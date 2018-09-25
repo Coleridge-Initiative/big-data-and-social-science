@@ -37,7 +37,7 @@
   
   
 
-<link rel="next" href="define-cosine-similarity-function.html">
+<link rel="next" href="chap-text.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -84,12 +84,21 @@
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#sec:intro:resources"><i class="fa fa-check"></i><b>1.8</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html"><i class="fa fa-check"></i><b>2</b> Define cosine similarity function</a><ul>
-<li class="chapter" data-level="2.0.1" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#processing-text-data"><i class="fa fa-check"></i><b>2.0.1</b> Processing text data</a></li>
-<li class="chapter" data-level="2.0.2" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>2.0.2</b> How much is a word worth?</a></li>
-<li class="chapter" data-level="2.0.3" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:lda"><i class="fa fa-check"></i><b>2.0.3</b> Topic modeling</a></li>
-<li class="chapter" data-level="2.0.4" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:ir"><i class="fa fa-check"></i><b>2.0.4</b> Information retrieval and clustering</a></li>
-<li class="chapter" data-level="2.0.5" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:other"><i class="fa fa-check"></i><b>2.0.5</b> Other approaches</a></li>
+<li class="chapter" data-level="2" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>2</b> Text Analysis</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>2.1</b> Understanding what people write</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>2.2</b> How to analyze text</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>2.2.1</b> Processing text data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>2.2.2</b> How much is a word worth?</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>2.3</b> Approaches and applications</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>2.3.1</b> Topic modeling</a></li>
+<li class="chapter" data-level="2.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>2.3.2</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="2.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>2.3.3</b> Other approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>2.4</b> Evaluation</a></li>
+<li class="chapter" data-level="2.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>2.5</b> Text analysis tools</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-text.html"><a href="chap-text.html#summary"><i class="fa fa-check"></i><b>2.6</b> Summary</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-text.html"><a href="chap-text.html#resources"><i class="fa fa-check"></i><b>2.7</b> Resources</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -550,7 +559,7 @@ empirical approach that is needed: data about grants, the people who are
 funded on grants, and the subsequent scientific and economic activities.</p>
 <p>First, data must be captured on what is funded, and since the data are
 in text format, computational linguistics tools must be applied
-(Chapter <a href="#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a>). Second, data must be captured on who is funded,
+(Chapter <a href="chap-text.html#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a>). Second, data must be captured on who is funded,
 and how they interact in teams, so network tools and analysis must be
 used (Chapter <a href="#chap:networks" reference-type="ref" reference="chap:networks"><span class="math display">\[chap:networks\]</span></a>). Third, information about the type of
 results must be gleaned from the web and other sources the disparate
@@ -570,7 +579,7 @@ build on data that have been put together to answer a real-world
 question, and provide explicit examples based on that data. We then
 provide examples that show how the approach generalizes.</p>
 <p>For example, the text analysis chapter
-(Chapter <a href="#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a>) shows how to use natural language processing to
+(Chapter <a href="chap-text.html#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a>) shows how to use natural language processing to
 describe <em>what</em> research is being done, using proposal and award text to
 identify the research topics in a portfolio
 <span class="citation">[@talley2011database; @Evans2011]</span>. But then it also shows how the
@@ -665,7 +674,7 @@ chapter builds from a conceptual framework and then shows you how the
 different concepts are translated into code. There is a particular focus
 on random forests and support vector machine (SVM) approaches.</p>
 
-<p>Chapter <a href="#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a> describes how social scientists can make use of
+<p>Chapter <a href="chap-text.html#chap:text" reference-type="ref" reference="chap:text"><span class="math display">\[chap:text\]</span></a> describes how social scientists can make use of
 one of the most exciting advances in big data—text analysis. Vast
 amounts of data that are stored in documents can now be analyzed
 andsearched so that different types of information can be retrieved.
@@ -805,7 +814,7 @@ Such systems may well represent the future of research computing.</p>
         </div>
       </div>
 
-<a href="define-cosine-similarity-function.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="chap-text.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
