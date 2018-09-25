@@ -15,3 +15,4 @@ bookdown::pdf_book:
   citation_package: natbib
 bookdown::epub_book:
   stylesheet: style.css
+  
