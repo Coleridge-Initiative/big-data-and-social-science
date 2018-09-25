@@ -1,3 +1,17 @@
+---
+title: "Big Data and Social Science"
+author: 
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+bibliography: [book.bib]
+biblio-style: apalike
+link-citations: yes
+github-repo: Coleridge-Initiative/big-data-and-social-science
+url: 
+description: 
+---
+
 # Test 
 
 This is a test Rmd file.
