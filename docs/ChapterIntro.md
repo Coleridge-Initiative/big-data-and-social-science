@@ -1,20 +1,3 @@
----
-title: "Big Data and Social Science"
-author:
-- Ian Foster
-- Rayid Ghani
-- Ron S. Jarmin
-- Frauke Kreuter
-- Julia Lane
-date: "2018-09-25"
-documentclass: book
-github-repo: Coleridge-Initiative/big-data-and-social-science
-link-citations: yes
-site: bookdown::bookdown_site
-subtitle: A Practical Guide to Methods and Tools
-biblio-style: apalike
----
-
 Introduction {#chap:intro}
 ============
 
