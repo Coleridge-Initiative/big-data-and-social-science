@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Big Data and Social Science</title>
+  <meta name="description" content="Big Data and Social Science">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+
+  <meta property="og:title" content="Big Data and Social Science" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  <meta name="github-repo" content="Coleridge-Initiative/big-data-and-social-science" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Big Data and Social Science" />
+  
+  
+  
+
+<meta name="author" content="Ian Foster">
+<meta name="author" content="Rayid Ghani">
+<meta name="author" content="Ron S. Jarmin">
+<meta name="author" content="Frauke Kreuter">
+<meta name="author" content="Julia Lane">
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="chap-errors.html">
+<link rel="next" href="chap-workbooks.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Big Data and Social Science</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="chap-intro.html"><a href="chap-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
+<li class="chapter" data-level="1.1" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-1"><i class="fa fa-check"></i><b>1.1</b> Why this book?</a></li>
+<li class="chapter" data-level="1.2" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-2"><i class="fa fa-check"></i><b>1.2</b> Defining big data and its value</a></li>
+<li class="chapter" data-level="1.3" data-path="chap-intro.html"><a href="chap-intro.html#sec:1.3"><i class="fa fa-check"></i><b>1.3</b> Social science, inference, and big data</a></li>
+<li class="chapter" data-level="1.4" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-5"><i class="fa fa-check"></i><b>1.4</b> Social science, data quality, and big data</a></li>
+<li class="chapter" data-level="1.5" data-path="chap-intro.html"><a href="chap-intro.html#new-tools-for-new-data"><i class="fa fa-check"></i><b>1.5</b> New tools for new data</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#the-books-use-case"><i class="fa fa-check"></i><b>1.6</b> The book’s “use case”</a></li>
+<li class="chapter" data-level="1.7" data-path="chap-intro.html"><a href="chap-intro.html#the-structure-of-the-book"><i class="fa fa-check"></i><b>1.7</b> The structure of the book</a><ul>
+<li class="chapter" data-level="1.7.1" data-path="chap-intro.html"><a href="chap-intro.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>1.7.1</b> Part I: Capture and curation</a></li>
+<li class="chapter" data-level="1.7.2" data-path="chap-intro.html"><a href="chap-intro.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>1.7.2</b> Part II: Modeling and analysis</a></li>
+<li class="chapter" data-level="1.7.3" data-path="chap-intro.html"><a href="chap-intro.html#part-iii-inference-and-ethics"><i class="fa fa-check"></i><b>1.7.3</b> Part III: Inference and ethics</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="chap-intro.html"><a href="chap-intro.html#sec:intro:resources"><i class="fa fa-check"></i><b>1.8</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="chap-web.html"><a href="chap-web.html"><i class="fa fa-check"></i><b>2</b> Working with Web Data and APIs</a><ul>
+<li class="chapter" data-level="2.1" data-path="chap-web.html"><a href="chap-web.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-1"><i class="fa fa-check"></i><b>2.2</b> Scraping information from the web</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.1"><i class="fa fa-check"></i><b>2.2.1</b> Obtaining data from the HHMI website</a></li>
+<li class="chapter" data-level="2.2.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.2"><i class="fa fa-check"></i><b>2.2.2</b> Limits of scraping</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="chap-web.html"><a href="chap-web.html#sec:4-2"><i class="fa fa-check"></i><b>2.3</b> New data in the research enterprise</a></li>
+<li class="chapter" data-level="2.4" data-path="chap-web.html"><a href="chap-web.html#sec:4-3"><i class="fa fa-check"></i><b>2.4</b> A functional view</a><ul>
+<li class="chapter" data-level="2.4.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-3.1"><i class="fa fa-check"></i><b>2.4.1</b> Relevant APIs and resources</a></li>
+<li class="chapter" data-level="2.4.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-3.2"><i class="fa fa-check"></i><b>2.4.2</b> RESTful APIs, returned data, and Python wrappers</a></li>
+</ul></li>
+<li class="chapter" data-level="2.5" data-path="chap-web.html"><a href="chap-web.html#sec:4-4"><i class="fa fa-check"></i><b>2.5</b> Programming against an API</a></li>
+<li class="chapter" data-level="2.6" data-path="chap-web.html"><a href="chap-web.html#sec:4-4.1"><i class="fa fa-check"></i><b>2.6</b> Using the ORCID API via a wrapper</a></li>
+<li class="chapter" data-level="2.7" data-path="chap-web.html"><a href="chap-web.html#sec:4-5"><i class="fa fa-check"></i><b>2.7</b> Quality, scope, and management</a></li>
+<li class="chapter" data-level="2.8" data-path="chap-web.html"><a href="chap-web.html#sec:4-6"><i class="fa fa-check"></i><b>2.8</b> Integrating data from multiple sources</a><ul>
+<li class="chapter" data-level="2.8.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-6.1"><i class="fa fa-check"></i><b>2.8.1</b> The Lagotto API</a></li>
+<li class="chapter" data-level="2.8.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-6.2"><i class="fa fa-check"></i><b>2.8.2</b> Working with a corpus</a></li>
+</ul></li>
+<li class="chapter" data-level="2.9" data-path="chap-web.html"><a href="chap-web.html#sec:4-7"><i class="fa fa-check"></i><b>2.9</b> Working with the graph of relationships</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1"><i class="fa fa-check"></i><b>2.9.1</b> Citation links between articles</a></li>
+<li class="chapter" data-level="2.9.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.2"><i class="fa fa-check"></i><b>2.9.2</b> Categories, sources, and connections</a></li>
+<li class="chapter" data-level="2.9.3" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.3"><i class="fa fa-check"></i><b>2.9.3</b> Data availability and completeness</a></li>
+<li class="chapter" data-level="2.9.4" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.4"><i class="fa fa-check"></i><b>2.9.4</b> The value of sparse dynamic data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="chap-web.html"><a href="chap-web.html#sec:4-8"><i class="fa fa-check"></i><b>2.10</b> Bringing it together: Tracking pathways to impact</a><ul>
+<li class="chapter" data-level="2.10.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-8.1"><i class="fa fa-check"></i><b>2.10.1</b> Network analysis approaches</a></li>
+<li class="chapter" data-level="2.10.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-8.3"><i class="fa fa-check"></i><b>2.10.2</b> Future prospects and new data sources</a></li>
+</ul></li>
+<li class="chapter" data-level="2.11" data-path="chap-web.html"><a href="chap-web.html#sec:4-9"><i class="fa fa-check"></i><b>2.11</b> Summary</a></li>
+<li class="chapter" data-level="2.12" data-path="chap-web.html"><a href="chap-web.html#resources"><i class="fa fa-check"></i><b>2.12</b> Resources</a></li>
+<li class="chapter" data-level="2.13" data-path="chap-web.html"><a href="chap-web.html#acknowledgements-and-copyright"><i class="fa fa-check"></i><b>2.13</b> Acknowledgements and copyright</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="chap-link.html"><a href="chap-link.html"><i class="fa fa-check"></i><b>3</b> Record Linkage</a><ul>
+<li class="chapter" data-level="3.1" data-path="chap-link.html"><a href="chap-link.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
+<li class="chapter" data-level="3.2" data-path="chap-link.html"><a href="chap-link.html#sec:recordlinkage"><i class="fa fa-check"></i><b>3.2</b> Introduction to record linkage</a></li>
+<li class="chapter" data-level="3.3" data-path="chap-link.html"><a href="chap-link.html#preprocessing-data-for-record-linkage"><i class="fa fa-check"></i><b>3.3</b> Preprocessing data for record linkage</a></li>
+<li class="chapter" data-level="3.4" data-path="chap-link.html"><a href="chap-link.html#S:indexing"><i class="fa fa-check"></i><b>3.4</b> Indexing and blocking</a></li>
+<li class="chapter" data-level="3.5" data-path="chap-link.html"><a href="chap-link.html#matching"><i class="fa fa-check"></i><b>3.5</b> Matching</a><ul>
+<li class="chapter" data-level="3.5.1" data-path="chap-link.html"><a href="chap-link.html#rule-based-approaches"><i class="fa fa-check"></i><b>3.5.1</b> Rule-based approaches</a></li>
+<li class="chapter" data-level="3.5.2" data-path="chap-link.html"><a href="chap-link.html#probabilistic-record-linkage"><i class="fa fa-check"></i><b>3.5.2</b> Probabilistic record linkage</a></li>
+<li class="chapter" data-level="3.5.3" data-path="chap-link.html"><a href="chap-link.html#machine-learning-approaches-to-linking"><i class="fa fa-check"></i><b>3.5.3</b> Machine learning approaches to linking</a></li>
+<li class="chapter" data-level="3.5.4" data-path="chap-link.html"><a href="chap-link.html#disambiguating-networks"><i class="fa fa-check"></i><b>3.5.4</b> Disambiguating networks</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="chap-link.html"><a href="chap-link.html#classification"><i class="fa fa-check"></i><b>3.6</b> Classification</a><ul>
+<li class="chapter" data-level="3.6.1" data-path="chap-link.html"><a href="chap-link.html#S:thresholds"><i class="fa fa-check"></i><b>3.6.1</b> Thresholds</a></li>
+<li class="chapter" data-level="3.6.2" data-path="chap-link.html"><a href="chap-link.html#one-to-one-links"><i class="fa fa-check"></i><b>3.6.2</b> One-to-one links</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="chap-link.html"><a href="chap-link.html#record-linkage-and-data-protection"><i class="fa fa-check"></i><b>3.7</b> Record linkage and data protection</a></li>
+<li class="chapter" data-level="3.8" data-path="chap-link.html"><a href="chap-link.html#summary"><i class="fa fa-check"></i><b>3.8</b> Summary</a></li>
+<li class="chapter" data-level="3.9" data-path="chap-link.html"><a href="chap-link.html#resources-1"><i class="fa fa-check"></i><b>3.9</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="chap-db.html"><a href="chap-db.html"><i class="fa fa-check"></i><b>4</b> Databases</a><ul>
+<li class="chapter" data-level="4.1" data-path="chap-db.html"><a href="chap-db.html#sec:db:intro"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
+<li class="chapter" data-level="4.2" data-path="chap-db.html"><a href="chap-db.html#sec:db:when"><i class="fa fa-check"></i><b>4.2</b> DBMS: When and why</a></li>
+<li class="chapter" data-level="4.3" data-path="chap-db.html"><a href="chap-db.html#relational-dbmss"><i class="fa fa-check"></i><b>4.3</b> Relational DBMSs</a><ul>
+<li class="chapter" data-level="4.3.1" data-path="chap-db.html"><a href="chap-db.html#structured-query-language-sql"><i class="fa fa-check"></i><b>4.3.1</b> Structured Query Language (SQL)</a></li>
+<li class="chapter" data-level="4.3.2" data-path="chap-db.html"><a href="chap-db.html#sec:db:sql"><i class="fa fa-check"></i><b>4.3.2</b> Manipulating and querying data</a></li>
+<li class="chapter" data-level="4.3.3" data-path="chap-db.html"><a href="chap-db.html#sec:db:schema"><i class="fa fa-check"></i><b>4.3.3</b> Schema design and definition</a></li>
+<li class="chapter" data-level="4.3.4" data-path="chap-db.html"><a href="chap-db.html#loading-data"><i class="fa fa-check"></i><b>4.3.4</b> Loading data</a></li>
+<li class="chapter" data-level="4.3.5" data-path="chap-db.html"><a href="chap-db.html#transactions-and-crash-recovery"><i class="fa fa-check"></i><b>4.3.5</b> Transactions and crash recovery</a></li>
+<li class="chapter" data-level="4.3.6" data-path="chap-db.html"><a href="chap-db.html#sec:db:index"><i class="fa fa-check"></i><b>4.3.6</b> Database optimizations</a></li>
+<li class="chapter" data-level="4.3.7" data-path="chap-db.html"><a href="chap-db.html#caveats-and-challenges"><i class="fa fa-check"></i><b>4.3.7</b> Caveats and challenges</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="chap-db.html"><a href="chap-db.html#linking-dbmss-and-other-tools"><i class="fa fa-check"></i><b>4.4</b> Linking DBMSs and other tools</a></li>
+<li class="chapter" data-level="4.5" data-path="chap-db.html"><a href="chap-db.html#sec:db:nosql"><i class="fa fa-check"></i><b>4.5</b> NoSQL databases</a><ul>
+<li class="chapter" data-level="4.5.1" data-path="chap-db.html"><a href="chap-db.html#challenges-of-scale-the-cap-theorem"><i class="fa fa-check"></i><b>4.5.1</b> Challenges of scale: The CAP theorem</a></li>
+<li class="chapter" data-level="4.5.2" data-path="chap-db.html"><a href="chap-db.html#nosql-and-keyvalue-stores"><i class="fa fa-check"></i><b>4.5.2</b> NoSQL and key–value stores</a></li>
+<li class="chapter" data-level="4.5.3" data-path="chap-db.html"><a href="chap-db.html#other-nosql-databases"><i class="fa fa-check"></i><b>4.5.3</b> Other NoSQL databases</a></li>
+</ul></li>
+<li class="chapter" data-level="4.6" data-path="chap-db.html"><a href="chap-db.html#sec:db:spatial"><i class="fa fa-check"></i><b>4.6</b> Spatial databases</a></li>
+<li class="chapter" data-level="4.7" data-path="chap-db.html"><a href="chap-db.html#which-database-to-use"><i class="fa fa-check"></i><b>4.7</b> Which database to use?</a><ul>
+<li class="chapter" data-level="4.7.1" data-path="chap-db.html"><a href="chap-db.html#relational-dbmss-1"><i class="fa fa-check"></i><b>4.7.1</b> Relational DBMSs</a></li>
+<li class="chapter" data-level="4.7.2" data-path="chap-db.html"><a href="chap-db.html#nosql-dbmss"><i class="fa fa-check"></i><b>4.7.2</b> NoSQL DBMSs</a></li>
+</ul></li>
+<li class="chapter" data-level="4.8" data-path="chap-db.html"><a href="chap-db.html#summary-1"><i class="fa fa-check"></i><b>4.8</b> Summary</a></li>
+<li class="chapter" data-level="4.9" data-path="chap-db.html"><a href="chap-db.html#resources-2"><i class="fa fa-check"></i><b>4.9</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Programming with Big Data</a><ul>
+<li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> The MapReduce programming model</a></li>
+<li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
+<li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
+<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop: Bringing compute to the data</a></li>
+<li class="chapter" data-level="5.3.3" data-path="chap-parallel.html"><a href="chap-parallel.html#hardware-provisioning"><i class="fa fa-check"></i><b>5.3.3</b> Hardware provisioning</a></li>
+<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.4</b> Programming language support</a></li>
+<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#fault-tolerance"><i class="fa fa-check"></i><b>5.3.5</b> Fault tolerance</a></li>
+<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Limitations of Hadoop</a></li>
+</ul></li>
+<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.4</b> Apache Spark</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-3"><i class="fa fa-check"></i><b>5.6</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>6.2</b> What is machine learning?</a></li>
+<li class="chapter" data-level="6.3" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>6.3</b> The machine learning process</a></li>
+<li class="chapter" data-level="6.4" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>6.4</b> Problem formulation: Mapping a problem to machine learning methods</a></li>
+<li class="chapter" data-level="6.5" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>6.5</b> Methods</a><ul>
+<li class="chapter" data-level="6.5.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>6.5.1</b> Unsupervised learning methods</a></li>
+<li class="chapter" data-level="6.5.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>6.5.2</b> Supervised learning</a></li>
+</ul></li>
+<li class="chapter" data-level="6.6" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>6.6</b> Evaluation</a><ul>
+<li class="chapter" data-level="6.6.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>6.6.1</b> Methodology</a></li>
+<li class="chapter" data-level="6.6.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>6.6.2</b> Metrics</a></li>
+</ul></li>
+<li class="chapter" data-level="6.7" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>6.7</b> Practical tips</a><ul>
+<li class="chapter" data-level="6.7.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>6.7.1</b> Features</a></li>
+<li class="chapter" data-level="6.7.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>6.7.2</b> Machine learning pipeline</a></li>
+<li class="chapter" data-level="6.7.3" data-path="chap-ml.html"><a href="chap-ml.html#multiclass-problems"><i class="fa fa-check"></i><b>6.7.3</b> Multiclass problems</a></li>
+<li class="chapter" data-level="6.7.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>6.7.4</b> Skewed or imbalanced classification problems</a></li>
+</ul></li>
+<li class="chapter" data-level="6.8" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>6.8</b> How can social scientists benefit from machine learning?</a></li>
+<li class="chapter" data-level="6.9" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>6.9</b> Advanced topics</a></li>
+<li class="chapter" data-level="6.10" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>6.10</b> Summary</a></li>
+<li class="chapter" data-level="6.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>6.11</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>7</b> Text Analysis</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> How much is a word worth?</a></li>
+</ul></li>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
+<li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#resources-4"><i class="fa fa-check"></i><b>7.7</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-networks.html"><a href="chap-networks.html#network-data"><i class="fa fa-check"></i><b>8.2</b> Network data</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="chap-networks.html"><a href="chap-networks.html#forms-of-network-data"><i class="fa fa-check"></i><b>8.2.1</b> Forms of network data</a></li>
+<li class="chapter" data-level="8.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>8.2.2</b> Inducing one-mode networks from two-mode data</a></li>
+</ul></li>
+<li class="chapter" data-level="8.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>8.3</b> Network measures</a><ul>
+<li class="chapter" data-level="8.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>8.3.1</b> Reachability</a></li>
+<li class="chapter" data-level="8.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>8.3.2</b> Whole-network measures</a></li>
+</ul></li>
+<li class="chapter" data-level="8.4" data-path="chap-networks.html"><a href="chap-networks.html#comparing-collaboration-networks"><i class="fa fa-check"></i><b>8.4</b> Comparing collaboration networks</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>8.5</b> Summary</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-networks.html"><a href="chap-networks.html#resources-5"><i class="fa fa-check"></i><b>8.6</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="chap-viz.html"><a href="chap-viz.html"><i class="fa fa-check"></i><b>9</b> Information Visualization</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2"><i class="fa fa-check"></i><b>9.2</b> Developing effective visualizations</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-3"><i class="fa fa-check"></i><b>9.3</b> A data-by-tasks taxonomy</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.1"><i class="fa fa-check"></i><b>9.3.1</b> Multivariate data</a></li>
+<li class="chapter" data-level="9.3.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.2"><i class="fa fa-check"></i><b>9.3.2</b> Spatial data</a></li>
+<li class="chapter" data-level="9.3.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.4"><i class="fa fa-check"></i><b>9.3.3</b> Temporal data</a></li>
+<li class="chapter" data-level="9.3.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.5"><i class="fa fa-check"></i><b>9.3.4</b> Hierarchical data</a></li>
+<li class="chapter" data-level="9.3.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.6"><i class="fa fa-check"></i><b>9.3.5</b> Network data</a></li>
+<li class="chapter" data-level="9.3.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.7"><i class="fa fa-check"></i><b>9.3.6</b> Text data</a></li>
+</ul></li>
+<li class="chapter" data-level="9.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4"><i class="fa fa-check"></i><b>9.4</b> Challenges</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.1"><i class="fa fa-check"></i><b>9.4.1</b> Scalability</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.2"><i class="fa fa-check"></i><b>9.4.2</b> Evaluation</a></li>
+<li class="chapter" data-level="9.4.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.3"><i class="fa fa-check"></i><b>9.4.3</b> Visual impairment</a></li>
+<li class="chapter" data-level="9.4.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.4"><i class="fa fa-check"></i><b>9.4.4</b> Visual literacy</a></li>
+</ul></li>
+<li class="chapter" data-level="9.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-5"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
+<li class="chapter" data-level="9.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:mylabel4"><i class="fa fa-check"></i><b>9.6</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="chap-errors.html"><a href="chap-errors.html"><i class="fa fa-check"></i><b>10</b> Errors and Inference</a><ul>
+<li class="chapter" data-level="10.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-1"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
+<li class="chapter" data-level="10.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2"><i class="fa fa-check"></i><b>10.2</b> The total error paradigm</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2.1"><i class="fa fa-check"></i><b>10.2.1</b> The traditional model</a></li>
+<li class="chapter" data-level="10.2.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2.2"><i class="fa fa-check"></i><b>10.2.2</b> Extending the framework to big data</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-3"><i class="fa fa-check"></i><b>10.3</b> Illustrations of errors in big data</a></li>
+<li class="chapter" data-level="10.4" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4"><i class="fa fa-check"></i><b>10.4</b> Errors in big data analytics</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4.1"><i class="fa fa-check"></i><b>10.4.1</b> Errors resulting from volume, velocity, and variety, assuming perfect veracity</a></li>
+<li class="chapter" data-level="10.4.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4.2"><i class="fa fa-check"></i><b>10.4.2</b> Errors resulting from lack of veracity</a></li>
+</ul></li>
+<li class="chapter" data-level="10.5" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-5"><i class="fa fa-check"></i><b>10.5</b> Some methods for mitigating, detecting, and compensating for errors</a></li>
+<li class="chapter" data-level="10.6" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-6"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
+<li class="chapter" data-level="10.7" data-path="chap-errors.html"><a href="chap-errors.html#resources-6"><i class="fa fa-check"></i><b>10.7</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="11" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>11</b> Privacy and Confidentiality</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-privacy.html"><a href="chap-privacy.html#why-is-access-important"><i class="fa fa-check"></i><b>11.2</b> Why is access important?</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-privacy.html"><a href="chap-privacy.html#providing-access"><i class="fa fa-check"></i><b>11.3</b> Providing access</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>11.4</b> The new challenges</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>11.5</b> Legal and ethical framework</a></li>
+<li class="chapter" data-level="11.6" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-6"><i class="fa fa-check"></i><b>11.6</b> Summary</a></li>
+<li class="chapter" data-level="11.7" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-7"><i class="fa fa-check"></i><b>11.7</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>12</b> Workbooks</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#environment"><i class="fa fa-check"></i><b>12.2</b> Environment</a><ul>
+<li class="chapter" data-level="12.2.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#running-workbooks-locally"><i class="fa fa-check"></i><b>12.2.1</b> Running workbooks locally</a></li>
+<li class="chapter" data-level="12.2.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#central-workbook-server"><i class="fa fa-check"></i><b>12.2.2</b> Central workbook server</a></li>
+</ul></li>
+<li class="chapter" data-level="12.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#workbook-details"><i class="fa fa-check"></i><b>12.3</b> Workbook details</a><ul>
+<li class="chapter" data-level="12.3.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#social-media-and-apis"><i class="fa fa-check"></i><b>12.3.1</b> Social Media and APIs</a></li>
+<li class="chapter" data-level="12.3.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#database-basics"><i class="fa fa-check"></i><b>12.3.2</b> Database basics</a></li>
+<li class="chapter" data-level="12.3.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#data-linkage"><i class="fa fa-check"></i><b>12.3.3</b> Data Linkage</a></li>
+<li class="chapter" data-level="12.3.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning"><i class="fa fa-check"></i><b>12.3.4</b> Machine Learning</a></li>
+<li class="chapter" data-level="12.3.5" data-path="chap-workbooks.html"><a href="chap-workbooks.html#text-analysis"><i class="fa fa-check"></i><b>12.3.5</b> Text Analysis</a></li>
+<li class="chapter" data-level="12.3.6" data-path="chap-workbooks.html"><a href="chap-workbooks.html#networks"><i class="fa fa-check"></i><b>12.3.6</b> Networks</a></li>
+<li class="chapter" data-level="12.3.7" data-path="chap-workbooks.html"><a href="chap-workbooks.html#visualization"><i class="fa fa-check"></i><b>12.3.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="12.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#resources-8"><i class="fa fa-check"></i><b>12.4</b> Resources</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Big Data and Social Science</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="chap:privacy" class="section level1">
+<h1><span class="header-section-number">Chapter 11</span> Privacy and Confidentiality</h1>
+
+<p>This chapter addresses the issue that sits at the core of any study of
+human beings—privacy and confidentiality. In a new field, like the one
+covered in this book, it is critical that many researchers have access
+to the data so that work can be replicated and built upon—that there
+be a scientific basis to data science. Yet the rules that social
+scientists have traditionally used for survey data, namely anonymity and
+informed consent, no longer apply when data are collected in the wild.
+This concluding chapter identifies the issues that must be addressed for
+responsible and ethical research to take place.</p>
+<div id="introduction-4" class="section level2">
+<h2><span class="header-section-number">11.1</span> Introduction</h2>
+<p>Most big data applications in the social sciences involve data on units
+such as individuals, households, and different types of business,
+educational, and government organizations. Indeed, the example running
+throughout this book involves data on individuals (such as faculty and
+students) and organizations (such as universities and firms). In
+circumstances such as these, researchers must ensure that such data are
+used responsibly and ethically—that the subjects under study suffer no
+harm from their data being accessed, analyzed, and reported. A clear
+distinction must be made between analysis done for the public good and
+that done for private gain. In practical terms, this requires that the
+private interests of individual privacy and data confidentiality be
+balanced against the social benefits of research access and use.</p>
+<p>&quot; encompasses not only the famous ‘right to be left alone,’ or keeping
+one’s personal matters and relationships secret, but also the ability to
+share information selectively but not publicly&quot; <span class="citation">[@house2014big]</span>. is
+“preserving authorized restrictions on information access and
+disclosure, including means for protecting personal privacy and
+proprietary information” <span class="citation">[@mccallister2010sp]</span>. Doing so is not
+easy—the challenge to the research community is how to balance the
+<em>risk</em> of providing access with the associated utility
+<span class="citation">[@duncanstatistical]</span>. To give a simple example, if means and percentages
+are presented for a <em>large</em> number of people, it will be difficult to
+infer an individual’s value from such output, even if one knew that a
+certain individual or unit contributed to the formation of that mean or
+percentage. However, if those means and percentages are presented for
+subgroups or in multivariate tables with small cell sizes, the risk for
+disclosure increases <span class="citation">[@doyle2001confidentiality]</span>. As a result, the
+quality of data analysis is typically degraded with the production of
+public use data <span class="citation">[@duncanstatistical]</span>.</p>
+
+<div class="figure">
+<img src="ChapterPrivacy/figures/fig11-1" alt="The privacy–utility tradeoff" id="fig:11-1" />
+<p class="caption">The privacy–utility
+tradeoff<span label="fig:11-1"></span></p>
+</div>
+
+<p>In general, the greater the access to data and their original values,
+the greater the risk of reidentification for individual units. We depict
+this tradeoff graphically in
+Figure <a href="chap-privacy.html#fig:11-1" reference-type="ref" reference="fig:11-1">1.1</a>. The
+concave curves in this hypothetical example depict the technological
+relationship between data utility and privacy for an organization such
+as a business firm or a statistical agency. At one extreme, all
+information is available to anybody about all units, and therefore high
+analytic utility is associated with the data that are not at all
+protected. At the other extreme, nobody has access to any data and no
+utility is achieved. Initially, assume the organization is on the outer
+frontier. Increased external data resources (those not used by the
+organization) increase the risk of reidentification. This is represented
+by an inward shift of the utility/privacy frontier in
+Figure <a href="chap-privacy.html#fig:11-1" reference-type="ref" reference="fig:11-1">1.1</a>.
+Before the increase in external data, the organization could achieve a
+level of data utility <span class="math inline">\(U^*\)</span> and privacy <span class="math inline">\(P_1\)</span>. The increase in
+externally available data now means that in order to maintain utility at
+<span class="math inline">\(U^*\)</span>, privacy is reduced to <span class="math inline">\(P_2\)</span>. This simple example represents the
+challenge to all organization that release statistical or analytical
+products obtained from underlying identifiable data in the era of big
+data. As more data become available externally, the more difficult it is
+to maintain privacy.</p>
+<p>Before the big data era, national statistical agencies had the capacity
+and the mandate to make dissemination decisions: they assessed the risk,
+they understood the data user community and the associated utility from
+data releases. And they had the wherewithal to address the legal,
+technical, and statistical issues associated with protecting
+confidentiality <span class="citation">[@trewin2007managing]</span>.</p>
+<p>But in a world of big data, many once-settled issues have new
+complications, and wholly new issues arise that need to be addressed,
+albeit under the same rubrics. The new types of data have much greater
+potential utility, often because it is possible to study small cells or
+the tails of a distribution in ways not possible with small data. In
+fact, in many social science applications, the tails of the distribution
+are often the most interesting and hardest-to-reach parts of the
+population being studied; consider health care costs for a small number
+of ill people <span class="citation">[@stanton2006high]</span>, or economic activity such as rapid
+employment growth by a small number of firms <span class="citation">[@decker2015has]</span>.</p>
+<p>Spending on health care services in the United States is highly
+concentrated among a small proportion of people with extremely high use.
+For the overall civilian population living in the community, the latest
+data indicate that more than 20% of all personal health care spending in
+2009 ($275 billion) was on behalf of just 1% of the population
+<span class="citation">[@healthcarespending]</span>.</p>
+<p>It is important to understand where the risk of privacy breaches comes
+from. Let us assume for a moment that we conducted a traditional
+small-scale survey with 1,000 respondents. The survey contains
+information on political attitudes, spending and saving in a given year,
+and income, as well as background variables on income and education. If
+name and address are saved together with this data, and someone gets
+access to the data, obviously it is easy to identify individuals and
+gain access to information that is otherwise not public. If the personal
+identifiable information (name and address) are removed from this data
+file, the risk is much reduced. If someone has access to the survey data
+and sees all the individual values, it might be difficult to assess with
+certainty who among the 320 million inhabitants in the USA is associated
+with an individual data record. However, the risk is higher if one knows
+some of this information (say, income) for a person, and knows that this
+person is in the survey. With these two pieces of information, it is
+likely possible to uniquely identify the person in the survey data.</p>
+<p>Big data increases the risk precisely for this reason. Much data is
+available for reidentification purposes <span class="citation">[@ohm2010broken]</span>. Most
+obviously, the risk of reidentification is much greater because the new
+types of data have much richer detail and a much larger public community
+has access to ways to reidentify individuals. There are many famous
+examples of reidentification occurring even when obvious personal
+information, such as name and social security number, has been removed
+and the data provider thought that the data were consequently
+deidentified. In the 1990s, Massachusetts Group Insurance released
+“deidentified” data on the hospital visits of state employees;
+researcher Latanya Sweeney quickly reidentified the hospital records of
+the then Governor William Weld using nothing more than state voter
+records about residence and date of birth <span class="citation">[@sweeney2001computational]</span>.
+In 2006, the release of supposedly deidentified web search data by AOL
+resulted in two <em>New York Times</em> reports being able to reidentify a
+customer simply from her browsing habits <span class="citation">[@barbaro2006face]</span>. And in
+2012, statisticians at the department store, Target, used a young
+teenager’s shopping patterns to determine that she was pregnant before
+her father did <span class="citation">[@hill2012target]</span>.</p>
+<p>But there are also less obvious problems. What is the legal framework
+when the ownership of data is unclear? In the past, when data were more
+likely to be collected and used within the same entity—for example,
+within an agency that collects administrative data or within a
+university that collects data for research
+purposes—organization-specific procedures were (usually) in place and
+sufficient to regulate the usage of these data. In a world of big data,
+legal ownership is less clear.</p>
+<p>Who has the legal authority to make decisions about permission, access,
+and dissemination and under what circumstances? The answer is often not
+clear. The challenge in the case of big data is that data sources are
+often combined, collected for one purpose, and used for another. Data
+providers often have a poor understanding of whether or how their data
+will be used.</p>
+<p>In a discussion of legal approaches to privacy in the context of big
+data, Strandburg <span class="citation">[@Strandburg2014]</span> says: “‘Big data’ has great potential
+to benefit society. At the same time, its availability creates
+significant potential for mistaken, misguided or malevolent uses of
+personal information. The conundrum for the law is to provide space for
+big data to fulfill its potential for societal benefit, while protecting
+citizens adequately from related individual and social harms. Current
+privacy law evolved to address different concerns and must be adapted to
+confront big data’s challenges.”</p>
+<p>It is critical to address privacy and confidentiality issues if the full
+public value of big data is to be realized. This chapter highlights why
+the challenges need to be met (i.e., why access to data is crucial),
+review the pre-big data past, point out challenges with this approach in
+the context of big data, briefly describe the current state of play from
+a legal, technical, and statistical perspective, and point to open
+questions that need to be addressed in the future.</p>
+</div>
+<div id="why-is-access-important" class="section level2">
+<h2><span class="header-section-number">11.2</span> Why is access important?</h2>
+<p>This book gives detailed examples of the potential of big data to
+provide insights into a variety of social science
+questions—particularly the relationship between investments in R&amp;D and
+innovation. But that potential is only realized if researchers have
+access to the data <span class="citation">[@Lane2007]</span>: not only to perform primary analyses but
+also to validate the data generation process (in particular, data
+linkage), replicate analyses, and build a knowledge infrastructure
+around complex data sets.</p>
+<div id="validating-the-data-generating-process" class="section level5 unnumbered">
+<h5>Validating the data generating process</h5>
+<p>Research designs requiring a combination of data sources and/or analysis
+of the tails of populations challenge the traditional paradigm of
+conducting statistical analysis on deidentified or aggregated data. In
+order to combine data sets, someone in the chain that transforms raw
+data into research outputs needs access to link keys contained in the
+data sets to be combined. High-quality link keys uniquely identify the
+subjects under study and typically are derived from items such as
+individual names, birth dates, social security numbers, and business
+names, addresses, and tax ID numbers. From a privacy and confidentiality
+perspective, link keys are among most sensitive information in many data
+sets of interest to social scientists. This is why many organizations
+replace link keys containing personal identifiable information (PII)
+with privacy-protecting identifiers <span class="citation">[@schnell2009privacy]</span>. Regardless,
+at some point in the process those must be generated out of the original
+information, thus access to the latter is important.</p>
+</div>
+<div id="replication" class="section level5 unnumbered">
+<h5>Replication</h5>
+<p>John Ioannidis has claimed that most published research findings are
+false <span class="citation">[@Ioannidis2005]</span>; for example, the unsuccessful replication of
+genome-wide association studies, at less than 1%, is staggering
+<span class="citation">[@Bastian2013]</span>. Inadequate understanding of coverage, incentive, and
+quality issues, together with the lack of a comparison group, can result
+in biased analysis—famously in the case of using administrative
+records on crime to make inference about the role of death penalty
+policy in crime reduction <span class="citation">[@donohue2006uses; @levitt2006economic]</span>.
+Similarly, overreliance on, say, Twitter data, in targeting resources
+after hurricanes can lead to the misallocation of resources towards
+young, Internet-savvy people with cell phones and away from elderly or
+impoverished neighborhoods <span class="citation">[@shelton2014mapping]</span>, just as bad survey
+methodology led the <em>Literary Digest</em> to incorrectly call the 1936
+election <span class="citation">[@squire19881936]</span>. The first step to replication is data
+access; such access can enable other researchers to ascertain whether
+the assumptions of a particular statistical model are met, what relevant
+information is included or excluded, and whether valid inferences can be
+drawn from the data <span class="citation">[@kreuter201412]</span>.</p>
+</div>
+<div id="building-knowledge-infrastructure" class="section level5 unnumbered">
+<h5>Building knowledge infrastructure</h5>
+<p>Creating a community of practice around a data infrastructure can result
+in tremendous new insights, as the Sloan Digital Sky Survey and the
+Polymath project have shown <span class="citation">[@nielsen2012reinventing]</span>. In the social
+science arena, the Census Bureau has developed a productive ecosystem
+that is predicated on access to approved external experts to build,
+conduct research using, and improve key data assets such as the
+Longitudinal Business Database <span class="citation">[@jarmin2002longitudinal]</span> and
+Longitudinal Employer Household Dynamics <span class="citation">[@abowd2004integrated]</span>, which
+have yielded a host of new data products and critical policy-relevant
+insights on business dynamics <span class="citation">[@haltiwanger2013creates]</span> and labor market
+volatility <span class="citation">[@brown2008economic]</span>, respectively. Without providing robust,
+but secure, access to confidential data, researchers at the Census
+Bureau would have been unable to undertake the innovations that made
+these new products and insights possible.</p>
+</div>
+</div>
+<div id="providing-access" class="section level2">
+<h2><span class="header-section-number">11.3</span> Providing access</h2>
+<p>The approaches to providing access have evolved over time. Statistical
+agencies often employ a range of approaches depending on the needs of
+heterogeneous data users
+<span class="citation">[@doyle2001confidentiality; @foster2009resolving]</span>. Dissemination of data
+to the public usually occurs in three steps: an evaluation of disclosure
+risks, followed by the application of an anonymization technique, and
+finally an evaluation of disclosure risks and analytical quality of the
+candidate data release(s). The two main approaches have been
+<em>statistical disclosure</em> control techniques to produce anonymized public
+use data sets, and controlled access through a <em>research data center</em>.</p>
+<div id="statistical-disclosure-control-techniques" class="section level5 unnumbered">
+<h5>Statistical disclosure control techniques</h5>
+<p>Statistical agencies have made data available in a number of ways:
+through tabular data, public use files, licensing agreements and, more
+recently, through synthetic data <span class="citation">[@reiter2012statistical]</span>. Hundepool et
+al. <span class="citation">[@hundepool2010handbook]</span> define statistical disclosure control as
+follows:</p>
+<blockquote>
+<p>concepts and methods that ensure the confidentiality of micro and
+aggregated data that are to be published. It is methodology used to
+design statistical outputs in a way that someone with access to that
+output cannot relate a known individual (or other responding unit) to
+an element in the output.</p>
+</blockquote>
+<p>Traditionally, confidentiality protection has been accomplished by
+releasing only <em>aggregated tabular data</em>. This practice works well in
+settings where the primary purpose is enumeration, such as census
+taking. However, tabular data are poorly suited to describing the
+underlying distributions and covariance across variables that are often
+the focus of applied social science research <span class="citation">[@duncanstatistical]</span>.</p>
+<p>To provide researchers access to data that permitted analysis of the
+underlying variance–covariance structure of the data, some agencies
+have constructed public use micro-data samples. To product
+confidentiality in such <em>public use files</em>, a number of statistical
+disclosure control procedures are typically applied. These include
+stripping all identifying (e.g., PII) fields from the data, topcoding
+highly skewed variables (e.g., income), and swapping records
+<span class="citation">[@doyle2001confidentiality; @zayatz2007disclosure]</span>. However, the mosaic
+effect—where disparate pieces of information can be combined to
+reidentify individuals—dramatically increases the risk of releasing
+public use files <span class="citation">[@czajka2014minimizing]</span>. In addition, there is more and
+more evidence that the statistical disclosure procedure applied to
+produce them decreases their utility across many applications
+<span class="citation">[@burkhauser2010improving]</span>.</p>
+<p>Some agencies provide access to confidential micro-data through
+<em>licensing</em> arrangements. A contract specifies the conditions of use and
+what safeguards must be in place. In some cases, the agency has the
+authority to conduct random inspections. However, this approach has led
+to a number of operational challenges, including version control,
+identifying and managing risky researcher behavior, and management costs
+<span class="citation">[@doyle2001confidentiality]</span>.</p>
+<p>More recently, <em>synthetic data</em> have been created whereby key features
+of the original data are preserved but the original data are replaced by
+results from estimations (synthetic data) so that no individual or
+business entity can be found in the released data
+<span class="citation">[@drechsler2011synthetic]</span>. Two examples of synthetic data sets are the
+SIPP Synthetic-Beta <span class="citation">[@abowd2006final]</span> of linked Survey of Income and
+Program Participation (SIPP) and Social Security Administration earnings
+data, and the Synthetic Longitudinal Business Database (SynLBD)
+<span class="citation">[@kinney2011towards]</span>. Jarmin et al. <span class="citation">[@jarmin2014expanding]</span> discuss how
+synthetic data sets lack utility in many research settings but are
+useful for generating flexible data sets underlying data tools and apps
+such as the Census Bureau’s OnTheMap.</p>
+</div>
+<div id="research-data-centers" class="section level5 unnumbered">
+<h5>Research data centers</h5>
+<p>The second approach is establishing research data centers. Here,
+qualified researchers gain access to micro-level data after they are
+sworn in to protect the confidentially of the data they access. Strong
+input and output controls are in place to ensure that published findings
+comply with the privacy and confidentiality regulations
+<span class="citation">[@hayden2012broken]</span>. Some RDCs allow access through remote execution,
+where no direct access to the data is allowed, but it is not necessary
+to travel; others allow remote direct access.</p>
+</div>
+</div>
+<div id="the-new-challenges" class="section level2">
+<h2><span class="header-section-number">11.4</span> The new challenges</h2>
+<p>While there are well-established policies and protocols surrounding
+access to and use of survey and administrative data, a major new
+challenge is the lack of clear guidelines governing the collection of
+data about human activity in a world in which all public, and some
+private, actions generate data that can be harvested
+<span class="citation">[@house2014big; @ohm2010broken; @Strandburg2014]</span>. The twin pillars on
+which so much of social science have rested—informed consent and
+anonymization—are virtually useless in a big data setting where
+multiple data sets can be and are linked together using individual
+identifiers by a variety of players beyond social scientists with formal
+training and whose work is overseen by institutional review boards. This
+rapid expansion in data and their use is very much driven by the
+increased utility of the linked information to businesses, policymakers,
+and ultimately the taxpayer. In addition, there are no obvious data
+stewards and custodians who can be entrusted with preserving the privacy
+and confidentiality with regard to both the source data collected from
+sensors, social media, and many other sources, and the related analyses
+<span class="citation">[@lane2013me]</span>.</p>
+<p>It is clear that informed consent as historically construed is no longer
+feasible. As Nissenbaum <span class="citation">[@nissenbaum2011contextual]</span> points out,
+notification is either comprehensive or comprehensible, but not both.
+While ideally human subjects are offered true freedom of choice based on
+a sound and sufficient understanding of what the choice entails, in
+reality the flow of data is so complex and the interest in the data
+usage so diverse that simplicity and clarity in the consent statement
+unavoidably result in losses of fidelity, as anyone who has accepted a
+Google Maps agreement is likely to understand <span class="citation">[@check2015researchers]</span>.
+In addition, informed consent requires a greater understanding of the
+breadth of type of privacy breaches, the nature of harm as diffused over
+time, and an improved valuation of privacy in the big data context.
+Consumers may value their own privacy in variously flawed ways. They
+may, for example, have incomplete information, or an overabundance of
+information rendering processing impossible, or use heuristics that
+establish and routinize deviations from rational decision-making
+<span class="citation">[@Acquisti2014]</span>.</p>
+<p>It is also nearly impossible to anonymize data. Big data are often
+structured in such a way that essentially everyone in the file is
+unique, either because so many variables exist or because they are so
+frequent or geographically detailed, that they make it easy to
+reidentify individual patterns <span class="citation">[@narayanan2008robust]</span>. It is also no
+longer possible to rely on sampling or measurement error in external
+files as a buffer for data protection, since most data are not in the
+hands of statistical agencies.</p>
+<p>There are no data stewards controlling access to individual data. Data
+are often so interconnected (think social media network data) that one
+person’s action can disclose information about another person without
+that person even knowing that their data are being accessed. The group
+of students posting pictures about a beer party is an obvious example,
+but, in a research context, if the principal investigator grants access
+to the proposal, information could be divulged about colleagues and
+students. In other words, volunteered information of a minority of
+individuals can unlock the same information about many—a type of
+“tyranny of the minority” <span class="citation">[@barocas2014bigger]</span>.</p>
+<p>There are particular issues raised by the new potential to link
+information based on a variety of attributes that do not include PII.
+Barocas and Nissenbaum write as follows <span class="citation">[@barocas2014big]</span>:</p>
+<blockquote>
+<p>Rather than attempt to deanonymize medical records, for instance, an
+attacker (or commercial actor) might instead infer a rule that relates
+a string of more easily observable or accessible indicators to a
+specific medical condition, rendering large populations vulnerable to
+such inferences even in the absence of PII. Ironically, this is often
+the very thing about big data that generate the most excitement: the
+capacity to detect subtle correlations and draw actionable inferences.
+But it is this same feature that renders the traditional protections
+afforded by anonymity (again, more accurately, pseudonymity) much less
+effective.</p>
+</blockquote>
+<p>In light of these challenges, Barocas and Nissenbaum continue</p>
+<blockquote>
+<p>the value of anonymity inheres not in namelessness, and not even in
+the extension of the previous value of namelessness to all uniquely
+identifying information, but instead to something we called
+“reachability,” the possibility of knocking on your door, hauling you
+out of bed, calling your phone number, threatening you with sanction,
+holding you accountable—with or without access to identifying
+information.</p>
+</blockquote>
+<p>It is clear that the concepts used in the larger discussion of privacy
+and big data require updating. How we understand and assess harms from
+privacy violations needs updating. And we must rethink established
+approaches to managing privacy in the big data context. The next section
+discusses the framework for doing so.</p>
+</div>
+<div id="legal-and-ethical-framework" class="section level2">
+<h2><span class="header-section-number">11.5</span> Legal and ethical framework</h2>
+<p>The Fourth Amendment to the US Constitution, which constrains the
+government’s power to “search” the citizenry’s “persons, houses, papers,
+and effects” is usually cited as the legal framework for privacy and
+confidentiality issues. In the US a “sectoral” approach to privacy
+regulation, for example, the Family Education Rights and Privacy Act and
+the Health Insurance Portability and Accountability Act, is also used in
+situations where different economic areas have separate privacy laws
+<span class="citation">[@Ohm2014]</span>. In addition, current legal restrictions and guidance on data
+collection in the industrial setting include the Fair Information
+Practice Principles dating from 1973 and underlying the Fair Credit
+Reporting Act from 1970 and the Privacy Act from 1974 <span class="citation">[@Strandburg2014]</span>.
+Federal agencies often have statutory oversight, such as Title 13 of the
+US Code for the Census Bureau, the Confidential Information Protection
+and Statistical Efficiency Act for federal statistical agencies, and
+Title 26 of the US Code for the Internal Revenue Service.</p>
+<p>Yet the generation of big data often takes place in the open, or through
+commercial transactions with a business, and hence is not covered by
+these frameworks. There are major questions as to what is reasonably
+private and what constitutes unwarranted intrusion <span class="citation">[@Strandburg2014]</span>.
+There is a lack of clarity on who owns the new types of data—whether
+it is the person who is the subject of the information, the person or
+organization who collects these data (the data custodian), the person
+who compiles, analyzes, or otherwise adds value to the information, the
+person who purchases an interest in the data, or society at large. The
+lack of clarity is exacerbated because some laws treat data as property
+and some treat it as information <span class="citation">[@Cecil2003]</span>.</p>
+<p>The ethics of the use of big data are also not clear, because analysis
+may result in being discriminately against unfairly, being limited in
+one’s life choices, being trapped inside stereotypes, being unable to
+delineate personal boundaries, or being wrongly judged, embarrassed, or
+harassed. There is an entire research agenda to be pursued that examines
+the ways that big data may threaten interests and values, distinguishes
+the origins and nature of threats to individual and social integrity,
+and identifies different solutions <span class="citation">[@boyd2012critical]</span>. The approach
+should be to describe what norms and expectations are likely to be
+violated if a person agrees to provide data, rather than to describe
+what will be done during the research.</p>
+<p>What is clear is that most data are housed no longer in statistical
+agencies, with well-defined rules of conduct, but in businesses or
+administrative agencies. In addition, since digital data can be alive
+forever, ownership could be claimed by yet-to-be-born relatives whose
+personal privacy could be threatened by release of information about
+blood relations.</p>
+<p>Traditional regulatory tools for managing privacy, notice, and consent
+have failed to provide a viable market mechanism allowing a form of
+self-regulation governing industry data collection. Going forward, a
+more nuanced assessment of tradeoffs in the big data context, moving
+away from individualized assessments of the costs of privacy violations,
+is needed <span class="citation">[@Strandburg2014]</span>. Ohm advocates for a new conceptualization
+of legal policy regarding privacy in the big data context that uses five
+guiding principles for reform: first, that rules take into account the
+varying levels of inherent risk to individuals across different data
+sets; second, that traditional definitions of PII need to be rethought;
+third, that regulation has a role in creating and policing walls between
+data sets; fourth, that those analyzing big data must be reminded, with
+a frequency in proportion to the sensitivity of the data, that they are
+dealing with people; and finally, that the ethics of big data research
+must be an open topic for continual reassessment.</p>
+</div>
+<div id="summary-6" class="section level2">
+<h2><span class="header-section-number">11.6</span> Summary</h2>
+<p>The excitement about how big data can change the social science research
+paradigm should be tempered by a recognition that existing ways of
+protecting confidentiality are no longer viable <span class="citation">[@karr2014analytical]</span>.
+There is a great deal of research that can be used to inform the
+development of such a structure, but it has been siloed into
+disconnected research areas, such as statistics, cybersecurity, and
+cryptography, as well as a variety of different practical applications,
+including the successful development of remote access secure data
+enclaves. We must piece together the knowledge from these various fields
+to develop ways in which vast new sets of data on human beings can be
+collected, integrated, and analyzed while protecting them <span class="citation">[@Lane2014]</span>.</p>
+<p>It is possible that the confidentiality risks of disseminating data may
+be so high that traditional access models will no longer hold; that the
+data access model of the future will be to take the analysis to the data
+rather than the data to the analyst or the analyst to the data. One
+potential approach is to create an integrated system including (a)
+unrestricted access to highly redacted data, most likely some version of
+synthetic data, followed by (b) means for approved researchers to access
+the confidential data via remote access solutions, combined with (c)
+verification servers that allows users to assess the quality of their
+inferences with the redacted data so as to be more efficient with their
+use (if necessary) of the remote data access. Such verification servers
+might be a web-accessible system based on a confidential database with
+an associated public micro-data release, which helps to analyze the
+confidential database <span class="citation">[@karr2014analytical]</span>. Such approaches are
+starting to be developed, both in the USA and in Europe
+<span class="citation">[@Elias2014; @jones2006administrative]</span>.</p>
+<p>There is also some evidence that people do not require complete
+protection, and will gladly share even private information provided that
+certain social norms are met <span class="citation">[@Wilbanks2014; @Pentland2014]</span>. There is a
+research agenda around identifying those norms as well; characterizing
+the interests and wishes of actors (the information senders and
+recipients or providers and users); the nature of the attributes
+(especially types of information about the providers, including how
+these might be transformed or linked); and identifying transmission
+principles (the constraints underlying the information flows).</p>
+<p>However, it is likely that it is no longer possible for a lone social
+scientist to address these challenges. One-off access agreements to
+individuals are conducive to neither the production of high-quality
+science nor the high-quality protection of data <span class="citation">[@schermann2014big]</span>. The
+curation, protection, and dissemination of data on human subjects cannot
+be an artisan activity but should be seen as a major research
+infrastructure investment, like investments in the physical and life
+sciences <span class="citation">[@bird2011computing; @abazajian2009seventh; @human2010catalog]</span>.
+In practice, this means that linkages become professionalized and
+replicable, research is fostered within research data centers that
+protect privacy in a systematic manner, knowledge is shared about the
+process of privacy protections disseminated in a professional fashion,
+and there is ongoing documentation about the value of evidence-based
+research. It is thus that the risk–utility tradeoff depicted in
+Figure <a href="chap-privacy.html#fig:11-1" reference-type="ref" reference="fig:11-1">1.1</a> can
+be shifted in a manner that serves the public good.</p>
+</div>
+<div id="resources-7" class="section level2">
+<h2><span class="header-section-number">11.7</span> Resources</h2>
+<p>The American Statistical Association’s Privacy and Confidentiality
+website provides a useful source of information
+<span class="citation">[@AmericanStatisticalAssociation]</span>.</p>
+<p>An overview of federal activities is provided by the Confidentiality and
+Data Access Committee of the Federal Committee on Statistics and
+Methodology <span class="citation">[@ConfidentialityandDataAccessCommittee]</span>.</p>
+<p>The World Bank and International Household Survey Network provide a good
+overview of data dissemination “best practices”
+<span class="citation">[@InternationalHouseholdSurveyNetwork]</span>.</p>
+<p>There is a <em>Journal of Privacy and Confidentiality</em> based at Carnegie
+Mellon University <span class="citation">[@JPC]</span>, and also a journal called <em>Transactions in
+Data Privacy</em> <span class="citation">[@TransactionsonDataPrivacy]</span>.</p>
+<p>The United Nations Economic Commission on Europe hosts workshops and
+conferences and produces occasional reports
+<span class="citation">[@UnitedNationsEconomicCommissionforEurope]</span>.</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="chap-errors.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="chap-workbooks.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:" && /^https?:/.test(src))
+      src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
