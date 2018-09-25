@@ -1,0 +1,1216 @@
+---
+title: "Text Analysis"
+author: 'null'
+output:
+  html_document:
+    df_print: paged
+---
+
+Text Analysis {#chap:text}
+=============
+
+\chapterauthor{Evgeny Klochikhin and Jordan Boyd-Graber}
+This chapter provides an overview of how social scientists can make use
+of one of the most exciting advances in big data---text analysis. Vast
+amounts of data that are stored in documents can now be analyzed and
+searched so that different types of information can be retrieved.
+Documents (and the underlying activities of the entities that generated
+the documents) can be categorized into topics or fields as well as
+summarized. In addition, machine translation can be used to compare
+documents in different languages.
+
+Understanding what people write
+-------------------------------
+
+You wake up and read the newspaper, a Facebook post, or an academic
+article a colleague sent you. You, like other humans, can digest and
+understand rich information, but an increasingly central challenge for
+humans is to cope with the deluge of information we are supposed to read
+and understand. In our use case of science, even Aristotle struggled
+with categorizing areas of science; the vast increase in the scope of
+written research has only made the challenge greater.
+
+One approach is to use rule-based methods to tag documents for
+categorization. Businesses used to employ human beings to read the news
+and tag documents on topics of interest for senior management. The rules
+on how to assign these topics and tags were developed and communicated
+to these human beings beforehand. Such a manual categorization process
+is still common in multiple applications, e.g., systematic literature
+reviews [@brody2015].
+
+However, as anyone who has used a search engine knows, newer approaches
+exist to categorize text and help humans cope with overload:
+computer-aided *text analysis*. Text data can be used to "conventional"
+data sources, such as surveys and administrative data, since the words
+spoken or written by individuals often provide more nuanced and
+unanticipated insights.
+Chapter [\[chap:link\]](#chap:link){reference-type="ref"
+reference="chap:link"} discusses how to link data to create larger, more
+diverse data sets. The linkage data sets need not just be numeric, but
+can also include data sets consisting of text data.
+
+The National Center for Science and Engineering Statistics, the US
+statistical agency charged with collecting statistics on science and
+engineering, uses a rule-based system to manually create categories of
+science; these are then used to categorize research as "physics" or
+"economics" [@oecd2005measurement; @manual2004summary]. In a rule-based
+system there is no ready response to the question "how much do we spend
+on climate change, food safety, or biofuels?" because existing rules
+have not created such categories. Text analysis techniques can be used
+to provide such detail without manual collation. For example, data about
+research awards from public sources and about people funded on research
+grants from UMETRICS can be linked with data about their subsequent
+publications and related student dissertations from ProQuest. Both award
+and dissertation data are text documents that can be used to
+characterize what research has been done, provide information about
+which projects are similar within or across institutions, and
+potentially identify new fields of study [@talley2011database].
+
+Overall, text analysis can help with specific tasks that define
+application-specific subfields including the following:
+
+-    Text analysis tools can help find relevant information in large
+    databases. For example, we used these techniques in systematic
+    literature reviews to facilitate the discovery and retrieval of
+    relevant publications related to early grade reading in Latin
+    America and the Caribbean.
+
+-    Tools like topic modeling can provide a big picture of the contents
+    of thousands of documents in a comprehensible format by discovering
+    only the most important words and phrases in those documents.
+
+-    Similar to clustering, text summarization can provide value in
+    processing large documents and text corpora. For example, Wang et
+    al. [@wang-09] use topic modeling to produce category-sensitive text
+    summaries and annotations on large-scale document collections.
+
+-    Machine translation is an example of a text analysis method that
+    provides quick insights into documents written in other
+
+How to analyze text
+-------------------
+
+Human language is complex and nuanced, which makes analysis difficult.
+We often make simplifying assumptions: we assume our input is perfect
+text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11];
+and we assume "standard" English [@kong-14].
+
+Recognizing this complexity, the goal of text mining is to reduce the
+complexity of text and extract important messages in a comprehensible
+and meaningful way. This objective is usually achieved through text
+categorization or automatic classification. These tools can be used in
+multiple applications to gain salient insights into the relationships
+between words and documents. Examples include using machine learning to
+analyze the flow and topic segmentation of political debates and
+behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to
+assign automated tags to documents [@tuarob-13].
+
+Information retrieval has a similar objective of extracting the most
+important messages from textual data that would answer a particular
+query. The process analyzes the full text or metadata related to
+documents and allows only relevant knowledge to be discovered and
+returned to the query maker. Typical information retrieval tasks include
+knowledge discovery [@Mukherjea-05], word sense disambiguation
+[@navigli-11], and sentiment analysis [@pang-08].
+
+The choice of appropriate tools to address specific tasks significantly
+depends on the context and application. For example, document
+classification techniques can be used to gain insights into the general
+contents of a large corpus of documents [@talley2011database], or to
+discover a particular knowledge area, or to link corpora based on
+implicit semantic relationships [@bron-11].
+
+In practical terms, some of the questions can be: How much does the US
+government invest in climate change research and nanotechnology? Or what
+are the main topics in the political debate on guns in the United
+States? Or how can we build a salient and dynamic taxonomy of all
+scientific research?
+
+We begin with a review of established techniques to begin the process of
+analyzing text. Section [1.3](#sec:appapp){reference-type="ref"
+reference="sec:appapp"} provides an overview of topic modeling,
+information retrieval and clustering, and other approaches accompanied
+by practical examples and applications.
+Section [1.4](#sec:eval){reference-type="ref" reference="sec:eval"}
+reviews key evaluation techniques used to assess the validity,
+robustness and utility of derived results.
+
+### Processing text data
+
+The first important step in working with text data is cleaning and
+processing. Textual data are often messy and unstructured, which makes
+many researchers and practitioners overlook their value. Depending on
+the source, cleaning and processing these data can require varying
+amounts of effort but typically involve a set of established techniques.
+
+##### Text corpora {#text-corpora .unnumbered}
+
+A set of multiple similar documents is called a *corpus*. For example,
+the Brown University Standard Corpus of Present-Day American English, or
+just the Brown Corpus [@browncorpus], is a collection of processed
+documents from works published in the United States in 1961. The Brown
+Corpus was a historical milestone: it was a machine-readable collection
+of a million words across 15 balanced genres with each word tagged with
+its part of speech (e.g., noun, verb, preposition). The British National
+Corpus [@bnc] repeated the same process for British English at a larger
+scale. The Penn Treebank [@marcus-93] provides additional information:
+in addition to part-of-speech annotation, it provides *syntactic*
+annotation. For example, what is the object of the sentence "The man
+bought the hat"? These standard corpora serve as training data to train
+the classifiers and machine learning techniques to automatically analyze
+text [@halevy-09].
+
+However, not every corpus is effective for every purpose: the number and
+scope of documents determine the range of questions that you can ask and
+the quality of the answers you will get back: too few documents result
+in a lack of coverage, too many of the wrong kind of documents invite
+confusing noise.
+
+##### Tokenization {#tokenization .unnumbered}
+
+The first step in processing text is deciding what terms and phrases are
+meaningful. Tokenization separates sentences and terms from each other.
+The Natural Language Toolkit (NLTK) [@bird-09] provides simple reference
+implementations of standard natural language processing algorithms such
+as tokenization---for example, sentences are separated from each other
+using punctuation such as period, question mark, or exclamation mark.
+However, this does not cover all cases such as quotes, abbreviations, or
+informal communication on social media. While separating sentences in a
+single language is hard enough, some documents "code-switch," combining
+multiple languages in a single document. These complexities are best
+addressed through data-driven machine learning frameworks [@kiss-06].
+
+##### Stop words {#stop-words .unnumbered}
+
+Once the tokens are clearly separated, it is possible to perform further
+text processing at a more granular, token level. Stop words are a
+category of words that have limited semantic meaning regardless of the
+document contents. Such words can be prepositions, articles, common
+nouns, etc. For example, the word "the" accounts for about 7% of all
+words in the Brown Corpus, and "to" and "of" are more than 3% each
+[@malmkjar-02].
+
+*Hapax legomena* are rarely occurring words that might have only one
+instance in the entire corpus. These words---names, misspellings, or
+rare technical terms---are also unlikely to bear significant contextual
+meaning. Similar to stop words, these tokens are often disregarded in
+further modeling either by the design of the method or by manual removal
+from the corpus before the actual analysis.
+
+##### $N$-grams {#n-grams .unnumbered}
+
+However, individual words are sometimes not the correct unit of
+analysis. For example, blindly removing stop words can obscure important
+phrases such as "systems of innovation," "cease and desist," or
+"commander in chief." Identifying these $N$-grams requires looking for
+statistical patterns to discover phrases that often appear together in
+fixed patterns [@dunning-93]. These combinations of phrases are often
+called *collocations*, as their overall meaning is more than the sum of
+their parts.
+
+##### Stemming and lemmatization {#stemming-and-lemmatization .unnumbered}
+
+Text normalization is another important aspect of preprocessing textual
+data. Given the complexity of natural language, words can take multiple
+forms dependent on the syntactic structure with limited change of their
+original meaning. For example, the word "system" morphologically has a
+plural "systems" or an adjective "systematic." All these words are
+semantically similar and---for many tasks---should be treated the same.
+For example, if a document has the word "system" occurring three times,
+"systems" once, and "systematic" twice, one can assume that the word
+"system" with similar meaning and morphological structure can cover all
+instances and that variance should be reduced to "system" with six
+instances.
+
+The process for text normalization is often implemented using
+established lemmatization and stemming algorithms. A *lemma* is the
+original dictionary form of a word. For example, "go," "went," and
+"goes" will all have the lemma "go." The stem is a central part of a
+given word bearing its primary semantic meaning and uniting a group of
+similar lexical units. For example, the words "order" and "ordering"
+will have the same stem "ord." Morphy (a lemmatizer provided by the
+electronic dictionary WordNet), Lancaster Stemmer, and Snowball Stemmer
+are common tools used to derive lemmas and stems for tokens, and all
+have implementations in the NLTK [@bird-09].
+
+All text-processing steps are critical to successful analysis. Some of
+them bear more importance than others, depending on the specific
+application, research questions, and properties of the corpus. Having
+all these tools ready is imperative to producing a clean input for
+subsequent modeling and analysis. Some simple rules should be followed
+to prevent typical errors. For example, stop words should not be removed
+before performing $n$-gram indexing, and a stemmer should not be used
+where data are complex and require accounting for all possible forms and
+meanings of words. Reviewing interim results at every stage of the
+process can be helpful.
+
+### How much is a word worth?
+
+Not all words are worth the same; in an article about electronics,
+"capacitor" is more important than "aspect." Appropriately weighting and
+calibrating words is important for both human and machine consumers of
+text data: humans do not want to see "the" as the most frequent word of
+every document in summaries, and classification algorithms benefit from
+knowing which features are actually important to making a decision.
+
+Weighting words requires balancing how often a word appears in a local
+context (such as a document) with how much it appears overall in the
+document collection. Term frequency--inverse document frequency (TFIDF)
+[@salton-68] is a weighting scheme to explicitly balance these factors
+and prioritize the most meaningful words. The TFIDF model takes into
+account both the term frequency of a given token and its document
+frequency (Box [\[text:box1\]](#text:box1){reference-type="ref"
+reference="text:box1"}) so that if a highly frequent word also appears
+in almost all documents, its meaning for the specific context of the
+corpus is negligible. Stop words are a good example when highly frequent
+words also bear limited meaning since they appear in virtually all
+documents of a givencorpus.
+
+TFIDF[\[text:box1\]]{#text:box1 label="text:box1"} For every token $t$
+and every document $d$ in the corpus $D$, TFIDF is calculated as
+$$tfidf(t,d,D) = tf(t,d) \times
+idf(t,D),$$ where term frequency is either a simple count,
+$$tf(t,d)=f(t,d),$$ or a more balanced quantity,
+$$tf(t,d) = 0.5+\frac{0.5 \times
+  f(t,d)}{\max\{f(t,d):t\in d\}},$$ and inverse document frequency is
+$$\
+idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
+
+\enlargethispage{24pt}
+\vspace*{-36pt}
+Approaches and applications {#sec:appapp}
+---------------------------
+
+In this section, we discuss several approaches that allow users to
+perform an unsupervised analysis of large text corpora. That is,
+approaches that do not require extensive investment of time from experts
+or programmers to begin to understand large text corpora. The ease of
+using these approaches provides additional opportunities for social
+scientists and policymakers to gain insights into policy and research
+questions through text analysis.
+
+First, we discuss topic modeling, an approach that discovers *topics*
+that constitute the high-level themes of a corpus. Topic modeling is
+often described as an *information discovery* process: describing what
+concepts are present in a corpus. Second, we discuss information
+retrieval, which finds the closest documents to a particular concept a
+user wants to discover. In contrast to topic modeling (exposing the
+primary concepts the corpus, heretofore unknown), information retrieval
+finds documents that express already known concepts. Other approaches
+can be used for document classification, sentiment analysis, and
+part-of-speech tagging.
+
+### Topic modeling {#sec:lda}
+
+As topic modeling is a broad subfield of natural language processing and
+machine learning, we will restrict our focus to a single latent
+Dirichlet allocation (LDA) [@blei-03]. LDA is a fully Bayesian extension
+of probabilistic latent semantic indexing [@hofmann-99], itself a
+probabilistic extension of latent semantic analysis [@landauer-97]. Blei
+and Lafferty [@blei-09] provide a more detailed discussion of the
+history of topic models.
+
+LDA, like all topic models, assumes that there are topics that form the
+building blocks of a corpus. Topics are distributions over words and are
+often shown as a ranked list of words, with the highest probability
+words at the top of the list
+(Figure [1.3](#fig:ex-topics){reference-type="ref"
+reference="fig:ex-topics"}). However, we do not know what the topics are
+[a priori]{.roman}; the challenge is to discover what they are (more on
+this shortly).
+
+\centering
+![Topics are distributions over words. Here are three example topics
+learned by latent Dirichlet allocation from a model with 50 topics
+discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be
+about technology, Topic 2 about business, and Topic 3 about the
+arts[]{label="fig:ex-topics"}](ChapterText/figures/nyt_topics-1.eps "fig:"){#fig:ex-topics}
+![Topics are distributions over words. Here are three example topics
+learned by latent Dirichlet allocation from a model with 50 topics
+discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be
+about technology, Topic 2 about business, and Topic 3 about the
+arts[]{label="fig:ex-topics"}](ChapterText/figures/nyt_topics-2.eps "fig:"){#fig:ex-topics}
+![Topics are distributions over words. Here are three example topics
+learned by latent Dirichlet allocation from a model with 50 topics
+discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be
+about technology, Topic 2 about business, and Topic 3 about the
+arts[]{label="fig:ex-topics"}](ChapterText/figures/nyt_topics-3.eps "fig:"){#fig:ex-topics}
+
+In addition to assuming that there exist some number of topics that
+explain a corpus, LDA also assumes that each document in a corpus can be
+explained by a small number of topics. For example, taking the example
+topics from Figure [1.3](#fig:ex-topics){reference-type="ref"
+reference="fig:ex-topics"}, a document titled "Red Light, Green Light: A
+Two-Tone LED to Simplify Screens" would be about Topic 1, which appears
+to be about technology. However, a document like "Forget the Bootleg,
+Just Download the Movie Legally" would require all three of the topics.
+The set of topics that are used by a document is called the document's
+*allocation* (Figure [1.4](#fig:doc-allocations){reference-type="ref"
+reference="fig:doc-allocations"}). This terminology explains the name
+*latent Dirichlet allocation*: each document has an allocation over
+latent topics governed by a Dirichlet distribution.
+
+\centering
+![Allocations of documents to
+topics[]{label="fig:doc-allocations"}](ChapterText/figures/nyt_documents.eps){#fig:doc-allocations
+width="\textwidth"}
+
+\vspace*{-12pt}
+#### Inferring topics from raw text
+
+Algorithmically, the problem can be viewed as a black box. Given a
+corpus and an integer $K$ as input, provide the topics that best
+describe the document collection: a process called *posterior
+inference*. The most common algorithm for solving this problem is a
+technique called *Gibbs sampling* [@geman-90].
+
+Gibbs sampling works at the word level to discover the topics that best
+describe a document collection. Each word is associated with a single
+topic, explaining why that word appeared in a document. For example,
+consider the sentence "Hollywood studios are preparing to let people
+download and buy electronic copies of movies over the Internet." Each
+word in this sentence is associated with a topic: "Hollywood" might be
+associated with an arts topic; "buy" with a business topic; and
+"Internet" with a technology topic
+(Figure [1.5](#fig:assignments){reference-type="ref"
+reference="fig:assignments"}).
+
+\enlargethispage{18pt}
+\centering
+![Each word is associated with a topic. Gibbs sampling inference
+iteratively resamples the topic assignments for each word to discover
+the most likely topic assignments that explain the document
+collection[]{label="fig:assignments"}](ChapterText/figures/inference_1.eps){#fig:assignments}
+
+This is where we should eventually get. However, we do not know this to
+start. So we can initially assign words to topics randomly. This will
+result in poor topics, but we can make those topics better. We improve
+these topics by taking each word, pretending that we do not know the
+topic, and selecting a new topic for the word.
+
+A topic model wants to do two things: it does not want to use many
+topics in a document, and it does not want to use many words in a topic.
+So the algorithm will keep track of how many times a document $d$ has
+used a topic $k$, $N_{d,k}$, and how many times a topic $k$ has used a
+word $w$, $V_{k,w}$. For notational convenience, it will also be useful
+to keep track of marginal counts of how many words are in a document,
+$$N_{d, \cdot} \equiv \sum_k N_{d,k},$$ and how many words are
+associated with a topic, $$V_{k, \cdot} \equiv \sum_w V_{k, w}.$$ The
+algorithm removes the counts for a word from $N_{d,k}$ and $V_{k,w}$ and
+then changes the topic of a word (hopefully to a better topic than the
+one it had before). Through many thousands of iterations of this
+process, the algorithm can find topics that are coherent, useful, and
+characterize the data well.
+
+The two goals of topic modeling---balancing document allocations to
+topics and topics' distribution over words---come together in an
+equation that multiplies them together. A good topic will be both common
+in a document and explain a word's appearance well.
+
+The topic assignment $z_{d,n}$ of word $n$ in document $d$ is
+proportional to
+$$p(z_{d,n}=k) \propto \left( \explicate{how much doc likes the topic}{\frac{N_{d,k} + \alpha}{N_{d, \cdot} + K \alpha}} \right) \left(\explicate{how much topic likes the word}{\frac{V_{k,w_{d,n}} + \beta}{V_{k, \cdot} + V \beta}} \right),$$
+where $\alpha$ and $\beta$ are smoothing factors that prevent a topic
+from having zero probability if a topic does not use a word or a
+document does not use a topic [@wallach-09b]. Recall that we do not
+include the token that we are sampling in the counts for $N$ or $V$.
+
+For the sake of concreteness, assume that we have three documents with
+the following topic assignments:
+
+-   Document 1: $^A$dog$_3$ $^B$cat$_2$ $^C$cat$_3$ $^D$pig$_1$
+
+-   Document 2: $^E$hamburger$_2$ $^F$dog$_3$ $^G$hamburger$_1$
+
+-   Document 3: $^H$iron$_1$ $^I$iron$_3$ $^J$pig$_2$ $^K$iron$_2$
+
+If we want to sample token B (the first instance of of "cat" in
+document 1), we compute the conditional probability for each of the
+three topics ($z=1,2,3$): $$\begin{aligned}
+p(z_B = 1) = & \frac{1 + 1.000}{3 + 3.000} \times \frac{0
+    + 1.000}{3 + 5.000} = 0.333 \times 0.125 = 0.042, \\[4pt]
+p(z_B = 2) = & \frac{0 + 1.000}{3 + 3.000} \times \frac{0
+    + 1.000}{3 + 5.000} = 0.167 \times 0.125 = 0.021\mbox{, and} \\[4pt]
+p(z_B = 3) = & \frac{2 + 1.000}{3 + 3.000} \times \frac{1 + 1.000}{4 + 5.000} = 0.500 \times 0.222 = 0.111.\end{aligned}$$
+To reiterate, we do not include token B in these counts: in computing
+these conditional probabilities, we consider topic 2 as never appearing
+in the document and "cat" as never appearing in topic 2. However, "cat"
+does appear in topic 3 (token C), so it has a higher probability than
+the other topics. After renormalizing, our conditional probabilities are
+$(0.24, 0.12, 0.64)$. We then sample the new assignment of token B to be
+topic 3 two times out of three. Griffiths and Steyvers [@griffiths-04]
+provide more details on the derivation of this equation.
+
+##### Example code {#example-code .unnumbered}
+
+Listing [\[list:7.1\]](#list:7.1){reference-type="ref"
+reference="list:7.1"} provides a function to compute the conditional
+probability of a single word and return the (unnormalized) probability
+to sample from.
+
+``` {#list:7.1 style="PythonStyle" numbers="none" caption="Python code to compute conditional probability of a single word and return the probability from which to sample" label="list:7.1" belowskip="-6pt"}
+def class_sample(docs, vocab, d, n, alpha,
+               beta, theta, phi, num_topics):
+  # Get the vocabulary ID of the word we are sampling
+  type = docs[d][n]
+
+  # Dictionary to store final result
+  result = {}
+
+  # Consider each topic possibility
+  for kk in xrange(num_topics):
+    # theta stores the number of times the document d uses
+    # each topic kk; alpha is a smoothing parameter
+    doc_contrib = (theta[d][kk] + alpha) / \
+         (sum(theta[d].values()) + num_topics * alpha)
+
+    # phi stores the number of times topic kk uses
+    # this word type; beta is a smoothing parameter
+    topic_contrib = (phi[kk][type] + beta) / \
+            (sum(phi[kk].values()) + len(vocab) * beta)
+
+    result[kk] = doc_contrib * topic_contrib
+  return result
+```
+
+\exampend{Gibbs sampling for topic models}
+#### Applications of topic models
+
+Topic modeling is most often used for topic exploration, allowing users
+to understand the contents of large text corpora. Thus, topic models
+have been used, for example, to understand what the National Institutes
+of Health funds [@talley2011database]; to compare and contrast what was
+discussed in the North and South in the Civil War [@nelson-10]; and to
+understand how individuals code in large programming projects
+[@maskeri-08].
+
+Topic models can also be used as features to more elaborate algorithms
+such as machine translation [@Hu:Zhai:Eidelman:Boyd-Graber-2014],
+detecting objects in images [@wang-09b], or identifying political
+polarization [@paul-10].
+
+### Information retrieval and clustering {#sec:ir}
+
+Information retrieval is a large subdiscipline that encompasses a
+variety of methods and approaches. Its main advantage is using
+large-scale empirical data to make analytical inferences and class
+assignments. Compared to topic modeling, discussed above, information
+retrieval techniques can use external knowledge repositories to
+categorize given corpora as well as discover smaller and emerging areas
+within a large database.
+
+A major concept of information retrieval is a search query that is
+usually a short phrase presented by a human or machine to retrieve a
+relevant answer to a question or discover relevant knowledge. A good
+example of a large-scale information retrieval system is a search
+engine, such as Google or Yahoo!, that provides the user with an
+opportunity to search the entire Internet almost instantaneously. Such
+fast searches are achieved by complex techniques that are linguistic
+(set-theoretic), algebraic, probabilistic, or feature-based.
+
+##### Set-theoretic operations and Boolean logic {#set-theoretic-operations-and-boolean-logic .unnumbered}
+
+Set-theoretic operations proceed from the assumption that any query is a
+set of linked components all of which need to be present in the returned
+result for it to be relevant. Boolean logic serves as the basis for such
+queries; it uses Boolean operators such as , , and to combine query
+components. For example, the query
+
+\cf{induction AND (physics OR logic)}
+will retrieve all documents in which the word "induction" is used,
+whether in a physical or logical sense. The *extended Boolean model* and
+*fuzzy retrieval* are enhanced approaches to calculating the relevance
+of retrieved documents based on such queries [@lee:boolean-88].
+
+Search queries can be also enriched by wildcards and other connectors.
+For example, the character "" typically substitutes for any possible
+character or characters depending on the settings of the query engine.
+(In some instances, search queries can run in *nongreedy* mode, in which
+case, for example, the phrase might retrieve only text up to the end of
+the sentence. On the other hand, a *greedy* query might retrieve full
+text following the word or part of word, denoted as , up to the end of
+the document, which would essentially mean the same as .) The wildcard
+"" expects either one or no character in its place, and the wildcard "."
+expects exactly one character. Search queries enhanced with such symbols
+and Boolean operators are referred to as *regular expressions*.
+
+Various databases and search engines can interpret Boolean operators and
+wildcards differently depending on their settings and therefore are
+prone to return rather different results. This behavior should be
+expected and controlled for while running searches on different data
+sources.
+
+\enlargethispage{12pt}
+Food safety is an interdisciplinary research area that spans multiple
+scientific disciplines including biological sciences, agriculture, and
+food science. To retrieve food safety-related awards, we have to
+construct a Boolean-based search string that would look for terms and
+phrases in those documents and return only relevant results.
+
+An example of such a string would typically be subdivided by category or
+search group connected to each other by the or operator:
+
+1.  `(food safety OR food securit* OR foodinsecurit*)`
+
+2.  `(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)`
+
+3.  `(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)`
+
+4.  `(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)`
+
+5.  `(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)`
+
+6.  `(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)`
+
+Different websites and databases use different search functions to
+return most relevant results given a query (e.g., "food safety").
+Ideally, a user has access to a full database and can apply the same
+Python code based on regular expressions to all textual data. However,
+this is not always possible (e.g., when using proprietary databases,
+such as Web of Science). In those cases, it is important to follow the
+conventions of the information retrieval system. For example, one source
+might need phrases to be embedded in parentheses (i.e., ) while another
+database interface would require such phrases to be contained within
+quotation marks (i.e., ). It is then critical to explore the search tips
+and rules on those databases to ensure that the most complete
+information is gathered and further analyzed.
+
+\enlargethispage{24pt}
+``` {#list:7.2 style="PythonStyle" numbers="none" float="b" label="list:7.2" caption="Python code to identify food safety related NSF awards with regular expressions"}
+def fs_regex(nsf_award_abstracts,outfilename):
+
+  # Construct simple search string divided by search groups
+  food = "food.*"
+  general = "safety|secur.*|insecur.*"
+  pathogens = "toxicolog.*|acid-hydrolyzed vegetable protein.*|activated carbon.*"
+  process = "process.*|preserv.*|fortif.*" #and so on
+
+  # Open csv table with all NSF award abstracts in 2000-2014
+  inpfile = open(nsf_award_abstracts,'rb')
+  inpdata = csv.reader(infile)
+  outfile = open(outfilename,'wb')
+  output = csv.writer(outfile)
+  for line in inpdata:
+    award_id = line[0]
+    title = line[1]
+    abstract = line[2]
+    if re.search(food,abstract) and (re.search(general,abstract)
+      or re.search(pathogens,abstract) or re.search(process,abstract)):
+      output.writerow(i+['food safety award'])
+```
+
+##### Example code {#example-code-1 .unnumbered}
+
+Python's built-in package provides all the capability needed to
+construct and search with complex regular expressions. Listing
+[\[list:7.2\]](#list:7.2){reference-type="ref" reference="list:7.2"}
+provides an example.
+
+\exampend{Discover food safety awards}
+##### Algebraic models {#algebraic-models .unnumbered}
+
+Algebraic models turn text into numbers to run mathematical operations
+and discover inherent interdependencies between terms and phrases, also
+defining the most important and meaningful among them. The vector space
+representation is a typical way of converting words into numbers,
+wherein every token is assigned with a sequential ID and a respective
+weight, be it a simple term frequency, TFIDF value, or any other
+assigned number.
+
+Latent Dirichlet allocation, discussed in the preceding section, is a
+good example of a probabilistic model, while unsupervised machine
+learning techniques, such as random forest, can be used for
+feature-based modeling and information retrieval.
+
+##### Similarity measures and approaches {#similarity-measures-and-approaches .unnumbered}
+
+Based on algebraic models, the user can either compare documents between
+each other or train a model that can be further inferred on a different
+corpus. Typical metrics involved in this process include cosine
+similarity and Kullback--Leibler divergence [@kullback1951information].
+
+Cosine similarity is a popular measure in document classification. Given
+two documents $d_a$ and $d_b$ presented as term vectors
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the cosine similarity
+is
+
+$$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
+     \overrightarrow{t_b}}{|\overrightarrow{t_a}|*|\overrightarrow{t_b}|}.$$
+
+NSF awards are not labeled by scientific field---they are labeled by
+program. This administrative classification is not always useful to
+assess the effects of certain funding mechanisms on disciplines and
+scientific communities. One approach is to understand how awards align
+with each other even if they were funded by different programs. Cosine
+similarity allows us to do just that.
+
+##### Example code {#example-code-2 .unnumbered}
+
+The Python module is a powerful library of tools for efficient linear
+algebra computation. Among other things, it can be used to compute the
+cosine similarity of two documents represented by numeric vectors, as
+described above. The module that is often used as a Python-based topic
+modeling implementation can be used to produce vector space
+representations of textual data.
+Listing [\[list:7.3\]](#list:7.3){reference-type="ref"
+reference="list:7.3"} provides an example of measuring cosine similarity
+using these modules.
+
+``` {#list:7.3 style="PythonStyleInline" basicstyle="\scriptsize\ttfamily" backgroundcolor="\color{codeBG}" label="list:7.3" caption="Python code to measure cosine similarity between Climate Change and all other Earth Science NSF awards"}
+# Define cosine similarity function
+def coss(v1,v2):
+  return np.dot(v1,v2) /
+        (np.sqrt(np.sum(np.square(v1))) *
+         np.sqrt(np.sum(np.square(v2))))
+
+def coss_nsf(nsf_climate_change,nsf_earth_science,outfile):
+
+  # Open the source and compared to documents
+  source = csv.reader(file(nsf_climate_change,'rb'))
+  comparison = csv.reader(file(nsf_earth_science,'rb'))
+
+  # Create an output file
+  output = csv.writer(open(outfile,'wb'))
+
+  # Read through the source and store value in static data container
+  data = {}
+  for row in source:
+    award_id = row[0]
+    abstract = row[1]
+    data[award_id] = abstract
+
+  # Read through the comparison file and compute similarity
+  for row in comparison:
+    award_id = row[0]
+    # Assuming that abstract is cleaned, processed, tokenized, and
+    # stored as a space-separated string of tokens
+    abstract = row[1]
+    abstract_for_dict = abstract.split(" ")
+    # Construct dictionary of tokens and IDs
+    dict_abstract = corpora.dictionary.Dictionary(abstract_for_dict)
+    # Construct vector from dictionary
+    # of all tokens and IDs in abstract
+    abstr_vector = dict(dict_abstract.doc2bow(abstract))
+    # Iterate through all stored abstracts in source corpus
+    # and assign same token IDs using dictionary
+    for key,value in data.items():
+      source_id = key
+      # Get all tokens from source abstract, assuming it is
+      # tokenized and space-separated
+      source_abstr = value.split(" ")
+      source_vector = dict(dict_abstract.doc2bow(source_abstr))
+      # Cosine similarity requires having same shape vectors.
+      # Thus impute zeros for any missing tokens in source
+      # abstract as compared to the target one
+      add = { n:0 for n in abstr_vector.keys()
+              if n not in source_dict.keys() }
+      # Update source vector
+      source_vector.update(add)
+      source_vector = sorted(source_vector.items())
+      abstr_vector = sorted(abstr_vector.items())
+      # Compute cosine similarity
+      similarity = coss(np.array([item[1] for item in abstr_vector]),
+                        np.array([item[1] for item in source_dict])
+      output.writerow([source_id,award_id,similarity])
+```
+
+\pagebreak
+Kullback--Leibler (KL) divergence is an asymmetric measure that is often
+enhanced by averaged calculations to ensure unbiased results when
+comparing documents between each other or running a classification task.
+Given two term vectors $\overrightarrow{t_a}$ and
+$\overrightarrow{t_b}$, the KL divergence from vector
+$\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
+$$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m w_{t,a}\times \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$
+where $w_{t,a}$ and $w_{t,b}$ are term weights in two vectors,
+respectively.
+
+An averaged KL divergence metric is then defined as
+$$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
+where
+$\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}}$,
+and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
+
+A Python-based library provides an implementation of these measures as
+well as other machine learning models and approaches.
+
+##### Knowledge repositories {#knowledge-repositories .unnumbered}
+
+Information retrieval can be significantly enriched by the use of
+established knowledge repositories that can provide enormous amounts of
+organized empirical data for modeling and relevance calculations.
+Established corpora, such as the Brown Corpus and
+Lancaster--Oslo--Bergen Corpus, are one type of such preprocessed
+repositories.
+
+Wikipedia and WordNet are examples of another type of lexical and
+semantic resources that are dynamic in nature and that can provide a
+valuable basis for consistent and salient information retrieval and
+clustering. These repositories have the innate hierarchy, or ontology,
+of words (and concepts) that are explicitly linked to each other either
+by inter-document links (Wikipedia) or by the inherent structure of the
+repository (WordNet). In Wikipedia, concepts thus can be considered as
+titles of individual Wikipedia pages and the contents of these pages can
+be considered as their extended semantic representation.
+
+Information retrieval techniques build on these advantages of WordNet
+and Wikipedia. For example, Meij et al. [@meij-09] mapped search queries
+to the DBpedia ontology (derived from Wikipedia topics and their
+relationships), and found that this mapping enriches the search queries
+with additional context and concept relationships. One way of using
+these ontologies is to retrieve a predefined list of Wikipedia pages
+that would match a specific taxonomy. For example, scientific
+disciplines are an established way of tagging documents--- some are in
+physics, others in chemistry, engineering, or computer science. If a
+user retrieves four Wikipedia pages on "Physics," "Chemistry,"
+"Engineering," and "Computer Science," they can be further mapped to a
+given set of scientific documents to label and classify them, such as a
+corpus of award abstracts from the US National Science Foundation.
+
+*Personalized PageRank* is a similarity system that can help with the
+task. This system uses WordNet to assess semantic relationships and
+relevance between a search query (document $d$) and possible results
+(the most similar Wikipedia article or articles). This system has been
+applied to text categorization [@navigli-11] by comparing documents to
+*semantic model vectors* of Wikipedia pages constructed using WordNet.
+These vectors account for the term frequency and their relative
+importance given their place in the WordNet hierarchy, so that the
+overall $wiki$ vector is defined as:
+
+$SMV_{wiki}(s) = \sum\nolimits_{w\in Synonyms(s)} \frac{tf_{wiki}(w)}{|Synsets(w)|}$,
+
+where $w$ is a token within $wiki$, $s$ is a WordNet synset that is
+associated with every token $w$ in WordNet hierarchy, $Synonyms(s)$ is
+the set of words (i.e., synonyms) in the synset $s$, $tf_{wiki}(w)$ is
+the term frequency of the word $w$ in the Wikipedia article $wiki$, and
+$Synsets(w)$ is the set of synsets for the word $w$.
+
+The overall probability of a candidate document $d$ (e.g., an NSF award
+abstract or a PhD dissertation abstract) matching the target query, or
+in our case a Wikipedia article $wiki$, is
+$$wiki_{BEST}=\sum\nolimits_{w_t\in doc} \max_{s\in Synsets(w_t)} SMV_{wiki}(s),$$
+where $Synsets(w_t)$ is the set of synsets for the word $w_t$ in the
+target document document (e.g., NSF award abstract) and $SMV_{wiki}(s)$
+is the semantic model vector of a Wikipedia page, as defined above.
+
+##### Applications {#applications .unnumbered}
+
+Information retrieval can be used in a number of applications. Knowledge
+discovery, or information extraction, is perhaps its primary mission; in
+contrast, for users, the purpose of information retrieval applications
+is to retrieve the most relevant response to a query.
+
+Document classification is another popular task where information
+retrieval methods can be helpful. Such systems, however, typically
+require a two-step process: The first phase defines all relevant
+information needed to answer the query. The second phase clusters the
+documents according to a set of rules or by allowing the machine to
+actively learn the patterns and classes. For example, one approach is to
+generate a taxonomy of concepts with associated Wikipedia pages and then
+map other documents to these pages through Personalized PageRank. In
+this case, disciplines, such as physics, chemistry, and engineering, can
+be used as the original labels, and NSF award abstracts can be mapped to
+these disciplinary categories through the similarity metrics (i.e.,
+whichever of these disciplines scores the highest is the most likely to
+fit the disciplinary profile of an award abstract).
+
+Another approach is to use the Wikipedia structure as a clustering
+mechanism in itself. For example, the article about "nanotechnology"
+links to a number of other Wikipedia pages as referenced in its content.
+"Quantum realm," "nanometer" or "National Nanotechnology Initiative" are
+among the meaningful concepts used in the description of nanotechnology
+that also have their own individual Wikipedia pages. Using these pages,
+we can assume that if a scientific document, such as an NSF award
+abstract, has enough similarity with any one of the articles associated
+with nanotechnology, it can be tagged as such in the classification
+exercise.
+
+The process can also be turned around: if the user knows exactly the
+clusters of documents in a given corpus, these can be mapped to an
+external knowledge repository, such as Wikipedia, to discover yet
+unknown and emerging relationships between concepts that are not
+explicitly mentioned in the Wikipedia ontology at the current moment.
+This situation is likely given the time lag between the discovery of new
+phenomena, their introduction to the research community, and their
+adoption by the wider user community responsible for writing Wikipedia
+pages.
+
+##### Examples {#examples .unnumbered}
+
+Some examples from our recent work can demonstrate how Wikipedia-based
+labeling and labeled LDA
+[@ramage-09; @Nguyen:Boyd-Graber:Resnik:Chang-2014] cope with the task
+of document classification and labeling in the scientific domain. See
+Table [\[table:labels\]](#table:labels){reference-type="ref"
+reference="table:labels"}.
+
+\centering
+\small
+\bgroup
+\def\arraystretch{1.75}
+\begin{tabular}{|m{17pc}|m{6pc}|m{5.5pc}|m{5.2pc}|}
+  \hline
+  {\bf Abstract excerpt} & {\bf ProQuest\newline subject category} & {\bf Labeled LDA} & {\bf Wikipedia-based labeling} \\
+  \hline
+  {\bf Reconfigurable computing platform for small-scale resource-constrained robot.} Specific applications often require robots of small size for reasons such as costs, access, and stealth. Small-scale robots impose constraints on resources such as power or space for modules \ldots & Engineering,\newline Electronics and\newline Electrical;\newline Engineering,\newline Robotics & Motor controller &  Robotics, Robot, Field-\newline programmable gate array \\
+ \hline
+  {\bf Genetic mechanisms of thalamic nuclei speci\-fication and the influence of thalamocortical axons in regulating neocortical area formation.} Sensory information from the periphery is essential for all animal species to learn, adapt, and survive in their environment. The thalamus, a critical structure in the diencephalon, receives sensory information \ldots & Biology,\newline Neurobiology & HSD2 neurons & \mbox{Sonic hedgehog,}\newline Induced stem\newline cell, Nervous\newline system \\
+  \hline
+  {\bf Poetry 'n acts: The cultural politics of twentieth-century American poets' theater.} This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform \ldots & Literature,\newline American;\newline Theater & Audience & Counter-culture of~the\newline 1960s, Novel,\newline Modernism \\
+  \hline
+\end{tabular}
+\egroup
+\vspace*{12pt}
+\vspace*{6pt}
+### Other approaches {#sec:other}
+
+Our focus in this chapter is on approaches that are language independent
+and require little (human) effort to analyze text data. In addition to
+topic modeling and information retrieval discussed above, natural
+language processing and computational linguistics are rich,
+well-developed subdisciplines of computer science that can help analyze
+text data. While covering these subfields is beyond this chapter, we
+briefly discuss some of the most widely used approaches to process and
+understand natural language texts.
+
+In contrast to the *unsupervised* approaches discussed above, most
+techniques in natural language processing are *supervised* machine
+learning algorithms. Supervised machine learning produce labels $y$
+given inputs $x$---the algorithm's job is to learn how to automatically
+produce correct labels given automatic inputs $x$.
+
+However, the algorithm must have access to many examples of $x$ and $y$,
+often of the order of thousands of examples. This is expensive, as the
+labels often require linguistic expertise [@marcus-93]. While it is
+possible to annotate data using crowdsourcing [@snow-08], this is not a
+panacea, as it often forces compromises in the complexity of the task or
+the quality of the labels.
+
+In the sequel, we discuss how different definitions of $x$ and
+$y$---both in the scope and structure of the examples and
+labels---define unique analyses of linguistic data.
+
+\vspace*{-2pt}
+##### Document classification {#document-classification .unnumbered}
+
+If the examples $x$ are documents and $y$ are what these documents are
+about, the problem is called *document classification*. In contrast to
+the techniques in Section [1.3.1](#sec:lda){reference-type="ref"
+reference="sec:lda"}, document classification is used when you know the
+specific document types for which you are looking *and* you have many
+examples of those document types.
+
+One simple but ubiquitous example of document classification is spam
+detection: an email is either an unwanted advertisement (spam) or it is
+not. Document classification techniques such as naïve Bayes [@lewis-05]
+touch essentially every email sent worldwide, making email usable even
+though most emails are spam.
+
+\vspace*{-2pt}
+##### Sentiment analysis {#sentiment-analysis .unnumbered}
+
+Instead of being what a document is about, a label $y$ could also reveal
+the speaker. A recent subfield of natural language processing is to use
+machine learning to reveal the internal state of speakers based on what
+they say about a subject [@pang-08]. For example, given an example of
+sentence $x$, can we determine whether the speaker is a Liberal or a
+Conservative? Is the speaker happy or sad?
+
+Simple approaches use dictionaries and word counting methods
+[@pennebaker-99], but more nuanced approaches make use of
+*domain*-specific information to make better predictions. One uses
+different approaches to praise a toaster than to praise an air
+conditioner [@blitzer-07]; liberals and conservatives each frame health
+care differently from how they frame energy policy [@nguyen-13:shlda].
+
+\vspace*{-2pt}
+##### Part-of-speech tagging {#part-of-speech-tagging .unnumbered}
+
+When the examples $x$ are individual words and the labels $y$ represent
+the grammatical function of a word (e.g., whether a word is a noun,
+verb, or adjective), the task is called part-of-speech tagging. This
+level of analysis can be useful for discovering simple patterns in text:
+distinguishing between when "hit" is used as a noun (a Hollywood hit)
+and when "hit" is used as a verb (the car hit the guard rail).
+
+Unlike document classification, the examples $x$ are not independent:
+knowing whether the previous word was an adjective makes it far more
+likely that the next word will be a noun than a verb. Thus, the
+classification algorithms need to incorporate structure into the
+decisions. Two common algorithms for this problem are hidden Markov
+models [@rabiner-89] and conditional random fields [@lafferty-01].
+
+Evaluation {#sec:eval}
+----------
+
+Evaluation techniques are common in economics, policy analysis, and
+development. They allow researchers to justify their conclusions using
+statistical means of validation and assessment. Text, however, is less
+amenable to standard definitions of error: it is clear that predicting
+that revenue will be \$110 when it is really \$100 is far better than
+predicting \$900; however, it is hard to say how far "potato harvest" is
+from "journalism" if you are attempting to automatically label
+documents. Documents are hard to transform into numbers without losing
+semantic meanings and context.
+
+Content analysis, discourse analysis, and bibliometrics are all common
+tools used by social scientists in their text mining exercises
+[@Stemler2001; @glanzel-12]. However, they are rarely presented with
+robust evaluation metrics, such as type I and type II error rates, when
+retrieving data for further analysis. For example, bibliometricians
+often rely on search strings derived from expert interviews and
+workshops. However, it is hard to certify that those search strings are
+optimal. For instance, in nanotechnology research, Porter et
+al. [@porter-08] developed a canonical search strategy for retrieving
+nano-related papers from major scientific databases. Nevertheless,
+others adopt their own search string modifications and claim similar
+validity [@terekhov-11; @guan-07].
+
+Evaluating these methods depends on reference corpora. We discuss
+metrics that help you understand whether a collection of documents for a
+query is a good one or not or whether a labeling of a document
+collection is consistent with an existing set of labels.
+
+##### Purity {#purity .unnumbered}
+
+Suppose you are tasked with categorizing a collection of documents based
+on what they are about. Reasonable people may disagree: I might put
+"science and medicine" together, while another person may create
+separate categories for "energy," "scientific research," and "health
+care," none of which is a strict subset of my "science and medicine"
+category. Nevertheless, we still want to know whether two
+categorizations are consistent.
+
+Let us first consider the case where the labels differ but all
+categories match (i.e., even though you call one category "taxes" and I
+call it "taxation," it has exactly the same constituent documents). This
+should be the best case; it should have the highest score possible. Let
+us say that this maximum score should be 1.
+
+The opposite case is if we both simply assign labels randomly. There
+will still be some overlap in our labeling: we will agree sometimes,
+purely by chance. On average, if we both assign one label, selected from
+the same set of $K$ labels, to each document, then we should expect to
+agree on about $\frac{1}{K}$ of the labels. This is a lower bound on
+performance.
+
+The formalization of this measure is called *purity*: how much overlap
+there is between each of my labels and the "best" match from your
+labels. Box [\[text:box2\]](#text:box2){reference-type="ref"
+reference="text:box2"} shows how to calculate it.
+
+Purity calculation[\[text:box2\]]{#text:box2 label="text:box2"} We
+compute purity by assigning each cluster to the class that is most
+frequent in the cluster, and then measuring the accuracy of this
+assignment by counting correctly assigned documents and dividing by the
+number of all documents, $N$ [@manning2008]. In formal terms,
+$$\mathrm{Purity}(\Omega,\mathbb{C}) = \frac{1}{N}\sum_{k} \max\limits_{j}|w_k\cap c_j|,$$
+where $\Omega = \{w_1, w_2,\ldots, w_k\}$ is the set of candidate
+clusters and $\mathbb{C} = \{c_1, c_2,\ldots, c_j\}$ is the gold set of
+classes.
+
+##### Precision and recall {#precision-and-recall .unnumbered}
+
+Chapter [\[chap:ml\]](#chap:ml){reference-type="ref"
+reference="chap:ml"} already touched on the importance of precision and
+recall for evaluating the results of information retrieval and machine
+learning models (Box [\[text:box3\]](#text:box3){reference-type="ref"
+reference="text:box3"} provides a reminder of the formulae). Here we
+look at a particular example of how these metrics can be computed when
+working with scientific documents.
+
+Precision and recall[\[text:box3\]]{#text:box3 label="text:box3"} These
+two metrics are commonly used in information retrieval and computational
+linguistics [@resnik-10b]. Precision computes the type I errors---*false
+positives*---in a similar manner to the purity measure; it is formally
+defined as
+$$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.$$
+Recall accounts for type II errors---*false negatives*---and is defined
+as
+$$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
+
+We assume that a user has three sets of documents $D_a =
+\{d_{a1},$ $d_{a2},
+\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =
+\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
+disciplinary label: $D_a$ are computer science documents, $D_b$ are
+physics, and $D_c$ are chemistry.
+
+The user also has a different set of documents---Wikipedia pages on
+"Computer Science," "Chemistry," and "Physics." Knowing that all
+documents in $D_a$, $D_b$, and $D_c$ have clear disciplinary
+assignments, let us map the given Wikipedia pages to all documents
+within those three sets. For example, the Wikipedia-based query on
+"Computer Science" should return all computer science documents and none
+in physics or chemistry. So, if the query based on the "Computer
+Science" Wikipedia page returns only 50% of all computer science
+documents, then 50% of the relevant documents are lost: the recall is
+0.5.
+
+On the other hand, if the same "Computer Science" query returns 50% of
+all computer science documents but also 20% of the physics documents and
+50% of the chemistry documents, then all of the physics and chemistry
+documents returned are false positives. Assuming that all document sets
+are of equal size, so that $|D_a| = 10$, $|D_b|=10$ and $|D_c| = 10$,
+then the precision is $\frac{5}{12} = 0.42$.
+
+##### *F* score {#f-score .unnumbered}
+
+The *F score* takes precision and recall measures a step further and
+considers the general accuracy of the model. In formal terms, the $F$
+score is a weighted average of the precision and recall:
+$$\label{eq:text:F1}
+F_1 = 2\cdot \frac{\mathrm{Precision}\cdot \mathrm{Recall}}{\mathrm{Precision}+\mathrm{Recall}}.$$
+In terms of type I and type II errors:
+$$F_\beta = \frac{(1+\beta^2)\cdot \mathrm{true\ positive}}{(1+\beta^2)\cdot \mathrm{true\ positive} + \beta^2\cdot \mathrm{false\ negative} + \mathrm{false\ positive}},$$
+where $\beta$ is the balance between precision and recall. Thus, $F_2$
+puts more emphasis on the recall measure and $F_{0.5}$ puts more
+emphasis on precision.
+
+Text analysis tools
+-------------------
+
+We are fortunate to have access to a set of powerful open source text
+analysis tools. We describe three here.
+
+##### The Natural Language Toolkit {#the-natural-language-toolkit .unnumbered}
+
+The NLTK is a commonly used natural language toolkit that provides a
+large number of relevant solutions for text analysis. It is Python-based
+and can be easily integrated into data processing and analytical scripts
+by a simple (or similar for any one of its submodules).
+
+The NLTK includes a set of tokenizers, stemmers, lemmatizers and other
+natural language processing tools typically applied in text analysis and
+machine learning. For example, a user canextract tokens from a document
+*doc* by running the command.
+
+Useful text corpora are also present in the NLTK distribution. For
+example, the stop words list can be retrieved by running the command .
+These stop words are available for several languages within NTLK,
+including English, French, and Spanish.
+
+Similarly, the Brown Corpus or WordNet can be called by running . After
+the corpora are loaded, their various properties can be explored and
+used in text analysis; for example, will return a list of WordNet
+synsets related to the word "dog."
+
+Term frequency distribution and $n$-gram indexing are other techniques
+implemented in NLTK. For example, a user can compute frequency
+distribution of individual terms within a document *doc* by running a
+command in Python: . This command returns a dictionary of all tokens
+with associated frequency within *doc*.
+
+$N$-gram indexing is implemented as a chain-linked collocations
+algorithm that takes into account the probability of any given two,
+three, or more words appearing together in the entire corpus. In
+general, $n$-grams can be discovered as easily as running . However, a
+more sophisticated approach is needed to discover statistically
+significant word collocations, as we show in Listing
+[\[list:7.4\]](#list:7.4){reference-type="ref" reference="list:7.4"}.
+
+``` {#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
+def bigram_finder(texts):
+  # NLTK bigrams from a corpus of documents separated by new line
+  tokens_list = nltk.word_tokenize(re.sub("\n"," ",texts))
+  bgm    = nltk.collocations.BigramAssocMeasures()
+  finder = nltk.collocations.BigramCollocationFinder.from_words(tokens_list)
+  scored = finder.score_ngrams( bgm.likelihood_ratio  )
+
+  # Group bigrams by first word in bigram.
+  prefix_keys = collections.defaultdict(list)
+  for key, scores in scored:
+      prefix_keys[key[0]].append((key[1], scores))
+
+  # Sort keyed bigrams by strongest association.
+  for key in prefix_keys:
+      prefix_keys[key].sort(key = lambda x: -x[1])
+```
+
+Bird et al. [@bird-09] provide a detailed description of NLTK tools and
+techniques. See also the official NLTK website [@NLTKweb].
+
+##### Stanford CoreNLP {#stanford-corenlp .unnumbered}
+
+While NLTK's emphasis is on simple reference implementations, Stanford's
+CoreNLP [@corenlp; @manning2014stanford] is focused on fast
+implementations of cutting-edge algorithms, particularly for syntactic
+analysis (e.g., determining the subject of a sentence).
+
+##### MALLET {#mallet .unnumbered}
+
+For probabilistic models of text, MALLET, the MAchine Learning for
+LanguagE Toolkit [@mallet], often strikes the right balance between
+usefulness and usability. It is written to be fast and efficient but
+with enough documentation and easy enough interfaces to be used by
+novices. It offers fast, popular implementations of conditional random
+fields (for part-of- speech tagging), text classification, and topic
+modeling.
+
+Summary
+-------
+
+Much "big data" of interest to social scientists is text: tweets,
+Facebook posts, corporate emails, and the news of the day. However, the
+meaning of these documents is buried beneath the ambiguities and
+noisiness of the informal, inconsistent ways by which humans communicate
+with each other. Despite attempts to formalize the meaning of text data
+through asking users to tag people, apply metadata, or to create
+structured representations, these attempts to manually curate meaning
+are often incomplete, inconsistent, or both.
+
+These aspects make text data difficult to work with, but also a
+rewarding object of study. Unlocking the meaning of a piece of text
+helps bring machines closer to human-level intelligence---as language is
+one of the most quintessentially human activities---and helps overloaded
+information professionals do their jobs more effectively: understand
+large corpora, find the right documents, or automate repetitive tasks.
+And as an added bonus, the better computers become at understanding
+natural language, the easier it is for information professionals to
+communicate their needs: one day using computers to grapple with big
+data may be as natural as sitting down to a conversation over coffee
+with a knowledgeable, trusted friend.
+
+Resources
+---------
+
+Text analysis is one of the more complex tasks in big data analysis.
+Because it is unstructured, text (and natural language overall) requires
+significant processing and cleaning before we can engage in interesting
+analysis and learning. In this chapter we have referenced several
+resources that can be helpful in mastering text mining techniques:
+
+-   The Natural Language Toolkit is one of the most popular Python-based
+    tools for natural language processing. It has a variety of methods
+    and examples that are easily accessible online [@NLTKweb]. The book
+    by Bird et al. [@bird-09], available online, contains multiple
+    examples and tips on how to use NLTK.
+
+-   The book *Pattern Recognition and Machine Learning* by Christopher
+    Bishop [@bishop-06] is a useful introduction to computational
+    techniques, including probabilistic methods, text analysis, and
+    machine learning. It has a number of tips and examples that are
+    helpful to both learning and experienced researchers.
+
+-   A paper by Anna Huang [@huang-08] provides a brief overview of the
+    key similarity measures for text document clustering discussed in
+    this chapter, including their strengths and weaknesses in different
+    contexts.
+
+-   Materials at the MALLET website [@mallet] can be specialized for the
+    unprepared reader but are helpful when looking for specific
+    solutions with topic modeling and machine classification using this
+    toolkit.
+
+-   David Blei, one of the authors of the latent Dirichlet allocation
+    algorithm (topic modeling), maintains a helpful web page with
+    introductory resources for those interested in topic modeling
+    [@BleiTM].
+
+-   We provide an example of how to run topic modeling using MALLET on
+    textual data from the National Science Foundation and Norwegian
+    Research Council award abstracts [@NSFsearch].
+
+-   Weka, developed at the University of Waikato in New Zealand, is a
+    useful resource for running both complex text analysis and other
+    machine learning tasks and evaluations [@hall2009weka; @WekaWeb].
