@@ -1,7 +1,7 @@
 ---
 title: "Big Data and Social Science"
 author: 
-date: "`r Sys.Date()`"
+date: "2018-09-25"
 site: bookdown::bookdown_site
 documentclass: book
 biblio-style: apalike
