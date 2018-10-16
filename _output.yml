@@ -6,6 +6,8 @@ bookdown::gitbook:
       collapse: subsection
       before: |
         <li><a href="./">Big Data and Social Science</a></li>
+  includes:
+    after_body: disqus.html
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
