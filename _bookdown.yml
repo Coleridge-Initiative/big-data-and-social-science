@@ -1,6 +1,7 @@
 book_filename: "big-data-and-social-science"
 chapter_name: "Chapter "
 repo: https://github.com/Coleridge-Initiative/big-data-and-social-science
+edit: https://github.com/Coleridge-Initiative/big-data-and-social-science/edit/master/%s
 output_dir: docs
 clean: [packages.bib, bookdown.bbl]
 delete_merged_file: TRUE

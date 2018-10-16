@@ -36,7 +36,7 @@
   
   
 
-<link rel="next" href="chap-intro.html">
+<link rel="next" href="given-a-request-response-object-parse-for-hhmi-investigators.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -52,69 +52,6 @@
 
 
 
-<style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -132,227 +69,94 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">Big Data and Social Science</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="chap-intro.html"><a href="chap-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a><ul>
-<li class="chapter" data-level="1.1" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-1"><i class="fa fa-check"></i><b>1.1</b> Why this book?</a></li>
-<li class="chapter" data-level="1.2" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-2"><i class="fa fa-check"></i><b>1.2</b> Defining big data and its value</a></li>
-<li class="chapter" data-level="1.3" data-path="chap-intro.html"><a href="chap-intro.html#sec:1.3"><i class="fa fa-check"></i><b>1.3</b> Social science, inference, and big data</a></li>
-<li class="chapter" data-level="1.4" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-5"><i class="fa fa-check"></i><b>1.4</b> Social science, data quality, and big data</a></li>
-<li class="chapter" data-level="1.5" data-path="chap-intro.html"><a href="chap-intro.html#new-tools-for-new-data"><i class="fa fa-check"></i><b>1.5</b> New tools for new data</a></li>
-<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#the-books-use-case"><i class="fa fa-check"></i><b>1.6</b> The book’s “use case”</a></li>
-<li class="chapter" data-level="1.7" data-path="chap-intro.html"><a href="chap-intro.html#the-structure-of-the-book"><i class="fa fa-check"></i><b>1.7</b> The structure of the book</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="chap-intro.html"><a href="chap-intro.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>1.7.1</b> Part I: Capture and curation</a></li>
-<li class="chapter" data-level="1.7.2" data-path="chap-intro.html"><a href="chap-intro.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>1.7.2</b> Part II: Modeling and analysis</a></li>
-<li class="chapter" data-level="1.7.3" data-path="chap-intro.html"><a href="chap-intro.html#part-iii-inference-and-ethics"><i class="fa fa-check"></i><b>1.7.3</b> Part III: Inference and ethics</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a><ul>
+<li class="chapter" data-level="0.0.1" data-path="index.html"><a href="index.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>0.0.1</b> Part I: Capture and curation</a></li>
+<li class="chapter" data-level="0.0.2" data-path="index.html"><a href="index.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>0.0.2</b> Part II: Modeling and analysis</a></li>
+<li class="chapter" data-level="0.0.3" data-path="index.html"><a href="index.html#part-iii-inference-and-ethics"><i class="fa fa-check"></i><b>0.0.3</b> Part III: Inference and ethics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="chap-intro.html"><a href="chap-intro.html#sec:intro:resources"><i class="fa fa-check"></i><b>1.8</b> Resources</a></li>
+<li class="chapter" data-level="1" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html"><i class="fa fa-check"></i><b>1</b> Given a request response object, parse for HHMI investigators</a><ul>
+<li class="chapter" data-level="1.0.1" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-1.1"><i class="fa fa-check"></i><b>1.0.1</b> Obtaining data from the HHMI website</a></li>
+<li class="chapter" data-level="1.0.2" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-1.2"><i class="fa fa-check"></i><b>1.0.2</b> Limits of scraping</a></li>
+<li class="chapter" data-level="1.0.3" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-3.1"><i class="fa fa-check"></i><b>1.0.3</b> Relevant APIs and resources</a></li>
+<li class="chapter" data-level="1.0.4" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-3.2"><i class="fa fa-check"></i><b>1.0.4</b> RESTful APIs, returned data, and Python wrappers</a></li>
+<li class="chapter" data-level="1.0.5" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-6.1"><i class="fa fa-check"></i><b>1.0.5</b> The Lagotto API</a></li>
+<li class="chapter" data-level="1.0.6" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-6.2"><i class="fa fa-check"></i><b>1.0.6</b> Working with a corpus</a></li>
+<li class="chapter" data-level="1.0.7" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-7.1"><i class="fa fa-check"></i><b>1.0.7</b> Citation links between articles</a></li>
+<li class="chapter" data-level="1.0.8" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-7.1.2"><i class="fa fa-check"></i><b>1.0.8</b> Categories, sources, and connections</a></li>
+<li class="chapter" data-level="1.0.9" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-7.1.3"><i class="fa fa-check"></i><b>1.0.9</b> Data availability and completeness</a></li>
+<li class="chapter" data-level="1.0.10" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-7.1.4"><i class="fa fa-check"></i><b>1.0.10</b> The value of sparse dynamic data</a></li>
+<li class="chapter" data-level="1.0.11" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-8.1"><i class="fa fa-check"></i><b>1.0.11</b> Network analysis approaches</a></li>
+<li class="chapter" data-level="1.0.12" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:4-8.3"><i class="fa fa-check"></i><b>1.0.12</b> Future prospects and new data sources</a></li>
+<li class="chapter" data-level="1.0.13" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#rule-based-approaches"><i class="fa fa-check"></i><b>1.0.13</b> Rule-based approaches</a></li>
+<li class="chapter" data-level="1.0.14" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#probabilistic-record-linkage"><i class="fa fa-check"></i><b>1.0.14</b> Probabilistic record linkage</a></li>
+<li class="chapter" data-level="1.0.15" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#machine-learning-approaches-to-linking"><i class="fa fa-check"></i><b>1.0.15</b> Machine learning approaches to linking</a></li>
+<li class="chapter" data-level="1.0.16" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#disambiguating-networks"><i class="fa fa-check"></i><b>1.0.16</b> Disambiguating networks</a></li>
+<li class="chapter" data-level="1.0.17" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#S:thresholds"><i class="fa fa-check"></i><b>1.0.17</b> Thresholds</a></li>
+<li class="chapter" data-level="1.0.18" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#one-to-one-links"><i class="fa fa-check"></i><b>1.0.18</b> One-to-one links</a></li>
+<li class="chapter" data-level="1.0.19" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#structured-query-language-sql"><i class="fa fa-check"></i><b>1.0.19</b> Structured Query Language (SQL)</a></li>
+<li class="chapter" data-level="1.0.20" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:db:sql"><i class="fa fa-check"></i><b>1.0.20</b> Manipulating and querying data</a></li>
+<li class="chapter" data-level="1.0.21" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:db:schema"><i class="fa fa-check"></i><b>1.0.21</b> Schema design and definition</a></li>
+<li class="chapter" data-level="1.0.22" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#loading-data"><i class="fa fa-check"></i><b>1.0.22</b> Loading data</a></li>
+<li class="chapter" data-level="1.0.23" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#transactions-and-crash-recovery"><i class="fa fa-check"></i><b>1.0.23</b> Transactions and crash recovery</a></li>
+<li class="chapter" data-level="1.0.24" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#sec:db:index"><i class="fa fa-check"></i><b>1.0.24</b> Database optimizations</a></li>
+<li class="chapter" data-level="1.0.25" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#caveats-and-challenges"><i class="fa fa-check"></i><b>1.0.25</b> Caveats and challenges</a></li>
+<li class="chapter" data-level="1.0.26" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#challenges-of-scale-the-cap-theorem"><i class="fa fa-check"></i><b>1.0.26</b> Challenges of scale: The CAP theorem</a></li>
+<li class="chapter" data-level="1.0.27" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#nosql-and-keyvalue-stores"><i class="fa fa-check"></i><b>1.0.27</b> NoSQL and key–value stores</a></li>
+<li class="chapter" data-level="1.0.28" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#other-nosql-databases"><i class="fa fa-check"></i><b>1.0.28</b> Other NoSQL databases</a></li>
+<li class="chapter" data-level="1.0.29" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#relational-dbmss"><i class="fa fa-check"></i><b>1.0.29</b> Relational DBMSs</a></li>
+<li class="chapter" data-level="1.0.30" data-path="given-a-request-response-object-parse-for-hhmi-investigators.html"><a href="given-a-request-response-object-parse-for-hhmi-investigators.html#nosql-dbmss"><i class="fa fa-check"></i><b>1.0.30</b> NoSQL DBMSs</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="chap-web.html"><a href="chap-web.html"><i class="fa fa-check"></i><b>2</b> Working with Web Data and APIs</a><ul>
-<li class="chapter" data-level="2.1" data-path="chap-web.html"><a href="chap-web.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-1"><i class="fa fa-check"></i><b>2.2</b> Scraping information from the web</a><ul>
-<li class="chapter" data-level="2.2.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.1"><i class="fa fa-check"></i><b>2.2.1</b> Obtaining data from the HHMI website</a></li>
-<li class="chapter" data-level="2.2.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.2"><i class="fa fa-check"></i><b>2.2.2</b> Limits of scraping</a></li>
+<li class="chapter" data-level="2" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html"><i class="fa fa-check"></i><b>2</b> Input : a list of text lines</a><ul>
+<li class="chapter" data-level="2.0.1" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>2.0.1</b> The Hadoop Distributed File System</a></li>
+<li class="chapter" data-level="2.0.2" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>2.0.2</b> Hadoop: Bringing compute to the data</a></li>
+<li class="chapter" data-level="2.0.3" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#hardware-provisioning"><i class="fa fa-check"></i><b>2.0.3</b> Hardware provisioning</a></li>
+<li class="chapter" data-level="2.0.4" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#programming-language-support"><i class="fa fa-check"></i><b>2.0.4</b> Programming language support</a></li>
+<li class="chapter" data-level="2.0.5" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#fault-tolerance"><i class="fa fa-check"></i><b>2.0.5</b> Fault tolerance</a></li>
+<li class="chapter" data-level="2.0.6" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>2.0.6</b> Limitations of Hadoop</a></li>
+<li class="chapter" data-level="2.0.7" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>2.0.7</b> Unsupervised learning methods</a></li>
+<li class="chapter" data-level="2.0.8" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>2.0.8</b> Supervised learning</a></li>
+<li class="chapter" data-level="2.0.9" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#methodology"><i class="fa fa-check"></i><b>2.0.9</b> Methodology</a></li>
+<li class="chapter" data-level="2.0.10" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#metrics"><i class="fa fa-check"></i><b>2.0.10</b> Metrics</a></li>
+<li class="chapter" data-level="2.0.11" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#features"><i class="fa fa-check"></i><b>2.0.11</b> Features</a></li>
+<li class="chapter" data-level="2.0.12" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>2.0.12</b> Machine learning pipeline</a></li>
+<li class="chapter" data-level="2.0.13" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#multiclass-problems"><i class="fa fa-check"></i><b>2.0.13</b> Multiclass problems</a></li>
+<li class="chapter" data-level="2.0.14" data-path="input-a-list-of-text-lines.html"><a href="input-a-list-of-text-lines.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>2.0.14</b> Skewed or imbalanced classification problems</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="chap-web.html"><a href="chap-web.html#sec:4-2"><i class="fa fa-check"></i><b>2.3</b> New data in the research enterprise</a></li>
-<li class="chapter" data-level="2.4" data-path="chap-web.html"><a href="chap-web.html#sec:4-3"><i class="fa fa-check"></i><b>2.4</b> A functional view</a><ul>
-<li class="chapter" data-level="2.4.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-3.1"><i class="fa fa-check"></i><b>2.4.1</b> Relevant APIs and resources</a></li>
-<li class="chapter" data-level="2.4.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-3.2"><i class="fa fa-check"></i><b>2.4.2</b> RESTful APIs, returned data, and Python wrappers</a></li>
+<li class="chapter" data-level="3" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html"><i class="fa fa-check"></i><b>3</b> Define cosine similarity function</a><ul>
+<li class="chapter" data-level="3.0.1" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#processing-text-data"><i class="fa fa-check"></i><b>3.0.1</b> Processing text data</a></li>
+<li class="chapter" data-level="3.0.2" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>3.0.2</b> How much is a word worth?</a></li>
+<li class="chapter" data-level="3.0.3" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:lda"><i class="fa fa-check"></i><b>3.0.3</b> Topic modeling</a></li>
+<li class="chapter" data-level="3.0.4" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:ir"><i class="fa fa-check"></i><b>3.0.4</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="3.0.5" data-path="define-cosine-similarity-function.html"><a href="define-cosine-similarity-function.html#sec:other"><i class="fa fa-check"></i><b>3.0.5</b> Other approaches</a></li>
 </ul></li>
-<li class="chapter" data-level="2.5" data-path="chap-web.html"><a href="chap-web.html#sec:4-4"><i class="fa fa-check"></i><b>2.5</b> Programming against an API</a></li>
-<li class="chapter" data-level="2.6" data-path="chap-web.html"><a href="chap-web.html#sec:4-4.1"><i class="fa fa-check"></i><b>2.6</b> Using the ORCID API via a wrapper</a></li>
-<li class="chapter" data-level="2.7" data-path="chap-web.html"><a href="chap-web.html#sec:4-5"><i class="fa fa-check"></i><b>2.7</b> Quality, scope, and management</a></li>
-<li class="chapter" data-level="2.8" data-path="chap-web.html"><a href="chap-web.html#sec:4-6"><i class="fa fa-check"></i><b>2.8</b> Integrating data from multiple sources</a><ul>
-<li class="chapter" data-level="2.8.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-6.1"><i class="fa fa-check"></i><b>2.8.1</b> The Lagotto API</a></li>
-<li class="chapter" data-level="2.8.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-6.2"><i class="fa fa-check"></i><b>2.8.2</b> Working with a corpus</a></li>
-</ul></li>
-<li class="chapter" data-level="2.9" data-path="chap-web.html"><a href="chap-web.html#sec:4-7"><i class="fa fa-check"></i><b>2.9</b> Working with the graph of relationships</a><ul>
-<li class="chapter" data-level="2.9.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1"><i class="fa fa-check"></i><b>2.9.1</b> Citation links between articles</a></li>
-<li class="chapter" data-level="2.9.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.2"><i class="fa fa-check"></i><b>2.9.2</b> Categories, sources, and connections</a></li>
-<li class="chapter" data-level="2.9.3" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.3"><i class="fa fa-check"></i><b>2.9.3</b> Data availability and completeness</a></li>
-<li class="chapter" data-level="2.9.4" data-path="chap-web.html"><a href="chap-web.html#sec:4-7.1.4"><i class="fa fa-check"></i><b>2.9.4</b> The value of sparse dynamic data</a></li>
-</ul></li>
-<li class="chapter" data-level="2.10" data-path="chap-web.html"><a href="chap-web.html#sec:4-8"><i class="fa fa-check"></i><b>2.10</b> Bringing it together: Tracking pathways to impact</a><ul>
-<li class="chapter" data-level="2.10.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-8.1"><i class="fa fa-check"></i><b>2.10.1</b> Network analysis approaches</a></li>
-<li class="chapter" data-level="2.10.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-8.3"><i class="fa fa-check"></i><b>2.10.2</b> Future prospects and new data sources</a></li>
-</ul></li>
-<li class="chapter" data-level="2.11" data-path="chap-web.html"><a href="chap-web.html#sec:4-9"><i class="fa fa-check"></i><b>2.11</b> Summary</a></li>
-<li class="chapter" data-level="2.12" data-path="chap-web.html"><a href="chap-web.html#resources"><i class="fa fa-check"></i><b>2.12</b> Resources</a></li>
-<li class="chapter" data-level="2.13" data-path="chap-web.html"><a href="chap-web.html#acknowledgements-and-copyright"><i class="fa fa-check"></i><b>2.13</b> Acknowledgements and copyright</a></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="chap-link.html"><a href="chap-link.html"><i class="fa fa-check"></i><b>3</b> Record Linkage</a><ul>
-<li class="chapter" data-level="3.1" data-path="chap-link.html"><a href="chap-link.html#motivation"><i class="fa fa-check"></i><b>3.1</b> Motivation</a></li>
-<li class="chapter" data-level="3.2" data-path="chap-link.html"><a href="chap-link.html#sec:recordlinkage"><i class="fa fa-check"></i><b>3.2</b> Introduction to record linkage</a></li>
-<li class="chapter" data-level="3.3" data-path="chap-link.html"><a href="chap-link.html#preprocessing-data-for-record-linkage"><i class="fa fa-check"></i><b>3.3</b> Preprocessing data for record linkage</a></li>
-<li class="chapter" data-level="3.4" data-path="chap-link.html"><a href="chap-link.html#S:indexing"><i class="fa fa-check"></i><b>3.4</b> Indexing and blocking</a></li>
-<li class="chapter" data-level="3.5" data-path="chap-link.html"><a href="chap-link.html#matching"><i class="fa fa-check"></i><b>3.5</b> Matching</a><ul>
-<li class="chapter" data-level="3.5.1" data-path="chap-link.html"><a href="chap-link.html#rule-based-approaches"><i class="fa fa-check"></i><b>3.5.1</b> Rule-based approaches</a></li>
-<li class="chapter" data-level="3.5.2" data-path="chap-link.html"><a href="chap-link.html#probabilistic-record-linkage"><i class="fa fa-check"></i><b>3.5.2</b> Probabilistic record linkage</a></li>
-<li class="chapter" data-level="3.5.3" data-path="chap-link.html"><a href="chap-link.html#machine-learning-approaches-to-linking"><i class="fa fa-check"></i><b>3.5.3</b> Machine learning approaches to linking</a></li>
-<li class="chapter" data-level="3.5.4" data-path="chap-link.html"><a href="chap-link.html#disambiguating-networks"><i class="fa fa-check"></i><b>3.5.4</b> Disambiguating networks</a></li>
-</ul></li>
-<li class="chapter" data-level="3.6" data-path="chap-link.html"><a href="chap-link.html#classification"><i class="fa fa-check"></i><b>3.6</b> Classification</a><ul>
-<li class="chapter" data-level="3.6.1" data-path="chap-link.html"><a href="chap-link.html#S:thresholds"><i class="fa fa-check"></i><b>3.6.1</b> Thresholds</a></li>
-<li class="chapter" data-level="3.6.2" data-path="chap-link.html"><a href="chap-link.html#one-to-one-links"><i class="fa fa-check"></i><b>3.6.2</b> One-to-one links</a></li>
-</ul></li>
-<li class="chapter" data-level="3.7" data-path="chap-link.html"><a href="chap-link.html#record-linkage-and-data-protection"><i class="fa fa-check"></i><b>3.7</b> Record linkage and data protection</a></li>
-<li class="chapter" data-level="3.8" data-path="chap-link.html"><a href="chap-link.html#summary"><i class="fa fa-check"></i><b>3.8</b> Summary</a></li>
-<li class="chapter" data-level="3.9" data-path="chap-link.html"><a href="chap-link.html#resources-1"><i class="fa fa-check"></i><b>3.9</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="4" data-path="chap-db.html"><a href="chap-db.html"><i class="fa fa-check"></i><b>4</b> Databases</a><ul>
-<li class="chapter" data-level="4.1" data-path="chap-db.html"><a href="chap-db.html#sec:db:intro"><i class="fa fa-check"></i><b>4.1</b> Introduction</a></li>
-<li class="chapter" data-level="4.2" data-path="chap-db.html"><a href="chap-db.html#sec:db:when"><i class="fa fa-check"></i><b>4.2</b> DBMS: When and why</a></li>
-<li class="chapter" data-level="4.3" data-path="chap-db.html"><a href="chap-db.html#relational-dbmss"><i class="fa fa-check"></i><b>4.3</b> Relational DBMSs</a><ul>
-<li class="chapter" data-level="4.3.1" data-path="chap-db.html"><a href="chap-db.html#structured-query-language-sql"><i class="fa fa-check"></i><b>4.3.1</b> Structured Query Language (SQL)</a></li>
-<li class="chapter" data-level="4.3.2" data-path="chap-db.html"><a href="chap-db.html#sec:db:sql"><i class="fa fa-check"></i><b>4.3.2</b> Manipulating and querying data</a></li>
-<li class="chapter" data-level="4.3.3" data-path="chap-db.html"><a href="chap-db.html#sec:db:schema"><i class="fa fa-check"></i><b>4.3.3</b> Schema design and definition</a></li>
-<li class="chapter" data-level="4.3.4" data-path="chap-db.html"><a href="chap-db.html#loading-data"><i class="fa fa-check"></i><b>4.3.4</b> Loading data</a></li>
-<li class="chapter" data-level="4.3.5" data-path="chap-db.html"><a href="chap-db.html#transactions-and-crash-recovery"><i class="fa fa-check"></i><b>4.3.5</b> Transactions and crash recovery</a></li>
-<li class="chapter" data-level="4.3.6" data-path="chap-db.html"><a href="chap-db.html#sec:db:index"><i class="fa fa-check"></i><b>4.3.6</b> Database optimizations</a></li>
-<li class="chapter" data-level="4.3.7" data-path="chap-db.html"><a href="chap-db.html#caveats-and-challenges"><i class="fa fa-check"></i><b>4.3.7</b> Caveats and challenges</a></li>
-</ul></li>
-<li class="chapter" data-level="4.4" data-path="chap-db.html"><a href="chap-db.html#linking-dbmss-and-other-tools"><i class="fa fa-check"></i><b>4.4</b> Linking DBMSs and other tools</a></li>
-<li class="chapter" data-level="4.5" data-path="chap-db.html"><a href="chap-db.html#sec:db:nosql"><i class="fa fa-check"></i><b>4.5</b> NoSQL databases</a><ul>
-<li class="chapter" data-level="4.5.1" data-path="chap-db.html"><a href="chap-db.html#challenges-of-scale-the-cap-theorem"><i class="fa fa-check"></i><b>4.5.1</b> Challenges of scale: The CAP theorem</a></li>
-<li class="chapter" data-level="4.5.2" data-path="chap-db.html"><a href="chap-db.html#nosql-and-keyvalue-stores"><i class="fa fa-check"></i><b>4.5.2</b> NoSQL and key–value stores</a></li>
-<li class="chapter" data-level="4.5.3" data-path="chap-db.html"><a href="chap-db.html#other-nosql-databases"><i class="fa fa-check"></i><b>4.5.3</b> Other NoSQL databases</a></li>
-</ul></li>
-<li class="chapter" data-level="4.6" data-path="chap-db.html"><a href="chap-db.html#sec:db:spatial"><i class="fa fa-check"></i><b>4.6</b> Spatial databases</a></li>
-<li class="chapter" data-level="4.7" data-path="chap-db.html"><a href="chap-db.html#which-database-to-use"><i class="fa fa-check"></i><b>4.7</b> Which database to use?</a><ul>
-<li class="chapter" data-level="4.7.1" data-path="chap-db.html"><a href="chap-db.html#relational-dbmss-1"><i class="fa fa-check"></i><b>4.7.1</b> Relational DBMSs</a></li>
-<li class="chapter" data-level="4.7.2" data-path="chap-db.html"><a href="chap-db.html#nosql-dbmss"><i class="fa fa-check"></i><b>4.7.2</b> NoSQL DBMSs</a></li>
-</ul></li>
-<li class="chapter" data-level="4.8" data-path="chap-db.html"><a href="chap-db.html#summary-1"><i class="fa fa-check"></i><b>4.8</b> Summary</a></li>
-<li class="chapter" data-level="4.9" data-path="chap-db.html"><a href="chap-db.html#resources-2"><i class="fa fa-check"></i><b>4.9</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Programming with Big Data</a><ul>
-<li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> The MapReduce programming model</a></li>
-<li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
-<li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
-<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop: Bringing compute to the data</a></li>
-<li class="chapter" data-level="5.3.3" data-path="chap-parallel.html"><a href="chap-parallel.html#hardware-provisioning"><i class="fa fa-check"></i><b>5.3.3</b> Hardware provisioning</a></li>
-<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.4</b> Programming language support</a></li>
-<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#fault-tolerance"><i class="fa fa-check"></i><b>5.3.5</b> Fault tolerance</a></li>
-<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Limitations of Hadoop</a></li>
-</ul></li>
-<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.4</b> Apache Spark</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-3"><i class="fa fa-check"></i><b>5.6</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>6.2</b> What is machine learning?</a></li>
-<li class="chapter" data-level="6.3" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>6.3</b> The machine learning process</a></li>
-<li class="chapter" data-level="6.4" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>6.4</b> Problem formulation: Mapping a problem to machine learning methods</a></li>
-<li class="chapter" data-level="6.5" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>6.5</b> Methods</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>6.5.1</b> Unsupervised learning methods</a></li>
-<li class="chapter" data-level="6.5.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>6.5.2</b> Supervised learning</a></li>
-</ul></li>
-<li class="chapter" data-level="6.6" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>6.6</b> Evaluation</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>6.6.1</b> Methodology</a></li>
-<li class="chapter" data-level="6.6.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>6.6.2</b> Metrics</a></li>
-</ul></li>
-<li class="chapter" data-level="6.7" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>6.7</b> Practical tips</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>6.7.1</b> Features</a></li>
-<li class="chapter" data-level="6.7.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>6.7.2</b> Machine learning pipeline</a></li>
-<li class="chapter" data-level="6.7.3" data-path="chap-ml.html"><a href="chap-ml.html#multiclass-problems"><i class="fa fa-check"></i><b>6.7.3</b> Multiclass problems</a></li>
-<li class="chapter" data-level="6.7.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>6.7.4</b> Skewed or imbalanced classification problems</a></li>
-</ul></li>
-<li class="chapter" data-level="6.8" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>6.8</b> How can social scientists benefit from machine learning?</a></li>
-<li class="chapter" data-level="6.9" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>6.9</b> Advanced topics</a></li>
-<li class="chapter" data-level="6.10" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>6.10</b> Summary</a></li>
-<li class="chapter" data-level="6.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>6.11</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="7" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>7</b> Text Analysis</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> How much is a word worth?</a></li>
-</ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
-<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
-<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#resources-4"><i class="fa fa-check"></i><b>7.7</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="chap-networks.html"><a href="chap-networks.html#network-data"><i class="fa fa-check"></i><b>8.2</b> Network data</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="chap-networks.html"><a href="chap-networks.html#forms-of-network-data"><i class="fa fa-check"></i><b>8.2.1</b> Forms of network data</a></li>
-<li class="chapter" data-level="8.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>8.2.2</b> Inducing one-mode networks from two-mode data</a></li>
-</ul></li>
-<li class="chapter" data-level="8.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>8.3</b> Network measures</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>8.3.1</b> Reachability</a></li>
-<li class="chapter" data-level="8.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>8.3.2</b> Whole-network measures</a></li>
-</ul></li>
-<li class="chapter" data-level="8.4" data-path="chap-networks.html"><a href="chap-networks.html#comparing-collaboration-networks"><i class="fa fa-check"></i><b>8.4</b> Comparing collaboration networks</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>8.5</b> Summary</a></li>
-<li class="chapter" data-level="8.6" data-path="chap-networks.html"><a href="chap-networks.html#resources-5"><i class="fa fa-check"></i><b>8.6</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="9" data-path="chap-viz.html"><a href="chap-viz.html"><i class="fa fa-check"></i><b>9</b> Information Visualization</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2"><i class="fa fa-check"></i><b>9.2</b> Developing effective visualizations</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-3"><i class="fa fa-check"></i><b>9.3</b> A data-by-tasks taxonomy</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.1"><i class="fa fa-check"></i><b>9.3.1</b> Multivariate data</a></li>
-<li class="chapter" data-level="9.3.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.2"><i class="fa fa-check"></i><b>9.3.2</b> Spatial data</a></li>
-<li class="chapter" data-level="9.3.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.4"><i class="fa fa-check"></i><b>9.3.3</b> Temporal data</a></li>
-<li class="chapter" data-level="9.3.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.5"><i class="fa fa-check"></i><b>9.3.4</b> Hierarchical data</a></li>
-<li class="chapter" data-level="9.3.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.6"><i class="fa fa-check"></i><b>9.3.5</b> Network data</a></li>
-<li class="chapter" data-level="9.3.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.7"><i class="fa fa-check"></i><b>9.3.6</b> Text data</a></li>
-</ul></li>
-<li class="chapter" data-level="9.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4"><i class="fa fa-check"></i><b>9.4</b> Challenges</a><ul>
-<li class="chapter" data-level="9.4.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.1"><i class="fa fa-check"></i><b>9.4.1</b> Scalability</a></li>
-<li class="chapter" data-level="9.4.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.2"><i class="fa fa-check"></i><b>9.4.2</b> Evaluation</a></li>
-<li class="chapter" data-level="9.4.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.3"><i class="fa fa-check"></i><b>9.4.3</b> Visual impairment</a></li>
-<li class="chapter" data-level="9.4.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.4"><i class="fa fa-check"></i><b>9.4.4</b> Visual literacy</a></li>
-</ul></li>
-<li class="chapter" data-level="9.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-5"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:mylabel4"><i class="fa fa-check"></i><b>9.6</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="10" data-path="chap-errors.html"><a href="chap-errors.html"><i class="fa fa-check"></i><b>10</b> Errors and Inference</a><ul>
-<li class="chapter" data-level="10.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-1"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
-<li class="chapter" data-level="10.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2"><i class="fa fa-check"></i><b>10.2</b> The total error paradigm</a><ul>
-<li class="chapter" data-level="10.2.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2.1"><i class="fa fa-check"></i><b>10.2.1</b> The traditional model</a></li>
-<li class="chapter" data-level="10.2.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-2.2"><i class="fa fa-check"></i><b>10.2.2</b> Extending the framework to big data</a></li>
-</ul></li>
-<li class="chapter" data-level="10.3" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-3"><i class="fa fa-check"></i><b>10.3</b> Illustrations of errors in big data</a></li>
-<li class="chapter" data-level="10.4" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4"><i class="fa fa-check"></i><b>10.4</b> Errors in big data analytics</a><ul>
-<li class="chapter" data-level="10.4.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4.1"><i class="fa fa-check"></i><b>10.4.1</b> Errors resulting from volume, velocity, and variety, assuming perfect veracity</a></li>
-<li class="chapter" data-level="10.4.2" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4.2"><i class="fa fa-check"></i><b>10.4.2</b> Errors resulting from lack of veracity</a></li>
-</ul></li>
-<li class="chapter" data-level="10.5" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-5"><i class="fa fa-check"></i><b>10.5</b> Some methods for mitigating, detecting, and compensating for errors</a></li>
-<li class="chapter" data-level="10.6" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-6"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
-<li class="chapter" data-level="10.7" data-path="chap-errors.html"><a href="chap-errors.html#resources-6"><i class="fa fa-check"></i><b>10.7</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="11" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>11</b> Privacy and Confidentiality</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
-<li class="chapter" data-level="11.2" data-path="chap-privacy.html"><a href="chap-privacy.html#why-is-access-important"><i class="fa fa-check"></i><b>11.2</b> Why is access important?</a></li>
-<li class="chapter" data-level="11.3" data-path="chap-privacy.html"><a href="chap-privacy.html#providing-access"><i class="fa fa-check"></i><b>11.3</b> Providing access</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>11.4</b> The new challenges</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>11.5</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="11.6" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-6"><i class="fa fa-check"></i><b>11.6</b> Summary</a></li>
-<li class="chapter" data-level="11.7" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-7"><i class="fa fa-check"></i><b>11.7</b> Resources</a></li>
-</ul></li>
-<li class="chapter" data-level="12" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>12</b> Workbooks</a><ul>
-<li class="chapter" data-level="12.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
-<li class="chapter" data-level="12.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#environment"><i class="fa fa-check"></i><b>12.2</b> Environment</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#running-workbooks-locally"><i class="fa fa-check"></i><b>12.2.1</b> Running workbooks locally</a></li>
-<li class="chapter" data-level="12.2.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#central-workbook-server"><i class="fa fa-check"></i><b>12.2.2</b> Central workbook server</a></li>
-</ul></li>
-<li class="chapter" data-level="12.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#workbook-details"><i class="fa fa-check"></i><b>12.3</b> Workbook details</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#social-media-and-apis"><i class="fa fa-check"></i><b>12.3.1</b> Social Media and APIs</a></li>
-<li class="chapter" data-level="12.3.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#database-basics"><i class="fa fa-check"></i><b>12.3.2</b> Database basics</a></li>
-<li class="chapter" data-level="12.3.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#data-linkage"><i class="fa fa-check"></i><b>12.3.3</b> Data Linkage</a></li>
-<li class="chapter" data-level="12.3.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning"><i class="fa fa-check"></i><b>12.3.4</b> Machine Learning</a></li>
-<li class="chapter" data-level="12.3.5" data-path="chap-workbooks.html"><a href="chap-workbooks.html#text-analysis"><i class="fa fa-check"></i><b>12.3.5</b> Text Analysis</a></li>
-<li class="chapter" data-level="12.3.6" data-path="chap-workbooks.html"><a href="chap-workbooks.html#networks"><i class="fa fa-check"></i><b>12.3.6</b> Networks</a></li>
-<li class="chapter" data-level="12.3.7" data-path="chap-workbooks.html"><a href="chap-workbooks.html#visualization"><i class="fa fa-check"></i><b>12.3.7</b> Visualization</a></li>
-</ul></li>
-<li class="chapter" data-level="12.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#resources-8"><i class="fa fa-check"></i><b>12.4</b> Resources</a></li>
+<li class="chapter" data-level="4" data-path="read-the-graph.html"><a href="read-the-graph.html"><i class="fa fa-check"></i><b>4</b> Read the graph</a><ul>
+<li class="chapter" data-level="4.0.1" data-path="read-the-graph.html"><a href="read-the-graph.html#forms-of-network-data"><i class="fa fa-check"></i><b>4.0.1</b> Forms of network data</a></li>
+<li class="chapter" data-level="4.0.2" data-path="read-the-graph.html"><a href="read-the-graph.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>4.0.2</b> Inducing one-mode networks from two-mode data</a></li>
+<li class="chapter" data-level="4.0.3" data-path="read-the-graph.html"><a href="read-the-graph.html#reachability"><i class="fa fa-check"></i><b>4.0.3</b> Reachability</a></li>
+<li class="chapter" data-level="4.0.4" data-path="read-the-graph.html"><a href="read-the-graph.html#whole-network-measures"><i class="fa fa-check"></i><b>4.0.4</b> Whole-network measures</a></li>
+<li class="chapter" data-level="4.0.5" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.1"><i class="fa fa-check"></i><b>4.0.5</b> Multivariate data</a></li>
+<li class="chapter" data-level="4.0.6" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.2"><i class="fa fa-check"></i><b>4.0.6</b> Spatial data</a></li>
+<li class="chapter" data-level="4.0.7" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.4"><i class="fa fa-check"></i><b>4.0.7</b> Temporal data</a></li>
+<li class="chapter" data-level="4.0.8" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.5"><i class="fa fa-check"></i><b>4.0.8</b> Hierarchical data</a></li>
+<li class="chapter" data-level="4.0.9" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.6"><i class="fa fa-check"></i><b>4.0.9</b> Network data</a></li>
+<li class="chapter" data-level="4.0.10" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-2.7"><i class="fa fa-check"></i><b>4.0.10</b> Text data</a></li>
+<li class="chapter" data-level="4.0.11" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-4.1"><i class="fa fa-check"></i><b>4.0.11</b> Scalability</a></li>
+<li class="chapter" data-level="4.0.12" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-4.2"><i class="fa fa-check"></i><b>4.0.12</b> Evaluation</a></li>
+<li class="chapter" data-level="4.0.13" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-4.3"><i class="fa fa-check"></i><b>4.0.13</b> Visual impairment</a></li>
+<li class="chapter" data-level="4.0.14" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:viz-4.4"><i class="fa fa-check"></i><b>4.0.14</b> Visual literacy</a></li>
+<li class="chapter" data-level="4.0.15" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:10-2.1"><i class="fa fa-check"></i><b>4.0.15</b> The traditional model</a></li>
+<li class="chapter" data-level="4.0.16" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:10-2.2"><i class="fa fa-check"></i><b>4.0.16</b> Extending the framework to big data</a></li>
+<li class="chapter" data-level="4.0.17" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:10-4.1"><i class="fa fa-check"></i><b>4.0.17</b> Errors resulting from volume, velocity, and variety, assuming perfect veracity</a></li>
+<li class="chapter" data-level="4.0.18" data-path="read-the-graph.html"><a href="read-the-graph.html#sec:10-4.2"><i class="fa fa-check"></i><b>4.0.18</b> Errors resulting from lack of veracity</a></li>
+<li class="chapter" data-level="4.0.19" data-path="read-the-graph.html"><a href="read-the-graph.html#running-workbooks-locally"><i class="fa fa-check"></i><b>4.0.19</b> Running workbooks locally</a></li>
+<li class="chapter" data-level="4.0.20" data-path="read-the-graph.html"><a href="read-the-graph.html#central-workbook-server"><i class="fa fa-check"></i><b>4.0.20</b> Central workbook server</a></li>
+<li class="chapter" data-level="4.0.21" data-path="read-the-graph.html"><a href="read-the-graph.html#social-media-and-apis"><i class="fa fa-check"></i><b>4.0.21</b> Social Media and APIs</a></li>
+<li class="chapter" data-level="4.0.22" data-path="read-the-graph.html"><a href="read-the-graph.html#database-basics"><i class="fa fa-check"></i><b>4.0.22</b> Database basics</a></li>
+<li class="chapter" data-level="4.0.23" data-path="read-the-graph.html"><a href="read-the-graph.html#data-linkage"><i class="fa fa-check"></i><b>4.0.23</b> Data Linkage</a></li>
+<li class="chapter" data-level="4.0.24" data-path="read-the-graph.html"><a href="read-the-graph.html#machine-learning"><i class="fa fa-check"></i><b>4.0.24</b> Machine Learning</a></li>
+<li class="chapter" data-level="4.0.25" data-path="read-the-graph.html"><a href="read-the-graph.html#text-analysis"><i class="fa fa-check"></i><b>4.0.25</b> Text Analysis</a></li>
+<li class="chapter" data-level="4.0.26" data-path="read-the-graph.html"><a href="read-the-graph.html#networks"><i class="fa fa-check"></i><b>4.0.26</b> Networks</a></li>
+<li class="chapter" data-level="4.0.27" data-path="read-the-graph.html"><a href="read-the-graph.html#visualization"><i class="fa fa-check"></i><b>4.0.27</b> Visualization</a></li>
 </ul></li>
 </ul>
 
@@ -388,6 +192,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>We thank Trent Buskirk, Davon Clarke, Chase Coleman, Stephanie Eckman, Matt Gee, Laurel Haak, Jen Helsby, Madian Khabsa, Ulrich Kohler, Charlotte Oslund, Rod Little, Arnaud Sahuguet, Tim Savage, Severin Thaler, and Joe Walsh for their helpful comments on drafts of this material.</p>
 <p>We also owe a great debt to the copyeditor, Richard Leigh; the project editor, Charlotte Byrnes; and the publisher, Rob Calver, for their hard work and dedication.</p>
 
+<div id="description" class="section level5">
+<h5><span class="header-section-number">0.0.0.0.1</span> Description</h5>
+</div>
+<div id="causation" class="section level5">
+<h5><span class="header-section-number">0.0.0.0.2</span> Causation</h5>
+</div>
+<div id="prediction" class="section level5">
+<h5><span class="header-section-number">0.0.0.0.3</span> Prediction</h5>
+</div>
+<div id="part-i-capture-and-curation" class="section level3">
+<h3><span class="header-section-number">0.0.1</span> Part I: Capture and curation</h3>
+</div>
+<div id="part-ii-modeling-and-analysis" class="section level3">
+<h3><span class="header-section-number">0.0.2</span> Part II: Modeling and analysis</h3>
+</div>
+<div id="part-iii-inference-and-ethics" class="section level3">
+<h3><span class="header-section-number">0.0.3</span> Part III: Inference and ethics</h3>
+
+</div>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -407,7 +230,7 @@ s.setAttribute('data-timestamp', +new Date());
         </div>
       </div>
 
-<a href="chap-intro.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="given-a-request-response-object-parse-for-hhmi-investigators.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
