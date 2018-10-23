@@ -46,15 +46,15 @@ disclosure increases [@doyle2001confidentiality]. As a result, the
 quality of data analysis is typically degraded with the production of
 public use data [@duncanstatistical].
 
-\centering
-![The privacy--utility
-tradeoff[]{label="fig:11-1"}](ChapterPrivacy/figures/fig11-1){#fig:11-1}
+```{r fig11-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The privacy--utility tradeoff'}
+knitr::include_graphics("ChapterPrivacy/figures/fig11-1.png")
+```
 
 \vspace*{-12pt}
 In general, the greater the access to data and their original values,
 the greater the risk of reidentification for individual units. We depict
 this tradeoff graphically in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"}. The
+Figure \@ref(fig:fig11-1). The
 concave curves in this hypothetical example depict the technological
 relationship between data utility and privacy for an organization such
 as a business firm or a statistical agency. At one extreme, all
@@ -65,7 +65,7 @@ utility is achieved. Initially, assume the organization is on the outer
 frontier. Increased external data resources (those not used by the
 organization) increase the risk of reidentification. This is represented
 by an inward shift of the utility/privacy frontier in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"}.
+Figure \@ref(fig:fig11-1).
 Before the increase in external data, the organization could achieve a
 level of data utility $U^*$ and privacy $P_1$. The increase in
 externally available data now means that in order to maintain utility at
@@ -534,7 +534,7 @@ protect privacy in a systematic manner, knowledge is shared about the
 process of privacy protections disseminated in a professional fashion,
 and there is ongoing documentation about the value of evidence-based
 research. It is thus that the risk--utility tradeoff depicted in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"} can
+Figure \@ref(fig:fig11-1) can
 be shifted in a manner that serves the public good.
 
 Resources
