@@ -37,8 +37,7 @@ graphic design to present information, and on advances in rapid
 processing and dynamic to design user interfaces that permit powerful
 interactive visual
 
-Figure [\[fig:viz-1\]](#fig:viz-1){reference-type="ref"
-reference="fig:viz-1"}, "Anscombe's quartet" [@anscombe1973graphs],
+Figure \@ref(fig:fig9-1), "Anscombe's quartet" [@anscombe1973graphs],
 provides a classic example of the value of visualization compared to
 basic descriptive statistical analysis. The left-hand panel includes raw
 data of four small number-pair data sets (A, B, C, D), which have the
@@ -48,8 +47,9 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-\centering
-![image](ChapterViz/figures/fig1)
+```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-1.png")
+```
 
 In broad terms, visualizations are used either to present results or for
 analysis and open-ended exploration. This chapter provides an overview
@@ -108,13 +108,13 @@ analysis* for casual users as well as professional analysts. One casual
 example is BabyNameVoyager [@babynamevoyager], which lets users type in
 a name and see a graph of its popularity over the past century.
 
-\centering
-![image](ChapterViz/figures/fig2)
+```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-2.png")
+```
 
 \vspace*{-12pt}
 Data analysis tools can enable analysis of structured and generic data
-sets. Figure [\[fig:viz-2\]](#fig:viz-2){reference-type="ref"
-reference="fig:viz-2"} shows an exploratory browser of a selection of
+sets. Figure \@ref(fig:fig9-2) shows an exploratory browser of a selection of
 awards (grants) from the US Department of Agriculture, created using the
 web-based data exploration tool Keshif (<http://www.keshif.me>). The
 awards (records) are listed in the middle panel by latest start date
@@ -128,20 +128,20 @@ The analyst can explore trends in new or old awards, funding resources,
 and other attributes in this rich award portfolio.
 
 \afterpage{\clearpage}
-\centering
-![image](ChapterViz/figures/fig3-a)
+```{r fig9-3a, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
+```
 
-\centering
-![image](ChapterViz/figures/fig3-b)
+```{r fig9-3b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-3b.png")
+```
 
 Commercial tools such as Spotfire and Tableau, among many other tools
-(see Section [1.6](#sec:mylabel4){reference-type="ref"
-reference="sec:mylabel4"}), allow users to create visualizations by
+(see Section [Resources]), allow users to create visualizations by
 offering chart types and visual design environments to analyze their
 data, and to combine them in potent dashboards rapidly shared with
 colleagues. For example, Figure
-[\[fig:viz-3a\]](#fig:viz-3a){reference-type="ref"
-reference="fig:viz-3a"} shows the charting interface of Tableau on a
+\@ref(fig:fig9-3a)} shows the charting interface of Tableau on a
 transaction data set. The left-hand panel shows the list of attributes
 associated with vendor transactions for a given university. The
 visualization (center) is constructed by placing the month of spending
@@ -153,8 +153,7 @@ is annotated with an explanation of the spike. On the rightmost side,
 the Show Me panel suggests the applicable chart types potentially
 appropriate for the selected attributes. This chart can be combined with
 other charts focusing on other aspects in interactive dashboards.
-Figure [\[fig:viz-3b\]](#fig:viz-3b){reference-type="ref"
-reference="fig:viz-3b"} shows a treemap [@johnson1991tree] for agency
+Figure \@ref(fig:fig9-3b) shows a treemap [@johnson1991tree] for agency
 and sub-agency spending breakdown, combined with a map showing average
 spending per state. Oklahoma state stands out with few but large
 expenditures. Mousing-over Oklahoma reveals details of these
@@ -164,8 +163,7 @@ change across three years.
 Creating effective visualizations requires careful consideration of many
 components. Data values may be encoded using one or more visual
 elements, like position, length, color, angle, area, and texture
-(Figure [\[fig:viz-4\]](#fig:viz-4){reference-type="ref"
-reference="fig:viz-4"}; see also
+(Figure \@ref(fig:fig9-4); see also
 [@cleveland1984graphical; @edward2001visual]). Each of these can be
 organized in a multitude of ways, discussed in more detail by Munzner
 [@munzner2014visualization]. In addition to visual data encoding, units
@@ -177,10 +175,9 @@ attention and to describe related insights. Providing attribution and
 data source, where applicable, is an ethical practice that also enables
 validating data, and promotes reuse to explore new perspectives.
 
-\centering
-![Visual elements described by MacKinlay
-[@mackinlay1986automating][\[fig:viz-4\]]{#fig:viz-4
-label="fig:viz-4"}](ChapterViz/figures/fig4)
+```{r fig9-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Visual elements described by MacKinlay [@mackinlay1986automating]'}
+knitr::include_graphics("ChapterViz/figures/fig9-4.png")
+```
 
 \vspace*{-8pt}
 The following is a short list of guidelines: provide immediate feedback
@@ -318,8 +315,7 @@ the chart space, such as stacked charts or pie charts.
 Finally, another approach to analyzing multidimensional data is to use
 clustering algorithms to identify similar items. Clusters are typically
 represented as a tree structure (see
-Section [1.3.4](#sec:viz-2.5){reference-type="ref"
-reference="sec:viz-2.5"}). For example, $k$-means clustering starts by
+Section [Hierarchical data]). For example, $k$-means clustering starts by
 users specifying how many clusters to create; the algorithm then places
 every item into the most appropriate cluster. Surprising relationships
 and interesting outliers may be identified by these techniques on
@@ -356,18 +352,19 @@ data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
-\centering
-![image](ChapterViz/figures/fig5)
+```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-5.png")
+```
 
 Maps are commonly combined with other visualizations. For example, in
-Figure [\[fig:viz-5\]](#fig:viz-5){reference-type="ref"
-reference="fig:viz-5"}, the US Cancer Atlas combines a map showing
+Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
 to explore correlations between attributes.
 
-\centering
-![image](ChapterViz/figures/fig6)
+```{r fig9-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-6.png")
+```
 
 ### Temporal data {#sec:viz-2.4}
 
@@ -382,9 +379,8 @@ last). This cyclic nature can be captured by circular visual encodings,
 such as the the conventional clock with hour, minute, and second hands.
 
 Time series data
-(Figures [\[fig:viz-6\]](#fig:viz-6){reference-type="ref"
-reference="fig:viz-6"} and
-[\[fig:viz-7\]](#fig:viz-7){reference-type="ref" reference="fig:viz-7"})
+(Figures \@ref(fig:fig9-6) and
+\@ref(fig:fig9-7))
 describe values measured at regular intervals, such as stock market or
 weather data. The focus of analysis is to understand temporal trends and
 anomalies, querying for specific patterns, or prediction. To show
@@ -395,8 +391,9 @@ perceptually effective after learning to read its encoding, this chart
 design may not be appropriate for audiences who may lack such training
 or familiarity.
 
-\centering
-![image](ChapterViz/figures/fig7)
+```{r fig9-7, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-7.png")
+```
 
 Another form of temporal analysis is understanding sequences of events.
 The study of human activity often includes analyzing event sequences.
@@ -407,8 +404,7 @@ patterns, spotting rare ones, searching for specific sequences, or
 understanding what leads to particular types of events is important
 (e.g., what events lead to a student dropping out, precede a medical
 error, or a company filing bankruptcy).
-Figure [\[fig:viz-7\]](#fig:viz-7){reference-type="ref"
-reference="fig:viz-7"} shows EventFlow used to visualize sequences of
+Figure \@ref(fig:fig9-7) shows EventFlow used to visualize sequences of
 innovation activities by Illinois companies. Activity types include
 research, invention, prototyping, and commercialization. The timeline
 (right panel) shows the sequence of activities for each company. The
@@ -417,8 +413,9 @@ prototyping activity of the company. In most of the sequences shown
 here, the company's first prototype is preceded by two or more patents
 with a lag of about a year.
 
-\centering
-![image](ChapterViz/figures/fig8)
+```{r fig9-8, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-8.png")
+```
 
 \enlargethispage{12pt}
 ### Hierarchical data {#sec:viz-2.5}
@@ -436,8 +433,7 @@ as "how deep is the tree?", "how many items does this branch have?", or
 "what are the characteristics of one branch compared to another?" In
 such cases, the most appropriate representation is usually a node-link
 diagram [@plaisant2002spacetree; @card2002degree]. In
-Figure [\[fig:viz-8\]](#fig:viz-8){reference-type="ref"
-reference="fig:viz-8"}, is used to browse a company organizational
+Figure \@ref(fig:fig9-8), is used to browse a company organizational
 chart. Since not all the nodes of the tree fit on the screen, we see an
 iconic representation of the branches that cannot be displayed,
 indicating the size of each branch. As the tree branches are opened or
@@ -449,8 +445,7 @@ leaf nodes are of primary interest, treemaps, a space-filling approach,
 are preferable as they can show arbitrary-sized trees in a fixed
 rectangular space and map one attribute to the size of each rectangle
 and another to color. For example,
-Figure [\[fig:viz-9\]](#fig:viz-9){reference-type="ref"
-reference="fig:viz-9"} shows the Finviz treemap that helps users monitor
+Figure \@ref(fig:fig9-9) shows the Finviz treemap that helps users monitor
 the stock market. Each stock is shown as a rectangle. The size of the
 rectangle represents market capitalization, and color indicates whether
 the stock is going up or down. Treemaps are effective for situation
@@ -460,13 +455,15 @@ allowing users to see that "healthcare technology" is not doing as
 poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
-\centering
-![image](ChapterViz/figures/fig9)
+```{r fig9-9, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-9.png")
+```
 
 ### Network data {#sec:viz-2.6}
 
-\centering
-![image](ChapterViz/figures/fig10)
+```{r fig9-10, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-10.png")
+```
 
 \vspace*{12pt}
 Network data encode relationships between items: for example, social
@@ -479,16 +476,15 @@ traced. Analysis can also focus on attributes of the items and the links
 in between, such as age of people in communication or the average
 duration of communications.
 
-\centering
-![image](ChapterViz/figures/fig10-b)
+```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-10b.png")
+```
 
 \vspace*{12pt}
 [Node-link diagrams]{.roman} are the most common representation of
 network structures and overviews (Figures
-[\[fig:viz-10\]](#fig:viz-10){reference-type="ref"
-reference="fig:viz-10"} and
-[\[fig:viz-10b\]](#fig:viz-10b){reference-type="ref"
-reference="fig:viz-10b"}), and may use linear (arc), circular, or force-
+\@ref(fig:fig9-10) and
+\@ref(fig:fig9-10b), and may use linear (arc), circular, or force-
 directed layouts for positioning the nodes (items). Matrices or grid
 layouts are also a valuable way to represent networks
 [@henry2006matrixexplorer]. Hybrid solutions have been proposed, with
@@ -498,8 +494,7 @@ networks where nodes and edges inevitably overlap by virtue of the
 underlying network structure, and where aggregation and filtering may be
 needed before effective overviews can be presented to users.
 
-Figure [\[fig:viz-10\]](#fig:viz-10){reference-type="ref"
-reference="fig:viz-10"} shows the networks of inventors (white) and
+Figure \@ref(fig:fig9-10) shows the networks of inventors (white) and
 companies (orange) and their patenting connections (purple lines) in the
 network visualization NodeXL. Each company and inventor is also
 connected to a location node (blue = USA; yellow = Canada). Green lines
@@ -511,8 +506,7 @@ structure moving from the cluster in the lower right to the main cluster
 in the upper left. NodeXL is designed for interactive network
 exploration; many controls (not shown in the figure) allow users to zoom
 on areas of interest or change options.
-Figure [\[fig:viz-10b\]](#fig:viz-10b){reference-type="ref"
-reference="fig:viz-10b"} shows an example of network visualization on
+Figure \@ref(fig:fig9-10b) shows an example of network visualization on
 science as a topic used for data presentation in a book and a traveling
 exhibit. Designed for print media, it includes a clear title and
 annotations and shows a series of topic clusters at the bottom with a
@@ -533,8 +527,7 @@ the text collections, such as matrices to see relations, network
 diagrams, or parallel coordinates to see entity relationships (e.g.,
 between what, who, where, and when). Timelines can be mapped to the
 linear dimension of text.
-Figure [\[fig:viz-11\]](#fig:viz-11){reference-type="ref"
-reference="fig:viz-11"} shows an example using Jigsaw
+Figure \@ref(fig:fig9-11) shows an example using Jigsaw
 [@stasko2008jigsaw] for the exploration of car reviews. Entities have
 been extracted automatically (in this case make, model, features, etc.),
 and a cluster analysis has been performed, visualized in the bottom
@@ -543,8 +536,9 @@ between entities. Another view allows traversing word sequences as a
 tree. Reading original documents is critical, so all the visualization
 elements are linked to the corresponding text.
 
-\centering
-![image](ChapterViz/figures/fig11)
+```{r fig9-11, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterViz/figures/fig9-11.png")
+```
 
 \vspace*{6pt}
 Challenges {#sec:viz-4}
