@@ -242,8 +242,7 @@ into two major categories:
 In between the two extremes of supervised and unsupervised learning,
 there is a spectrum of methods that have different levels of supervision
 involved (Figure
-[\[fig:ml:spectrum\]](#fig:ml:spectrum){reference-type="ref"
-reference="fig:ml:spectrum"}). Supervision in this case is the presence
+\@ref(fig:spectrum)). Supervision in this case is the presence
 of target variables (known in machine learning as *labels*). In
 unsupervised learning, none of the data points have labels. In
 supervised learning, all data points have labels. In between, either the
@@ -252,10 +251,9 @@ vary. We do not cover the weakly supervised and semi-supervised methods
 much in this chapter, but this is an active area of research in machine
 learning. Zhu [@zhu2005semi] provides more details.
 
-\centering
-![Spectrum of machine learning methods from unsupervised to supervised
-learning[\[fig:ml:spectrum\]]{#fig:ml:spectrum
-label="fig:ml:spectrum"}](ChapterML/figures/spectrum)
+```{r spectrum, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Spectrum of machine learning methods from unsupervised to supervised learning'}
+knitr::include_graphics("ChapterML/figures/spectrum.png")
+```
 
 Machine learning vocabulary[\[vocabbox\]]{#vocabbox label="vocabbox"}
 
@@ -298,8 +296,7 @@ to supervised learning methods. We focus here on the intuition behind
 the methods and the algorithm, as well as practical tips, rather than on
 the statistical theory that underlies the methods. We encourage readers
 to refer to machine learning books listed in
-Section [1.11](#ml:res){reference-type="ref" reference="ml:res"} for
-more details. Box [\[vocabbox\]](#vocabbox){reference-type="ref"
+Section [Resources]. Box [\[vocabbox\]](#vocabbox){reference-type="ref"
 reference="vocabbox"} gives brief definitions of several terms we will
 use in this section.
 
@@ -342,8 +339,7 @@ Euclidean distance, but other commonly used metrics are Manhattan,
 Minkowski, Chebyshev, cosine, Hamming, Pearson, and Mahalanobis. Often,
 domain-specific similarity metrics can be designed for use in specific
 problems. For example, when performing the record linkage tasks
-discussed in Chapter [\[chap:link\]](#chap:link){reference-type="ref"
-reference="chap:link"}, you can design a similarity metric that compares
+discussed in Chapter [Record Linkage], you can design a similarity metric that compares
 two first names and assigns them a high similarity (low distance) if
 they both map to the same canonical name, so that, for example, Sammy
 and Sam map to Samuel.
@@ -393,8 +389,7 @@ $k$ defines the number of clusters. The algorithm works as follows:
 
 The algorithm stops when the assignments do not change from one
 iteration to the next (Figure
-[\[fig:ML:kmeans\]](#fig:ML:kmeans){reference-type="ref"
-reference="fig:ML:kmeans"}). The final set of clusters, however, depend
+\@ref(fig:kmeans)). The final set of clusters, however, depend
 on the starting points. If they are initialized differently, it is
 possible that different clusters are obtained. One common practical
 trick is to run $k$-means several times, each with different (random)
@@ -404,8 +399,9 @@ fits your needs. When the data are of the form where the mean of the
 data points cannot be computed, a related method called $K$-medoids can
 be used [@park2009simple].
 
-\centering
-![image](ChapterML/figures/kmeans)
+```{r kmeans, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/kmeans.png")
+```
 
 ##### Expectation-maximization (EM) clustering {#expectation-maximization-em-clustering .unnumbered}
 
@@ -490,8 +486,7 @@ later on.
 
 ##### Spectral clustering {#spectral-clustering .unnumbered}
 
-Figure [\[fig:ML:spectral\]](#fig:ML:spectral){reference-type="ref"
-reference="fig:ML:spectral"} shows the clusters that $k$-means would
+Figure \@ref(fig:spectral) shows the clusters that $k$-means would
 generate on the data set in the figure. It is obvious that the clusters
 produced are not the clusters you would want, and that is one drawback
 of methods such as $k$-means. Two points that are far away from each
@@ -503,8 +498,9 @@ clustering methods work by representing data as a graph (or network),
 where data points are nodes in the graph and the edges (connections
 between nodes) represent the similarity between the two data points.
 
-\centering
-![image](ChapterML/figures/spectral)
+```{r spectral, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/spectral.png")
+```
 
 \vspace*{8pt}
 The algorithm works as follows:
@@ -688,14 +684,14 @@ predictions having high variance but can capture the local structure of
 the data. Larger values of $k$ build more global models that are lower
 in variance but may not capture local structure in the data as well.
 
-Figure [\[fig:ML:knn\]](#fig:ML:knn){reference-type="ref"
-reference="fig:ML:knn"} provides an example for $k = 1, 3, 5$ nearest
+Figure \@ref(fig:knn) provides an example for $k = 1, 3, 5$ nearest
 neighbors. The number of neighbors ($k$) is a parameter, and the
 prediction depends heavily on how it is determined. In this example,
 point B is classified differently if $k = 3$.
 
-\centering
-![image](ChapterML/figures/knn)
+```{r knn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/knn.png")
+```
 
 \vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
@@ -744,18 +740,15 @@ for, and how to use them.
 
 We are all familiar with linear models that separate two classes by
 fitting a line in two dimensions (or a hyperplane in higher dimensions)
-in the middle (see Figure [1.1](#fig:ML:svm){reference-type="ref"
-reference="fig:ML:svm"}). An important decision that linear models have
+in the middle (see Figure \@ref(fig:svm)). An important decision that linear models have
 to make is which linear separator we should prefer when there are
 several we can build.
 
-\centering
-![Support vector
-machines[]{label="fig:ML:svm"}](ChapterML/figures/svm){#fig:ML:svm
-width="100%"}
+```{r svm, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'Support vector machines'}
+knitr::include_graphics("ChapterML/figures/svm.png")
+```
 
-You can see in Figure [1.1](#fig:ML:svm){reference-type="ref"
-reference="fig:ML:svm"} that multiple lines offer a solution to the
+You can see in Figure \@ref(fig:svm) that multiple lines offer a solution to the
 problem. Is any of them better than the others? We can intuitively
 define a criterion to estimate the worth of the lines: A line is bad if
 it passes too close to the points because it will be noise sensitive and
@@ -822,27 +815,19 @@ can be used for regression [@SmolaRegression04] and ranking
 Decision trees are yet another set of methods that are helpful for
 prediction. Typical decision trees learn a set of rules from training
 data represented as a tree. An exemplary decision tree is shown in
-Figure [1.3](#fig:ML:tree){reference-type="ref"
-reference="fig:ML:tree"}. Each level of a tree *splits* the tree to
+Figure \@ref(fig:tree). Each level of a tree *splits* the tree to
 create a branch using a feature and a value (or range of values). In the
 example tree, the first split is made on the feature *number of visits
 in the past year* and the value $4$. The second level of the tree now
 has two splits: one using *average length of visit* with value $2$ days
 and the other using the value $10$ days.
 
-\centering
-![An exemplary decision tree. The top figure is the standard
-representation for trees. The bottom figure offers an alternative view
-of the same tree. The feature space is partitioned into numerous
-rectangles, which is another way to view a tree, representing its
-nonlinear character more
-explicitly[]{label="fig:ML:tree"}](ChapterML/figures/tree "fig:"){#fig:ML:tree}\
-![An exemplary decision tree. The top figure is the standard
-representation for trees. The bottom figure offers an alternative view
-of the same tree. The feature space is partitioned into numerous
-rectangles, which is another way to view a tree, representing its
-nonlinear character more
-explicitly[]{label="fig:ML:tree"}](ChapterML/figures/tree-rectangle "fig:"){#fig:ML:tree}
+```{r tree, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly'}
+knitr::include_graphics("ChapterML/figures/tree.png")
+```
+```{r tree-rectangle, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly'}
+knitr::include_graphics("ChapterML/figures/tree-rectangle.png")
+```
 
 Various algorithms exist to build decision trees. C4.5, CHAID, and CART
 (Classification and Regression Trees) are the most Each needs to
@@ -897,8 +882,7 @@ may lead to different splitting points. As a consequence, the whole tree
 may take a different structure. The suboptimal predictive performance
 can be seen from the fact that trees partition the predictor space into
 a few rectangular regions, each one predicting only a single value (see
-the bottom part of Figure [1.3](#fig:ML:tree){reference-type="ref"
-reference="fig:ML:tree"}).
+the bottom part of Figure \@ref(fig:tree).
 
 ##### Ensemble methods {#ensemble-methods .unnumbered}
 
@@ -1135,8 +1119,7 @@ is to generalize to new data, and validating models in-sample does not
 allow us to do that. We focus here on evaluation methodologies that
 allow us to optimize (as best as we can) for generalization performance.
 The methods are illustrated in
-Figure [\[fig:ml:holdout\]](#fig:ml:holdout){reference-type="ref"
-reference="fig:ml:holdout"}.
+Figure \@ref(fig:holdout).
 
 ##### Out-of-sample and holdout set {#out-of-sample-and-holdout-set .unnumbered}
 
@@ -1158,10 +1141,9 @@ on. The performance measures on each test set can then give us an
 estimate of the performance of different methods and how much they vary
 across different random sets.
 
-\centering
-![Validation methodologies: holdout set and
-cross-validation[\[fig:ml:holdout\]]{#fig:ml:holdout
-label="fig:ml:holdout"}](ChapterML/figures/holdout)
+```{r holdout, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Validation methodologies: holdout set and cross-validation'}
+knitr::include_graphics("ChapterML/figures/holdout.png")
+```
 
 ##### Cross-validation {#cross-validation .unnumbered}
 
@@ -1193,9 +1175,9 @@ that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in
 practice and affects performance estimates for a model.
 
-\centering
-![Temporal validation[\[fig:ml:temporal\]]{#fig:ml:temporal
-label="fig:ml:temporal"}](ChapterML/figures/temporal)
+```{r temporal, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/temporal.png")
+```
 
 In most practical problems, we want to use a validation strategy that
 emulates the way in which our models will be used and provides an
@@ -1205,8 +1187,7 @@ available to us before $t_i$ to avoid training on data from the
 "future." We then predict and evaluate on data from $t_i$ to $t_i$ + $d$
 and iterate, expanding the training window while keeping the test window
 size constant at $d$.
-Figure [\[fig:ml:temporal\]](#fig:ml:temporal){reference-type="ref"
-reference="fig:ml:temporal"} shows this validation process with
+Figure \@ref(fig:temporal) shows this validation process with
 $t_i=2010$ and $d=1$ year. The test set window $d$ depends on a few
 factors related to how the model will be deployed to best emulate
 reality:
@@ -1256,7 +1237,7 @@ that a little later in this section.
 
 Once we have turned the real-valued predictions into 0/1 classification,
 we can now create a *confusion matrix* from these predictions, shown in
-Figure [\[fig:cm\]](#fig:cm){reference-type="ref" reference="fig:cm"}.
+Figure \@ref(fig:cm).
 Each data point belongs to either the positive class or the negative
 class, and for each data point the prediction of the classifier is
 either correct or incorrect. This is what the four cells of the
@@ -1326,16 +1307,16 @@ only predicts a 1 when it is absolutely sure (say, a threshold of
 but will miss most 1s (low recall). At the other extreme, a classifier
 that says 1 to every data point (a threshold of 0.0001) will have
 perfect recall but low precision.
-Figure [\[fig:ml:pr\]](#fig:ml:pr){reference-type="ref"
-reference="fig:ml:pr"} show a precision--recall curve that is often used
+Figure \@ref(fig:pr) show a precision--recall curve that is often used
 to represent the performance of a given classifier.
 
-\centering
-![image](ChapterML/figures/pr){width="17.5pc"}
+```{r pr2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/pr.png")
+```
 
-\hfill
-\centering
-![image](ChapterML/figures/pr2)
+```{r pr2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+knitr::include_graphics("ChapterML/figures/pr2.png")
+```
 
 If we care about optimizing for the entire precision recall space, a
 useful metric is the *area under the curve* (AUC-PR), which is the area
@@ -1359,8 +1340,7 @@ in order of hazard risk. We would then want to know what percentage of
 the top 5% (the ones that will get inspected) are likely to be hazards,
 which translates to the precision in the top 5% of the most confidence
 predictions---precision at 5%, as it is commonly called (see Figure
-[\[fig:ml:pr-threshold\]](#fig:ml:pr-threshold){reference-type="ref"
-reference="fig:ml:pr-threshold"}). *Precision at top k percent* is a
+\@ref(fig:threshold)). *Precision at top k percent* is a
 common class of metrics widely used in information retrieval and search
 engine literature, where you want to make sure that the results
 retrieved at the top of the search results are accurate. More generally,
@@ -1568,8 +1548,7 @@ improve some social science tasks:
     an overview of different automatic methods for text analysis.
     Grimmer and Stewart [@grimmer2013text] give examples that are more
     specific for social scientists, and
-    Chapter [\[chap:text\]](#chap:text){reference-type="ref"
-    reference="chap:text"} provides more details on this topic.
+    Chapter [Text analysis] provides more details on this topic.
 
 -   Some survey questions have a large number of possible answer
     categories. For example, international job classifications describe
