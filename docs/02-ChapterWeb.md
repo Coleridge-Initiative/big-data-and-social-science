@@ -141,8 +141,7 @@ module documentation provides more details.
 
 We need to check the details of the page source to find where the
 information we are looking for is kept (see, for example,
-Figure[\[fig:4-1\]](#fig:4-1){reference-type="ref"
-reference="fig:4-1"}). Here, all the details on HHMI investigators can
+\@ref(fig:fig4-1)). Here, all the details on HHMI investigators can
 be found in a element with the class attribute . This structure is not
 something that can be determined in advance. It requires knowledge of
 the structure of the page itself. Nested inside this element are another
@@ -151,8 +150,10 @@ the class attribute . Again, there is nothing obvious about finding
 these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
-\centering
-![image](ChapterWeb/figures/fig1){width="38pc"}
+<div class="figure" style="text-align: center">
+<img src="ChapterWeb/figures/fig2-1.png" alt="DUMMY TEXT" width="70%" />
+<p class="caption">(\#fig:fig2-1)DUMMY TEXT</p>
+</div>
 
 \vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
@@ -242,8 +243,7 @@ itself, identifying where the information is held, what tags can be used
 to find it, and often doing some postprocessing to clean it up (removing
 spaces, splitting different elements up).
 
-Listing [\[fig:web:py1\]](#fig:web:py1){reference-type="ref"
-reference="fig:web:py1"} provides a function to handle all of this. The
+Listing \@ref(fig:web-py1) provides a function to handle all of this. The
 function accepts the response object from the requests module as its
 input, processes the page text to soup, and then finds the as above and
 processes it into an actual list of the investigators. For each
@@ -259,8 +259,7 @@ Harbor, Maine. Note that we have also obtained URLs that give more
 details on the researcher and their research program ( and keys in the
 dictionary) that could provide a useful input to textual analysis or
 topic modeling (see
-Chapter [\[chap:text\]](#chap:text){reference-type="ref"
-reference="chap:text"}).
+[Text Analysis]).
 
 
 ```r
@@ -415,12 +414,13 @@ privacy issues that have not been comprehensively addressed but also
 provides a rich source of data on who is doing what with research
 articles.
 
-\centering
-![image](ChapterWeb/figures/fig2)
+<div class="figure" style="text-align: center">
+<img src="ChapterWeb/figures/fig2-2.png" alt="DUMMY TEXT" width="70%" />
+<p class="caption">(\#fig:fig2-2)DUMMY TEXT</p>
+</div>
 
 There are a wide range of potential data sources, so it is useful to
-categorize them. Figure [\[fig:4-2\]](#fig:4-2){reference-type="ref"
-reference="fig:4-2"} shows one possible categorization, in which data
+categorize them. Figure \@ref(fig:fig2-2) shows one possible categorization, in which data
 sources are grouped based on the level of engagement and the stage of
 use. It starts from the left with "views," measures of online views and
 article downloads, followed by "saves" where readers actively collect
@@ -716,32 +716,28 @@ term. We also need a more functional perspective to help us understand
 how these sources of data relate to activities in the broader research
 enterprise.
 
-Consider Figure [\[fig:intro:cam\]](#fig:intro:cam){reference-type="ref"
-reference="fig:intro:cam"} in
-Chapter [\[chap:intro\]](#chap:intro){reference-type="ref"
-reference="chap:intro"}. The research enterprise has been framed as
+Consider Figure \@ref(fig:fig-cam) in
+Chapter [Introduction]. The research enterprise has been framed as
 being made up of people who are generating outputs. The data that we
 consider in this chapter relate to connections between outputs, such as
 citations between research articles and tweets referring to articles.
 These connections are themselves created by people, as shown in Figure
-[1.1](#fig:4-3){reference-type="ref" reference="fig:4-3"}. The people in
+\@ref(fig:fig2-3). The people in
 turn may be classed as belonging to certain categories or communities.
 What is interesting, and expands on the simplified picture of
-Figure [\[fig:intro:cam\]](#fig:intro:cam){reference-type="ref"
-reference="fig:intro:cam"}, is that many of these people are not
+Figure \@ref(fig:fig-cam), is that many of these people are not
 professional researchers. Indeed, in some cases they may not be people
 at all but automated systems of some kind. This means we need to expand
 the set of actors we are considering. As described above, we are also
 expanding the range of outputs (or objects) that we are considering as
 well.
 
-\centering
-![A simplified model of online interactions between research outputs and
-the objects that refer to
-them[]{label="fig:4-3"}](ChapterWeb/figures/fig3){#fig:4-3}
+<div class="figure" style="text-align: center">
+<img src="ChapterWeb/figures/fig2-3.png" alt="A simplified model of online interactions between research outputs and the objects that refer to them" width="70%" />
+<p class="caption">(\#fig:fig2-3)A simplified model of online interactions between research outputs and the objects that refer to them</p>
+</div>
 
-In the simple model of Figure [1.1](#fig:4-3){reference-type="ref"
-reference="fig:4-3"}, there are three categories of things (nodes on the
+In the simple model of Figure \@ref(fig:fig2-3), there are three categories of things (nodes on the
 graph): objects, people, and the communities they belong to. Then there
 are the relationships between these elements (connections between
 nodes). Any given data source may provide information on different parts
@@ -1053,8 +1049,7 @@ objects that have DOIs, and messy or impossible for those that do not.
 In general, integration is possible, but it depends on a means of
 cross-referencing between data sets. Unique identifiers that are common
 to both are extremely powerful but only exist in certain cases (see also
-Chapter [\[chap:link\]](#chap:link){reference-type="ref"
-reference="chap:link"}).
+Chapter [Record Linkage].
 
 \vspace*{-2pt}
 ##### Coverage
@@ -1509,8 +1504,7 @@ unique ID to search on.
 While it is possible to work with author names or the titles of works
 directly, disambiguating such names and titles is substantially more
 difficult than working with unique identifiers. Other chapters (in
-particular, Chapter [\[chap:link\]](#chap:link){reference-type="ref"
-reference="chap:link"}) deal with issues of data cleaning and
+particular, Chapter [Record Linkage]) deal with issues of data cleaning and
 disambiguation. Much work has been done on this basis, but increasingly
 you will see that the first step in any analysis is simply to discard
 objects without a unique ID that can be used across data sources.
@@ -1810,13 +1804,13 @@ and is highly unlikely to be representative of "all discussions."
 Equally the set of all objects with a Crossref DOI, while defined, is
 unlikely to be representative of all articles.
 
-\centering
-![A functional view of proxies and
-relationships[]{label="fig:4-4"}](ChapterWeb/figures/fig4){#fig:4-4}
+```{r fig2-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A functional view of proxies and
+relationships'}
+knitr::include_graphics("ChapterWeb/figures/fig2-4.png")
+```
 
-Expanding on Figure [1.1](#fig:4-3){reference-type="ref"
-reference="fig:4-3"}, we show in Figure
-[1.2](#fig:4-4){reference-type="ref" reference="fig:4-4"} agents and
+Expanding on Figure \@ref(fig:fig2-3), we show in Figure
+\@ref(fig:fig2-4) agents and
 actors (people) and outputs. We place both agents and outputs into
 categories that may be more or less well defined. In practice our
 analysis is limited to those objects that we discover by using some
@@ -2105,10 +2099,8 @@ grant programs (see, for instance, the Lattes analysis of the network
 grant program).
 
 Network analysis techniques and visualization are covered in
-Chapter [\[chap:networks\]](#chap:networks){reference-type="ref"
-reference="chap:networks"} (on networks) and clustering and
-categorization in Chapter [\[chap:ml\]](#chap:ml){reference-type="ref"
-reference="chap:ml"} (on machine learning). Networks may be built up
+Chapter [Networks: The Basics] (on networks) and clustering and
+categorization in Chapter [Machine Learning] (on machine learning). Networks may be built up
 from any combination of outputs, actors/agents, and their relationships
 to each other. Analyses that may be particularly useful are those
 searching for highly connected (proxy for influential) actors or

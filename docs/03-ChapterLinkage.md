@@ -183,13 +183,14 @@ provide additional predictive power to determine which records should be
 linked. In some cases, when sufficient training data can be produced,
 more modern machine learning techniques may be applied.
 
-\centering
-![The preprocessing
-pipeline[]{label="ch:linkage-fig1"}](ChapterLinkage/figures/fig1){#ch:linkage-fig1}
+
+```{r fig3-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The preprocessing
+pipeline'}
+knitr::include_graphics("ChapterLinkage/figures/fig3-1.png")
+```
 
 The canonical record linkage workflow process is shown in Figure
-[1.1](#ch:linkage-fig1){reference-type="ref"
-reference="ch:linkage-fig1"} for two data files, A and B. The goal is to
+\@ref(fig:fig3-1) for two data files, A and B. The goal is to
 identify all pairs of records in the two data sets that correspond to
 the same underlying individual. One approach is to compare all data
 units from file A with all units in file B and classify all of the
@@ -599,7 +600,7 @@ scalable, and approaches are developed based on work in network
 algorithms and machine learning.
 
 While simple blocking as described in
-Section [1.4](#S:indexing){reference-type="ref" reference="S:indexing"}
+Section [Indexing and Blocking]
 is standard in Fellegi--Sunter applications, computer scientists are
 likely to use the more sophisticated clustering approach to indexing.
 Indexing may also use network information to include, for example,
@@ -632,8 +633,7 @@ As Wick et al. [@wick2013joint] note:
 > the challenge of jointly modeling entity-linking and entity discovery
 > as a single entity resolution problem.
 
-Figure [\[ch:linkage-fig2\]](#ch:linkage-fig2){reference-type="ref"
-reference="ch:linkage-fig2"} provides a useful comparison between
+Figure \@ref(fig:fig3-2) provides a useful comparison between
 classical record linkage and learning-based approaches. In machine
 learning there is a predictive model and an algorithm for "learning" the
 optimal set of parameters to use in the predictive algorithm. The
@@ -646,8 +646,10 @@ from the training data, the predictive model can be applied to unlabeled
 data to find new links. The quality of the training data set is
 critical; the model is only as good as the data it is trained on.
 
-\centering
-![image](ChapterLinkage/figures/fig2)
+<div class="figure" style="text-align: center">
+<img src="ChapterLinkage/figures/fig3-2.png" alt="DUMMY TEXT" width="70%" />
+<p class="caption">(\#fig:fig3-2)DUMMY TEXT</p>
+</div>
 
 \vspace*{-6pt}
 An example of a machine learning model that is popular for record
@@ -662,8 +664,7 @@ with simple classification trees, which is that they may overfit to
 training data.
 
 As shown in Figure
-[\[ch:linkage-fig2\]](#ch:linkage-fig2){reference-type="ref"
-reference="ch:linkage-fig2"}, a major difference between probabilistic
+\@ref(fig:fig3-2), a major difference between probabilistic
 and machine learning approaches is the need for labeled training data to
 implement the latter approach. Usually training data are created through
 a painstaking process of clerical review. After an initial round of

@@ -174,13 +174,14 @@ An example of this type of data is a network where nodes are firms and
 ties indicate the presence of a strategic alliance connecting them
 [@powell2005network]. This network would be represented as a square
 symmetric matrix or a list of edges connecting nodes. Figure
-[1.1](#fig:6-1){reference-type="ref" reference="fig:6-1"} summarizes
+\@ref(fig:fig8-1) summarizes
 this simple data structure, highlighting the idea that network data of
 this form can be represented either as a matrix or as an edge list.
 
-\centering
-![Undirected, binary, one-mode network
-data[]{label="fig:6-1"}](ChapterNetworks/figures/fig1){#fig:6-1}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-1.png" alt="Undirected, binary, one-mode network data" width="70%" />
+<p class="caption">(\#fig:fig8-1)Undirected, binary, one-mode network data</p>
+</div>
 
 \vspace*{-12pt}
 A much more complicated network would be one that is both directed and
@@ -190,12 +191,12 @@ and the value of those goods and services (or their volume) represents
 ties of different strengths. When networks connecting one class of nodes
 (in this case nations) are directed and valued, they can be represented
 as asymmetric valued matrices or lists of arcs with associated values.
-(See Figure [1.2](#fig:6-2){reference-type="ref" reference="fig:6-2"}
-for an example.)
+(See Figure \@ref(fig:fig8-1).)
 
-\centering
-![Directed, valued, one-mode network
-data[]{label="fig:6-2"}](ChapterNetworks/figures/fig2){#fig:6-2}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-2.png" alt="Directed, valued, one-mode network data" width="70%" />
+<p class="caption">(\#fig:fig8-2)Directed, valued, one-mode network data</p>
+</div>
 
 \vspace*{-12pt}
 While many studies of small- to medium-sized social networks rely on
@@ -275,12 +276,13 @@ people. Transforming two-mode data into one-mode projections is a fairly
 simple matter. If $\mathbf{X}$ is a rectangular matrix, $p \times g$,
 then a one-mode projection, $p \times p$, can be obtained by multiplying
 $\mathbf{X}$ by its transpose $\mathbf{X}'$.
-Figure [1.3](#fig:6-3){reference-type="ref" reference="fig:6-3"}
+Figure \@ref(fig:fig8-3)
 summarizes this transformation.
 
-\centering
-![Two-mode affiliation
-data[]{label="fig:6-3"}](ChapterNetworks/figures/fig3){#fig:6-3}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-3.png" alt="Two-mode affiliation data" width="70%" />
+<p class="caption">(\#fig:fig8-3)Two-mode affiliation data</p>
+</div>
 
 In the following snippet of code, I use the package in Python to read in
 a Pajek file and then transform the original two-mode network into two
@@ -368,8 +370,7 @@ resources [@burt2004structural]. It is the reachability that networks
 create that makes them so important for understanding the work of
 science and innovation.
 
-Consider Figure [1.4](#fig:6-4){reference-type="ref"
-reference="fig:6-4"}, which presents three schematic networks. In each,
+Consider Figure \@ref(fig:fig8-4), which presents three schematic networks. In each,
 one focal node, ego, is colored orange. Each ego has four alters, but
 the fact that each has connections to four other nodes masks important
 differences in their structural positions. Those differences have to do
@@ -380,14 +381,15 @@ their positions are far from equivalent. Centrality measures on full
 network data can tease out the differences. The networks also vary in
 their gross characteristics. Those differences, too, are measurable.
 
-\centering
-![Reachability and indirect
-ties[]{label="fig:6-4"}](ChapterNetworks/figures/fig4){#fig:6-4}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
+<p class="caption">(\#fig:fig8-4)Reachability and indirect ties</p>
+</div>
 
 Networks in which more of the possible connections among nodes are
 realized are denser and more cohesive than networks in which fewer
 potential connections are realized. Consider the two smaller networks in
-Figure [1.4](#fig:6-4){reference-type="ref" reference="fig:6-4"}, each
+Figure \@ref(fig:fig8-4), each
 of which is comprised of five nodes. Just five ties connect those nodes
 in the network on the far right of the figure. One smaller subset of
 that network, the triangle connecting ego and two alters at the center
@@ -537,7 +539,7 @@ have been considering. First, the average pair of nodes that are
 connected by indirect paths are slightly more than five steps from one
 another. Second, however, many node pairs in this network ( =
 29,864,182) are unconnected and thus unreachable to each other. Figure
-[1.5](#fig:6-5){reference-type="ref" reference="fig:6-5"} presents a
+\@ref(fig:fig8-5) presents a
 histogram of the distribution of path lengths in the network. It
 represents the numeric values returned by the command in the code
 snippet above. In this case the diameter of the network is 18 and five
@@ -546,10 +548,10 @@ dyads is reachable ($N=2{,}996{,}157$ dyads) at distance 4. In short,
 nearly 3 million pairs of nodes are collaborators of collaborators of
 collaborators of collaborators.
 
-\centering
-![Histogram of path lengths for university A employee
-network[]{label="fig:6-5"}](ChapterNetworks/figures/fig5){#fig:6-5
-width="\textwidth"}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-5.png" alt="Histogram of path lengths for university A employee network" width="70%" />
+<p class="caption">(\#fig:fig8-5)Histogram of path lengths for university A employee network</p>
+</div>
 
 ##### Degree distribution {#degree-distribution .unnumbered}
 
@@ -677,8 +679,7 @@ common to normalize degree by the maximum value defined by $g-1$:
 $$C_D^{\prime}(n_i)=\frac{\sum_j x_{ij}}{g-1}.$$
 
 While the normalized degree centrality of the two orange nodes of the
-smaller networks in Figure [1.4](#fig:6-4){reference-type="ref"
-reference="fig:6-4"} is 1.0, the normalized value for the node in the
+smaller networks in Figure \@ref(fig:fig8-4) is 1.0, the normalized value for the node in the
 large network of 13 nodes is 0.33. Despite the fact that the highlighted
 nodes in the two smaller networks have the same degree centrality, the
 pattern of indirect ties connecting their alters means they occupy
@@ -789,8 +790,7 @@ emp.vs["btc"]=emp.betweenness(vertices=emp.vs, directed=False)
 Comparing collaboration networks
 --------------------------------
 
-Consider Figure [1.6](#fig:6-6){reference-type="ref"
-reference="fig:6-6"}, which presents visualizations of the main
+Consider Figure \@ref(fig:fig8-6), which presents visualizations of the main
 component of two university networks. Both of these representations are
 drawn from a single year (2012) of UMETRICS data. Nodes represent
 people, and ties reflect the fact that those individuals were paid with
@@ -802,8 +802,7 @@ better positioned to play the role of brokers in the network. A complete
 review of the many approaches to network visualization and their dangers
 in the absence of descriptive statistics such as those presented above
 is beyond the scope of this chapter, but consider the guidelines
-presented in Chapter [\[chap:viz\]](#chap:viz){reference-type="ref"
-reference="chap:viz"} on information visualization as well as useful
+presented in Chapter [Information Visualization] on information visualization as well as useful
 discussions by Powell et al. [@powell2005network] and Healy and Moody
 [@healy2014data].
 
@@ -832,30 +831,32 @@ scientific findings. Two otherwise similar institutions might have quite
 different capabilities based on the structure and composition of their
 collaboration networks.
 
-\centering
-![The main component of two university
-networks[]{label="fig:6-6"}](ChapterNetworks/figures/fig6){#fig:6-6}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-6.png" alt="The main component of two university networks" width="70%" />
+<p class="caption">(\#fig:fig8-6)The main component of two university networks</p>
+</div>
 
-The intuitions suggested by Figure [1.6](#fig:6-6){reference-type="ref"
-reference="fig:6-6"} can also be checked against some of the measures we
-have described. Figure [1.8](#fig:6-7){reference-type="ref"
-reference="fig:6-7"}, for instance, presents degree distributions for
-each of the two networks. Figure [1.9](#fig:6-8){reference-type="ref"
-reference="fig:6-8"} presents the histogram of path lengths for each
+The intuitions suggested by Figure \@ref(fig:fig8-6) can also be checked against some of the measures we
+have described. Figure \@ref(fig:fig8-7a), for instance, presents degree distributions for
+each of the two networks. Figure \@ref(fig:fig8-8) presents the histogram of path lengths for each
 network.
 
-\centering
-![Degree distribution for two
-universities[]{label="fig:6-7"}](ChapterNetworks/figures/fig7a "fig:"){#fig:6-7}
-![Degree distribution for two
-universities[]{label="fig:6-7"}](ChapterNetworks/figures/fig7b "fig:"){#fig:6-7}
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-7a.png" alt="Degree distribution for two universities" width="70%" />
+<p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-7b.png" alt="DUMMY TEXT" width="70%" />
+<p class="caption">(\#fig:fig8-7b)DUMMY TEXT</p>
+</div>
 
-\centering
-![Distribution of path lengths for universities A and
-B[]{label="fig:6-8"}](ChapterNetworks/figures/fig8){#fig:6-8}
 
-It is evident from Figure [1.8](#fig:6-7){reference-type="ref"
-reference="fig:6-7"} that they are quite different in character.
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-8.png" alt="The main component of two university networks" width="70%" />
+<p class="caption">(\#fig:fig8-8)The main component of two university networks</p>
+</div>
+
+It is evident from Figure \@ref(fig:fig8-7) that they are quite different in character.
 University A's network follows a more classic skewed distribution of the
 sort that is often associated with the kinds of power-law degree
 distributions common to scale- free networks. In contrast, university
@@ -877,7 +878,7 @@ the intuition we drew from the images that they are significantly
 different.
 
 The path length histogram presented in Figure
-[1.9](#fig:6-8){reference-type="ref" reference="fig:6-8"} suggests a
+\@ref(fig:fig8-8) suggests a
 similar pattern. While the average distance among any pair of connected
 nodes in both networks is fairly similar (see
 Table [\[tab:net1\]](#tab:net1){reference-type="ref"
@@ -913,7 +914,7 @@ connecting university B's, a difference that appears particularly
 starkly in the much higher density of university B's network. Part of
 the story can be found in the average degree of nodes in each network.
 As the degree distributions presented in Figure
-[1.6](#fig:6-6){reference-type="ref" reference="fig:6-6"} suggested, the
+\@ref(fig:fig8-6) suggested, the
 average researcher at university B is much more highly connected to
 others than is the case at university A. The difference is stark and
 quite likely has to do with the presence of larger grants that employ

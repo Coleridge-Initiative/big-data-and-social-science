@@ -419,12 +419,12 @@ records on separate lines. However, this behavior is fully customizable.
 Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
-![Data transfer and communication of a MapReduce job in Hadoop. Data
-blocks are assigned to several maps, which emit key--value pairs that
-are shuffled and sorted in parallel. The reduce step emits one or more
-pairs, with results stored on the
-HDFS](ChapterParallel/figures/hadoop "fig:")
-[\[fig:hadoop\]]{#fig:hadoop label="fig:hadoop"}
+
+<div class="figure" style="text-align: center">
+<img src="ChapterParallel/figures/hadoop.png" alt="Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS" width="70%" />
+<p class="caption">(\#fig:hadoop)Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS</p>
+</div>
+
 
 ### Hardware provisioning
 
