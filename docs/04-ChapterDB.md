@@ -52,8 +52,7 @@ how to get started, set up a database schema, ingest data, query data
 within a database, and get results out. We also discuss how to link from
 databases to other tools, such as Python, R, and Stata (if you really
 have to).
-Chapter [\[chap:parallel\]](#chap:parallel){reference-type="ref"
-reference="chap:parallel"} describes how to apply parallel computing
+Chapter [Programming with Big Data] describes how to apply parallel computing
 methods when needed.
 
 DBMS: When and why {#sec:db:when}
@@ -77,8 +76,7 @@ Consider the following three data sets:
 Which tools should you use to manage and analyze these data sets? The
 answer depends on the specifics of the data, the analyses that you want
 to perform, and the life cycle within which data and analyses are
-embedded. Table [\[tab:db:dbs\]](#tab:db:dbs){reference-type="ref"
-reference="tab:db:dbs"} summarizes relevant factors, which we now
+embedded. Table \@ref(tab:db:dbs) summarizes relevant factors, which we now
 discuss.
 
 \centering
@@ -197,10 +195,8 @@ queried for analysis. A *database management system* is a software suite
 designed to safely store and efficiently manage databases, and to assist
 with the maintenance and discovery of the relationships that database
 represents. In general, a DBMS encompasses three key components, as
-shown in Table [\[tab:db:1\]](#tab:db:1){reference-type="ref"
-reference="tab:db:1"}: its *data model* (which defines how data are
-represented: see Box [\[db:box1\]](#db:box1){reference-type="ref"
-reference="db:box1"}), its *query language* (which defines how the user
+shown in Table \@ref(tab:db:1): its *data model* (which defines how data are
+represented: see Box \@ref(#db:box1), its *query language* (which defines how the user
 interacts with the data), and support for *transactions and crash
 recovery* (to ensure reliable execution despite system failures).
 
@@ -211,8 +207,7 @@ one another. In developing a data model, we commonly first identity the
 entities that are to be modeled and then define their properties and
 relationships. For example, when working on the science of science
 policy (see
-Figure [\[fig:intro:cam\]](#fig:intro:cam){reference-type="ref"
-reference="fig:intro:cam"}), the entities include people, products,
+Figure \@ref(fig:fig2), the entities include people, products,
 institutions, and funding, each of which has various properties (e.g.,
 for a person, their name, address, employer); relationships include "is
 employed by" and "is funded by." This conceptual data model can then be
@@ -234,8 +229,7 @@ Literally hundreds of different open source, commercial, and
 cloud-hosted versions DBMSs are available. However, you only need to
 understand a relatively small number of concepts and major database
 types to make sense of this diversity.
-Table [\[tab:db:3\]](#tab:db:3){reference-type="ref"
-reference="tab:db:3"} defines the major classes of DBMSs that we will
+Table \@ref(tab:db:3) defines the major classes of DBMSs that we will
 consider in this book. We consider only a few of these in any detail.
 
 Relational DBMSs are the most widely used and mature systems, and will
@@ -286,8 +280,7 @@ routing\
 
 Relational and NoSQL databases (and indeed other solutions, such as
 statistical packages) can also be used together. Consider, for example,
-Figure [\[fig:db:dbs\]](#fig:db:dbs){reference-type="ref"
-reference="fig:db:dbs"}, which depicts data flows commonly encountered
+Figure \@ref(fig:db:dbs), which depicts data flows commonly encountered
 in large research projects. Diverse data are being collected from
 different sources: JSON documents from web APIs, web pages from web
 scraping, tabular data from various administrative databases, Twitter
@@ -328,13 +321,12 @@ Relational DBMSs implement the relational data model, in which data are
 represented as sets of records organized in tables. This model is
 particularly well suited for the structured, regular data with which we
 frequently deal in the social sciences; we discuss in
-Section [1.5](#sec:db:nosql){reference-type="ref"
+Section [4.5](#sec:db:nosql){reference-type="ref"
 reference="sec:db:nosql"} alternative data models, such as those used in
 NoSQL databases.
 
 We use the data shown in
-Figure [\[fig:db:1\]](#fig:db:1){reference-type="ref"
-reference="fig:db:1"} to introduce key concepts. These two CSV format
+Figure \@ref(fig:db:1) to introduce key concepts. These two CSV format
 files describe grants made by the US National Science Foundation (NSF).
 One file contains information about grants, the other information about
 investigators. How should you proceed to manipulate and analyze these
@@ -353,10 +345,8 @@ referred to as a *relation*): a set of rows (also referred to as tuples,
 records, or observations), each with the same columns (also referred to
 as fields, attributes or variables). A database consists of multiple
 tables. For example, we show in
-Figure [\[fig:db:2\]](#fig:db:2){reference-type="ref"
-reference="fig:db:2"} how the data contained in the two CSV files of
-Figure [\[fig:db:1\]](#fig:db:1){reference-type="ref"
-reference="fig:db:1"} may be as two tables. The table contains one tuple
+Figure \@ref(fig:db:2) how the data contained in the two CSV files of
+Figure \@ref(fig:db:1) may be as two tables. The table contains one tuple
 for each row in grants.csv, with columns , , , and . The table contains
 one tuple for each row in investigators.csv, with columns , , , and .
 The CSV files and tables contain essentially the same information,
@@ -454,8 +444,7 @@ evaluated as follows:
     "\*" indicates that all columns should be kept.)
 
 The answer, given the data in
-Figure [\[fig:db:2\]](#fig:db:2){reference-type="ref"
-reference="fig:db:2"}, is the following single-row table. (The fact that
+Figure \@ref(fig:db:2), is the following single-row table. (The fact that
 an SQL query returns a table is important when it comes to creating more
 complex queries: the result of a query can be stored into the database
 as a new table, or passed to another query as input.)

@@ -707,6 +707,7 @@ Ahmed et al. provide some pointers
 [@christen2012survey; @elmagarmid2007duplicate].
 
 \vspace*{-3pt}
+
 ### Disambiguating networks
 
 \enlargethispage{18pt}
@@ -737,6 +738,7 @@ distances are then fed into the DBSCAN clustering algorithm to identify
 unique entities.
 
 \vspace*{-3pt}
+
 Classification
 --------------
 
