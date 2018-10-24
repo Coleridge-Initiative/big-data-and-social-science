@@ -1310,7 +1310,7 @@ perfect recall but low precision.
 Figure \@ref(fig:pr) show a precision--recall curve that is often used
 to represent the performance of a given classifier.
 
-```{r pr2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+```{r pr, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
 knitr::include_graphics("ChapterML/figures/pr.png")
 ```
 
@@ -1340,7 +1340,7 @@ in order of hazard risk. We would then want to know what percentage of
 the top 5% (the ones that will get inspected) are likely to be hazards,
 which translates to the precision in the top 5% of the most confidence
 predictions---precision at 5%, as it is commonly called (see Figure
-\@ref(fig:threshold)). *Precision at top k percent* is a
+\@ref(fig:pr2)). *Precision at top k percent* is a
 common class of metrics widely used in information retrieval and search
 engine literature, where you want to make sure that the results
 retrieved at the top of the search results are accurate. More generally,
