@@ -90,7 +90,7 @@ the individual data sources [@abowd2004integrated].
 
 The UK's Administrative Data Research Network is a major investment by
 the United Kingdom to "improve our knowledge and understanding of the
-society we live in ... \[and\] provide a sound base for policymakers to
+society we live in ... [and] provide a sound base for policymakers to
 decide how to tackle a range of complex social, economic and
 environmental issues" by linking administrative data from a variety of
 sources, such as health agencies, court records, and tax records in a
@@ -184,10 +184,10 @@ linked. In some cases, when sufficient training data can be produced,
 more modern machine learning techniques may be applied.
 
 
-```{r fig3-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The preprocessing
-pipeline'}
-knitr::include_graphics("ChapterLinkage/figures/fig3-1.png")
-```
+<div class="figure" style="text-align: center">
+<img src="ChapterLinkage/figures/fig3-1.png" alt="The preprocessing pipeline" width="70%" />
+<p class="caption">(\#fig:fig3-1)The preprocessing pipeline</p>
+</div>
 
 The canonical record linkage workflow process is shown in Figure
 \@ref(fig:fig3-1) for two data files, A and B. The goal is to
@@ -647,8 +647,8 @@ data to find new links. The quality of the training data set is
 critical; the model is only as good as the data it is trained on.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterLinkage/figures/fig3-2.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig3-2)DUMMY TEXT</p>
+<img src="ChapterLinkage/figures/fig3-2.png" alt="Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [213]" width="70%" />
+<p class="caption">(\#fig:fig3-2)Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [213]</p>
 </div>
 
 \vspace*{-6pt}

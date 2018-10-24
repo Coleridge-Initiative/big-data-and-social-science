@@ -317,7 +317,7 @@ as separate physical hardware.
 ```{r fig5-1a, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = '(a) The traditional parallel computing model where data are brought to the computing nodes. (b) Hadoop’s parallel computing model: bringing compute to the data [242]'}
 knitr::include_graphics("ChapterParallel/figures/data2compute.png")
 ```
-```{r fig5-1b out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = '(a) The traditional parallel computing model where data are brought to the computing nodes. (b) Hadoop’s parallel computing model: bringing compute to the data [242]'}
+```{r fig5-1b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = '(a) The traditional parallel computing model where data are brought to the computing nodes. (b) Hadoop’s parallel computing model: bringing compute to the data [242]'}
 knitr::include_graphics("ChapterParallel/figures/compute2data.png")
 ```
 

@@ -90,7 +90,7 @@ the individual data sources [@abowd2004integrated].
 
 The UK's Administrative Data Research Network is a major investment by
 the United Kingdom to "improve our knowledge and understanding of the
-society we live in ... \[and] provide a sound base for policymakers to
+society we live in ... [and] provide a sound base for policymakers to
 decide how to tackle a range of complex social, economic and
 environmental issues" by linking administrative data from a variety of
 sources, such as health agencies, court records, and tax records in a

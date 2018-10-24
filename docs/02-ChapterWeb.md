@@ -151,8 +151,8 @@ these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterWeb/figures/fig2-1.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig2-1)DUMMY TEXT</p>
+<img src="ChapterWeb/figures/fig2-1.png" alt="Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read." width="70%" />
+<p class="caption">(\#fig:fig2-1)Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.</p>
 </div>
 
 \vspace*{-8pt}
@@ -414,10 +414,10 @@ privacy issues that have not been comprehensively addressed but also
 provides a rich source of data on who is doing what with research
 articles.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterWeb/figures/fig2-2.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig2-2)DUMMY TEXT</p>
-</div>
+```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237],
+under a Creative Commons Attribution v 3.0 license'}
+knitr::include_graphics("ChapterWeb/figures/fig2-2.png")
+```
 
 There are a wide range of potential data sources, so it is useful to
 categorize them. Figure \@ref(fig:fig2-2) shows one possible categorization, in which data
@@ -716,8 +716,8 @@ term. We also need a more functional perspective to help us understand
 how these sources of data relate to activities in the broader research
 enterprise.
 
-Consider Figure \@ref(fig:fig-cam) in
-Chapter [Introduction]. The research enterprise has been framed as
+Consider Figure \@ref(fig:fig2) in
+Chapter [Introduction](#chap:intro). The research enterprise has been framed as
 being made up of people who are generating outputs. The data that we
 consider in this chapter relate to connections between outputs, such as
 citations between research articles and tweets referring to articles.
@@ -725,7 +725,7 @@ These connections are themselves created by people, as shown in Figure
 \@ref(fig:fig2-3). The people in
 turn may be classed as belonging to certain categories or communities.
 What is interesting, and expands on the simplified picture of
-Figure \@ref(fig:fig-cam), is that many of these people are not
+Figure \@ref(fig:fig2), is that many of these people are not
 professional researchers. Indeed, in some cases they may not be people
 at all but automated systems of some kind. This means we need to expand
 the set of actors we are considering. As described above, we are also
@@ -1049,7 +1049,7 @@ objects that have DOIs, and messy or impossible for those that do not.
 In general, integration is possible, but it depends on a means of
 cross-referencing between data sets. Unique identifiers that are common
 to both are extremely powerful but only exist in certain cases (see also
-Chapter [Record Linkage].
+Chapter [Record Linkage]).
 
 \vspace*{-2pt}
 ##### Coverage
@@ -1434,8 +1434,7 @@ From this analysis we can show that this tweet is actually from one of
 my co-authors of the article.
 
 To make this process easier we write the convenience function shown in
-Listing [\[fig:web:py2\]](#fig:web:py2){reference-type="ref"
-reference="fig:web:py2"} to go from a Twitter user handle to try and
+Listing \@ref(fig:web:py2), to go from a Twitter user handle to try and
 find an ORCID for that person.
 
 ``` {#fig:web:py2 style="PythonStyle" caption="Python code to find ORCID for Twitter handle" label="fig:web:py2"}
@@ -1804,10 +1803,10 @@ and is highly unlikely to be representative of "all discussions."
 Equally the set of all objects with a Crossref DOI, while defined, is
 unlikely to be representative of all articles.
 
-```{r fig2-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A functional view of proxies and
-relationships'}
-knitr::include_graphics("ChapterWeb/figures/fig2-4.png")
-```
+<div class="figure" style="text-align: center">
+<img src="ChapterWeb/figures/fig2-4.png" alt="A functional view of proxies and relationships" width="70%" />
+<p class="caption">(\#fig:fig2-4)A functional view of proxies and relationships</p>
+</div>
 
 Expanding on Figure \@ref(fig:fig2-3), we show in Figure
 \@ref(fig:fig2-4) agents and
@@ -2100,7 +2099,7 @@ grant program).
 
 Network analysis techniques and visualization are covered in
 Chapter [Networks: The Basics] (on networks) and clustering and
-categorization in Chapter [Machine Learning] (on machine learning). Networks may be built up
+categorization in Chapter [Machine Learning](#chap:ml) (on machine learning). Networks may be built up
 from any combination of outputs, actors/agents, and their relationships
 to each other. Analyses that may be particularly useful are those
 searching for highly connected (proxy for influential) actors or
