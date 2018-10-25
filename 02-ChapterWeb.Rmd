@@ -89,10 +89,12 @@ the following. (We have broken the one-line URL into three lines for
 ease of presentation.)
 
 \enlargethispage{6pt}
-aaāaā\
-\
 
-The module, available natively in Jupyter Python notebooks, is a useful
+http://www.hhmi.org/scientists/browse?
+kw=&sort_by=field_scientist_last_name&
+sort_order=ASC&items_per_page=20&page=0
+
+The `requests` module, available natively in Jupyter Python notebooks, is a useful
 set of tools for handling interactions with websites. It lets us
 construct the request that we just presented in terms of a base URL and
 query terms, as follows:
@@ -119,7 +121,7 @@ to get a response.
 The first thing to do when building a script that hits a web page is to
 make sure that your call was successful. This can be checked by looking
 at the response code that the web server sent---and, obviously, by
-checking the actual HTML that was returned. A code means success and
+checking the actual HTML that was returned. A `200` code means success and
 that everything should be OK. Other codes may mean that the URL was
 constructed wrongly or that there was a server error.
 
@@ -139,11 +141,11 @@ module documentation provides more details.
 We need to check the details of the page source to find where the
 information we are looking for is kept (see, for example,
 \@ref(fig:fig4-1)). Here, all the details on HHMI investigators can
-be found in a element with the class attribute . This structure is not
+be found in a `<div>` element with the class attribute `view-content`. This structure is not
 something that can be determined in advance. It requires knowledge of
-the structure of the page itself. Nested inside this element are another
-series of s, each of which corresponds to one investigator. These have
-the class attribute . Again, there is nothing obvious about finding
+the structure of the page itself. Nested inside this `<div>` element are another
+series of `div`s, each of which corresponds to one investigator. These have
+the class attribute `view-rows`. Again, there is nothing obvious about finding
 these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
@@ -153,11 +155,11 @@ knitr::include_graphics("ChapterWeb/figures/fig2-1.png")
 
 \vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
-variable ) and then find the element that holds the information on
-investigators (). As this element is unique on the page (I checked using
-my web browser), we can use the find method. We then process that (using
-) to create an iterator object that contains each of the page segments
-detailing a single investigator ().
+variable `soup`) and then find the `div` element that holds the information on
+investigators (`investigator_list`). As this element is unique on the page (I checked using
+my web browser), we can use the find method. We then process that `div` (using
+`find_all`) to create an iterator object that contains each of the page segments
+detailing a single investigator (`investigators`).
 
 ```{r, eval=FALSE}
 >> from bs4 import BeautifulSoup
@@ -238,7 +240,7 @@ spaces, splitting different elements up).
 
 Listing \@ref(fig:web-py1) provides a function to handle all of this. The
 function accepts the response object from the requests module as its
-input, processes the page text to soup, and then finds the as above and
+input, processes the page text to soup, and then finds the `investigator_list` as above and
 processes it into an actual list of the investigators. For each
 investigator it then processes the HTML to find and clean up the
 information required, converting it to a dictionary and adding it to our
@@ -249,10 +251,10 @@ You can see two dictionaries, one relating to Laurence Abbott, who is a
 senior fellow at the HHMI Janelia Farm Campus, and one for Susan
 Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar
 Harbor, Maine. Note that we have also obtained URLs that give more
-details on the researcher and their research program ( and keys in the
+details on the researcher and their research program (`research_url` and `url` keys in the
 dictionary) that could provide a useful input to textual analysis or
 topic modeling (see
-[Text Analysis]).
+[Text Analysis](#chap:text)).
 
 ```{r, eval=FALSE}
 >> data = scrape(response)
@@ -286,7 +288,7 @@ search returned manually, but to make this more general we can actually
 scrape the page to find that piece of information and use that to
 calculate how many pages we need to work through.
 
-The number of results is found in a with the class "view-headers" as a
+The number of results is found in a `div` with the class "view-headers" as a
 piece of free text ("Showing 1--20 of 493 results"). We need to grab the
 text, split it up (I do so based on spaces), find the right number (the
 one that is before the word "results") and convert that to an integer.
@@ -403,8 +405,7 @@ privacy issues that have not been comprehensively addressed but also
 provides a rich source of data on who is doing what with research
 articles.
 
-```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237],
-under a Creative Commons Attribution v 3.0 license'}
+```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license'}
 knitr::include_graphics("ChapterWeb/figures/fig2-2.png")
 ```
 
@@ -424,6 +425,10 @@ that the indicator is a proxy for, which *users* are captured by the
 indicator, the *limitations* that the indicator has as a measure, and
 the *sources* of data. We start with the familiar case of formal
 literature citations to provide context.
+
+---
+
+**Example: Citations**
 
 Most quantitative analyses of research have focused on citations from
 research articles to other research articles. Many familiar
@@ -470,8 +475,13 @@ increasingly the basis for much bibliometric analysis.
 
     -   Some publishers make citation data collected by Crossref
         available.
+        
+---
 
-\exampend{Citations}
+---
+
+**Example: Page views and downloads**
+
 A major new source of data online is the number of times articles are
 viewed. Page views and downloads can be defined in different ways and
 can be reached via a range of paths. Page views are an immediate measure
@@ -523,8 +533,13 @@ example, whether research is reaching a target audience.
     -   PubMed Central makes page views of articles hosted on that site
         available to depositing publishers. PLOS and a few other
         publishers make this available.
+        
+---
 
-\exampend{Page views and downloads}
+---
+
+**Example: Analyzing bookmarks** 
+
 Tools for collecting and curating personal collections of literature, or
 web content, are now available online. They make it easy to make copies
 and build up indexes of articles. Bookmarking services can choose to
@@ -585,7 +600,12 @@ view onto wider interest in research articles.
     -   Most consumer bookmarking services provide some form of API, but
         this often has restrictions or limitations.
 
-\exampend{Analyzing bookmarks}
+---
+
+---
+
+**Example: Discussions on social media**
+
 Social media are one of the most valuable new services producing
 information about research usage. A growing number of researchers,
 policymakers, and technologists are on these services discussing
@@ -657,7 +677,12 @@ can be a site for frank discussion of research.
         other research---so analysis of numbers of tweets or likes is
         not always useful.
 
-\exampend{Discussions on social media}
+\---
+
+---
+
+**Example: Recommendations**
+
 A somewhat separate form of usage is direct expert recommendations. The
 best-known case of this is the F1000 service on which experts offer
 recommendations with reviews of specific research articles. Other
@@ -694,7 +719,8 @@ relevant here as well.
 
     -   Recommendations are slow to build up.
 
-\exampend{Recommendations}
+---
+
 A functional view {#sec:4-3}
 -----------------
 
@@ -844,8 +870,8 @@ out nicely to make it more readable.)
 This is a package of JavaScript Object Notation (JSON) data returned in
 response to a query. The query is contained entirely in the URL, which
 can be broken up into pieces: the root URL (<http://api.crossref.org>)
-and a data "query," in this case made up of a "field" () and an
-identifier (the DOI ). The Crossref API provides information about the
+and a data "query," in this case made up of a "field" (`works`) and an
+identifier (the DOI `10.1093/nar/gni170`). The Crossref API provides information about the
 article identified with this specific DOI.
 
 Programming against an API {#sec:4-4}
@@ -859,7 +885,7 @@ the only organization to provide DOIs. The scholarly communication space
 DataCite is another important provider. The documentation is available
 at the Crossref website [@crossref].
 
-Once again the Python library provides a series of convenience functions
+Once again the `requests` Python library provides a series of convenience functions
 that make it easier to make HTTP calls and to process returned JSON. Our
 first step is to import the module and set a base URL variable.
 
@@ -883,14 +909,14 @@ http://api.crossref.org/works/10.1093/nar/gni170
 200
 ```
 
-The object that the library has created has a range of useful
+The `response` object that the `requests` library has created has a range of useful
 information, including the URL called and the response code from the web
 server (in this case 200, which means everything is OK). We need the
 JSON body from the response object (which is currently text from the
-perspective of our script) converted to a Python dictionary. The module
+perspective of our script) converted to a Python dictionary. The `requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
-the notation.)
+the `u�` notation.)
 
 ``` {r, eval=FALSE}
 >> response_dict = response.json()
@@ -969,7 +995,7 @@ the list.
 The wrapper has created Python objects that make it easier to work with
 and manipulate the data. It is common to take the return from an API and
 create objects that behave as would be expected in Python. For instance,
-the object is a list populated with publications (which are also
+the `publications` object is a list populated with publications (which are also
 Python-like objects). Each publication in the list has its own
 attributes, which can then be examined individually. In this case the
 external IDs attribute is a list of further objects that include a DOI
@@ -1018,7 +1044,7 @@ matter knowledge as well as broader data management expertise. Some of
 the core issues are as follows:
 
 \vspace*{-2pt}
-##### Integration
+**Integration**
 
 In the examples given above with Crossref and ORCID, we used a known
 identifier (a DOI or an ORCID). Integrating data from Crossref to
@@ -1033,7 +1059,7 @@ to both are extremely powerful but only exist in certain cases (see also
 Chapter [Record Linkage]).
 
 \vspace*{-2pt}
-##### Coverage
+**Coverage**
 
 \hspace*{4pt}
 Without a population frame, it is difficult to know whether the
@@ -1047,7 +1073,7 @@ literature" is therefore impossible, and the choice of index used for
 any study can make a substantial difference to the conclusions.
 
 \vspace*{-2pt}
-##### Completeness
+**Completeness**
 
 Alongside the question of coverage (how broad is a data source?), with
 web data and opt-in services we also need to probe the completeness of a
@@ -1061,7 +1087,7 @@ a small subset of ORCID profiles provide a link to a Twitter profile.
 See below for a worked example.
 
 \vspace*{-2pt}
-##### Scope
+**Scope**
 
 In survey data sets, the scope is defined by the question being asked.
 This is not the case with much of these new data. For example, the
@@ -1077,7 +1103,7 @@ these outputs has as its first challenge the question of how to limit
 the corpus to be studied.
 
 \vspace*{-2pt}
-##### Source and validity
+**Source and validity**
 
 The challenges described above relate to the identification and counting
 of outputs. As we start to address questions of how these outputs are
@@ -1103,7 +1129,7 @@ a similar corpus. The distinction lies in differences in the methodology
 used to mine the corpus for citations.
 
 \vspace*{-2pt}
-##### Identifying the underlying latent variable
+**Identifying the underlying latent variable**
 
 These issues multiply as we move into newer forms of data. These sparse
 and incomplete sources of data require different treatment than more
@@ -1138,7 +1164,7 @@ to collect information on articles from a range of sources.
 
 ### The Lagotto API {#sec:4-6.1}
 
-The module is a wrapper for the Lagotto API, which is served from a
+The module `pyalm` is a wrapper for the Lagotto API, which is served from a
 range of hosts. We will work with two instances in particular: one run
 by PLOS, and the Crossref DOI Event Tracker (DET, recently renamed
 Crossref Event Data) pilot service. We first need to provide the details
@@ -1175,7 +1201,7 @@ The articles key holds a list of ArticleALM objects as its value. Each
 ArticleALM object has a set of internal attributes that contain
 information on each of the metrics that the Lagotto instance collects.
 These are derived from various data providers and are called *sources*.
-Each can be accessed by name from a dictionary called "sources." The
+Each can be accessed by name from a dictionary called "sources." The `iterkeys()`
 function provides an iterator that lets us loop over the set of keys in
 a dictionary. Within the source object there is a range of information
 that we will dig into.
@@ -1905,7 +1931,7 @@ they cannot, conversely, show that it has not. They enable some forms of
 comparison and determination of the characteristics of activity in some
 cases.
 
-##### Provide evidence that ... {#provide-evidence-that .unnumbered}
+**Provide evidence that ...**
 
 Because much of the data that we have is sparse, the absence of an
 indicator cannot reliably be taken to mean an absence of activity. For
@@ -1949,7 +1975,7 @@ some examples:
 
 \enlargethispage{6pt}
 \vspace*{-6pt}
-##### Compare ... {#compare .unnumbered}
+**Compare ...**
 
 Comparisons using social media or download statistics need real care. As
 noted above, the data are sparse so it is important that comparisons are
@@ -1984,7 +2010,7 @@ more by this online community," *not* "which article is discussed more."
     insight into who is aware of the work and whether it is reaching
     target audiences.
 
-##### What flavor is it? {#what-flavor-is-it .unnumbered}
+**What flavor is it?**
 
 Priem et al. [@priem2012altmetrics] provide a thoughtful analysis of the
 PLOS Article Level Metrics data set. They used principal component
@@ -2227,12 +2253,12 @@ community to build their own publicationsystem.
 Acknowledgements and copyright
 ------------------------------
 
-Section [1.3](#sec:4-2){reference-type="ref" reference="sec:4-2"} is
+Section [2.3](#sec:4-2){reference-type="ref" reference="sec:4-2"} is
 adapted in part from Neylon et al. [@neylon2014scap], copyright
 International Development Research Center, Canada, used here under a
 Creative Commons Attribution v 4.0 License.
 
-Section [1.9.4](#sec:4-7.1.4){reference-type="ref"
+Section [2.9.4](#sec:4-7.1.4){reference-type="ref"
 reference="sec:4-7.1.4"} is adapted in part from Neylon
 [@neylon2014plosaltmetrics], copyright PLOS, used here under a Creative
 Commons Attribution v 4.0License.

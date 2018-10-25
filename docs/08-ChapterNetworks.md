@@ -30,7 +30,7 @@ research-intensive universities. Both those collaboration networks and a
 grant co-employment network for a large public university also examined
 in this chapter are derived from data produced by the multi-university
 Committee on Institutional Cooperation (CIC)'s UMETRICS project
-[@lane2015new]. The snippets of code that are provided are from the
+[@lane2015new]. The snippets of code that are provided are from the `igraph`
 package for network analysis as implemented in Python.
 
 At their most basic, networks are measurable representations of patterns
@@ -284,7 +284,7 @@ summarizes this transformation.
 <p class="caption">(\#fig:fig8-3)Two-mode affiliation data</p>
 </div>
 
-In the following snippet of code, I use the package in Python to read in
+In the following snippet of code, I use the `igraph` package in Python to read in
 a Pajek file and then transform the original two-mode network into two
 separate projections. Because my focus in this discussion is on
 relationships among people, I then move on to work exclusively with the
@@ -329,7 +329,7 @@ emp=pr_g_proj1
 ```
 
 \vspace*{12pt}
-We now can work with the graph , which represents the collaborative
+We now can work with the graph `emp`, which represents the collaborative
 network of federally funded research on this campus. Care must be taken
 when inducing one-mode network projections from two-mode network data
 because not all affiliations provide equally compelling evidence of
@@ -426,7 +426,7 @@ possible network measures is long, a few commonly used indices offer
 useful insights into the structure and implications of entire network
 structures.
 
-##### Components and reachability {#components-and-reachability .unnumbered}
+**Components and reachability**
 
 As we have seen, a key feature of networks is reachability. The
 reachability of participants in a network is determined by their
@@ -446,7 +446,7 @@ network. Thus any description of a network or any effort to compare
 networks should report the number of components and the percentage of
 nodes reachable through the largest component. In the code snippet
 below, I identify the weakly connected components of the employee
-network, .
+network, `emp`.
 
 
 ```r
@@ -475,7 +475,7 @@ path lengths with a value that is one plus the longest path, called the
 network's diameter, observed in a given structure, it is also common to
 simply analyze the largest connected component of the network.
 
-##### Path length {#path-length .unnumbered}
+**Path length**
 
 One of the most robust and reliable descriptive statistics about an
 entire network is the average path length, $l_{G}$, among nodes.
@@ -495,7 +495,7 @@ The snippet of code below identifies the distribution of shortest path
 lengths among all pairs of nodes in a network and the average path
 length. I also include a line of code that calculates the network
 distance among all nodes and returns a matrix of those distances. That
-matrix (saved as ) can be used to calculate additional measures or to
+matrix (saved as `empdist`) can be used to calculate additional measures or to
 visualize the graph-theoretic proximities among nodes.
 
 
@@ -537,11 +537,11 @@ empdist= emp.shortest_paths()
 These measures provide a few key insights into the employee network we
 have been considering. First, the average pair of nodes that are
 connected by indirect paths are slightly more than five steps from one
-another. Second, however, many node pairs in this network ( =
+another. Second, however, many node pairs in this network (`$unconnected` =
 29,864,182) are unconnected and thus unreachable to each other. Figure
 \@ref(fig:fig8-5) presents a
 histogram of the distribution of path lengths in the network. It
-represents the numeric values returned by the command in the code
+represents the numeric values returned by the `distance.table` command in the code
 snippet above. In this case the diameter of the network is 18 and five
 pairs of nodes are reachable at this distance, but the largest group of
 dyads is reachable ($N=2{,}996{,}157$ dyads) at distance 4. In short,
@@ -553,7 +553,7 @@ collaborators of collaborators.
 <p class="caption">(\#fig:fig8-5)Histogram of path lengths for university A employee network</p>
 </div>
 
-##### Degree distribution {#degree-distribution .unnumbered}
+**Degree distribution**
 
 Another powerful way to describe and compare networks is to look at the
 distribution of centralities across nodes. While any of the centrality
@@ -592,7 +592,7 @@ established colleagues on grants as coinvestigators. In the comparison
 exercise outlined below, I plot degree distributions for the main
 components of two different university networks.
 
-##### Clustering coefficient {#clustering-coefficient .unnumbered}
+**Clustering coefficient**
 
 The third commonly used whole-network measure captures the extent to
 which a network is cohesive, with many nodes interconnected. In networks
@@ -654,7 +654,7 @@ compare whole networks. It is also possible to distinguish among the
 positions nodes hold in a particular network. Some of the most powerful
 centrality measures also rely on the idea of indirect ties.
 
-##### Centrality measures {#centrality-measures .unnumbered}
+**Centrality measures**
 
 This class of measures is the most common way to distinguish between the
 positions individual nodes hold in networks. There are many different
@@ -846,17 +846,17 @@ network.
 <p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
 </div>
 <div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-7b.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig8-7b)DUMMY TEXT</p>
+<img src="ChapterNetworks/figures/fig8-7b.png" alt="Degree distribution for two universities" width="70%" />
+<p class="caption">(\#fig:fig8-7b)Degree distribution for two universities</p>
 </div>
 
 
 <div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-8.png" alt="The main component of two university networks" width="70%" />
-<p class="caption">(\#fig:fig8-8)The main component of two university networks</p>
+<img src="ChapterNetworks/figures/fig8-8.png" alt="Distribution of path lengths for universities A and B" width="70%" />
+<p class="caption">(\#fig:fig8-8)Distribution of path lengths for universities A and B</p>
 </div>
 
-It is evident from Figure \@ref(fig:fig8-7) that they are quite different in character.
+It is evident from Figure \@ref(fig:fig8-7a) that they are quite different in character.
 University A's network follows a more classic skewed distribution of the
 sort that is often associated with the kinds of power-law degree
 distributions common to scale- free networks. In contrast, university

@@ -6,7 +6,7 @@ This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
 more recent Google Flu Trends problems in
-Chapter [Introduction]. Although the consequences are well understood,
+Chapter [Introduction](#chap:intro). Although the consequences are well understood,
 the new types of data are so large and complex that their properties
 often cannot be studied in traditional ways. In addition, the data
 generating function is such that the data are often selective,
@@ -138,17 +138,17 @@ heuristic formula:
 $$\text{Total error } =\text{ Row error } + \text{ Column error }
 + \text{ Cell error}.$$
 
-##### Row error
+**Row error**
 
 For the situations considered in this chapter, the row errors may be of
 three types:
 
--   Some rows are missing, which implies that elements in the target
+-   Omissions: Some rows are missing, which implies that elements in the target
     population are not represented on the file.
 
--   Some population elements occupy more than one row.
+-   Duplications: Some population elements occupy more than one row.
 
--   Some rows contain elements or entities that are not part of the
+-   Erroneous inclusions: Some rows contain elements or entities that are not part of the
     target population.
 
 For survey sample data sets, omissions include members of the target
@@ -168,6 +168,10 @@ similar to frame noncoverage in survey sampling and can bias inferences
 when researchers fail to consider it and compensate for it in their
 analyses.
 
+---
+
+**Example: Google searches**
+
 As an example, in the United States, the word "Jewish" is included in
 3.2 times more Google searches than "Mormon" [@SDV2015]. This does not
 mean that the Jewish population is 3.2 times larger than the Mormon
@@ -175,6 +179,8 @@ population. Another possible explanation is that Jewish people use the
 Internet in higher proportions or have more questions that require using
 the word "Jewish." Thus Google search data are more useful for relative
 comparisons than for estimating absolute levels.
+
+---
 
 A well-known formula in the survey literature provides a useful
 expression for the so-called *coverage bias* in the mean of some
@@ -230,7 +236,7 @@ be excluded prior to analysis. However, with big data, some out-of-scope
 elements may still be included as a result of missing or erroneous
 information, and these inclusions will bias inference.
 
-##### Column error
+**Column error**
 
 The most common type of column error in survey data analysis is caused
 by inaccurate or erroneous labeling of the column data---an example of
@@ -253,6 +259,10 @@ expressions about some phenomenon like the economy or a political
 figure. There is considerable risk of the resulting variables being
 either inaccurately defined or misinterpreted by the data analyst.
 
+---
+
+**Example: Specification error with Twitter data**
+
 As an example, consider a Twitter data set where the rows correspond to
 tweets and one of the columns supposedly contains an indicator of
 whether the tweet contained one of the following key words: marijuana,
@@ -263,7 +273,9 @@ of specification error which could be a biasing factor in an analysis.
 For example, estimates of marijuana use based upon the indicator could
 be underestimates.
 
-##### Cell errors
+---
+
+**Cell errors**
 
 Finally, cell errors can be of three types: content error, specification
 error, or missing data. A content error occurs when the value in a cell
@@ -375,7 +387,7 @@ are typically involved in creating a data set from big data, which often
 includes three stages: (a) data generation (see
 Chapter [Working with Web Data and APIs], (b) extract, transform and load (ETL), and (c)
 analysis (see, for example,
-Chapter [Text Analysis]). As noted there, this mapping of the process is
+Chapter [Text Analysis](#chap:text)). As noted there, this mapping of the process is
 oversimplified for some applications. For example, data that flow
 continuously from their sources may not be directed through an ETL
 process at all. Rather it may be gathered in real time and processed on
@@ -534,6 +546,10 @@ section. These issues should concern big data analysts even if the data
 could be regarded as infallible. Content errors, missing data, and other
 data deficiencies will only exacerbate
 
+---
+
+**Example: Noise accumulation**
+
 To illustrate noise accumulation, Fan et al. [@fan2014challenges]
 consider the following scenario. Suppose an analyst is interested in
 classifying individuals into two categories, $C_{1}$ and $C_{2}$, based
@@ -551,6 +567,8 @@ variables). In the Fan et al. [@fan2014challenges] example, when
 $m > 200$, the accumulated noise exceeds the signal embedded in the
 first 10 variables and the classification rule becomes equivalent to a
 coin-flip classification rule.
+
+---
 
 High dimensionality can also introduce coincidental (or *spurious*)
 correlations in that many unrelated variables may be highly correlated
@@ -718,6 +736,10 @@ $$\label{eq:10-1.2}
 uncorrelated error model (i.e., $b_j = 0$) and thus $\varepsilon_{rj}$
 is purely random noise.
 
+---
+
+**Example: Speed sensor**
+
 Suppose that, due to calibration error, the $j$th speed sensor in a
 traffic pattern study underestimates the speed of vehicle traffic on a
 highway by an average of 4 miles per hour. Thus, the model for this
@@ -733,6 +755,8 @@ reduce the reliability of the measurements. However, as shown in Section
 [Correlation analysis],
 the systematic error component is particularly problematic for many
 types of analysis.
+
+---
 
 #### Models for categorical data {#sec:10-4.2.2}
 
@@ -783,7 +807,11 @@ content errors can quickly overwhelm such an analysis, rendering the
 data useless for this purpose. We illustrate this using the following
 contrived and somewhat amusing example. The results in this section are
 particularly relevant to the approaches considered in
-Chapter [Machine Learning].
+Chapter [Machine Learning](#chap:ml).
+
+---
+
+**Example: Thinking about probabilities**
 
 Suppose, using big data and other resources, we construct a terrorist
 detector and boast that the detector is 99.9% accurate. In other words,
@@ -798,6 +826,8 @@ terrorist! What are the odds that the machine is right? The surprising
 answer is only about 1 in 1000. That is, 999 times out of 1,000 times
 the machine classifies a person as a terrorist, the machine will be
 wrong!
+
+---
 
 How could such an accurate machine be wrong so often in the terrorism
 example? Let us do the math.
@@ -904,10 +934,9 @@ correlation analysis.
 
 Using the results in Biemer and Trewin [@biemer1997review], it can be
 shown that the correlation between $y_{rc}$ and $y_{rd}$, defined as
-$\rho_{y\vert cd} = \sigma_{y\vert cd} / \sigma_{y\vert c}
-\sigma_{y\vert d}$, can be expressed as $$\label{eq:10-1.7}
-\rho_{y\vert cd} = \sqrt {R_c R_d } \rho_{\mu \vert cd} + \sqrt
-{\rho_c \rho_d }.$$ Note that if there are no errors (i.e., when
+$\rho_{y\vert cd} = \sigma_{y\vert cd} / \sigma_{y\vert c} \sigma_{y\vert d}$, can be expressed as
+$$\label{eq:10-1.7} \rho_{y\vert cd} = \sqrt {R_c R_d } \rho_{\mu \vert cd} + \sqrt {\rho_c \rho_d }.$$
+Note that if there are no errors (i.e., when
 $\sigma_{b\vert
 c}^2 = \sigma_{\varepsilon \vert c}^2 = 0$), then $R_c = 1$,
 $\rho_c =0$, and the correlation between $y_{c}$ and $y_{d}$ is just the
@@ -917,7 +946,7 @@ Let us consider the implications of these results first without
 systematic errors (i.e., only variable errors) and then with the effects
 of systematic errors.
 
-##### Variable errors only
+**Variable errors only**
 
 If the only errors are due to random noise, then the additive term on
 the right in equation [\[eq:10-1.7\]](#eq:10-1.7){reference-type="eqref"
@@ -969,11 +998,11 @@ be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-4.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig10-4)DUMMY TEXT</p>
+<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size " width="70%" />
+<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size </p>
 </div>
 
-##### Both variable and systematic errors
+**Both variable and systematic errors**
 
 If both systematic and variable errors contaminate the data, the
 additive term on the right in
@@ -996,12 +1025,12 @@ systematic effects may still operate for correlation analysis without
 regard to the number of elements comprising the aggregates.
 
 For example, consider the illustration in
-Figure \@ref(fig:10-4) with
+Figure \@ref(fig:fig10-4) with
 $n_c = n_d =
 n$, reliability ratios (excluding systematic effects) set at $0.5$ and
 population correlation at $\rho_{\mu \vert cd} = 0.5$. In this scenario,
 let $\rho_c = \rho_d = 0.25$. Figure
-\@ref(fig:10-5) shows the
+\@ref(fig:fig10-5) shows the
 correlation as a function of the sample size with systematic errors
 (dotted line) compared to the correlation without systematic errors
 (solid line). Correlation with systematic errors is both inflated and
@@ -1010,8 +1039,8 @@ inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-5.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig10-5)DUMMY TEXT</p>
+<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size " width="70%" />
+<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size </p>
 </div>
 
 To summarize these findings, correlation analysis is attenuated by
@@ -1048,7 +1077,7 @@ error with mean 0 and variance $\sigma_{\varepsilon\vert x}^2$. It can
 also be shown that $\mbox{Bias}(b_0 ) \approx B(1 - R_x )\bar{\mu }_x$.
 
 As an illustration of these effects, consider the regressions displayed
-in Figure \@ref(fig:10-6), which are based upon contrived data. The
+in Figure \@ref(fig:fig10-6), which are based upon contrived data. The
 regression on the left is the population (true) regression with a slope
 of $1.05$ and an intercept of $-0.61$. The regression on the left uses
 the same $y$- and $x$-values. The only difference is that normal error
@@ -1059,8 +1088,8 @@ $x$-values, reliability is reduced and the fitted slope will approach
 $0$.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-6.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig10-6)DUMMY TEXT</p>
+<img src="ChapterError/figures/fig10-6.png" alt="Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77" width="70%" />
+<p class="caption">(\#fig:fig10-6)Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77</p>
 </div>
 
 \vspace*{-6pt}
@@ -1120,7 +1149,7 @@ the effective methods for obtaining highly accurate responses, and
 computer-assisted interviewing instruments can be programmed to correct
 errors in the data as they are generated. For big data, the data
 generation process is often outside the purview of the data collectors,
-as noted in Section [Introduction], and there is limited opportunity to address
+as noted in Section [Introduction](#sec:10-1), and there is limited opportunity to address
 deficiencies in the data generation process. This is because big data is
 often a by-product of systems designed with little or no thought given
 to the potential secondary uses of the data. Instead, error mitigation
@@ -1252,8 +1281,8 @@ displayed as a bar (for continuous variables) or as a stacked bar for
 categorical variables.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-7.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig10-7)DUMMY TEXT</p>
+<img src="ChapterError/figures/fig10-7.png" alt="Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars" width="70%" />
+<p class="caption">(\#fig:fig10-7)Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars</p>
 </div>
 
 \vspace*{24pt}
@@ -1380,6 +1409,7 @@ Biemer and Lyberg [@biemer2003] discuss these and other issues in some
 detail.
 
 \vspace*{6pt}
+
 Resources
 ---------
 

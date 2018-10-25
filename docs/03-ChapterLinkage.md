@@ -88,6 +88,10 @@ generally, linking separate data sources makes it possible to create a
 combined data set that is richer in coverage and measurement than any of
 the individual data sources [@abowd2004integrated].
 
+---
+
+**Example: The Administrative Data Research Network**
+
 The UK's Administrative Data Research Network is a major investment by
 the United Kingdom to "improve our knowledge and understanding of the
 society we live in ... [and] provide a sound base for policymakers to
@@ -97,6 +101,8 @@ sources, such as health agencies, court records, and tax records in a
 confidential environment for approved researchers. The linkages are done
 by trusted third-party providers.
 [@EconomicandSocialResearchCouncil2016]
+
+---
 
 Linking is straightforward if each entity has a corresponding unique
 identifier that appears in the data sets to be linked. For example, two
@@ -156,6 +162,10 @@ measures in the different data sets---an "occupational classification"
 in a survey data set may be very different from a "job title" in an
 administrative record or a "current position" in LinkedIn data.
 
+---
+
+**Example: Employment and earnings outcomes of doctoral recipients**
+
 A recent paper in *Science* matched UMETRICS data on doctoral recipients
 to Census data on earnings and employment outcomes. The authors note
 that some 20% of the doctoral recipients are not matched for several
@@ -168,6 +178,8 @@ because Asian names are more likely duplicated and harder to uniquely
 match [@zolas2015wrapping]. Improving the linkage algorithm would
 increase the estimate of the effects of investments in research and the
 result would be more accurate.
+
+---
 
 Comparing the kinds of heterogeneous records associated with big data is
 a new challenge for social scientists, who have traditionally used a
@@ -262,6 +274,10 @@ agree on those values. Therefore, fields that exhibit a wider range of
 values are more powerful as link keys: names are much better link keys
 than sex or year of birth.
 
+---
+
+**Example: Link keys in practice**
+
 "A Harvard professor has re-identified the names of more than 40 percent
 of a sample of anonymous participants in a high-profile DNA study,
 highlighting the dangers that ever greater amounts of personal data
@@ -273,6 +289,8 @@ rolls or other public records. Of these, Sweeney succeeded in naming
 241, or 42 percent of the total. The Personal Genome Project confirmed
 that 97 percent of the names matched those in its database if nicknames
 and first name variations were included" [@forbesharvard].
+
+---
 
 Complex link keys like addresses can be broken down into components so
 that the components can be compared independently of one another. This
@@ -343,12 +361,18 @@ blocking keys is a relatively quick operation compared to a full record
 comparison, which may involve multiple applications of a fuzzy string
 comparator.
 
+---
+
+**Example: Blocking in practice**
+
 Given two lists of individuals, one might construct the blocking key by
 concatenating the first letter of the last name and the postal code and
 then "blocking" on first character of last name and postal code. This
 reduces the total number of comparisons by only comparing those
 individuals in the two files who live in the same locality and whose
 last names begin with the same letter.
+
+---
 
 There are important considerations when choosing the blocking key.
 First, the choice of blocking key creates a potential bias in the linked
@@ -410,11 +434,17 @@ matching, regression-based matching, and propensity score matching. The
 probabilistic approach to record linkage defines the match score in
 terms of a likelihood ratio [@FS69].
 
+---
+
+**Example: Matching in practice**
+
 Long strings, such as assignee and inventor names, are susceptible to
 typographical errors and name variations. For example, none of Sony
 Corporation, Sony Corporatoin and Sony Corp. will match using simple
 exact matching. Similarly, David vs. Dave would not match
 [@ventura2015seeing].
+
+---
 
 Comparing fields whose values are continuous is straightforward: often
 one can simply take the absolute difference as the comparison value.
@@ -461,6 +491,10 @@ if there are few fields in common but each file contains auxiliary
 fields that may inform a linkage decision, then an ad hoc approach may
 be appropriate.
 
+---
+
+**Example: Linking in practice**
+
 Consider the problem of linking two lists of individuals where both
 lists contain first name, last name, and year of birth. Here is one
 possible linkage rule: link all pairs of records such that
@@ -473,6 +507,8 @@ possible linkage rule: link all pairs of records such that
 
 The result will depend on the rate of data errors in the year of birth
 field and typos in the name fields.
+
+---
 
 By *auxiliary field* we mean data fields that do not appear on both data
 sets, but which may nonetheless provide information about whether
@@ -505,6 +541,10 @@ model underlying the algorithm. By understanding this model, one is
 better equipped to define link keys and record comparisons in an optimal
 way.
 
+---
+
+**Example: Usefulness of probabilistic record linkage**
+
 In practice, it is typically the case that a researcher will want to
 combine two or more data sets containing records for the same
 individuals or units that possibly come from different sources. Unless
@@ -518,6 +558,8 @@ but mergers, acquisitions, and other actions can break these linkages.
 Probabilistic record linkage on company names and/or addresses is used
 to fix these broken linkages that bias statistics on business dynamics
 [@jarmin2002longitudinal].
+
+---
 
 Let $A$ and $B$ be two lists of individuals whom we wish to link. The
 product set $A \times B$ contains all possible pairs of records where

@@ -12,6 +12,7 @@ of data types and tasks, and to explore the foundations and challenges
 of information visualization.
 
 \vspace*{-6pt}
+
 Introduction {#sec:viz-1}
 ------------
 
@@ -48,8 +49,8 @@ dramatic differences between the data sets, trends, and outliers
 visually.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-1)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [16]" width="70%" />
+<p class="caption">(\#fig:fig9-1)Anscombes quartet [16]</p>
 </div>
 
 In broad terms, visualizations are used either to present results or for
@@ -110,8 +111,8 @@ example is BabyNameVoyager [@babynamevoyager], which lets users type in
 a name and see a graph of its popularity over the past century.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-2)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-2.png" alt=" A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
+<p class="caption">(\#fig:fig9-2) A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
 </div>
 
 \vspace*{-12pt}
@@ -131,17 +132,17 @@ and other attributes in this rich award portfolio.
 
 \afterpage{\clearpage}
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3a.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-3a)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="70%" />
+<p class="caption">(\#fig:fig9-3a)Charting interface of Tableau</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3b.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-3b)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-3b.png" alt="A treemap visualization of agency and sub-agency spending breakdown" width="70%" />
+<p class="caption">(\#fig:fig9-3b)A treemap visualization of agency and sub-agency spending breakdown</p>
 </div>
 
 Commercial tools such as Spotfire and Tableau, among many other tools
-(see Section [Resources]), allow users to create visualizations by
+(see Section [Resources](#sec:mylabel4)), allow users to create visualizations by
 offering chart types and visual design environments to analyze their
 data, and to combine them in potent dashboards rapidly shared with
 colleagues. For example, Figure
@@ -358,8 +359,8 @@ hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-5.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-5)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [66]. Interface based on [244]" width="70%" />
+<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [66]. Interface based on [244]</p>
 </div>
 
 Maps are commonly combined with other visualizations. For example, in
@@ -369,8 +370,8 @@ additional statistical information and a scatterplot that allows users
 to explore correlations between attributes.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-6.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-6)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="70%" />
+<p class="caption">(\#fig:fig9-6)Horizon graphs used to display time series</p>
 </div>
 
 ### Temporal data {#sec:viz-2.4}
@@ -399,8 +400,8 @@ design may not be appropriate for audiences who may lack such training
 or familiarity.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-7.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-7)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="70%" />
+<p class="caption">(\#fig:fig9-7)EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
 Another form of temporal analysis is understanding sequences of events.
@@ -422,8 +423,8 @@ here, the company's first prototype is preceded by two or more patents
 with a lag of about a year.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-8.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-8)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="70%" />
+<p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
 </div>
 
 \enlargethispage{12pt}
@@ -465,15 +466,15 @@ poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-9.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-9)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="70%" />
+<p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (www.finviz.com)</p>
 </div>
 
 ### Network data {#sec:viz-2.6}
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-10)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-10.png" alt="NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission" width="70%" />
+<p class="caption">(\#fig:fig9-10)NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
 \vspace*{12pt}
@@ -488,8 +489,8 @@ in between, such as age of people in communication or the average
 duration of communications.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10b.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-10b)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [45]" width="70%" />
+<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [45]</p>
 </div>
 
 \vspace*{12pt}
@@ -549,8 +550,8 @@ tree. Reading original documents is critical, so all the visualization
 elements are linked to the corresponding text.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-11.png" alt="DUMMY TEXT" width="70%" />
-<p class="caption">(\#fig:fig9-11)DUMMY TEXT</p>
+<img src="ChapterViz/figures/fig9-11.png" alt="Jigsaw used to explore a collection of car reviews" width="70%" />
+<p class="caption">(\#fig:fig9-11)Jigsaw used to explore a collection of car reviews</p>
 </div>
 
 \vspace*{6pt}

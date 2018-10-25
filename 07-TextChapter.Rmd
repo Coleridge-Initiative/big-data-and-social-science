@@ -48,6 +48,10 @@ Chapter [Record Linkage] discusses how to link data to create larger, more
 diverse data sets. The linkage data sets need not just be numeric, but
 can also include data sets consisting of text data.
 
+---
+
+**Example: Using text to categorize scientific fields**
+
 The National Center for Science and Engineering Statistics, the US
 statistical agency charged with collecting statistics on science and
 engineering, uses a rule-based system to manually create categories of
@@ -65,25 +69,27 @@ characterize what research has been done, provide information about
 which projects are similar within or across institutions, and
 potentially identify new fields of study [@talley2011database].
 
+---
+
 Overall, text analysis can help with specific tasks that define
 application-specific subfields including the following:
 
--    Text analysis tools can help find relevant information in large
+-   Searches and information retrieval: Text analysis tools can help find relevant information in large
     databases. For example, we used these techniques in systematic
     literature reviews to facilitate the discovery and retrieval of
     relevant publications related to early grade reading in Latin
     America and the Caribbean.
 
--    Tools like topic modeling can provide a big picture of the contents
+-   Clustering and text categorization: Tools like topic modeling can provide a big picture of the contents
     of thousands of documents in a comprehensible format by discovering
     only the most important words and phrases in those documents.
 
--    Similar to clustering, text summarization can provide value in
+-   Text summarization: Similar to clustering, text summarization can provide value in
     processing large documents and text corpora. For example, Wang et
     al. [@wang-09] use topic modeling to produce category-sensitive text
     summaries and annotations on large-scale document collections.
 
--    Machine translation is an example of a text analysis method that
+-   Machine translation: Machine translation is an example of a text analysis method that
     provides quick insights into documents written in other
 
 How to analyze text
@@ -126,10 +132,10 @@ States? Or how can we build a salient and dynamic taxonomy of all
 scientific research?
 
 We begin with a review of established techniques to begin the process of
-analyzing text. Section [Approaches and applications] provides an overview of topic modeling,
+analyzing text. Section [Approaches and applications](#sec:appapp) provides an overview of topic modeling,
 information retrieval and clustering, and other approaches accompanied
 by practical examples and applications.
-Section [Evaluation]
+Section [Evaluation](#sec:eval)
 reviews key evaluation techniques used to assess the validity,
 robustness and utility of derived results.
 
@@ -141,7 +147,7 @@ many researchers and practitioners overlook their value. Depending on
 the source, cleaning and processing these data can require varying
 amounts of effort but typically involve a set of established techniques.
 
-##### Text corpora {#text-corpora .unnumbered}
+**Text corpora**
 
 A set of multiple similar documents is called a *corpus*. For example,
 the Brown University Standard Corpus of Present-Day American English, or
@@ -164,7 +170,7 @@ the quality of the answers you will get back: too few documents result
 in a lack of coverage, too many of the wrong kind of documents invite
 confusing noise.
 
-##### Tokenization {#tokenization .unnumbered}
+**Tokenization**
 
 The first step in processing text is deciding what terms and phrases are
 meaningful. Tokenization separates sentences and terms from each other.
@@ -178,7 +184,7 @@ single language is hard enough, some documents "code-switch," combining
 multiple languages in a single document. These complexities are best
 addressed through data-driven machine learning frameworks [@kiss-06].
 
-##### Stop words {#stop-words .unnumbered}
+**Stop words**
 
 Once the tokens are clearly separated, it is possible to perform further
 text processing at a more granular, token level. Stop words are a
@@ -195,7 +201,7 @@ meaning. Similar to stop words, these tokens are often disregarded in
 further modeling either by the design of the method or by manual removal
 from the corpus before the actual analysis.
 
-##### $N$-grams {#n-grams .unnumbered}
+**$N$-grams**
 
 However, individual words are sometimes not the correct unit of
 analysis. For example, blindly removing stop words can obscure important
@@ -206,7 +212,7 @@ fixed patterns [@dunning-93]. These combinations of phrases are often
 called *collocations*, as their overall meaning is more than the sum of
 their parts.
 
-##### Stemming and lemmatization {#stemming-and-lemmatization .unnumbered}
+**Stemming and lemmatization**
 
 Text normalization is another important aspect of preprocessing textual
 data. Given the complexity of natural language, words can take multiple
@@ -276,6 +282,7 @@ idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
 
 \enlargethispage{24pt}
 \vspace*{-36pt}
+
 Approaches and applications {#sec:appapp}
 ---------------------------
 
@@ -316,13 +323,13 @@ words at the top of the list
 [a priori]{.roman}; the challenge is to discover what they are (more on
 this shortly).
 
-```{r nyt_topics-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts'}
+```{r nyt_topics-1, out.width = '70%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterText/figures/nyt_topics-1.png")
 ```
-```{r nyt_topics-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+```{r nyt_topics-2, out.width = '70%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterText/figures/nyt_topics-2.png")
 ```
-```{r nyt_topics-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'DUMMY TEXT'}
+```{r nyt_topics-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts'}
 knitr::include_graphics("ChapterText/figures/nyt_topics-3.png")
 ```
 
@@ -343,6 +350,7 @@ knitr::include_graphics("ChapterText/figures/nyt_documents.png")
 ```
 
 \vspace*{-12pt}
+
 #### Inferring topics from raw text
 
 Algorithmically, the problem can be viewed as a black box. Given a
@@ -391,6 +399,10 @@ topics and topics' distribution over words---come together in an
 equation that multiplies them together. A good topic will be both common
 in a document and explain a word's appearance well.
 
+---
+
+**Example: Gibbs sampling for topic models**
+
 The topic assignment $z_{d,n}$ of word $n$ in document $d$ is
 proportional to
 $$p(z_{d,n}=k) \propto \left( \explicate{how much doc likes the topic}{\frac{N_{d,k} + \alpha}{N_{d, \cdot} + K \alpha}} \right) \left(\explicate{how much topic likes the word}{\frac{V_{k,w_{d,n}} + \beta}{V_{k, \cdot} + V \beta}} \right),$$
@@ -425,12 +437,14 @@ $(0.24, 0.12, 0.64)$. We then sample the new assignment of token B to be
 topic 3 two times out of three. Griffiths and Steyvers [@griffiths-04]
 provide more details on the derivation of this equation.
 
-##### Example code {#example-code .unnumbered}
+**Example code**
 
 Listing [\[list:7.1\]](#list:7.1){reference-type="ref"
 reference="list:7.1"} provides a function to compute the conditional
 probability of a single word and return the (unnormalized) probability
 to sample from.
+
+---
 
 ``` {#list:7.1 style="PythonStyle" numbers="none" caption="Python code to compute conditional probability of a single word and return the probability from which to sample" label="list:7.1" belowskip="-6pt"}
 def class_sample(docs, vocab, d, n, alpha,
@@ -492,7 +506,7 @@ opportunity to search the entire Internet almost instantaneously. Such
 fast searches are achieved by complex techniques that are linguistic
 (set-theoretic), algebraic, probabilistic, or feature-based.
 
-##### Set-theoretic operations and Boolean logic {#set-theoretic-operations-and-boolean-logic .unnumbered}
+**Set-theoretic operations and Boolean logic**
 
 Set-theoretic operations proceed from the assumption that any query is a
 set of linked components all of which need to be present in the returned
@@ -500,7 +514,8 @@ result for it to be relevant. Boolean logic serves as the basis for such
 queries; it uses Boolean operators such as , , and to combine query
 components. For example, the query
 
-\cf{induction AND (physics OR logic)}
+`induction AND (physics OR logic)`
+
 will retrieve all documents in which the word "induction" is used,
 whether in a physical or logical sense. The *extended Boolean model* and
 *fuzzy retrieval* are enhanced approaches to calculating the relevance
@@ -510,11 +525,11 @@ Search queries can be also enriched by wildcards and other connectors.
 For example, the character "" typically substitutes for any possible
 character or characters depending on the settings of the query engine.
 (In some instances, search queries can run in *nongreedy* mode, in which
-case, for example, the phrase might retrieve only text up to the end of
+case, for example, the phrase `inform*` might retrieve only text up to the end of
 the sentence. On the other hand, a *greedy* query might retrieve full
-text following the word or part of word, denoted as , up to the end of
-the document, which would essentially mean the same as .) The wildcard
-"" expects either one or no character in its place, and the wildcard "."
+text following the word or part of word, denoted as `inform*`, up to the end of
+the document, which would essentially mean the same as `inform*$`.) The wildcard
+"`?`" expects either one or no character in its place, and the wildcard "`.`"
 expects exactly one character. Search queries enhanced with such symbols
 and Boolean operators are referred to as *regular expressions*.
 
@@ -525,6 +540,11 @@ expected and controlled for while running searches on different data
 sources.
 
 \enlargethispage{12pt}
+
+---
+
+**Example: Discover food safety awards**
+
 Food safety is an interdisciplinary research area that spans multiple
 scientific disciplines including biological sciences, agriculture, and
 food science. To retrieve food safety-related awards, we have to
@@ -532,19 +552,19 @@ construct a Boolean-based search string that would look for terms and
 phrases in those documents and return only relevant results.
 
 An example of such a string would typically be subdivided by category or
-search group connected to each other by the or operator:
+search group connected to each other by the `AND` or `OR` operator:
 
-1.  `(food safety OR food securit* OR foodinsecurit*)`
+1.  General terms: `(food safety OR food securit* OR foodinsecurit*)`
 
-2.  `(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)`
+2.  Food pathogens: `(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)`
 
-3.  `(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)`
+3.  Biochemistry and toxicology: `(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)`
 
-4.  `(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)`
+4.  Food processing and preservation: `(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)`
 
-5.  `(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)`
+5.  Food quality and quality control: `(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)`
 
-6.  `(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)`
+6.  Food-related diseases: `(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)`
 
 Different websites and databases use different search functions to
 return most relevant results given a query (e.g., "food safety").
@@ -553,11 +573,7 @@ Python code based on regular expressions to all textual data. However,
 this is not always possible (e.g., when using proprietary databases,
 such as Web of Science). In those cases, it is important to follow the
 conventions of the information retrieval system. For example, one source
-might need phrases to be embedded in parentheses (i.e., ) while another
-database interface would require such phrases to be contained within
-quotation marks (i.e., ). It is then critical to explore the search tips
-and rules on those databases to ensure that the most complete
-information is gathered and further analyzed.
+might need phrases to be embedded in parentheses (i.e., `(x-ray crystallograph.*)`) while another database interface would require such phrases to be contained within quotation marks (i.e., `''x-ray crystallograph.*''`). It is then critical to explore the search tips and rules on those databases to ensure that the most complete information is gathered and further analyzed.
 
 \enlargethispage{24pt}
 ``` {#list:7.2 style="PythonStyle" numbers="none" float="b" label="list:7.2" caption="Python code to identify food safety related NSF awards with regular expressions"}
@@ -583,15 +599,16 @@ def fs_regex(nsf_award_abstracts,outfilename):
       output.writerow(i+['food safety award'])
 ```
 
-##### Example code {#example-code-1 .unnumbered}
+**Example code**
 
-Python's built-in package provides all the capability needed to
+Python's built-in `re` package provides all the capability needed to
 construct and search with complex regular expressions. Listing
 [\[list:7.2\]](#list:7.2){reference-type="ref" reference="list:7.2"}
 provides an example.
 
-\exampend{Discover food safety awards}
-##### Algebraic models {#algebraic-models .unnumbered}
+---
+
+**Algebraic models**
 
 Algebraic models turn text into numbers to run mathematical operations
 and discover inherent interdependencies between terms and phrases, also
@@ -606,7 +623,7 @@ good example of a probabilistic model, while unsupervised machine
 learning techniques, such as random forest, can be used for
 feature-based modeling and information retrieval.
 
-##### Similarity measures and approaches {#similarity-measures-and-approaches .unnumbered}
+**Similarity measures and approaches**
 
 Based on algebraic models, the user can either compare documents between
 each other or train a model that can be further inferred on a different
@@ -620,6 +637,10 @@ is
 
 $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
      \overrightarrow{t_b}}{|\overrightarrow{t_a}|*|\overrightarrow{t_b}|}.$$
+     
+---
+
+**Example: Measuring cosine similarity between documents**
 
 NSF awards are not labeled by scientific field---they are labeled by
 program. This administrative classification is not always useful to
@@ -628,12 +649,12 @@ scientific communities. One approach is to understand how awards align
 with each other even if they were funded by different programs. Cosine
 similarity allows us to do just that.
 
-##### Example code {#example-code-2 .unnumbered}
+**Example code**
 
-The Python module is a powerful library of tools for efficient linear
+The Python `numpy` module is a powerful library of tools for efficient linear
 algebra computation. Among other things, it can be used to compute the
 cosine similarity of two documents represented by numeric vectors, as
-described above. The module that is often used as a Python-based topic
+described above. The `gensim` module that is often used as a Python-based topic
 modeling implementation can be used to produce vector space
 representations of textual data.
 Listing [\[list:7.3\]](#list:7.3){reference-type="ref"
@@ -715,10 +736,10 @@ where
 $\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}}$,
 and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
 
-A Python-based library provides an implementation of these measures as
+A Python-based `scikit-learn` library provides an implementation of these measures as
 well as other machine learning models and approaches.
 
-##### Knowledge repositories {#knowledge-repositories .unnumbered}
+**Knowledge repositories**
 
 Information retrieval can be significantly enriched by the use of
 established knowledge repositories that can provide enormous amounts of
@@ -777,7 +798,7 @@ where $Synsets(w_t)$ is the set of synsets for the word $w_t$ in the
 target document document (e.g., NSF award abstract) and $SMV_{wiki}(s)$
 is the semantic model vector of a Wikipedia page, as defined above.
 
-##### Applications {#applications .unnumbered}
+**Applications**
 
 Information retrieval can be used in a number of applications. Knowledge
 discovery, or information extraction, is perhaps its primary mission; in
@@ -819,7 +840,7 @@ phenomena, their introduction to the research community, and their
 adoption by the wider user community responsible for writing Wikipedia
 pages.
 
-##### Examples {#examples .unnumbered}
+**Examples**
 
 Some examples from our recent work can demonstrate how Wikipedia-based
 labeling and labeled LDA
@@ -875,7 +896,7 @@ $y$---both in the scope and structure of the examples and
 labels---define unique analyses of linguistic data.
 
 \vspace*{-2pt}
-##### Document classification {#document-classification .unnumbered}
+**Document classification**
 
 If the examples $x$ are documents and $y$ are what these documents are
 about, the problem is called *document classification*. In contrast to
@@ -891,7 +912,7 @@ touch essentially every email sent worldwide, making email usable even
 though most emails are spam.
 
 \vspace*{-2pt}
-##### Sentiment analysis {#sentiment-analysis .unnumbered}
+**Sentiment analysis**
 
 Instead of being what a document is about, a label $y$ could also reveal
 the speaker. A recent subfield of natural language processing is to use
@@ -908,7 +929,7 @@ conditioner [@blitzer-07]; liberals and conservatives each frame health
 care differently from how they frame energy policy [@nguyen-13:shlda].
 
 \vspace*{-2pt}
-##### Part-of-speech tagging {#part-of-speech-tagging .unnumbered}
+**Part-of-speech tagging**
 
 When the examples $x$ are individual words and the labels $y$ represent
 the grammatical function of a word (e.g., whether a word is a noun,
@@ -955,7 +976,7 @@ metrics that help you understand whether a collection of documents for a
 query is a good one or not or whether a labeling of a document
 collection is consistent with an existing set of labels.
 
-##### Purity {#purity .unnumbered}
+**Purity**
 
 Suppose you are tasked with categorizing a collection of documents based
 on what they are about. Reasonable people may disagree: I might put
@@ -993,9 +1014,9 @@ where $\Omega = \{w_1, w_2,\ldots, w_k\}$ is the set of candidate
 clusters and $\mathbb{C} = \{c_1, c_2,\ldots, c_j\}$ is the gold set of
 classes.
 
-##### Precision and recall {#precision-and-recall .unnumbered}
+**Precision and recall**
 
-Chapter [Machine Learning] already touched on the importance of precision and
+Chapter [Machine Learning](#chap:ml) already touched on the importance of precision and
 recall for evaluating the results of information retrieval and machine
 learning models (Box [\[text:box3\]](#text:box3){reference-type="ref"
 reference="text:box3"} provides a reminder of the formulae). Here we
@@ -1037,7 +1058,7 @@ documents returned are false positives. Assuming that all document sets
 are of equal size, so that $|D_a| = 10$, $|D_b|=10$ and $|D_c| = 10$,
 then the precision is $\frac{5}{12} = 0.42$.
 
-##### *F* score {#f-score .unnumbered}
+***F* score**
 
 The *F score* takes precision and recall measures a step further and
 considers the general accuracy of the model. In formal terms, the $F$
@@ -1056,41 +1077,32 @@ Text analysis tools
 We are fortunate to have access to a set of powerful open source text
 analysis tools. We describe three here.
 
-##### The Natural Language Toolkit {#the-natural-language-toolkit .unnumbered}
+**The Natural Language Toolkit**
 
 The NLTK is a commonly used natural language toolkit that provides a
 large number of relevant solutions for text analysis. It is Python-based
 and can be easily integrated into data processing and analytical scripts
-by a simple (or similar for any one of its submodules).
+by a simple `import nltk` (or similar for any one of its submodules).
 
 The NLTK includes a set of tokenizers, stemmers, lemmatizers and other
 natural language processing tools typically applied in text analysis and
 machine learning. For example, a user canextract tokens from a document
-*doc* by running the command.
+*doc* by running the command `tokens = nltk.word_tokenize(doc)`.
 
 Useful text corpora are also present in the NLTK distribution. For
-example, the stop words list can be retrieved by running the command .
-These stop words are available for several languages within NTLK,
-including English, French, and Spanish.
+example, the stop words list can be retrieved by running the command `stops=nltk.corpus.stopwords.words(language)`. These stop words are available for several languages within NTLK, including English, French, and Spanish.
 
-Similarly, the Brown Corpus or WordNet can be called by running . After
-the corpora are loaded, their various properties can be explored and
-used in text analysis; for example, will return a list of WordNet
-synsets related to the word "dog."
+Similarly, the Brown Corpus or WordNet can be called by running `from nltk.corpus import wordnet/brown`. After the corpora are loaded, their various properties can be explored and used in text analysis; for example, `dogsyn = wordnet.synsets('dog')` will return a list of WordNet synsets related to the word "dog."
 
 Term frequency distribution and $n$-gram indexing are other techniques
 implemented in NLTK. For example, a user can compute frequency
 distribution of individual terms within a document *doc* by running a
-command in Python: . This command returns a dictionary of all tokens
-with associated frequency within *doc*.
+command in Python: `fdist=nltk.FreqDist(text)`. This command returns a dictionary of all tokens with associated frequency within *doc*.
 
 $N$-gram indexing is implemented as a chain-linked collocations
 algorithm that takes into account the probability of any given two,
 three, or more words appearing together in the entire corpus. In
-general, $n$-grams can be discovered as easily as running . However, a
-more sophisticated approach is needed to discover statistically
-significant word collocations, as we show in Listing
-[\[list:7.4\]](#list:7.4){reference-type="ref" reference="list:7.4"}.
+general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing [\[list:7.4\]](#list:7.4){reference-type="ref" reference="list:7.4"}.
 
 ``` {#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
 def bigram_finder(texts):
@@ -1113,14 +1125,14 @@ def bigram_finder(texts):
 Bird et al. [@bird-09] provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
 
-##### Stanford CoreNLP {#stanford-corenlp .unnumbered}
+**Stanford CoreNLP**
 
 While NLTK's emphasis is on simple reference implementations, Stanford's
 CoreNLP [@corenlp; @manning2014stanford] is focused on fast
 implementations of cutting-edge algorithms, particularly for syntactic
 analysis (e.g., determining the subject of a sentence).
 
-##### MALLET {#mallet .unnumbered}
+**MALLET**
 
 For probabilistic models of text, MALLET, the MAchine Learning for
 LanguagE Toolkit [@mallet], often strikes the right balance between

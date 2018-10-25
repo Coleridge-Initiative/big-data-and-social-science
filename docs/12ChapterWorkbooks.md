@@ -4,7 +4,7 @@ Workbooks {#chap:workbooks}
 \chapterauthor{Jonathan Scott Morgan, Christina Jones, and Ahmad Emad}
 This final chapter provides an overview of the Python workbooks that
 accompany each chapter. These workbooks combine text explanation and
-code you can run, implemented in , to explain techniques and approaches
+code you can run, implemented in Jupyter notebooks, to explain techniques and approaches
 selected from each chapter and to provide thorough implementation
 details, enabling students and interested practitioners to quickly get
 up to speed on and start using the technologies covered in the book. We
@@ -19,8 +19,7 @@ from each chapter and provide thorough implementation details so that
 students and interested practitioners can quickly start using the
 technologies covered within.
 
-The workbooks and related files are stored in the , and so are freely
-available to be downloaded by anyone at any time and run on any
+The workbooks and related files are stored in the Big-Data-Workbooks GitHub repository, and so are freely available to be downloaded by anyone at any time and run on any
 appropriately configured computer. These workbooks are a live set of
 documents that could potentially change over time, so see the repository
 for the most recent set of information.
@@ -43,10 +42,7 @@ The Big-Data-Workbooks GitHub repository provides two different types of
 workbooks, each needing a different Python setup to run. The first type
 of workbooks is intended to be downloaded andrun locally by individual
 users. The second type is designed to be hosted, assigned, worked on,
-and graded on a single server,using
-(<https://github.com/jupyter/jupyterhub>) to hostand run the notebooks
-and (<https://github.com/jupyter/nbgrader>) to assign, collect, and
-grade.
+and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to hostand run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
 
 The text, images, and Python code in the workbooks are the same between
 the two versions, as are the files and programs needed to complete each.
@@ -54,14 +50,14 @@ the two versions, as are the files and programs needed to complete each.
 The differences in the workbooks themselves relate to the code cells
 within each notebook where users implement and test exercises. In the
 workbooks intended to be used locally, exercises are implemented in
-simple interactive code cells. In the versions, these cells have
+simple interactive code cells. In the `nbgrader` versions, these cells have
 additional metadata and contain the solutions for the exercises, making
 them a convenient answer key even if you are working on them locally.
 
 ### Running workbooks locally
 
 To run workbooks locally, you will need to install Python on your
-system, then install , which includes a local Jupyter server you can use
+system, then install `ipython`, which includes a local Jupyter server you can use
 to run the workbooks. You will also need to install additional Python
 packages needed by the workbooks, and a few additional programs.
 
@@ -80,17 +76,17 @@ use on Windows. Packages are harder to compile and install, the
 environment can be more difficult to set up, etc. Anaconda makes Python
 easier to work with on any OS, and on Windows, in a single run of the
 Anaconda installer, it integrates Python and common Python utilities
-like into Windows well enough that it approximates the ease and
+like `pip` into Windows well enough that it approximates the ease and
 experience of using Python within OS X or Unix/Linux (no small feat).
 
 You can also create your Python environment manually, installing Python,
-package managers, and Python packages separately. Packages like and can
+package managers, and Python packages separately. Packages like `numpy` and `pandas` can
 be difficult to get working, however, particularly on Windows, and
 Anaconda simplifies this setup considerably regardless of your OS.
 
 ### Central workbook server
 
-Setting up a server to host workbooks managed by is more involved. Some
+Setting up a server to host workbooks managed by `nbgrader` is more involved. Some
 of the workbooks consume multiple gigabytes of memory per user and
 substantial processing power. A hosted implementation where all users
 work on a single server requires substantial hardware, relatively
@@ -158,7 +154,7 @@ records are data about the same underlying entity. In this workbook, you
 will learn how to:
 
 -   Parse a name string into first, middle, and last names using
-    Python's method and regular expressions,
+    Python's `split` method and regular expressions,
 
 -   Use and evaluate the results of common computationalstring
     comparison algorithms including Levenshtein
@@ -177,7 +173,7 @@ predicting the academic department of a given grant's primary
 investigator based on other traits of the grant. In this workbook, you
 will learn how to:
 
--   Read, clean, filter, and store data with Python's data analysis
+-   Read, clean, filter, and store data with Python's `pandas` data analysis
     package,
 
 -   Recognize the types of data cleaning and refining needed to make
@@ -190,7 +186,7 @@ will learn how to:
 -   Employ strategies for dividing data to properly train and test a
     machine learning model,
 
--   Use the Python package to train, fit, and evaluate machine learning
+-   Use the `scikit-learn` Python package to train, fit, and evaluate machine learning
     models.
 
 ### Text Analysis
@@ -215,8 +211,8 @@ together. In this workbook, you will learn how to:
 In the Networks workbook you will create network data where the nodes
 are researchers who have been awarded grants, and ties are created
 between each researcher on a given grant. You will use Python to read
-the grant data and translate them into network data, then use the Python
-library to calculate node- and graph-level network statistics and to
+the grant data and translate them into network data, then use the `networkx` Python
+library to calculate node- and graph-level network statistics and `igraph` to
 create and refine network visualizations. You will also be introduced to
 graph databases, an alternative way of storing and querying network
 data. In this workbook, you will learn how to:
@@ -226,15 +222,15 @@ data. In this workbook, you will learn how to:
 
 -   Use Python to derive network data from a relational database,
 
--   Store and query network data using a graph database like ,
+-   Store and query network data using a graph database like `neo4j`,
 
--   Load network data into , then use it to calculate node- and
+-   Load network data into `networkx`, then use it to calculate node- and
     graph-level network statistics,
 
--   Use to export graph data into commonly shared formats (, edge lists,
+-   Use `networkx` to export graph data into commonly shared formats (`graphml`, edge lists,
     different tabular formats, etc.),
 
--   Load network data into the Python package and then create graph
+-   Load network data into the `igraph` Python package and then create graph
     visualizations.
 
 ### Visualization
@@ -264,8 +260,7 @@ Resources
 ---------
 
 We noted in
-Section [\[sec:intro:resources\]](#sec:intro:resources){reference-type="ref"
-reference="sec:intro:resources"} the importance of Python, MySQL, and
+Section [Introduction: Resources](#sec:intro:resources) the importance of Python, MySQL, and
 Git/GitHub for the social scientist who intends to work with large data.
 See that section for pointers to useful online resources, and also this
 book's website, at <https://github.com/BigDataSocialScience>, where we
@@ -280,7 +275,7 @@ IPython site [@ipython], IPython documentation [@ipythondoc], Jupyter
 Project site [@juypter], and Jupyter Project documentation
 [@juypterdoc].
 
-For more information on using and to host, distribute, and grade
-workbooks using a central server, see the GitHub repository
-[@juypterhub], documentation [@juypterhubdoc], GitHub repository
-[@nbgrader], and documentation [@nbgraderdoc].
+For more information on using `jupyterhub` and `nbgrader` to host, distribute, and grade
+workbooks using a central server, see the `jupyterhub` GitHub repository
+[@juypterhub], `jupyterhub` documentation [@juypterhubdoc], `nbgrader` GitHub repository
+[@nbgrader], `nbgrader` and documentation [@nbgraderdoc].
