@@ -1130,6 +1130,7 @@ attempt to eliminate the error rather than model it.
 
 \enlargethispage{6pt}
 \vspace*{-4pt}
+
 Some methods for mitigating, detecting, and compensating for errors {#sec:10-5}
 -------------------------------------------------------------------
 

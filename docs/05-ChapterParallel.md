@@ -319,13 +319,10 @@ specifications: the first is optimized for CPU performance and the
 second for storage occupancy. The two systems are typically configured
 as separate physical hardware.
 
+<img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/data2compute.png" alt="The traditional parallel computing model where data are brought to the computing nodes." width="70%" />
-<p class="caption">(\#fig:fig5-1a)The traditional parallel computing model where data are brought to the computing nodes.</p>
-</div>
-<div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/compute2data.png" alt="(b) Hadoop’s parallel computing model: bringing compute to the data [242]" width="70%" />
-<p class="caption">(\#fig:fig5-1b)(b) Hadoop’s parallel computing model: bringing compute to the data [242]</p>
+<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]" width="70%" />
+<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]</p>
 </div>
 
 Running compute jobs on such hardware often goes like this. When a user
@@ -333,7 +330,7 @@ requests to run an intensive task on a particular data set, the system
 will first reserve a set of computing nodes. Then the data are
 partitioned and copied from the storage server into these computing
 nodes before the task is executed. This process is illustrated in
-Figure \@ref(fig:fig5-1a). This computing model will be referred
+Figure \@ref(fig:fig5-1a)(top). This computing model will be referred
 to as *bringing data to computation*. In this model, if a data set is
 being analyzed in multiple iterations, it is very likely that the data
 will be copied multiple times from the storage cluster to the compute
@@ -351,7 +348,7 @@ To solve this problem, Hadoop implements a *bring compute to the data*
 strategy that combines both computing and storage at each node of the
 cluster. In this setup, each node offers both computing power and
 storage capacity. As shown in
-Figure \@ref(fig:fig5-1b), when users submit a task to be run on
+Figure \@ref(fig:fig5-1a)(bottom), when users submit a task to be run on
 a data set, the scheduler will first look for nodes that contain the
 data, and if the nodes are available, it will schedule the task to run
 directly on those nodes. If a node is busy with another task, data will

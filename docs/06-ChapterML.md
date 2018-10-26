@@ -827,14 +827,12 @@ in the past year* and the value $4$. The second level of the tree now
 has two splits: one using *average length of visit* with value $2$ days
 and the other using the value $10$ days.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterML/figures/tree.png" alt="standard representation for trees" width="70%" />
-<p class="caption">(\#fig:tree)standard representation for trees</p>
-</div>
+<img src="ChapterML/figures/tree.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center">
 <img src="ChapterML/figures/tree-rectangle.png" alt="An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly" width="70%" />
-<p class="caption">(\#fig:tree-rectangle)An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly</p>
+<p class="caption">(\#fig:tree)An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly</p>
 </div>
+
 
 Various algorithms exist to build decision trees. C4.5, CHAID, and CART
 (Classification and Regression Trees) are the most Each needs to
@@ -1252,21 +1250,11 @@ either correct or incorrect. This is what the four cells of the
 confusion matrix represent. We can use the confusion matrix to describe
 several commonly used evaluation metrics.
 
-\centering
-\small
-\setlength
-\tabcolsep{0pt}
-  ----------- ----------- ------- ------- -----------
-                                          
-                                          
-                           **1**   **0**  **total**
-                    **1**                 $P'$
-   \[2.4em\]        **0**                 $N'$
-                **total**   $P$     $N$   
-  ----------- ----------- ------- ------- -----------
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/cm.png" alt="A *confusion matrix* created from real-valued predictions" width="70%" />
+<p class="caption">(\#fig:cm)A *confusion matrix* created from real-valued predictions</p>
+</div>
 
-\vspace*{-6pt}
-\enlargethispage{12pt}
 Accuracy is the ratio of correct predictions (both positive and negative) to all
 predictions:
 $$\textrm{Accuracy}=\frac{TP + TN}{TP + TN + FP + FN}=\frac{TP + TN}{P+N}=\frac{TP + TN}{P'+N'},$$

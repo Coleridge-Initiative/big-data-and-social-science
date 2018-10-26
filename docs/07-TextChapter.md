@@ -319,7 +319,7 @@ LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
 words at the top of the list
-(Figure \@ref(fig:nyt_topics-1)). However, we do not know what the topics are
+(Figure \@ref(fig:nyt-topics-3)). However, we do not know what the topics are
 [a priori]{.roman}; the challenge is to discover what they are (more on
 this shortly).
 
@@ -327,24 +327,24 @@ this shortly).
 <img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center">
 <img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
-<p class="caption">(\#fig:nyt_topics-3)Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts</p>
+<p class="caption">(\#fig:nyt-topics-3)Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts</p>
 </div>
 
 In addition to assuming that there exist some number of topics that
 explain a corpus, LDA also assumes that each document in a corpus can be
 explained by a small number of topics. For example, taking the example
-topics from Figure \@ref(fig:nyt_topics-1), a document titled "Red Light, Green Light: A
+topics from Figure \@ref(fig:nyt-topics-3), a document titled "Red Light, Green Light: A
 Two-Tone LED to Simplify Screens" would be about Topic 1, which appears
 to be about technology. However, a document like "Forget the Bootleg,
 Just Download the Movie Legally" would require all three of the topics.
 The set of topics that are used by a document is called the document's
-*allocation* (Figure \@ref(fig:nyt_documents)). This terminology explains the name
+*allocation* (Figure \@ref(fig:nyt-documents)). This terminology explains the name
 *latent Dirichlet allocation*: each document has an allocation over
 latent topics governed by a Dirichlet distribution.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterText/figures/nyt_documents.png" alt="Allocations of documents to topics" width="70%" />
-<p class="caption">(\#fig:nyt_documents)Allocations of documents to topics</p>
+<p class="caption">(\#fig:nyt-documents)Allocations of documents to topics</p>
 </div>
 
 \vspace*{-12pt}
@@ -365,12 +365,12 @@ download and buy electronic copies of movies over the Internet." Each
 word in this sentence is associated with a topic: "Hollywood" might be
 associated with an arts topic; "buy" with a business topic; and
 "Internet" with a technology topic
-(Figure \@ref(fig:inference_1)).
+(Figure \@ref(fig:inference-1)).
 
 \enlargethispage{18pt}
 <div class="figure" style="text-align: center">
 <img src="ChapterText/figures/inference_1.png" alt="Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection" width="70%" />
-<p class="caption">(\#fig:inference_1)Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection</p>
+<p class="caption">(\#fig:inference-1)Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection</p>
 </div>
 
 This is where we should eventually get. However, we do not know this to

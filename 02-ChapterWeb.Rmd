@@ -140,7 +140,7 @@ module documentation provides more details.
 
 We need to check the details of the page source to find where the
 information we are looking for is kept (see, for example,
-\@ref(fig:fig4-1)). Here, all the details on HHMI investigators can
+\@ref(fig:fig2-1)). Here, all the details on HHMI investigators can
 be found in a `<div>` element with the class attribute `view-content`. This structure is not
 something that can be determined in advance. It requires knowledge of
 the structure of the page itself. Nested inside this `<div>` element are another
@@ -916,7 +916,7 @@ JSON body from the response object (which is currently text from the
 perspective of our script) converted to a Python dictionary. The `requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
-the `u´` notation.)
+the "u´" notation.)
 
 ``` {r, eval=FALSE}
 >> response_dict = response.json()

@@ -203,6 +203,7 @@ We provide a summary of the basic tasks that users typically perform
 during visual analysis of data in the next section.
 
 \vspace*{-3pt}
+
 A data-by-tasks taxonomy {#sec:viz-3}
 ------------------------
 
@@ -282,6 +283,7 @@ forms requires special care, though basic design principles such as
 "less is more" still apply.
 
 \vspace*{-3pt}
+
 ### Multivariate data {#sec:viz-2.1}
 
 In common tabular data, each record (row) has a list of attributes
@@ -428,6 +430,7 @@ with a lag of about a year.
 </div>
 
 \enlargethispage{12pt}
+
 ### Hierarchical data {#sec:viz-2.5}
 
 Data are often organized in a hierarchical fashion. Each item appears in
@@ -526,6 +529,7 @@ annotations and shows a series of topic clusters at the bottom with a
 summary of the insights gathered by analysts.
 
 \vspace*{6pt}
+
 ### Text data {#sec:viz-2.7}
 
 Text is usually preprocessed (for word/paragraph counts, sentiment
@@ -555,6 +559,7 @@ elements are linked to the corresponding text.
 </div>
 
 \vspace*{6pt}
+
 Challenges {#sec:viz-4}
 ----------
 

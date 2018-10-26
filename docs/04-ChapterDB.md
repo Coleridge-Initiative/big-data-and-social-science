@@ -278,7 +278,7 @@ routing\
 
 Relational and NoSQL databases (and indeed other solutions, such as
 statistical packages) can also be used together. Consider, for example,
-Figure \@ref(fig:db:dbs), which depicts data flows commonly encountered
+Figure \@ref(fig:figdb-dbs), which depicts data flows commonly encountered
 in large research projects. Diverse data are being collected from
 different sources: JSON documents from web APIs, web pages from web
 scraping, tabular data from various administrative databases, Twitter
@@ -304,12 +304,11 @@ relational database, the researcher will necessarily define schemas,
 relationships between entities, and so forth. Analysis results can be
 stored in a relational database or back into the NoSQL store.
 
-\centering
-![A research project may use a NoSQL database to accumulate large
-amounts of data from many different sources, and then extract selected
-subsets to a relational or other database for more structured
-processing[\[fig:db:dbs\]]{#fig:db:dbs
-label="fig:db:dbs"}](ChapterDB/figures/data-fig2)
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/data-fig2.png" alt="A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing" width="70%" />
+<p class="caption">(\#fig:figdb-dbs)A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing</p>
+</div>
+
 
 Relational DBMSs
 ----------------
@@ -324,27 +323,24 @@ reference="sec:db:nosql"} alternative data models, such as those used in
 NoSQL databases.
 
 We use the data shown in
-Figure \@ref(fig:db:1) to introduce key concepts. These two CSV format
+Figure \@ref(fig:figdb-1) to introduce key concepts. These two CSV format
 files describe grants made by the US National Science Foundation (NSF).
 One file contains information about grants, the other information about
 investigators. How should you proceed to manipulate and analyze these
 data?
 
-\hspace*{4.7pc}
-\
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/figdb-1.png" alt="CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address" width="70%" />
+<p class="caption">(\#fig:figdb-1)CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address</p>
+</div>
 
-\vspace{2ex}
-\hspace*{4.7pc}
-\
-
-\vspace*{6pt}
 The main concept underlying the relational data model is a *table* (also
 referred to as a *relation*): a set of rows (also referred to as tuples,
 records, or observations), each with the same columns (also referred to
 as fields, attributes or variables). A database consists of multiple
 tables. For example, we show in
-Figure \@ref(fig:db:2) how the data contained in the two CSV files of
-Figure \@ref(fig:db:1) may be as two tables. The `Grants` table contains one tuple
+Figure \@ref(fig:figdb-2) how the data contained in the two CSV files of
+Figure \@ref(fig:figdb-1) may be as two tables. The `Grants` table contains one tuple
 for each row in grants.csv, with columns `GrantID`, `Person`, `Funding`, and `Program`. The table contains one tuple for each row in investigators.csv, with columns `ID`, `Name`, `Institution`, and `Email`. The CSV files and tables contain essentially the same information, albeit with important differences (the addition of an `ID` field in the
 `Investigators` table, the substitution of an `ID` column for the `Person` column in the `Grants` table) that we will explain below.
 
@@ -364,22 +360,10 @@ database further ensures that the data comply with the model (e.g., data
 types, key uniqueness, entity relationships), essentially providing core
 quality assurance.
 
-\centering
-\small
-\hspace*{-82pt}
-  **Number**   **Person**   **Funding**   **Program**
-  ------------ ------------ ------------- -------------------------------
-  1316033      1            660,000       Elem. Particle Physics/Theory
-  1336199      2            323,194       ENVIRONMENTAL ENGINEERING
-  1500194      3            200,000       Accelerating Innovation Rsrch
-  1211853      3            261,437       GALACTIC ASTRONOMY PROGRAM
-
-\vspace{1ex}
-  **ID**   **Name**          **Institution**                            **Email**
-  -------- ----------------- ------------------------------------------ ----------------------
-  1        Steven Weinberg   University of Texas at Austin              weinberg\@utexas.edu
-  2        Howard Weinberg   University of North Carolina Chapel Hill   
-  3        Irving Weinberg   University of Maryland College Park        irving\@ucmc.edu
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/figdb-2.png" alt="Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table" width="70%" />
+<p class="caption">(\#fig:figdb-2)Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table</p>
+</div>
 
 ### Structured Query Language (SQL)
 
@@ -439,7 +423,7 @@ evaluated as follows:
     "\*" indicates that all columns should be kept.)
 
 The answer, given the data in
-Figure \@ref(fig:db:2), is the following single-row table. (The fact that
+Figure \@ref(fig:figdb-2), is the following single-row table. (The fact that
 an SQL query returns a table is important when it comes to creating more
 complex queries: the result of a query can be stored into the database
 as a new table, or passed to another query as input.)
@@ -1406,26 +1390,15 @@ join*---or, more precisely, the *left excluding join*. The expression
 returns all rows from the left table (`table1`) with the matching rows in the
 right table (`table2`), with the result being `null` in the right side when there is no
 match. This selection is illustrated in the middle column of
-Table [\[tab:db:6\]](#tab:db:6){reference-type="ref"
-reference="tab:db:6"}. The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
-Table [\[tab:db:6\]](#tab:db:6){reference-type="ref" reference="tab:db:6"}. Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
+Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
+Table \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
+
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join" width="70%" />
+<p class="caption">(\#fig:fig-venn)Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join</p>
+</div>
 
 ---
-
-\small
-                                            **Left join**                             **Left excluding join**
-  ----------------------------------------- ----------------------------------------- -----------------------------------------
-  ![image](ChapterDB/figures/data-venn-1)   ![image](ChapterDB/figures/data-venn-2)   ![image](ChapterDB/figures/data-venn-3)
-                                                                                      
-                                                                                      
-                                                                                      
-                                                                                      
-                                                                                      
-
-  : Three types of *join* illustrated: the inner join, as used in
-  Section [1.3.2](#sec:db:sql){reference-type="ref"
-  reference="sec:db:sql"}, the left join, and left excluding join
-  [\[tab:db:6\]]{#tab:db:6 label="tab:db:6"}
 
 Which database to use?
 ----------------------
@@ -1479,8 +1452,7 @@ of Twitter messages frequently store the messages in a NoSQL
 document-oriented database such as MongoDB. NoSQL databases are also
 often used to organize large numbers of records from many different
 sources, as illustrated in
-Figure [\[fig:db:dbs\]](#fig:db:dbs){reference-type="ref"
-reference="fig:db:dbs"}.
+Figure \@ref(fig:figdb-dbs).
 
 Summary
 -------

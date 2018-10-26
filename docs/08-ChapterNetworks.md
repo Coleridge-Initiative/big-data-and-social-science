@@ -669,8 +669,7 @@ represents a clear measure of the prominence or visibility of a node.
 Let $$C_D(n_i)=\sum_jx_{ij}.$$ The degree of a node is limited by the
 size of the network in which it is embedded. In a network of $g$ nodes
 the maximum degree of any node is $g-1$. The two orange nodes in the
-small networks presented in Figure [1.4](#fig:6-4){reference-type="ref"
-reference="fig:6-4"} have the maximum degree possible (4). In contrast,
+small networks presented in Figure \@ref(fig:fig8-4) have the maximum degree possible (4). In contrast,
 the orange node in the larger, 13-node network in that figure has the
 same number of alters but the possible number of partners is three times
 as large (12). For this reason it is problematic to compare raw degree
@@ -838,22 +837,12 @@ collaboration networks.
 
 The intuitions suggested by Figure \@ref(fig:fig8-6) can also be checked against some of the measures we
 have described. Figure \@ref(fig:fig8-7a), for instance, presents degree distributions for
-each of the two networks. Figure \@ref(fig:fig8-8) presents the histogram of path lengths for each
-network.
+each of the two networks. Figure \@ref(fig:fig8-8) presents the histogram of path lengths for each network.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-7a.png" alt="Degree distribution for two universities" width="70%" />
-<p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
-</div>
+<img src="ChapterNetworks/figures/fig8-7a.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center">
 <img src="ChapterNetworks/figures/fig8-7b.png" alt="Degree distribution for two universities" width="70%" />
-<p class="caption">(\#fig:fig8-7b)Degree distribution for two universities</p>
-</div>
-
-
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-8.png" alt="Distribution of path lengths for universities A and B" width="70%" />
-<p class="caption">(\#fig:fig8-8)Distribution of path lengths for universities A and B</p>
+<p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
 </div>
 
 It is evident from Figure \@ref(fig:fig8-7a) that they are quite different in character.
@@ -876,6 +865,11 @@ work needs to be done to bear out these hypotheses, but for now it
 suffices to say that the degree distribution of the networks bears out
 the intuition we drew from the images that they are significantly
 different.
+
+<div class="figure" style="text-align: center">
+<img src="ChapterNetworks/figures/fig8-8.png" alt="Distribution of path lengths for universities A and B" width="70%" />
+<p class="caption">(\#fig:fig8-8)Distribution of path lengths for universities A and B</p>
+</div>
 
 The path length histogram presented in Figure
 \@ref(fig:fig8-8) suggests a
