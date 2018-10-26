@@ -6,8 +6,7 @@ This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
 more recent Google Flu Trends problems in
-Chapter [\[chap:intro\]](#chap:intro){reference-type="ref"
-reference="chap:intro"}. Although the consequences are well understood,
+Chapter [Introduction](#chap:intro). Although the consequences are well understood,
 the new types of data are so large and complex that their properties
 often cannot be studied in traditional ways. In addition, the data
 generating function is such that the data are often selective,
@@ -111,7 +110,7 @@ of the data, leading to better-informed analyses and applications of the
 results. It may also inform a research agenda for reducing the effects
 of error on big data analytics.
 
-In Figure [1.1](#fig:10-1){reference-type="ref" reference="fig:10-1"}, a
+In Figure \@ref(fig:fig10-1), a
 canonical data file is represented as an array consisting of rows
 (records) and columns (variables), with their size denoted by $N$ and
 $p$, respectively. Many data sets derived from big data can be
@@ -128,26 +127,27 @@ target population, the columns represent characteristics, variables (or
 features) of the row elements, and the cells correspond to values of the
 column features for elements on the rows.
 
-\centering
-![A typical rectangular data file
-format[]{label="fig:10-1"}](ChapterError/figures/fig1){#fig:10-1}
+```{r fig10-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A typical rectangular data file format'}
+knitr::include_graphics("ChapterError/figures/fig10-1.png")
+```
+
 
 The total error for this data set may be expressed by the following
 heuristic formula:
 $$\text{Total error } =\text{ Row error } + \text{ Column error }
 + \text{ Cell error}.$$
 
-##### Row error
+**Row error**
 
 For the situations considered in this chapter, the row errors may be of
 three types:
 
--   Some rows are missing, which implies that elements in the target
+-   Omissions: Some rows are missing, which implies that elements in the target
     population are not represented on the file.
 
--   Some population elements occupy more than one row.
+-   Duplications: Some population elements occupy more than one row.
 
--   Some rows contain elements or entities that are not part of the
+-   Erroneous inclusions: Some rows contain elements or entities that are not part of the
     target population.
 
 For survey sample data sets, omissions include members of the target
@@ -167,6 +167,10 @@ similar to frame noncoverage in survey sampling and can bias inferences
 when researchers fail to consider it and compensate for it in their
 analyses.
 
+---
+
+**Example: Google searches**
+
 As an example, in the United States, the word "Jewish" is included in
 3.2 times more Google searches than "Mormon" [@SDV2015]. This does not
 mean that the Jewish population is 3.2 times larger than the Mormon
@@ -174,6 +178,8 @@ population. Another possible explanation is that Jewish people use the
 Internet in higher proportions or have more questions that require using
 the word "Jewish." Thus Google search data are more useful for relative
 comparisons than for estimating absolute levels.
+
+---
 
 A well-known formula in the survey literature provides a useful
 expression for the so-called *coverage bias* in the mean of some
@@ -229,7 +235,7 @@ be excluded prior to analysis. However, with big data, some out-of-scope
 elements may still be included as a result of missing or erroneous
 information, and these inclusions will bias inference.
 
-##### Column error
+**Column error**
 
 The most common type of column error in survey data analysis is caused
 by inaccurate or erroneous labeling of the column data---an example of
@@ -252,6 +258,10 @@ expressions about some phenomenon like the economy or a political
 figure. There is considerable risk of the resulting variables being
 either inaccurately defined or misinterpreted by the data analyst.
 
+---
+
+**Example: Specification error with Twitter data**
+
 As an example, consider a Twitter data set where the rows correspond to
 tweets and one of the columns supposedly contains an indicator of
 whether the tweet contained one of the following key words: marijuana,
@@ -262,7 +272,9 @@ of specification error which could be a biasing factor in an analysis.
 For example, estimates of marijuana use based upon the indicator could
 be underestimates.
 
-##### Cell errors
+---
+
+**Cell errors**
 
 Finally, cell errors can be of three types: content error, specification
 error, or missing data. A content error occurs when the value in a cell
@@ -287,7 +299,7 @@ that is the most obvious deficiency.
 
 The traditional TSE framework is quite general in that it can be applied
 to essentially any data set that conform to the format in Figure
-[1.1](#fig:10-1){reference-type="ref" reference="fig:10-1"}. However, in
+\@ref(fig:fig10-1). However, in
 most practical situations it is quite limited because it makes no
 attempt to describe how the processes that the data may have contributed
 to what could be construed as data errors. In some cases, these
@@ -372,11 +384,9 @@ detailed error framework that is applicable to all big data.
 Nevertheless, some progress can be made by considering the steps that
 are typically involved in creating a data set from big data, which often
 includes three stages: (a) data generation (see
-Chapter [\[chap:web\]](#chap:web){reference-type="ref"
-reference="chap:web"}), (b) extract, transform and load (ETL), and (c)
+Chapter [Working with Web Data and APIs], (b) extract, transform and load (ETL), and (c)
 analysis (see, for example,
-Chapter [\[chap:text\]](#chap:text){reference-type="ref"
-reference="chap:text"}). As noted there, this mapping of the process is
+Chapter [Text Analysis](#chap:text)). As noted there, this mapping of the process is
 oversimplified for some applications. For example, data that flow
 continuously from their sources may not be directed through an ETL
 process at all. Rather it may be gathered in real time and processed on
@@ -390,7 +400,7 @@ stages in the process map. Thus, the model outline here is but an
 initial attempt to capture the tremendous complexities that may be
 involved in the big data life cycle.
 
-Figure [1.2](#fig:10-2){reference-type="ref" reference="fig:10-2"}
+Figure \@ref(fig:fig10-2)
 graphically depicts the flow of data along the major steps in the
 process. One might imagine many more arrows among the boxes within the
 ETL and analysis stages that represent the recursive nature of those
@@ -399,9 +409,9 @@ depend on the specific data sources and analytic goals involved.
 Nevertheless, we can still consider how each stage might create errors
 in a more generic fashion.
 
-\centering
-![Big data process
-map[]{label="fig:10-2"}](ChapterError/figures/fig2){#fig:10-2}
+```{r fig10-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Big data process map'}
+knitr::include_graphics("ChapterError/figures/fig10-2.png")
+```
 
 \vspace*{-9pt}
 For example, data generation error is somewhat analogous to errors
@@ -516,8 +526,7 @@ so-called "three Vs" of big data, namely, volume, velocity, and variety,
 under the assumption of perfect "veracity." If we relax the assumption
 of perfect veracity, the errors that afflict big data as a result of the
 three Vs can be exacerbated in largely unpredictable ways. Section
-[1.4.2](#sec:10-4.2){reference-type="ref" reference="sec:10-4.2"}
-considers three common types of analysis when data lack veracity:
+[Errors resulting from lack of veracity] considers three common types of analysis when data lack veracity:
 classification, correlation, and regression. While the scope of our
 review is necessarily limited, hopefully the discussion will lay the
 foundation for further study regarding the effects of errors on big data
@@ -534,6 +543,10 @@ incidental endogeneity---which will be briefly discussed in this
 section. These issues should concern big data analysts even if the data
 could be regarded as infallible. Content errors, missing data, and other
 data deficiencies will only exacerbate
+
+---
+
+**Example: Noise accumulation**
 
 To illustrate noise accumulation, Fan et al. [@fan2014challenges]
 consider the following scenario. Suppose an analyst is interested in
@@ -553,11 +566,13 @@ $m > 200$, the accumulated noise exceeds the signal embedded in the
 first 10 variables and the classification rule becomes equivalent to a
 coin-flip classification rule.
 
+---
+
 High dimensionality can also introduce coincidental (or *spurious*)
 correlations in that many unrelated variables may be highly correlated
 simply by chance, resulting in false discoveries and erroneous
 inferences. The phenomenon depicted in Figure
-[1.3](#fig:10-3){reference-type="ref" reference="fig:10-3"} is an
+\@ref(fig:fig10-3), is an
 illustration of this. Many more examples can be found on a website and
 in a book devoted to the topic [@spurious; @spurious2]. Fan et
 al. [@fan2014challenges] explain this phenomenon using simulated
@@ -568,10 +583,9 @@ results suggest that there are considerable risks of false inference
 associated with a purely empirical approach to predictive analytics
 using high-dimensional data.
 
-\centering
-![An illustration of coincidental correlation between two variables:
-stork die-off linked to human birth decline
-[@sies1988new][]{label="fig:10-3"}](ChapterError/figures/fig3){#fig:10-3}
+```{r fig10-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]'}
+knitr::include_graphics("ChapterError/figures/fig10-3.png")
+```
 
 Finally, turning to incidental endogeneity, a key assumption in
 regression analysis is that the model covariates are uncorrelated with
@@ -599,8 +613,7 @@ that are difficult to evaluate or mitigate in the analysis process.
 ### Errors resulting from lack of veracity {#sec:10-4.2}
 
 The previous section examined some of the issues big data analysts face
-as either $N$ or $p$ in Figure [1.1](#fig:10-1){reference-type="ref"
-reference="fig:10-1"} becomes extremely large. When row, column, and
+as either $N$ or $p$ in Figure \@ref(fig:fig10-1) becomes extremely large. When row, column, and
 cell errors are added into the mix, these *volumatic* problems can be
 further exacerbated. For example, noise accumulation can be expected to
 accelerate when random noise (i.e., content errors) afflicts the data.
@@ -720,6 +733,10 @@ $$\label{eq:10-1.2}
 uncorrelated error model (i.e., $b_j = 0$) and thus $\varepsilon_{rj}$
 is purely random noise.
 
+---
+
+**Example: Speed sensor**
+
 Suppose that, due to calibration error, the $j$th speed sensor in a
 traffic pattern study underestimates the speed of vehicle traffic on a
 highway by an average of 4 miles per hour. Thus, the model for this
@@ -732,9 +749,11 @@ Further, to the extent that ambient noise in the readings for $j$th
 sensor causes variation around the values $\mu_{rc} + b_j$, then
 $\sigma_\varepsilon^2$ will be large. Both sources of variation will
 reduce the reliability of the measurements. However, as shown in Section
-[1.4.2.4](#sec:10-4.2.4){reference-type="ref" reference="sec:10-4.2.4"},
+[Correlation analysis],
 the systematic error component is particularly problematic for many
 types of analysis.
+
+---
 
 #### Models for categorical data {#sec:10-4.2.2}
 
@@ -785,8 +804,11 @@ content errors can quickly overwhelm such an analysis, rendering the
 data useless for this purpose. We illustrate this using the following
 contrived and somewhat amusing example. The results in this section are
 particularly relevant to the approaches considered in
-Chapter [\[chap:ml\]](#chap:ml){reference-type="ref"
-reference="chap:ml"}.
+Chapter [Machine Learning](#chap:ml).
+
+---
+
+**Example: Thinking about probabilities**
 
 Suppose, using big data and other resources, we construct a terrorist
 detector and boast that the detector is 99.9% accurate. In other words,
@@ -802,14 +824,15 @@ answer is only about 1 in 1000. That is, 999 times out of 1,000 times
 the machine classifies a person as a terrorist, the machine will be
 wrong!
 
+---
+
 How could such an accurate machine be wrong so often in the terrorism
 example? Let us do the math.
 
 The relevant probability is the PPV of the machine: given that the
 machine classifies an individual (Terry) as a terrorist, what is the
 probability the individual is truly a terrorist? Using the notation in
-Section [1.4.2.2](#sec:10-4.2.2){reference-type="ref"
-reference="sec:10-4.2.2"} and Bayes' rule, we can derive the PPV as
+Section [Models for categorical data] and Bayes' rule, we can derive the PPV as
 $$\begin{aligned}
 \Pr (\mu_r = 1\vert y_r = 1) &=  \frac{\Pr (y_r = 1\vert \mu_r =
 1)\Pr(\mu_r = 1)}{\Pr (y_r = 1)} \\
@@ -864,15 +887,13 @@ perfect sensitivity, to attain a 90% PPV.
 
 #### Correlation analysis {#sec:10-4.2.4}
 
-In Section [1.4.1](#sec:10-4.1){reference-type="ref"
-reference="sec:10-4.1"}, we considered the problem of incidental
+In Section [Errors resulting from volume, velocity, and variety, assuming perfect veracity], we considered the problem of incidental
 correlation that occurs when an analyst correlates pairs of variables
 selected from big data stores containing thousands of variables. In this
 section, we discuss how errors in the data can exacerbate this problem
 or even lead to failure to recognize strong associations among the
 variables. We confine the discussion to the continuous variable model of
-Section [1.4.2.1](#sec:10-4.2.1){reference-type="ref"
-reference="sec:10-4.2.1"} and begin with theoretical results that help
+Section [Variable and correlated error] and begin with theoretical results that help
 explain what happens in correlation analysis when the data are subject
 to variable and systematic errors.
 
@@ -910,10 +931,9 @@ correlation analysis.
 
 Using the results in Biemer and Trewin [@biemer1997review], it can be
 shown that the correlation between $y_{rc}$ and $y_{rd}$, defined as
-$\rho_{y\vert cd} = \sigma_{y\vert cd} / \sigma_{y\vert c}
-\sigma_{y\vert d}$, can be expressed as $$\label{eq:10-1.7}
-\rho_{y\vert cd} = \sqrt {R_c R_d } \rho_{\mu \vert cd} + \sqrt
-{\rho_c \rho_d }.$$ Note that if there are no errors (i.e., when
+$\rho_{y\vert cd} = \sigma_{y\vert cd} / \sigma_{y\vert c} \sigma_{y\vert d}$, can be expressed as
+$$\label{eq:10-1.7} \rho_{y\vert cd} = \sqrt {R_c R_d } \rho_{\mu \vert cd} + \sqrt {\rho_c \rho_d }.$$
+Note that if there are no errors (i.e., when
 $\sigma_{b\vert
 c}^2 = \sigma_{\varepsilon \vert c}^2 = 0$), then $R_c = 1$,
 $\rho_c =0$, and the correlation between $y_{c}$ and $y_{d}$ is just the
@@ -923,7 +943,7 @@ Let us consider the implications of these results first without
 systematic errors (i.e., only variable errors) and then with the effects
 of systematic errors.
 
-##### Variable errors only
+**Variable errors only**
 
 If the only errors are due to random noise, then the additive term on
 the right in equation [\[eq:10-1.7\]](#eq:10-1.7){reference-type="eqref"
@@ -938,7 +958,7 @@ the correlation between two variables.
 
 Quite often in the analysis of big data, the correlations being explored
 are for aggregate measures, as in Figure
-[1.3](#fig:10-3){reference-type="ref" reference="fig:10-3"}. Therefore,
+\@ref(fig:fig10-3). Therefore,
 suppose that, rather than being a single element, $y_{rc}$ and $y_{rd}$
 are the means of $n_{rc}$ and $n_{rd}$ independent elements,
 respectively. For example, $y_{rc}$ and $y_{rd}$ may be the average rate
@@ -961,7 +981,7 @@ $R_c^A = \sigma_{\mu \vert c}^2 / (\sigma_{\mu \vert
 c}^2 + \sigma_{\varepsilon \vert c}^2 / n_c )$. Note that $R_c^A$
 converges to 1 as $n_c$ increases, which means that $\rho _{y\vert cd}$
 will converge to $\rho_{\mu \vert cd}$. Figure
-[1.4](#fig:10-4){reference-type="ref" reference="fig:10-4"} illustrates
+\@ref(fig:fig10-4) illustrates
 the speed at which this convergence occurs.
 
 In this figure, we assume $n_c = n_d = n$ and vary $n$ from 0 to 60. We
@@ -974,12 +994,11 @@ negligible when $n > 30$. These results suggest that variable error can
 be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
-\centering
-![Correlation as a function of sample size for $\rho_{\mu
-\vert cd} = 0.5$ and
-$R_c = R_d = 0.5$[]{label="fig:10-4"}](ChapterError/figures/fig4){#fig:10-4}
+```{r fig10-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size '}
+knitr::include_graphics("ChapterError/figures/fig10-4.png")
+```
 
-##### Both variable and systematic errors
+**Both variable and systematic errors**
 
 If both systematic and variable errors contaminate the data, the
 additive term on the right in
@@ -1002,12 +1021,12 @@ systematic effects may still operate for correlation analysis without
 regard to the number of elements comprising the aggregates.
 
 For example, consider the illustration in
-Figure [1.4](#fig:10-4){reference-type="ref" reference="fig:10-4"} with
+Figure \@ref(fig:fig10-4) with
 $n_c = n_d =
 n$, reliability ratios (excluding systematic effects) set at $0.5$ and
 population correlation at $\rho_{\mu \vert cd} = 0.5$. In this scenario,
 let $\rho_c = \rho_d = 0.25$. Figure
-[1.5](#fig:10-5){reference-type="ref" reference="fig:10-5"} shows the
+\@ref(fig:fig10-5) shows the
 correlation as a function of the sample size with systematic errors
 (dotted line) compared to the correlation without systematic errors
 (solid line). Correlation with systematic errors is both inflated and
@@ -1015,10 +1034,9 @@ attenuated. However, at the assumed level of intra-source variation, the
 inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.
 
-\centering
-![Correlation as a function of sample size for $\rho_{\mu \vert
-cd} = 0.5$, $R_c = R_d = 0.5$, and
-$\rho_c = \rho_d = 0.25$[]{label="fig:10-5"}](ChapterError/figures/fig5){#fig:10-5}
+```{r fig10-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size '}
+knitr::include_graphics("ChapterError/figures/fig10-5.png")
+```
 
 To summarize these findings, correlation analysis is attenuated by
 variable errors, which can lead to null findings when conducting a
@@ -1054,8 +1072,7 @@ error with mean 0 and variance $\sigma_{\varepsilon\vert x}^2$. It can
 also be shown that $\mbox{Bias}(b_0 ) \approx B(1 - R_x )\bar{\mu }_x$.
 
 As an illustration of these effects, consider the regressions displayed
-in Figure [\[fig:10-6\]](#fig:10-6){reference-type="ref"
-reference="fig:10-6"}, which are based upon contrived data. The
+in Figure \@ref(fig:fig10-6), which are based upon contrived data. The
 regression on the left is the population (true) regression with a slope
 of $1.05$ and an intercept of $-0.61$. The regression on the left uses
 the same $y$- and $x$-values. The only difference is that normal error
@@ -1065,8 +1082,9 @@ proportion to the reliability, $R_{x}$. As random error is added to the
 $x$-values, reliability is reduced and the fitted slope will approach
 $0$.
 
-\centering
-![image](ChapterError/figures/fig6)
+```{r fig10-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77'}
+knitr::include_graphics("ChapterError/figures/fig10-6.png")
+```
 
 \vspace*{-6pt}
 When the dependent variable, $y$, only is subject to variable error, the
@@ -1112,6 +1130,7 @@ attempt to eliminate the error rather than model it.
 
 \enlargethispage{6pt}
 \vspace*{-4pt}
+
 Some methods for mitigating, detecting, and compensating for errors {#sec:10-5}
 -------------------------------------------------------------------
 
@@ -1125,8 +1144,7 @@ the effective methods for obtaining highly accurate responses, and
 computer-assisted interviewing instruments can be programmed to correct
 errors in the data as they are generated. For big data, the data
 generation process is often outside the purview of the data collectors,
-as noted in Section [1.1](#sec:10-1){reference-type="ref"
-reference="sec:10-1"}, and there is limited opportunity to address
+as noted in Section [Introduction](#sec:10-1), and there is limited opportunity to address
 deficiencies in the data generation process. This is because big data is
 often a by-product of systems designed with little or no thought given
 to the potential secondary uses of the data. Instead, error mitigation
@@ -1210,8 +1228,7 @@ macro-editing passes the edit and is deemed correct. However, because
 serious offsetting errors can be masked by aggregation, there is no
 guarantee that the elements comprising the aggregate are indeed
 accurate. Recalling the discussion in
-Section [1.4.2.1](#sec:10-4.2.1){reference-type="ref"
-reference="sec:10-4.2.1"} regarding random noise, we know that the data
+Section [Variable and correlated error] regarding random noise, we know that the data
 may be quite noisy while the aggregates may appear to be essentially
 error-free. However, macro-editing can be an effective control for
 systematic errors and egregious and some random errors that create
@@ -1239,15 +1256,13 @@ The tableplot seems particularly well suited for the three Vs of big
 data and will be discussed in some detail.
 
 Like other visualization techniques examined in
-Chapter [\[chap:viz\]](#chap:viz){reference-type="ref"
-reference="chap:viz"}, the tableplot has the ability to summarize a
+Chapter [Information Visualization], the tableplot has the ability to summarize a
 large multivariate data set in a single plot [@malik2010interactive]. In
 editing big data, it can be used to detect outliers and unusual data
 patterns. Software for implementing this technique has been written in R
 and is available without cost from the Comprehensive R Archive Network
 (<https://cran.r-project.org/>). Figure
-[\[fig:10-7\]](#fig:10-7){reference-type="ref" reference="fig:10-7"}
-shows an example. The key idea is that micro-aggregates of two related
+\@ref(fig:fig10-7) shows an example. The key idea is that micro-aggregates of two related
 variables should have similar data patterns. Inconsistent data patterns
 may signal errors in one of the aggregates that can be investigated and
 corrected in the editing process to improve data quality. The tableplot
@@ -1260,8 +1275,9 @@ such as the mean or total is computed for the values in a bin and is
 displayed as a bar (for continuous variables) or as a stacked bar for
 categorical variables.
 
-\centering
-![image](ChapterError/figures/fig7){width="\textwidth"}
+```{r fig10-7, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars'}
+knitr::include_graphics("ChapterError/figures/fig10-7.png")
+```
 
 \vspace*{24pt}
 The sequence of steps typically involved in producing a tableplot is as
@@ -1303,13 +1319,12 @@ massive, multivariate data sets, they seem particularly well suited for
 big data. Currently, the R implementation of tableplot is limited to $2$
 billion records.
 
-The tableplot in Figure [\[fig:10-7\]](#fig:10-7){reference-type="ref"
-reference="fig:10-7"} is taken from Tennekes and de Jonge
+The tableplot in Figure \@ref(fig:fig10-7) is taken from Tennekes and de Jonge
 [@tennekes2011top] for the annual Dutch Structural Business Statistics
 survey, a survey of approximately 58,000 business units annually. Topics
 covered in the questionnaire include turnover, number of employed
 persons, total purchases, and financial results. Figure
-[\[fig:10-7\]](#fig:10-7){reference-type="ref" reference="fig:10-7"} was
+\@ref(fig:fig10-7) was
 created by sorting on the first column, viz., log(turnover), and
 dividing the 57,621 observed units into 100 bins, so that each row bin
 contains approximately 576 records. To aid the comparisons between
@@ -1388,6 +1403,7 @@ Biemer and Lyberg [@biemer2003] discuss these and other issues in some
 detail.
 
 \vspace*{6pt}
+
 Resources
 ---------
 

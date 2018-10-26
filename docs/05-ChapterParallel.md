@@ -89,7 +89,7 @@ parallelism of these operations. Users are expected to develop their
 codes using only the subset if they expect their code to scale to large
 data sets. MapReduce, one of the most widely used big data programming
 paradigms, is no exception to this rule. As its name suggests, the
-framework only supports two operations: and . The next sections will
+framework only supports two operations: map and reduce. The next sections will
 provide an overview of MapReduce and its most popular implementation,
 Apache Hadoop.
 
@@ -100,37 +100,42 @@ The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
 similar approaches first described in the early 1980s. MapReduce was
 indeed inspired by the *map* and *reduce* functions of functional
-programming, though its function is more of a *group-by-key* function,
+programming, though its `reduce` function is more of a *group-by-key* function,
 producing a list of values, instead of the traditional reduce, which
 outputs only a single value. MapReduce is a record-oriented model, where
 each record is treated as a *key--value* pair; thus, both and functions
 operate on key--value pair data.
 
 A typical MapReduce job is composed of three phases---map, shuffle, and
-reduce---taking a list of key--value pairs as input. In the map phase,
-each input key--value pair is run through the function, and zero or more
+reduce---taking a list of key--value pairs `[(k$_1$,v$_2$), (k$_2$,v$_2$), ..., (k$_n$,v$_n$)]` as input. In the map phase,
+each input key--value pair is run through the `map` function, and zero or more
 new key--value pairs are output. In the shuffle phase, the framework
 sorts the outputs of the map phase, grouping pairs by keys before
-sending each of them to the function. In the reduce phase, each grouping
-of values are processed by the function, and the result is a list of new
+sending each of them to the `reduce` function. In the reduce phase, each grouping
+of values are processed by the `reduce` function, and the result is a list of new
 values that are collected for the job output.
 
 In brief, a MapReduce job just takes a list of key--value pairs as input
 and produces a list of values as output. Users only need to implement
-interfaces of the and functions (the shuffle phase is not very
+interfaces of the `map` and `reduce` functions (the shuffle phase is not very
 customizable) and can leave it up to the system that implements
 MapReduce to handle all data communications and parallel computing. We
 can summarize the MapReduce logic as follows:
 
-aaā `(k_i, v_i)`
+map: `(k_i, v_i)`
 `[f(k^{'}_{i1}, v^{'}_{i1}),f(k^{'}_{i2}, v^{'}_{i2}),..]`\
 for a user-defined function $f$.\
-`(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])`
+reduce: `(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])`
 `[v^{'''}_{1},v^{'''}_{2},..]`\
 where $\{k^{'}_{i}\} \equiv \{k^{''}_{j}\}$ and $v^{'''} = g(v^{''})$
 for a user-defined function $g$.
 
 \enlargethispage{12pt}
+
+---
+
+**Example: Counting NSF awards**
+
 To gain a better understanding of these MapReduce operators, imagine
 that we have a list of NSF principal investigators, along with their
 email information and award IDs as below. Our task is to count the
@@ -153,8 +158,7 @@ scan input lines and extract institution information and award IDs.
 Then, in the function, we simply count unique IDs on the data, since
 everything is already grouped by institution. Python pseudo-code is
 provided in
-Listing [\[lst:mapreduce\]](#lst:mapreduce){reference-type="ref"
-reference="lst:mapreduce"}.
+Listing \@ref(#lst:mapreduce).
 
 ``` {#lst:mapreduce style="PythonStyle" caption="Python pseudo-code for the \cfs{map} and \cfs{reduce} functions to count the number of awards per institution" label="lst:mapreduce" belowskip="-6pt"}
 # Input  : a list of text lines
@@ -189,6 +193,8 @@ institutions and award ids:
 Then the tuples will be grouped by institutions and be counted by the
 function.
 
+---
+
 \small
 \centering
   ------------------------------------ -- -------------------
@@ -205,8 +211,7 @@ fact, it has been said to be *too* simple and criticized as "a major
 step backwards" [@MapReduceBad] for large-scale, data-intensive
 applications. It is hard to argue that MapReduce is offering something
 truly innovative when MPI has been offering similar scatter and reduce
-operations since 1995, and Python has had high-order functions (, , ,
-and ) since its 2.2 release in 1994. However, the biggest strength of
+operations since 1995, and Python has had high-order functions (`map`, `reduce`, `filter`, and `lambda`) since its 2.2 release in 1994. However, the biggest strength of
 MapReduce is its simplicity. Its simple programming model has brought
 many nonexpert users to big data analysis. Its simple architecture has
 also inspired many developers to develop advanced capabilities, such as
@@ -314,13 +319,18 @@ specifications: the first is optimized for CPU performance and the
 second for storage occupancy. The two systems are typically configured
 as separate physical hardware.
 
+<img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]" width="70%" />
+<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]</p>
+</div>
+
 Running compute jobs on such hardware often goes like this. When a user
 requests to run an intensive task on a particular data set, the system
 will first reserve a set of computing nodes. Then the data are
 partitioned and copied from the storage server into these computing
 nodes before the task is executed. This process is illustrated in
-Figure [\[fig:computemodel\]](#fig:computemodel){reference-type="ref"
-reference="fig:computemodel"}(a). This computing model will be referred
+Figure \@ref(fig:fig5-1a)(top). This computing model will be referred
 to as *bringing data to computation*. In this model, if a data set is
 being analyzed in multiple iterations, it is very likely that the data
 will be copied multiple times from the storage cluster to the compute
@@ -338,8 +348,7 @@ To solve this problem, Hadoop implements a *bring compute to the data*
 strategy that combines both computing and storage at each node of the
 cluster. In this setup, each node offers both computing power and
 storage capacity. As shown in
-Figure [\[fig:computemodel\]](#fig:computemodel){reference-type="ref"
-reference="fig:computemodel"}(b), when users submit a task to be run on
+Figure \@ref(fig:fig5-1a)(bottom), when users submit a task to be run on
 a data set, the scheduler will first look for nodes that contain the
 data, and if the nodes are available, it will schedule the task to run
 directly on those nodes. If a node is busy with another task, data will
@@ -365,8 +374,7 @@ we can go over the design of a Hadoop MapReduce job. A MapReduce job is
 still composed of three phases: map, shuffle, and reduce. However,
 Hadoop divides the map and reduce phases into smaller tasks.
 
-Each map phase in Hadoop is divided into five tasks: , , , , and . An
-[input format]{.roman} task is in charge of talking to the input data
+Each map phase in Hadoop is divided into five tasks: input format, record reader, mapper, combiner, and partitioner. An [input format]{.roman} task is in charge of talking to the input data
 presumably sitting on HDFS, and splitting it into partitions (e.g., by
 breaking lines at line breaks). Then a [record reader]{.roman} task is
 responsible for translating the split data into the key--value pair
@@ -391,9 +399,9 @@ framework, but it only works locally at each node: it takes output from
 mappers executed on the same node and produces aggregated values.
 Combiners are optional but can be used to greatly reduce the amount of
 data exchange in the shuffle phase; thus, users are encouraged to
-implement this whenever possible. A common practice is when a function
+implement this whenever possible. A common practice is when a `reduce` function
 is both commutative and associative, and has the same input and output
-format, one can just use the function as the combiner. Nevertheless,
+format, one can just use the `reduce` function as the combiner. Nevertheless,
 combiners are not guaranteed to be executed by Hadoop, so this should
 only be treated as a hint. Its execution must not affect the correctness
 of the program.
@@ -408,9 +416,9 @@ understands the intermediate data distribution as well as the
 specifications of the cluster. In general, it is better to leave this
 job to Hadoop.
 
-Each reduce phase in Hadoop is divided into three tasks: , , and . The
-task is equivalent to the function of the MapReduce model. It basically
-groups the data produced by the mappers by keys and runs a function on
+Each reduce phase in Hadoop is divided into three tasks: reducer, output format, and record writer. The `reducer`
+task is equivalent to the `reduce` function of the MapReduce model. It basically
+groups the data produced by the mappers by keys and runs a `reduce` function on
 each list of grouping values. It outputs zero or more key--value pairs
 for the output format task, which then translates them into a writable
 format for the record writer task to serialize on HDFS. By default,
@@ -419,12 +427,12 @@ records on separate lines. However, this behavior is fully customizable.
 Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
-![Data transfer and communication of a MapReduce job in Hadoop. Data
-blocks are assigned to several maps, which emit key--value pairs that
-are shuffled and sorted in parallel. The reduce step emits one or more
-pairs, with results stored on the
-HDFS](ChapterParallel/figures/hadoop "fig:")
-[\[fig:hadoop\]]{#fig:hadoop label="fig:hadoop"}
+
+<div class="figure" style="text-align: center">
+<img src="ChapterParallel/figures/hadoop.png" alt="Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS" width="70%" />
+<p class="caption">(\#fig:hadoop)Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS</p>
+</div>
+
 
 ### Hardware provisioning
 
@@ -508,7 +516,7 @@ reference="lst:reducer"}).
 
 It should be noted that in Hadoop streaming, intermediate key--value
 pairs (the data flowing between mappers and reducers) must be in
-tab-delimited format, thus we replace the original command with a
+tab-delimited format, thus we replace the original `yield` command with a `print`
 formatted with tabs. Though the input format and record reader are still
 customizable in Hadoop streaming, they must be supplied as Java classes.
 This is one of the biggest limitations of Hadoop for Python developers.
@@ -537,7 +545,7 @@ Hadoop is a great system, and probably the most widely used MapReduce
 implementation. Nevertheless, it has important limitations, as we now
 describe.
 
--   Hadoop has proven to be a scalable implementation that can run on
+-   Performance: Hadoop has proven to be a scalable implementation that can run on
     thousands of cores. However, it is also known for having a
     relatively high job setup overheads and suboptimal running time. An
     empty task in Hadoop (i.e., with no mapper or reducer) can take
@@ -550,7 +558,7 @@ describe.
     maintaining fault tolerance by storing everything on HDFS is
     expensive, especially when for large data sets.
 
--   As mentioned previously, non-Java applications may only be
+-   Hadoop streaming support for non-Java applications: As mentioned previously, non-Java applications may only be
     integrated with Hadoop through the Hadoop streaming API. However,
     this API is far from optimal. First, input formats and record
     readers can only be written in Java, making it impossible to write
@@ -561,7 +569,7 @@ describe.
     tuples into strings in the mappers and convert them back into tuples
     again in reducers).
 
--   With the current setup, Hadoop only supports batch data processing
+-   Real-time applications: With the current setup, Hadoop only supports batch data processing
     jobs. This is by design, so it is not exactly a limitation of
     Hadoop. However, given that more and more applications are dealing
     with real-time massive data sets, the community using MapReduce for
@@ -569,7 +577,7 @@ describe.
     streaming or real-time data is clearly a disadvantage of Hadoop over
     other implementations.
 
--   This is more of a limitation of MapReduce than Hadoop per se.
+-   Limited data transformation operations: This is more of a limitation of MapReduce than Hadoop per se.
     MapReduce only supports two operations, map and reduce, and while
     these operations are sufficient to describe a variety of data
     processing pipelines, there are classes of applications that
@@ -632,9 +640,9 @@ developers can run Spark in a fraction of the time required for Hadoop.
 Listing [\[lst:spark\]](#lst:spark){reference-type="ref"
 reference="lst:spark"} provides the full code for the previous example
 written entirely in Spark. It should be noted that Spark's concept of
-the operator is not the same as Hadoop's, as it is designed to aggregate
+the `reduceByKey` operator is not the same as Hadoop's, as it is designed to aggregate
 all elements of a data set into a single element. The closest simulation
-of Hadoop's MapReduce pattern is a combination of , and , as shown in
+of Hadoop's MapReduce pattern is a combination of `mapPartitions`, `groupByKey` and `mapPartitions`, as shown in
 the next example.
 
 ``` {#lst:spark style="PythonStyle" caption="Python code for a Spark program that counts the number of awards per institution using MapReduce" label="lst:spark" numbers="none"}
@@ -663,6 +671,10 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
+
+---
+
+**Example: Analyzing home mortgage disclosure application data**
 
 We use a financial services analysis problem to illustrate the use of
 Apache Spark.
@@ -743,6 +755,11 @@ available, but mostly from the large I/O bandwidth available on the
 cluster thanks to the 200 distributed hard disks and fast network
 interconnects.
 
+---
+
+Summary
+-------
+
 ``` {#lst:hdma style="PythonStyle" caption="Python code for a Spark program to aggregate the debt--income ratio for loans originated in different census tracts" label="lst:hdma" numbers="none"}
 import ast
 import sys
@@ -777,9 +794,6 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
-
-Summary
--------
 
 Big data means that it is necessary to both store very large collections
 of data and perform aggregate computations on those data. This chapter

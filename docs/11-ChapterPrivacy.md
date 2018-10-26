@@ -28,9 +28,9 @@ that done for private gain. In practical terms, this requires that the
 private interests of individual privacy and data confidentiality be
 balanced against the social benefits of research access and use.
 
-" encompasses not only the famous 'right to be left alone,' or keeping
+Privacy "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
-share information selectively but not publicly" [@house2014big]. is
+share information selectively but not publicly" [@house2014big]. Confidentiality is
 "preserving authorized restrictions on information access and
 disclosure, including means for protecting personal privacy and
 proprietary information" [@mccallister2010sp]. Doing so is not
@@ -46,15 +46,16 @@ disclosure increases [@doyle2001confidentiality]. As a result, the
 quality of data analysis is typically degraded with the production of
 public use data [@duncanstatistical].
 
-\centering
-![The privacy--utility
-tradeoff[]{label="fig:11-1"}](ChapterPrivacy/figures/fig11-1){#fig:11-1}
+<div class="figure" style="text-align: center">
+<img src="ChapterPrivacy/figures/fig11-1.png" alt="The privacy--utility tradeoff" width="70%" />
+<p class="caption">(\#fig:fig11-1)The privacy--utility tradeoff</p>
+</div>
 
 \vspace*{-12pt}
 In general, the greater the access to data and their original values,
 the greater the risk of reidentification for individual units. We depict
 this tradeoff graphically in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"}. The
+Figure \@ref(fig:fig11-1). The
 concave curves in this hypothetical example depict the technological
 relationship between data utility and privacy for an organization such
 as a business firm or a statistical agency. At one extreme, all
@@ -65,7 +66,7 @@ utility is achieved. Initially, assume the organization is on the outer
 frontier. Increased external data resources (those not used by the
 organization) increase the risk of reidentification. This is represented
 by an inward shift of the utility/privacy frontier in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"}.
+Figure \@ref(fig:fig11-1).
 Before the increase in external data, the organization could achieve a
 level of data utility $U^*$ and privacy $P_1$. The increase in
 externally available data now means that in order to maintain utility at
@@ -93,12 +94,18 @@ population being studied; consider health care costs for a small number
 of ill people [@stanton2006high], or economic activity such as rapid
 employment growth by a small number of firms [@decker2015has].
 
+---
+
+**Example: The importance of activity in the tails**
+
 Spending on health care services in the United States is highly
 concentrated among a small proportion of people with extremely high use.
 For the overall civilian population living in the community, the latest
 data indicate that more than 20% of all personal health care spending in
 2009 (\$275 billion) was on behalf of just 1% of the population
 [@healthcarespending].
+
+---
 
 It is important to understand where the risk of privacy breaches comes
 from. Let us assume for a moment that we conducted a traditional
@@ -153,6 +160,10 @@ often combined, collected for one purpose, and used for another. Data
 providers often have a poor understanding of whether or how their data
 will be used.
 
+---
+
+**Example: Knowledge is power**
+
 In a discussion of legal approaches to privacy in the context of big
 data, Strandburg [@Strandburg2014] says: "'Big data' has great potential
 to benefit society. At the same time, its availability creates
@@ -162,6 +173,8 @@ big data to fulfill its potential for societal benefit, while protecting
 citizens adequately from related individual and social harms. Current
 privacy law evolved to address different concerns and must be adapted to
 confront big data's challenges."
+
+---
 
 It is critical to address privacy and confidentiality issues if the full
 public value of big data is to be realized. This chapter highlights why
@@ -183,7 +196,7 @@ also to validate the data generation process (in particular, data
 linkage), replicate analyses, and build a knowledge infrastructure
 around complex data sets.
 
-##### Validating the data generating process {#validating-the-data-generating-process .unnumbered}
+**Validating the data generating process**
 
 Research designs requiring a combination of data sources and/or analysis
 of the tails of populations challenge the traditional paradigm of
@@ -201,7 +214,7 @@ with privacy-protecting identifiers [@schnell2009privacy]. Regardless,
 at some point in the process those must be generated out of the original
 information, thus access to the latter is important.
 
-##### Replication {#replication .unnumbered}
+**Replication**
 
 John Ioannidis has claimed that most published research findings are
 false [@Ioannidis2005]; for example, the unsuccessful replication of
@@ -222,7 +235,7 @@ the assumptions of a particular statistical model are met, what relevant
 information is included or excluded, and whether valid inferences can be
 drawn from the data [@kreuter201412].
 
-##### Building knowledge infrastructure {#building-knowledge-infrastructure .unnumbered}
+**Building knowledge infrastructure**}
 
 Creating a community of practice around a data infrastructure can result
 in tremendous new insights, as the Sloan Digital Sky Survey and the
@@ -253,7 +266,7 @@ candidate data release(s). The two main approaches have been
 *statistical disclosure* control techniques to produce anonymized public
 use data sets, and controlled access through a *research data center*.
 
-##### Statistical disclosure control techniques {#statistical-disclosure-control-techniques .unnumbered}
+**Statistical disclosure control techniques**
 
 Statistical agencies have made data available in a number of ways:
 through tabular data, public use files, licensing agreements and, more
@@ -310,7 +323,7 @@ synthetic data sets lack utility in many research settings but are
 useful for generating flexible data sets underlying data tools and apps
 such as the Census Bureau's OnTheMap.
 
-##### Research data centers {#research-data-centers .unnumbered}
+**Research data centers**
 
 The second approach is establishing research data centers. Here,
 qualified researchers gain access to micro-level data after they are
@@ -534,7 +547,7 @@ protect privacy in a systematic manner, knowledge is shared about the
 process of privacy protections disseminated in a professional fashion,
 and there is ongoing documentation about the value of evidence-based
 research. It is thus that the risk--utility tradeoff depicted in
-Figure [1.1](#fig:11-1){reference-type="ref" reference="fig:11-1"} can
+Figure \@ref(fig:fig11-1) can
 be shifted in a manner that serves the public good.
 
 Resources
