@@ -916,7 +916,7 @@ JSON body from the response object (which is currently text from the
 perspective of our script) converted to a Python dictionary. The `requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
-the "u´" notation.)
+the "u" notation.)
 
 ``` {r, eval=FALSE}
 >> response_dict = response.json()
