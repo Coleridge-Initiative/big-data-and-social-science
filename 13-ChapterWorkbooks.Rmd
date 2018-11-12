@@ -13,7 +13,7 @@ hope you have a lot of fun with them.
 Introduction
 ------------
 
-We provide accompanying Juptyer IPython workbooks for mostchapters in
+We provide accompanying Juptyer IPython workbooks for most chapters in
 this book. These workbooks explain techniques and approaches selected
 from each chapter and provide thorough implementation details so that
 students and interested practitioners can quickly start using the
