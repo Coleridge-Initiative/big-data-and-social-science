@@ -1,7 +1,11 @@
 Record Linkage {#chap:link}
 ==============
 
-\chapterauthor{Joshua Tokle and Stefan Bender}
+***Joshua Tokle***
+
+***Stefan Bender***
+<br><br>
+
 Big data differs from survey data in that it is typically necessary to
 combine data from multiple sources to get a complete picture of the
 activities of interest. Although computer scientists tend to simply

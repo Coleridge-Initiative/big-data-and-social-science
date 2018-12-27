@@ -1,7 +1,9 @@
 Working with Web Data and APIs {#chap:web}
 ==============================
 
-\chapterauthor{Cameron Neylon}
+***Cameron Neylon***
+<br><br>
+
 This chapter will show you how to extract information from social media
 about the transmission of knowledge. The particular application will be
 to develop links to authors' articles on Twitter using PLOS articles and
@@ -88,8 +90,6 @@ limit the search, and so with some fiddling we come up with a URL like
 the following. (We have broken the one-line URL into three lines for
 ease of presentation.)
 
-\enlargethispage{6pt}
-
 http://www.hhmi.org/scientists/browse?
 kw=&sort_by=field_scientist_last_name&
 sort_order=ASC&items_per_page=20&page=0
@@ -157,7 +157,6 @@ specific case you happen to be looking at.
 <p class="caption">(\#fig:fig2-1)Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.</p>
 </div>
 
-\vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
 variable `soup`) and then find the `div` element that holds the information on
 investigators (`investigator_list`). As this element is unique on the page (I checked using
@@ -173,7 +172,6 @@ detailing a single investigator (`investigators`).
 >> investigators = investigator_list.find_all("div", class_ = "views-row")
 ```
 
-\enlargethispage{24pt}
 As we specified in our query parameters that we wanted 20 results per
 page, we should check whether our list of page sections has the right
 length.
@@ -184,7 +182,6 @@ length.
 20
 ```
 
-\enlargethispage{12pt}
 
 ```r
 # Given a request response object, parse for HHMI investigators
@@ -237,7 +234,6 @@ def scrape(page_response):
    return data
 ```
 
-\pagebreak
 Finally, we need to process each of these segments to obtain the data we
 are looking for. This is the actual "scraping" of the page to get the
 information we want. Again, this involves looking closely at the HTML
@@ -260,8 +256,7 @@ Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar
 Harbor, Maine. Note that we have also obtained URLs that give more
 details on the researcher and their research program (`research_url` and `url` keys in the
 dictionary) that could provide a useful input to textual analysis or
-topic modeling (see
-[Text Analysis](#chap:text)).
+topic modeling (see [Text Analysis](#chap:text)).
 
 
 ```r
@@ -334,7 +329,6 @@ you so desire. The file also states that there is a requested
 between each query. This request is easily accommodated by adding a
 timed delay between each page request.
 
-\pagebreak
 
 ```r
 >> for page_num in range(num_pages):
@@ -689,7 +683,7 @@ can be a site for frank discussion of research.
         other research---so analysis of numbers of tweets or likes is
         not always useful.
 
-\---
+---
 
 ---
 
@@ -710,7 +704,6 @@ relevant here as well.
     -   Presumably, recommendations are a result of in-depth reading and
         a high level of engagement.
 
-    \pagebreak
 -   Users
 
     -   Recommendations are from a selected population of experts
@@ -800,7 +793,6 @@ Table [\[tab:chapAPI:1\]](#tab:chapAPI:1){reference-type="ref"
 reference="tab:chapAPI:1"} gives a partial list of key data sources and
 APIs that are relevant to the analysis of research outputs.
 
-\small
   **Source**                  **Description**                                                                                                                                                                                                 **API**   **Free**
   --------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------- ----------
                                                                                                                                                                                                                                                        
@@ -993,7 +985,6 @@ API to make various API calls straightforward. This wrapper only works
 with the public ORCID API and can therefore only access publicly
 available data.
 
-\pagebreak
 Using the API and wrapper together provides a convenient means of
 getting this information. For instance, given an ORCID, it is
 straightforward to get profile information. Here we get a list of
@@ -1063,7 +1054,6 @@ when using these data, and a researcher will need to apply subject
 matter knowledge as well as broader data management expertise. Some of
 the core issues are as follows:
 
-\vspace*{-2pt}
 **Integration**
 
 In the examples given above with Crossref and ORCID, we used a known
@@ -1078,7 +1068,6 @@ cross-referencing between data sets. Unique identifiers that are common
 to both are extremely powerful but only exist in certain cases (see also
 Chapter [Record Linkage]).
 
-\vspace*{-2pt}
 **Coverage**
 
 \hspace*{4pt}
@@ -1092,7 +1081,6 @@ inclusion and differing commitments to completeness. Sampling of "the
 literature" is therefore impossible, and the choice of index used for
 any study can make a substantial difference to the conclusions.
 
-\vspace*{-2pt}
 **Completeness**
 
 Alongside the question of coverage (how broad is a data source?), with
@@ -1106,7 +1094,6 @@ researchers have a Twitter profile and many have an ORCID profile, only
 a small subset of ORCID profiles provide a link to a Twitter profile.
 See below for a worked example.
 
-\vspace*{-2pt}
 **Scope**
 
 In survey data sets, the scope is defined by the question being asked.
@@ -1122,7 +1109,6 @@ repositories, and some are highly informal. Any study of (a subset of)
 these outputs has as its first challenge the question of how to limit
 the corpus to be studied.
 
-\vspace*{-2pt}
 **Source and validity**
 
 The challenges described above relate to the identification and counting
@@ -1148,7 +1134,6 @@ reports 10 citations but Europe PubMed Central reports 18, despite using
 a similar corpus. The distinction lies in differences in the methodology
 used to mine the corpus for citations.
 
-\vspace*{-2pt}
 **Identifying the underlying latent variable**
 
 These issues multiply as we move into newer forms of data. These sparse
@@ -1248,7 +1233,6 @@ mendeley 0
 crossref 0
 ```
 
-\enlargethispage{18pt}
 The DET service only has a record of citations to this article from
 Wikipedia. As we will see below, the PLOS service returns more results.
 This is because some of the sources are not yet being queried by DET.
@@ -1461,10 +1445,11 @@ From this analysis we can show that this tweet is actually from one of
 my co-authors of the article.
 
 To make this process easier we write the convenience function shown in
-Listing \@ref(fig:web:py2), to go from a Twitter user handle to try and
+Listing \@ref(fig:web-py2), to go from a Twitter user handle to try and
 find an ORCID for that person.
 
-``` {#fig:web:py2 style="PythonStyle" caption="Python code to find ORCID for Twitter handle" label="fig:web:py2"}
+
+```r
 # Take a twitter handle or user name and return an ORCID
 def twitter2orcid(twitter_handle,
                   resp = 'orcid', search_depth = 10):
@@ -1631,7 +1616,6 @@ probably have duplicate articles (one article might cite multiple in our
 set of seven) and duplicate people (authors in common between articles
 and authors who are also tweeting).
 
-\enlargethispage{6pt}
 These data could be used for network analysis, to build up a new corpus
 of articles (by following the citation links), or to analyze the links
 between authors and those tweeting about the articles. We do not pursue
@@ -1698,7 +1682,6 @@ here. First, the author may not have an ORCID. Second, the article may
 not be explicitly linked to another article. Try searching ORCID for the
 DOIs associated with each of the citing articles.
 
-\enlargethispage{12pt}
 In this case we will look to see how many of the Twitter handles
 discussing these articles are associated with an ORCID profile we can
 discover. This in turn could lead to more profiles and more cycles of
@@ -2010,8 +1993,6 @@ some examples:
     our ability to say *which* groups are talking about it, which could
     be quite interesting.
 
-\enlargethispage{6pt}
-\vspace*{-6pt}
 **Compare ...**
 
 Comparisons using social media or download statistics need real care. As
@@ -2060,7 +2041,6 @@ implications? Is it being used in education or in health practice? And
 to what extent are these different kinds of use independent from each
 other?
 
-\enlargethispage{-12pt}
 It is important to realize that these kinds of data are proxies of
 things that we do not truly understand. They are signals of the flow of
 information down paths that we have not mapped. To me this is the most
@@ -2195,7 +2175,6 @@ project, researcher, funding decision, or institute) makes in the world.
 In this sense, it maps well to standard approaches in the social
 sciences that seek to identify how an intervention has led to change.
 
-\pagebreak
 The link between "impact" and the distribution of limited research
 resources makes its definition highly political. In fact, there are many
 forms of impact, and the different pathways to different kinds of
