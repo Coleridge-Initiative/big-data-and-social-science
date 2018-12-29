@@ -1,7 +1,9 @@
 Errors and Inference {#chap:errors}
 ====================
 
-\chapterauthor{Paul P. Biemer}
+***Paul P. Biemer***
+<br><br>
+
 This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
