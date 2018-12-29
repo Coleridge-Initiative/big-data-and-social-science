@@ -1,11 +1,7 @@
 Programming with Big Data {#chap:parallel}
 =========================
 
-***Huy Vo***
-
-***Claudio Silva***
-<br><br>
-
+\chapterauthor{Huy Vo and Claudio Silva}
 Big data is sometimes defined as data that are too big to fit onto the
 analyst's computer. This chapter provides an overview of clever
 programming techniques that facilitate the use of data (often using

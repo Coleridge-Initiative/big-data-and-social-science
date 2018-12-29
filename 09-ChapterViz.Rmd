@@ -1,11 +1,8 @@
 Information Visualization {#chap:viz}
 =========================
 
-***M. Adil Yalcin***
-
-***Catherine Plaisant***
-<br><br>
-
+\chapterauthor{M.\ Adil Yal\c{c}{\i}n and Catherine Plaisant}
+\vspace*{-6pt}
 This chapter will show you how to explore data and communicate results
 so that data can be turned into interpretable, actionable information.
 There are many ways of presenting statistical information that convey
@@ -13,6 +10,8 @@ content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range
 of data types and tasks, and to explore the foundations and challenges
 of information visualization.
+
+\vspace*{-6pt}
 
 Introduction {#sec:viz-1}
 ------------

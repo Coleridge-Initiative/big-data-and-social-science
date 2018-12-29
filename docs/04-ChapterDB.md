@@ -1,11 +1,7 @@
 Databases {#chap:db}
 =========
 
-***Ian Foster***
-
-***Pascal Heus***
-<br><br>
-
+\chapterauthor{Ian Foster and Pascal Heus}
 Once the data have been collected and linked into different files, it is
 necessary to store and organize them. Social scientists are used to
 working with one analytical file, often in SAS, Stata, SPSS, or R. This
