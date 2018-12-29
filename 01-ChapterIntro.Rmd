@@ -165,7 +165,7 @@ goals: description, causation, and prediction.
 
 The job of many social scientists is to provide descriptive statements
 about the population of interest. These could be univariate, bivariate,
-or even multivariate statements. [Machine Learning](#chap:ml) on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
+or even multivariate statements. [Machine Learning] on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
 methods.
 
 Descriptive statistics are usually created based on census data or
@@ -498,13 +498,12 @@ in text format, computational linguistics tools must be applied
 ([Text Analysis]). Second, data must be captured on who is funded,
 and how they interact in teams, so network tools and analysis must be
 used ([Networks: The Basics]). Third, information about the type of
-results must be gleaned from the web and other sources ([Working with Web Data and APIs])
+results must be gleaned from the web and other sources the disparate
+complex data sets need to be stored in databases ([Databases]), integrated ([Record Linkage]), analyzed ([Machine Learning]), and used to make inferences ([Errors and Inference]).
 
 ```{r fig2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong'}
 knitr::include_graphics("ChapterIntro/figures/figure_cameron.png")
 ```
-
-Finally, the disparate complex data sets need to be stored in databases ([Databases]), integrated ([Record Linkage]), analyzed [Machine Learning](#chap:ml), and used to make inferences ([Errors and Inference]).
 
 The use case serves as the thread that ties many of the ideas together.
 Rather than asking the reader to learn how to code "hello world," we
@@ -594,7 +593,7 @@ knitr::include_graphics("ChapterIntro/figures/Figure2.png")
 
 The three chapters in Part II (see Figure \@ref(fig:fig4)) introduce three of the most important tools that can be used by social scientists to do new and exciting research: machine learning, text analysis, and social network analysis.
 
-[Machine Learning](#chap:ml) introduces machine learning methods. It shows the
+[Machine Learning] introduces machine learning methods. It shows the
 power of machine learning in a variety of different contexts,
 particularly focusing on clustering and classification. You will get an
 overview of basic approaches and how those approaches are applied. The
@@ -602,7 +601,7 @@ chapter builds from a conceptual framework and then shows you how the
 different concepts are translated into code. There is a particular focus
 on random forests and support vector machine (SVM) approaches.
 
-[Text Analysis](#chap:text) describes how social scientists can make use of
+[Text Analysis] describes how social scientists can make use of
 one of the most exciting advances in big data---text analysis. Vast
 amounts of data that are stored in documents can now be analyzed
 andsearched so that different types of information can be retrieved.

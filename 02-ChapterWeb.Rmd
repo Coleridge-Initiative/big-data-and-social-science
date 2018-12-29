@@ -90,7 +90,9 @@ ease of presentation.)
 
 \enlargethispage{6pt}
 
-http://www.hhmi.org/scientists/browse?kw=&sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=20&page=0
+http://www.hhmi.org/scientists/browse?
+kw=&sort_by=field_scientist_last_name&
+sort_order=ASC&items_per_page=20&page=0
 
 The `requests` module, available natively in Jupyter Python notebooks, is a useful
 set of tools for handling interactions with websites. It lets us
@@ -174,7 +176,10 @@ length.
 ```{r, eval=FALSE}
 >> len(investigators)
 20
+```
 
+\enlargethispage{12pt}
+``` {r, eval=FALSE}
 # Given a request response object, parse for HHMI investigators
 def scrape(page_response):
    # Obtain response HTML and the correct <div> from the page
@@ -911,7 +916,7 @@ JSON body from the response object (which is currently text from the
 perspective of our script) converted to a Python dictionary. The `requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
-the `uÂ´` notation.)
+the "u´" notation.)
 
 ``` {r, eval=FALSE}
 >> response_dict = response.json()
