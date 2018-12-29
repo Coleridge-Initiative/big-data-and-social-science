@@ -1,9 +1,11 @@
 Machine Learning {#chap:ml}
 ================
 
-\chapterauthor{Rayid Ghani and Malte Schierholz}
-\vspace*{-12pt}
-\enlargethispage{6pt}
+***Rayid Ghani***
+
+***Malte Schierholz***
+<br><br>
+
 This chapter introduces you to the value of machine learning in the
 social sciences, particularly focusing on the overall machine learning
 process as well as clustering and classification methods. You will get
@@ -66,8 +68,6 @@ of tasks $T$ and performance measure $P$, if its performance at tasks in
 $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine].
 
-\enlargethispage{6pt}
-\afterpage{\clearpage}
 Commercial machine learning examples[\[commalee\]]{#commalee
 label="commalee"}
 
@@ -370,7 +370,6 @@ describe the cluster using the features in your data. A good example of
 a tool that allows interactive clustering from text data is Ontogen
 [@Ontogen].
 
-\enlargethispage{6pt}
 **$k$-means clustering**
 
 The most commonly used clustering algorithm is called $k$-means, where
@@ -407,7 +406,6 @@ be used [@park2009simple].
 
 **Expectation-maximization (EM) clustering**
 
-\hspace*{3pt}
 You may be familiar with the EM algorithm in the context of imputing
 missing data. EM is a general approach to maximum likelihood in the
 presence of incomplete data. However, it is also used as a clustering
@@ -464,7 +462,6 @@ shift is computationally slow but can be easily parallelized.
 
 **Hierarchical clustering**
 
-\hspace*{-1pt}
 The clustering methods that we have seen so far, often termed
 *partitioning* methods, produce a flat set of clusters with no
 hierarchy. Sometimes, we want to generate a hierarchy of clusters, and
@@ -505,7 +502,6 @@ between nodes) represent the similarity between the two data points.
 <p class="caption">(\#fig:spectral)The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering</p>
 </div>
 
-\vspace*{8pt}
 The algorithm works as follows:
 
 1.  Compute a similarity matrix from the data. This involves determining
@@ -697,7 +693,6 @@ point B is classified differently if $k = 3$.
 <p class="caption">(\#fig:knn)Example of k-nearest neighbor with k = 1, 3, 5 neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
 </div>
 
-\vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
 useful in applications where data are coming in extremely quickly and a
 model needs to be updated frequently. All the work, however, gets pushed
@@ -733,7 +728,6 @@ method is completely oblivious to the type of target variable and can
 potentially be used to predict text documents, images, and videos, based
 on the aggregation function after the nearest neighbors are found.
 
-\vspace*{-4pt}
 **Support vector machines**
 
 Support vector machines are one of the most popular and best-performing
@@ -1175,7 +1169,6 @@ possible) and making sure the model is tested on each data point.
 
 **Temporal validation**
 
-\hspace*{4pt}
 The cross-validation and holdout set approaches described above assume
 that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in

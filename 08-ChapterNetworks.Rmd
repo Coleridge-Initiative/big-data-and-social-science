@@ -1,7 +1,9 @@
 Networks: The Basics {#chap:networks}
 ====================
 
-\chapterauthor{Jason Owen-Smith}
+***Jason Owen-Smith***
+<br><br>
+
 Social scientists are typically interested in describing the activities
 of individuals and organizations (such as households and firms) in a
 variety of economic and social contexts. The frame within which data has
