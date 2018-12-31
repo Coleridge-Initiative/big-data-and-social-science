@@ -2,6 +2,8 @@ Networks: The Basics {#chap:networks}
 ====================
 
 \chapterauthor{Jason Owen-Smith}
+**Jason Owen-Smith**
+
 Social scientists are typically interested in describing the activities
 of individuals and organizations (such as households and firms) in a
 variety of economic and social contexts. The frame within which data has
@@ -212,7 +214,7 @@ is relatively rare to analyze untransformed two-mode network data.
 Instead, most analyses take advantage of the fact that such networks are
 *dual* [@white1976social]. In other words, a two-mode network connecting
 grants and people can be conceptualized (and analyzed) as two one-mode
-networks, or *projections*.
+networks, or *projections*^[Key insight: A two-mode network can be conceptualized and analyzed as two one-mode networks, or projections.].
 
 ### Inducing one-mode networks from two-mode data
 
@@ -249,18 +251,20 @@ the vertex list, which has value "00100679") is connected to the vertex
 with identifier 10419 by an edge with value 1, indicating that employee
 "00100679" is paid by the grant described by vertex 10419.
 
-aaaaaaaaaaāaaāaaaāaaaaaaaaaaaaaaaaaaaaaaaaāaaāaaaāaaaaaaaāaā\
-  12595  9206\
-1 \"00100679\" 1 10419\
-2 \"00107462\" 2 10422\
-3 \"00109569\" 3 9855\
-4 \"00145355\" 3 9873\
-5 \"00153190\" 4 9891\
-6 \"00163131\" 7 10432\
-7 \"00170348\" 7 12226\
-8 \"00172339\" 8 10419\
-9 \"00176582\" 9 11574\
-10 \"00203529\" 10 11196
+<div style="text-align: center"> *Grant-Person-Network </div>
+
+|\*Vertices 12595  9206 | | \*Edges| |
+|---------------------------|-|-|-|
+1 |"00100679"| 1| 10419|
+2 |"00107462"| 2 |10422|
+3 |"00109569" |3 |9855|
+4 |"00145355" |3 |9873|
+5 |"00153190" |4 |9891|
+6 |"00163131" |7 |10432|
+7 |"00170348" |7 |12226|
+8 |"00172339" |8 |10419|
+9 |"00176582" |9 |11574|
+10 |"00203529"| 10 |11196|
 
 The network excerpted above is two-mode because it represents
 relationships between two different classes of nodes, grants, and
@@ -343,7 +347,11 @@ original two-mode person-by-grants data. In constructing these networks
 I assume that a tie exists between two university research employees
 when they are paid any wages from the same grant during the same year.
 Other time frames or thresholds might be used to define ties if
-appropriate for particular analyses.
+appropriate for particular analyses^[Key insight: Care must
+be taken when inducing
+one-mode network projections from two-mode network data because not all
+affiliations provide equally
+compelling evidence of actual social relationships.].
 
 Network measures
 ----------------
@@ -357,7 +365,10 @@ individual or group are a function of the complete pattern of
 connections among them. In other words, the explanatory power of
 networks is driven as much by the pathways that *indirectly* connect
 nodes as by the particular relationships that *directly* link members of
-a given dyad. Indirect ties create reachability in a network.
+a given dyad. Indirect ties create reachability in a network^[Key insight: Structural analysis of outcomes for
+any individual or group are
+a function of the complete pattern of connections
+among them.].
 
 ### Reachability
 
@@ -379,7 +390,13 @@ the extent to which the other nodes in the network are connected to each
 other. The orange node (ego) in each network has four partners, but
 their positions are far from equivalent. Centrality measures on full
 network data can tease out the differences. The networks also vary in
-their gross characteristics. Those differences, too, are measurable.
+their gross characteristics. Those differences, too, are measurable^[ Key insight: Much of
+the power of networks (and
+their systemic features) is
+due to indirect ties that create reachability. Two nodes
+can reach each other if they
+are connected by an unbroken chain of relationships.
+These are often called indirect ties.].
 
 <div class="figure" style="text-align: center">
 <img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
@@ -652,7 +669,10 @@ length, distribution of path lengths, degree distribution, and the
 clustering coefficient---offer a robust set of measures to examine and
 compare whole networks. It is also possible to distinguish among the
 positions nodes hold in a particular network. Some of the most powerful
-centrality measures also rely on the idea of indirect ties.
+centrality measures also rely on the idea of indirect ties^[Key insight: Some of
+the most powerful centrality
+measures also rely on the
+idea of indirect ties.].
 
 **Centrality measures**
 
@@ -696,7 +716,16 @@ make explicit use of the idea that reachability is the source of many of
 the important social and economic benefits of salutary network
 positions, but they do so with different substantive emphases. Both of
 these approaches rely on the idea of a network geodesic, the longest
-shortest path connecting any pair of actors. Because these measures rely
+shortest path^[A *shortest path* is a path that does not repeat any
+nodes or ties. Most pairs
+have several of those. The
+*geodesic* is the longest
+shortest path. So, if two
+people are directly connected (path length 1) and
+connected through shared
+ties to another person
+(path length 2), then their
+geodesic distance is two.] connecting any pair of actors. Because these measures rely
 on reachability, they are only useful when applied to components. When
 nodes have no ties (degree 0) they are called *isolates*. The geodesic
 distances are infinite and thus path-based centrality measures cannot be
@@ -875,32 +904,28 @@ The path length histogram presented in Figure
 \@ref(fig:fig8-8) suggests a
 similar pattern. While the average distance among any pair of connected
 nodes in both networks is fairly similar (see
-Table [\[tab:net1\]](#tab:net1){reference-type="ref"
-reference="tab:net1"}), university B has a larger number of unconnected
+Table \@ref(tab:table8-1), university B has a larger number of unconnected
 nodes and university A has a greater concentration of more closely
 connected dyads. The preponderance of shorter paths in this network
 could also be a result of a few larger grants that connect many pairs of
 nodes at unit distance and thus shorten overall path lengths.
 
-\centering
-\small
-                                **University A**   **University B**
-  ---------------------------- ------------------ ------------------
-  Nodes                              4,999              4,144
-  Edges (total)                      57,756             91,970
-  \% nodes in main component         68.67%             67.34%
-  Diameter                             18                 18
-  Average degree                     11.554             44.387
-  Clustering coefficient             0.855              0.913
-  Density                            0.005              0.011
-  Average path length                5.034              5.463
+Table: (\#tab:table8-1) Descriptive statistics for the main components of two university networks
 
-  : Descriptive statistics for the main components of two university
-  networks[\[tab:net1\]]{#tab:net1 label="tab:net1"}
+|                             |  **University A**|   **University B**|
+|----------------------------|:------------------:|:------------------:|
+|Nodes                       |       4,999      |        4,144|
+|Edges (total)               |       57,756     |        91,970|
+|\% nodes in main component   |      68.67%     |        67.34%|
+|Diameter                     |        18       |          18|
+|Average degree              |       11.554     |        44.387|
+|Clustering coefficient      |       0.855      |        0.913|
+|Density                     |       0.005      |        0.011|
+|Average path length         |       5.034      |        5.463|
+<br>
 
 But how do the descriptive statistics shake out?
-Table [\[tab:net1\]](#tab:net1){reference-type="ref"
-reference="tab:net1"} presents the basic descriptive statistics we have
+Table \@ref(tab:table8-1) presents the basic descriptive statistics we have
 discussed for each network. University A's network includes 855 more
 nodes than university B's, a difference of about 20%. In contrast, there
 are far fewer edges connecting university A's research employees than
@@ -952,8 +977,7 @@ For more information about network analysis *in general*, the
 International Network for Social Network Analysis
 (<http://www.insna.org/>) is a large, interdisciplinary association
 dedicated to network analysis. It publishes a traditional academic
-journal, *Social Networks*, an online journal, *Journal of Social
-Structure*, and a short-format journal, *Connections*, all dedicated to
+journal, *Social Networks*, an online journal, *Journal of Social Structure*, and a short-format journal, *Connections*, all dedicated to
 social network analysis. Its several listservs offer vibrant
 international forums for discussion of network issues and questions.
 Finally, its annual meetings include numerous opportunities for

@@ -246,6 +246,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
 <li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
 <li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
@@ -549,8 +550,9 @@ Listing 5.4. Python code for a Spark program that counts the number of awards pe
 <p>We use a financial services analysis problem to illustrate the use of Apache Spark.</p>
 <p>Mortgage origination data provided by the Consumer Protection Financial Bureau provide insightful details of the financial health of the real estate market. The data <span class="citation">[@HDMA]</span>, which are a product of the Home Mortgage Disclosure Act (HMDA), highlight key attributes that function as strong indicators of health and lending patterns.</p>
 <p>Lending institutions, as defined by section 1813 in Title 12 of the HMDA, decide on whether to originate or deny mortgage applications based on credit risk. In order to determine this credit risk, lenders must evaluate certain features relative to the applicant, the underlying property, and the location. We want to determine whether census tract clusters could be created based on mortgage application data and whether lending institutions’ perception of risk is held constant across the entire USA.</p>
-<p>For the first step of this process, we study the debt–income ratio for loans originating in different census tracts. This could be achieved simply by computing the debt–income ratio for each loan application and aggregating them for each year by census tract number. A challenge, however, is that the data set provided by HMDA is quite extensive. In total, HMDA data contain approximately 130 million loan applications between 2007 and 2013. As each record contains 47 attributes, varying in types from continuous variables such as loan amounts and applicant income to categorical variables such as applicant gender, race, loan type, and owner occupancy, the entire data set results in about 86 GB of information. Parsing the data alone could take up to hours on a single machine if using a naïve approach that scans through the data sequentially. Tables 5.1 and 5.2 highlight the breakdown in size per year and data fields of interest.</p>
+<p>For the first step of this process, we study the debt–income ratio for loans originating in different census tracts. This could be achieved simply by computing the debt–income ratio for each loan application and aggregating them for each year by census tract number. A challenge, however, is that the data set provided by HMDA is quite extensive. In total, HMDA data contain approximately 130 million loan applications between 2007 and 2013. As each record contains 47 attributes, varying in types from continuous variables such as loan amounts and applicant income to categorical variables such as applicant gender, race, loan type, and owner occupancy, the entire data set results in about 86 GB of information. Parsing the data alone could take up to hours on a single machine if using a naïve approach that scans through the data sequentially. Tables <a href="chap-parallel.html#tab:table5-1">5.1</a> and <a href="chap-parallel.html#tab:table5-2">5.2</a> highlight the breakdown in size per year and data fields of interest.</p>
 <table>
+<caption><span id="tab:table5-1">Table 5.1: </span> Home Mortgage Disclosure Act data size</caption>
 <thead>
 <tr class="header">
 <th align="center"><strong>Year</strong></th>
@@ -601,11 +603,9 @@ Listing 5.4. Python code for a Spark program that counts the number of awards pe
 </tr>
 </tbody>
 </table>
-<div style="text-align: center">
-Table 5.1. Home Mortgage Disclosure Act data size
-</div>
 <p><br></p>
 <table>
+<caption><span id="tab:table5-2">Table 5.2: </span> Home Mortgage Disclosure Act data size</caption>
 <thead>
 <tr class="header">
 <th><strong>Index</strong></th>
@@ -656,9 +656,6 @@ Table 5.1. Home Mortgage Disclosure Act data size
 </tr>
 </tbody>
 </table>
-<div style="text-align: center">
-Table 5.2. Home Mortgage Disclosure Act data fields
-</div>
 <p><br></p>
 <p>Observing the transactional nature of the data, where the aggregation process could be distributed and merged across multiple partitions of the data, we could complete this task in much less time by using Spark. Using a cluster consisting of 1,200 cores, the Spark program in Listing 5.5 took under a minute to complete. The substantial performance gain comes not so much from the large number of processors available, but mostly from the large I/O bandwidth available on the cluster thanks to the 200 distributed hard disks and fast network interconnects.</p>
 <pre id="lst:hdma" style="PythonStyle" caption="Python code for a Spark program to aggregate the debt--income ratio for loans originated in different census tracts" label="lst:hdma" numbers="none"><code>import ast

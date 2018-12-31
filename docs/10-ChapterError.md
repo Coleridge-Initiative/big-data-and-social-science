@@ -2,6 +2,8 @@ Errors and Inference {#chap:errors}
 ====================
 
 \chapterauthor{Paul P. Biemer}
+**Paul P. Biemer**
+
 This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
@@ -143,12 +145,12 @@ $$\text{Total error } =\text{ Row error } + \text{ Column error }
 For the situations considered in this chapter, the row errors may be of
 three types:
 
--   Omissions: Some rows are missing, which implies that elements in the target
+-   **Omissions**: Some rows are missing, which implies that elements in the target
     population are not represented on the file.
 
--   Duplications: Some population elements occupy more than one row.
+-   **Duplications**: Some population elements occupy more than one row.
 
--   Erroneous inclusions: Some rows contain elements or entities that are not part of the
+-   **Erroneous inclusions**: Some rows contain elements or entities that are not part of the
     target population.
 
 For survey sample data sets, omissions include members of the target
@@ -385,7 +387,7 @@ detailed error framework that is applicable to all big data.
 Nevertheless, some progress can be made by considering the steps that
 are typically involved in creating a data set from big data, which often
 includes three stages: (a) data generation (see
-Chapter [Working with Web Data and APIs], (b) extract, transform and load (ETL), and (c)
+Chapter [Working with Web Data and APIs]), (b) extract, transform and load (ETL), and (c)
 analysis (see, for example,
 Chapter [Text Analysis](#chap:text)). As noted there, this mapping of the process is
 oversimplified for some applications. For example, data that flow
@@ -457,7 +459,8 @@ Illustrations of errors in big data {#sec:10-3}
 A well-known example of the risks of big data error is provided by the
 Google Flu Trends series that uses Google searches on flu symptoms,
 remedies, and other related key words to provide near-real-time
-estimates of flu activity in the USA and 24 other countries. Compared to
+estimates of flu activity in the USA and 24 other countries^[See the discussion in
+Section 1.3.]. Compared to
 CDC data, the Google Flu Trends provided remarkably accurate indicators
 of flu incidence in the USA between 2009 and 2011. However, for the
 2012--2013 flu seasons, Google Flu Trends predicted more than double the
@@ -622,7 +625,13 @@ further exacerbated. For example, noise accumulation can be expected to
 accelerate when random noise (i.e., content errors) afflicts the data.
 Spurious correlations that give rise to both incidental endogeneity and
 coincidental correlations can render correlation analysis meaningless if
-the error levels in big data are not mitigated. In this section, we
+the error levels in big data are not mitigated^[The volume, velocity, and
+variety of big data make it
+challenging to analyze because of noise accumulation, spurious correlations,
+and incidental endogeneity.
+But, the three Vs are also
+the scourge of veracity—
+i.e., errors in big data.]. In this section, we
 consider some of the issues that arise in classification, correlation,
 and regression analysis as a result of content errors that may be either
 variable or systematic. The current literature on big data error
@@ -764,8 +773,7 @@ For variables that are categorical, the model of the previous section is
 not appropriate because the assumptions it makes about the error
 structure do not hold. For example, consider the case of a binary
 ($0/1$) variable. Since both $y_r$ and $\mu_r$ should be either 1 or 0,
-the error in equation [\[eq:10-1.1\]](#eq:10-1.1){reference-type="eqref"
-reference="eq:10-1.1"} must assume the values of $-1$, $0$, or $1$. A
+the error in equation (10.1) must assume the values of $-1$, $0$, or $1$. A
 more appropriate model is the misclassification model described by
 Biemer [@biemer2011latent], which we summarize here.
 
@@ -852,9 +860,9 @@ less than 1 chance in 10 million of an error.
 To generalize this approach, note that any population can be regarded as
 a *mixture* of subpopulations. Mathematically, this can be written as
 $$\label{eq:10-1.5}
-f(y\vert \mathbf{x};{\boldsymbol \theta}) = \pi_1 f(y\vert
-\mathbf{x};\theta_1 ) + \pi_2 f(y\vert \mathbf{x};\theta_2 ) +
-\ldots + \pi_K f(y\vert \mathbf{x};\theta_K ),$$ where
+f(y\vert \mathbf{x};{\boldsymbol \eth}) = \pi_1 f(y\vert
+\mathbf{x};\eth_1 ) + \pi_2 f(y\vert \mathbf{x};\eth_2 ) +
+\ldots + \pi_K f(y\vert \mathbf{x};\eth_K ),$$ where
 $f(y\vert \mathbf{x}; {\boldsymbol \theta})$ denotes the population
 distribution of $y$ given the vector of explanatory variables
 $\mathbf{x}$ and the parameter vector ${\boldsymbol \theta
@@ -864,8 +872,7 @@ of the population in the $k$th subgroup, and $f(y\vert
 A rare subgroup is one where $\pi_k$ is quite small (say, less than
 0.01).
 
-Table [\[tab:10-3\]](#tab:10-3){reference-type="ref"
-reference="tab:10-3"} shows the PPV for a range of rare subgroup sizes
+Table \@ref(tab:table10-1) shows the PPV for a range of rare subgroup sizes
 when the sensitivity is perfect (i.e., no misclassification of true
 positives) and specificity is not perfect but still high. This table
 reveals the fallacy of identifying rare population subgroups using
@@ -874,19 +881,16 @@ appropriately matched to the rarity of the subgroup. As an example, for
 a 0.1% subgroup, the specificity should be at least 99.99%, even with
 perfect sensitivity, to attain a 90% PPV.
 
-\centering
-\small
-  ------------- ---- ---- ---- ---- ---- ----
-  **$\pi_k$**                            
-                                         
-  0.1             91 70     99 10     99 90
-  0.01            50 30     91 00     99 00
-  0.001            9 10     50 00     90 90
-  0.0001           1 00      9 10     50 00
-  ------------- ---- ---- ---- ---- ---- ----
+Table: (\#tab:table10-1) Positive predictive value (%) for rare subgroups, high specificity, and perfect sensitivity
 
-  : Positive predictive value (%) for rare subgroups, high specificity,
-  and perfect sensitivity[]{label="tab:10-3"}
+|  **$\pi_k$**  | |**Specificity** | |
+|---------------|:-:|:---------------:|:-:|
+| | *99%* | *99.9%* | *99.99%*|                                        
+| 0.1  |           91.70   |  99.10  |   99.90|
+|0.01     |       50.30  |   91.00  |   99.00|
+ | 0.001  |          9.10 |    50.00  |   90.90|
+  |0.0001     |      1.00  |    9.10   |  50.00|
+  
 
 #### Correlation analysis {#sec:10-4.2.4}
 
@@ -949,8 +953,7 @@ of systematic errors.
 **Variable errors only**
 
 If the only errors are due to random noise, then the additive term on
-the right in equation [\[eq:10-1.7\]](#eq:10-1.7){reference-type="eqref"
-reference="eq:10-1.7"} is 0 and $\rho_{y\vert cd} = \sqrt {R_c R_d }
+the right in equation (10.2) is 0 and $\rho_{y\vert cd} = \sqrt {R_c R_d }
 \rho _{\mu \vert cd}$, which says that the correlation is attenuated by
 the product of the root reliability ratios. For example, suppose
 $R_c = R_d = 0.8$, which is considered excellent reliability. Then the
@@ -977,8 +980,7 @@ $O(n_{rc}^{ - 1} )$.
 To simplify the result for the purposes of our discussion, suppose
 $n_{rc} = n_c$, that is, each aggregate is based upon the same sample
 size. It can be shown that
-equation [\[eq:10-1.7\]](#eq:10-1.7){reference-type="eqref"
-reference="eq:10-1.7"} still applies if we replace $R_c$ by its
+equation (10.2) still applies if we replace $R_c$ by its
 aggregated data counterpart denoted by
 $R_c^A = \sigma_{\mu \vert c}^2 / (\sigma_{\mu \vert
 c}^2 + \sigma_{\varepsilon \vert c}^2 / n_c )$. Note that $R_c^A$
@@ -1006,8 +1008,7 @@ independent errors.
 
 If both systematic and variable errors contaminate the data, the
 additive term on the right in
-equation [\[eq:10-1.7\]](#eq:10-1.7){reference-type="eqref"
-reference="eq:10-1.7"} is positive. For aggregate data, the reliability
+equation (10.2) is positive. For aggregate data, the reliability
 ratio takes the form $$\label{eq:10-1.8}
 R_c^A = \frac{{\sigma_{\mu |c}^2}}{{\sigma_{\mu |c}^2 + \sigma
 _{b|c}^2 + n_c^{ - 1}\sigma_{\varepsilon |c}^2}},$$ which converges not
@@ -1107,8 +1108,7 @@ $e_r$ is the usual regression residual error with mean $0$ and variance
 $\sigma_e^2$, which is assumed to be uncorrelated with
 $\varepsilon_{r\vert y}$. Letting ${e}' = e_r -
 \varepsilon_{r\vert y}$, it follows that the regression in
-equation [\[eq:10-1.12\]](#eq:10-1.12){reference-type="eqref"
-reference="eq:10-1.12"} is equivalent to the previously considered
+equation (10.3) is equivalent to the previously considered
 regression of $y$ on $x$ where $y$ is not subject to error, but now the
 residual variance is increased by the additive term, that is,
 $\sigma_{e}^{\prime2} = \sigma_{\varepsilon \vert y}^2 +
@@ -1140,7 +1140,10 @@ attempt to eliminate the error rather than model it.
 Some methods for mitigating, detecting, and compensating for errors {#sec:10-5}
 -------------------------------------------------------------------
 
-For survey data and other *designed* data collections, error mitigation
+For survey data and other *designed* data collections, error mitigation^[Data errors further complicate analysis and exacerbate the analytical problems. There are essentially
+three solutions: prevention,
+remediation, and the choice
+of analysis methodology.]
 begins at the data generation stage by incorporating design strategies
 that generate high-quality data that are at least adequate for the
 purposes of the data users. For example, missing data can be mitigated
@@ -1163,7 +1166,13 @@ missing cells, weighting the observations, and preparing the file,
 including the application of disclosure- limiting processes. For big
 data, many of these same operations could be needed to some extent,
 depending upon requirements of the data, its uses, and the prevailing
-statutory requirements. Of all the operations comprising data
+statutory requirements^[For example, Title 13 in
+the US code is explicit in
+terms of data statutory protections and—as you will
+see in the next chapter—
+can have substantial impact
+on the quality of subsequent
+inference.]. Of all the operations comprising data
 processing, the area that has the greatest potential to both alter data
 quality and consume vast resources is data editing. For example, Biemer
 and Lyberg [@biemer2003] note that national statistical offices may

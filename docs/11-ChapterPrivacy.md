@@ -2,6 +2,8 @@ Privacy and Confidentiality {#chap:privacy}
 ===========================
 
 \chapterauthor{Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane}
+**Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane**
+
 This chapter addresses the issue that sits at the core of any study of
 human beings---privacy and confidentiality. In a new field, like the one
 covered in this book, it is critical that many researchers have access
@@ -28,9 +30,11 @@ that done for private gain. In practical terms, this requires that the
 private interests of individual privacy and data confidentiality be
 balanced against the social benefits of research access and use.
 
-Privacy "encompasses not only the famous 'right to be left alone,' or keeping
+**Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
-share information selectively but not publicly" [@house2014big]. Confidentiality is
+share information selectively but not publicly" [@house2014big].
+
+**Confidentiality** is
 "preserving authorized restrictions on information access and
 disclosure, including means for protecting personal privacy and
 proprietary information" [@mccallister2010sp]. Doing so is not
@@ -209,7 +213,14 @@ individual names, birth dates, social security numbers, and business
 names, addresses, and tax ID numbers. From a privacy and confidentiality
 perspective, link keys are among most sensitive information in many data
 sets of interest to social scientists. This is why many organizations
-replace link keys containing personal identifiable information (PII)
+replace link keys containing personal identifiable information (PII)^[PII is "any information about an individual maintained by an agency, including (1) any information
+that can be used to distinguish or trace an individual’s identity, such as name,
+social security number, date
+and place of birth, mother’s
+maiden name, or biometric
+records; and (2) any other
+information that is linked
+or linkable to an individual, such as medical, educational, financial, and employment information” [254].]
 with privacy-protecting identifiers [@schnell2009privacy]. Regardless,
 at some point in the process those must be generated out of the original
 information, thus access to the latter is important.

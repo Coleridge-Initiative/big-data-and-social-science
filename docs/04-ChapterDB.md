@@ -79,8 +79,10 @@ Consider the following three data sets:
 Which tools should you use to manage and analyze these data sets? The
 answer depends on the specifics of the data, the analyses that you want
 to perform, and the life cycle within which data and analyses are
-embedded. Table 4.1 summarizes relevant factors, which we now
+embedded. Table \@ref(tab:table4-1) summarizes relevant factors, which we now
 discuss.
+
+Table: (\#tab:table4-1) When to use different data management and analysis technologies
 
 |**When to use different data management and analysis technologies**|
 |-----------------------------------------------------------------|
@@ -99,7 +101,6 @@ discuss.
 | **NoSQL database**                                              |
 | • Your data are unstructured                                    |
 | • Your data are extremely large                                 |
-<div style="text-align: center">Table 4.1. When to use different data management and analysis technologies</div>
 <br>
 
 \vspace*{-8pt}
@@ -207,7 +208,7 @@ queried for analysis. A *database management system* is a software suite
 designed to safely store and efficiently manage databases, and to assist
 with the maintenance and discovery of the relationships that database
 represents. In general, a DBMS encompasses three key components, as
-shown in Table 4.2: its *data model* (which defines how data are
+shown in Table \@ref(tab:table4-2): its *data model* (which defines how data are
 represented: see Box 4.1, its *query language* (which defines how the user
 interacts with the data), and support for *transactions and crash
 recovery* (to ensure reliable execution despite system failures).^[Some key DBMS features are often lacking in
@@ -223,12 +224,12 @@ structure.]
 <p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with a problem domain, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:fig2), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include &quot;is employed by&quot; and &quot;is funded by.&quot; This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
 </div>
 
+Table: (\#tab:table4-2) Key components of a DBMS
 
 |             |                             **Data model**                            |                         **Query language**                         |       **Transactios, crash recovery**      |
 |-------------|:-----------------------------------------------------------------:|:--------------------------------------------------------------:|:--------------------------------------:|
 | User-facing | For example: relational, semi-structured                          | For example: SQL (for relational), XPath (for semi-structured) | Transactions                           |
 | Internal    | Mapping data to storage systems; creating and maintaining indices | Query optimization and evaluation; consistency                 | Locking, concurrency control, recovery |
-<div style="text-align: center">Table 4.2. Key components of a DBMS</div>
 <br>
 
 \vspace*{12pt}
@@ -236,7 +237,7 @@ Literally hundreds of different open source, commercial, and
 cloud-hosted versions DBMSs are available. However, you only need to
 understand a relatively small number of concepts and major database
 types to make sense of this diversity.
-Table 4.3 defines the major classes of DBMSs that we will
+Table \@ref(tab:table4-3) defines the major classes of DBMSs that we will
 consider in this book. We consider only a few of these in any detail.
 
 Relational DBMSs are the most widely used and mature systems, and will
@@ -269,6 +270,8 @@ process the billions of records that can be obtained from web crawlers.
 We review below some of these alternatives and the factors that may
 motivate their use.
 
+Table: (\#tab:table4-3) Types of databases: relational (first row) and various types of NoSQL (other rows)
+
 | **Type**                | **Examples**                                        | **Advantages**                                                         | **Disadvantages**                                                | **Uses**                                                             |
 |---------------------|-------------------------------------------------|--------------------------------------------------------------------|--------------------------------------------------------------|------------------------------------------------------------------|
 | Relational database | MySQL, PostgreSQL, Oracle, SQL Server, Teradata | Consistency (ACID)                                                 | Fixed schema; typically harder to scale                      | Transactional systems: order processing, retail, hospitals, etc. |
@@ -276,7 +279,6 @@ motivate their use.
 | Column store        | Cassandra, HBase                                | Same as key–value; distributed; better compression at column level | Not immediately consistent; using all columns is inefficient | Large-scale analysis                                             |
 | Document store      | CouchDB, MongoDB                                | Index entire document (JSON)                                       | Not immediately consistent; no higher-level queries          | Web applications                                                 |
 | Graph database      | Neo4j, InfiniteGraph                            | Graph queries are fast                                             | Difficult to do non-graph analysis                           | Recommendation systems, networks, routing                        |
-<div style="text-align: center">Table 4.3. Types of databases: relational (first row) and various types of NoSQL (other rows)</div>
 <br>
 
 Relational and NoSQL databases (and indeed other solutions, such as
@@ -1159,7 +1161,7 @@ BASE.
 
 Dozens of different NoSQL DBMSs exist, with widely varying
 characteristics as summarized in
-Table 4.3. The simplest are *key--value stores* such as
+Table \@ref(tab:table4-3). The simplest are *key--value stores* such as
 Redis, Amazon Dynamo, Apache Cassandra, and Project Voldemort. We can
 think of a key--value store as a relational database with a single table
 that has just two columns, key and value, and that supports just two
@@ -1375,7 +1377,7 @@ Which database to use?
 The question of which DBMS to use for a social sciences data management
 and analysis project depends on many factors. We introduced some
 relevant rules in
-Table 4.1. We expand on those considerations here.
+Table \@ref(tab:table4-1). We expand on those considerations here.
 
 ### Relational DBMSs
 

@@ -246,6 +246,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
 <li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
 <li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
@@ -346,7 +347,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="chap:networks" class="section level1">
 <h1><span class="header-section-number">Chapter 8</span> Networks: The Basics</h1>
-<p> Social scientists are typically interested in describing the activities of individuals and organizations (such as households and firms) in a variety of economic and social contexts. The frame within which data has been collected will typically have been generated from tax or other programmatic sources. The new types of data permit new units of analysis—particularly network analysis—largely enabled by advances in mathematical graph theory. This chapter provides an overview of how social scientists can use network theory to generate measurable representations of patterns of relationships connecting entities. As the author points out, the value of the new framework is not only in constructing different right-hand-side variables but also in studying an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists.</p>
+<p> <strong>Jason Owen-Smith</strong></p>
+<p>Social scientists are typically interested in describing the activities of individuals and organizations (such as households and firms) in a variety of economic and social contexts. The frame within which data has been collected will typically have been generated from tax or other programmatic sources. The new types of data permit new units of analysis—particularly network analysis—largely enabled by advances in mathematical graph theory. This chapter provides an overview of how social scientists can use network theory to generate measurable representations of patterns of relationships connecting entities. As the author points out, the value of the new framework is not only in constructing different right-hand-side variables but also in studying an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists.</p>
 <div id="introduction-3" class="section level2">
 <h2><span class="header-section-number">8.1</span> Introduction</h2>
 <p>This chapter provides a basic introduction to the analysis of large networks. The following introduces the basic logic of network analysis, then turn to a summary of data structures and essential measures before presenting a primer on network visualization and a more elaborated descriptive case comparison of the collaboration networks of two research-intensive universities. Both those collaboration networks and a grant co-employment network for a large public university also examined in this chapter are derived from data produced by the multi-university Committee on Institutional Cooperation (CIC)’s UMETRICS project <span class="citation">[@lane2015new]</span>. The snippets of code that are provided are from the <code>igraph</code> package for network analysis as implemented in Python.</p>
@@ -380,25 +382,88 @@ Figure 8.1: Undirected, binary, one-mode network data
 Figure 8.2: Directed, valued, one-mode network data
 </p>
 </div>
-<p> While many studies of small- to medium-sized social networks rely on one-mode data. Large-scale social network data of this type are relatively rare, but one-mode data of this sort are fairly common in relationships among other types of nodes such as web pages or citations connecting patents or publications. Nevertheless, much “big” social network analysis is conducted using two-mode data. The UMETRICS employee data set is a two-mode network that connects people (research employees) to the grants that pay their wages. These two types of nodes can be represented as a rectangular matrix that is either valued or binary. It is relatively rare to analyze untransformed two-mode network data. Instead, most analyses take advantage of the fact that such networks are <em>dual</em> <span class="citation">[@white1976social]</span>. In other words, a two-mode network connecting grants and people can be conceptualized (and analyzed) as two one-mode networks, or <em>projections</em>.</p>
+<p> While many studies of small- to medium-sized social networks rely on one-mode data. Large-scale social network data of this type are relatively rare, but one-mode data of this sort are fairly common in relationships among other types of nodes such as web pages or citations connecting patents or publications. Nevertheless, much “big” social network analysis is conducted using two-mode data. The UMETRICS employee data set is a two-mode network that connects people (research employees) to the grants that pay their wages. These two types of nodes can be represented as a rectangular matrix that is either valued or binary. It is relatively rare to analyze untransformed two-mode network data. Instead, most analyses take advantage of the fact that such networks are <em>dual</em> <span class="citation">[@white1976social]</span>. In other words, a two-mode network connecting grants and people can be conceptualized (and analyzed) as two one-mode networks, or <em>projections</em><a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a>.</p>
 </div>
 <div id="inducing-one-mode-networks-from-two-mode-data" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Inducing one-mode networks from two-mode data</h3>
 <p>The most important trick in large-scale social network analysis is that of inducing one-mode, or unipartite, networks (e.g., employee <span class="math inline">\(\times\)</span> employee relationships) from two-mode, or bipartite, data. But the ubiquity and potential value of two-mode data can come at a cost. Not all affiliations are equally likely to represent real, meaningful relationships. While it seems plausible to assume that two individuals paid by the same grant have interactions that reasonably pertain to the work funded by the grant, this need not be the case.</p>
 <p>For example, consider the two-mode grant <span class="math inline">\(\times\)</span> person network for university A. I used SQL to create a representation of this network that is readable by a freeware network visualization program called Pajek <span class="citation">[@batagelj1998pajek]</span>. In this format, a network is represented as two lists: a <em>vertex list</em> that lists the nodes in the graph and an <em>edge list</em> that lists the connections between those nodes. In our grant <span class="math inline">\(\times\)</span> person network, we have two types of nodes, people and grants, and one kind of edge, used to represent wage payments from grants to individuals.</p>
 <p>I present a brief snippet of the resulting network file in what follows, showing first the initial 10 elements of the vertex list and then the initial 10 elements of the edge list, presented in two columns for compactness. (The complete file comprises information on 9,206 employees and 3,389 grants, for a total of 12,595 vertices and 15,255 edges. The employees come first in the vertex list, and so the 10 rows shown below all represent employees.) Each vertex is represented by a vertex number–label pair and each edge by a pair of vertices plus an optional value. Thus, the first entry in the edge list (1 10419) specifies that the vertex with identifier 1 (which happens to be the first element of the vertex list, which has value “00100679”) is connected to the vertex with identifier 10419 by an edge with value 1, indicating that employee “00100679” is paid by the grant described by vertex 10419.</p>
-<p>aaaaaaaaaaāaaāaaaāaaaaaaaaaaaaaaaaaaaaaaaaāaaāaaaāaaaaaaaāaā<br />
-  12595  9206<br />
-1 &quot;00100679&quot; 1 10419<br />
-2 &quot;00107462&quot; 2 10422<br />
-3 &quot;00109569&quot; 3 9855<br />
-4 &quot;00145355&quot; 3 9873<br />
-5 &quot;00153190&quot; 4 9891<br />
-6 &quot;00163131&quot; 7 10432<br />
-7 &quot;00170348&quot; 7 12226<br />
-8 &quot;00172339&quot; 8 10419<br />
-9 &quot;00176582&quot; 9 11574<br />
-10 &quot;00203529&quot; 10 11196</p>
+<div style="text-align: center">
+*Grant-Person-Network
+</div>
+<table>
+<thead>
+<tr class="header">
+<th>*Vertices 12595  9206</th>
+<th></th>
+<th>*Edges</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>“00100679”</td>
+<td>1</td>
+<td>10419</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>“00107462”</td>
+<td>2</td>
+<td>10422</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>“00109569”</td>
+<td>3</td>
+<td>9855</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>“00145355”</td>
+<td>3</td>
+<td>9873</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>“00153190”</td>
+<td>4</td>
+<td>9891</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>“00163131”</td>
+<td>7</td>
+<td>10432</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>“00170348”</td>
+<td>7</td>
+<td>12226</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>“00172339”</td>
+<td>8</td>
+<td>10419</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>“00176582”</td>
+<td>9</td>
+<td>11574</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>“00203529”</td>
+<td>10</td>
+<td>11196</td>
+</tr>
+</tbody>
+</table>
 <p>The network excerpted above is two-mode because it represents relationships between two different classes of nodes, grants, and people. In order to use data of this form to address questions about patterns of collaboration on UMETRICS campuses, we must first transform it to represent collaborative relationships.</p>
 <p>A person-by-person projection of the original two-mode network assumes that ties exist between people when they are paid by the same grant. By the same token, a grant-by-grant projection of the original two-mode network assumes that ties exist between grants when they pay the same people. Transforming two-mode data into one-mode projections is a fairly simple matter. If <span class="math inline">\(\mathbf{X}\)</span> is a rectangular matrix, <span class="math inline">\(p \times g\)</span>, then a one-mode projection, <span class="math inline">\(p \times p\)</span>, can be obtained by multiplying <span class="math inline">\(\mathbf{X}\)</span> by its transpose <span class="math inline">\(\mathbf{X}&#39;\)</span>. Figure <a href="chap-networks.html#fig:fig8-3">8.3</a> summarizes this transformation.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8-3"></span>
@@ -439,16 +504,16 @@ pr_g_proj1, pr_g_proj2=<span class="st"> </span><span class="kw">g.bipartite_pro
 <span class="co"># Rename to emp for use in future calculations</span>
 
 emp=pr_g_proj1</code></pre></div>
-<p> We now can work with the graph <code>emp</code>, which represents the collaborative network of federally funded research on this campus. Care must be taken when inducing one-mode network projections from two-mode network data because not all affiliations provide equally compelling evidence of actual social relationships. While assuming that people who are paid by the same research grants are collaborating on the same project seems plausible, it might be less realistic to assume that all students who take the same university classes have meaningful relationships. For the remainder of this chapter, the examples I discuss are based on UMETRICS employee data rendered as a one-mode person-by-person projection of the original two-mode person-by-grants data. In constructing these networks I assume that a tie exists between two university research employees when they are paid any wages from the same grant during the same year. Other time frames or thresholds might be used to define ties if appropriate for particular analyses.</p>
+<p> We now can work with the graph <code>emp</code>, which represents the collaborative network of federally funded research on this campus. Care must be taken when inducing one-mode network projections from two-mode network data because not all affiliations provide equally compelling evidence of actual social relationships. While assuming that people who are paid by the same research grants are collaborating on the same project seems plausible, it might be less realistic to assume that all students who take the same university classes have meaningful relationships. For the remainder of this chapter, the examples I discuss are based on UMETRICS employee data rendered as a one-mode person-by-person projection of the original two-mode person-by-grants data. In constructing these networks I assume that a tie exists between two university research employees when they are paid any wages from the same grant during the same year. Other time frames or thresholds might be used to define ties if appropriate for particular analyses<a href="#fn52" class="footnoteRef" id="fnref52"><sup>52</sup></a>.</p>
 </div>
 </div>
 <div id="network-measures" class="section level2">
 <h2><span class="header-section-number">8.3</span> Network measures</h2>
-<p>The power of networks lies in their unique flexibility and ability to address many phenomena at multiple levels of analysis. But harnessing that power requires the application of measures that take into account the overall structure of relationships represented in a given network. The key insight of structural analysis is that outcomes for any individual or group are a function of the complete pattern of connections among them. In other words, the explanatory power of networks is driven as much by the pathways that <em>indirectly</em> connect nodes as by the particular relationships that <em>directly</em> link members of a given dyad. Indirect ties create reachability in a network.</p>
+<p>The power of networks lies in their unique flexibility and ability to address many phenomena at multiple levels of analysis. But harnessing that power requires the application of measures that take into account the overall structure of relationships represented in a given network. The key insight of structural analysis is that outcomes for any individual or group are a function of the complete pattern of connections among them. In other words, the explanatory power of networks is driven as much by the pathways that <em>indirectly</em> connect nodes as by the particular relationships that <em>directly</em> link members of a given dyad. Indirect ties create reachability in a network<a href="#fn53" class="footnoteRef" id="fnref53"><sup>53</sup></a>.</p>
 <div id="reachability" class="section level3">
 <h3><span class="header-section-number">8.3.1</span> Reachability</h3>
 <p>Two nodes are said to be reachable when they are connected by an unbroken chain of relationships through other nodes. For instance, two people who have never met may nonetheless be able to reach each other through a common acquaintance who is positioned to broker an introduction <span class="citation">[@obstfeld2005social]</span> or the transfer of information and resources <span class="citation">[@burt2004structural]</span>. It is the reachability that networks create that makes them so important for understanding the work of science and innovation.</p>
-<p>Consider Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, which presents three schematic networks. In each, one focal node, ego, is colored orange. Each ego has four alters, but the fact that each has connections to four other nodes masks important differences in their structural positions. Those differences have to do with the number of other nodes they can reach through the network and the extent to which the other nodes in the network are connected to each other. The orange node (ego) in each network has four partners, but their positions are far from equivalent. Centrality measures on full network data can tease out the differences. The networks also vary in their gross characteristics. Those differences, too, are measurable.</p>
+<p>Consider Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, which presents three schematic networks. In each, one focal node, ego, is colored orange. Each ego has four alters, but the fact that each has connections to four other nodes masks important differences in their structural positions. Those differences have to do with the number of other nodes they can reach through the network and the extent to which the other nodes in the network are connected to each other. The orange node (ego) in each network has four partners, but their positions are far from equivalent. Centrality measures on full network data can tease out the differences. The networks also vary in their gross characteristics. Those differences, too, are measurable<a href="#fn54" class="footnoteRef" id="fnref54"><sup>54</sup></a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8-4"></span>
 <img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
 <p class="caption">
@@ -547,11 +612,11 @@ import pandas as pd
 <span class="co"># 75%         1.000000</span>
 <span class="co"># max         1.000000</span>
 <span class="co">#--------------------------------------------------#</span></code></pre></div>
-<p>Together, these summary statistics—number of nodes, average path length, distribution of path lengths, degree distribution, and the clustering coefficient—offer a robust set of measures to examine and compare whole networks. It is also possible to distinguish among the positions nodes hold in a particular network. Some of the most powerful centrality measures also rely on the idea of indirect ties.</p>
+<p>Together, these summary statistics—number of nodes, average path length, distribution of path lengths, degree distribution, and the clustering coefficient—offer a robust set of measures to examine and compare whole networks. It is also possible to distinguish among the positions nodes hold in a particular network. Some of the most powerful centrality measures also rely on the idea of indirect ties<a href="#fn55" class="footnoteRef" id="fnref55"><sup>55</sup></a>.</p>
 <p><strong>Centrality measures</strong></p>
 <p>This class of measures is the most common way to distinguish between the positions individual nodes hold in networks. There are many different measures of centrality that capture different aspects of network positions, but they fall into three general types. The most basic and intuitive measure of centrality, <em>degree centrality,</em> simply counts the number of ties that a node has. In a binary undirected network, this measure resolves into the number of unique alters each node is connected to. In mathematical terms it is the row or column sum of the adjacency matrix that characterizes a network. Degree centrality, <span class="math inline">\(C_{D}(n_{i})\)</span>, represents a clear measure of the prominence or visibility of a node. Let <span class="math display">\[C_D(n_i)=\sum_jx_{ij}.\]</span> The degree of a node is limited by the size of the network in which it is embedded. In a network of <span class="math inline">\(g\)</span> nodes the maximum degree of any node is <span class="math inline">\(g-1\)</span>. The two orange nodes in the small networks presented in Figure <a href="chap-networks.html#fig:fig8-4">8.4</a> have the maximum degree possible (4). In contrast, the orange node in the larger, 13-node network in that figure has the same number of alters but the possible number of partners is three times as large (12). For this reason it is problematic to compare raw degree centrality measures across networks of different sizes. Thus, it is common to normalize degree by the maximum value defined by <span class="math inline">\(g-1\)</span>: <span class="math display">\[C_D^{\prime}(n_i)=\frac{\sum_j x_{ij}}{g-1}.\]</span></p>
 <p>While the normalized degree centrality of the two orange nodes of the smaller networks in Figure <a href="chap-networks.html#fig:fig8-4">8.4</a> is 1.0, the normalized value for the node in the large network of 13 nodes is 0.33. Despite the fact that the highlighted nodes in the two smaller networks have the same degree centrality, the pattern of indirect ties connecting their alters means they occupy meaningfully different positions. There are a number of degree-based centrality measures that take more of the structural information from a complete network into account by using a variety of methods to account not just for the number of partners a particular ego might have but also for the prominence of those partners. Two well-known examples are eigenvector centrality and page rank (see <span class="citation">[@newman2010networks Ch. 7.2 and 8.4]</span>).</p>
-<p>Consider two additional measures that capture aspects of centrality that have more to do with the indirect ties that increase reachability. Both make explicit use of the idea that reachability is the source of many of the important social and economic benefits of salutary network positions, but they do so with different substantive emphases. Both of these approaches rely on the idea of a network geodesic, the longest shortest path connecting any pair of actors. Because these measures rely on reachability, they are only useful when applied to components. When nodes have no ties (degree 0) they are called <em>isolates</em>. The geodesic distances are infinite and thus path-based centrality measures cannot be calculated. This is a shortcoming of these measures, which can only be used on connected subsets of graphs where each node has at least one tie to another and all are indirectly connected.</p>
+<p>Consider two additional measures that capture aspects of centrality that have more to do with the indirect ties that increase reachability. Both make explicit use of the idea that reachability is the source of many of the important social and economic benefits of salutary network positions, but they do so with different substantive emphases. Both of these approaches rely on the idea of a network geodesic, the longest shortest path<a href="#fn56" class="footnoteRef" id="fnref56"><sup>56</sup></a> connecting any pair of actors. Because these measures rely on reachability, they are only useful when applied to components. When nodes have no ties (degree 0) they are called <em>isolates</em>. The geodesic distances are infinite and thus path-based centrality measures cannot be calculated. This is a shortcoming of these measures, which can only be used on connected subsets of graphs where each node has at least one tie to another and all are indirectly connected.</p>
 <p>Closeness centrality, <span class="math inline">\(C_{C,}\)</span> is based on the idea that networks position some individuals closer to or farther away from other participants. The primary idea is that shorter network paths between actors increase the likelihood of communication and with it the ability to coordinate complicated activities. Let <span class="math inline">\(d(n_{i}, n_{j})\)</span> represent the number of network steps in the geodesic path connecting two nodes <span class="math inline">\(i\)</span> and <span class="math inline">\(j\)</span>. As <span class="math inline">\(d\)</span> increases, the network distance between a pair of nodes grows. Thus a standard measure of closeness is the inverse of the sum of distances between any given node and all the others that are reachable in a network: <span class="math display">\[C_C(n_i) = \frac{1}{\sum_{j=1}^gd(n_i,n_j)}.\]</span> The maximum of closeness centrality occurs when a node is directly connected to every possible partner in the network. As with degree centrality, closeness depends on the number of nodes in a network. Thus, it is necessary to standardize the measure to allow comparisons across multiple networks: <span class="math display">\[C_C^{\prime}(n_i)=\frac{g-1}{\sum_{j=1}^gd(n_i,n_j)}.\]</span></p>
 <p>Like closeness centrality, betweenness centrality, <span class="math inline">\(C_{B}\)</span>, relies on the concept of geodesic paths to capture nuanced differences the positions of nodes in a connected network. Where closeness assumes that communication and the flow of information increase with proximity, betweenness captures the idea of brokerage that was made famous by Burt <span class="citation">[@burt1993social]</span>. Here too the idea is that flows of information and resources pass between nodes that are not directly connected through indirect paths. The key to the idea of brokerage is that such paths pass through nodes that can interdict, or otherwise profit from their position “in between” unconnected alters. This idea has been particularly important in network studies of innovation <span class="citation">[@owen2003expanding; @burt2004structural]</span>, where flows of information through strategic alliances among firms or social networks connecting individuals loom large in explanations of why some organizations or individuals are better able to develop creative ideas than others.</p>
 <p>To calculate betweenness as originally specified, two strong assumptions are required <span class="citation">[@freeman1979centrality]</span>. First, one must assume that when people (or organizations) search for new information through their networks, they are capable of identifying the shortest path to what they seek. When multiple paths of equal length exist, we assume that each path is equally likely to be used. Newman <span class="citation">[@newman2005measure]</span> describes an alternative betweenness measure based on random paths through a network, rather than shortest paths, that relaxes these assumptions. For now, let <span class="math inline">\(g_{jk}\)</span> equal the number of geodesic paths linking any two actors. Then <span class="math inline">\(1/g_{jk}\)</span> is the probability that any given path will be followed on a particular node’s search for information or resources in a network. In order to calculate the betweenness score of a particular actor, <span class="math inline">\(i\)</span>, it is then necessary to determine how many of the geodesic paths connecting <span class="math inline">\(j\)</span> to <span class="math inline">\(k\)</span> include <span class="math inline">\(i\)</span>. That quantity is <span class="math inline">\(g_{jk}(n_{i})\)</span>. With these (unrealistic) assumptions in place, we calculate <span class="math inline">\(C_{B}(n_{i})\)</span> as <span class="math display">\[C_B(n_i)=\sum_{j&lt;k} g_{jk}^{(n_i)}/g_{jk}.\]</span> Here, too, the maximum value depends on the size of the network. <span class="math inline">\(C_{B}(n_{i}) = 1\)</span> if <span class="math inline">\(i\)</span> sits on every geodesic path in the network. While this is only likely to occur in small, star-shaped networks, it is still common to standardize the measure. Instead of conceptualizing network size in terms of the number of nodes, however, this measure requires that we consider the number of possible pairs of actors (excluding ego) in a structure. When there are <span class="math inline">\(g\)</span> nodes, that quantity is <span class="math inline">\((g-1)(g-2)/2\)</span> and the standardized betweenness measure is <span class="math display">\[C_B^{\prime}(n_i)=\frac{C_B(n_i)}{(g-1)(g-2)/2}.\]</span></p>
@@ -588,10 +653,61 @@ Figure 8.7: Degree distribution for two universities
 Figure 8.8: Distribution of path lengths for universities A and B
 </p>
 </div>
-<p>The path length histogram presented in Figure <a href="chap-networks.html#fig:fig8-8">8.8</a> suggests a similar pattern. While the average distance among any pair of connected nodes in both networks is fairly similar (see Table <a href="chap-networks.html#tab:net1" reference-type="ref" reference="tab:net1"><span class="math display">\[tab:net1\]</span></a>), university B has a larger number of unconnected nodes and university A has a greater concentration of more closely connected dyads. The preponderance of shorter paths in this network could also be a result of a few larger grants that connect many pairs of nodes at unit distance and thus shorten overall path lengths.</p>
-<p> <strong>University A</strong> <strong>University B</strong> —————————- —————— —————— Nodes 4,999 4,144 Edges (total) 57,756 91,970 % nodes in main component 68.67% 67.34% Diameter 18 18 Average degree 11.554 44.387 Clustering coefficient 0.855 0.913 Density 0.005 0.011 Average path length 5.034 5.463</p>
-<p>: Descriptive statistics for the main components of two university networks<span id="tab:net1" label="tab:net1"><span class="math display">\[tab:net1\]</span></span></p>
-<p>But how do the descriptive statistics shake out? Table <a href="chap-networks.html#tab:net1" reference-type="ref" reference="tab:net1"><span class="math display">\[tab:net1\]</span></a> presents the basic descriptive statistics we have discussed for each network. University A’s network includes 855 more nodes than university B’s, a difference of about 20%. In contrast, there are far fewer edges connecting university A’s research employees than connecting university B’s, a difference that appears particularly starkly in the much higher density of university B’s network. Part of the story can be found in the average degree of nodes in each network. As the degree distributions presented in Figure <a href="chap-networks.html#fig:fig8-6">8.6</a> suggested, the average researcher at university B is much more highly connected to others than is the case at university A. The difference is stark and quite likely has to do with the presence of larger grants that employ many individuals.</p>
+<p>The path length histogram presented in Figure <a href="chap-networks.html#fig:fig8-8">8.8</a> suggests a similar pattern. While the average distance among any pair of connected nodes in both networks is fairly similar (see Table <a href="chap-networks.html#tab:table8-1">8.1</a>, university B has a larger number of unconnected nodes and university A has a greater concentration of more closely connected dyads. The preponderance of shorter paths in this network could also be a result of a few larger grants that connect many pairs of nodes at unit distance and thus shorten overall path lengths.</p>
+<table>
+<caption><span id="tab:table8-1">Table 8.1: </span> Descriptive statistics for the main components of two university networks</caption>
+<thead>
+<tr class="header">
+<th></th>
+<th align="center"><strong>University A</strong></th>
+<th align="center"><strong>University B</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Nodes</td>
+<td align="center">4,999</td>
+<td align="center">4,144</td>
+</tr>
+<tr class="even">
+<td>Edges (total)</td>
+<td align="center">57,756</td>
+<td align="center">91,970</td>
+</tr>
+<tr class="odd">
+<td>% nodes in main component</td>
+<td align="center">68.67%</td>
+<td align="center">67.34%</td>
+</tr>
+<tr class="even">
+<td>Diameter</td>
+<td align="center">18</td>
+<td align="center">18</td>
+</tr>
+<tr class="odd">
+<td>Average degree</td>
+<td align="center">11.554</td>
+<td align="center">44.387</td>
+</tr>
+<tr class="even">
+<td>Clustering coefficient</td>
+<td align="center">0.855</td>
+<td align="center">0.913</td>
+</tr>
+<tr class="odd">
+<td>Density</td>
+<td align="center">0.005</td>
+<td align="center">0.011</td>
+</tr>
+<tr class="even">
+<td>Average path length</td>
+<td align="center">5.034</td>
+<td align="center">5.463</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<p>But how do the descriptive statistics shake out? Table <a href="chap-networks.html#tab:table8-1">8.1</a> presents the basic descriptive statistics we have discussed for each network. University A’s network includes 855 more nodes than university B’s, a difference of about 20%. In contrast, there are far fewer edges connecting university A’s research employees than connecting university B’s, a difference that appears particularly starkly in the much higher density of university B’s network. Part of the story can be found in the average degree of nodes in each network. As the degree distributions presented in Figure <a href="chap-networks.html#fig:fig8-6">8.6</a> suggested, the average researcher at university B is much more highly connected to others than is the case at university A. The difference is stark and quite likely has to do with the presence of larger grants that employ many individuals.</p>
 <p>Both schools have a low average path length (around 5), suggesting that no member of the network is more than five acquaintances away from any other. Likewise, the diameter of both networks is 18, which means that on each campus the most distant pair of nodes is separated by just 18 steps. University A’s slightly lower path length may be accounted for by the centralizing effect of its large medical school grant infrastructure. Finally, consider the clustering coefficient. This measure approaches 1 as it becomes more likely that two partners to a third node will themselves be connected. The likelihood that collaborators of collaborators will collaborate is high on both campuses, but substantially higher at university B.</p>
 </div>
 <div id="summary-5" class="section level2">
@@ -608,6 +724,17 @@ Figure 8.8: Distribution of path lengths for universities A and B
 <p><em>Nexus</em> (<a href="http://nexus.igraph.org/api/dataset_info?format=html&amp;limit=10&amp;offset=20&amp;operator=or&amp;order=date" class="uri">http://nexus.igraph.org/api/dataset_info?format=html&amp;limit=10&amp;offset=20&amp;operator=or&amp;order=date</a>) is a growing repository for network data sets that includes some classic data dating back to the origins of social science network research as well as more recent data from some of the best-known publications and authors in network science.</p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="51">
+<li id="fn51"><p>Key insight: A two-mode network can be conceptualized and analyzed as two one-mode networks, or projections.<a href="chap-networks.html#fnref51">↩</a></p></li>
+<li id="fn52"><p>Key insight: Care must be taken when inducing one-mode network projections from two-mode network data because not all affiliations provide equally compelling evidence of actual social relationships.<a href="chap-networks.html#fnref52">↩</a></p></li>
+<li id="fn53"><p>Key insight: Structural analysis of outcomes for any individual or group are a function of the complete pattern of connections among them.<a href="chap-networks.html#fnref53">↩</a></p></li>
+<li id="fn54"><p>Key insight: Much of the power of networks (and their systemic features) is due to indirect ties that create reachability. Two nodes can reach each other if they are connected by an unbroken chain of relationships. These are often called indirect ties.<a href="chap-networks.html#fnref54">↩</a></p></li>
+<li id="fn55"><p>Key insight: Some of the most powerful centrality measures also rely on the idea of indirect ties.<a href="chap-networks.html#fnref55">↩</a></p></li>
+<li id="fn56"><p>A <em>shortest path</em> is a path that does not repeat any nodes or ties. Most pairs have several of those. The <em>geodesic</em> is the longest shortest path. So, if two people are directly connected (path length 1) and connected through shared ties to another person (path length 2), then their geodesic distance is two.<a href="chap-networks.html#fnref56">↩</a></p></li>
+</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>

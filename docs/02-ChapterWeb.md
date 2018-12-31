@@ -800,8 +800,10 @@ in combination with the APIs featured above to develop an overview of
 research outputs and of where and how they are being used. There are
 also other tools that can allow deeper analysis of the outputs
 themselves.
-Table 2.1 gives a partial list of key data sources and
+Table \@ref(tab:table2-1) gives a partial list of key data sources and
 APIs that are relevant to the analysis of research outputs.
+
+Table: (\#tab:table2-1) Popular sources of data relevant to the analysis of research outputs
 
 | **Source**                    | **Description**                                                                                                                                                                                                  | **API** | **Free** |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---:|:----:|
@@ -825,7 +827,6 @@ APIs that are relevant to the analysis of research outputs.
 | NSF Award Search          | Online search for information on NSF grants. Does not provide an API but downloadable data sets by year are available.                                                                                       |  N  |   Y  |
 *The data are restricted: sometimes fee based, other times not.
 
-<div style="text-align: center">Table 2.1. Popular sources of data relevant to the analysis of research outputs</div>
 
 ### RESTful APIs, returned data, and Python wrappers {#sec:4-3.2}
 

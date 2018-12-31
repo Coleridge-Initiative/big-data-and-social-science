@@ -697,7 +697,7 @@ fortunately, are quite accessible and are supported by excellent online
 resources. Time spent mastering them will be repaid many times over in
 more productive research.
 
-For **Python**^[Read this! http://bit.ly/1VgytVV], Alex Bell's *Python for Economists* (available online [@BellPython]) provides a wonderful 30-page introduction to the use of Python in the social sciences,
+For **Python**^[Read this! http://alexbell.net/pyseminar/pyseminar.html], Alex Bell's *Python for Economists* (available online [@BellPython]) provides a wonderful 30-page introduction to the use of Python in the social sciences,
 complete with XKCD cartoons. Economists Tom Sargent and John Stachurski
 provide a very useful set of lectures and examples at
 <http://quant-econ.net/>. For more detail, we recommend Charles

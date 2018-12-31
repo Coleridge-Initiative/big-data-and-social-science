@@ -703,8 +703,10 @@ income to categorical variables such as applicant gender, race, loan
 type, and owner occupancy, the entire data set results in about 86 GB of
 information. Parsing the data alone could take up to hours on a single
 machine if using a naïve approach that scans through the data
-sequentially. Tables 5.1 and 5.2 highlight the breakdown in size per year and
+sequentially. Tables \@ref(tab:table5-1) and \@ref(tab:table5-2) highlight the breakdown in size per year and
 data fields of interest.
+
+Table: (\#tab:table5-1) Home Mortgage Disclosure Act data size
 
  |  **Year**  |    **Records**   |  **File Size (Gigabytes)**|
  |:------------:|:------------------:|:---------------------------:|
@@ -716,9 +718,9 @@ data fields of interest.
  |    2012    |    18,691,552    |             12|
  |    2013    |    17,016,160    |             11|
  |  **Total** |  **130,420,445** |          **86.4**|
-<div style="text-align: center">Table 5.1. Home Mortgage Disclosure Act data size</div>
 <br>
 
+Table: (\#tab:table5-2) Home Mortgage Disclosure Act data size
 
 |  **Index** |  **Attribute**  |     **Type**|
 |-----------|------------------|:----------:|
@@ -730,7 +732,6 @@ data fields of interest.
  | 5         |  Applicant Income  |   Float|
  | 6         |  Loan Originated   |  Boolean|
  |...|...|...|
-<div style="text-align: center">Table 5.2. Home Mortgage Disclosure Act data fields</div>
 <br>
 
 Observing the transactional nature of the data, where the aggregation
