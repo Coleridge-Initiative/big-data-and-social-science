@@ -2,6 +2,9 @@ Programming with Big Data {#chap:parallel}
 =========================
 
 \chapterauthor{Huy Vo and Claudio Silva}
+**Huy Vo and Claudio Silva**
+
+
 Big data is sometimes defined as data that are too big to fit onto the
 analyst's computer. This chapter provides an overview of clever
 programming techniques that facilitate the use of data (often using
@@ -32,7 +35,7 @@ For example, we could consider a problem to involve big data if a
 spreadsheet gets so large that Excel can no longer load the entire data
 set into memory for analysis---or if there are so many features in a
 data set that a machine learning classifier would take an unreasonable
-amount of time (say days) to finish instead of a few seconds or minutes.
+amount of time (say days) to finish instead of a few seconds or minutes^[See Chapter 6, in particular Section 6.5.2.].
 In such cases, the analyst has to develop customized solutions to
 interrogate the data, often by taking advantage of parallel computing.
 In particular, one may have to get a larger computer, with more memory
@@ -122,11 +125,10 @@ customizable) and can leave it up to the system that implements
 MapReduce to handle all data communications and parallel computing. We
 can summarize the MapReduce logic as follows:
 
-map: `(k_i, v_i)`
-`[f(k^{'}_{i1}, v^{'}_{i1}),f(k^{'}_{i2}, v^{'}_{i2}),..]`\
-for a user-defined function $f$.\
-reduce: `(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])`
-`[v^{'''}_{1},v^{'''}_{2},..]`\
+**map**: $(k_i, v_i)$ → $[f(k^{'}_{i1}, v^{'}_{i1}),f(k^{'}_{i2}, v^{'}_{i2}),..]$
+for a user-defined function $f$.
+
+**reduce**: $(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])$ → $[v^{'''}_{1},v^{'''}_{2},..]$
 where $\{k^{'}_{i}\} \equiv \{k^{''}_{j}\}$ and $v^{'''} = g(v^{''})$
 for a user-defined function $g$.
 
@@ -158,9 +160,9 @@ scan input lines and extract institution information and award IDs.
 Then, in the function, we simply count unique IDs on the data, since
 everything is already grouped by institution. Python pseudo-code is
 provided in
-Listing \@ref(#lst:mapreduce).
+Listing 5.1.
 
-``` {#lst:mapreduce style="PythonStyle" caption="Python pseudo-code for the \cfs{map} and \cfs{reduce} functions to count the number of awards per institution" label="lst:mapreduce" belowskip="-6pt"}
+```{r, eval = FALSE}
 # Input  : a list of text lines
 # Output : a list of domain name and award ids
 def MAP(lines):
@@ -177,31 +179,23 @@ def REDUCE(pairs):
         count = len(set(awardIds))
         yield (domainName, count)
 ```
+<div style="text-align: center">Listing 5.1. Python pseudo-code for the `map` and `reduce` functions to count the number of awards per institution</div>
+<br>
 
 In the map phase, the input will be transformed into tuples of
 institutions and award ids:
 
-\small
-\hspace*{-5.4pc}
-  ------------------------------------------------ -- -------------------------
-  \"0958723,Roland,Mundil,rmundil\@bgc.org\"          (\"bgc.org\", 0958723)
-  \"0958915,Randall,Irmis,irmis\@umnh.utah.edu\"      (\"utah.edu\", 0958915)
-  \"1301647,Zaher,Hani,zh8\@nyu.edu\"                 (\"nyu.edu\", 1301647)
-  \"1316375,David,Shuster,dshuster\@bgc.org\"         (\"bgc.org\", 1316375)
-  ------------------------------------------------ -- -------------------------
+`"0958723,Roland,Mundil,rmundil@bgc.org"` → `("bgc.org", 0958723)`
+`"0958915,Randall,Irmis,irmis@umnh.utah.edu"` → `("utah.edu", 0958915)`
+`"1301647,Zaher,Hani,zh8@nyu.edu"` → `("nyu.edu", 1301647)`
+`"1316375,David,Shuster,dshuster@bgc.org"` → `("bgc.org", 1316375)`
 
 Then the tuples will be grouped by institutions and be counted by the
 function.
 
----
-
-\small
-\centering
-  ------------------------------------ -- -------------------
-  (\"bgc.org\", \[0958723,1316375\])      (\"bgc.org\", 2)
-  (\"utah.edu\", \[0958915\])             (\"utah.edu\", 1)
-  (\"nyu.edu\", \[1301647\])              (\"nyu.edu\", 1)
-  ------------------------------------ -- -------------------
+`("bgc.org", [0958723,1316375])` → `("bgc.org", 2)`
+`("utah.edu", \[0958915\])` → `("utah.edu", 1)`
+`("nyu.edu", \[1301647\])` → `("nyu.edu", 1)`
 
 \exampend{Counting NSF awards}
 \pagebreak
@@ -226,7 +220,7 @@ Hadoop and Spark.
 Apache Hadoop MapReduce
 -----------------------
 
-The names MapReduce and Apache Hadoop (or Hadoop) are often used
+The names MapReduce and Apache Hadoop (or Hadoop)^[The term *Hadoop* refers to the creator’s son’s toy elephant.] are often used
 interchangeably, but they are conceptually different. MapReduce is
 simply a programming paradigm with a layer of abstraction that allows a
 set of data processing pipelines to be expressed without too much
@@ -331,7 +325,7 @@ requests to run an intensive task on a particular data set, the system
 will first reserve a set of computing nodes. Then the data are
 partitioned and copied from the storage server into these computing
 nodes before the task is executed. This process is illustrated in
-Figure \@ref(fig:fig5-1a)(top). This computing model will be referred
+Figure \@ref(fig:fig5-1a) (top). This computing model will be referred
 to as *bringing data to computation*. In this model, if a data set is
 being analyzed in multiple iterations, it is very likely that the data
 will be copied multiple times from the storage cluster to the compute
@@ -349,7 +343,7 @@ To solve this problem, Hadoop implements a *bring compute to the data*
 strategy that combines both computing and storage at each node of the
 cluster. In this setup, each node offers both computing power and
 storage capacity. As shown in
-Figure \@ref(fig:fig5-1a)(bottom), when users submit a task to be run on
+Figure \@ref(fig:fig5-1a) (bottom), when users submit a task to be run on
 a data set, the scheduler will first look for nodes that contain the
 data, and if the nodes are available, it will schedule the task to run
 directly on those nodes. If a node is busy with another task, data will
@@ -375,7 +369,7 @@ we can go over the design of a Hadoop MapReduce job. A MapReduce job is
 still composed of three phases: map, shuffle, and reduce. However,
 Hadoop divides the map and reduce phases into smaller tasks.
 
-Each map phase in Hadoop is divided into five tasks: input format, record reader, mapper, combiner, and partitioner. An [input format]{.roman} task is in charge of talking to the input data
+Each map phase in Hadoop is divided into five tasks: **input format**, **record reader**, **mapper**, **combiner**, and **partitioner**. An [input format]{.roman} task is in charge of talking to the input data
 presumably sitting on HDFS, and splitting it into partitions (e.g., by
 breaking lines at line breaks). Then a [record reader]{.roman} task is
 responsible for translating the split data into the key--value pair
@@ -389,7 +383,7 @@ data partitioning; they do not move data around computing nodes.
 After the records are generated, mappers are spawned---typically on
 nodes containing the blocks---to run through these records and output
 zero or more new key--value pairs. A mapper in Hadoop is equivalent to
-the function of the MapReduce model that we discussed earlier. The
+the `map` function of the MapReduce model that we discussed earlier. The
 selection of the key to be output from the mapper will heavily depend on
 the data processing pipeline and could greatly affect the performance of
 the framework. Mappers are executed concurrently in Hadoop as long as
@@ -417,7 +411,7 @@ understands the intermediate data distribution as well as the
 specifications of the cluster. In general, it is better to leave this
 job to Hadoop.
 
-Each reduce phase in Hadoop is divided into three tasks: reducer, output format, and record writer. The `reducer`
+Each reduce phase in Hadoop is divided into three tasks: **reducer**, **output format**, and **record writer**. The `reducer`
 task is equivalent to the `reduce` function of the MapReduce model. It basically
 groups the data produced by the mappers by keys and runs a `reduce` function on
 each list of grouping values. It outputs zero or more key--value pairs
@@ -468,6 +462,18 @@ you, as the user, can provide the best input.
 ### Programming language support
 
 \enlargethispage{6pt}
+Hadoop is written entirely in Java, thus it is best supporting
+applications written in Java. However, Hadoop also provides a *streaming
+API* that allows arbitrary code to be run inside the Hadoop MapReduce
+framework through the use of UNIX pipes. This means that we can supply a
+mapper program written in Python or C++ to Hadoop as long as that
+program reads from the standard input and writes to the standard output.
+The same mechanism also applies for the combiner and reducer. For
+example, we can develop from the Python pseudo-code in
+Listing 5.1 to a complete Hadoop streaming mapper
+(Listing 5.2) and reducer
+(Listing 5.3).
+
 ``` {#lst:mapper style="PythonStyle" belowskip="-6pt" caption="A Hadoop streaming mapper in Python" label="lst:mapper" numbers="none"}
 #!/usr/bin/env python
 import sys
@@ -483,6 +489,8 @@ if __name__=='__main__':
         domainName = fields[3].split('@')[-1].split('.')[-2:]
         print '%s\t%s' % (domainName,awardId)
 ```
+<div style="text-align: center">Listing 5.2. A Hadoop streaming mapper in Python</div>
+<br>
 
 ``` {#lst:reducer style="PythonStyle" float="b" caption="A Hadoop streaming reducer in Python" label="lst:reducer" numbers="none"}
 #!/usr/bin/env python
@@ -498,21 +506,8 @@ if __name__=='__main__':
         count = len(set(awardIds))
         print '%s\t%s' % (domainName, count)
 ```
-
-Hadoop is written entirely in Java, thus it is best supporting
-applications written in Java. However, Hadoop also provides a *streaming
-API* that allows arbitrary code to be run inside the Hadoop MapReduce
-framework through the use of UNIX pipes. This means that we can supply a
-mapper program written in Python or C++ to Hadoop as long as that
-program reads from the standard input and writes to the standard output.
-The same mechanism also applies for the combiner and reducer. For
-example, we can develop from the Python pseudo-code in
-Listing [\[lst:mapreduce\]](#lst:mapreduce){reference-type="ref"
-reference="lst:mapreduce"} to a complete Hadoop streaming mapper
-(Listing [\[lst:mapper\]](#lst:mapper){reference-type="ref"
-reference="lst:mapper"}) and reducer
-(Listing [\[lst:reducer\]](#lst:reducer){reference-type="ref"
-reference="lst:reducer"}).
+<div style="text-align: center">Listing 5.3. A Hadoop streaming reducer in Python</div>
+<br>
 
 It should be noted that in Hadoop streaming, intermediate key--value
 pairs (the data flowing between mappers and reducers) must be in
@@ -545,7 +540,7 @@ Hadoop is a great system, and probably the most widely used MapReduce
 implementation. Nevertheless, it has important limitations, as we now
 describe.
 
--   Performance: Hadoop has proven to be a scalable implementation that can run on
+-   **Performance**: Hadoop has proven to be a scalable implementation that can run on
     thousands of cores. However, it is also known for having a
     relatively high job setup overheads and suboptimal running time. An
     empty task in Hadoop (i.e., with no mapper or reducer) can take
@@ -558,7 +553,7 @@ describe.
     maintaining fault tolerance by storing everything on HDFS is
     expensive, especially when for large data sets.
 
--   Hadoop streaming support for non-Java applications: As mentioned previously, non-Java applications may only be
+-   **Hadoop streaming support for non-Java applications**: As mentioned previously, non-Java applications may only be
     integrated with Hadoop through the Hadoop streaming API. However,
     this API is far from optimal. First, input formats and record
     readers can only be written in Java, making it impossible to write
@@ -569,7 +564,7 @@ describe.
     tuples into strings in the mappers and convert them back into tuples
     again in reducers).
 
--   Real-time applications: With the current setup, Hadoop only supports batch data processing
+-   **Real-time applications**: With the current setup, Hadoop only supports batch data processing
     jobs. This is by design, so it is not exactly a limitation of
     Hadoop. However, given that more and more applications are dealing
     with real-time massive data sets, the community using MapReduce for
@@ -577,7 +572,7 @@ describe.
     streaming or real-time data is clearly a disadvantage of Hadoop over
     other implementations.
 
--   Limited data transformation operations: This is more of a limitation of MapReduce than Hadoop per se.
+-   **Limited data transformation operations**: This is more of a limitation of MapReduce than Hadoop per se.
     MapReduce only supports two operations, map and reduce, and while
     these operations are sufficient to describe a variety of data
     processing pipelines, there are classes of applications that
@@ -595,7 +590,7 @@ Apache Spark
 
 In addition to Apache Hadoop, other notable MapReduce implementations
 include MongoDB, GreenplumDB, Disco, Riak, and Spark. MongoDB, Riak, and
-Greenplum DB are all database systems and thus their MapReduce
+Greenplum DB are all database systems^[See Chapter 4.] and thus their MapReduce
 implementations focus more on the interoperability of MapReduce and the
 core components such as MongoDB's aggregation framework, and leave it up
 to users to customize the MapReduce functionalities for broader tasks.
@@ -637,8 +632,7 @@ possible to be built on top of current Hadoop applications.
 
 Another advantage of Spark is that it supports Python natively; thus,
 developers can run Spark in a fraction of the time required for Hadoop.
-Listing [\[lst:spark\]](#lst:spark){reference-type="ref"
-reference="lst:spark"} provides the full code for the previous example
+Listing 5.4 provides the full code for the previous example
 written entirely in Spark. It should be noted that Spark's concept of
 the `reduceByKey` operator is not the same as Hadoop's, as it is designed to aggregate
 all elements of a data set into a single element. The closest simulation
@@ -671,6 +665,8 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
+<div style="text-align: center">Listing 5.4. Python code for a Spark program that counts the number of awards
+per institution using MapReduce</div>
 
 ---
 
@@ -706,59 +702,45 @@ income to categorical variables such as applicant gender, race, loan
 type, and owner occupancy, the entire data set results in about 86 GB of
 information. Parsing the data alone could take up to hours on a single
 machine if using a naïve approach that scans through the data
-sequentially. Tables [\[table:size\]](#table:size){reference-type="ref"
-reference="table:size"}
-and [\[table:fields\]](#table:fields){reference-type="ref"
-reference="table:fields"} highlight the breakdown in size per year and
+sequentially. Tables 5.1 and 5.2 highlight the breakdown in size per year and
 data fields of interest.
 
-\centering
-\small
-   **Year**      **Records**     **File Size (Gigabytes)**
-  ----------- ----------------- ---------------------------
-     2007        26,605,696                 18
-     2008        17,391,571                 12
-     2009        19,493,492                 13
-     2010        16,348,558                 11
-     2011        14,873,416                 9.4
-     2012        18,691,552                 12
-     2013        17,016,160                 11
-   **Total**   **130,420,445**           **86.4**
+ |  **Year**  |    **Records**   |  **File Size (Gigabytes)**|
+ |:------------:|:------------------:|:---------------------------:|
+ |    2007    |   26,605,696     |            18|
+ |    2008    |   17,391,571     |            12 |
+ |    2009    |    19,493,492    |             13|
+ |    2010    |    16,348,558    |              11|
+ |    2011    |    14,873,416    |             9.4|
+ |    2012    |    18,691,552    |             12|
+ |    2013    |    17,016,160    |             11|
+ |  **Total** |  **130,420,445** |          **86.4**|
+<div style="text-align: center">Table 5.1. Home Mortgage Disclosure Act data size</div>
+<br>
 
-[\[table:size\]]{#table:size label="table:size"}
 
-\hfill
-\centering
-\small
-  **Index**   **Attribute**       **Type**
-  ----------- ------------------ ----------
-  0           Year                Integer
-  1           State                String
-  2           County               String
-  3           Census Tract         String
-  4           Loan Amount          Float
-  5           Applicant Income     Float
-  6           Loan Originated     Boolean
-  $\cdots$    $\cdots$            $\cdots$
+|  **Index** |  **Attribute**  |     **Type**|
+|-----------|------------------|:----------:|
+ | 0          | Year             |   Integer|
+ | 1         |  State            |    String|
+ | 2         |  County           |    String|
+ | 3         |  Census Tract      |   String|
+ | 4         |  Loan Amount       |   Float|
+ | 5         |  Applicant Income  |   Float|
+ | 6         |  Loan Originated   |  Boolean|
+ |...|...|...|
+<div style="text-align: center">Table 5.2. Home Mortgage Disclosure Act data fields</div>
+<br>
 
-[\[table:fields\]]{#table:fields label="table:fields"}
-
-\vspace*{-5pt}
 Observing the transactional nature of the data, where the aggregation
 process could be distributed and merged across multiple partitions of
 the data, we could complete this task in much less time by using Spark.
 Using a cluster consisting of 1,200 cores, the Spark program in
-Listing [\[lst:hdma\]](#lst:hdma){reference-type="ref"
-reference="lst:hdma"} took under a minute to complete. The substantial
+Listing 5.5 took under a minute to complete. The substantial
 performance gain comes not so much from the large number of processors
 available, but mostly from the large I/O bandwidth available on the
 cluster thanks to the 200 distributed hard disks and fast network
 interconnects.
-
----
-
-Summary
--------
 
 ``` {#lst:hdma style="PythonStyle" caption="Python code for a Spark program to aggregate the debt--income ratio for loans originated in different census tracts" label="lst:hdma" numbers="none"}
 import ast
@@ -794,6 +776,15 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
+<div style="text-align: center">Listing 5.5. Python code for a Spark program to aggregate the debt–income ratio
+for loans originated in different census tracts</div>
+
+---
+
+
+Summary
+-------
+
 
 Big data means that it is necessary to both store very large collections
 of data and perform aggregate computations on those data. This chapter
