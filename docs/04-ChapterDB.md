@@ -410,12 +410,10 @@ Here is an SQL query to identify all grants with total funding of at
 most \$200,000:
 
 
-```r
+```sql
 select * from Grants
 where Funding <= 200,000;
 ```
-
-(Here and elsewhere in this chapter, we show SQL key words in blue.)
 
 Notice SQL's declarative nature: this query can be read almost as the
 English language statement, "select all rows from the `Grants` table for which
@@ -469,7 +467,7 @@ Weinberg." The information required to answer this question is
 distributed over two tables, `Grants` and `Investigators`, and so we *join* the two tables to combine tuples from both:
 
 
-```r
+```sql
 select Number, Name, Funding, Program
 from Grants, Investigators
 where Grants.Person = Investigators.ID
@@ -497,7 +495,7 @@ determine the total number of grants and their total and average funding
 levels:
 
 
-```r
+```sql
 select count(*) as 'Number', sum(Funding) as 'Total',
        avg(Funding) as 'Average'
 from Grants;
@@ -516,7 +514,7 @@ the number of grants associated with the investigator, and the aggregate
 funding:
 
 
-```r
+```sql
 select Name, count(*) as 'Number',
        avg(Funding) as 'Average funding'
 from Grants, Investigators
@@ -711,7 +709,7 @@ to update the `Funding` column of each row. The DBMS will ensure that either no
 rows are altered or all are altered.
 
 
-```r
+```sql
 update Grants set Grants.Funding = Grants.Funding*0.9;
 ```
 
@@ -754,7 +752,7 @@ to be found with just $\log_2 N$ comparisons.
 Consider the following query:
 
 
-```r
+```sql
 select ID, Name, sum(Funding) as TotalFunding
   from Grants, Investigators
     where Investigators.ID=Grants.Person
@@ -789,7 +787,7 @@ an index is created for it automatically. If it were not, we could
 easily create the desired index as follows:
 
 
-```r
+```sql
 alter table Investigators add index(ID);
 ```
 
@@ -813,10 +811,11 @@ such as the key(s) that could be used, if indices exist (`Person` in the `Grants
 and the primary key, `ID`, for the `Investigators` table); the key(s) that are actually used (the primary key, `ID`, in the `Investigators` table); the column(s) that are compared to the index (`Investigators.ID` is compared with `Grants.Person`); and the number of rows that must be considered (each of the 1,000 rows in `Grants` is compared with one row in `Investigators`, for a total of 1,000 comparisons).
 
 
-```r
+```sql
 mysql> explain select ID, Name, sum(Funding) as TotalFunding
        from Grants, Investigators
        where Investigators.ID=Grants.Person group by ID;
+
 +---------------+---------------+---------+---------------+------+
 | table         | possible_keys | key     | ref           | rows |
 +---------------+---------------+---------+---------------+------+
@@ -831,7 +830,7 @@ $1{,}000\times 1{,}000=1{,}000{,}000$ comparisons and the associated
 disk reads must be performed.
 
 
-```r
+```sql
 +---------------+---------------+------+------+------+
 | table         | possible_keys | key  | ref  | rows |
 +---------------+---------------+------+------+------+
@@ -1251,7 +1250,7 @@ additional information that we just introduced.
 Associated query languages may permit queries within the document, such
 as regular expression searches, and retrieval of selected fields,
 providing a form of a relational DBMS's selection and projection
-capabilities (Section [1.3.2](#sec:db:sql){reference-type="ref"
+capabilities (Section [4.3.2](#sec:db:sql){reference-type="ref"
 reference="sec:db:sql"}). For example, MongoDB allows us to ask for
 documents in a collection called that have "University of Texas at
 Austin" as their institution and the Nobel as an award.
@@ -1320,7 +1319,7 @@ example, given two tables with rows for schools and hospitals in
 Illinois (`illinois_schools` and `illinois_hospitals`, respectively; in each case, the column `the_geom` is a polygon for the object in question) and a third table with a single row representing the city of Chicago (`chicago_citylimits`), we can easily find the names of all schools within the Chicago city limits:
 
 
-```r
+```sql
 select illinois_schools.name
   from illinois_schools, chicago_citylimits
   where st_within(illinois_schools.the_geom,
@@ -1334,7 +1333,7 @@ Section [4.3.2](#sec:db:sql){reference-type="ref"
 reference="sec:db:sql"}. This query could also be written as:
 
 
-```r
+```sql
 select illinois_schools.name
   from illinois_schools left join chicago_citylimits
   on st_within(illinois_schools.the_geom,
@@ -1345,7 +1344,7 @@ We can also determine the names of all schools that do *not* have a
 hospital within 3,000 meters:
 
 
-```r
+```sql
 select s.name as 'School Name'
     from illinois_schools as s
         left join illinois_hospitals as h

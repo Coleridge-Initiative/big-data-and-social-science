@@ -246,7 +246,7 @@ the assumptions of a particular statistical model are met, what relevant
 information is included or excluded, and whether valid inferences can be
 drawn from the data [@kreuter201412].
 
-**Building knowledge infrastructure**}
+**Building knowledge infrastructure**
 
 Creating a community of practice around a data infrastructure can result
 in tremendous new insights, as the Sloan Digital Sky Survey and the

@@ -567,9 +567,8 @@ Figure 4.3: Relational tables <code>Grants</code> and <code>Investigators</code>
 <p>SQL and other query languages used in DBMSs support the concise, declarative specification of complex queries. Because we are eager to show you something immediately useful, we cover these features first, before talking about how to define data models.</p>
 <hr />
 <p><strong>Example: Identifying grants of more than $200,000</strong> Here is an SQL query to identify all grants with total funding of at most $200,000:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select <span class="op">*</span><span class="st"> </span>from Grants
-where Funding <span class="op">&lt;=</span><span class="st"> </span><span class="dv">200</span>,<span class="dv">000</span>;</code></pre></div>
-<p>(Here and elsewhere in this chapter, we show SQL key words in blue.)</p>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> * <span class="kw">from</span> Grants
+<span class="kw">where</span> Funding &lt;= <span class="dv">200</span>,<span class="dv">000</span>;</code></pre></div>
 <p>Notice SQL’s declarative nature: this query can be read almost as the English language statement, “select all rows from the <code>Grants</code> table for which the <code>Funding</code> column has value less than or equal 200,000.” This query is evaluated as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p>The input table specified by the <code>from</code> clause, <code>Grants</code>, is selected.</p></li>
@@ -601,10 +600,10 @@ where Funding <span class="op">&lt;=</span><span class="st"> </span><span class=
 <hr />
 <p><strong>Example: Finding grants awarded to an investigator</strong></p>
 <p>We want to find all grants awarded to the investigator with name “Irving Weinberg.” The information required to answer this question is distributed over two tables, <code>Grants</code> and <code>Investigators</code>, and so we <em>join</em> the two tables to combine tuples from both:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select Number, Name, Funding, Program
-from Grants, Investigators
-where Grants.Person =<span class="st"> </span>Investigators.ID
-and Name =<span class="st"> &quot;Irving Weinberg&quot;</span>;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> <span class="dt">Number</span>, Name, Funding, Program
+<span class="kw">from</span> Grants, Investigators
+<span class="kw">where</span> Grants.Person = Investigators.ID
+<span class="kw">and</span> Name = <span class="ot">&quot;Irving Weinberg&quot;</span>;</code></pre></div>
 <p>This query combines tuples from the <code>Grants</code> and <code>Investigators</code> tables for which the <code>Person</code> and <code>ID</code> fields match. It is evaluated in a similar fashion to the query presented above, except for the <code>from</code> clause: when multiple tables are listed, as here, the conditions in the <code>where</code> clause are checked for all different combinations of tuples from the tables defined in the <code>from</code> clause (i.e., the cartesian product of these tables)—in this case, a total of <span class="math inline">\(3\times 4 = 12\)</span> combinations. We thus determine that Irving Weinberg has two grants. The query further selects the <code>Number</code>, <code>Name</code>, <code>Funding</code>, and <code>Program</code> fields from the result, giving the following:</p>
 <table>
 <thead>
@@ -633,9 +632,9 @@ and Name =<span class="st"> &quot;Irving Weinberg&quot;</span>;</code></pre></di
 <p>This ability to join two tables in a query is one example of how SQL permits concise specifications of complex computations. This joining of tables via a cartesian product operation is formally called a <em>cross join</em>. Other types of join are also supported. We describe one such, the <em>inner join</em>, in Section <a href="chap-db.html#sec:db:spatial">4.6</a>.</p>
 <hr />
 <p>SQL aggregate functions allow for the computation of aggregate statistics over tables. For example, we can use the following query to determine the total number of grants and their total and average funding levels:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select <span class="kw">count</span>(<span class="op">*</span>) as <span class="st">&#39;Number&#39;</span>, <span class="kw">sum</span>(Funding) as <span class="st">&#39;Total&#39;</span>,
-       <span class="kw">avg</span>(Funding) as <span class="st">&#39;Average&#39;</span>
-from Grants;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> <span class="fu">count</span>(*) <span class="kw">as</span> <span class="st">&#39;Number&#39;</span>, <span class="fu">sum</span>(Funding) <span class="kw">as</span> <span class="st">&#39;Total&#39;</span>,
+       <span class="fu">avg</span>(Funding) <span class="kw">as</span> <span class="st">&#39;Average&#39;</span>
+<span class="kw">from</span> Grants;</code></pre></div>
 <p>This yields the following:</p>
 <table>
 <thead>
@@ -654,11 +653,11 @@ from Grants;</code></pre></div>
 </tbody>
 </table>
 <p>The <code>group by</code> operator can be used in conjunction with the aggregate functions to group the result set by one or more columns. For example, we can use the following query to create a table with three columns: investigator name, the number of grants associated with the investigator, and the aggregate funding:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select Name, <span class="kw">count</span>(<span class="op">*</span>) as <span class="st">&#39;Number&#39;</span>,
-       <span class="kw">avg</span>(Funding) as <span class="st">&#39;Average funding&#39;</span>
-from Grants, Investigators
-where Grants.Person =<span class="st"> </span>Investigators.ID
-group by Name;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> Name, <span class="fu">count</span>(*) <span class="kw">as</span> <span class="st">&#39;Number&#39;</span>,
+       <span class="fu">avg</span>(Funding) <span class="kw">as</span> <span class="st">&#39;Average funding&#39;</span>
+<span class="kw">from</span> Grants, Investigators
+<span class="kw">where</span> Grants.Person = Investigators.ID
+<span class="kw">group</span> <span class="kw">by</span> Name;</code></pre></div>
 <p>We obtain the following:</p>
 <table>
 <thead>
@@ -744,7 +743,7 @@ Listing 4.2. Code to load data into the Investigators and Grants tables
 <div id="transactions-and-crash-recovery" class="section level3">
 <h3><span class="header-section-number">4.3.5</span> Transactions and crash recovery</h3>
 <p>A DBMS protects the data that it stores from computer crashes: if your computer stops running suddenly (e.g., your operating system crashes or you unplug the power), the contents of your database are not corrupted. It does so by supporting <em>transactions</em>. A transaction is an atomic sequence of database actions. In general, every SQL statement is executed as a transaction. You can also specify sets of statements to be combined into a single transaction, but we do not cover that capability here. The DBMS ensures that each transaction is executed completely even in the case of failure or error: if the transaction succeeds, the results of all operations are recorded permanently (“persisted”) in the database, and if it fails, all operations are “rolled back” and no changes are committed. For example, suppose we ran the following SQL statement to convert the funding amounts in the table from dollars to euros, by scaling each number by 0.9. The <code>update</code> statement specifies the table to be updated and the operation to be performed, which in this case is to update the <code>Funding</code> column of each row. The DBMS will ensure that either no rows are altered or all are altered.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">update Grants set Grants.Funding =<span class="st"> </span>Grants.Funding<span class="op">*</span><span class="fl">0.9</span>;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">update</span> Grants <span class="kw">set</span> Grants.Funding = Grants.Funding*<span class="fl">0.9</span>;</code></pre></div>
 <p>Transactions are also key to supporting multi-user access. The <em>concurrency control</em> mechanisms in a DBMS allow multiple users to operate on a database concurrently, as if they were the only users of the system: transactions from multiple users can be interleaved to ensure fast response times, while the DBMS ensures that the database remains consistent. While entire books could be (and have been) written on concurrency in databases, the key point is that read operations can proceed concurrently, while update operations are typically serialized.</p>
 </div>
 <div id="sec:db:index" class="section level3">
@@ -754,10 +753,10 @@ Listing 4.2. Code to load data into the Investigators and Grants tables
 <hr />
 <p><strong>Example: Using indices to improve database performance</strong></p>
 <p>Consider the following query:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select ID, Name, <span class="kw">sum</span>(Funding) as TotalFunding
-  from Grants, Investigators
-    where Investigators.ID=Grants.Person
-  group by ID;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> <span class="kw">ID</span>, Name, <span class="fu">sum</span>(Funding) <span class="kw">as</span> TotalFunding
+  <span class="kw">from</span> Grants, Investigators
+    <span class="kw">where</span> Investigators.ID=Grants.Person
+  <span class="kw">group</span> <span class="kw">by</span> <span class="kw">ID</span>;</code></pre></div>
 <p>This query joins our two tables to link investigators with the grants that they hold, groups grants by investigator (using <code>group by</code>), and finally sums the funding associated with the grants held by each investigator. The result is the following:</p>
 <table>
 <thead>
@@ -787,25 +786,26 @@ Listing 4.2. Code to load data into the Investigators and Grants tables
 </table>
 <p>In the absence of indices, the DBMS must compare each row in <code>Investigators</code> with each row in <code>Grants</code>, checking for each pair whether <code>Investigators.ID = Grants.Person</code> holds. As the two tables in our sample database have only three and four rows, respectively, the total number of comparisons is only <span class="math inline">\(3\times 4=12\)</span>. But if we had, say, 1 million investigators and 1 million grants, then the DBMS would have to perform 1 trillion comparisons, which would take a long time. (More importantly in many cases, it would have to perform a large number of disk I/O operations if the tables did not fit in memory.) An index on the <code>ID</code> column of the <code>Investigators</code> table reduces the number of operations dramatically, as the DBMS can then take each of the 1 million rows in the <code>Grants</code> table and, for each row, identify the matching row(s) in <code>Investigators</code> via an index lookup rather than a linear scan.</p>
 <p>In our example table, the <code>ID</code> column has been specified to be a <code>primary key</code>, and thus an index is created for it automatically. If it were not, we could easily create the desired index as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alter table Investigators add <span class="kw">index</span>(ID);</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">alter</span> <span class="kw">table</span> Investigators <span class="kw">add</span> <span class="kw">index</span>(<span class="kw">ID</span>);</code></pre></div>
 <p>It can be difficult for the user to determine when an index is required. A good rule of thumb is to create an index for any column that is queried often, that is, appears on the right-hand side of a <code>where</code> statement. However, the presence of indices makes updates more expensive, as every change to a column value requires that the index be rebuilt to reflect the change. Thus, if your data are highly dynamic, you should carefully select which indices to create. (For bulk load operations, a common practice is to drop indices prior to the data import, and re-create them once the load is completed.) Also, indices take disk space, so you need to consider the tradeoff between query efficiency and resources.</p>
 <p>The <code>explain</code> command can be useful for determining when indices are required. For example, we show in the following some of the output produced when we apply <code>explain</code> to our query. (For this example, we have expanded the two tables to 1,000 rows each, as our original tables are too small for MySQL to consider the use of indices.) The output provides useful information such as the key(s) that could be used, if indices exist (<code>Person</code> in the <code>Grants</code> table, and the primary key, <code>ID</code>, for the <code>Investigators</code> table); the key(s) that are actually used (the primary key, <code>ID</code>, in the <code>Investigators</code> table); the column(s) that are compared to the index (<code>Investigators.ID</code> is compared with <code>Grants.Person</code>); and the number of rows that must be considered (each of the 1,000 rows in <code>Grants</code> is compared with one row in <code>Investigators</code>, for a total of 1,000 comparisons).</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">mysql<span class="op">&gt;</span><span class="st"> </span>explain select ID, Name, <span class="kw">sum</span>(Funding) as TotalFunding
-       from Grants, Investigators
-       where Investigators.ID=Grants.Person group by ID;
-<span class="op">+---------------+---------------+---------+---------------+------+</span>
-<span class="er">|</span><span class="st"> </span>table         <span class="op">|</span><span class="st"> </span>possible_keys <span class="op">|</span><span class="st"> </span>key     <span class="op">|</span><span class="st"> </span>ref           <span class="op">|</span><span class="st"> </span>rows <span class="op">|</span>
-<span class="op">+---------------+---------------+---------+---------------+------+</span>
-<span class="er">|</span><span class="st"> </span>Grants        <span class="op">|</span><span class="st"> </span>Person        <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span>    <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span>          <span class="op">|</span><span class="st"> </span><span class="dv">1000</span> <span class="op">|</span>
-<span class="er">|</span><span class="st"> </span>Investigators <span class="op">|</span><span class="st"> </span>PRIMARY       <span class="op">|</span><span class="st"> </span>PRIMARY <span class="op">|</span><span class="st"> </span>Grants.Person <span class="op">|</span><span class="st">    </span><span class="dv">1</span> <span class="op">|</span>
-<span class="op">+---------------+---------------+---------+---------------+------+</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql">mysql&gt; <span class="kw">explain</span> <span class="kw">select</span> <span class="kw">ID</span>, Name, <span class="fu">sum</span>(Funding) <span class="kw">as</span> TotalFunding
+       <span class="kw">from</span> Grants, Investigators
+       <span class="kw">where</span> Investigators.ID=Grants.Person <span class="kw">group</span> <span class="kw">by</span> <span class="kw">ID</span>;
+
++<span class="co">---------------+---------------+---------+---------------+------+</span>
+| <span class="kw">table</span>         | possible_keys | <span class="kw">key</span>     | <span class="fu">ref</span>           | <span class="kw">rows</span> |
++<span class="co">---------------+---------------+---------+---------------+------+</span>
+| Grants        | Person        | <span class="kw">NULL</span>    | <span class="kw">NULL</span>          | <span class="dv">1000</span> |
+| Investigators | <span class="kw">PRIMARY</span>       | <span class="kw">PRIMARY</span> | Grants.Person |    <span class="dv">1</span> |
++<span class="co">---------------+---------------+---------+---------------+------+</span></code></pre></div>
 <p>Contrast this output with the output obtained for equivalent tables in which is not a primary key. In this case, no keys are used and thus <span class="math inline">\(1{,}000\times 1{,}000=1{,}000{,}000\)</span> comparisons and the associated disk reads must be performed.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">+---------------+---------------+------+------+------+</span>
-<span class="er">|</span><span class="st"> </span>table         <span class="op">|</span><span class="st"> </span>possible_keys <span class="op">|</span><span class="st"> </span>key  <span class="op">|</span><span class="st"> </span>ref  <span class="op">|</span><span class="st"> </span>rows <span class="op">|</span>
-<span class="op">+---------------+---------------+------+------+------+</span>
-<span class="er">|</span><span class="st"> </span>Grants        <span class="op">|</span><span class="st"> </span>Person        <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span> <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span> <span class="op">|</span><span class="st"> </span><span class="dv">1000</span> <span class="op">|</span>
-<span class="er">|</span><span class="st"> </span>Investigators <span class="op">|</span><span class="st"> </span>ID            <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span> <span class="op">|</span><span class="st"> </span><span class="ot">NULL</span> <span class="op">|</span><span class="st"> </span><span class="dv">1000</span> <span class="op">|</span>
-<span class="op">+---------------+---------------+------+------+------+</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql">+<span class="co">---------------+---------------+------+------+------+</span>
+| <span class="kw">table</span>         | possible_keys | <span class="kw">key</span>  | <span class="fu">ref</span>  | <span class="kw">rows</span> |
++<span class="co">---------------+---------------+------+------+------+</span>
+| Grants        | Person        | <span class="kw">NULL</span> | <span class="kw">NULL</span> | <span class="dv">1000</span> |
+| Investigators | <span class="kw">ID</span>            | <span class="kw">NULL</span> | <span class="kw">NULL</span> | <span class="dv">1000</span> |
++<span class="co">---------------+---------------+------+------+------+</span></code></pre></div>
 <hr />
 <p>A second way in which the user can contribute to performance improvement is by using appropriate table definitions and data types. Most DBMSs store data on disk. Data must be read from disk into memory before it can be manipulated. Memory accesses are fast, but loading data into memory is expensive: accesses to main memory can be a million times faster than accesses to disk. Therefore, to ensure queries are efficient, it is important to minimize the number of disk accesses. A relational DBMS automatically optimizes queries: based on how the data are stored, it transforms a SQL query into a query plan that can be executed efficiently, and chooses an execution strategy that minimizes disk accesses. But users can contribute to making queries efficient. As discussed above, the choice of types made when defining schemas can make a big difference. As a rule of thumb, only use as much space as needed for your data: the smaller your records, the more records can be transferred to main memory using a single disk access. The design of relational tables is also important. If you put all columns in a single table (do not normalize), more data will come into memory than is required.</p>
 </div>
@@ -1048,7 +1048,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Associated query languages may permit queries within the document, such as regular expression searches, and retrieval of selected fields, providing a form of a relational DBMS’s selection and projection capabilities (Section <a href="chap-db.html#sec:db:sql" reference-type="ref" reference="sec:db:sql">1.3.2</a>). For example, MongoDB allows us to ask for documents in a collection called that have “University of Texas at Austin” as their institution and the Nobel as an award.</p>
+<p>Associated query languages may permit queries within the document, such as regular expression searches, and retrieval of selected fields, providing a form of a relational DBMS’s selection and projection capabilities (Section <a href="chap-db.html#sec:db:sql" reference-type="ref" reference="sec:db:sql">4.3.2</a>). For example, MongoDB allows us to ask for documents in a collection called that have “University of Texas at Austin” as their institution and the Nobel as an award.</p>
 <p><code>db.investigators.find( { institution: 'University of Texas at Austin', award: 'Nobel' } )</code></p>
 <p>A column-oriented DBMS stores data tables by columns rather than by rows, as is common practice in relational DBMSs. This approach has advantages in settings where aggregates must frequently be computed over many similar data items: for example, in clinical data analysis. Google Cloud BigTable and Amazon RedShift are two cloud-hosted column-oriented NoSQL databases. HBase and Cassandra are two open source systems with similar characteristics. (Confusingly, the term <em>column oriented</em> is also often used to refer to SQL database engines that store data in columns instead of rows: for example, Google BigQuery, HP Vertica, Terradata, and the open source MonetDB.</p>
 <p>Such systems are not to be confused with column-based NoSQL databases.)</p>
@@ -1063,21 +1063,21 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
 <hr />
 <p><strong>Example: Spatial extensions to relational databases</strong></p>
 <p>Spatial extensions have been developed for many relational databases: for example, Oracle Spatial, DB2 Spatial, and SQL Server Spatial. We use the PostGIS extensions to the PostgreSQL relational database here. These extensions implement support for spatial data types such as <code>point</code>, <code>line</code>, and <code>polygon</code>, and operations such as <code>st_within</code> (returns <code>true</code> if one object is contained within another), <code>st_dwithin</code> (returns <code>true</code> if two objects are within a specified distance of each other), and <code>st_distance</code> (returns the distance between two objects). Thus, for example, given two tables with rows for schools and hospitals in Illinois (<code>illinois_schools</code> and <code>illinois_hospitals</code>, respectively; in each case, the column <code>the_geom</code> is a polygon for the object in question) and a third table with a single row representing the city of Chicago (<code>chicago_citylimits</code>), we can easily find the names of all schools within the Chicago city limits:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select illinois_schools.name
-  from illinois_schools, chicago_citylimits
-  where <span class="kw">st_within</span>(illinois_schools.the_geom,
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> illinois_schools.name
+  <span class="kw">from</span> illinois_schools, chicago_citylimits
+  <span class="kw">where</span> st_within(illinois_schools.the_geom,
                   chicago_citylimits.the_geom);</code></pre></div>
 <p>We join the two tables and , with the constraint constraining the selected rows to those representing schools within the city limits. Here we use the inner join introduced in Section <a href="chap-db.html#sec:db:sql" reference-type="ref" reference="sec:db:sql">4.3.2</a>. This query could also be written as:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select illinois_schools.name
-  from illinois_schools left join chicago_citylimits
-  on <span class="kw">st_within</span>(illinois_schools.the_geom,
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> illinois_schools.name
+  <span class="kw">from</span> illinois_schools <span class="kw">left</span> <span class="kw">join</span> chicago_citylimits
+  <span class="kw">on</span> st_within(illinois_schools.the_geom,
                   chicago_citylimits.the_geom);</code></pre></div>
 <p>We can also determine the names of all schools that do <em>not</em> have a hospital within 3,000 meters:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">select s.name as <span class="st">&#39;School Name&#39;</span>
-    from illinois_schools as s
-        left join illinois_hospitals as h
-          on <span class="kw">st_dwithin</span>(s.the_geom, h.the_geom, <span class="dv">3000</span>)
-    where h.gid is null;</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> s.name <span class="kw">as</span> <span class="st">&#39;School Name&#39;</span>
+    <span class="kw">from</span> illinois_schools <span class="kw">as</span> s
+        <span class="kw">left</span> <span class="kw">join</span> illinois_hospitals <span class="kw">as</span> h
+          <span class="kw">on</span> st_dwithin(s.the_geom, h.the_geom, <span class="dv">3000</span>)
+    <span class="kw">where</span> h.gid <span class="kw">is</span> <span class="kw">null</span>;</code></pre></div>
 <p>Here, we use an alternative form of the join operator, the <em>left join</em>—or, more precisely, the <em>left excluding join</em>. The expression</p>
 <p><code>table1 left join table2 on constraint</code></p>
 <p>returns all rows from the left table (<code>table1</code>) with the matching rows in the right table (<code>table2</code>), with the result being <code>null</code> in the right side when there is no match. This selection is illustrated in the middle column of Figure <a href="chap-db.html#fig:fig-venn">4.4</a>. The addition of the <code>where h.gid is null</code> then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of Figure <a href="chap-db.html#fig:fig-venn">4.4</a>. Note also the use of the <code>as</code> operator to rename the columns <code>illinois_schools</code> and <code>illinois_hospitals</code>. In this case, we rename them simply to make our query more compact.</p>
