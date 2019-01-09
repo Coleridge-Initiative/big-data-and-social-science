@@ -51,8 +51,8 @@ dramatic differences between the data sets, trends, and outliers
 visually.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [16]" width="70%" />
-<p class="caption">(\#fig:fig9-1)Anscombes quartet [16]</p>
+<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [@anscombe1973graphs]" width="70%" />
+<p class="caption">(\#fig:fig9-1)Anscombes quartet [@anscombe1973graphs]</p>
 </div>
 
 In broad terms, visualizations are used either to present results or for
@@ -120,8 +120,8 @@ popular girl names in the
 the 1960s.].
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2.png" alt=" A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
-<p class="caption">(\#fig:fig9-2) A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
+<img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
+<p class="caption">(\#fig:fig9-2)A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
 </div>
 
 \vspace*{-12pt}
@@ -357,8 +357,8 @@ hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [66]. Interface based on [244]" width="70%" />
-<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [66]. Interface based on [244]</p>
+<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="70%" />
+<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]</p>
 </div>
 
 Maps are commonly combined with other visualizations. For example, in
@@ -488,8 +488,8 @@ in between, such as age of people in communication or the average
 duration of communications.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [45]" width="70%" />
-<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [45]</p>
+<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]" width="70%" />
+<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
 </div>
 
 \vspace*{12pt}

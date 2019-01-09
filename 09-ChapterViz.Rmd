@@ -50,7 +50,7 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [16]'}
+```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1.png")
 ```
 
@@ -128,7 +128,7 @@ popular girl names in the
 “John” has declined since
 the 1960s.].
 
-```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = ' A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
+```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
 knitr::include_graphics("ChapterViz/figures/fig9-2.png")
 ```
 
@@ -373,7 +373,7 @@ data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
-```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [66]. Interface based on [244]'}
+```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
 knitr::include_graphics("ChapterViz/figures/fig9-5.png")
 ```
 
@@ -498,7 +498,7 @@ traced. Analysis can also focus on attributes of the items and the links
 in between, such as age of people in communication or the average
 duration of communications.
 
-```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [45]'}
+```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]'}
 knitr::include_graphics("ChapterViz/figures/fig9-10b.png")
 ```
 

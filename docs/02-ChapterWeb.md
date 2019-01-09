@@ -421,8 +421,8 @@ provides a rich source of data on who is doing what with research
 articles.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterWeb/figures/fig2-2.png" alt="Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license" width="70%" />
-<p class="caption">(\#fig:fig2-2)Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license</p>
+<img src="ChapterWeb/figures/fig2-2.png" alt="Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [@lin2013altmetrics], under a Creative Commons Attribution v 3.0 license" width="70%" />
+<p class="caption">(\#fig:fig2-2)Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [@lin2013altmetrics], under a Creative Commons Attribution v 3.0 license</p>
 </div>
 
 There are a wide range of potential data sources, so it is useful to

@@ -316,8 +316,8 @@ as separate physical hardware.
 
 <img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]" width="70%" />
-<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [242]</p>
+<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]" width="70%" />
+<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]</p>
 </div>
 
 Running compute jobs on such hardware often goes like this. When a user

@@ -213,7 +213,7 @@ analysis. For example, blindly removing stop words can obscure important
 phrases such as "systems of innovation," "cease and desist," or
 "commander in chief." Identifying these $N$-grams requires looking for
 statistical patterns to discover phrases that often appear together in
-fixed patterns [@dunning-93]. These combinations of phrases are often
+fixed patterns [@Dunning-93]. These combinations of phrases are often
 called *collocations*, as their overall meaning is more than the sum of
 their parts.
 

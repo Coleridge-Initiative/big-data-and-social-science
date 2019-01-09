@@ -6,6 +6,10 @@ author:
 - Ron S. Jarmin
 - Frauke Kreuter
 - Julia Lane
+bibliography:
+- book.bib
+- parallel.bib
+- reclink.bib
 documentclass: book
 github-repo: Coleridge-Initiative/big-data-and-social-science
 link-citations: yes

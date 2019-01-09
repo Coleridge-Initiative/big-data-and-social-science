@@ -996,7 +996,7 @@ negligible when $n > 30$. These results suggest that variable error can
 be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
-```{r fig10-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size '}
+```{r fig10-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size'}
 knitr::include_graphics("ChapterError/figures/fig10-4.png")
 ```
 
@@ -1035,7 +1035,7 @@ attenuated. However, at the assumed level of intra-source variation, the
 inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.
 
-```{r fig10-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size '}
+```{r fig10-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size'}
 knitr::include_graphics("ChapterError/figures/fig10-5.png")
 ```
 

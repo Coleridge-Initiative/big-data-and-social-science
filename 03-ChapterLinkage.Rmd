@@ -699,7 +699,7 @@ from the training data, the predictive model can be applied to unlabeled
 data to find new links. The quality of the training data set is
 critical; the model is only as good as the data it is trained on.
 
-```{r fig3-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [213]'}
+```{r fig3-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]'}
 knitr::include_graphics("ChapterLinkage/figures/fig3-2.png")
 ```
 

@@ -1000,8 +1000,8 @@ be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size " width="70%" />
-<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size </p>
+<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size" width="70%" />
+<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size</p>
 </div>
 
 **Both variable and systematic errors**
@@ -1040,8 +1040,8 @@ inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size " width="70%" />
-<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size </p>
+<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size" width="70%" />
+<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size</p>
 </div>
 
 To summarize these findings, correlation analysis is attenuated by

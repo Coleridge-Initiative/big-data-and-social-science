@@ -28,8 +28,8 @@ leading academic journals are much less likely today to draw on
 preprocessed survey data (Figure \@ref(fig:fig1)).
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 @Chetty2012" width="70%" />
-<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 @Chetty2012</p>
+<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)" width="70%" />
+<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)</p>
 </div>
 
 The way in which data are used has also changed for both government
@@ -120,7 +120,7 @@ But most interestingly, the new data can change the way we think about
 measuring and making inferences about behavior. For example, it enables
 the capture of information on the subject's entire environment---thus,
 for example, the effect of fast food caloric labeling in health
-interventions [@elbel2011]; the productivity of a cashier if he is
+interventions [@Elbel2011]; the productivity of a cashier if he is
 within eyesight of a highly productive cashier but not otherwise
 [@Mas2009]. So it offers the potential to understand the effects of
 complex environmental inputs on human behavior. In addition, big data,

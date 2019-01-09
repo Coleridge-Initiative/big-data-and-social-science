@@ -514,7 +514,7 @@ cryptography, as well as a variety of different practical applications,
 including the successful development of remote access secure data
 enclaves. We must piece together the knowledge from these various fields
 to develop ways in which vast new sets of data on human beings can be
-collected, integrated, and analyzed while protecting them [@Lane2014].
+collected, integrated, and analyzed while protecting them [@lane2014].
 
 It is possible that the confidentiality risks of disseminating data may
 be so high that traditional access models will no longer hold; that the

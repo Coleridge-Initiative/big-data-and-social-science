@@ -409,7 +409,7 @@ privacy issues that have not been comprehensively addressed but also
 provides a rich source of data on who is doing what with research
 articles.
 
-```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license'}
+```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [@lin2013altmetrics], under a Creative Commons Attribution v 3.0 license'}
 knitr::include_graphics("ChapterWeb/figures/fig2-2.png")
 ```
 

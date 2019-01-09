@@ -701,8 +701,8 @@ data to find new links. The quality of the training data set is
 critical; the model is only as good as the data it is trained on.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterLinkage/figures/fig3-2.png" alt="Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [213]" width="70%" />
-<p class="caption">(\#fig:fig3-2)Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [213]</p>
+<img src="ChapterLinkage/figures/fig3-2.png" alt="Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]" width="70%" />
+<p class="caption">(\#fig:fig3-2)Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]</p>
 </div>
 
 \vspace*{-6pt}
