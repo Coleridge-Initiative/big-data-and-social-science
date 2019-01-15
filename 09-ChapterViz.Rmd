@@ -1,10 +1,9 @@
 Information Visualization {#chap:viz}
 =========================
 
-***M. Adil Yalcin***
-
-***Catherine Plaisant***
-<br><br>
+\chapterauthor{M.\ Adil Yal\c{c}{\i}n and Catherine Plaisant}
+\vspace*{-6pt}
+**M. Adil Yalçın and Catherine Plaisant**
 
 This chapter will show you how to explore data and communicate results
 so that data can be turned into interpretable, actionable information.
@@ -13,6 +12,8 @@ content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range
 of data types and tasks, and to explore the foundations and challenges
 of information visualization.
+
+\vspace*{-6pt}
 
 Introduction {#sec:viz-1}
 ------------
@@ -49,7 +50,7 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [16]'}
+```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1.png")
 ```
 
@@ -67,11 +68,13 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box [\[viz:box1\]](#viz:box1){reference-type="ref"
-reference="viz:box1"}).
+(see Box 9.1^[See Chapters 2, 3, 4, and
+5 for an overview of collecting, merging, storing, and
+processing data sets.]).
 
-\pagebreak
-[\[viz:box1\]]{#viz:box1 label="viz:box1"} The development of an
+```{block, type='F00'}
+**Box 9.1:**
+The development of an
 effective visualization is an iterative process that generally includes
 the following steps:
 
@@ -90,6 +93,7 @@ the following steps:
 
 -   Deploy (monitor usage, provide user support, manage revision
     process).
+```
 
 If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
@@ -108,9 +112,23 @@ information.
 Another goal of visualization is to enable *interactive exploratory
 analysis* for casual users as well as professional analysts. One casual
 example is BabyNameVoyager [@babynamevoyager], which lets users type in
-a name and see a graph of its popularity over the past century.
+a name and see a graph of its popularity over the past century^[As the baby name is
+typed letter by letter, BabyNameVoyager visualizes
+the popularity of all the
+names starting with the
+letters entered so far, and
+it animates smoothly with
+each new letter input. For
+example, typing “Jo” shows
+all the names starting with
+“Jo”. This view reveals
+that Joyce and Joan were
+popular girl names in the
+1930s, and the use of
+“John” has declined since
+the 1960s.].
 
-```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = ' A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
+```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
 knitr::include_graphics("ChapterViz/figures/fig9-2.png")
 ```
 
@@ -143,7 +161,7 @@ Commercial tools such as Spotfire and Tableau, among many other tools
 offering chart types and visual design environments to analyze their
 data, and to combine them in potent dashboards rapidly shared with
 colleagues. For example, Figure
-\@ref(fig:fig9-3a)} shows the charting interface of Tableau on a
+\@ref(fig:fig9-3a) shows the charting interface of Tableau on a
 transaction data set. The left-hand panel shows the list of attributes
 associated with vendor transactions for a given university. The
 visualization (center) is constructed by placing the month of spending
@@ -216,13 +234,12 @@ current population (single numerical data), the amount of trade with
 other countries (networked/linked data), and the top 10 exported
 products (if grouped by industry, hierarchical data). Furthermore, we
 provide an overview of common tasks for visual data analysis in
-Box [\[viz:box2\]](#viz:box2){reference-type="ref"
-reference="viz:box2"}, which can be applied across different data types
+Box 9.2, which can be applied across different data types
 based on goals and types of visualizations.
 
-\afterpage{\clearpage}
-A task categorization for visual data analysis[\[viz:box2\]]{#viz:box2
-label="viz:box2"} Select/Query
+```{block, type='F00'}
+**Box 9.2: A task categorization for visual data analysis**
+ Select/Query
 
 -   Filter to focus on a subset of the data
 
@@ -269,6 +286,7 @@ Communicate
 -   Share results
 
 -   Trace action histories
+```
 
 Interactive visualization design is also closely coupled with the
 targeted devices. Conventionally, visualizations have been designed for
@@ -337,8 +355,7 @@ HomeFinder application that introduced the concept of dynamic queries
 [@ahlberg1992dynamic]. The tasks include finding adjacent items, regions
 containing certain items or with specific characteristics, and paths
 between items---and performing the basic tasks listed in
-Box [\[viz:box1\]](#viz:box1){reference-type="ref"
-reference="viz:box1"}.
+Box 9.1.
 
 The primary form of visualizing spatial data is *maps*. In *choropleth
 maps*, color encoding is used to add represent one data attribute.
@@ -356,7 +373,7 @@ data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
-```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [66]. Interface based on [244]'}
+```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
 knitr::include_graphics("ChapterViz/figures/fig9-5.png")
 ```
 
@@ -365,10 +382,6 @@ Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
 to explore correlations between attributes.
-
-```{r fig9-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Horizon graphs used to display time series'}
-knitr::include_graphics("ChapterViz/figures/fig9-6.png")
-```
 
 ### Temporal data {#sec:viz-2.4}
 
@@ -395,6 +408,10 @@ perceptually effective after learning to read its encoding, this chart
 design may not be appropriate for audiences who may lack such training
 or familiarity.
 
+```{r fig9-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Horizon graphs used to display time series'}
+knitr::include_graphics("ChapterViz/figures/fig9-6.png")
+```
+
 ```{r fig9-7, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission'}
 knitr::include_graphics("ChapterViz/figures/fig9-7.png")
 ```
@@ -417,10 +434,6 @@ prototyping activity of the company. In most of the sequences shown
 here, the company's first prototype is preceded by two or more patents
 with a lag of about a year.
 
-```{r fig9-8, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (www.cs.umd.edu/hcil/spacetree/)'}
-knitr::include_graphics("ChapterViz/figures/fig9-8.png")
-```
-
 \enlargethispage{12pt}
 
 ### Hierarchical data {#sec:viz-2.5}
@@ -438,7 +451,7 @@ as "how deep is the tree?", "how many items does this branch have?", or
 "what are the characteristics of one branch compared to another?" In
 such cases, the most appropriate representation is usually a node-link
 diagram [@plaisant2002spacetree; @card2002degree]. In
-Figure \@ref(fig:fig9-8), is used to browse a company organizational
+Figure \@ref(fig:fig9-8), Spacetree is used to browse a company organizational
 chart. Since not all the nodes of the tree fit on the screen, we see an
 iconic representation of the branches that cannot be displayed,
 indicating the size of each branch. As the tree branches are opened or
@@ -460,6 +473,10 @@ allowing users to see that "healthcare technology" is not doing as
 poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
+```{r fig9-8, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (www.cs.umd.edu/hcil/spacetree/)'}
+knitr::include_graphics("ChapterViz/figures/fig9-8.png")
+```
+
 ```{r fig9-9, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The Finviz treemap helps users monitor the stock market (www.finviz.com)'}
 knitr::include_graphics("ChapterViz/figures/fig9-9.png")
 ```
@@ -471,7 +488,7 @@ knitr::include_graphics("ChapterViz/figures/fig9-10.png")
 ```
 
 \vspace*{12pt}
-Network data encode relationships between items: for example, social
+Network data encode relationships between items^[See Chapter 8.]: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
 patterns (such as emails). The network overviews attempt to reveal the
@@ -481,7 +498,7 @@ traced. Analysis can also focus on attributes of the items and the links
 in between, such as age of people in communication or the average
 duration of communications.
 
-```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [45]'}
+```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]'}
 knitr::include_graphics("ChapterViz/figures/fig9-10b.png")
 ```
 
@@ -523,7 +540,7 @@ summary of the insights gathered by analysts.
 
 Text is usually preprocessed (for word/paragraph counts, sentiment
 analysis, categorization, etc.) to generate metadata about text
-segments, which are then visualized. Simple visualizations like tag
+segments, which are then visualized^[See Chapter 7 for text analysis approaches.]. Simple visualizations like tag
 clouds display statistics about word usage in a text collection, or can
 be used to compare two collections or text segments. While visually
 appealing, they can easily be misinterpreted and are often replaced by

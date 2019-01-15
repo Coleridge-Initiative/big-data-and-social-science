@@ -1,10 +1,16 @@
+---
+title: "Text Analysis"
+author: Evgeny Klochikhin and Jordan Boyd-Graber
+output:
+  html_document:
+    df_print: paged
+---
+
 Text Analysis {#chap:text}
 =============
 
-***Evgeny Klochikhin***
-
-***Jordan Boyd-Graber***
-<br><br>
+\chapterauthor{Evgeny Klochikhin and Jordan Boyd-Graber}
+**Evgeny Klochikhin and Jordan Boyd-Graber**
 
 This chapter provides an overview of how social scientists can make use
 of one of the most exciting advances in big data---text analysis. Vast
@@ -40,7 +46,7 @@ computer-aided *text analysis*. Text data can be used to "conventional"
 data sources, such as surveys and administrative data, since the words
 spoken or written by individuals often provide more nuanced and
 unanticipated insights.
-Chapter [Record Linkage] discusses how to link data to create larger, more
+Chapter [Record Linkage]^[See Chapter 3.] discusses how to link data to create larger, more
 diverse data sets. The linkage data sets need not just be numeric, but
 can also include data sets consisting of text data.
 
@@ -70,22 +76,22 @@ potentially identify new fields of study [@talley2011database].
 Overall, text analysis can help with specific tasks that define
 application-specific subfields including the following:
 
--   Searches and information retrieval: Text analysis tools can help find relevant information in large
+-   **Searches and information retrieval**: Text analysis tools can help find relevant information in large
     databases. For example, we used these techniques in systematic
     literature reviews to facilitate the discovery and retrieval of
     relevant publications related to early grade reading in Latin
     America and the Caribbean.
 
--   Clustering and text categorization: Tools like topic modeling can provide a big picture of the contents
+-   **Clustering and text categorization**: Tools like topic modeling can provide a big picture of the contents
     of thousands of documents in a comprehensible format by discovering
     only the most important words and phrases in those documents.
 
--   Text summarization: Similar to clustering, text summarization can provide value in
+-   **Text summarization**: Similar to clustering, text summarization can provide value in
     processing large documents and text corpora. For example, Wang et
     al. [@wang-09] use topic modeling to produce category-sensitive text
     summaries and annotations on large-scale document collections.
 
--   Machine translation: Machine translation is an example of a text analysis method that
+-   **Machine translation**: Machine translation is an example of a text analysis method that
     provides quick insights into documents written in other
 
 How to analyze text
@@ -94,12 +100,14 @@ How to analyze text
 Human language is complex and nuanced, which makes analysis difficult.
 We often make simplifying assumptions: we assume our input is perfect
 text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11];
-and we assume "standard" English [@kong-14].
+and we assume "standard" English [@kong-14]^[See Chapter 6 for a discussion of speech recognition, which can turn spoken
+language into text.].
 
 Recognizing this complexity, the goal of text mining is to reduce the
 complexity of text and extract important messages in a comprehensible
 and meaningful way. This objective is usually achieved through text
-categorization or automatic classification. These tools can be used in
+categorization or automatic classification^[Classification, a machine
+learning method, is discussed in Chapter 6.]. These tools can be used in
 multiple applications to gain salient insights into the relationships
 between words and documents. Examples include using machine learning to
 analyze the flow and topic segmentation of political debates and
@@ -138,7 +146,8 @@ robustness and utility of derived results.
 ### Processing text data
 
 The first important step in working with text data is cleaning and
-processing. Textual data are often messy and unstructured, which makes
+processing^[Cleaning and processing are discussed extensively in
+Chapter 3.]. Textual data are often messy and unstructured, which makes
 many researchers and practitioners overlook their value. Depending on
 the source, cleaning and processing these data can require varying
 amounts of effort but typically involve a set of established techniques.
@@ -204,7 +213,7 @@ analysis. For example, blindly removing stop words can obscure important
 phrases such as "systems of innovation," "cease and desist," or
 "commander in chief." Identifying these $N$-grams requires looking for
 statistical patterns to discover phrases that often appear together in
-fixed patterns [@dunning-93]. These combinations of phrases are often
+fixed patterns [@Dunning-93]. These combinations of phrases are often
 called *collocations*, as their overall meaning is more than the sum of
 their parts.
 
@@ -247,7 +256,7 @@ process can be helpful.
 ### How much is a word worth?
 
 Not all words are worth the same; in an article about electronics,
-"capacitor" is more important than "aspect." Appropriately weighting and
+"capacitor" is more important than "aspect." Appropriately weighting^[Term weighting is an example of feature engineering discussed in Chapter 6.] and
 calibrating words is important for both human and machine consumers of
 text data: humans do not want to see "the" as the most frequent word of
 every document in summaries, and classification algorithms benefit from
@@ -259,22 +268,18 @@ document collection. Term frequency--inverse document frequency (TFIDF)
 [@salton-68] is a weighting scheme to explicitly balance these factors
 and prioritize the most meaningful words. The TFIDF model takes into
 account both the term frequency of a given token and its document
-frequency (Box [\[text:box1\]](#text:box1){reference-type="ref"
-reference="text:box1"}) so that if a highly frequent word also appears
+frequency (Box 7.1) so that if a highly frequent word also appears
 in almost all documents, its meaning for the specific context of the
 corpus is negligible. Stop words are a good example when highly frequent
 words also bear limited meaning since they appear in virtually all
 documents of a givencorpus.
 
-TFIDF[\[text:box1\]]{#text:box1 label="text:box1"} For every token $t$
-and every document $d$ in the corpus $D$, TFIDF is calculated as
-$$tfidf(t,d,D) = tf(t,d) \times
-idf(t,D),$$ where term frequency is either a simple count,
-$$tf(t,d)=f(t,d),$$ or a more balanced quantity,
-$$tf(t,d) = 0.5+\frac{0.5 \times
-  f(t,d)}{\max\{f(t,d):t\in d\}},$$ and inverse document frequency is
-$$\
-idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
+<div class="F00">
+<p><strong>Box 7.1: TFIDF</strong> For every token <span class="math inline">\(t\)</span> and every document <span class="math inline">\(d\)</span> in the corpus <span class="math inline">\(D\)</span>, TFIDF is calculated as <span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
+idf(t,D),\]</span> where term frequency is either a simple count, <span class="math display">\[tf(t,d)=f(t,d),\]</span> or a more balanced quantity, <span class="math display">\[tf(t,d) = 0.5+\frac{0.5 \times
+  f(t,d)}{\max\{f(t,d):t\in d\}},\]</span> and inverse document frequency is <span class="math display">\[\
+idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
+</div>
 
 \enlargethispage{24pt}
 \vspace*{-36pt}
@@ -400,7 +405,7 @@ in a document and explain a word's appearance well.
 
 The topic assignment $z_{d,n}$ of word $n$ in document $d$ is
 proportional to
-$$p(z_{d,n}=k) \propto \left( \explicate{how much doc likes the topic}{\frac{N_{d,k} + \alpha}{N_{d, \cdot} + K \alpha}} \right) \left(\explicate{how much topic likes the word}{\frac{V_{k,w_{d,n}} + \beta}{V_{k, \cdot} + V \beta}} \right),$$
+$$p(z_{d,n}=k) \propto \left( \underset{how much doc likes the topic}{\frac{N_{d,k} + \alpha}{N_{d, \cdot} + K \alpha}} \right) \left(\underset{how much topic likes the word}{\frac{V_{k,w_{d,n}} + \beta}{V_{k, \cdot} + V \beta}} \right),$$
 where $\alpha$ and $\beta$ are smoothing factors that prevent a topic
 from having zero probability if a topic does not use a word or a
 document does not use a topic [@wallach-09b]. Recall that we do not
@@ -434,8 +439,7 @@ provide more details on the derivation of this equation.
 
 **Example code**
 
-Listing [\[list:7.1\]](#list:7.1){reference-type="ref"
-reference="list:7.1"} provides a function to compute the conditional
+Listing 7.1 provides a function to compute the conditional
 probability of a single word and return the (unnormalized) probability
 to sample from.
 
@@ -465,8 +469,8 @@ def class_sample(docs, vocab, d, n, alpha,
     result[kk] = doc_contrib * topic_contrib
   return result
 ```
+<div style="text-align: center">Listing 7.1. Python code to compute conditional probability of a single word and return the probability from which to sample</div>
 
-\exampend{Gibbs sampling for topic models}
 #### Applications of topic models
 
 Topic modeling is most often used for topic exploration, allowing users
@@ -549,17 +553,17 @@ phrases in those documents and return only relevant results.
 An example of such a string would typically be subdivided by category or
 search group connected to each other by the `AND` or `OR` operator:
 
-1.  General terms: `(food safety OR food securit* OR foodinsecurit*)`
+1.  **General terms**: `(food safety OR food securit* OR foodinsecurit*)`
 
-2.  Food pathogens: `(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)`
+2.  **Food pathogens**: `(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)`
 
-3.  Biochemistry and toxicology: `(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)`
+3.  **Biochemistry and toxicology**: `(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)`
 
-4.  Food processing and preservation: `(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)`
+4.  **Food processing and preservation**: `(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)`
 
-5.  Food quality and quality control: `(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)`
+5.  **Food quality and quality control**: `(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)`
 
-6.  Food-related diseases: `(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)`
+6.  **Food-related diseases**: `(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)`
 
 Different websites and databases use different search functions to
 return most relevant results given a query (e.g., "food safety").
@@ -568,9 +572,16 @@ Python code based on regular expressions to all textual data. However,
 this is not always possible (e.g., when using proprietary databases,
 such as Web of Science). In those cases, it is important to follow the
 conventions of the information retrieval system. For example, one source
-might need phrases to be embedded in parentheses (i.e., `(x-ray crystallograph.*)`) while another database interface would require such phrases to be contained within quotation marks (i.e., `''x-ray crystallograph.*''`). It is then critical to explore the search tips and rules on those databases to ensure that the most complete information is gathered and further analyzed.
+might need phrases to be embedded in parentheses (i.e., `(x-ray crystallograph.*)`) while another database interface would require such phrases to be contained within quotation marks (i.e., `\``x-ray crystallograph.*´´`). It is then critical to explore the search tips and rules on those databases to ensure that the most complete information is gathered and further analyzed.
 
 \enlargethispage{24pt}
+
+**Example code**
+
+Python's built-in `re` package provides all the capability needed to
+construct and search with complex regular expressions. Listing 7.2
+provides an example.
+
 ``` {#list:7.2 style="PythonStyle" numbers="none" float="b" label="list:7.2" caption="Python code to identify food safety related NSF awards with regular expressions"}
 def fs_regex(nsf_award_abstracts,outfilename):
 
@@ -593,13 +604,7 @@ def fs_regex(nsf_award_abstracts,outfilename):
       or re.search(pathogens,abstract) or re.search(process,abstract)):
       output.writerow(i+['food safety award'])
 ```
-
-**Example code**
-
-Python's built-in `re` package provides all the capability needed to
-construct and search with complex regular expressions. Listing
-[\[list:7.2\]](#list:7.2){reference-type="ref" reference="list:7.2"}
-provides an example.
+<div style="text-align: center">Listing 7.2. Python code to identify food safety related NSF awards with regular expressions</div>
 
 ---
 
@@ -652,8 +657,7 @@ cosine similarity of two documents represented by numeric vectors, as
 described above. The `gensim` module that is often used as a Python-based topic
 modeling implementation can be used to produce vector space
 representations of textual data.
-Listing [\[list:7.3\]](#list:7.3){reference-type="ref"
-reference="list:7.3"} provides an example of measuring cosine similarity
+Listing 7.3 provides an example of measuring cosine similarity
 using these modules.
 
 ``` {#list:7.3 style="PythonStyleInline" basicstyle="\scriptsize\ttfamily" backgroundcolor="\color{codeBG}" label="list:7.3" caption="Python code to measure cosine similarity between Climate Change and all other Earth Science NSF awards"}
@@ -713,6 +717,9 @@ def coss_nsf(nsf_climate_change,nsf_earth_science,outfile):
                         np.array([item[1] for item in source_dict])
       output.writerow([source_id,award_id,similarity])
 ```
+<div style="text-align: center">Listing 7.3. Python code to measure cosine similarity between Climate Change and all other Earth Science NSF awards</div>
+
+--- 
 
 \pagebreak
 Kullback--Leibler (KL) divergence is an asymmetric measure that is often
@@ -777,7 +784,7 @@ These vectors account for the term frequency and their relative
 importance given their place in the WordNet hierarchy, so that the
 overall $wiki$ vector is defined as:
 
-$SMV_{wiki}(s) = \sum\nolimits_{w\in Synonyms(s)} \frac{tf_{wiki}(w)}{|Synsets(w)|}$,
+$$SMV_{wiki}(s) = \sum\nolimits_{w\in Synonyms(s)} \frac{tf_{wiki}(w)}{|Synsets(w)|}$$,
 
 where $w$ is a token within $wiki$, $s$ is a WordNet synset that is
 associated with every token $w$ in WordNet hierarchy, $Synonyms(s)$ is
@@ -841,27 +848,18 @@ Some examples from our recent work can demonstrate how Wikipedia-based
 labeling and labeled LDA
 [@ramage-09; @Nguyen:Boyd-Graber:Resnik:Chang-2014] cope with the task
 of document classification and labeling in the scientific domain. See
-Table [\[table:labels\]](#table:labels){reference-type="ref"
-reference="table:labels"}.
+Table \@ref(tab:table7-1).
 
-\centering
-\small
-\bgroup
-\def\arraystretch{1.75}
-\begin{tabular}{|m{17pc}|m{6pc}|m{5.5pc}|m{5.2pc}|}
-  \hline
-  {\bf Abstract excerpt} & {\bf ProQuest\newline subject category} & {\bf Labeled LDA} & {\bf Wikipedia-based labeling} \\
-  \hline
-  {\bf Reconfigurable computing platform for small-scale resource-constrained robot.} Specific applications often require robots of small size for reasons such as costs, access, and stealth. Small-scale robots impose constraints on resources such as power or space for modules \ldots & Engineering,\newline Electronics and\newline Electrical;\newline Engineering,\newline Robotics & Motor controller &  Robotics, Robot, Field-\newline programmable gate array \\
- \hline
-  {\bf Genetic mechanisms of thalamic nuclei speci\-fication and the influence of thalamocortical axons in regulating neocortical area formation.} Sensory information from the periphery is essential for all animal species to learn, adapt, and survive in their environment. The thalamus, a critical structure in the diencephalon, receives sensory information \ldots & Biology,\newline Neurobiology & HSD2 neurons & \mbox{Sonic hedgehog,}\newline Induced stem\newline cell, Nervous\newline system \\
-  \hline
-  {\bf Poetry 'n acts: The cultural politics of twentieth-century American poets' theater.} This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform \ldots & Literature,\newline American;\newline Theater & Audience & Counter-culture of~the\newline 1960s, Novel,\newline Modernism \\
-  \hline
-\end{tabular}
-\egroup
-\vspace*{12pt}
-\vspace*{6pt}
+Table: (\#tab:table7-1) Wikipedia articles as potential labels generated by $n$-gram indexing of NSF awards
+
+| **Abstract excerpt**                                                                                                                                                                                                                                                                                                                                                | **ProQuest subject category**                                      | **Labeled LDA**      | **Wikipedia-based labeling**                          |
+|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------|------------------|---------------------------------------------------|
+| **Reconfigurable computing platform for smallscale resource-constrained robot.**  Specific applications often require robots of small size for reasons such as costs, access, and stealth. Smallscale robots impose constraints on resources such as power or space for modules...                                                                                  | Engineering, Electronics and Electrical; Engineering, Robotics | Motor controller | Robotics, Robot, Fieldprogrammable gate array     |
+|  **Genetic mechanisms of thalamic nuclei specification and the influence of thalamocortical axons in regulating neocortical area formation.** Sensory information from the periphery is essential for all animal species to learn, adapt, and survive in their environment. The thalamus, a critical structure in the diencephalon, receives sensory information... | Biology, Neurobiology                                          | HSD2 neurons     | Sonic hedgehog, Induced stem cell, Nervous system |
+| **Poetry ’n acts: The cultural politics of twentiethcentury American poets’ theater.**  This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform...                                                               | Literature, American; Theater                                  | Audience         | Counterculture of the 1960s, Novel, Modernism     |
+
+
+
 ### Other approaches {#sec:other}
 
 Our focus in this chapter is on approaches that are language independent
@@ -875,7 +873,7 @@ understand natural language texts.
 
 In contrast to the *unsupervised* approaches discussed above, most
 techniques in natural language processing are *supervised* machine
-learning algorithms. Supervised machine learning produce labels $y$
+learning algorithms^[Chapter 6 reviews supervised machine learning approaches.]. Supervised machine learning produce labels $y$
 given inputs $x$---the algorithm's job is to learn how to automatically
 produce correct labels given automatic inputs $x$.
 
@@ -895,7 +893,7 @@ labels---define unique analyses of linguistic data.
 
 If the examples $x$ are documents and $y$ are what these documents are
 about, the problem is called *document classification*. In contrast to
-the techniques in Section [1.3.1](#sec:lda){reference-type="ref"
+the techniques in Section [7.3.1](#sec:lda){reference-type="ref"
 reference="sec:lda"}, document classification is used when you know the
 specific document types for which you are looking *and* you have many
 examples of those document types.
@@ -957,7 +955,8 @@ Content analysis, discourse analysis, and bibliometrics are all common
 tools used by social scientists in their text mining exercises
 [@Stemler2001; @glanzel-12]. However, they are rarely presented with
 robust evaluation metrics, such as type I and type II error rates, when
-retrieving data for further analysis. For example, bibliometricians
+retrieving data for further analysis^[Chapter 10 discusses
+how to measure and diagnose errors in big data.]. For example, bibliometricians
 often rely on search strings derived from expert interviews and
 workshops. However, it is hard to certify that those search strings are
 optimal. For instance, in nanotechnology research, Porter et
@@ -996,42 +995,25 @@ performance.
 
 The formalization of this measure is called *purity*: how much overlap
 there is between each of my labels and the "best" match from your
-labels. Box [\[text:box2\]](#text:box2){reference-type="ref"
-reference="text:box2"} shows how to calculate it.
+labels. Box 7.2 shows how to calculate it.
 
-Purity calculation[\[text:box2\]]{#text:box2 label="text:box2"} We
-compute purity by assigning each cluster to the class that is most
-frequent in the cluster, and then measuring the accuracy of this
-assignment by counting correctly assigned documents and dividing by the
-number of all documents, $N$ [@manning2008]. In formal terms,
-$$\mathrm{Purity}(\Omega,\mathbb{C}) = \frac{1}{N}\sum_{k} \max\limits_{j}|w_k\cap c_j|,$$
-where $\Omega = \{w_1, w_2,\ldots, w_k\}$ is the set of candidate
-clusters and $\mathbb{C} = \{c_1, c_2,\ldots, c_j\}$ is the gold set of
-classes.
+<div class="F00">
+<p><strong>Box 7.2: Purity calculation</strong> We compute purity by assigning each cluster to the class that is most frequent in the cluster, and then measuring the accuracy of this assignment by counting correctly assigned documents and dividing by the number of all documents, <span class="math inline">\(N\)</span> <span class="citation">[@manning2008]</span>. In formal terms, <span class="math display">\[\mathrm{Purity}(\Omega,\mathbb{C}) = \frac{1}{N}\sum_{k} \max\limits_{j}|w_k\cap c_j|,\]</span> where <span class="math inline">\(\Omega = \{w_1, w_2,\ldots, w_k\}\)</span> is the set of candidate clusters and <span class="math inline">\(\mathbb{C} = \{c_1, c_2,\ldots, c_j\}\)</span> is the gold set of classes.</p>
+</div>
 
 **Precision and recall**
 
 Chapter [Machine Learning](#chap:ml) already touched on the importance of precision and
 recall for evaluating the results of information retrieval and machine
-learning models (Box [\[text:box3\]](#text:box3){reference-type="ref"
-reference="text:box3"} provides a reminder of the formulae). Here we
+learning models (Box 7.3 provides a reminder of the formulae). Here we
 look at a particular example of how these metrics can be computed when
 working with scientific documents.
 
-Precision and recall[\[text:box3\]]{#text:box3 label="text:box3"} These
-two metrics are commonly used in information retrieval and computational
-linguistics [@resnik-10b]. Precision computes the type I errors---*false
-positives*---in a similar manner to the purity measure; it is formally
-defined as
-$$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.$$
-Recall accounts for type II errors---*false negatives*---and is defined
-as
-$$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
+<div class="F00">
+<p><strong>Box 7.3: Precision and recall</strong> These two metrics are commonly used in information retrieval and computational linguistics <span class="citation">[@resnik-10b]</span>. Precision computes the type I errors---<em>false positives</em>---in a similar manner to the purity measure; it is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em>---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+</div>
 
-We assume that a user has three sets of documents $D_a =
-\{d_{a1},$ $d_{a2},
-\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =
-\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
+We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
 disciplinary label: $D_a$ are computer science documents, $D_b$ are
 physics, and $D_c$ are chemistry.
 
@@ -1097,7 +1079,10 @@ command in Python: `fdist=nltk.FreqDist(text)`. This command returns a dictionar
 $N$-gram indexing is implemented as a chain-linked collocations
 algorithm that takes into account the probability of any given two,
 three, or more words appearing together in the entire corpus. In
-general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing [\[list:7.4\]](#list:7.4){reference-type="ref" reference="list:7.4"}.
+general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing 7.4.
+
+Bird et al. [@bird-09] provide a detailed description of NLTK tools and
+techniques. See also the official NLTK website [@NLTKweb].
 
 ``` {#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
 def bigram_finder(texts):
@@ -1116,9 +1101,7 @@ def bigram_finder(texts):
   for key in prefix_keys:
       prefix_keys[key].sort(key = lambda x: -x[1])
 ```
-
-Bird et al. [@bird-09] provide a detailed description of NLTK tools and
-techniques. See also the official NLTK website [@NLTKweb].
+<div style="text-align: center">Listing 7.4. Python code to find bigrams using NLTK</div>
 
 **Stanford CoreNLP**
 

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Chapter 2 Working with Web Data and APIs | Big Data and Social Science</title>
-  <meta name="description" content="Chapter 2 Working with Web Data and APIs | Big Data and Social Science">
-  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+  <title>Big Data and Social Science</title>
+  <meta name="description" content="Big Data and Social Science">
+  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
 
-  <meta property="og:title" content="Chapter 2 Working with Web Data and APIs | Big Data and Social Science" />
+  <meta property="og:title" content="Big Data and Social Science" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="Coleridge-Initiative/big-data-and-social-science" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 2 Working with Web Data and APIs | Big Data and Social Science" />
+  <meta name="twitter:title" content="Big Data and Social Science" />
   
   
   
@@ -39,7 +39,6 @@
 <link rel="next" href="chap-link.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -114,7 +113,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3" data-path="chap-intro.html"><a href="chap-intro.html#sec:1.3"><i class="fa fa-check"></i><b>1.3</b> Social science, inference, and big data</a></li>
 <li class="chapter" data-level="1.4" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-5"><i class="fa fa-check"></i><b>1.4</b> Social science, data quality, and big data</a></li>
 <li class="chapter" data-level="1.5" data-path="chap-intro.html"><a href="chap-intro.html#new-tools-for-new-data"><i class="fa fa-check"></i><b>1.5</b> New tools for new data</a></li>
-<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#the-books-use-case"><i class="fa fa-check"></i><b>1.6</b> The book’s “use case”</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-6"><i class="fa fa-check"></i><b>1.6</b> The book’s “use case”</a></li>
 <li class="chapter" data-level="1.7" data-path="chap-intro.html"><a href="chap-intro.html#the-structure-of-the-book"><i class="fa fa-check"></i><b>1.7</b> The structure of the book</a><ul>
 <li class="chapter" data-level="1.7.1" data-path="chap-intro.html"><a href="chap-intro.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>1.7.1</b> Part I: Capture and curation</a></li>
 <li class="chapter" data-level="1.7.2" data-path="chap-intro.html"><a href="chap-intro.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>1.7.2</b> Part II: Modeling and analysis</a></li>
@@ -247,6 +246,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
 <li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
+<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
 <li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
 <li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
@@ -347,7 +347,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="chap:web" class="section level1">
 <h1><span class="header-section-number">Chapter 2</span> Working with Web Data and APIs</h1>
-<p><strong><em>Cameron Neylon</em></strong> <br><br></p>
+<p> <strong>Cameron Neylon</strong></p>
 <p>This chapter will show you how to extract information from social media about the transmission of knowledge. The particular application will be to develop links to authors’ articles on Twitter using PLOS articles and to pull information using an API. You will get link data from bookmarking services, citations from Crossref, links from Facebook, and information from news coverage. The examples that will be used are from Twitter. In keeping with the social science grounding that is a core feature of the book, it will discuss what can be captured, what is potentially reliable, and how to manage data quality issues.</p>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
@@ -363,7 +363,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">2.2.1</span> Obtaining data from the HHMI website</h3>
 <p>Let us suppose we are interested in obtaining information on those investigators that are funded by the Howard Hughes Medical Institute (HHMI). HHMI has a website that includes a search function for funded researchers, including the ability to filter by field, state, and role. But there does not appear to be a downloadable data set of this information. However, we can automate the process with code to create a data set that you might compare with other data.</p>
 <p>This process involves first understanding how to construct a URL that will do the search we want. This is most easily done by playing with search functionality and investigating the URL structures that are returned. Note that in many cases websites are not helpful here. However, with HHMI if we do a general search and play with the structure of the URL, we can see some of the elements of the URL that we can think of as a query. As we want to see <em>all</em> investigators, we do not need to limit the search, and so with some fiddling we come up with a URL like the following. (We have broken the one-line URL into three lines for ease of presentation.)</p>
-<p><a href="http://www.hhmi.org/scientists/browse" class="uri">http://www.hhmi.org/scientists/browse</a>? kw=&amp;sort_by=field_scientist_last_name&amp; sort_order=ASC&amp;items_per_page=20&amp;page=0</p>
+
+<p><a href="http://www.hhmi.org/scientists/browse?kw" class="uri">http://www.hhmi.org/scientists/browse?kw</a>=&amp;sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=20&amp;page=0</p>
 <p>The <code>requests</code> module, available natively in Jupyter Python notebooks, is a useful set of tools for handling interactions with websites. It lets us construct the request that we just presented in terms of a base URL and query terms, as follows:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>BASE_URL =<span class="st"> &quot;http://www.hhmi.org/scientists/browse&quot;</span>
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>query =<span class="st"> </span>{
@@ -379,7 +380,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The first thing to do when building a script that hits a web page is to make sure that your call was successful. This can be checked by looking at the response code that the web server sent—and, obviously, by checking the actual HTML that was returned. A <code>200</code> code means success and that everything should be OK. Other codes may mean that the URL was constructed wrongly or that there was a server error.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code
 <span class="dv">200</span></code></pre></div>
-<p>With the page successfully returned, we now need to process the text it contains into the data we want. This is not a trivial exercise. It is possible to search through and find things, but there are a range of tools that can help with processing HTML and XML data. Among these one of the most popular is a module called BeautifulSoup <span class="citation">(Richardson, n.d.)</span>, which provides a number of useful functions for this kind of processing. The module documentation provides more details.</p>
+<p>With the page successfully returned, we now need to process the text it contains into the data we want. This is not a trivial exercise. It is possible to search through and find things, but there are a range of tools that can help with processing HTML and XML data. Among these one of the most popular is a module called BeautifulSoup<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> <span class="citation">(Richardson, n.d.)</span>, which provides a number of useful functions for this kind of processing. The module documentation provides more details.</p>
 <p>We need to check the details of the page source to find where the information we are looking for is kept (see, for example, <a href="chap-web.html#fig:fig2-1">2.1</a>). Here, all the details on HHMI investigators can be found in a <code>&lt;div&gt;</code> element with the class attribute <code>view-content</code>. This structure is not something that can be determined in advance. It requires knowledge of the structure of the page itself. Nested inside this <code>&lt;div&gt;</code> element are another series of <code>div</code>s, each of which corresponds to one investigator. These have the class attribute <code>view-rows</code>. Again, there is nothing obvious about finding these, it requires a close examination of the page HTML itself for any specific case you happen to be looking at.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig2-1"></span>
 <img src="ChapterWeb/figures/fig2-1.png" alt="Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read." width="70%" />
@@ -387,14 +388,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 Figure 2.1: Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.
 </p>
 </div>
-<p>We first process the page using the BeautifulSoup module (into the variable <code>soup</code>) and then find the <code>div</code> element that holds the information on investigators (<code>investigator_list</code>). As this element is unique on the page (I checked using my web browser), we can use the find method. We then process that <code>div</code> (using <code>find_all</code>) to create an iterator object that contains each of the page segments detailing a single investigator (<code>investigators</code>).</p>
+<p> We first process the page using the BeautifulSoup module (into the variable <code>soup</code>) and then find the <code>div</code> element that holds the information on investigators (<code>investigator_list</code>). As this element is unique on the page (I checked using my web browser), we can use the find method. We then process that <code>div</code> (using <code>find_all</code>) to create an iterator object that contains each of the page segments detailing a single investigator (<code>investigators</code>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>from bs4 import BeautifulSoup
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>soup =<span class="st"> </span><span class="kw">BeautifulSoup</span>(response.text, <span class="st">&quot;html5lib&quot;</span>)
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigator_list =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&#39;div&#39;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-content&quot;</span>)
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigators =<span class="st"> </span><span class="kw">investigator_list.find_all</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;views-row&quot;</span>)</code></pre></div>
-<p>As we specified in our query parameters that we wanted 20 results per page, we should check whether our list of page sections has the right length.</p>
+<p> As we specified in our query parameters that we wanted 20 results per page, we should check whether our list of page sections has the right length.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(investigators)
 <span class="dv">20</span></code></pre></div>
+
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Given a request response object, parse for HHMI investigators</span>
 def <span class="kw">scrape</span>(page_response)<span class="op">:</span>
 <span class="st">   </span><span class="co"># Obtain response HTML and the correct &lt;div&gt; from the page</span>
@@ -443,8 +445,12 @@ def <span class="kw">scrape</span>(page_response)<span class="op">:</span>
        <span class="co"># Add the new data to the list</span>
        <span class="kw">data.append</span>(inv)
    return data</code></pre></div>
+<div style="text-align: center">
+Listing 2.1. Python code to parse for HHMI investigators
+</div>
+<p><br></p>
 <p>Finally, we need to process each of these segments to obtain the data we are looking for. This is the actual “scraping” of the page to get the information we want. Again, this involves looking closely at the HTML itself, identifying where the information is held, what tags can be used to find it, and often doing some postprocessing to clean it up (removing spaces, splitting different elements up).</p>
-<p>Listing <a href="#fig:web-py1"><strong>??</strong></a> provides a function to handle all of this. The function accepts the response object from the requests module as its input, processes the page text to soup, and then finds the <code>investigator_list</code> as above and processes it into an actual list of the investigators. For each investigator it then processes the HTML to find and clean up the information required, converting it to a dictionary and adding it to our growing list of data.</p>
+<p>Listing 2.1 provides a function to handle all of this. The function accepts the response object from the requests module as its input, processes the page text to soup, and then finds the <code>investigator_list</code> as above and processes it into an actual list of the investigators. For each investigator it then processes the HTML to find and clean up the information required, converting it to a dictionary and adding it to our growing list of data.</p>
 <p>Let us check what the first two elements of our data set now look like. You can see two dictionaries, one relating to Laurence Abbott, who is a senior fellow at the HHMI Janelia Farm Campus, and one for Susan Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar Harbor, Maine. Note that we have also obtained URLs that give more details on the researcher and their research program (<code>research_url</code> and <code>url</code> keys in the dictionary) that could provide a useful input to textual analysis or topic modeling (see <a href="chap-text.html#chap:text">Text Analysis</a>).</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data =<span class="st"> </span><span class="kw">scrape</span>(response)
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data[<span class="dv">0</span><span class="op">:</span><span class="dv">2</span>]
@@ -480,6 +486,7 @@ u<span class="st">&#39;http://www.hhmi.org/sites/default/files/Our%20Scientists/
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>num_pages
 <span class="dv">24</span></code></pre></div>
 <p>Then it is a simple matter of putting the function we constructed earlier into a loop to work through the correct number of pages. As we start to hit the website repeatedly, we need to consider whether we are being polite. Most websites have a file in the root directory called robots.txt that contains guidance on using programs to interact with the website. In the case of <a href="http://hhmi.org" class="uri">http://hhmi.org</a> the file states first that we are allowed (or, more properly, not forbidden) to query <a href="http://www.hhmi.org/scientists/" class="uri">http://www.hhmi.org/scientists/</a> programmatically. Thus, you can pull down all of the more detailed biographical or research information, if you so desire. The file also states that there is a requested “Crawl-delay” of 10. This means that if you are making repeated queries (as we will be in getting the 24 pages), you should wait for 10 seconds between each query. This request is easily accommodated by adding a timed delay between each page request.</p>
+
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> page_num <span class="cf">in</span> <span class="kw">range</span>(num_pages)<span class="op">:</span>
 <span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># We already have page zero and we need to go to 24:</span>
 <span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># range(24) is [0,1,...,23]</span>
@@ -509,9 +516,9 @@ Retrieved and scraped page number<span class="op">:</span><span class="st"> </sp
 <p>The new forms of data we are discussing in this chapter are largely available because so many human activities—in this case, discussion, reading, and bookmarking—are happening online. All sorts of data are generated as a side effect of these activities. Some of that data is public (social media conversations), some private (IP addresses requesting specific pages), and some intrinsic to the service (the identity of a user who bookmarks an article). What exactly are these new forms of data? There are broadly two new directions that data availability is moving in. The first is information on new forms of research output, data sets, software, and in some cases physical resources. There is an interest across the research community in expanding the set of research outputs that are made available and, to drive this, significant efforts are being made to ensure that these nontraditional outputs are seen as legitimate outputs. In particular there has been a substantial policy emphasis on data sharing and, coupled with this, efforts to standardize practice around data citation. This is applying a well-established measure (citation) to a new form of research output.</p>
 <p>The second new direction, which is more developed, takes the alternate route, providing <em>new forms of information on existing types of output</em>, specifically research articles. The move online of research activities, including discovery, reading, writing, and bookmarking, means that many of these activities leave a digital trace. Often these traces are public or semi-public and can be collected and tracked. This certainly raises privacy issues that have not been comprehensively addressed but also provides a rich source of data on who is doing what with research articles.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig2-2"></span>
-<img src="ChapterWeb/figures/fig2-2.png" alt="Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license" width="70%" />
+<img src="ChapterWeb/figures/fig2-2.png" alt="Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [@lin2013altmetrics], under a Creative Commons Attribution v 3.0 license" width="70%" />
 <p class="caption">
-Figure 2.2: Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license
+Figure 2.2: Classes of online activity related to research journal articles. Reproduced from Lin and Fenner <span class="citation">(Lin and Fenner <a href="#ref-lin2013altmetrics">2013</a>)</span>, under a Creative Commons Attribution v 3.0 license
 </p>
 </div>
 <p>There are a wide range of potential data sources, so it is useful to categorize them. Figure <a href="chap-web.html#fig:fig2-2">2.2</a> shows one possible categorization, in which data sources are grouped based on the level of engagement and the stage of use. It starts from the left with “views,” measures of online views and article downloads, followed by “saves” where readers actively collect articles into a library of their own, through online <em>discussion</em> forums such as blogs, social media and new commentary, formal scholarly <em>recommendations</em>, and, finally, formal <em>citations</em>.</p>
@@ -634,7 +641,7 @@ Figure 2.2: Classes of online activity related to research journal articles. Rep
 <li><p>There are demographic issues and reinforcement effects—retweeting leads to more retweeting in preference to other research—so analysis of numbers of tweets or likes is not always useful.</p></li>
 </ul></li>
 </ul>
-<hr />
+<p>-–</p>
 <hr />
 <p><strong>Example: Recommendations</strong></p>
 <p>A somewhat separate form of usage is direct expert recommendations. The best-known case of this is the F1000 service on which experts offer recommendations with reviews of specific research articles. Other services such as collections or personal recommendation services may be relevant here as well.</p>
@@ -643,7 +650,8 @@ Figure 2.2: Classes of online activity related to research journal articles. Rep
 <ul>
 <li><p>Recommendations from specific experts show that particular outputs are worth looking at in detail, are important, or have some other value.</p></li>
 <li><p>Presumably, recommendations are a result of in-depth reading and a high level of engagement.</p></li>
-</ul></li>
+</ul>
+</li>
 <li><p>Users</p>
 <ul>
 <li><p>Recommendations are from a selected population of experts depending on the service in question.</p></li>
@@ -668,18 +676,140 @@ Figure 2.2: Classes of online activity related to research journal articles. Rep
 Figure 2.3: A simplified model of online interactions between research outputs and the objects that refer to them
 </p>
 </div>
-<p>In the simple model of Figure <a href="chap-web.html#fig:fig2-3">2.3</a>, there are three categories of things (nodes on the graph): objects, people, and the communities they belong to. Then there are the relationships between these elements (connections between nodes). Any given data source may provide information on different parts of this graph, and the information available is rarely complete or comprehensive. Data from different sources can also be difficult to integrate. As with any data integration, combining sources relies on being able to confidently identify those nodes that are common between data sources. Therefore identifying unique objects and people is critical to making progress.</p>
+<p>In the simple model of Figure <a href="chap-web.html#fig:fig2-3">2.3</a>, there are three categories of things (nodes on the graph): objects, people, and the communities they belong to. Then there are the relationships between these elements (connections between nodes). Any given data source may provide information on different parts of this graph, and the information available is rarely complete or comprehensive. Data from different sources can also be difficult to integrate<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a>. As with any data integration, combining sources relies on being able to confidently identify those nodes that are common between data sources. Therefore identifying unique objects and people is critical to making progress.</p>
 <p>These data are not necessarily public but many services choose to make some data available. An important characteristic of these data sources is that they are completely in the gift of the service provider. Data availability, its presentation, and upstream analysis can change without notice. Data are sometimes provided as a dump but is also frequently provided through an API.</p>
 <p>An API is simply a tool that allows a program to interface with a service. APIs can take many different forms and be of varying quality and usefulness. In this section we will focus on one common type of API and examples of important publicly available APIs relevant to research communications. We will also cover combining APIs and the benefits and challenges of bringing multiple data sources together.</p>
 <div id="sec:4-3.1" class="section level3">
 <h3><span class="header-section-number">2.4.1</span> Relevant APIs and resources</h3>
-<p>There is a wide range of other sources of information that can be used in combination with the APIs featured above to develop an overview of research outputs and of where and how they are being used. There are also other tools that can allow deeper analysis of the outputs themselves. Table <a href="#tab:chapAPI:1" reference-type="ref" reference="tab:chapAPI:1"><span class="math display">\[tab:chapAPI:1\]</span></a> gives a partial list of key data sources and APIs that are relevant to the analysis of research outputs.</p>
-<p><strong>Source</strong> <strong>Description</strong> <strong>API</strong> <strong>Free</strong> ————————— ————————————————————————————————————————————————————————————————————– ——— ———-</p>
-<p>PubMed An online index that combines bibliographic data from Medline and PubMed Central. PubMed Central and Europe PubMed Central also provide information. Y Y Web of Science The bibliographic database provided by Thomson Reuters. The ISI Citation Index is also available. Y N Scopus The bibliographic database provided by Elsevier. It also provides citation information. Y N Crossref Provides a range of bibliographic metadata and information obtained from members registering DOIs. Y Y Google Scholar Provides a search index for scholarly objects and aggregates citation information. N Y Microsoft Academic Search Provides a search index for scholarly objects and aggregates citation information. Not as complete as Google Scholar, but has an API. Y Y</p>
-<p>Altmetric.com A provider of aggregated data on social media and mainstream media attention of research outputs. Most comprehensive source of information across different social media and mainstream media conversations. Y N Twitter Provides an API that allows a user to search for recent tweets and obtain some information on specific accounts. Y Y Facebook The Facebook API gives information on the number of pages, likes, and posts associated with specific web pages. Y Y</p>
-<p>ORCID Unique identifiers for research authors. Profiles include information on publication lists, grants, and affiliations. Y Y LinkedIn CV-based profiles, projects, and publications. Y *</p>
-<p>Gateway to Research A database of funding decisions and related outputs from Research Councils UK. Y Y NIH Reporter Online search for information on National Institutes of Health grants. Does not provide an API but a downloadable data set is available. N Y NSF Award Search Online search for information on NSF grants. Does not provide an API but downloadable data sets by year are available. N Y</p>
-<p>The data are restricted: sometimes fee based, other times not.</p>
+<p>There is a wide range of other sources of information that can be used in combination with the APIs featured above to develop an overview of research outputs and of where and how they are being used. There are also other tools that can allow deeper analysis of the outputs themselves. Table <a href="chap-web.html#tab:table2-1">2.1</a> gives a partial list of key data sources and APIs that are relevant to the analysis of research outputs.</p>
+<table style="width:100%;">
+<caption><span id="tab:table2-1">Table 2.1: </span> Popular sources of data relevant to the analysis of research outputs</caption>
+<colgroup>
+<col width="11%" />
+<col width="83%" />
+<col width="2%" />
+<col width="2%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Source</strong></th>
+<th><strong>Description</strong></th>
+<th align="center"><strong>API</strong></th>
+<th align="center"><strong>Free</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td></td>
+<td><strong>Bibliographic Data</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>PubMed</td>
+<td>An online index that combines bibliographic data from Medline and PubMed Central. PubMed Central and Europe PubMed Central also provide information.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="odd">
+<td>Web of Science</td>
+<td>The bibliographic database provided by Thomson Reuters. The ISI Citation Index is also available.</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+</tr>
+<tr class="even">
+<td>Scopus</td>
+<td>The bibliographic database provided by Elsevier. It also provides citation information.</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+</tr>
+<tr class="odd">
+<td>Crossref</td>
+<td>Provides a range of bibliographic metadata and information obtained from members registering DOIs.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="even">
+<td>Google Scholar</td>
+<td>Provides a search index for scholarly objects and aggregates citation information.</td>
+<td align="center">N</td>
+<td align="center">Y</td>
+</tr>
+<tr class="odd">
+<td>Microsoft Academic Search</td>
+<td>Provides a search index for scholarly objects and aggregates citation information. Not as complete as Google Scholar, but has an API.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Social Media</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>Altmetric.com</td>
+<td>A provider of aggregated data on social media and mainstream media attention of research outputs. Most comprehensive source of information across different social media and mainstream media conversations.</td>
+<td align="center">Y</td>
+<td align="center">N</td>
+</tr>
+<tr class="even">
+<td>Twitter</td>
+<td>Provides an API that allows a user to search for recent tweets and obtain some information on specific accounts.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="odd">
+<td>Facebook</td>
+<td>The Facebook API gives information on the number of pages, likes, and posts associated with specific web pages</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="even">
+<td></td>
+<td><strong>Author Profiles</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td>ORCID</td>
+<td>Unique identifiers for research authors. Profiles include information on publication lists, grants, and affiliations.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="even">
+<td>LinkedIn</td>
+<td>CV-based profiles, projects, and publications.</td>
+<td align="center">Y</td>
+<td align="center">*</td>
+</tr>
+<tr class="odd">
+<td></td>
+<td><strong>Funder Information</strong></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
+<td>Gateway to Research</td>
+<td>A database of funding decisions and related outputs from Research Councils UK.</td>
+<td align="center">Y</td>
+<td align="center">Y</td>
+</tr>
+<tr class="odd">
+<td>NIH Reporter</td>
+<td>Online search for information on National Institutes of Health grants. Does not provide an API but a downloadable data set is available.</td>
+<td align="center">N</td>
+<td align="center">Y</td>
+</tr>
+<tr class="even">
+<td>NSF Award Search</td>
+<td>Online search for information on NSF grants. Does not provide an API but downloadable data sets by year are available.</td>
+<td align="center">N</td>
+<td align="center">Y</td>
+</tr>
+</tbody>
+</table>
+<p>*The data are restricted: sometimes fee based, other times not.</p>
 </div>
 <div id="sec:4-3.2" class="section level3">
 <h3><span class="header-section-number">2.4.2</span> RESTful APIs, returned data, and Python wrappers</h3>
@@ -717,7 +847,7 @@ Figure 2.3: A simplified model of online interactions between research outputs a
      <span class="st">&quot;member&quot;</span> <span class="op">:</span><span class="st"> &quot;http://id.crossref.org/member/286&quot;</span>
    }
 <span class="er">}</span></code></pre></div>
-<p>This is a package of JavaScript Object Notation (JSON) data returned in response to a query. The query is contained entirely in the URL, which can be broken up into pieces: the root URL (<a href="http://api.crossref.org" class="uri">http://api.crossref.org</a>) and a data “query,” in this case made up of a “field” (<code>works</code>) and an identifier (the DOI <code>10.1093/nar/gni170</code>). The Crossref API provides information about the article identified with this specific DOI.</p>
+<p>This is a package of JavaScript Object Notation (JSON)<a href="#fn12" class="footnoteRef" id="fnref12"><sup>12</sup></a> data returned in response to a query. The query is contained entirely in the URL, which can be broken up into pieces: the root URL (<a href="http://api.crossref.org" class="uri">http://api.crossref.org</a>) and a data “query,” in this case made up of a “field” (<code>works</code>) and an identifier (the DOI <code>10.1093/nar/gni170</code>). The Crossref API provides information about the article identified with this specific DOI.</p>
 </div>
 </div>
 <div id="sec:4-4" class="section level2">
@@ -735,7 +865,7 @@ Figure 2.3: A simplified model of online interactions between research outputs a
 http<span class="op">:</span><span class="er">//</span>api.crossref.org<span class="op">/</span>works<span class="op">/</span><span class="fl">10.1093</span><span class="op">/</span>nar<span class="op">/</span>gni170
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code
 <span class="dv">200</span></code></pre></div>
-<p>The <code>response</code> object that the <code>requests</code> library has created has a range of useful information, including the URL called and the response code from the web server (in this case 200, which means everything is OK). We need the JSON body from the response object (which is currently text from the perspective of our script) converted to a Python dictionary. The <code>requests</code> module provides a convenient function for performing this conversion, as the following code shows. (All strings in the output are in Unicode, hence the “u” notation.)</p>
+<p>The <code>response</code> object that the <code>requests</code> library has created has a range of useful information, including the URL called and the response code from the web server (in this case 200, which means everything is OK). We need the JSON body from the response object (which is currently text from the perspective of our script) converted to a Python dictionary. The <code>requests</code> module provides a convenient function for performing this conversion, as the following code shows. (All strings in the output are in Unicode, hence the <code>u´</code> notation.)</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict =<span class="st"> </span><span class="kw">response.json</span>()
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict
 { u<span class="st">&#39;message&#39;</span> <span class="op">:</span>
@@ -799,19 +929,19 @@ http<span class="op">:</span><span class="er">//</span>api.crossref.org<span cla
 </div>
 <div id="sec:4-5" class="section level2">
 <h2><span class="header-section-number">2.7</span> Quality, scope, and management</h2>
-<p>The examples in the previous section are just a small dip into the surface of the data available, but we already can see a number of issues that are starting to surface. A great deal of care needs to be taken when using these data, and a researcher will need to apply subject matter knowledge as well as broader data management expertise. Some of the core issues are as follows:</p>
-<p><strong>Integration</strong></p>
+<p>The examples in the previous section are just a small dip into the surface of the data available, but we already can see a number of issues that are starting to surface. A great deal of care needs to be taken when using these data, and a researcher will need to apply subject matter knowledge as well as broader data management expertise<a href="#fn13" class="footnoteRef" id="fnref13"><sup>13</sup></a>. Some of the core issues are as follows:</p>
+<p> <strong>Integration</strong></p>
 <p>In the examples given above with Crossref and ORCID, we used a known identifier (a DOI or an ORCID). Integrating data from Crossref to supplement the information from an ORCID profile is possible, but it depends on the linking of identifiers. Note that for the profile data we obtained, only 66 or the 70 items had DOIs. Data integration across multiple data sources that reference DOIs is straightforward for those objects that have DOIs, and messy or impossible for those that do not. In general, integration is possible, but it depends on a means of cross-referencing between data sets. Unique identifiers that are common to both are extremely powerful but only exist in certain cases (see also Chapter <a href="chap-link.html#chap:link">Record Linkage</a>).</p>
-<p><strong>Coverage</strong></p>
+<p> <strong>Coverage</strong></p>
 <p> Without a population frame, it is difficult to know whether the information that can be captured is comprehensive. For example, “the research literature” is at best a vague concept. A variety of indexes, some openly available (PubMed, Crossref), some proprietary (Scopus, Web of Knowledge, many others), cover different partially overlapping segments of this corpus of work. Each index has differing criteria for inclusion and differing commitments to completeness. Sampling of “the literature” is therefore impossible, and the choice of index used for any study can make a substantial difference to the conclusions.</p>
-<p><strong>Completeness</strong></p>
+<p> <strong>Completeness</strong></p>
 <p>Alongside the question of coverage (how broad is a data source?), with web data and opt-in services we also need to probe the completeness of a data set. In the example above, 66 of 70 objects have a DOI <em>registered</em>. This does not mean that those four other objects do not have a DOI, just that there are none included in the ORCID record. Similarly, ORCID profiles only exist for a subset of researchers at this stage. Completeness feeds into integration challenges. While many researchers have a Twitter profile and many have an ORCID profile, only a small subset of ORCID profiles provide a link to a Twitter profile. See below for a worked example.</p>
-<p><strong>Scope</strong></p>
+<p> <strong>Scope</strong></p>
 <p>In survey data sets, the scope is defined by the question being asked. This is not the case with much of these new data. For example, the challenges listed above for research articles, traditionally considered the bedrock of research outputs, at least in the natural sciences, are much greater for other forms of research outputs. Increasingly, the data generated from research projects, software, materials, and tools, as well as reports and presentations, are being shared by researchers in a variety of settings. Some of these are formal mechanisms for publication, such as large disciplinary databases, books, and software repositories, and some are highly informal. Any study of (a subset of) these outputs has as its first challenge the question of how to limit the corpus to be studied.</p>
-<p><strong>Source and validity</strong></p>
+<p> <strong>Source and validity</strong></p>
 <p>The challenges described above relate to the identification and counting of outputs. As we start to address questions of how these outputs are being used, the issues are compounded. To illustrate some of the difficulties that can arise, we examine the number of citations that have been reported for a single sample article on a biochemical methodology <span class="citation">(Chan et al. <a href="#ref-chan2007covalent">2007</a>)</span>. This article has been available for eight years and has accumulated a reasonable number of citations for such an article over that time.</p>
 <p>However, the exact number of citations identified varies radically, depending on the data source. Scopus finds 40, while Web of Science finds only 38. A Google Scholar search performed on the same date identified 59. These differences relate to the size of the corpus from which inward citations are being counted. Web of Science has the smallest database, with Scopus being larger and Google Scholar substantially larger again. Thus the size of the index not only affects output counting, it can also have a substantial effect on any analysis that uses that corpus. Alongside the size of the corpus, the means of analysis can also have an effect. For the same article, PubMed Central reports 10 citations but Europe PubMed Central reports 18, despite using a similar corpus. The distinction lies in differences in the methodology used to mine the corpus for citations.</p>
-<p><strong>Identifying the underlying latent variable</strong></p>
+<p> <strong>Identifying the underlying latent variable</strong></p>
 <p>These issues multiply as we move into newer forms of data. These sparse and incomplete sources of data require different treatment than more traditional structured and comprehensive forms of data. They are more useful as a way of identifying activities than of quantifying or comparing them. Nevertheless, they can provide new insight into the processes of knowledge dissemination and community building that are occurring online.</p>
 </div>
 <div id="sec:4-6" class="section level2">
@@ -853,7 +983,7 @@ wordpress <span class="dv">0</span>
 pmc <span class="dv">0</span>
 mendeley <span class="dv">0</span>
 crossref <span class="dv">0</span></code></pre></div>
-<p>The DET service only has a record of citations to this article from Wikipedia. As we will see below, the PLOS service returns more results. This is because some of the sources are not yet being queried by DET.</p>
+<p> The DET service only has a record of citations to this article from Wikipedia. As we will see below, the PLOS service returns more results. This is because some of the sources are not yet being queried by DET.</p>
 <p>Because this is a PLOS paper we can also query the PLOS Lagotto instance for the same article.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>plos_alm_test =<span class="st"> </span><span class="kw">pyalm.get_alm</span>(<span class="st">&#39;10.1371/journal.pbio.1001677&#39;</span>, <span class="dt">info=</span><span class="st">&#39;detail&#39;</span>, <span class="dt">instance=</span><span class="st">&#39;plos&#39;</span>)
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>article_plos =<span class="st"> </span><span class="kw">plos_alm_test.get</span>(<span class="st">&#39;articles&#39;</span>)[<span class="dv">0</span>]
@@ -965,7 +1095,7 @@ crossref <span class="dv">0</span> <span class="dv">3</span></code></pre></div>
   u<span class="st">&#39;event_time&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;2013-10-08T21:12:28Z&#39;</span>,
   u<span class="st">&#39;event_url&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://twitter.com/catmacOA/status/387686960585641984&#39;</span>
 }</code></pre></div>
-<p>We could use the Twitter API to understand more about this person. For instance, we could look at their Twitter followers and whom they follow, or analyze the text of their tweets for topic modeling. Much work on social media interactions is done with this kind of data, using forms of network and text analysis described elsewhere in this book.</p>
+<p>We could use the Twitter API to understand more about this person. For instance, we could look at their Twitter followers and whom they follow, or analyze the text of their tweets for topic modeling. Much work on social media interactions is done with this kind of data, using forms of network and text analysis described elsewhere in this book<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a>.</p>
 <p>A different approach is to integrate these data with information from another source. We might be interested, for instance, in whether the author of this tweet is a researcher, or whether they have authored research papers. One thing we could do is search the ORCID API to see if there are any ORCID profiles that link to this Twitter handle.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>twitter_search =<span class="st"> </span><span class="kw">orcid.search</span>(<span class="st">&quot;catmacOA&quot;</span>)
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> result <span class="cf">in</span> twitter_search<span class="op">:</span>
@@ -983,25 +1113,29 @@ Expert Failure: Re-evaluating Research Assessment
 Why ONE Is More Than 5
 Reporting Animal Studies: Good Science and a Duty of Care</code></pre>
 <p>From this analysis we can show that this tweet is actually from one of my co-authors of the article.</p>
-<p>To make this process easier we write the convenience function shown in Listing <a href="#fig:web-py2"><strong>??</strong></a>, to go from a Twitter user handle to try and find an ORCID for that person.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Take a twitter handle or user name and return an ORCID</span>
-def <span class="kw">twitter2orcid</span>(twitter_handle,
-                  <span class="dt">resp =</span> <span class="st">&#39;orcid&#39;</span>, <span class="dt">search_depth =</span> <span class="dv">10</span>)<span class="op">:</span>
-<span class="st">    </span>search =<span class="st"> </span><span class="kw">orcid.search</span>(twitter_handle)
-    s =<span class="st"> </span>[r <span class="cf">for</span> r <span class="cf">in</span> search]
-    orc =<span class="st"> </span>None
-    i =<span class="st"> </span><span class="dv">0</span>
-    <span class="cf">while</span> i <span class="op">&lt;</span><span class="st"> </span>search_depth and orc <span class="op">==</span><span class="st"> </span>None and i <span class="op">&lt;</span><span class="st"> </span><span class="kw">len</span>(s)<span class="op">:</span>
-<span class="st">        </span>arr =<span class="st"> </span>[(<span class="st">&#39;twitter.com&#39;</span> <span class="cf">in</span> website.url)
-               <span class="cf">for</span> website <span class="cf">in</span> s[i].researcher_urls]
-        <span class="cf">if</span> True <span class="cf">in</span> arr<span class="op">:</span>
-<span class="st">            </span>index =<span class="st"> </span><span class="kw">arr.index</span>(True)
-            url =<span class="st"> </span>s[i].researcher_urls[index].url
-            <span class="cf">if</span> <span class="kw">url.lower</span>()<span class="kw">.endswith</span>(<span class="kw">twitter_handle.lower</span>())<span class="op">:</span>
-<span class="st">                </span>orc =<span class="st"> </span>s[i].orcid
+<p>To make this process easier we write the convenience function shown in Listing 2.2, to go from a Twitter user handle to try and find an ORCID for that person.</p>
+<pre id="fig:web:py2" style="PythonStyle" caption="Python code to find ORCID for Twitter handle" label="fig:web:py2"><code># Take a twitter handle or user name and return an ORCID
+def twitter2orcid(twitter_handle,
+                  resp = &#39;orcid&#39;, search_depth = 10):
+    search = orcid.search(twitter_handle)
+    s = [r for r in search]
+    orc = None
+    i = 0
+    while i &lt; search_depth and orc == None and i &lt; len(s):
+        arr = [(&#39;twitter.com&#39; in website.url)
+               for website in s[i].researcher_urls]
+        if True in arr:
+            index = arr.index(True)
+            url = s[i].researcher_urls[index].url
+            if url.lower().endswith(twitter_handle.lower()):
+                orc = s[i].orcid
                 return orc
-        i<span class="op">+</span><span class="er">=</span><span class="dv">1</span>
-     return None</code></pre></div>
+        i+=1
+     return None</code></pre>
+<div style="text-align: center">
+Listing 2.2. Python code to find ORCID for Twitter handle
+</div>
+<p><br></p>
 <p>Let us do a quick test of the function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">twitter2orcid</span>(<span class="st">&#39;catmacOA&#39;</span>)
 u<span class="st">&#39;0000-0001-9623-2225&#39;</span></code></pre></div>
@@ -1029,60 +1163,60 @@ u<span class="st">&#39;0000-0001-9623-2225&#39;</span></code></pre></div>
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(det_alms)
 <span class="dv">24</span></code></pre></div>
 <p>The DET API only provides information on a subset of Crossref DOIs. The process that Crossref has followed to populate its database has focused on more recently published articles, so only 24 responses are received in this case for the 66 DOIs we queried on. A good exercise would be to look at which of the DOIs are found and which are not. Let us see how much interesting data is available in the subset of DOIs for which we have data.</p>
-<pre><code>&gt;&gt; for r in [d for d in det_alms if d.sources[&#39;wikipedia&#39;].metrics.total != 0]:
-&gt;&gt;     print r.title
-&gt;&gt;     print &#39;     &#39;, r.sources[&#39;pmceurope&#39;].metrics.total, &#39;pmceurope citations&#39;
-&gt;&gt;     print &#39;     &#39;, r.sources[&#39;wikipedia&#39;].metrics.total, &#39;wikipedia citations&#39;
-Architecting the Future of Research Communication: Building the Models and Analytics for an Open Access Future
-      1 pmceurope citations
-      1 wikipedia citations
-Expert Failure: Re-evaluating Research Assessment
-      0 pmceurope citations
-      1 wikipedia citations
-LabTrove: A Lightweight, Web Based, Laboratory &quot;Blog&quot; as a Route towards a Marked Up Record of Work in a Bioscience Research Laboratory
-      0 pmceurope citations
-      1 wikipedia citations
-The lipidome and proteome of oil bodies from Helianthus annuus (common sunflower)
-      2 pmceurope citations
-      1 wikipedia citations</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> r <span class="cf">in</span> [d <span class="cf">for</span> d <span class="cf">in</span> det_alms <span class="cf">if</span> d.sources[<span class="st">&#39;wikipedia&#39;</span>].metrics.total <span class="op">!=</span><span class="st"> </span><span class="dv">0</span>]<span class="op">:</span>
+<span class="st">    </span><span class="er">&gt;&gt;</span><span class="st">     </span>print r.title
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st">     </span>print <span class="st">&#39;     &#39;</span>, r.sources[<span class="st">&#39;pmceurope&#39;</span>].metrics.total, <span class="st">&#39;pmceurope citations&#39;</span>
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st">     </span>print <span class="st">&#39;     &#39;</span>, r.sources[<span class="st">&#39;wikipedia&#39;</span>].metrics.total, <span class="st">&#39;wikipedia citations&#39;</span>
+    Architecting the Future of Research Communication<span class="op">:</span><span class="st"> </span>Building the Models and Analytics <span class="cf">for</span> an Open Access Future
+          <span class="dv">1</span> pmceurope citations
+          <span class="dv">1</span> wikipedia citations
+    Expert Failure<span class="op">:</span><span class="st"> </span>Re<span class="op">-</span>evaluating Research Assessment
+          <span class="dv">0</span> pmceurope citations
+          <span class="dv">1</span> wikipedia citations
+    LabTrove<span class="op">:</span><span class="st"> </span>A Lightweight, Web Based, Laboratory <span class="st">&quot;Blog&quot;</span> as a Route towards a Marked Up Record of Work <span class="cf">in</span> a Bioscience Research Laboratory
+          <span class="dv">0</span> pmceurope citations
+          <span class="dv">1</span> wikipedia citations
+    The lipidome and proteome of oil bodies from Helianthus <span class="kw">annuus</span> (common sunflower)
+          <span class="dv">2</span> pmceurope citations
+          <span class="dv">1</span> wikipedia citations</code></pre></div>
 <p>As discussed above, this shows that the DET instance, while it provides information on a greater number of DOIs, has less complete data on each DOI at this stage. Only four of the 24 responses have Wikipedia references. You can change the code to look at the full set of 24, which shows only sparse data. The PLOS Lagotto instance provides more data but only on PLOS articles. However, it does provide data on all PLOS articles, going back earlier than the set returned by the DET instance. We can collect the set of articles from the profile published by PLOS.</p>
-<pre><code>&gt;&gt; plos_dois = []
-&gt;&gt; for doi in DOIs:
-&gt;&gt;     # Quick and dirty, should check Crossref API for publisher
-&gt;&gt;     if doi.startswith(&#39;10.1371&#39;):
-&gt;&gt;         plos_dois.append(doi)
-&gt;&gt; len(plos_dois)
-7
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>plos_dois =<span class="st"> </span>[]
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> doi <span class="cf">in</span> DOIs<span class="op">:</span>
+<span class="st">    </span><span class="er">&gt;&gt;</span><span class="st">     </span><span class="co"># Quick and dirty, should check Crossref API for publisher</span>
+<span class="st">    </span><span class="er">&gt;&gt;</span><span class="st">     </span><span class="cf">if</span> <span class="kw">doi.startswith</span>(<span class="st">&#39;10.1371&#39;</span>)<span class="op">:</span>
+<span class="st">    </span><span class="er">&gt;&gt;</span><span class="st">         </span><span class="kw">plos_dois.append</span>(doi)
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(plos_dois)
+    <span class="dv">7</span>
 
-&gt;&gt; plos_alms = pyalm.get_alm(plos_dois, info=&#39;detail&#39;, instance=&#39;plos&#39;).get(&#39;articles&#39;)
-&gt;&gt; for article in plos_alms:
-&gt;&gt;     print article.title
-&gt;&gt;     print &#39;     &#39;, article.sources[&#39;crossref&#39;].metrics.total, &#39;Crossref citations&#39;
-&gt;&gt;     print &#39;     &#39;, article.sources[&#39;twitter&#39;].metrics.total, &#39;tweets&#39;
-Architecting the Future of Research Communication: Building the Models and Analytics for an Open Access Future
-      2 Crossref citations
-      48 tweets
-Expert Failure: Re-evaluating Research Assessment
-      3 Crossref citations
-      130 tweets
-LabTrove: A Lightweight, Web Based, Laboratory &quot;Blog&quot; as a Route towards a Marked Up Record of Work in a Bioscience Research Laboratory
-      6 Crossref citations
-      1 tweets
-More Than Just Access: Delivering on a Network-Enabled Literature
-      4 Crossref citations
-      95 tweets
-Article-Level Metrics and the Evolution of Scientific Impact
-      24 Crossref citations
-      5 tweets
-Optimal Probe Length Varies for Targets with High Sequence Variation: Implications for Probe
-Library Design for Resequencing Highly Variable Genes
-      2 Crossref citations
-      1 tweets
-Covalent Attachment of Proteins to Solid Supports and Surfaces via Sortase-Mediated Ligation
-      40 Crossref citations
-      0 tweets</code></pre>
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>plos_alms =<span class="st"> </span><span class="kw">pyalm.get_alm</span>(plos_dois, <span class="dt">info=</span><span class="st">&#39;detail&#39;</span>, <span class="dt">instance=</span><span class="st">&#39;plos&#39;</span>)<span class="kw">.get</span>(<span class="st">&#39;articles&#39;</span>)
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> article <span class="cf">in</span> plos_alms<span class="op">:</span>
+<span class="st">    </span><span class="er">&gt;&gt;</span><span class="st">     </span>print article.title
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st">     </span>print <span class="st">&#39;     &#39;</span>, article.sources[<span class="st">&#39;crossref&#39;</span>].metrics.total, <span class="st">&#39;Crossref citations&#39;</span>
+    <span class="op">&gt;</span><span class="er">&gt;</span><span class="st">     </span>print <span class="st">&#39;     &#39;</span>, article.sources[<span class="st">&#39;twitter&#39;</span>].metrics.total, <span class="st">&#39;tweets&#39;</span>
+    Architecting the Future of Research Communication<span class="op">:</span><span class="st"> </span>Building the Models and Analytics <span class="cf">for</span> an Open Access Future
+          <span class="dv">2</span> Crossref citations
+          <span class="dv">48</span> tweets
+    Expert Failure<span class="op">:</span><span class="st"> </span>Re<span class="op">-</span>evaluating Research Assessment
+          <span class="dv">3</span> Crossref citations
+          <span class="dv">130</span> tweets
+    LabTrove<span class="op">:</span><span class="st"> </span>A Lightweight, Web Based, Laboratory <span class="st">&quot;Blog&quot;</span> as a Route towards a Marked Up Record of Work <span class="cf">in</span> a Bioscience Research Laboratory
+          <span class="dv">6</span> Crossref citations
+          <span class="dv">1</span> tweets
+    More Than Just Access<span class="op">:</span><span class="st"> </span>Delivering on a Network<span class="op">-</span>Enabled Literature
+          <span class="dv">4</span> Crossref citations
+          <span class="dv">95</span> tweets
+    Article<span class="op">-</span>Level Metrics and the Evolution of Scientific Impact
+          <span class="dv">24</span> Crossref citations
+          <span class="dv">5</span> tweets
+    Optimal Probe Length Varies <span class="cf">for</span> Targets with High Sequence Variation<span class="op">:</span><span class="st"> </span>Implications <span class="cf">for</span> Probe
+    Library Design <span class="cf">for</span> Resequencing Highly Variable Genes
+          <span class="dv">2</span> Crossref citations
+          <span class="dv">1</span> tweets
+    Covalent Attachment of Proteins to Solid Supports and Surfaces via Sortase<span class="op">-</span>Mediated Ligation
+          <span class="dv">40</span> Crossref citations
+          <span class="dv">0</span> tweets</code></pre></div>
 <p>From the previous examples we know that we can obtain information on citing articles and tweets associated with these 66 articles. From that initial corpus we now have a collection of up to 86 related articles (cited and citing), a few hundred tweets that refer to (some of) those articles, and perhaps 500 people if we include authors of both articles and tweets. Note how for each of these links our query is limited, so we have a subset of all the related objects and agents. At this stage we probably have duplicate articles (one article might cite multiple in our set of seven) and duplicate people (authors in common between articles and authors who are also tweeting).</p>
-<p>These data could be used for network analysis, to build up a new corpus of articles (by following the citation links), or to analyze the links between authors and those tweeting about the articles. We do not pursue an in-depth analysis here, but will gather the relevant objects, deduplicate them as far as possible, and count how many we have in preparation for future analysis.</p>
+<p> These data could be used for network analysis, to build up a new corpus of articles (by following the citation links), or to analyze the links between authors and those tweeting about the articles. We do not pursue an in-depth analysis here, but will gather the relevant objects, deduplicate them as far as possible, and count how many we have in preparation for future analysis.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># Collect all citing DOIs &amp; author names from citing articles</span>
 <span class="er">&gt;&gt;</span><span class="st"> </span>citing_dois =<span class="st"> </span>[]
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>citing_authors =<span class="st"> </span>[]
@@ -1123,7 +1257,7 @@ After de<span class="op">-</span>deduplication<span class="op">:</span>
 <span class="dv">280</span> tweets
 <span class="dv">210</span> Twitter users</code></pre></div>
 <p>It could be interesting to look at which Twitter users interact most with the articles associated with this ORCID profile. To do that we would need to create not a set but a list, and then count the number of duplicates in the list. The code could be easily modified to do this. Another useful exercise would be to search ORCID for profiles corresponding to citing authors. The best way to do this would be to obtain ORCIDs associated with each of the citing articles. However, because ORCID data are sparse and incomplete, there are two limitations here. First, the author may not have an ORCID. Second, the article may not be explicitly linked to another article. Try searching ORCID for the DOIs associated with each of the citing articles.</p>
-<p>In this case we will look to see how many of the Twitter handles discussing these articles are associated with an ORCID profile we can discover. This in turn could lead to more profiles and more cycles of analysis to build up a network of researchers interacting through citation and on Twitter. Note that we have inserted a delay between calls. This is because we are making a larger number of API calls (one for each Twitter handle). It is considered polite to keep the pace at which calls are made to an API to a reasonable level. The ORCID API does not post suggested limits at the moment, but delaying for a second between calls is reasonable.</p>
+<p> In this case we will look to see how many of the Twitter handles discussing these articles are associated with an ORCID profile we can discover. This in turn could lead to more profiles and more cycles of analysis to build up a network of researchers interacting through citation and on Twitter. Note that we have inserted a delay between calls. This is because we are making a larger number of API calls (one for each Twitter handle). It is considered polite to keep the pace at which calls are made to an API to a reasonable level. The ORCID API does not post suggested limits at the moment, but delaying for a second between calls is reasonable.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>tweet_orcids =<span class="st"> </span>[]
 <span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> handle <span class="cf">in</span> twitter_handles<span class="op">:</span>
 <span class="er">&gt;&gt;</span><span class="st">     </span>orc =<span class="st"> </span><span class="kw">twitter2orcid</span>(handle)
@@ -1158,7 +1292,7 @@ Graham Steel <span class="dv">0000</span><span class="op">-</span><span class="d
 </div>
 <div id="sec:4-7" class="section level2">
 <h2><span class="header-section-number">2.9</span> Working with the graph of relationships</h2>
-<p>In the above examples we started with the profile of an individual, used this to create a corpus of works, which in turn led us to other citing works (and their authors) and commentary about those works on Twitter (and the people who wrote those comments). Along the way we built up a graph of relationships between objects and people. In this section we will look at this model of the data and how it reveals limitations and strengths of these forms of data and what can be done with them.</p>
+<p>In the above examples we started with the profile of an individual, used this to create a corpus of works, which in turn led us to other citing works (and their authors) and commentary about those works on Twitter (and the people who wrote those comments)<a href="#fn15" class="footnoteRef" id="fnref15"><sup>15</sup></a>. Along the way we built up a graph of relationships between objects and people. In this section we will look at this model of the data and how it reveals limitations and strengths of these forms of data and what can be done with them.</p>
 <div id="sec:4-7.1" class="section level3">
 <h3><span class="header-section-number">2.9.1</span> Citation links between articles</h3>
 <p>A citation in a research article (or a policy document or working paper) defines a relationship between that citing article and the cited article. The exact form of the relationship is generally poorly defined, at least at the level of large-scale data sets. A citation might be referring to previous work, indicating the source of data, or supporting (or refuting) an idea. While efforts have been made to codify citation types, they have thus far gained little traction.</p>
@@ -1201,7 +1335,7 @@ Figure 2.4: A functional view of proxies and relationships
 <li><p>Provide evidence that a relatively under-cited paper is having a research impact. There is a certain kind of research article, often a method description or a position paper, that is influential without being (apparently) heavily cited. For instance, the <em>PLoS One</em> article by Shen et al. <span class="citation">(Shen et al. <a href="#ref-shen2009simplified">2009</a>)</span> has a respectable 14,000 views and 116 Mendeley bookmarks, but a relatively (for the number of views) small number of WoS citations (19) compared to, say, another article, by Leahy et al. <span class="citation">(Leahy et al. <a href="#ref-leahy2010genome">2010</a>)</span> and also in <em>PLoS One</em>, that is similar in age and number of views but has many more citations.</p></li>
 <li><p>Provide evidence of public interest in some topic. Many articles at the top of lists ordered by views or social media mentions are of ephemeral (or prurient) interest—the usual trilogy of sex, drugs, and rock and roll. However, if we dig a little deeper, a wide range of articles surface, often not highly cited but clearly of wider interest. For example, an article on Y-chromosome distribution in Afghanistan <span class="citation">(Haber et al. <a href="#ref-haber2012afghanistan">2012</a>)</span> has high page views and Facebook activity among papers with a Harvard affiliation but is not about sex, drugs, nor rock and roll. Unfortunately, because this is Facebook data we cannot see <em>who</em> is talking about it, which limits our ability to say <em>which</em> groups are talking about it, which could be quite interesting.</p></li>
 </ul>
-<p><strong>Compare …</strong></p>
+<p>  <strong>Compare …</strong></p>
 <p>Comparisons using social media or download statistics need real care. As noted above, the data are sparse so it is important that comparisons are fair. Also, comparisons need to be on the basis of something that the data can actually tell you: for example, “which article is discussed more by this online community,” <em>not</em> “which article is discussed more.”</p>
 <ul>
 <li><p>Compare the extent to which these articles are discussed by this online patient group, or possibly specific online communities in general. Here the online communities might be a proxy for a broader community, or there might be a specific interest in knowing whether the dissemination strategy reaches this community. It is clear that in the longer term social media will be a substantial pathway for research to reach a wide range of audiences, and understanding which communities are discussing what research will help us to optimize the communication.</p></li>
@@ -1210,7 +1344,7 @@ Figure 2.4: A functional view of proxies and relationships
 </ul>
 <p><strong>What flavor is it?</strong></p>
 <p>Priem et al. <span class="citation">(Priem, Piwowar, and Hemminger <a href="#ref-priem2012altmetrics">2012</a>)</span> provide a thoughtful analysis of the PLOS Article Level Metrics data set. They used principal component analysis to define different “flavors of impact” based on the way different combinations of signals seemed to point to different kinds of interest. Many of the above use cases are variants on this theme—what kind of article is this? Is it a policy piece, of public interest? Is it of interest to a niche research community or does it have wider public implications? Is it being used in education or in health practice? And to what extent are these different kinds of use independent from each other?</p>
-<p>It is important to realize that these kinds of data are proxies of things that we do not truly understand. They are signals of the flow of information down paths that we have not mapped. To me this is the most exciting possibility and one we are only just starting to What can these signals tell us about the underlying pathways down which information flows? How do different combinations of signals tell us about who is using that information now, and how they might be applying it in the future? Correlation analysis cannot answer these questions, but more sophisticated approaches might. And with that information in hand we could truly <em>design</em> scholarly communication systems to maximize their reach, value, and efficiency.</p>
+<p> It is important to realize that these kinds of data are proxies of things that we do not truly understand. They are signals of the flow of information down paths that we have not mapped. To me this is the most exciting possibility and one we are only just starting to What can these signals tell us about the underlying pathways down which information flows? How do different combinations of signals tell us about who is using that information now, and how they might be applying it in the future? Correlation analysis cannot answer these questions, but more sophisticated approaches might. And with that information in hand we could truly <em>design</em> scholarly communication systems to maximize their reach, value, and efficiency.</p>
 </div>
 </div>
 <div id="sec:4-8" class="section level2">
@@ -1260,6 +1394,9 @@ Figure 2.4: A functional view of proxies and relationships
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-lin2013altmetrics">
+<p>Lin, Jennifer, and Martin Fenner. 2013. “Altmetrics in Evolution: Defining and Redefining the Ontology of Article-Level Metrics.” <em>Information Standards Quarterly</em> 25 (2): 20.</p>
+</div>
 <div id="ref-fielding2002principled">
 <p>Fielding, Roy T., and Richard N. Taylor. 2002. “Principled Design of the Modern Web Architecture.” <em>ACM Transactions on Internet Technology</em> 2 (2). ACM: 115–50.</p>
 </div>
@@ -1318,6 +1455,17 @@ Figure 2.4: A functional view of proxies and relationships
 <p>Neylon, Cameron. 2014. “Altmetrics: What Are They Good for?” <a href="http://blogs.plos.org/opens/2014/10/03/altmetrics-what-are-they-good-for/" class="uri">http://blogs.plos.org/opens/2014/10/03/altmetrics-what-are-they-good-for/</a>.</p>
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="10">
+<li id="fn10"><p>Python features many useful libraries; BeautifulSoup is particularly helpful for webscraping.<a href="chap-web.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>See Section 3.2.<a href="chap-web.html#fnref11">↩</a></p></li>
+<li id="fn12"><p>JSON is an open standard way of storing and exchanging data.<a href="chap-web.html#fnref12">↩</a></p></li>
+<li id="fn13"><p>See Chapter 10.<a href="chap-web.html#fnref13">↩</a></p></li>
+<li id="fn14"><p>See Chapter 7 and 8.<a href="chap-web.html#fnref14">↩</a></p></li>
+<li id="fn15"><p>See Chapter 8.<a href="chap-web.html#fnref15">↩</a></p></li>
+</ol>
+</div>
 <div id="disqus_thread"></div>
 <script>
 (function() { // DON'T EDIT BELOW THIS LINE
@@ -1356,7 +1504,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapaper": false,
+"instapper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1368,10 +1516,6 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/Coleridge-Initiative/big-data-and-social-science/edit/master/02-ChapterWeb.Rmd",
 "text": "Edit"
-},
-"history": {
-"link": null,
-"text": null
 },
 "download": null,
 "toc": {
@@ -1387,7 +1531,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

@@ -1,8 +1,10 @@
 Working with Web Data and APIs {#chap:web}
 ==============================
 
-***Cameron Neylon***
-<br><br>
+\chapterauthor{Cameron Neylon}
+**Cameron Neylon**
+
+
 
 This chapter will show you how to extract information from social media
 about the transmission of knowledge. The particular application will be
@@ -90,9 +92,9 @@ limit the search, and so with some fiddling we come up with a URL like
 the following. (We have broken the one-line URL into three lines for
 ease of presentation.)
 
-http://www.hhmi.org/scientists/browse?
-kw=&sort_by=field_scientist_last_name&
-sort_order=ASC&items_per_page=20&page=0
+\enlargethispage{6pt}
+
+http://www.hhmi.org/scientists/browse?kw=&sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=20&page=0
 
 The `requests` module, available natively in Jupyter Python notebooks, is a useful
 set of tools for handling interactions with websites. It lets us
@@ -134,7 +136,7 @@ With the page successfully returned, we now need to process the text it
 contains into the data we want. This is not a trivial exercise. It is
 possible to search through and find things, but there are a range of
 tools that can help with processing HTML and XML data. Among these one
-of the most popular is a module called BeautifulSoup [@bsoup], which
+of the most popular is a module called BeautifulSoup^[Python features many useful libraries; BeautifulSoup is particularly helpful for webscraping.] [@bsoup], which
 provides a number of useful functions for this kind of processing. The
 module documentation provides more details.
 
@@ -153,6 +155,7 @@ specific case you happen to be looking at.
 knitr::include_graphics("ChapterWeb/figures/fig2-1.png")
 ```
 
+\vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
 variable `soup`) and then find the `div` element that holds the information on
 investigators (`investigator_list`). As this element is unique on the page (I checked using
@@ -167,6 +170,7 @@ detailing a single investigator (`investigators`).
 >> investigators = investigator_list.find_all("div", class_ = "views-row")
 ```
 
+\enlargethispage{24pt}
 As we specified in our query parameters that we wanted 20 results per
 page, we should check whether our list of page sections has the right
 length.
@@ -176,7 +180,8 @@ length.
 20
 ```
 
-``` {r web-py1, eval=FALSE, fig.cap = "Python code to parse for HHMI investigators"}
+\enlargethispage{12pt}
+``` {r, eval=FALSE}
 # Given a request response object, parse for HHMI investigators
 def scrape(page_response):
    # Obtain response HTML and the correct <div> from the page
@@ -226,7 +231,10 @@ def scrape(page_response):
        data.append(inv)
    return data
 ```
+<div style="text-align: center">Listing 2.1. Python code to parse for HHMI investigators</div>
+<br>
 
+\pagebreak
 Finally, we need to process each of these segments to obtain the data we
 are looking for. This is the actual "scraping" of the page to get the
 information we want. Again, this involves looking closely at the HTML
@@ -234,7 +242,7 @@ itself, identifying where the information is held, what tags can be used
 to find it, and often doing some postprocessing to clean it up (removing
 spaces, splitting different elements up).
 
-Listing \@ref(fig:web-py1) provides a function to handle all of this. The
+Listing 2.1 provides a function to handle all of this. The
 function accepts the response object from the requests module as its
 input, processes the page text to soup, and then finds the `investigator_list` as above and
 processes it into an actual list of the investigators. For each
@@ -249,7 +257,8 @@ Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar
 Harbor, Maine. Note that we have also obtained URLs that give more
 details on the researcher and their research program (`research_url` and `url` keys in the
 dictionary) that could provide a useful input to textual analysis or
-topic modeling (see [Text Analysis](#chap:text)).
+topic modeling (see
+[Text Analysis](#chap:text)).
 
 ```{r, eval=FALSE}
 >> data = scrape(response)
@@ -320,6 +329,7 @@ you so desire. The file also states that there is a requested
 between each query. This request is easily accommodated by adding a
 timed delay between each page request.
 
+\pagebreak
 ```{r, eval=FALSE}
 >> for page_num in range(num_pages):
 >> # We already have page zero and we need to go to 24:
@@ -399,7 +409,7 @@ privacy issues that have not been comprehensively addressed but also
 provides a rich source of data on who is doing what with research
 articles.
 
-```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [237], under a Creative Commons Attribution v 3.0 license'}
+```{r fig2-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Classes of online activity related to research journal articles. Reproduced from Lin and Fenner [@lin2013altmetrics], under a Creative Commons Attribution v 3.0 license'}
 knitr::include_graphics("ChapterWeb/figures/fig2-2.png")
 ```
 
@@ -671,7 +681,7 @@ can be a site for frank discussion of research.
         other research---so analysis of numbers of tweets or likes is
         not always useful.
 
----
+\---
 
 ---
 
@@ -692,6 +702,7 @@ relevant here as well.
     -   Presumably, recommendations are a result of in-depth reading and
         a high level of engagement.
 
+    \pagebreak
 -   Users
 
     -   Recommendations are from a selected population of experts
@@ -750,7 +761,7 @@ are the relationships between these elements (connections between
 nodes). Any given data source may provide information on different parts
 of this graph, and the information available is rarely complete or
 comprehensive. Data from different sources can also be difficult to
-integrate. As with any data integration, combining sources relies on
+integrate^[See Section 3.2.]. As with any data integration, combining sources relies on
 being able to confidently identify those nodes that are common between
 data sources. Therefore identifying unique objects and people is
 critical to making progress.
@@ -776,32 +787,33 @@ in combination with the APIs featured above to develop an overview of
 research outputs and of where and how they are being used. There are
 also other tools that can allow deeper analysis of the outputs
 themselves.
-Table [\[tab:chapAPI:1\]](#tab:chapAPI:1){reference-type="ref"
-reference="tab:chapAPI:1"} gives a partial list of key data sources and
+Table \@ref(tab:table2-1) gives a partial list of key data sources and
 APIs that are relevant to the analysis of research outputs.
 
-  **Source**                  **Description**                                                                                                                                                                                                 **API**   **Free**
-  --------------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- --------- ----------
-                                                                                                                                                                                                                                                       
-  PubMed                      An online index that combines bibliographic data from Medline and PubMed Central. PubMed Central and Europe PubMed Central also provide information.                                                               Y         Y
-  Web of Science              The bibliographic database provided by Thomson Reuters. The ISI Citation Index is also available.                                                                                                                  Y         N
-  Scopus                      The bibliographic database provided by Elsevier. It also provides citation information.                                                                                                                            Y         N
-  Crossref                    Provides a range of bibliographic metadata and information obtained from members registering DOIs.                                                                                                                 Y         Y
-  Google Scholar              Provides a search index for scholarly objects and aggregates citation information.                                                                                                                                 N         Y
-  Microsoft Academic Search   Provides a search index for scholarly objects and aggregates citation information. Not as complete as Google Scholar, but has an API.                                                                              Y         Y
-                                                                                                                                                                                                                                                       
-  Altmetric.com               A provider of aggregated data on social media and mainstream media attention of research outputs. Most comprehensive source of information across different social media and mainstream media conversations.       Y         N
-  Twitter                     Provides an API that allows a user to search for recent tweets and obtain some information on specific accounts.                                                                                                   Y         Y
-  Facebook                    The Facebook API gives information on the number of pages, likes, and posts associated with specific web pages.                                                                                                    Y         Y
-                                                                                                                                                                                                                                                       
-  ORCID                       Unique identifiers for research authors. Profiles include information on publication lists, grants, and affiliations.                                                                                              Y         Y
-  LinkedIn                    CV-based profiles, projects, and publications.                                                                                                                                                                     Y         \*
-                                                                                                                                                                                                                                                       
-  Gateway to Research         A database of funding decisions and related outputs from Research Councils UK.                                                                                                                                     Y         Y
-  NIH Reporter                Online search for information on National Institutes of Health grants. Does not provide an API but a downloadable data set is available.                                                                           N         Y
-  NSF Award Search            Online search for information on NSF grants. Does not provide an API but downloadable data sets by year are available.                                                                                             N         Y
+Table: (\#tab:table2-1) Popular sources of data relevant to the analysis of research outputs
 
-The data are restricted: sometimes fee based, other times not.
+| **Source**                    | **Description**                                                                                                                                                                                                  | **API** | **Free** |
+|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:---:|:----:|
+|                           |                                                                                              **Bibliographic Data**                                                                                              |     |      |
+| PubMed                    | An online index that combines bibliographic data from Medline and PubMed Central. PubMed Central and Europe PubMed Central also provide information.                                                         |  Y  |   Y  |
+| Web of Science            | The bibliographic database provided by Thomson Reuters. The ISI Citation Index is also available.                                                                                                            |  Y  |   N  |
+| Scopus                    | The bibliographic database provided by Elsevier. It also provides citation information.                                                                                                                      |  Y  |   N  |
+| Crossref                  | Provides a range of bibliographic metadata and information obtained from members registering DOIs.                                                                                                           |  Y  |   Y  |
+| Google Scholar            | Provides a search index for scholarly objects and aggregates citation information.                                                                                                                           |  N  |   Y  |
+| Microsoft Academic Search | Provides a search index for scholarly objects and aggregates citation information. Not as complete as Google Scholar, but has an API.                                                                        |  Y  |   Y  |
+|                           |                                                                                                  **Social Media**                                                                                                |     |      |
+| Altmetric.com             | A provider of aggregated data on social media and mainstream media attention of research outputs. Most comprehensive source of information across different social media and mainstream media conversations. |  Y  |   N  |
+| Twitter                   | Provides an API that allows a user to search for recent tweets and obtain some information on specific accounts.                                                                                             |  Y  |   Y  |
+| Facebook                  | The Facebook API gives information on the number of pages, likes, and posts associated with specific web pages                                                                                               |  Y  |   Y  |
+|                           |                                                                                                **Author Profiles**                                                                                               |     |      |
+| ORCID                     | Unique identifiers for research authors. Profiles include information on publication lists, grants, and affiliations.                                                                                        |  Y  |   Y  |
+| LinkedIn                  | CV-based profiles, projects, and publications.                                                                                                                                                               |  Y  |   *  |
+|                           |                                                                                              **Funder Information**                                                                                             |     |      |
+| Gateway to Research       | A database of funding decisions and related outputs from Research Councils UK.                                                                                                                               |  Y  |   Y  |
+| NIH Reporter              | Online search for information on National Institutes of Health grants. Does not provide an API but a downloadable data set is available.                                                                     |  N  |   Y  |
+| NSF Award Search          | Online search for information on NSF grants. Does not provide an API but downloadable data sets by year are available.                                                                                       |  N  |   Y  |
+*The data are restricted: sometimes fee based, other times not.
+
 
 ### RESTful APIs, returned data, and Python wrappers {#sec:4-3.2}
 
@@ -859,7 +871,7 @@ out nicely to make it more readable.)
 }
 ```
 
-This is a package of JavaScript Object Notation (JSON) data returned in
+This is a package of JavaScript Object Notation (JSON)^[JSON is an open standard way of storing and exchanging data.] data returned in
 response to a query. The query is contained entirely in the URL, which
 can be broken up into pieces: the root URL (<http://api.crossref.org>)
 and a data "query," in this case made up of a "field" (`works`) and an
@@ -908,7 +920,7 @@ JSON body from the response object (which is currently text from the
 perspective of our script) converted to a Python dictionary. The `requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
-the "u" notation.)
+the `u´` notation.)
 
 ``` {r, eval=FALSE}
 >> response_dict = response.json()
@@ -968,6 +980,7 @@ API to make various API calls straightforward. This wrapper only works
 with the public ORCID API and can therefore only access publicly
 available data.
 
+\pagebreak
 Using the API and wrapper together provides a convenient means of
 getting this information. For instance, given an ORCID, it is
 straightforward to get profile information. Here we get a list of
@@ -1031,9 +1044,10 @@ The examples in the previous section are just a small dip into the
 surface of the data available, but we already can see a number of issues
 that are starting to surface. A great deal of care needs to be taken
 when using these data, and a researcher will need to apply subject
-matter knowledge as well as broader data management expertise. Some of
+matter knowledge as well as broader data management expertise^[See Chapter 10.]. Some of
 the core issues are as follows:
 
+\vspace*{-2pt}
 **Integration**
 
 In the examples given above with Crossref and ORCID, we used a known
@@ -1048,6 +1062,7 @@ cross-referencing between data sets. Unique identifiers that are common
 to both are extremely powerful but only exist in certain cases (see also
 Chapter [Record Linkage]).
 
+\vspace*{-2pt}
 **Coverage**
 
 \hspace*{4pt}
@@ -1061,6 +1076,7 @@ inclusion and differing commitments to completeness. Sampling of "the
 literature" is therefore impossible, and the choice of index used for
 any study can make a substantial difference to the conclusions.
 
+\vspace*{-2pt}
 **Completeness**
 
 Alongside the question of coverage (how broad is a data source?), with
@@ -1074,6 +1090,7 @@ researchers have a Twitter profile and many have an ORCID profile, only
 a small subset of ORCID profiles provide a link to a Twitter profile.
 See below for a worked example.
 
+\vspace*{-2pt}
 **Scope**
 
 In survey data sets, the scope is defined by the question being asked.
@@ -1089,6 +1106,7 @@ repositories, and some are highly informal. Any study of (a subset of)
 these outputs has as its first challenge the question of how to limit
 the corpus to be studied.
 
+\vspace*{-2pt}
 **Source and validity**
 
 The challenges described above relate to the identification and counting
@@ -1114,6 +1132,7 @@ reports 10 citations but Europe PubMed Central reports 18, despite using
 a similar corpus. The distinction lies in differences in the methodology
 used to mine the corpus for citations.
 
+\vspace*{-2pt}
 **Identifying the underlying latent variable**
 
 These issues multiply as we move into newer forms of data. These sparse
@@ -1211,6 +1230,7 @@ mendeley 0
 crossref 0
 ```
 
+\enlargethispage{18pt}
 The DET service only has a record of citations to this article from
 Wikipedia. As we will see below, the PLOS service returns more results.
 This is because some of the sources are not yet being queried by DET.
@@ -1382,7 +1402,7 @@ We could use the Twitter API to understand more about this person. For
 instance, we could look at their Twitter followers and whom they follow,
 or analyze the text of their tweets for topic modeling. Much work on
 social media interactions is done with this kind of data, using forms of
-network and text analysis described elsewhere in this book.
+network and text analysis described elsewhere in this book^[See Chapter 7 and 8.].
 
 A different approach is to integrate these data with information from
 another source. We might be interested, for instance, in whether the
@@ -1417,10 +1437,10 @@ From this analysis we can show that this tweet is actually from one of
 my co-authors of the article.
 
 To make this process easier we write the convenience function shown in
-Listing \@ref(fig:web-py2), to go from a Twitter user handle to try and
+Listing 2.2, to go from a Twitter user handle to try and
 find an ORCID for that person.
 
-```{r web-py2, eval=FALSE, fig.cap = "Python code to find ORCID for Twitter handle"}
+``` {#fig:web:py2 style="PythonStyle" caption="Python code to find ORCID for Twitter handle" label="fig:web:py2"}
 # Take a twitter handle or user name and return an ORCID
 def twitter2orcid(twitter_handle,
                   resp = 'orcid', search_depth = 10):
@@ -1440,6 +1460,9 @@ def twitter2orcid(twitter_handle,
         i+=1
      return None
 ```
+<div style="text-align: center">Listing 2.2. Python code to find ORCID for Twitter handle</div>
+<br>
+
 
 Let us do a quick test of the function.
 
@@ -1511,6 +1534,7 @@ look at which of the DOIs are found and which are not. Let us see how
 much interesting data is available in the subset of DOIs for which we
 have data.
 
+```{r, eval=FALSE}
     >> for r in [d for d in det_alms if d.sources['wikipedia'].metrics.total != 0]:
     >>     print r.title
     >>     print '     ', r.sources['pmceurope'].metrics.total, 'pmceurope citations'
@@ -1527,6 +1551,7 @@ have data.
     The lipidome and proteome of oil bodies from Helianthus annuus (common sunflower)
           2 pmceurope citations
           1 wikipedia citations
+```
 
 As discussed above, this shows that the DET instance, while it provides
 information on a greater number of DOIs, has less complete data on each
@@ -1537,6 +1562,7 @@ only on PLOS articles. However, it does provide data on all PLOS
 articles, going back earlier than the set returned by the DET instance.
 We can collect the set of articles from the profile published by PLOS.
 
+```{r, eval=FALSE}
     >> plos_dois = []
     >> for doi in DOIs:
     >>     # Quick and dirty, should check Crossref API for publisher
@@ -1572,6 +1598,7 @@ We can collect the set of articles from the profile published by PLOS.
     Covalent Attachment of Proteins to Solid Supports and Surfaces via Sortase-Mediated Ligation
           40 Crossref citations
           0 tweets
+```
 
 From the previous examples we know that we can obtain information on
 citing articles and tweets associated with these 66 articles. From that
@@ -1584,6 +1611,7 @@ probably have duplicate articles (one article might cite multiple in our
 set of seven) and duplicate people (authors in common between articles
 and authors who are also tweeting).
 
+\enlargethispage{6pt}
 These data could be used for network analysis, to build up a new corpus
 of articles (by following the citation links), or to analyze the links
 between authors and those tweeting about the articles. We do not pursue
@@ -1648,6 +1676,7 @@ here. First, the author may not have an ORCID. Second, the article may
 not be explicitly linked to another article. Try searching ORCID for the
 DOIs associated with each of the citing articles.
 
+\enlargethispage{12pt}
 In this case we will look to see how many of the Twitter handles
 discussing these articles are associated with an ORCID profile we can
 discover. This in turn could lead to more profiles and more cycles of
@@ -1718,7 +1747,7 @@ Working with the graph of relationships {#sec:4-7}
 In the above examples we started with the profile of an individual, used
 this to create a corpus of works, which in turn led us to other citing
 works (and their authors) and commentary about those works on Twitter
-(and the people who wrote those comments). Along the way we built up a
+(and the people who wrote those comments)^[See Chapter 8.]. Along the way we built up a
 graph of relationships between objects and people. In this section we
 will look at this model of the data and how it reveals limitations and
 strengths of these forms of data and what can be done with them.
@@ -1955,6 +1984,8 @@ some examples:
     our ability to say *which* groups are talking about it, which could
     be quite interesting.
 
+\enlargethispage{6pt}
+\vspace*{-6pt}
 **Compare ...**
 
 Comparisons using social media or download statistics need real care. As
@@ -2003,6 +2034,7 @@ implications? Is it being used in education or in health practice? And
 to what extent are these different kinds of use independent from each
 other?
 
+\enlargethispage{-12pt}
 It is important to realize that these kinds of data are proxies of
 things that we do not truly understand. They are signals of the flow of
 information down paths that we have not mapped. To me this is the most
@@ -2137,6 +2169,7 @@ project, researcher, funding decision, or institute) makes in the world.
 In this sense, it maps well to standard approaches in the social
 sciences that seek to identify how an intervention has led to change.
 
+\pagebreak
 The link between "impact" and the distribution of limited research
 resources makes its definition highly political. In fact, there are many
 forms of impact, and the different pathways to different kinds of

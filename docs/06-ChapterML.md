@@ -1,10 +1,10 @@
 Machine Learning {#chap:ml}
 ================
 
-***Rayid Ghani***
-
-***Malte Schierholz***
-<br><br>
+\chapterauthor{Rayid Ghani and Malte Schierholz}
+\vspace*{-12pt}
+\enlargethispage{6pt}
+**Rayid Ghani and Malte Schierholz**
 
 This chapter introduces you to the value of machine learning in the
 social sciences, particularly focusing on the overall machine learning
@@ -68,45 +68,19 @@ of tasks $T$ and performance measure $P$, if its performance at tasks in
 $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine].
 
-Commercial machine learning examples[\[commalee\]]{#commalee
-label="commalee"}
+\enlargethispage{6pt}
+\afterpage{\clearpage}
 
--   Speech recognition: Speech recognition software uses machine learning algorithms that
-    are built on large amounts of initial training data. Machine
-    learning allows these systems to be tuned and adapt to individual
-    variations in speaking as well as across different domains.
-
--   Autonomous cars: The ongoing development of self-driving cars applies techniques from
-    machine learning. An onboard computer continuously analyzes the
-    incoming video and sensor streams in order to monitor the
-    surroundings. Incoming data are matched with annotated images to
-    recognize objects like pedestrians, traffic lights, and potholes. In
-    order to assess the different objects, huge training data sets are
-    required where similar objects already have been identified. This
-    allows the autonomous car to decide on which actions to take next.
-
--   Fraud detection: Many public and private organizations face the problem of fraud and
-    abuse. Machine learning systems are widely used to take historical
-    cases of fraud and flag fraudulent transactions as they take place.
-    These systems have the benefit of being adaptive, and improving with
-    more data over time.
-
--   Personalized ads: Many online stores have personalized recommendations promoting
-    possible products of interest. Based on individual shopping history
-    and what other similar users bought in the past, the website
-    predicts products a user may like and tailors recommendations.
-    Netflix and Amazon are two examples of companies whose
-    recommendation software predicts how a customer would rate a certain
-    movie or product and then suggests items with the highest predicted
-    ratings. Of course there are some caveats here, since they then
-    adjust the recommendations to maximize profits.
-
--   Face recognition: Surveillance systems, social networking platforms, and imaging
-    software all use face detection and face recognition to first detect
-    faces in images (or video) and then tag them with individuals for
-    various tasks. These systems are trained by giving examples of faces
-    to a machine learning system which then learns to detect new faces,
-    and tag known individuals.
+<div class="F00">
+<p><strong>Box 6.1: Commercial machine learning examples</strong></p>
+<ul>
+<li><p><strong>Speech recognition</strong>: Speech recognition software uses machine learning algorithms that are built on large amounts of initial training data. Machine learning allows these systems to be tuned and adapt to individual variations in speaking as well as across different domains.</p></li>
+<li><p><strong>Autonomous cars</strong>: The ongoing development of self-driving cars applies techniques from machine learning. An onboard computer continuously analyzes the incoming video and sensor streams in order to monitor the surroundings. Incoming data are matched with annotated images to recognize objects like pedestrians, traffic lights, and potholes. In order to assess the different objects, huge training data sets are required where similar objects already have been identified. This allows the autonomous car to decide on which actions to take next.</p></li>
+<li><p><strong>Fraud detection</strong>: Many public and private organizations face the problem of fraud and abuse. Machine learning systems are widely used to take historical cases of fraud and flag fraudulent transactions as they take place. These systems have the benefit of being adaptive, and improving with more data over time.</p></li>
+<li><p><strong>Personalized ads</strong>: Many online stores have personalized recommendations promoting possible products of interest. Based on individual shopping history and what other similar users bought in the past, the website predicts products a user may like and tailors recommendations. Netflix and Amazon are two examples of companies whose recommendation software predicts how a customer would rate a certain movie or product and then suggests items with the highest predicted ratings. Of course there are some caveats here, since they then adjust the recommendations to maximize profits.</p></li>
+<li><p><strong>Face recognition</strong>: Surveillance systems, social networking platforms, and imaging software all use face detection and face recognition to first detect faces in images (or video) and then tag them with individuals for various tasks. These systems are trained by giving examples of faces to a machine learning system which then learns to detect new faces, and tag known individuals.</p></li>
+</ul>
+</div>
 
 Machine learning grew from the need to build systems that were adaptive,
 scalable, and cost-effective to build and maintain. A lot of tasks now
@@ -115,8 +89,7 @@ where experts would spend considerable time and effort developing and
 maintaining the rules. The problem with those systems was that they were
 rigid, not adaptive, hard to scale, and expensive to maintain. Machine
 learning systems started becoming popular because they could improve the
-system along all of these dimensions. Box
-[\[commalee\]](#commalee){reference-type="ref" reference="commalee"}
+system along all of these dimensions^[See Chapter 3.]. Box 6.1
 mentions several examples where machine learning is being used in
 commercial applications today. Social scientists are uniquely placed
 today to take advantage of the same advances in machine learning by
@@ -141,10 +114,10 @@ The machine learning process
 
 When solving problems using machine learning methods, it is important to
 think of the larger data-driven problem-solving process of which these
-methods are a small part. A typical machine learning problem requires
+methods are a small part^[See Chapter 3.]. A typical machine learning problem requires
 researchers and practitioners to take the following steps:
 
-1.  Understand the problem and goal: This sounds obvious but is often nontrivial. Problems typically
+1.  **Understand the problem and goal**: This sounds obvious but is often nontrivial. Problems typically
     start as vague descriptions of a goal---improving health outcomes,
     increasing graduation rates, understanding the effect of a variable
     $X$ on an outcome $Y$, etc. It is really important to work with
@@ -152,28 +125,28 @@ researchers and practitioners to take the following steps:
     define the problem more concretely. What is the analytical
     formulation of the metric that you are trying to optimize?
 
-2.  Formulate it as a machine learning problem: Is it a classification problem or a regression problem? Is the goal
+2.  **Formulate it as a machine learning problem**: Is it a classification problem or a regression problem? Is the goal
     to build a model that generates a ranked list prioritized by risk,
     or is it to detect anomalies as new data come in? Knowing what kinds
     of tasks machine learning can solve will allow you to map the
     problem you are working on to one or more machine learning settings
     and give you access to a suite of methods.
 
-3.  Data exploration and preparation: Next, you need to carefully explore the data you have. What
+3.  **Data exploration and preparation**: Next, you need to carefully explore the data you have. What
     additional data do you need or have access to? What variable will
     you use to match records for integrating different data sources?
     What variables exist in the data set? Are they continuous or
     categorical? What about missing values? Can you use the variables in
     their original form or do you need to alter them in some way?
 
-4.  Feature engineering: In machine learning language, what you might know as independent
+4.  **Feature engineering**: In machine learning language, what you might know as independent
     variables or predictors or factors or covariates are called
     "features." Creating good features is probably the most important
     step in the machine learning process. This involves doing
     transformations, creating interaction terms, or aggregating over
     data points or over time and space.
 
-5.  Method selection: Having formulated the problem and created your features, you now
+5.  **Method selection**: Having formulated the problem and created your features, you now
     have a suite of methods to choose from. It would be great if there
     were a single method that always worked best for a specific type of
     problem, but that would make things too easy. Typically, in machine
@@ -182,13 +155,13 @@ researchers and practitioners to take the following steps:
     will give an overview of leading methods that are being used today
     in this chapter.
 
-6.  Evaluation: As you build a large number of possible models, you need a way to
+6.  **Evaluation**: As you build a large number of possible models, you need a way to
     select the model that is the best. This part of the chapter will
     cover the validation methodology to first validate the models on
     historical data as well as discuss a variety of evaluation metrics.
     The next step is to validate using a field trial or experiment.
 
-7.  Deployment: Once you have selected the best model and validated it using
+7.  **Deployment**: Once you have selected the best model and validated it using
     historical data as well as a field trial, you are ready to put the
     model into practice. You still have to keep in mind that new data
     will be coming in, and the model might change over time. We will not
@@ -203,7 +176,7 @@ to map it to a class of machine learning methods. In general, the
 problems we will tackle, including the examples above, can be grouped
 into two major categories:
 
-1.  Supervised learning: These are problems where there exists a target variable (continuous
+1.  **Supervised learning**: These are problems where there exists a target variable (continuous
     or discrete) that we want to predict or classify data into.
     Classification, prediction, and regression all fall into this
     category. More formally, supervised learning methods predict a value
@@ -230,9 +203,9 @@ into two major categories:
     *overfit* to the data and the performance on new (unseen) data often
     goes down. Methods like the lasso [@tibshirani1996regression]
     penalize the model for having too many terms by performing what is
-    known as *regularization*.
+    known as *regularization*^[In statistical terms, regularization is an attempt to avoid overfitting the model].
 
-2.  Unsupervised learning: These are problems where there does not exist a target variable that
+2.  **Unsupervised learning**: These are problems where there does not exist a target variable that
     we want to predict but we want to understand "natural" groupings or
     patterns in the data. Clustering is the most common example of this
     type of analysis where you are given $X$ and want to group similar
@@ -256,39 +229,6 @@ learning. Zhu [@zhu2005semi] provides more details.
 <p class="caption">(\#fig:spectrum)Spectrum of machine learning methods from unsupervised to supervised learning</p>
 </div>
 
-Machine learning vocabulary[\[vocabbox\]]{#vocabbox label="vocabbox"}
-
--   Learning: In machine learning, you will notice the term *learning* that will
-    be used in the context of "learning" a model. This is what you
-    probably know as *fitting* or *estimating* a function, or *training*
-    or *building* a model. These terms are all synonyms and are used
-    interchangeably in the machine learning literature.
-
--   Examples: These are data points and instances.
-
--   Features: These are independent variables, attributes, predictor variables,
-    and explanatory variables.
-
--   Labels: These include the response variable, dependent variable, and target
-    variable.
-
--   Underfitting: This happens when a model is too simple and does not capture the
-    structure of the data well enough.
-
--   Overfitting: This happens when a model is possibly too complex and models the
-    noise in the data, which can result in poor generalization
-    performance. Using in-sample measures to do model selection can
-    result in that.
-
--   Regularization: This is a general method to avoid overfitting by applying additional
-    constraints to the model that is learned. A common approach is to
-    make sure the model weights are, on average, small in magnitude. Two
-    common regularizations are $L_1$ regularization (used by the lasso),
-    which has a penalty term that encourages the sum of the absolute
-    values of the parameters to be small; and $L_2$ regularization,
-    which encourages the sum of the squares of the parameters to be
-    small.
-
 Methods
 -------
 
@@ -297,9 +237,20 @@ to supervised learning methods. We focus here on the intuition behind
 the methods and the algorithm, as well as practical tips, rather than on
 the statistical theory that underlies the methods. We encourage readers
 to refer to machine learning books listed in
-Section [Resources](#ml:res). Box [\[vocabbox\]](#vocabbox){reference-type="ref"
-reference="vocabbox"} gives brief definitions of several terms we will
-use in this section.
+Section [Resources](#ml:res). Box 6.2 gives brief definitions of several terms we will use in this section.
+
+<div class="F00">
+<p><strong>Box 6.2: Machine learning vocabulary</strong></p>
+<ul>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of &quot;learning&quot; a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Examples</strong>: These are data points and instances.</p></li>
+<li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
+<li><p><strong>Labels</strong>: These include the response variable, dependent variable, and target variable.</p></li>
+<li><p><strong>Underfitting</strong>: This happens when a model is too simple and does not capture the structure of the data well enough.</p></li>
+<li><p><strong>Overfitting</strong>: This happens when a model is possibly too complex and models the noise in the data, which can result in poor generalization performance. Using in-sample measures to do model selection can result in that.</p></li>
+<li><p><strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. A common approach is to make sure the model weights are, on average, small in magnitude. Two common regularizations are <span class="math inline">\(L_1\)</span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline">\(L_2\)</span> regularization, which encourages the sum of the squares of the parameters to be small.</p></li>
+</ul>
+</div>
 
 ### Unsupervised learning methods
 
@@ -333,7 +284,16 @@ goal of clustering methods is to produce with high intra-cluster
 (within) similarity and low inter-cluster (between) similarity.
 
 Clustering algorithms typically require a distance (or similarity)
-metric to generate clusters. They take a data set and a distance metric
+metric^[Distance metrics are
+mathematical formulas to
+calculate the distance between two objects.
+For example, *Manhattan distance* is the distance a
+car would drive from one
+place to another place in
+a grid-based street system,
+whereas *Euclidian distance*
+(in two-dimensional space)
+is the “straight-line” distance between two points.] to generate clusters. They take a data set and a distance metric
 (and sometimes additional parameters), and they generate clusters based
 on that distance metric. The most common distance metric used is
 Euclidean distance, but other commonly used metrics are Manhattan,
@@ -370,6 +330,7 @@ describe the cluster using the features in your data. A good example of
 a tool that allows interactive clustering from text data is Ontogen
 [@Ontogen].
 
+\enlargethispage{6pt}
 **$k$-means clustering**
 
 The most commonly used clustering algorithm is called $k$-means, where
@@ -400,12 +361,13 @@ data points cannot be computed, a related method called $K$-medoids can
 be used [@park2009simple].
 
 <div class="figure" style="text-align: center">
-<img src="ChapterML/figures/kmeans.png" alt="Example of k-means clustering with k = 3. The upper left panel shows the distribution of the data and the three starting points m1, m2, m3 placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel" width="70%" />
-<p class="caption">(\#fig:kmeans)Example of k-means clustering with k = 3. The upper left panel shows the distribution of the data and the three starting points m1, m2, m3 placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel</p>
+<img src="ChapterML/figures/kmeans.png" alt="Example of $k$-means clustering with $k = 3$. The upper left panel shows the distribution of the data and the three starting points $m_1$, $m_2$, $m_3$ placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel" width="70%" />
+<p class="caption">(\#fig:kmeans)Example of $k$-means clustering with $k = 3$. The upper left panel shows the distribution of the data and the three starting points $m_1$, $m_2$, $m_3$ placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel</p>
 </div>
 
 **Expectation-maximization (EM) clustering**
 
+\hspace*{3pt}
 You may be familiar with the EM algorithm in the context of imputing
 missing data. EM is a general approach to maximum likelihood in the
 presence of incomplete data. However, it is also used as a clustering
@@ -462,18 +424,19 @@ shift is computationally slow but can be easily parallelized.
 
 **Hierarchical clustering**
 
+\hspace*{-1pt}
 The clustering methods that we have seen so far, often termed
 *partitioning* methods, produce a flat set of clusters with no
 hierarchy. Sometimes, we want to generate a hierarchy of clusters, and
 methods that can do that are of two types:
 
-1.  Agglomerative (bottom-up): Start with each point as its own cluster and iteratively merge the
+1.  **Agglomerative (bottom-up)**: Start with each point as its own cluster and iteratively merge the
     closest clusters. The iterations stop either when the clusters are
     too far apart to be merged (based on a predefined distance
     criterion) or when there is a sufficient number of clusters (based
     on a predefined threshold).
 
-2.  Divisive (top-down): Start with one cluster and create splits recursively.
+2.  **Divisive (top-down)**: Start with one cluster and create splits recursively.
 
 Typically, agglomerative clustering is used more often than divisive
 clustering. One reason is that it is significantly faster, although both
@@ -502,6 +465,7 @@ between nodes) represent the similarity between the two data points.
 <p class="caption">(\#fig:spectral)The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering</p>
 </div>
 
+\vspace*{8pt}
 The algorithm works as follows:
 
 1.  Compute a similarity matrix from the data. This involves determining
@@ -630,7 +594,8 @@ structural forms (ranging from linear models, to sets of rules, to more
 complex forms), and it may not always be possible to write them down in
 a compact form as an equation. This does not, however, make them
 incomprehensible or uninterpretable. Another focus of machine learning
-models for supervised learning is prediction, and not causal inference.
+models for supervised learning is prediction, and not causal inference^[The topic of causal inference is addressed in more
+detail in Chapter 10.].
 Some of these models can be used to help with causal inference, but they
 are typically optimized for prediction tasks. We believe that there are
 many social science and policy problems where better prediction methods
@@ -641,7 +606,7 @@ that is, problems in which the data points are to be classified into one
 of two categories. Several of the methods that we will cover can also be
 used for multiclass classification (classifying a data point into one of
 $n$ categories) or for multi-label classification (classifying a data
-point into $m$ of $n$ categories where $m$ $\ge$1). There are also
+point into $m$ of $n$ categories where $m\ge1$). There are also
 approaches to take multiclass problems and turn them into a set of
 binary problems that we will mention briefly at the end of the chapter.
 
@@ -689,10 +654,11 @@ prediction depends heavily on how it is determined. In this example,
 point B is classified differently if $k = 3$.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterML/figures/knn.png" alt="Example of k-nearest neighbor with k = 1, 3, 5 neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red (&quot;Patent not granted&quot;), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively." width="70%" />
-<p class="caption">(\#fig:knn)Example of k-nearest neighbor with k = 1, 3, 5 neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
+<img src="ChapterML/figures/knn.png" alt="Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red (&quot;Patent not granted&quot;), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively." width="70%" />
+<p class="caption">(\#fig:knn)Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
 </div>
 
+\vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
 useful in applications where data are coming in extremely quickly and a
 model needs to be updated frequently. All the work, however, gets pushed
@@ -728,6 +694,7 @@ method is completely oblivious to the type of target variable and can
 potentially be used to predict text documents, images, and videos, based
 on the aggregation function after the nearest neighbors are found.
 
+\vspace*{-4pt}
 **Support vector machines**
 
 Support vector machines are one of the most popular and best-performing
@@ -903,7 +870,10 @@ averaging or voting (possibly weighted).
 
 **Bagging**
 
-Bagging stands for "bootstrap aggregation": we first create bootstrap
+Bagging stands for "bootstrap aggregation"^[Bootstrap is a general
+statistical procedure that
+draws random samples of
+the original data with replacement.]: we first create bootstrap
 samples from the original data and then aggregate the predictions using
 models trained on each bootstrap sample. Given a data set of size $N$,
 the method works as follows:
@@ -1169,6 +1139,7 @@ possible) and making sure the model is tested on each data point.
 
 **Temporal validation**
 
+\hspace*{4pt}
 The cross-validation and holdout set approaches described above assume
 that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in
@@ -1267,8 +1238,7 @@ which are defined as follows: $$\begin{aligned}
 {\rm Precision} &= \frac{TP}{TP + FP}=\frac{TP}{P},
 \\
 {\rm Recall} &= \frac{TP}{TP + FN}=\frac{TP}{P'}\end{aligned}$$ (see
-also Box [\[text:box3\]](#text:box3){reference-type="ref"
-reference="text:box3"}). Precision measures the accuracy of the classifier when it
+also Box 7.3). Precision measures the accuracy of the classifier when it
 predicts an example to be positive. It is the ratio of correctly
 predicted positive examples ($TP$) to all examples predicted as positive
 ($TP + FP$). This measure is also called *positive predictive value* in
@@ -1284,8 +1254,7 @@ negatives that are correctly identified.
 Another metric that is used is the $F_1$ score, which is the harmonic
 mean of precision and recall:
 $$F_1 =  \frac{2* {\rm Precision} * {\rm Recall}}{{\rm Precision} + {\rm Recall}}$$
-(see also equation [\[eq:text:F1\]](#eq:text:F1){reference-type="eqref"
-reference="eq:text:F1"}). This is often used when you want to balance
+(see also equation 7.1). This is often used when you want to balance
 both precision and recall.
 
 There is often a tradeoff between precision and recall. By selecting
@@ -1381,17 +1350,17 @@ regularization and model selection. It is common to have models that are
 trained on thousands of features. Commonly used approaches to create
 features include:
 
--   Transformations, such as log, square, and square root.
+-   **Transformations**, such as log, square, and square root.
 
--   Dummy (binary) variables: This is often done by taking categorical variables (such as city)
+-   **Dummy (binary) variables**: This is often done by taking categorical variables (such as city)
     and creating a binary variable for each value (one variable for each
     city in the data). These are also called indicator variables.
 
--   Discretization: Several methods require features to be discrete instead of
+-   **Discretization**: Several methods require features to be discrete instead of
     continuous. Several approaches exist to convert continuous variables
     into discrete ones, the most common of which is equal-width binning.
 
--   Aggregation: Aggregate features often constitute the majority of features for a
+-   **Aggregation**: Aggregate features often constitute the majority of features for a
     given problem. These aggregations use different aggregation
     functions (count, min, max, average, standard deviation, etc.),
     often over varying windows of time and space. For example, given
@@ -1438,13 +1407,13 @@ into their industry codes or predicting whether a student will drop out,
 transfer, or graduate. Several solutions have been designed to deal with
 the multiclass classification problem:
 
--   Direct multiclass: Use methods that can directly perform multiclass classification.
+-   **Direct multiclass**: Use methods that can directly perform multiclass classification.
     Examples of such methods are $K$-nearest neighbor, decision trees,
     and random forests. There are extensions of support vector machines
     that exist for multiclass classification as well [@crammer2002], but
     they can often be slow to train.
 
--   Convert to one versus all (OVA): This is a common approach to solve multiclass classification
+-   **Convert to one versus all (OVA)**: This is a common approach to solve multiclass classification
     problems using binary classifiers. Any problem with $n$ classes can
     be turned into $n$ binary classification problems, where each
     classifier is trained to distinguish between one versus all the
@@ -1458,7 +1427,7 @@ the multiclass classification problem:
     classifier to be calibrated so that they are comparable across all
     of them.
 
--   Convert to pairwise: In this approach, we can create binary classifiers to distinguish
+-   **Convert to pairwise**: In this approach, we can create binary classifiers to distinguish
     between each pair of classes, resulting in $\binom{n}{2}$ binary
     classifiers. This results in a large number of classifiers, but each
     classifier usually has a balanced classification problem. A new
@@ -1500,7 +1469,7 @@ problems in research and practice. In this section, we will give a few
 concrete examples where what you have learned so far can be used to
 improve some social science tasks:
 
--   Use of better prediction methods and methodology: Traditional statistics and social sciences have not focused much on
+-   **Use of better prediction methods and methodology**: Traditional statistics and social sciences have not focused much on
     methods for prediction. Machine learning researchers have spent the
     past 30 years developing and adapting methods focusing on that task.
     We believe that there is a lot of value for social science
@@ -1513,7 +1482,7 @@ improve some social science tasks:
     classification methods, resulting in improved model selection and
     error estimates.
 
--   Model misspecification: Linear and logistic regressions are common techniques for data
+-   **Model misspecification**: Linear and logistic regressions are common techniques for data
     analysis in the social sciences. One fundamental assumption within
     both is that they are additive over parameters. Machine learning
     provides tools when this assumption is too limiting. Hainmueller and
@@ -1531,7 +1500,7 @@ improve some social science tasks:
     misspecification in the original model. Finally, the reanalysis also
     discovers interactions that were missed in the original publication.
 
--   Better text analysis:  Text is everywhere, but unfortunately humans are slow and expensive
+-   **Better text analysis**:  Text is everywhere, but unfortunately humans are slow and expensive
     in analyzing text data. Thus, computers are needed to analyze large
     collections of text. Machine learning methods can help make this
     process more efficient. Feldman and Sanger [@FeldmanSanger] provide
@@ -1540,7 +1509,7 @@ improve some social science tasks:
     specific for social scientists, and
     Chapter [Text analysis](#chap:text) provides more details on this topic.
 
--   Adaptive surveys: Some survey questions have a large number of possible answer
+-   **Adaptive surveys**: Some survey questions have a large number of possible answer
     categories. For example, international job classifications describe
     more than 500 occupational categories, and it is prohibitive to ask
     all categories during the survey. Instead, respondents answer an
@@ -1550,7 +1519,7 @@ improve some social science tasks:
     best description for their occupation, thus saving the costs for
     coding after the interview.
 
--    Estimating heterogeneous treatment effects: A standard approach to causal inference is the assignment of
+-    **Estimating heterogeneous treatment effects**: A standard approach to causal inference is the assignment of
     different treatments (e.g., medicines) to the units of interest
     (e.g., patients). Researchers then usually calculate the average
     treatmenteffect---the average difference in outcomes for both
@@ -1560,7 +1529,7 @@ improve some social science tasks:
     challenged by various machine learning techniques
     [@green2012modeling; @imai2013estimating].
 
--   Variable selection: Although there are many methods for variable selection, regularized
+-   **Variable selection**: Although there are many methods for variable selection, regularized
     methods such as the lasso are highly effective and efficient when
     faced with large amounts of data. Varian [@Varian2014] goes into
     more detail and gives other methods from machine learning that can

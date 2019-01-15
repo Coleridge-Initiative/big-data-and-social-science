@@ -1,14 +1,8 @@
 Privacy and Confidentiality {#chap:privacy}
 ===========================
 
-***Stefan Bender***
-
-***Ron Jarmin***
-
-***Frauke Kreuter***
-
-***Julia Lane***
-<br><br>
+\chapterauthor{Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane}
+**Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane**
 
 This chapter addresses the issue that sits at the core of any study of
 human beings---privacy and confidentiality. In a new field, like the one
@@ -36,9 +30,11 @@ that done for private gain. In practical terms, this requires that the
 private interests of individual privacy and data confidentiality be
 balanced against the social benefits of research access and use.
 
-Privacy "encompasses not only the famous 'right to be left alone,' or keeping
+**Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
-share information selectively but not publicly" [@house2014big]. Confidentiality is
+share information selectively but not publicly" [@house2014big].
+
+**Confidentiality** is
 "preserving authorized restrictions on information access and
 disclosure, including means for protecting personal privacy and
 proprietary information" [@mccallister2010sp]. Doing so is not
@@ -217,7 +213,14 @@ individual names, birth dates, social security numbers, and business
 names, addresses, and tax ID numbers. From a privacy and confidentiality
 perspective, link keys are among most sensitive information in many data
 sets of interest to social scientists. This is why many organizations
-replace link keys containing personal identifiable information (PII)
+replace link keys containing personal identifiable information (PII)^[PII is "any information about an individual maintained by an agency, including (1) any information
+that can be used to distinguish or trace an individual’s identity, such as name,
+social security number, date
+and place of birth, mother’s
+maiden name, or biometric
+records; and (2) any other
+information that is linked
+or linkable to an individual, such as medical, educational, financial, and employment information” [254].]
 with privacy-protecting identifiers [@schnell2009privacy]. Regardless,
 at some point in the process those must be generated out of the original
 information, thus access to the latter is important.
@@ -243,7 +246,7 @@ the assumptions of a particular statistical model are met, what relevant
 information is included or excluded, and whether valid inferences can be
 drawn from the data [@kreuter201412].
 
-**Building knowledge infrastructure**}
+**Building knowledge infrastructure**
 
 Creating a community of practice around a data infrastructure can result
 in tremendous new insights, as the Sloan Digital Sky Survey and the
@@ -512,7 +515,7 @@ cryptography, as well as a variety of different practical applications,
 including the successful development of remote access secure data
 enclaves. We must piece together the knowledge from these various fields
 to develop ways in which vast new sets of data on human beings can be
-collected, integrated, and analyzed while protecting them [@Lane2014].
+collected, integrated, and analyzed while protecting them [@lane2014].
 
 It is possible that the confidentiality risks of disseminating data may
 be so high that traditional access models will no longer hold; that the

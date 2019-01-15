@@ -1,10 +1,9 @@
 Information Visualization {#chap:viz}
 =========================
 
-***M. Adil Yalcin***
-
-***Catherine Plaisant***
-<br><br>
+\chapterauthor{M.\ Adil Yal\c{c}{\i}n and Catherine Plaisant}
+\vspace*{-6pt}
+**M. Adil Yalçın and Catherine Plaisant**
 
 This chapter will show you how to explore data and communicate results
 so that data can be turned into interpretable, actionable information.
@@ -13,6 +12,8 @@ content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range
 of data types and tasks, and to explore the foundations and challenges
 of information visualization.
+
+\vspace*{-6pt}
 
 Introduction {#sec:viz-1}
 ------------
@@ -50,8 +51,8 @@ dramatic differences between the data sets, trends, and outliers
 visually.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [16]" width="70%" />
-<p class="caption">(\#fig:fig9-1)Anscombes quartet [16]</p>
+<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [@anscombe1973graphs]" width="70%" />
+<p class="caption">(\#fig:fig9-1)Anscombes quartet [@anscombe1973graphs]</p>
 </div>
 
 In broad terms, visualizations are used either to present results or for
@@ -68,29 +69,22 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box [\[viz:box1\]](#viz:box1){reference-type="ref"
-reference="viz:box1"}).
+(see Box 9.1^[See Chapters 2, 3, 4, and
+5 for an overview of collecting, merging, storing, and
+processing data sets.]).
 
-\pagebreak
-[\[viz:box1\]]{#viz:box1 label="viz:box1"} The development of an
-effective visualization is an iterative process that generally includes
-the following steps:
-
--   Specify user needs, tasks, accessibility requirements and criteria
-    for success.
-
--   Prepare data (clean, transform).
-
--   Design visual representations.
-
--   Design interaction.
-
--   Plan sharing of insights, provenance.
-
--   Prototype/evaluate, including usability testing.
-
--   Deploy (monitor usage, provide user support, manage revision
-    process).
+<div class="F00">
+<p><strong>Box 9.1:</strong> The development of an effective visualization is an iterative process that generally includes the following steps:</p>
+<ul>
+<li><p>Specify user needs, tasks, accessibility requirements and criteria for success.</p></li>
+<li><p>Prepare data (clean, transform).</p></li>
+<li><p>Design visual representations.</p></li>
+<li><p>Design interaction.</p></li>
+<li><p>Plan sharing of insights, provenance.</p></li>
+<li><p>Prototype/evaluate, including usability testing.</p></li>
+<li><p>Deploy (monitor usage, provide user support, manage revision process).</p></li>
+</ul>
+</div>
 
 If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
@@ -109,11 +103,25 @@ information.
 Another goal of visualization is to enable *interactive exploratory
 analysis* for casual users as well as professional analysts. One casual
 example is BabyNameVoyager [@babynamevoyager], which lets users type in
-a name and see a graph of its popularity over the past century.
+a name and see a graph of its popularity over the past century^[As the baby name is
+typed letter by letter, BabyNameVoyager visualizes
+the popularity of all the
+names starting with the
+letters entered so far, and
+it animates smoothly with
+each new letter input. For
+example, typing “Jo” shows
+all the names starting with
+“Jo”. This view reveals
+that Joyce and Joan were
+popular girl names in the
+1930s, and the use of
+“John” has declined since
+the 1960s.].
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2.png" alt=" A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
-<p class="caption">(\#fig:fig9-2) A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
+<img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
+<p class="caption">(\#fig:fig9-2)A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
 </div>
 
 \vspace*{-12pt}
@@ -147,7 +155,7 @@ Commercial tools such as Spotfire and Tableau, among many other tools
 offering chart types and visual design environments to analyze their
 data, and to combine them in potent dashboards rapidly shared with
 colleagues. For example, Figure
-\@ref(fig:fig9-3a)} shows the charting interface of Tableau on a
+\@ref(fig:fig9-3a) shows the charting interface of Tableau on a
 transaction data set. The left-hand panel shows the list of attributes
 associated with vendor transactions for a given university. The
 visualization (center) is constructed by placing the month of spending
@@ -221,59 +229,47 @@ current population (single numerical data), the amount of trade with
 other countries (networked/linked data), and the top 10 exported
 products (if grouped by industry, hierarchical data). Furthermore, we
 provide an overview of common tasks for visual data analysis in
-Box [\[viz:box2\]](#viz:box2){reference-type="ref"
-reference="viz:box2"}, which can be applied across different data types
+Box 9.2, which can be applied across different data types
 based on goals and types of visualizations.
 
-\afterpage{\clearpage}
-A task categorization for visual data analysis[\[viz:box2\]]{#viz:box2
-label="viz:box2"} Select/Query
-
--   Filter to focus on a subset of the data
-
--   Retrieve details of item
-
--   Brush linked selections across multiple charts
-
--   Compare across multiple selections
-
-Navigate
-
--   Scroll along a dimension (1D)
-
--   Pan along two dimensions (2D)
-
--   Zoom along the third dimension (3D)
-
-Derive
-
--   Aggregate item groups and generate characteristics
-
--   Cluster item groups by algorithmic techniques
-
--   Rank items to define ordering
-
-Organize
-
--   Select chart type and data encodings to organize data
-
--   Layout multiple components or panels in the interface
-
-Understand
-
--   Observe distributions
-
--   Compare items and distributions
-
--   Relate items and patterns
-
-Communicate
-
--   Annotate findings
-
--   Share results
-
--   Trace action histories
+<div class="F00">
+<p><strong>Box 9.2: A task categorization for visual data analysis</strong> Select/Query</p>
+<ul>
+<li><p>Filter to focus on a subset of the data</p></li>
+<li><p>Retrieve details of item</p></li>
+<li><p>Brush linked selections across multiple charts</p></li>
+<li><p>Compare across multiple selections</p></li>
+</ul>
+<p>Navigate</p>
+<ul>
+<li><p>Scroll along a dimension (1D)</p></li>
+<li><p>Pan along two dimensions (2D)</p></li>
+<li><p>Zoom along the third dimension (3D)</p></li>
+</ul>
+<p>Derive</p>
+<ul>
+<li><p>Aggregate item groups and generate characteristics</p></li>
+<li><p>Cluster item groups by algorithmic techniques</p></li>
+<li><p>Rank items to define ordering</p></li>
+</ul>
+<p>Organize</p>
+<ul>
+<li><p>Select chart type and data encodings to organize data</p></li>
+<li><p>Layout multiple components or panels in the interface</p></li>
+</ul>
+<p>Understand</p>
+<ul>
+<li><p>Observe distributions</p></li>
+<li><p>Compare items and distributions</p></li>
+<li><p>Relate items and patterns</p></li>
+</ul>
+<p>Communicate</p>
+<ul>
+<li><p>Annotate findings</p></li>
+<li><p>Share results</p></li>
+<li><p>Trace action histories</p></li>
+</ul>
+</div>
 
 Interactive visualization design is also closely coupled with the
 targeted devices. Conventionally, visualizations have been designed for
@@ -342,8 +338,7 @@ HomeFinder application that introduced the concept of dynamic queries
 [@ahlberg1992dynamic]. The tasks include finding adjacent items, regions
 containing certain items or with specific characteristics, and paths
 between items---and performing the basic tasks listed in
-Box [\[viz:box1\]](#viz:box1){reference-type="ref"
-reference="viz:box1"}.
+Box 9.1.
 
 The primary form of visualizing spatial data is *maps*. In *choropleth
 maps*, color encoding is used to add represent one data attribute.
@@ -362,8 +357,8 @@ hierarchy of continents, countries, and cities).
 
 \afterpage{\clearpage}
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [66]. Interface based on [244]" width="70%" />
-<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [66]. Interface based on [244]</p>
+<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="70%" />
+<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]</p>
 </div>
 
 Maps are commonly combined with other visualizations. For example, in
@@ -371,11 +366,6 @@ Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
 to explore correlations between attributes.
-
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="70%" />
-<p class="caption">(\#fig:fig9-6)Horizon graphs used to display time series</p>
-</div>
 
 ### Temporal data {#sec:viz-2.4}
 
@@ -403,6 +393,11 @@ design may not be appropriate for audiences who may lack such training
 or familiarity.
 
 <div class="figure" style="text-align: center">
+<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="70%" />
+<p class="caption">(\#fig:fig9-6)Horizon graphs used to display time series</p>
+</div>
+
+<div class="figure" style="text-align: center">
 <img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="70%" />
 <p class="caption">(\#fig:fig9-7)EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
@@ -425,11 +420,6 @@ prototyping activity of the company. In most of the sequences shown
 here, the company's first prototype is preceded by two or more patents
 with a lag of about a year.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="70%" />
-<p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
-</div>
-
 \enlargethispage{12pt}
 
 ### Hierarchical data {#sec:viz-2.5}
@@ -447,7 +437,7 @@ as "how deep is the tree?", "how many items does this branch have?", or
 "what are the characteristics of one branch compared to another?" In
 such cases, the most appropriate representation is usually a node-link
 diagram [@plaisant2002spacetree; @card2002degree]. In
-Figure \@ref(fig:fig9-8), is used to browse a company organizational
+Figure \@ref(fig:fig9-8), Spacetree is used to browse a company organizational
 chart. Since not all the nodes of the tree fit on the screen, we see an
 iconic representation of the branches that cannot be displayed,
 indicating the size of each branch. As the tree branches are opened or
@@ -470,6 +460,11 @@ poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
 <div class="figure" style="text-align: center">
+<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="70%" />
+<p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
+</div>
+
+<div class="figure" style="text-align: center">
 <img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="70%" />
 <p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (www.finviz.com)</p>
 </div>
@@ -482,7 +477,7 @@ focus on that industry.
 </div>
 
 \vspace*{12pt}
-Network data encode relationships between items: for example, social
+Network data encode relationships between items^[See Chapter 8.]: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
 patterns (such as emails). The network overviews attempt to reveal the
@@ -493,8 +488,8 @@ in between, such as age of people in communication or the average
 duration of communications.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [45]" width="70%" />
-<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [45]</p>
+<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]" width="70%" />
+<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
 </div>
 
 \vspace*{12pt}
@@ -535,7 +530,7 @@ summary of the insights gathered by analysts.
 
 Text is usually preprocessed (for word/paragraph counts, sentiment
 analysis, categorization, etc.) to generate metadata about text
-segments, which are then visualized. Simple visualizations like tag
+segments, which are then visualized^[See Chapter 7 for text analysis approaches.]. Simple visualizations like tag
 clouds display statistics about word usage in a text collection, or can
 be used to compare two collections or text segments. While visually
 appealing, they can easily be misinterpreted and are often replaced by

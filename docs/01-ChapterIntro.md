@@ -28,8 +28,8 @@ leading academic journals are much less likely today to draw on
 preprocessed survey data (Figure \@ref(fig:fig1)).
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 @Chetty2012" width="70%" />
-<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 @Chetty2012</p>
+<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)" width="70%" />
+<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)</p>
 </div>
 
 The way in which data are used has also changed for both government
@@ -78,8 +78,7 @@ Defining big data and its value {#sec:1-2}
 -------------------------------
 
 There are almost as many definitions of big data as there are new types
-of data. One approach is to define big data as anything too big to fit 
-onto your computer. Another approach is to define it as data with high 
+of data. One approach is to define big data as *anything too big to fit onto your computer*^[This topic is discussed in more detail in Chapter 5]. Another approach is to define it as data with high 
 volume, high velocity, and great variety. We choose the description adopted 
 by the American Association of Public Opinion Research: "The term 'Big Data' 
 is an imprecise description of a rich and complicated set of characteristics,
@@ -121,7 +120,7 @@ But most interestingly, the new data can change the way we think about
 measuring and making inferences about behavior. For example, it enables
 the capture of information on the subject's entire environment---thus,
 for example, the effect of fast food caloric labeling in health
-interventions [@elbel2011]; the productivity of a cashier if he is
+interventions [@Elbel2011]; the productivity of a cashier if he is
 within eyesight of a highly productive cashier but not otherwise
 [@Mas2009]. So it offers the potential to understand the effects of
 complex environmental inputs on human behavior. In addition, big data,
@@ -155,7 +154,7 @@ adjustment are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
 flaws in the data generating process. Two books provide frameworks for
-survey quality [@groves2004survey; @biemer2003].
+*survey quality*^[This topic is discussed in more detail in Chapter 10.][@groves2004survey; @biemer2003].
 
 Across the social sciences, including economics, public policy,
 sociology, management, (parts of) psychology and the like, we can
@@ -166,7 +165,7 @@ goals: description, causation, and prediction.
 
 The job of many social scientists is to provide descriptive statements
 about the population of interest. These could be univariate, bivariate,
-or even multivariate statements. [Machine Learning] on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
+or even multivariate statements. [Machine Learning](#chap:ml) on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
 methods.
 
 Descriptive statistics are usually created based on census data or
@@ -304,19 +303,19 @@ Social science, data quality, and big data {#sec:1-5}
 
 Most data in the real world are noisy, inconsistent, and suffers from
 missing values, regardless of its source. Even if data collection is
-cheap, the costs of creating high-quality data from the source -- cleaning, curating, standardizing, and integrating -- are substantial.
+cheap, the costs of creating high-quality data from the source -- *cleaning, curating, standardizing, and integrating*^[This topic is discussed in more detail in Chapter 3.] -- are substantial.
 
 Data quality can be characterized in multiple ways [@christen2012data]:
 
-- Accuracy: How accurate are the attribute values in the data?
+- **Accuracy**: How accurate are the attribute values in the data?
 
-- Completeness: Is the data complete?
+- **Completeness**: Is the data complete?
 
-- Consistency: How consistent are the values in and between the database(s)?
+- **Consistency**: How consistent are the values in and between the database(s)?
 
-- Timeliness: How timely is the data?
+- **Timeliness**: How timely is the data?
 
-- Accessibility: Are all variables available for analysis?
+- **Accessibility**: Are all variables available for analysis?
 
 Social scientists have decades of experience in transformingmessy,
 noisy, and unstructured data into a well-defined, clearly structured,
@@ -328,7 +327,7 @@ It is difficult to overstate the value of preprocessing for any data
 analysis, but this is particularly true in big data. Data need to be
 parsed, standardized, deduplicated, and normalized.
 
-Parsing is a fundamental step taken regardless of the data source, and refers to
+**Parsing** is a fundamental step taken regardless of the data source, and refers to
 the decomposition of a complex variable into components. For example, a
 freeform address field like "1234 E 56th St" might be broken down into a
 street number "1234" and a street name "E 56th St." The street name
@@ -358,7 +357,7 @@ include:
 5.  Calling subroutines according to the identified pattern, therein
     mapping of tokens to the predefined components.
 
-Standardization refers to the process of simplifying data by replacing variant
+**Standardization** refers to the process of simplifying data by replacing variant
 representations of the same underlying observation by a default value in
 order to improve the accuracy of field comparisons. For example, "First
 Street" and "1st St" are two ways of writing the same street name, but a
@@ -377,7 +376,7 @@ Some common examples of standardization are:
 -   General standardization, including converting character fields to
     all uppercase and removing punctuation and digits.
 
-Deduplication consists of removing redundant records from a single list, that is,
+**Deduplication** consists of removing redundant records from a single list, that is,
 multiple records from the same list that refer to the same underlying
 entity. After deduplication, each record in the first list will have at
 most one true match in the second list and vice versa. This simplifies
@@ -387,7 +386,7 @@ list of all possible links). One can deduplicate a list by applying
 record linkage techniques described in this chapter to link a file to
 itself.
 
-Normalization is the process of ensuring that the fields that are being compared
+**Normalization** is the process of ensuring that the fields that are being compared
 across files are as similar as possible in the sense that they could
 have been generated by the same process. At minimum, the same
 standardization rules should be applied to both files. For additional
@@ -406,7 +405,7 @@ designed. Fortunately, the wider research and data analytics community
 has developed a wide variety of often more scalable and flexible
 tools---tools that we will introduce within this book.
 
-Relational database management systems (DBMSs) are usedthroughout
+Relational database management systems (DBMSs)^[This topic is discussed in more detail in Chapter 4.] are used throughout
 business as well as the sciences to organize, process, and search large
 collections of structured data. NoSQL DBMSs are used for data that is
 extremely large and/or unstructured, such as collections of web pages,
@@ -431,7 +430,7 @@ work by thousands of people worldwide. For these reasons, the modern
 social scientist needs to be familiar with their characteristics and
 capabilities.
 
-The book's "use case"
+The book's "use case" {#sec:1-6}
 ---------------------
 
 This book is about the uses of big data in social science. Our focus is
@@ -447,8 +446,8 @@ research, but relatively few that feature all the different aspects that
 are covered in this book. As a result, the chapters in the book draw
 heavily on a use case based on one of the first large-scale big data
 social science data infrastructures. This infrastructure, based on
-UMETRICS data housed at the University of Michigan's Institute for
-Research on Innovation and Science (IRIS) and enhanced with data from
+UMETRICS^[UMETRICS: Universities Measuring the Impact of Research on Innovation and Science [@lane2015new]] data housed at the University of Michigan's Institute for
+Research on Innovation and Science (IRIS)^[iris.isr.umich.edu] and enhanced with data from
 the US Census Bureau, provides a new quantitative analysis and
 understanding of science policy based on large-scale computational
 analysis of new types of data.
@@ -496,11 +495,13 @@ of the firms they work for, and the return on investments in research. Figure \@
 
 First, data must be captured on what is funded, and since the data are
 in text format, computational linguistics tools must be applied
-([Text Analysis]). Second, data must be captured on who is funded,
+([Text Analysis](#chap:text)). Second, data must be captured on who is funded,
 and how they interact in teams, so network tools and analysis must be
 used ([Networks: The Basics]). Third, information about the type of
-results must be gleaned from the web and other sources the disparate
-complex data sets need to be stored in databases ([Databases]), integrated ([Record Linkage]), analyzed ([Machine Learning]), and used to make inferences ([Errors and Inference]).
+results must be gleaned from the web and other sources ([Working with Web Data and APIs]).
+
+Finally, the disparate
+complex data sets need to be stored in databases ([Databases]), integrated ([Record Linkage]), analyzed ([Machine Learning](#chap:ml)), and used to make inferences ([Errors and Inference]).
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/figure_cameron.png" alt="A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong" width="70%" />
@@ -514,7 +515,7 @@ question, and provide explicit examples based on that data. We then
 provide examples that show how the approach generalizes.
 
 For example, the text analysis chapter
-([Text Analysis]) shows how to use natural language processing to
+([Text Analysis](#chap:text)) shows how to use natural language processing to
 describe *what* research is being done, using proposal and award text to
 identify the research topics in a portfolio
 [@talley2011database; @Evans2011]. But then it also shows how the
@@ -529,7 +530,7 @@ analysis---the networks of researchers who do science, and the networks
 of vendors who supply research inputs. It also shows how networks can be
 used to study a wide variety of other social science questions.
 
-In another example, we use APIs provided by publishers to describe the
+In another example, we use APIs^[Application Programming Interfaces] provided by publishers to describe the
 results generated by research funding in terms of publications and other
 measures of scientific impact, but also provide code that can be
 repurposed for many similar APIs.
@@ -588,15 +589,15 @@ Hadoop, the goal of the chapter is to provide a conceptual framework to
 the key challenges that the approach is designed to address.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure2.png" alt="The four chapters of Part I focus on data capture and curation" width="70%" />
-<p class="caption">(\#fig:fig3)The four chapters of Part I focus on data capture and curation</p>
+<img src="ChapterIntro/figures/Figure2.png" alt="The four chapters of Part I focus on *data capture* and *curation*" width="70%" />
+<p class="caption">(\#fig:fig3)The four chapters of Part I focus on *data capture* and *curation*</p>
 </div>
 
 ### Part II: Modeling and analysis
 
 The three chapters in Part II (see Figure \@ref(fig:fig4)) introduce three of the most important tools that can be used by social scientists to do new and exciting research: machine learning, text analysis, and social network analysis.
 
-[Machine Learning] introduces machine learning methods. It shows the
+[Machine Learning](#chap:ml) introduces machine learning methods. It shows the
 power of machine learning in a variety of different contexts,
 particularly focusing on clustering and classification. You will get an
 overview of basic approaches and how those approaches are applied. The
@@ -604,7 +605,7 @@ chapter builds from a conceptual framework and then shows you how the
 different concepts are translated into code. There is a particular focus
 on random forests and support vector machine (SVM) approaches.
 
-[Text Analysis] describes how social scientists can make use of
+[Text Analysis](#chap:text) describes how social scientists can make use of
 one of the most exciting advances in big data---text analysis. Vast
 amounts of data that are stored in documents can now be analyzed
 andsearched so that different types of information can be retrieved.
@@ -629,8 +630,8 @@ hierarchies that are the traditional object of inquiry of sociologists
 and organizational theorists.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure3.png" alt="The four chapters in Part II focus on data modeling and analysis" width="70%" />
-<p class="caption">(\#fig:fig4)The four chapters in Part II focus on data modeling and analysis</p>
+<img src="ChapterIntro/figures/Figure3.png" alt="The four chapters in Part II focus on data *modeling* and *analysis*" width="70%" />
+<p class="caption">(\#fig:fig4)The four chapters in Part II focus on data *modeling* and *analysis*</p>
 </div>
 
 ### Part III: Inference and ethics
@@ -670,24 +671,24 @@ that must be addressed for responsible and ethical research to take
 place.
 
 Finally, [Workbooks] provides an overview of the practical work
-that accompanies each chapter---the workbooks that are designed, using Jupyter notebooks, to enable students and interested practitioners to apply the new
+that accompanies each chapter---the workbooks that are designed, using *Jupyter notebooks*^[See jupyter.org.], to enable students and interested practitioners to apply the new
 techniques and approaches in selected chapters. We hope you have a lot
 of fun with them.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on inference and ethics" width="70%" />
-<p class="caption">(\#fig:fig5)The four chapters in Part III focus on inference and ethics</p>
+<img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on *inference* and *ethics*" width="70%" />
+<p class="caption">(\#fig:fig5)The four chapters in Part III focus on *inference* and *ethics*</p>
 </div>
 
 Resources {#sec:intro:resources}
 ---------
 
-For more information on the science of science policy, see Husbands et al.'s book for a full discussion of many issues [@husband2011science] and the online resources
+For more information on the **science of science policy**, see Husbands et al.'s book for a full discussion of many issues [@husband2011science] and the online resources
 at the eponymous website [@SOSP].
 
 This book is above all a *practical* introduction to the methods and
 tools that the social scientist can use to make sense of big data, and
-thus programming resources are also important. We make extensive use of the Python
+thus **programming** resources are also important. We make extensive use of the Python
 programming language and the MySQL database management system in both
 the book and its supporting workbooks. We recommend that any social
 scientist who aspires to work with large data sets become proficient in
@@ -696,7 +697,7 @@ fortunately, are quite accessible and are supported by excellent online
 resources. Time spent mastering them will be repaid many times over in
 more productive research.
 
-For Python, Alex Bell's Python for Economists (available online [@BellPython]) provides a wonderful 30-page introduction to the use of Python in the social sciences,
+For **Python**^[Read this! http://alexbell.net/pyseminar/pyseminar.html], Alex Bell's *Python for Economists* (available online [@BellPython]) provides a wonderful 30-page introduction to the use of Python in the social sciences,
 complete with XKCD cartoons. Economists Tom Sargent and John Stachurski
 provide a very useful set of lectures and examples at
 <http://quant-econ.net/>. For more detail, we recommend Charles
@@ -707,10 +708,10 @@ material relevant to web data (the subject of
 [Databases]). This book is also freely available online and is
 supported by excellent online lectures and exercises.
 
-For MySQL, Chapter [Databases] provides introductory material and pointers to
+For **MySQL**, Chapter [Databases] provides introductory material and pointers to
 additional resources, so we will not say more here.
 
-We also recommend that you master GitHub. A version control system is a tool
+We also recommend that you master **GitHub**. A version control system is a tool
 for keeping track of changes that have been made to a document over
 time. GitHub is a hosting service for projects that use the Git version
 control system. As Strasser explains [@GitResearch], Git/GitHub makes it
@@ -727,7 +728,7 @@ Ram [@ram2013git] provides a nice description of how Git/GitHub can be
 used to promote reproducibility and transparency in research.
 
 One more resource that is outside the scope of this book but that you
-may well want to master is the cloud [@armbrust2010view; @Lifka]. It used to
+may well want to master is the **cloud** [@armbrust2010view; @Lifka]. It used to
 be that when your data and computations became too large to analyze on
 your laptop, you were out of luck unless your employer (or a friend) had
 a larger computer. With the emergence of cloud storage and computing

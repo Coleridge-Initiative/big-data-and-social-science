@@ -1,16 +1,12 @@
 Workbooks {#chap:workbooks}
 =========
 
-***Jonathan Scott Morgan***
-
-***Christina Jones***
-
-***Ahmad Emad***
-<br><br>
+\chapterauthor{Jonathan Scott Morgan, Christina Jones, and Ahmad Emad}
+**Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
 
 This final chapter provides an overview of the Python workbooks that
 accompany each chapter. These workbooks combine text explanation and
-code you can run, implemented in Jupyter notebooks, to explain techniques and approaches
+code you can run, implemented in *Jupyter notebooks*^[See jupyter.org], to explain techniques and approaches
 selected from each chapter and to provide thorough implementation
 details, enabling students and interested practitioners to quickly get
 up to speed on and start using the technologies covered in the book. We
@@ -19,13 +15,13 @@ hope you have a lot of fun with them.
 Introduction
 ------------
 
-We provide accompanying Juptyer IPython workbooks for most chapters in
+We provide accompanying Juptyer IPython workbooks for mostchapters in
 this book. These workbooks explain techniques and approaches selected
 from each chapter and provide thorough implementation details so that
 students and interested practitioners can quickly start using the
 technologies covered within.
 
-The workbooks and related files are stored in the Big-Data-Workbooks GitHub repository, and so are freely available to be downloaded by anyone at any time and run on any
+The workbooks and related files are stored in the *Big-Data-Workbooks GitHub repository*^[github.com/BigDataSocialScience], and so are freely available to be downloaded by anyone at any time and run on any
 appropriately configured computer. These workbooks are a live set of
 documents that could potentially change over time, so see the repository
 for the most recent set of information.
