@@ -1,16 +1,8 @@
----
-title: "Text Analysis"
-author: Evgeny Klochikhin and Jordan Boyd-Graber
-output:
-  html_document:
-    df_print: paged
----
-
 Text Analysis {#chap:text}
 =============
 
-\chapterauthor{Evgeny Klochikhin and Jordan Boyd-Graber}
 **Evgeny Klochikhin and Jordan Boyd-Graber**
+
 
 This chapter provides an overview of how social scientists can make use
 of one of the most exciting advances in big data---text analysis. Vast

@@ -1,7 +1,6 @@
 Databases {#chap:db}
 =========
 
-\chapterauthor{Ian Foster and Pascal Heus}
 **Ian Foster and Pascal Heus**
 
 

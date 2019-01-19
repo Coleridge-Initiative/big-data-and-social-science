@@ -1,7 +1,6 @@
 Record Linkage {#chap:link}
 ==============
 
-\chapterauthor{Joshua Tokle and Stefan Bender}
 **Joshua Tokle and Stefan Bender**
 
 
