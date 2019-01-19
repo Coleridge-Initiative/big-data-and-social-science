@@ -1,10 +1,8 @@
 Machine Learning {#chap:ml}
 ================
 
-\chapterauthor{Rayid Ghani and Malte Schierholz}
-\vspace*{-12pt}
-\enlargethispage{6pt}
 **Rayid Ghani and Malte Schierholz**
+
 
 This chapter introduces you to the value of machine learning in the
 social sciences, particularly focusing on the overall machine learning

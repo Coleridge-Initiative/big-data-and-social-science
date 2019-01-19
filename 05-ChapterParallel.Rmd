@@ -1,7 +1,6 @@
 Programming with Big Data {#chap:parallel}
 =========================
 
-\chapterauthor{Huy Vo and Claudio Silva}
 **Huy Vo and Claudio Silva**
 
 
@@ -197,7 +196,6 @@ function.
 `("utah.edu", \[0958915\])` → `("utah.edu", 1)`
 `("nyu.edu", \[1301647\])` → `("nyu.edu", 1)`
 
-\exampend{Counting NSF awards}
 \pagebreak
 As we have seen so far, the MapReduce programming model is quite simple
 and straightforward, yet it supports a simple parallelization model. In
@@ -337,8 +335,6 @@ tasks constantly pull data from the storage cluster (the green arrow).
 This in turn leads to poor scalability; adding more nodes to the
 computing cluster would not increase its performance.
 
-\centering
-\hfill
 To solve this problem, Hadoop implements a *bring compute to the data*
 strategy that combines both computing and storage at each node of the
 cluster. In this setup, each node offers both computing power and

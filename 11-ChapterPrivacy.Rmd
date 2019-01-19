@@ -1,8 +1,8 @@
 Privacy and Confidentiality {#chap:privacy}
 ===========================
 
-\chapterauthor{Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane}
 **Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane**
+
 
 This chapter addresses the issue that sits at the core of any study of
 human beings---privacy and confidentiality. In a new field, like the one

@@ -5,11 +5,11 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Big Data and Social Science</title>
-  <meta name="description" content="Big Data and Social Science">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <title>Chapter 5 Programming with Big Data | Big Data and Social Science</title>
+  <meta name="description" content="Chapter 5 Programming with Big Data | Big Data and Social Science">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
 
-  <meta property="og:title" content="Big Data and Social Science" />
+  <meta property="og:title" content="Chapter 5 Programming with Big Data | Big Data and Social Science" />
   <meta property="og:type" content="book" />
   
   
@@ -17,7 +17,7 @@
   <meta name="github-repo" content="Coleridge-Initiative/big-data-and-social-science" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Big Data and Social Science" />
+  <meta name="twitter:title" content="Chapter 5 Programming with Big Data | Big Data and Social Science" />
   
   
   
@@ -39,6 +39,7 @@
 <link rel="next" href="chap-ml.html">
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -347,7 +348,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="chap:parallel" class="section level1">
 <h1><span class="header-section-number">Chapter 5</span> Programming with Big Data</h1>
-<p> <strong>Huy Vo and Claudio Silva</strong></p>
+<p><strong>Huy Vo and Claudio Silva</strong></p>
 <p>Big data is sometimes defined as data that are too big to fit onto the analyst’s computer. This chapter provides an overview of clever programming techniques that facilitate the use of data (often using parallel computing). While the focus is on one of the most widely used big data programming paradigms and its most popular implementation, Apache Hadoop, the goal of the chapter is to provide a conceptual framework to the key challenges that the approach is designed to address.</p>
 <div id="introduction-1" class="section level2">
 <h2><span class="header-section-number">5.1</span> Introduction</h2>
@@ -398,7 +399,7 @@ Listing 5.1. Python pseudo-code for the <code>map</code> and <code>reduce</code>
 <p><code>&quot;0958723,Roland,Mundil,rmundil@bgc.org&quot;</code> → <code>(&quot;bgc.org&quot;, 0958723)</code> <code>&quot;0958915,Randall,Irmis,irmis@umnh.utah.edu&quot;</code> → <code>(&quot;utah.edu&quot;, 0958915)</code> <code>&quot;1301647,Zaher,Hani,zh8@nyu.edu&quot;</code> → <code>(&quot;nyu.edu&quot;, 1301647)</code> <code>&quot;1316375,David,Shuster,dshuster@bgc.org&quot;</code> → <code>(&quot;bgc.org&quot;, 1316375)</code></p>
 <p>Then the tuples will be grouped by institutions and be counted by the function.</p>
 <p><code>(&quot;bgc.org&quot;, [0958723,1316375])</code> → <code>(&quot;bgc.org&quot;, 2)</code> <code>(&quot;utah.edu&quot;, \[0958915\])</code> → <code>(&quot;utah.edu&quot;, 1)</code> <code>(&quot;nyu.edu&quot;, \[1301647\])</code> → <code>(&quot;nyu.edu&quot;, 1)</code></p>
-<p> As we have seen so far, the MapReduce programming model is quite simple and straightforward, yet it supports a simple parallelization model. In fact, it has been said to be <em>too</em> simple and criticized as “a major step backwards” <span class="citation">(DeWitt and Stonebraker <a href="#ref-MapReduceBad">2008</a>)</span> for large-scale, data-intensive applications. It is hard to argue that MapReduce is offering something truly innovative when MPI has been offering similar scatter and reduce operations since 1995, and Python has had high-order functions (<code>map</code>, <code>reduce</code>, <code>filter</code>, and <code>lambda</code>) since its 2.2 release in 1994. However, the biggest strength of MapReduce is its simplicity. Its simple programming model has brought many nonexpert users to big data analysis. Its simple architecture has also inspired many developers to develop advanced capabilities, such as support for distributed computing, data partitioning, and streaming processing. (A downside of this diversity of interest is that available features and capabilities can vary considerably, depending on the specific implementation of MapReduce that is being used.)</p>
+<p>As we have seen so far, the MapReduce programming model is quite simple and straightforward, yet it supports a simple parallelization model. In fact, it has been said to be <em>too</em> simple and criticized as “a major step backwards” <span class="citation">(DeWitt and Stonebraker <a href="#ref-MapReduceBad">2008</a>)</span> for large-scale, data-intensive applications. It is hard to argue that MapReduce is offering something truly innovative when MPI has been offering similar scatter and reduce operations since 1995, and Python has had high-order functions (<code>map</code>, <code>reduce</code>, <code>filter</code>, and <code>lambda</code>) since its 2.2 release in 1994. However, the biggest strength of MapReduce is its simplicity. Its simple programming model has brought many nonexpert users to big data analysis. Its simple architecture has also inspired many developers to develop advanced capabilities, such as support for distributed computing, data partitioning, and streaming processing. (A downside of this diversity of interest is that available features and capabilities can vary considerably, depending on the specific implementation of MapReduce that is being used.)</p>
 <p>We next describe two specific implementations of the MapReduce model: Hadoop and Spark.</p>
 </div>
 <div id="apache-hadoop-mapreduce" class="section level2">
@@ -791,7 +792,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -803,6 +804,10 @@ gitbook.start({
 "edit": {
 "link": "https://github.com/Coleridge-Initiative/big-data-and-social-science/edit/master/05-ChapterParallel.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": null,
 "toc": {
@@ -818,7 +823,7 @@ gitbook.start({
     var script = document.createElement("script");
     script.type = "text/javascript";
     var src = "";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:" && /^https?:/.test(src))
       src = src.replace(/^https?:/, '');
     script.src = src;

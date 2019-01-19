@@ -1,9 +1,8 @@
 Information Visualization {#chap:viz}
 =========================
 
-\chapterauthor{M.\ Adil Yal\c{c}{\i}n and Catherine Plaisant}
-\vspace*{-6pt}
-**M. Adil Yalçın and Catherine Plaisant**
+**M. Adil Yalcin and Catherine Plaisant**
+
 
 This chapter will show you how to explore data and communicate results
 so that data can be turned into interpretable, actionable information.

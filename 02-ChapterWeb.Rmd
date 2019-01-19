@@ -1,9 +1,7 @@
 Working with Web Data and APIs {#chap:web}
 ==============================
 
-\chapterauthor{Cameron Neylon}
 **Cameron Neylon**
-
 
 
 This chapter will show you how to extract information from social media
