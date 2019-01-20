@@ -9,8 +9,8 @@ bookdown::gitbook:
   includes:
     after_body: disqus.html
 bookdown::pdf_book:
-#  includes:
-#    in_header: preamble.tex
+  includes:
+    in_header: preamble.tex
 #  latex_engine: xelatex
   keep_tex: yes
   citation_package: natbib

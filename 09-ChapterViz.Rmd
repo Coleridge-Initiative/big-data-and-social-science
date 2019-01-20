@@ -146,7 +146,6 @@ distributions of awards with formula funding, known as *Hatch funding*.
 The analyst can explore trends in new or old awards, funding resources,
 and other attributes in this rich award portfolio.
 
-\afterpage{\clearpage}
 ```{r fig9-3a, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Charting interface of Tableau'}
 knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
 ```
@@ -371,7 +370,6 @@ locations, such as flights to/from many regions of the world. Spatial
 data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
-\afterpage{\clearpage}
 ```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
 knitr::include_graphics("ChapterViz/figures/fig9-5.png")
 ```

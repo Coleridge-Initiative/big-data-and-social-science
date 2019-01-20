@@ -67,7 +67,6 @@ $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine].
 
 \enlargethispage{6pt}
-\afterpage{\clearpage}
 
 <div class="F00">
 <p><strong>Box 6.1: Commercial machine learning examples</strong></p>

@@ -729,7 +729,7 @@ ${\rm Var}(b_j ) =
 Finally, for the $r$th unit within the $j$th source, let
 $\varepsilon_{rj} = b_j + e_{rj}$. Then it follows that
 $$\label{eq:10-1.2}
-%\begin{array}{lcl@{\quad}l}
+\begin{array}{lcl@{\quad}l}
 \mathrm{Cov}(\varepsilon_{rj} ,\varepsilon_{sk}) =
 \begin{cases}
 \sigma_b^2 + \sigma_\varepsilon^2 & \text{for } r = s,j = k, \\
@@ -738,7 +738,7 @@ $$\label{eq:10-1.2}
 % &=&
  0 & \text{for } r \ne s,j \ne k.
  \end{cases}
-%\end{array}$$ The case where $\sigma_b^2 = 0$ corresponds to the
+\end{array}$$ The case where $\sigma_b^2 = 0$ corresponds to the
 uncorrelated error model (i.e., $b_j = 0$) and thus $\varepsilon_{rj}$
 is purely random noise.
 
