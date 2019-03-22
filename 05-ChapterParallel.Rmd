@@ -1,53 +1,78 @@
-Programming with Big Data {#chap:parallel}
+Scaling up through Parallel and Distributed Computing {#chap:parallel}
 =========================
 
 **Huy Vo and Claudio Silva**
 
 
-Big data is sometimes defined as data that are too big to fit onto the
-analyst's computer. This chapter provides an overview of clever
-programming techniques that facilitate the use of data (often using
-parallel computing). While the focus is on one of the most widely used
-big data programming paradigms and its most popular implementation,
-Apache Hadoop, the goal of the chapter is to provide a conceptual
+ This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using
+parallel computing). While the focus is on widely used
+big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual
 framework to the key challenges that the approach is designed to
-address.
+Address.
+
+This chapter will describe:
+Why we need mapreduce
+What is mapreduce
+How to use it
+Hadoop
+spark
+Benefits and challenges
+Examples
+
+
+
+
+Table
+Where the computer is
+Where the data is: one disk, or distributed
+
+
+Single processor
+multiprocessor
+distributed/parallel
+laptop/Desktop
+
+
+
+
+mapreduce/hadoop
+Server in IT center
+
+
+
+
+mapreduce/hadoop
+Cloud - AWS, Azure, Google
+
+
+
+
+mapreduce/hadoop
+
+
 
 Introduction
 ------------
 
-There are many definitions of big data, but perhaps the most popular one
-is from Laney's report [@laney] in 2001 that defines big data as data
-with the three Vs: *volume* (large data sets), *velocity* (real-time
-streaming data), and *variety* (various data forms). Other authors have
-since proposed additional Vs for various purposes: *veracity*, *value*,
-*variability*, and *visualization*. It is common nowadays to see big
-data being associated with five or even seven Vs--- the big data
-definition itself is also getting "big" and getting difficult to keep
-track. A simpler but also broader definition of big data is data sets
-that are "so large or complex that traditional data processing
-applications are inadequate," as described by Wikipedia. We note that in
-this case, the definition adapts to the task at hand, and it is also
-tool dependent.
+Why we need parallel computing for social sciences?
+What happens when you use traditional programming approaches with data that’s too large to fit into memory on one computer? Or when doing analysis on one computer will just take too long?
+Today, when dealing with these scenarios, social scientists might perform sampling and analyze a subset of the data or reduce the type and size of analysis that are done. The techniques described in this chapter allows us to scale the analysis by using all the data and run a larger number of …
+Network analysis
+Record linkage
+ML methods can be parallelized
 
-For example, we could consider a problem to involve big data if a
-spreadsheet gets so large that Excel can no longer load the entire data
-set into memory for analysis---or if there are so many features in a
-data set that a machine learning classifier would take an unreasonable
-amount of time (say days) to finish instead of a few seconds or minutes^[See Chapter 6, in particular Section 6.5.2.].
-In such cases, the analyst has to develop customized solutions to
-interrogate the data, often by taking advantage of parallel computing.
-In particular, one may have to get a larger computer, with more memory
-and/or stronger processors, to cope with expensive computations; or get
-a cluster of machines to speed up the computing time by distributing the
-workload among them. While the former solution would not scale well due
-to the limited amount of processors a single computer can have, the
-latter solution needs to deal with nontraditional programming
-infrastructures. Big data technologies, in a nutshell, are the
-technologies that make these infrastructures more usable by users
-without a computer science background.
 
-Parallel computing and big data are hardly new ideas for dealing with
+This chapter will describe:
+Why we need mapreduce
+What is mapreduce
+How to use it
+Hadoop
+spark
+Benefits and challenges
+Examples
+
+
+Parallel computing to deal with large amounts of data are hardly new ideas for dealing with
 computational challenges. Scientists have routinely been working on data
 sets much larger than a single machine can handle for several decades,
 especially at the DOE National Laboratories
@@ -56,49 +81,12 @@ computing has been a major technology trend. This is also demonstrated
 by the history of research in distributed computing and data management
 going back to the 1980s [@CSConf].
 
-There are major technological differences between this type of big data
-technology and what is covered in this chapter. True parallel computing
-involves designing clever parallel algorithms, often from scratch,
-taking into account machine-dependent constraints to achieve maximum
-performance from the particular architecture. They are often implemented
-using message passing libraries, such as implementations of the Message
-Passing Interface (MPI) standard [@mpi] (available since the mid-1990s).
-Often the expectation is that the code developed will be used for
-substantial computations. In that scenario it makes sense to optimize a
-code for maximum performance knowing the same code will be used
-repeatedly. Contrast that with big data for exploration, where we might
-need to keep changing the analysis code very often. In this case, what
-we are trying to optimize is the analyst's time, not computing time.
+There are many ways to do distributed and parallel computing, ranging from completely flexible (but more complex to use) approaches such as Message Passing Interface (MPI) [@mpi] to more restrictive (but much easier to use) approaches such as MapReduce. MPI allows you to do anything with as much efficiency as your MPI skills allow you to code while MapReduce allows a more restrictive set of analysis to be done (possibly less efficiently) but is much easier to learn and implement. 
 
-With storage and networking getting significantly cheaper and faster,
-big data sets could easily become available to data enthusiasts with
-just a few mouse clicks, e.g., the Amazon Web Service Public Data Sets
-[@AWSDataSets]. These enthusiasts may be policymakers, government
-employees, or managers who would like to draw insights and (business)
-value from big data. Thus, it is crucial for big data to be made
-available to nonexpert users in such a way that they can process the
-data without the need for a supercomputing expert. One such approach is
-to build big data frameworks within which commands can be implemented
-just as they would in a small data framework. Also, such a framework
-should be as simple as possible, even if not as efficient as
-custom-designed parallel solutions. Users should expect that if their
-code works within these frameworks for small data, it will also work for
-big data.
-
-In order to achieve scalability for big data, many frameworks only
-implement a small subset of data operations and fully automate the
-parallelism of these operations. Users are expected to develop their
-codes using only the subset if they expect their code to scale to large
-data sets. MapReduce, one of the most widely used big data programming
-paradigms, is no exception to this rule. As its name suggests, the
-framework only supports two operations: map and reduce. The next sections will
-provide an overview of MapReduce and its most popular implementation,
-Apache Hadoop.
-
-The MapReduce programming model {#sec:intro}
+MapReduce{#sec:intro}
 -------------------------------
-
-The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
+The MapReduce framework only supports two operations: map and reduce. We provide an overview of the MapReduce paradigm and its most popular implementation, Apache Hadoop.
+MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
 similar approaches first described in the early 1980s. MapReduce was
 indeed inspired by the *map* and *reduce* functions of functional
@@ -205,35 +193,20 @@ applications. It is hard to argue that MapReduce is offering something
 truly innovative when MPI has been offering similar scatter and reduce
 operations since 1995, and Python has had high-order functions (`map`, `reduce`, `filter`, and `lambda`) since its 2.2 release in 1994. However, the biggest strength of
 MapReduce is its simplicity. Its simple programming model has brought
-many nonexpert users to big data analysis. Its simple architecture has
+many non-expert users to big data analysis. Its simple architecture has
 also inspired many developers to develop advanced capabilities, such as
 support for distributed computing, data partitioning, and streaming
 processing. (A downside of this diversity of interest is that available
 features and capabilities can vary considerably, depending on the
 specific implementation of MapReduce that is being used.)
 
-We next describe two specific implementations of the MapReduce model:
-Hadoop and Spark.
+As mentioned above, MapReduce is a programming model. In order to implement an analysis in MapReduce, we need to select an implementation of MapReduce. Two most commonly used n implementations of the MapReduce model are Hadoop and Spark, that we describe in more detail below.
 
 Apache Hadoop MapReduce
 -----------------------
 
-The names MapReduce and Apache Hadoop (or Hadoop)^[The term *Hadoop* refers to the creator’s son’s toy elephant.] are often used
-interchangeably, but they are conceptually different. MapReduce is
-simply a programming paradigm with a layer of abstraction that allows a
-set of data processing pipelines to be expressed without too much
-tailoring for how it will be executed exactly. The MapReduce model tells
-us which class of data structure (key--value pairs) and data
-transformations (map and reduce) it is supporting; however, it does not
-specifically state how the framework should be implemented; for example,
-it does not specify how data should be stored or how the computation be
-executed (in particular, parallelized). Hadoop [@White2012], on the
-other hand, is a specific implementation of MapReduce with exact
-specifications of how data and computation are handled inside the
-system.
 
-Hadoop was originally designed for batch data processing at scale, with
-the target of being able to run in environments with thousands of
+Apache Hadoop (or Hadoop)^[The term *Hadoop* refers to the creator’s son’s toy elephant.] was originally designed to run in environments with thousands of
 machines. Supporting such a large computing environment puts several
 constraints on the system; for instance, with so many machines, the
 system had to assume computing nodes would fail. Hadoop is an enhanced
@@ -245,11 +218,8 @@ computation to be moved to the data during execution.
 
 ### The Hadoop Distributed File System
 
-The Hadoop Distributed File System [@shvachko2010hadoop] is arguably the
-most important component that Hadoop added to the MapReduce framework.
-In a nutshell, it is a distributed file system that stripes data across
-all the nodes of a Hadoop cluster. HDFS splits large data files into
-smaller blocks which are managed by different nodes in the cluster. Each
+The Hadoop Distributed File System [@Hadoop][@HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into
+smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
 block is also replicated across several nodes as an attempt to ensure
 that a full copy of the data is still available even in the case of
 computing node failures. The block size as well as the number of
@@ -268,47 +238,34 @@ Note that data blocks are replicated and distributed across several
 machines. This could create a problem for users, because if they had to
 manage the data manually, they might, for example, have to access more
 than one machine to fetch a large data file. Fortunately, Hadoop
-provides infrastructure for managing this complexity, including command
+provides infrastructure for managing this complexity seamlessly, including command
 line programs as well as an API that users can employ to interact with
-HDFS as if it were a local file system.
-
-This is one example that reinforces our discussion on big data
-technology being all about making things work seamlessly regardless of
-the computational environment; it should be possible for the user to use
-the system as though they are using their local workstation. Hadoop and
-HDFS are great examples of this approach. For example, one can run and
-to list and create a directory on HDFS, or even use to inspect file
-contents as one would expect in a Linux file system. The following code
+HDFS as if it were a local file system. For example, one can run simple linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
+contents the same way as one would do in a Linux file system. The following code
 shows some examples of interacting with HDFS.
 
 ``` {#lst:hdfs style="PythonStyleInLine" label="lst:hdfs"}
-# Creating a temporary folder
-hadoop dfs -mkdir /tmp/mytmp
+# Creating a folder
+hadoop dfs -mkdir /hadoopiseasy
 
 # Upload a CSV file from our local machine to HDFS
-hadoop dfs -put myfile.csv /tmp/mytmp
+hadoop dfs -put importantdata.csv /hadoopiseasy
 
-# Listing all files under mytmp folder
-hadoop dfs -ls /tmp/mytmp
-
-# Upload another file with five replications and 128MB per block
-hadoop -D dfs.replication=5 -D dfs.block.size=128M \
-       dfs -put mylargefile.csv /tmp/mytmp
+# Listing all files under hadoopiseasy folder
+hadoop dfs -ls /hadoopiseasy
 
 # Download a file to our local machine
-hadoop dfs -get /tmp/mytmp/myfile.csv .
+hadoop dfs -get /hadoopiseasy/importantdata.csv
 ```
 
-### Hadoop: Bringing compute to the data
+### Hadoop Setup: Bringing compute to the data
 
-The configuration of parallel computing infrastructure is a fairly
-complex task. At the risk of oversimplifying, we consider the computing
-environment as comprising a *compute cluster* with substantial computing
-power (e.g., thousands of computing cores), and a *storage cluster* with
-petabytes of disk space, capable of storing and serving data quickly to
-the compute cluster. These two clusters have quite different hardware
-specifications: the first is optimized for CPU performance and the
-second for storage occupancy. The two systems are typically configured
+There are two parts of the computing environment when using Hadoop: 
+a *compute cluster* with substantial computing
+power (e.g., thousands of computing cores)
+2. a *storage cluster* with lots of disk space, capable of storing and serving data quickly to the compute cluster. 
+
+These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured
 as separate physical hardware.
 
 ```{r fig5_1b, out.width = '70%', fig.align = 'center', echo = FALSE}
@@ -323,7 +280,7 @@ requests to run an intensive task on a particular data set, the system
 will first reserve a set of computing nodes. Then the data are
 partitioned and copied from the storage server into these computing
 nodes before the task is executed. This process is illustrated in
-Figure \@ref(fig:fig5-1a) (top). This computing model will be referred
+Figure \@ref(fig:fig5-1a) (top). This computing model will be referred
 to as *bringing data to computation*. In this model, if a data set is
 being analyzed in multiple iterations, it is very likely that the data
 will be copied multiple times from the storage cluster to the compute
@@ -339,7 +296,7 @@ To solve this problem, Hadoop implements a *bring compute to the data*
 strategy that combines both computing and storage at each node of the
 cluster. In this setup, each node offers both computing power and
 storage capacity. As shown in
-Figure \@ref(fig:fig5-1a) (bottom), when users submit a task to be run on
+Figure \@ref(fig:fig5-1a) (bottom), when users submit a task to be run on
 a data set, the scheduler will first look for nodes that contain the
 data, and if the nodes are available, it will schedule the task to run
 directly on those nodes. If a node is busy with another task, data will
@@ -358,6 +315,39 @@ traditional high-performance computing environment is probably best
 since it tends to spend more resources on CPU cores. It should be clear
 now that the Hadoop model has hardware implications, and computer
 architects have optimized systems for data-intensive computing.
+
+### Hardware provisioning
+
+Hadoop requires a distributed cluster of machines to operate
+efficiently. (It can be set up to run entirely on a single computer, but
+this should only be done for technology demonstration purposes.) This is
+mostly because the MapReduce performance heavily depends on the total
+I/O throughput (i.e., disk read and write) of the entire system. Having
+a distributed cluster, where each machine has its own set of hard
+drives, is one of the most efficient ways to maximize this throughput.
+
+A typical Hadoop cluster consists of two types of machine: masters and
+workers. Master machines are those exclusively reserved for running
+services that are critical to the framework operations. Some examples
+are the NameNode and the JobTracker services, which are tasked to manage
+how data and tasks are distributed among the machines, respectively. The
+worker machines are reserved for data storage and for running actual
+computation tasks (i.e., map and reduce). It is normal to have worker
+machines that can be included or removed from an operational cluster on
+demand. This ability to vary the number of worker nodes makes the
+overall system more tolerant of failure. However, master machines are
+usually required to be running uninterrupted.
+
+Provisioning and configuring the hardware for Hadoop, like any other
+parallel computing, are some of the most important and complex tasks in
+setting up a cluster, and they often require a lot of experience and
+careful consideration. Major big data vendors provide guidelines and
+tools to facilitate the process
+[@ApacheAmbari; @ClouderaManager; @Provisioning]. most decisions will be
+based on the types of analysis to be run on the cluster, for which only
+you, as the user, can provide the best input.
+
+### Programming in Hadoop
 
 Now that we are equipped with the knowledge that Hadoop is a MapReduce
 implementation that runs on HDFS and a bring-compute-to-the-data model,
@@ -423,38 +413,6 @@ Hadoop.
 knitr::include_graphics("ChapterParallel/figures/hadoop.png")
 ```
 
-
-### Hardware provisioning
-
-Hadoop requires a distributed cluster of machines to operate
-efficiently. (It can be set up to run entirely on a single computer, but
-this should only be done for technology demonstration purposes.) This is
-mostly because the MapReduce performance heavily depends on the total
-I/O throughput (i.e., disk read and write) of the entire system. Having
-a distributed cluster, where each machine has its own set of hard
-drives, is one of the most efficient ways to maximize this throughput.
-
-A typical Hadoop cluster consists of two types of machine: masters and
-workers. Master machines are those exclusively reserved for running
-services that are critical to the framework operations. Some examples
-are the NameNode and the JobTracker services, which are tasked to manage
-how data and tasks are distributed among the machines, respectively. The
-worker machines are reserved for data storage and for running actual
-computation tasks (i.e., map and reduce). It is normal to have worker
-machines that can be included or removed from an operational cluster on
-demand. This ability to vary the number of worker nodes makes the
-overall system more tolerant of failure. However, master machines are
-usually required to be running uninterrupted.
-
-Provisioning and configuring the hardware for Hadoop, like any other
-parallel computing, are some of the most important and complex tasks in
-setting up a cluster, and they often require a lot of experience and
-careful consideration. Major big data vendors provide guidelines and
-tools to facilitate the process
-[@ApacheAmbari; @ClouderaManager; @Provisioning]. most decisions will be
-based on the types of analysis to be run on the cluster, for which only
-you, as the user, can provide the best input.
-
 ### Programming language support
 
 \enlargethispage{6pt}
@@ -515,9 +473,11 @@ They not only have to split their code into separate mapper and reducer
 programs, but also need to learn Java if they want to work with
 nontextual data.
 
-### Fault tolerance
 
-By default, HDFS uses checksums to enforce data integrity on its file
+### Benefits and Limitations of Hadoop
+
+
+-   **Fault Tolerance**: By default, HDFS uses checksums to enforce data integrity on its file
 system use data replication for recovery of potential data losses.
 Taking advantage of this, Hadoop also maintains fault tolerance of
 MapReduce jobs by storing data at every step of a MapReduce job to HDFS,
@@ -530,11 +490,6 @@ also be customized for each job. Though the mechanism is simple, it
 works well on thousands of machines. It is indeed highly robust because
 of the simplicity of the model.
 
-### Limitations of Hadoop
-
-Hadoop is a great system, and probably the most widely used MapReduce
-implementation. Nevertheless, it has important limitations, as we now
-describe.
 
 -   **Performance**: Hadoop has proven to be a scalable implementation that can run on
     thousands of cores. However, it is also known for having a
@@ -581,7 +536,7 @@ describe.
     above, and it is not easy to integrate with existing customized
     Hadoop applications.
 
-Apache Spark
+Other MapReduce Implementations
 ------------
 
 In addition to Apache Hadoop, other notable MapReduce implementations
@@ -603,6 +558,8 @@ fit. However, it has significantly fewer supporting applications, such
 as access control and workflow integration, as well as a smaller
 developing community. This is why the top three big data platforms,
 Cloudera, Hortonworks, and MapR, still build primarily on Hadoop.
+
+## Apache Spark
 
 Apache Spark is another implementation that aims to support beyond
 MapReduce. The framework is centered around the concept of resilient
@@ -783,20 +740,15 @@ Summary
 -------
 
 
-Big data means that it is necessary to both store very large collections
+Analyzing large amounts of data means that it is necessary to both store very large collections
 of data and perform aggregate computations on those data. This chapter
-spelled out an important data storage approach (the Hadoop Distributed
+Describes an important data storage approach (the Hadoop Distributed
 File System) and a way of processing large-scale data sets (the
 MapReduce model, as implemented in both Hadoop and Spark). This
-in-database processing model enables not only high-performance analytics
-but also the provision of more flexibility for analysts to work with
-data. Instead of going through a database administrator for every data
-gathering, data ingestion, or data transformation task similar to a
-traditional data warehouse approach, the analysts rather "own" the data
-in the big data environment. This increases the analytic throughput as
+model enables not only large-scale data analysis but also provides easy to use implementations for more flexibility for social scientists to work with
+large amounts of data. This increases the analytic throughput as
 well as the time to insight, speeding up the decision-making process and
-thus increasing the business impact, which is one of the main drivers
-for big data analytics.
+thus increasing impact.
 
 Resources
 ---------
@@ -807,9 +759,3 @@ See, for example, the tutorials on the Apache Hadoop [@AHweb] and Spark
 science [@socialhadoop], and Lin and Dyer discuss the use of MapReduce
 for text analysis [@lin2010data].
 
-We have not discussed here how to deal with data that are located
-remotely from your computer. If such data are large, then moving them
-can be an arduous task. The Globus transfer service
-[@chard2014efficient] is commonly used for the transfer and sharing of
-such data. It is available on many research research systems and is easy
-to install on your own computer.
