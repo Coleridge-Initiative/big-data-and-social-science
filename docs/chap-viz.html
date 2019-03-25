@@ -208,20 +208,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="chap-db.html"><a href="chap-db.html#summary-1"><i class="fa fa-check"></i><b>4.8</b> Summary</a></li>
 <li class="chapter" data-level="4.9" data-path="chap-db.html"><a href="chap-db.html#resources-1"><i class="fa fa-check"></i><b>4.9</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Programming with Big Data</a><ul>
+<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> The MapReduce programming model</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
-<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop: Bringing compute to the data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
 <li class="chapter" data-level="5.3.3" data-path="chap-parallel.html"><a href="chap-parallel.html#hardware-provisioning"><i class="fa fa-check"></i><b>5.3.3</b> Hardware provisioning</a></li>
-<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.4</b> Programming language support</a></li>
-<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#fault-tolerance"><i class="fa fa-check"></i><b>5.3.5</b> Fault tolerance</a></li>
-<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Limitations of Hadoop</a></li>
+<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-in-hadoop"><i class="fa fa-check"></i><b>5.3.4</b> Programming in Hadoop</a></li>
+<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.5</b> Programming language support</a></li>
+<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#benefits-and-limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Benefits and Limitations of Hadoop</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.4</b> Apache Spark</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.6</b> Resources</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#other-mapreduce-implementations"><i class="fa fa-check"></i><b>5.4</b> Other MapReduce Implementations</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.5</b> Apache Spark</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
 <li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
@@ -416,7 +417,7 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box 9.1<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>).</p>
+(see Box 9.1<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>).</p>
 <div class="F00">
 <p>
 <strong>Box 9.1:</strong> The development of an effective visualization is an iterative process that generally includes the following steps:
@@ -475,7 +476,7 @@ information.</p>
 <p>Another goal of visualization is to enable <em>interactive exploratory
 analysis</em> for casual users as well as professional analysts. One casual
 example is BabyNameVoyager <span class="citation">(Harrison, Reinecke, and Chang, <a href="#ref-babynamevoyager">n.d.</a>)</span>, which lets users type in
-a name and see a graph of its popularity over the past century<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>.</p>
+a name and see a graph of its popularity over the past century<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-2"></span>
 <img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
 <p class="caption">
@@ -906,7 +907,7 @@ Figure 9.11: NodeXL showing innovation networks of the Great Lakes manufacturing
 </p>
 </div>
 
-<p>Network data encode relationships between items<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>: for example, social
+<p>Network data encode relationships between items<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
 patterns (such as emails). The network overviews attempt to reveal the
@@ -957,7 +958,7 @@ summary of the insights gathered by analysts.</p>
 <h3><span class="header-section-number">9.3.6</span> Text data</h3>
 <p>Text is usually preprocessed (for word/paragraph counts, sentiment
 analysis, categorization, etc.) to generate metadata about text
-segments, which are then visualized<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>. Simple visualizations like tag
+segments, which are then visualized<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>. Simple visualizations like tag
 clouds display statistics about word usage in a text collection, or can
 be used to compare two collections or text segments. While visually
 appealing, they can easily be misinterpreted and are often replaced by
@@ -1264,11 +1265,11 @@ example, the Python Plotly library) can be used.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="53">
-<li id="fn53"><p>See Chapters 2, 3, 4, and
+<ol start="52">
+<li id="fn52"><p>See Chapters 2, 3, 4, and
 5 for an overview of collecting, merging, storing, and
-processing data sets.<a href="chap-viz.html#fnref53" class="footnote-back">↩</a></p></li>
-<li id="fn54"><p>As the baby name is
+processing data sets.<a href="chap-viz.html#fnref52" class="footnote-back">↩</a></p></li>
+<li id="fn53"><p>As the baby name is
 typed letter by letter, BabyNameVoyager visualizes
 the popularity of all the
 names starting with the
@@ -1282,9 +1283,9 @@ that Joyce and Joan were
 popular girl names in the
 1930s, and the use of
 “John” has declined since
-the 1960s.<a href="chap-viz.html#fnref54" class="footnote-back">↩</a></p></li>
-<li id="fn55"><p>See Chapter 8.<a href="chap-viz.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>See Chapter 7 for text analysis approaches.<a href="chap-viz.html#fnref56" class="footnote-back">↩</a></p></li>
+the 1960s.<a href="chap-viz.html#fnref53" class="footnote-back">↩</a></p></li>
+<li id="fn54"><p>See Chapter 8.<a href="chap-viz.html#fnref54" class="footnote-back">↩</a></p></li>
+<li id="fn55"><p>See Chapter 7 for text analysis approaches.<a href="chap-viz.html#fnref55" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

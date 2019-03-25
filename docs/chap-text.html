@@ -208,20 +208,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="chap-db.html"><a href="chap-db.html#summary-1"><i class="fa fa-check"></i><b>4.8</b> Summary</a></li>
 <li class="chapter" data-level="4.9" data-path="chap-db.html"><a href="chap-db.html#resources-1"><i class="fa fa-check"></i><b>4.9</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Programming with Big Data</a><ul>
+<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> The MapReduce programming model</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
-<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop: Bringing compute to the data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
 <li class="chapter" data-level="5.3.3" data-path="chap-parallel.html"><a href="chap-parallel.html#hardware-provisioning"><i class="fa fa-check"></i><b>5.3.3</b> Hardware provisioning</a></li>
-<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.4</b> Programming language support</a></li>
-<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#fault-tolerance"><i class="fa fa-check"></i><b>5.3.5</b> Fault tolerance</a></li>
-<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Limitations of Hadoop</a></li>
+<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-in-hadoop"><i class="fa fa-check"></i><b>5.3.4</b> Programming in Hadoop</a></li>
+<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.5</b> Programming language support</a></li>
+<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#benefits-and-limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Benefits and Limitations of Hadoop</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.4</b> Apache Spark</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.6</b> Resources</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#other-mapreduce-implementations"><i class="fa fa-check"></i><b>5.4</b> Other MapReduce Implementations</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.5</b> Apache Spark</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
 <li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
@@ -388,7 +389,7 @@ computer-aided <em>text analysis</em>. Text data can be used to “conventional�
 data sources, such as surveys and administrative data, since the words
 spoken or written by individuals often provide more nuanced and
 unanticipated insights.
-Chapter <a href="chap-link.html#chap:link">Record Linkage</a><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a> discusses how to link data to create larger, more
+Chapter <a href="chap-link.html#chap:link">Record Linkage</a><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a> discusses how to link data to create larger, more
 diverse data sets. The linkage data sets need not just be numeric, but
 can also include data sets consisting of text data.</p>
 <hr />
@@ -434,11 +435,11 @@ provides quick insights into documents written in other</p></li>
 <p>Human language is complex and nuanced, which makes analysis difficult.
 We often make simplifying assumptions: we assume our input is perfect
 text; we ignore humor <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span> and deception <span class="citation">(Niculae et al. <a href="#ref-niculae-15">2015</a>; Ott et al. <a href="#ref-ott-11">2011</a>)</span>;
-and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>.</p>
+and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
 <p>Recognizing this complexity, the goal of text mining is to reduce the
 complexity of text and extract important messages in a comprehensible
 and meaningful way. This objective is usually achieved through text
-categorization or automatic classification<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. These tools can be used in
+categorization or automatic classification<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. These tools can be used in
 multiple applications to gain salient insights into the relationships
 between words and documents. Examples include using machine learning to
 analyze the flow and topic segmentation of political debates and
@@ -472,7 +473,7 @@ robustness and utility of derived results.</p>
 <div id="processing-text-data" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Processing text data</h3>
 <p>The first important step in working with text data is cleaning and
-processing<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>. Textual data are often messy and unstructured, which makes
+processing<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. Textual data are often messy and unstructured, which makes
 many researchers and practitioners overlook their value. Depending on
 the source, cleaning and processing these data can require varying
 amounts of effort but typically involve a set of established techniques.</p>
@@ -567,7 +568,7 @@ process can be helpful.</p>
 <div id="how-much-is-a-word-worth" class="section level3">
 <h3><span class="header-section-number">7.2.2</span> How much is a word worth?</h3>
 <p>Not all words are worth the same; in an article about electronics,
-“capacitor” is more important than “aspect.” Appropriately weighting<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a> and
+“capacitor” is more important than “aspect.” Appropriately weighting<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a> and
 calibrating words is important for both human and machine consumers of
 text data: humans do not want to see “the” as the most frequent word of
 every document in summaries, and classification algorithms benefit from
@@ -1137,7 +1138,7 @@ briefly discuss some of the most widely used approaches to process and
 understand natural language texts.</p>
 <p>In contrast to the <em>unsupervised</em> approaches discussed above, most
 techniques in natural language processing are <em>supervised</em> machine
-learning algorithms<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>. Supervised machine learning produce labels <span class="math inline">\(y\)</span>
+learning algorithms<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>. Supervised machine learning produce labels <span class="math inline">\(y\)</span>
 given inputs <span class="math inline">\(x\)</span>—the algorithm’s job is to learn how to automatically
 produce correct labels given automatic inputs <span class="math inline">\(x\)</span>.</p>
 <p>However, the algorithm must have access to many examples of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>,
@@ -1206,7 +1207,7 @@ semantic meanings and context.</p>
 tools used by social scientists in their text mining exercises
 <span class="citation">(Stemler <a href="#ref-Stemler2001">2001</a>; Glänzel <a href="#ref-glanzel-12">2012</a>)</span>. However, they are rarely presented with
 robust evaluation metrics, such as type I and type II error rates, when
-retrieving data for further analysis<a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>. For example, bibliometricians
+retrieving data for further analysis<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>. For example, bibliometricians
 often rely on search strings derived from expert interviews and
 workshops. However, it is hard to certify that those search strings are
 optimal. For instance, in nanotechnology research, Porter et
@@ -1610,18 +1611,18 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 </div>
 <div class="footnotes">
 <hr />
-<ol start="40">
-<li id="fn40"><p>See Chapter 3.<a href="chap-text.html#fnref40" class="footnote-back">↩</a></p></li>
-<li id="fn41"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken
-language into text.<a href="chap-text.html#fnref41" class="footnote-back">↩</a></p></li>
-<li id="fn42"><p>Classification, a machine
-learning method, is discussed in Chapter 6.<a href="chap-text.html#fnref42" class="footnote-back">↩</a></p></li>
-<li id="fn43"><p>Cleaning and processing are discussed extensively in
-Chapter 3.<a href="chap-text.html#fnref43" class="footnote-back">↩</a></p></li>
-<li id="fn44"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref44" class="footnote-back">↩</a></p></li>
-<li id="fn45"><p>Chapter 6 reviews supervised machine learning approaches.<a href="chap-text.html#fnref45" class="footnote-back">↩</a></p></li>
-<li id="fn46"><p>Chapter 10 discusses
-how to measure and diagnose errors in big data.<a href="chap-text.html#fnref46" class="footnote-back">↩</a></p></li>
+<ol start="39">
+<li id="fn39"><p>See Chapter 3.<a href="chap-text.html#fnref39" class="footnote-back">↩</a></p></li>
+<li id="fn40"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken
+language into text.<a href="chap-text.html#fnref40" class="footnote-back">↩</a></p></li>
+<li id="fn41"><p>Classification, a machine
+learning method, is discussed in Chapter 6.<a href="chap-text.html#fnref41" class="footnote-back">↩</a></p></li>
+<li id="fn42"><p>Cleaning and processing are discussed extensively in
+Chapter 3.<a href="chap-text.html#fnref42" class="footnote-back">↩</a></p></li>
+<li id="fn43"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref43" class="footnote-back">↩</a></p></li>
+<li id="fn44"><p>Chapter 6 reviews supervised machine learning approaches.<a href="chap-text.html#fnref44" class="footnote-back">↩</a></p></li>
+<li id="fn45"><p>Chapter 10 discusses
+how to measure and diagnose errors in big data.<a href="chap-text.html#fnref45" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

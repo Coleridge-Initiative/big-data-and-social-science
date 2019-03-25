@@ -208,20 +208,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="4.8" data-path="chap-db.html"><a href="chap-db.html#summary-1"><i class="fa fa-check"></i><b>4.8</b> Summary</a></li>
 <li class="chapter" data-level="4.9" data-path="chap-db.html"><a href="chap-db.html#resources-1"><i class="fa fa-check"></i><b>4.9</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Programming with Big Data</a><ul>
+<li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> The MapReduce programming model</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
-<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop: Bringing compute to the data</a></li>
+<li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
 <li class="chapter" data-level="5.3.3" data-path="chap-parallel.html"><a href="chap-parallel.html#hardware-provisioning"><i class="fa fa-check"></i><b>5.3.3</b> Hardware provisioning</a></li>
-<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.4</b> Programming language support</a></li>
-<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#fault-tolerance"><i class="fa fa-check"></i><b>5.3.5</b> Fault tolerance</a></li>
-<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Limitations of Hadoop</a></li>
+<li class="chapter" data-level="5.3.4" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-in-hadoop"><i class="fa fa-check"></i><b>5.3.4</b> Programming in Hadoop</a></li>
+<li class="chapter" data-level="5.3.5" data-path="chap-parallel.html"><a href="chap-parallel.html#programming-language-support"><i class="fa fa-check"></i><b>5.3.5</b> Programming language support</a></li>
+<li class="chapter" data-level="5.3.6" data-path="chap-parallel.html"><a href="chap-parallel.html#benefits-and-limitations-of-hadoop"><i class="fa fa-check"></i><b>5.3.6</b> Benefits and Limitations of Hadoop</a></li>
 </ul></li>
-<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.4</b> Apache Spark</a></li>
-<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.5</b> Summary</a></li>
-<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.6</b> Resources</a></li>
+<li class="chapter" data-level="5.4" data-path="chap-parallel.html"><a href="chap-parallel.html#other-mapreduce-implementations"><i class="fa fa-check"></i><b>5.4</b> Other MapReduce Implementations</a></li>
+<li class="chapter" data-level="5.5" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-spark"><i class="fa fa-check"></i><b>5.5</b> Apache Spark</a></li>
+<li class="chapter" data-level="5.6" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.6</b> Summary</a></li>
+<li class="chapter" data-level="5.7" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
 <li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
@@ -554,7 +555,7 @@ is relatively rare to analyze untransformed two-mode network data.
 Instead, most analyses take advantage of the fact that such networks are
 <em>dual</em> <span class="citation">(White, Boorman, and Breiger <a href="#ref-white1976social">1976</a>)</span>. In other words, a two-mode network connecting
 grants and people can be conceptualized (and analyzed) as two one-mode
-networks, or <em>projections</em><a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.</p>
+networks, or <em>projections</em><a href="#fn46" class="footnote-ref" id="fnref46"><sup>46</sup></a>.</p>
 </div>
 <div id="inducing-one-mode-networks-from-two-mode-data" class="section level3">
 <h3><span class="header-section-number">8.2.2</span> Inducing one-mode networks from two-mode data</h3>
@@ -738,7 +739,7 @@ original two-mode person-by-grants data. In constructing these networks
 I assume that a tie exists between two university research employees
 when they are paid any wages from the same grant during the same year.
 Other time frames or thresholds might be used to define ties if
-appropriate for particular analyses<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.</p>
+appropriate for particular analyses<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>.</p>
 </div>
 </div>
 <div id="network-measures" class="section level2">
@@ -752,7 +753,7 @@ individual or group are a function of the complete pattern of
 connections among them. In other words, the explanatory power of
 networks is driven as much by the pathways that <em>indirectly</em> connect
 nodes as by the particular relationships that <em>directly</em> link members of
-a given dyad. Indirect ties create reachability in a network<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>.</p>
+a given dyad. Indirect ties create reachability in a network<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.</p>
 <div id="reachability" class="section level3">
 <h3><span class="header-section-number">8.3.1</span> Reachability</h3>
 <p>Two nodes are said to be reachable when they are connected by an
@@ -772,7 +773,7 @@ the extent to which the other nodes in the network are connected to each
 other. The orange node (ego) in each network has four partners, but
 their positions are far from equivalent. Centrality measures on full
 network data can tease out the differences. The networks also vary in
-their gross characteristics. Those differences, too, are measurable<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>.</p>
+their gross characteristics. Those differences, too, are measurable<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8-4"></span>
 <img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
 <p class="caption">
@@ -1016,7 +1017,7 @@ length, distribution of path lengths, degree distribution, and the
 clustering coefficient—offer a robust set of measures to examine and
 compare whole networks. It is also possible to distinguish among the
 positions nodes hold in a particular network. Some of the most powerful
-centrality measures also rely on the idea of indirect ties<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>.</p>
+centrality measures also rely on the idea of indirect ties<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>.</p>
 <p><strong>Centrality measures</strong></p>
 <p>This class of measures is the most common way to distinguish between the
 positions individual nodes hold in networks. There are many different
@@ -1056,7 +1057,7 @@ make explicit use of the idea that reachability is the source of many of
 the important social and economic benefits of salutary network
 positions, but they do so with different substantive emphases. Both of
 these approaches rely on the idea of a network geodesic, the longest
-shortest path<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a> connecting any pair of actors. Because these measures rely
+shortest path<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a> connecting any pair of actors. Because these measures rely
 on reachability, they are only useful when applied to components. When
 nodes have no ties (degree 0) they are called <em>isolates</em>. The geodesic
 distances are infinite and thus path-based centrality measures cannot be
@@ -1431,29 +1432,29 @@ authors in network science.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="47">
-<li id="fn47"><p>Key insight: A two-mode network can be conceptualized and analyzed as two one-mode networks, or projections.<a href="chap-networks.html#fnref47" class="footnote-back">↩</a></p></li>
-<li id="fn48"><p>Key insight: Care must
+<ol start="46">
+<li id="fn46"><p>Key insight: A two-mode network can be conceptualized and analyzed as two one-mode networks, or projections.<a href="chap-networks.html#fnref46" class="footnote-back">↩</a></p></li>
+<li id="fn47"><p>Key insight: Care must
 be taken when inducing
 one-mode network projections from two-mode network data because not all
 affiliations provide equally
-compelling evidence of actual social relationships.<a href="chap-networks.html#fnref48" class="footnote-back">↩</a></p></li>
-<li id="fn49"><p>Key insight: Structural analysis of outcomes for
+compelling evidence of actual social relationships.<a href="chap-networks.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn48"><p>Key insight: Structural analysis of outcomes for
 any individual or group are
 a function of the complete pattern of connections
-among them.<a href="chap-networks.html#fnref49" class="footnote-back">↩</a></p></li>
-<li id="fn50"><p> Key insight: Much of
+among them.<a href="chap-networks.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p> Key insight: Much of
 the power of networks (and
 their systemic features) is
 due to indirect ties that create reachability. Two nodes
 can reach each other if they
 are connected by an unbroken chain of relationships.
-These are often called indirect ties.<a href="chap-networks.html#fnref50" class="footnote-back">↩</a></p></li>
-<li id="fn51"><p>Key insight: Some of
+These are often called indirect ties.<a href="chap-networks.html#fnref49" class="footnote-back">↩</a></p></li>
+<li id="fn50"><p>Key insight: Some of
 the most powerful centrality
 measures also rely on the
-idea of indirect ties.<a href="chap-networks.html#fnref51" class="footnote-back">↩</a></p></li>
-<li id="fn52"><p>A <em>shortest path</em> is a path that does not repeat any
+idea of indirect ties.<a href="chap-networks.html#fnref50" class="footnote-back">↩</a></p></li>
+<li id="fn51"><p>A <em>shortest path</em> is a path that does not repeat any
 nodes or ties. Most pairs
 have several of those. The
 <em>geodesic</em> is the longest
@@ -1462,7 +1463,7 @@ people are directly connected (path length 1) and
 connected through shared
 ties to another person
 (path length 2), then their
-geodesic distance is two.<a href="chap-networks.html#fnref52" class="footnote-back">↩</a></p></li>
+geodesic distance is two.<a href="chap-networks.html#fnref51" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
