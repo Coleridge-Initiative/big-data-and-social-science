@@ -252,17 +252,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> How much is a word worth?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> Turning text into a matrix: How much is a word worth?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Section Name</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
-<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
-<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.7</b> Resources</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.4</b> Word Embeddings and Deep Learning</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
@@ -546,7 +545,7 @@ individual names, birth dates, social security numbers, and business
 names, addresses, and tax ID numbers. From a privacy and confidentiality
 perspective, link keys are among most sensitive information in many data
 sets of interest to social scientists. This is why many organizations
-replace link keys containing personal identifiable information (PII)<a href="#fn60" class="footnote-ref" id="fnref60"><sup>60</sup></a>
+replace link keys containing personal identifiable information (PII)<a href="#fn58" class="footnote-ref" id="fnref58"><sup>58</sup></a>
 with privacy-protecting identifiers <span class="citation">(Schnell, Bachteler, and Reiher <a href="#ref-schnell2009privacy">2009</a>)</span>. Regardless,
 at some point in the process those must be generated out of the original
 information, thus access to the latter is important.</p>
@@ -1078,15 +1077,15 @@ conferences and produces occasional reports
 </div>
 <div class="footnotes">
 <hr />
-<ol start="60">
-<li id="fn60"><p>PII is “any information about an individual maintained by an agency, including (1) any information
+<ol start="58">
+<li id="fn58"><p>PII is “any information about an individual maintained by an agency, including (1) any information
 that can be used to distinguish or trace an individual’s identity, such as name,
 social security number, date
 and place of birth, mother’s
 maiden name, or biometric
 records; and (2) any other
 information that is linked
-or linkable to an individual, such as medical, educational, financial, and employment information” [254].<a href="chap-privacy.html#fnref60" class="footnote-back">↩</a></p></li>
+or linkable to an individual, such as medical, educational, financial, and employment information” [254].<a href="chap-privacy.html#fnref58" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

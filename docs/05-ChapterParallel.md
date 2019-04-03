@@ -22,7 +22,7 @@ Examples
 
 
 
-Table
+
 Where the computer is
 Where the data is: one disk, or distributed
 

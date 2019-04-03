@@ -252,17 +252,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> How much is a word worth?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> Turning text into a matrix: How much is a word worth?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Section Name</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
-<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
-<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.7</b> Resources</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.4</b> Word Embeddings and Deep Learning</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
@@ -360,8 +359,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h1><span class="header-section-number">Chapter 7</span> Text Analysis</h1>
 <p><strong>Evgeny Klochikhin and Jordan Boyd-Graber</strong></p>
 <p>This chapter provides an overview of how social scientists can make use
-of one of the most exciting advances in big data—text analysis. Vast
-amounts of data that are stored in documents can now be analyzed and
+of text data. Vast amounts of text data can now be analyzed and
 searched so that different types of information can be retrieved.
 Documents (and the underlying activities of the entities that generated
 the documents) can be categorized into topics or fields as well as
@@ -369,83 +367,29 @@ summarized. In addition, machine translation can be used to compare
 documents in different languages.</p>
 <div id="understanding-what-people-write" class="section level2">
 <h2><span class="header-section-number">7.1</span> Understanding what people write</h2>
-<p>You wake up and read the newspaper, a Facebook post, or an academic
-article a colleague sent you. You, like other humans, can digest and
-understand rich information, but an increasingly central challenge for
-humans is to cope with the deluge of information we are supposed to read
-and understand. In our use case of science, even Aristotle struggled
-with categorizing areas of science; the vast increase in the scope of
-written research has only made the challenge greater.</p>
-<p>One approach is to use rule-based methods to tag documents for
-categorization. Businesses used to employ human beings to read the news
-and tag documents on topics of interest for senior management. The rules
-on how to assign these topics and tags were developed and communicated
-to these human beings beforehand. Such a manual categorization process
-is still common in multiple applications, e.g., systematic literature
-reviews <span class="citation">(Brody et al. <a href="#ref-brody2015">2015</a>)</span>.</p>
-<p>However, as anyone who has used a search engine knows, newer approaches
-exist to categorize text and help humans cope with overload:
-computer-aided <em>text analysis</em>. Text data can be used to “conventional”
-data sources, such as surveys and administrative data, since the words
-spoken or written by individuals often provide more nuanced and
-unanticipated insights.
-Chapter <a href="chap-link.html#chap:link">Record Linkage</a><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a> discusses how to link data to create larger, more
-diverse data sets. The linkage data sets need not just be numeric, but
-can also include data sets consisting of text data.</p>
-<hr />
-<p><strong>Example: Using text to categorize scientific fields</strong></p>
-<p>The National Center for Science and Engineering Statistics, the US
-statistical agency charged with collecting statistics on science and
-engineering, uses a rule-based system to manually create categories of
-science; these are then used to categorize research as “physics” or
-“economics” <span class="citation">(Mortensen, Bloch, and others <a href="#ref-oecd2005measurement">2005</a>; Economic Co-operation and Development <a href="#ref-manual2004summary">2004</a>)</span>. In a rule-based
-system there is no ready response to the question “how much do we spend
-on climate change, food safety, or biofuels?” because existing rules
-have not created such categories. Text analysis techniques can be used
-to provide such detail without manual collation. For example, data about
-research awards from public sources and about people funded on research
-grants from UMETRICS can be linked with data about their subsequent
-publications and related student dissertations from ProQuest. Both award
-and dissertation data are text documents that can be used to
-characterize what research has been done, provide information about
-which projects are similar within or across institutions, and
-potentially identify new fields of study <span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>)</span>.</p>
-<hr />
-<p>Overall, text analysis can help with specific tasks that define
-application-specific subfields including the following:</p>
-<ul>
-<li><p><strong>Searches and information retrieval</strong>: Text analysis tools can help find relevant information in large
-databases. For example, we used these techniques in systematic
-literature reviews to facilitate the discovery and retrieval of
-relevant publications related to early grade reading in Latin
-America and the Caribbean.</p></li>
-<li><p><strong>Clustering and text categorization</strong>: Tools like topic modeling can provide a big picture of the contents
-of thousands of documents in a comprehensible format by discovering
-only the most important words and phrases in those documents.</p></li>
-<li><p><strong>Text summarization</strong>: Similar to clustering, text summarization can provide value in
-processing large documents and text corpora. For example, Wang et
-al. <span class="citation">(Y. Wang et al. <a href="#ref-wang-09">2009</a>)</span> use topic modeling to produce category-sensitive text
-summaries and annotations on large-scale document collections.</p></li>
-<li><p><strong>Machine translation</strong>: Machine translation is an example of a text analysis method that
-provides quick insights into documents written in other</p></li>
-</ul>
-</div>
-<div id="how-to-analyze-text" class="section level2">
-<h2><span class="header-section-number">7.2</span> How to analyze text</h2>
+<p>You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
+and understand. As social scientists, we often deal with text data that comes from a variety of sources - open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently incorporate it into our analysis just like we do with structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text from the respondents and medical practitioners, the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available, and efficiently incorporate large amounts of text data in your analysis.</p>
 <p>Human language is complex and nuanced, which makes analysis difficult.
 We often make simplifying assumptions: we assume our input is perfect
 text; we ignore humor <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span> and deception <span class="citation">(Niculae et al. <a href="#ref-niculae-15">2015</a>; Ott et al. <a href="#ref-ott-11">2011</a>)</span>;
-and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>.</p>
+and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn39" class="footnote-ref" id="fnref39"><sup>39</sup></a>.</p>
 <p>Recognizing this complexity, the goal of text mining is to reduce the
 complexity of text and extract important messages in a comprehensible
-and meaningful way. This objective is usually achieved through text
-categorization or automatic classification<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. These tools can be used in
-multiple applications to gain salient insights into the relationships
-between words and documents. Examples include using machine learning to
-analyze the flow and topic segmentation of political debates and
-behaviors <span class="citation">(Nguyen, Boyd-Graber, and Resnik <a href="#ref-nguyen-12">2012</a>; Nguyen et al. <a href="#ref-Nguyen:Boyd-Graber:Resnik:Miler-2015">2015</a>)</span> and to
-assign automated tags to documents <span class="citation">(Tuarob, Pouchard, and Giles <a href="#ref-tuarob-13">2013</a>)</span>.</p>
-<p>Information retrieval has a similar objective of extracting the most
+and meaningful way</p>
+<p>How is text data different?
+Define unstructured</p>
+<p>What types of analysis can be done?
+Slide 6</p>
+<p>Create box with text analysis vocabulary
+Corpus
+Token
+Term
+Frequency
+TFIDF
+Part of speech tags
+Parsing</p>
+<p>Search
+Information retrieval has a similar objective of extracting the most
 important messages from textual data that would answer a particular
 query. The process analyzes the full text or metadata related to
 documents and allows only relevant knowledge to be discovered and
@@ -463,40 +407,73 @@ government invest in climate change research and nanotechnology? Or what
 are the main topics in the political debate on guns in the United
 States? Or how can we build a salient and dynamic taxonomy of all
 scientific research?</p>
-<p>We begin with a review of established techniques to begin the process of
-analyzing text. Section <a href="chap-text.html#sec:appapp">Approaches and applications</a> provides an overview of topic modeling,
-information retrieval and clustering, and other approaches accompanied
-by practical examples and applications.
-Section <a href="chap-text.html#sec:eval">Evaluation</a>
-reviews key evaluation techniques used to assess the validity,
-robustness and utility of derived results.</p>
+<p>Classification</p>
+<p>This objective is usually achieved through text
+categorization or automatic classification<a href="#fn40" class="footnote-ref" id="fnref40"><sup>40</sup></a>. These tools can be used in
+multiple applications to gain salient insights into the relationships
+between words and documents. Examples include using machine learning to
+analyze the flow and topic segmentation of political debates and
+behaviors <span class="citation">(Nguyen, Boyd-Graber, and Resnik <a href="#ref-nguyen-12">2012</a>; Nguyen et al. <a href="#ref-Nguyen:Boyd-Graber:Resnik:Miler-2015">2015</a>)</span> and to
+assign automated tags to documents <span class="citation">(Tuarob, Pouchard, and Giles <a href="#ref-tuarob-13">2013</a>)</span>.</p>
+<hr />
+<p>Overall, text analysis can help with specific tasks that define
+application-specific subfields including the following:</p>
+<ul>
+<li><p><strong>Searches and information retrieval</strong>: Text analysis tools can help find relevant information in large
+databases. For example, we used these techniques in systematic
+literature reviews to facilitate the discovery and retrieval of
+relevant publications related to early grade reading in Latin
+America and the Caribbean.</p></li>
+<li><p>**Clustering and *: Tools like topic modeling can provide a big picture of the contents
+of thousands of documents in a comprehensible format by discovering
+only the most important words and phrases in those documents.</p></li>
+</ul>
+<p>text categorization*: One approach is to use rule-based methods to tag documents for
+categorization. Businesses used to employ human beings to read the news
+and tag documents on topics of interest for senior management. The rules
+on how to assign these topics and tags were developed and communicated
+to these human beings beforehand. Such a manual categorization process
+is still common in multiple applications, e.g., systematic literature
+reviews <span class="citation">(Brody et al. <a href="#ref-brody2015">2015</a>)</span>.</p>
+<ul>
+<li><p><strong>Text summarization</strong>: Similar to clustering, text summarization can provide value in
+processing large documents and text corpora. For example, Wang et
+al. <span class="citation">(Y. Wang et al. <a href="#ref-wang-09">2009</a>)</span> use topic modeling to produce category-sensitive text
+summaries and annotations on large-scale document collections.</p></li>
+<li><p><strong>Machine translation</strong>: Machine translation is an example of a text analysis method that
+provides quick insights into documents written in other</p></li>
+</ul>
+<p>We’ll focus on two types of analysis: clustering and classification. As we covered in the previous chapter, clustering a is a form of unsupervised learning where the goal is exploration and understanding of the data. With unstructured (text) data, clustering is often used to explore what topics and concepts are present in a new corpus (collection of documents). This can be a set of survey responses, news article, or publications that we’re trying to explore and analyze for which we use clustering methods. On the other hand, classification is a type of supervised learning (as covered in the previous chapter) where we already have predefined categories available for us and our task is to classify each document into one or more of those categories. For example, if we want to classify twitter or facebook posts as being about a topic, say health, a classification system would take a small number of manually tagged posts and classify the rest of them automatically as being about health or not. For both of these types of analysis, clustering and classification, text data first has to go through a processing stage and turned into a tabular matrix. That matrix can then be used with any of the methods covered in the Machine Learning chapter to do clustering and classification.</p>
+<p>We first describe the processing stages of a text analytics system.</p>
+<hr />
+<p><strong>Example: Using text to categorize scientific fields</strong></p>
+<p>The National Center for Science and Engineering Statistics, the US
+statistical agency charged with collecting statistics on science and
+engineering, uses a rule-based system to manually create categories of
+science; these are then used to categorize research as “physics” or
+“economics” <span class="citation">(Mortensen, Bloch, and others <a href="#ref-oecd2005measurement">2005</a>; Economic Co-operation and Development <a href="#ref-manual2004summary">2004</a>)</span>. In a rule-based
+system there is no ready response to the question “how much do we spend
+on climate change, food safety, or biofuels?” because existing rules
+have not created such categories. Text analysis techniques can be used
+to provide such detail without manual collation. For example, data about
+research awards from public sources and about people funded on research
+grants from UMETRICS can be linked with data about their subsequent
+publications and related student dissertations from ProQuest. Both award
+and dissertation data are text documents that can be used to
+characterize what research has been done, provide information about
+which projects are similar within or across institutions, and
+potentially identify new fields of study <span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>)</span>.</p>
+</div>
+<div id="how-to-analyze-text" class="section level2">
+<h2><span class="header-section-number">7.2</span> How to analyze text</h2>
+<p>Add image for the flow of these steps</p>
 <div id="processing-text-data" class="section level3">
 <h3><span class="header-section-number">7.2.1</span> Processing text data</h3>
 <p>The first important step in working with text data is cleaning and
-processing<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a>. Textual data are often messy and unstructured, which makes
+processing<a href="#fn41" class="footnote-ref" id="fnref41"><sup>41</sup></a>. Textual data are often messy and unstructured, which makes
 many researchers and practitioners overlook their value. Depending on
 the source, cleaning and processing these data can require varying
 amounts of effort but typically involve a set of established techniques.</p>
-<p><strong>Text corpora</strong></p>
-<p>A set of multiple similar documents is called a <em>corpus</em>. For example,
-the Brown University Standard Corpus of Present-Day American English, or
-just the Brown Corpus <span class="citation">(Francis and Kucera <a href="#ref-browncorpus">1979</a>)</span>, is a collection of processed
-documents from works published in the United States in 1961. The Brown
-Corpus was a historical milestone: it was a machine-readable collection
-of a million words across 15 balanced genres with each word tagged with
-its part of speech (e.g., noun, verb, preposition). The British National
-Corpus <span class="citation">(University of Oxford <a href="#ref-bnc">2006</a>)</span> repeated the same process for British English at a larger
-scale. The Penn Treebank <span class="citation">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-marcus-93">1993</a>)</span> provides additional information:
-in addition to part-of-speech annotation, it provides <em>syntactic</em>
-annotation. For example, what is the object of the sentence “The man
-bought the hat”? These standard corpora serve as training data to train
-the classifiers and machine learning techniques to automatically analyze
-text <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span>.</p>
-<p>However, not every corpus is effective for every purpose: the number and
-scope of documents determine the range of questions that you can ask and
-the quality of the answers you will get back: too few documents result
-in a lack of coverage, too many of the wrong kind of documents invite
-confusing noise.</p>
 <p><strong>Tokenization</strong></p>
 <p>The first step in processing text is deciding what terms and phrases are
 meaningful. Tokenization separates sentences and terms from each other.
@@ -565,25 +542,16 @@ where data are complex and require accounting for all possible forms and
 meanings of words. Reviewing interim results at every stage of the
 process can be helpful.</p>
 </div>
-<div id="how-much-is-a-word-worth" class="section level3">
-<h3><span class="header-section-number">7.2.2</span> How much is a word worth?</h3>
-<p>Not all words are worth the same; in an article about electronics,
-“capacitor” is more important than “aspect.” Appropriately weighting<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a> and
-calibrating words is important for both human and machine consumers of
-text data: humans do not want to see “the” as the most frequent word of
-every document in summaries, and classification algorithms benefit from
-knowing which features are actually important to making a decision.</p>
-<p>Weighting words requires balancing how often a word appears in a local
-context (such as a document) with how much it appears overall in the
-document collection. Term frequency–inverse document frequency (TFIDF)
-<span class="citation">(Salton <a href="#ref-salton-68">1968</a>)</span> is a weighting scheme to explicitly balance these factors
-and prioritize the most meaningful words. The TFIDF model takes into
-account both the term frequency of a given token and its document
+<div id="turning-text-into-a-matrix-how-much-is-a-word-worth" class="section level3">
+<h3><span class="header-section-number">7.2.2</span> Turning text into a matrix: How much is a word worth?</h3>
+<p>The processing stages described above provide us with the columns in our matrix. Now we have to decide what value we assign that word/phrase/column. In text analysis, we typically refer to them as tokens (where a token can be a word or a phrase). One simple approach would be to give each column a binary 0 or 1 value - if this token occurs in a document, we assign that cell a value of 1 and 0 otherwise. Another approach would be to assign it the value of how many times this token occurs in that document (often known as frequency of that term or token). This is essentially a way to define the importance or value of this token in this document. Not all words are worth the same; in an article about economics, “free market” is more important than “social good.” Appropriately weighting<a href="#fn42" class="footnote-ref" id="fnref42"><sup>42</sup></a> and calibrating words is important for both human and machine consumers of text data: humans do not want to see “the” as the most frequent word of
+every document in summaries, and classification algorithms benefit from knowing which features are actually important to making a decision.</p>
+<p>Weighting words requires balancing how often a word appears in a local context (such as a document) with how much it appears overall in the document collection. Term frequency–inverse document frequency (TFIDF) <span class="citation">(Salton <a href="#ref-salton-68">1968</a>)</span> is a weighting scheme to explicitly balance these factors and prioritize the most meaningful words. The TFIDF model takes into account both the term frequency of a given token and its document
 frequency (Box 7.1) so that if a highly frequent word also appears
 in almost all documents, its meaning for the specific context of the
 corpus is negligible. Stop words are a good example when highly frequent
 words also bear limited meaning since they appear in virtually all
-documents of a givencorpus.</p>
+documents of a given corpus.</p>
 <div class="F00">
 <p>
 <strong>Box 7.1: TFIDF</strong> For every token <span class="math inline"><span class="math inline">\(t\)</span></span> and every document <span class="math inline"><span class="math inline">\(d\)</span></span> in the corpus <span class="math inline"><span class="math inline">\(D\)</span></span>, TFIDF is calculated as <span class="math display"><span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
@@ -596,29 +564,15 @@ idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></span>
 </div>
 </div>
 <div id="sec:appapp" class="section level2">
-<h2><span class="header-section-number">7.3</span> Approaches and applications</h2>
-<p>In this section, we discuss several approaches that allow users to
-perform an unsupervised analysis of large text corpora. That is,
-approaches that do not require extensive investment of time from experts
-or programmers to begin to understand large text corpora. The ease of
-using these approaches provides additional opportunities for social
-scientists and policymakers to gain insights into policy and research
-questions through text analysis.</p>
-<p>First, we discuss topic modeling, an approach that discovers <em>topics</em>
-that constitute the high-level themes of a corpus. Topic modeling is
-often described as an <em>information discovery</em> process: describing what
-concepts are present in a corpus. Second, we discuss information
-retrieval, which finds the closest documents to a particular concept a
-user wants to discover. In contrast to topic modeling (exposing the
-primary concepts the corpus, heretofore unknown), information retrieval
-finds documents that express already known concepts. Other approaches
-can be used for document classification, sentiment analysis, and
-part-of-speech tagging.</p>
+<h2><span class="header-section-number">7.3</span> Section Name</h2>
+<p>Now that we have a matrix with documents as rows, words/phrases as columns and the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data. We will describe Topic Modeling, that provides us with another clustering approach specifically designed for text data.</p>
+<p>As we covered earlier, unsupervised analysis of large text corpora without extensive investment of time provides additional opportunities for social scientists and policymakers to gain insights into policy and research questions through text analysis. Topic modeling is an approach that describes <em>topics</em> that constitute the high-level themes of a text corpus. Topic modeling is
+often described as an <em>information discovery</em> process: describing what “concepts” are present in a corpus. We refer to them as “concepts” or “topics” (in quotes) because they typically will be represented as a probability distribution over the words (that the topic modeling method groups together) which may or may not be semantically coherent as a “topic” to social scientists.</p>
 <div id="sec:lda" class="section level3">
 <h3><span class="header-section-number">7.3.1</span> Topic modeling</h3>
 <p>As topic modeling is a broad subfield of natural language processing and
-machine learning, we will restrict our focus to a single latent
-Dirichlet allocation (LDA) <span class="citation">(Blei, Ng, and Jordan <a href="#ref-blei-03">2003</a>)</span>. LDA is a fully Bayesian extension
+machine learning, we will restrict our focus to a single methods called Latent
+Dirichlet Allocation (LDA) <span class="citation">(Blei, Ng, and Jordan <a href="#ref-blei-03">2003</a>)</span>. LDA is a fully Bayesian extension
 of probabilistic latent semantic indexing <span class="citation">(Hofmann <a href="#ref-hofmann-99">1999</a>)</span>, itself a
 probabilistic extension of latent semantic analysis <span class="citation">(Landauer and Dumais <a href="#ref-landauer-97">1997</a>)</span>. Blei
 and Lafferty <span class="citation">(Blei and Lafferty <a href="#ref-blei-09">2009</a>)</span> provide a more detailed discussion of the
@@ -627,26 +581,26 @@ history of topic models.</p>
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
 words at the top of the list
-(Figure <a href="chap-text.html#fig:nyt-topics-3">7.1</a>). However, we do not know what the topics are
-<span class="roman">a priori</span>; the challenge is to discover what they are (more on
+(Figure <a href="chap-text.html#fig:nyt-topics-3">7.1</a>). However, we do not know what the topics are
+<span class="roman">a priori</span>; the goal is to discover what they are (more on
 this shortly).</p>
 <img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" />
 <img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" />
 <div class="figure" style="text-align: center"><span id="fig:nyt-topics-3"></span>
-<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
+<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
 <p class="caption">
-Figure 7.1: Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the <em>New York Times</em> <span class="citation">(Sandhaus <a href="#ref-sandhaus-08">2008</a>)</span>. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts
+Figure 7.1: Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the <em>New York Times</em> <span class="citation">(Sandhaus <a href="#ref-sandhaus-08">2008</a>)</span>. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts
 </p>
 </div>
 <p>In addition to assuming that there exist some number of topics that
 explain a corpus, LDA also assumes that each document in a corpus can be
 explained by a small number of topics. For example, taking the example
-topics from Figure <a href="chap-text.html#fig:nyt-topics-3">7.1</a>, a document titled “Red Light, Green Light: A
-Two-Tone LED to Simplify Screens” would be about Topic 1, which appears
+topics from Figure <a href="chap-text.html#fig:nyt-topics-3">7.1</a>, a document titled “Red Light, Green Light: A
+Two-Tone LED to Simplify Screens” would be about Topic 1, which appears
 to be about technology. However, a document like “Forget the Bootleg,
 Just Download the Movie Legally” would require all three of the topics.
 The set of topics that are used by a document is called the document’s
-<em>allocation</em> (Figure <a href="chap-text.html#fig:nyt-documents">7.2</a>). This terminology explains the name
+<em>allocation</em> (Figure <a href="chap-text.html#fig:nyt-documents">7.2</a>). This terminology explains the name
 <em>latent Dirichlet allocation</em>: each document has an allocation over
 latent topics governed by a Dirichlet distribution.</p>
 <div class="figure" style="text-align: center"><span id="fig:nyt-documents"></span>
@@ -657,7 +611,7 @@ Figure 7.2: Allocations of documents to topics
 </div>
 
 <div id="inferring-topics-from-raw-text" class="section level4">
-<h4><span class="header-section-number">7.3.1.1</span> Inferring topics from raw text</h4>
+<h4><span class="header-section-number">7.3.1.1</span> Inferring “topics” from raw text</h4>
 <p>Algorithmically, the problem can be viewed as a black box. Given a
 corpus and an integer <span class="math inline">\(K\)</span> as input, provide the topics that best
 describe the document collection: a process called <em>posterior
@@ -671,7 +625,7 @@ download and buy electronic copies of movies over the Internet.” Each
 word in this sentence is associated with a topic: “Hollywood” might be
 associated with an arts topic; “buy” with a business topic; and
 “Internet” with a technology topic
-(Figure <a href="chap-text.html#fig:inference-1">7.3</a>).</p>
+(Figure <a href="chap-text.html#fig:inference-1">7.3</a>).</p>
 
 <div class="figure" style="text-align: center"><span id="fig:inference-1"></span>
 <img src="ChapterText/figures/inference_1.png" alt="Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection" width="70%" />
@@ -717,21 +671,21 @@ the following topic assignments:</p>
 <li><p>Document 2: <span class="math inline">\(^E\)</span>hamburger<span class="math inline">\(_2\)</span> <span class="math inline">\(^F\)</span>dog<span class="math inline">\(_3\)</span> <span class="math inline">\(^G\)</span>hamburger<span class="math inline">\(_1\)</span></p></li>
 <li><p>Document 3: <span class="math inline">\(^H\)</span>iron<span class="math inline">\(_1\)</span> <span class="math inline">\(^I\)</span>iron<span class="math inline">\(_3\)</span> <span class="math inline">\(^J\)</span>pig<span class="math inline">\(_2\)</span> <span class="math inline">\(^K\)</span>iron<span class="math inline">\(_2\)</span></p></li>
 </ul>
-<p>If we want to sample token B (the first instance of of “cat” in
-document 1), we compute the conditional probability for each of the
+<p>If we want to sample token B (the first instance of of “cat” in
+document 1), we compute the conditional probability for each of the
 three topics (<span class="math inline">\(z=1,2,3\)</span>): <span class="math display">\[\begin{aligned}
 p(z_B = 1) = &amp; \frac{1 + 1.000}{3 + 3.000} \times \frac{0
     + 1.000}{3 + 5.000} = 0.333 \times 0.125 = 0.042, \\[4pt]
 p(z_B = 2) = &amp; \frac{0 + 1.000}{3 + 3.000} \times \frac{0
     + 1.000}{3 + 5.000} = 0.167 \times 0.125 = 0.021\mbox{, and} \\[4pt]
 p(z_B = 3) = &amp; \frac{2 + 1.000}{3 + 3.000} \times \frac{1 + 1.000}{4 + 5.000} = 0.500 \times 0.222 = 0.111.\end{aligned}\]</span>
-To reiterate, we do not include token B in these counts: in computing
-these conditional probabilities, we consider topic 2 as never appearing
-in the document and “cat” as never appearing in topic 2. However, “cat”
-does appear in topic 3 (token C), so it has a higher probability than
+To reiterate, we do not include token B in these counts: in computing
+these conditional probabilities, we consider topic 2 as never appearing
+in the document and “cat” as never appearing in topic 2. However, “cat”
+does appear in topic 3 (token C), so it has a higher probability than
 the other topics. After renormalizing, our conditional probabilities are
-<span class="math inline">\((0.24, 0.12, 0.64)\)</span>. We then sample the new assignment of token B to be
-topic 3 two times out of three. Griffiths and Steyvers <span class="citation">(Griffiths and Steyvers <a href="#ref-griffiths-04">2004</a>)</span>
+<span class="math inline">\((0.24, 0.12, 0.64)\)</span>. We then sample the new assignment of token B to be
+topic 3 two times out of three. Griffiths and Steyvers <span class="citation">(Griffiths and Steyvers <a href="#ref-griffiths-04">2004</a>)</span>
 provide more details on the derivation of this equation.</p>
 <p><strong>Example code</strong></p>
 <p>Listing 7.1 provides a function to compute the conditional
@@ -776,127 +730,39 @@ understand how individuals code in large programming projects
 <p>Topic models can also be used as features to more elaborate algorithms
 such as machine translation <span class="citation">(Hu et al. <a href="#ref-Hu:Zhai:Eidelman:Boyd-Graber-2014">2014</a>)</span>,
 detecting objects in images <span class="citation">(C. Wang, Blei, and Fei-Fei <a href="#ref-wang-09b">2009</a>)</span>, or identifying political
-polarization <span class="citation">(Paul and Girju <a href="#ref-paul-10">2010</a>)</span>.</p>
-</div>
-</div>
-<div id="sec:ir" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> Information retrieval and clustering</h3>
-<p>Information retrieval is a large subdiscipline that encompasses a
-variety of methods and approaches. Its main advantage is using
-large-scale empirical data to make analytical inferences and class
-assignments. Compared to topic modeling, discussed above, information
-retrieval techniques can use external knowledge repositories to
-categorize given corpora as well as discover smaller and emerging areas
-within a large database.</p>
-<p>A major concept of information retrieval is a search query that is
-usually a short phrase presented by a human or machine to retrieve a
-relevant answer to a question or discover relevant knowledge. A good
-example of a large-scale information retrieval system is a search
-engine, such as Google or Yahoo!, that provides the user with an
-opportunity to search the entire Internet almost instantaneously. Such
-fast searches are achieved by complex techniques that are linguistic
-(set-theoretic), algebraic, probabilistic, or feature-based.</p>
-<p><strong>Set-theoretic operations and Boolean logic</strong></p>
-<p>Set-theoretic operations proceed from the assumption that any query is a
-set of linked components all of which need to be present in the returned
-result for it to be relevant. Boolean logic serves as the basis for such
-queries; it uses Boolean operators such as , , and to combine query
-components. For example, the query</p>
-<p><code>induction AND (physics OR logic)</code></p>
-<p>will retrieve all documents in which the word “induction” is used,
-whether in a physical or logical sense. The <em>extended Boolean model</em> and
-<em>fuzzy retrieval</em> are enhanced approaches to calculating the relevance
-of retrieved documents based on such queries <span class="citation">(Lee and Fox <a href="#ref-lee:boolean-88">1988</a>)</span>.</p>
-<p>Search queries can be also enriched by wildcards and other connectors.
-For example, the character &quot;&quot; typically substitutes for any possible
-character or characters depending on the settings of the query engine.
-(In some instances, search queries can run in <em>nongreedy</em> mode, in which
-case, for example, the phrase <code>inform*</code> might retrieve only text up to the end of
-the sentence. On the other hand, a <em>greedy</em> query might retrieve full
-text following the word or part of word, denoted as <code>inform*</code>, up to the end of
-the document, which would essentially mean the same as <code>inform*$</code>.) The wildcard
-“<code>?</code>” expects either one or no character in its place, and the wildcard “<code>.</code>”
-expects exactly one character. Search queries enhanced with such symbols
-and Boolean operators are referred to as <em>regular expressions</em>.</p>
-<p>Various databases and search engines can interpret Boolean operators and
-wildcards differently depending on their settings and therefore are
-prone to return rather different results. This behavior should be
-expected and controlled for while running searches on different data
-sources.</p>
-
-<hr />
-<p><strong>Example: Discover food safety awards</strong></p>
-<p>Food safety is an interdisciplinary research area that spans multiple
-scientific disciplines including biological sciences, agriculture, and
-food science. To retrieve food safety-related awards, we have to
-construct a Boolean-based search string that would look for terms and
-phrases in those documents and return only relevant results.</p>
-<p>An example of such a string would typically be subdivided by category or
-search group connected to each other by the <code>AND</code> or <code>OR</code> operator:</p>
-<ol style="list-style-type: decimal">
-<li><p><strong>General terms</strong>: <code>(food safety OR food securit* OR foodinsecurit*)</code></p></li>
-<li><p><strong>Food pathogens</strong>: <code>(food*) AND (acanthamoeba OR actinobacteri* OR (anaerobic organ*) OR DDT OR ...)</code></p></li>
-<li><p><strong>Biochemistry and toxicology</strong>: <code>(food*) AND (toxicolog* OR(activated carbon*) OR (acid-hydrol?zed vegetableprotein*) OR aflatoxin* OR ...)</code></p></li>
-<li><p><strong>Food processing and preservation</strong>: <code>(food*) AND (process* ORpreserv* OR fortif* OR extrac* OR ...)</code></p></li>
-<li><p><strong>Food quality and quality control</strong>: <code>(food*) AND (qualit* OR (danger zon*) OR test* OR (risk analys*) OR ...)</code></p></li>
-<li><p><strong>Food-related diseases</strong>: <code>(food* OR foodbo?rn* OR food-rela*)AND (diseas* OR hygien* OR allerg* OR diarrh?ea* ORnutrit* OR ...)</code></p></li>
-</ol>
-<p>Different websites and databases use different search functions to
-return most relevant results given a query (e.g., “food safety”).
-Ideally, a user has access to a full database and can apply the same
-Python code based on regular expressions to all textual data. However,
-this is not always possible (e.g., when using proprietary databases,
-such as Web of Science). In those cases, it is important to follow the
-conventions of the information retrieval system. For example, one source
-might need phrases to be embedded in parentheses (i.e., <code>(x-ray crystallograph.*)</code>) while another database interface would require such phrases to be contained within quotation marks (i.e., <code>\``x-ray crystallograph.*´´</code>). It is then critical to explore the search tips and rules on those databases to ensure that the most complete information is gathered and further analyzed.</p>
-
-<p><strong>Example code</strong></p>
-<p>Python’s built-in <code>re</code> package provides all the capability needed to
-construct and search with complex regular expressions. Listing 7.2
-provides an example.</p>
-<pre id="list:7.2" style="PythonStyle" numbers="none" float="b" label="list:7.2" caption="Python code to identify food safety related NSF awards with regular expressions"><code>def fs_regex(nsf_award_abstracts,outfilename):
-
-  # Construct simple search string divided by search groups
-  food = &quot;food.*&quot;
-  general = &quot;safety|secur.*|insecur.*&quot;
-  pathogens = &quot;toxicolog.*|acid-hydrolyzed vegetable protein.*|activated carbon.*&quot;
-  process = &quot;process.*|preserv.*|fortif.*&quot; #and so on
-
-  # Open csv table with all NSF award abstracts in 2000-2014
-  inpfile = open(nsf_award_abstracts,&#39;rb&#39;)
-  inpdata = csv.reader(infile)
-  outfile = open(outfilename,&#39;wb&#39;)
-  output = csv.writer(outfile)
-  for line in inpdata:
-    award_id = line[0]
-    title = line[1]
-    abstract = line[2]
-    if re.search(food,abstract) and (re.search(general,abstract)
-      or re.search(pathogens,abstract) or re.search(process,abstract)):
-      output.writerow(i+[&#39;food safety award&#39;])</code></pre>
-<div style="text-align: center">
-Listing 7.2. Python code to identify food safety related NSF awards with regular expressions
-</div>
-<hr />
-<p><strong>Algebraic models</strong></p>
-<p>Algebraic models turn text into numbers to run mathematical operations
-and discover inherent interdependencies between terms and phrases, also
-defining the most important and meaningful among them. The vector space
-representation is a typical way of converting words into numbers,
-wherein every token is assigned with a sequential ID and a respective
-weight, be it a simple term frequency, TFIDF value, or any other
-assigned number.</p>
-<p>Latent Dirichlet allocation, discussed in the preceding section, is a
-good example of a probabilistic model, while unsupervised machine
-learning techniques, such as random forest, can be used for
-feature-based modeling and information retrieval.</p>
-<p><strong>Similarity measures and approaches</strong></p>
-<p>Based on algebraic models, the user can either compare documents between
-each other or train a model that can be further inferred on a different
-corpus. Typical metrics involved in this process include cosine
-similarity and Kullback–Leibler divergence <span class="citation">(Kullback and Leibler <a href="#ref-kullback1951information">1951</a>)</span>.</p>
-<p>Cosine similarity is a popular measure in document classification. Given
-two documents <span class="math inline">\(d_a\)</span> and <span class="math inline">\(d_b\)</span> presented as term vectors
+polarization <span class="citation">(Paul and Girju <a href="#ref-paul-10">2010</a>)</span>. Find a good example of topic models used in social sciences (maybe political science)</p>
+<p><strong>Document classification</strong>
+What it is
+How do we use it
+what do we do with it</p>
+<p>Applications:
+</p>
+<p>If the examples <span class="math inline">\(x\)</span> are documents and <span class="math inline">\(y\)</span> are what these documents are
+about, the problem is called <em>document classification</em>. In contrast to
+the techniques in Section <a href="chap-text.html#sec:lda" reference-type="ref" reference="sec:lda">7.3.1</a>, document classification is used when you know the
+specific document types for which you are looking <em>and</em> you have many
+examples of those document types.</p>
+<p>One simple but ubiquitous example of document classification is spam
+detection: an email is either an unwanted advertisement (spam) or it is
+not. Document classification techniques such as naïve Bayes <span class="citation">(Lewis <a href="#ref-lewis-05">1998</a>)</span>
+touch essentially every email sent worldwide, making email usable even
+though most emails are spam.</p>
+<p>Sentiment analysis**</p>
+<p>Instead of being what a document is about, a label <span class="math inline">\(y\)</span> could also reveal
+the speaker. A recent subfield of natural language processing is to use
+machine learning to reveal the internal state of speakers based on what
+they say about a subject <span class="citation">(Pang and Lee <a href="#ref-pang-08">2008</a>)</span>. For example, given an example of
+sentence <span class="math inline">\(x\)</span>, can we determine whether the speaker is a Liberal or a
+Conservative? Is the speaker happy or sad?</p>
+<p>Simple approaches use dictionaries and word counting methods
+<span class="citation">(Pennebaker and Francis <a href="#ref-pennebaker-99">1999</a>)</span>, but more nuanced approaches make use of
+<em>domain</em>-specific information to make better predictions. One uses
+different approaches to praise a toaster than to praise an air
+conditioner <span class="citation">(Blitzer, Dredze, and Pereira <a href="#ref-blitzer-07">2007</a>)</span>; liberals and conservatives each frame health
+care differently from how they frame energy policy <span class="citation">(Nguyen, Boyd-Graber, and Resnik <a href="#ref-nguyen-13:shlda">2013</a>)</span>.</p>
+<p><strong>Finding Similar Documents</strong></p>
+<p>One task social scientists may be interested in is finding similar documents to a document they’re analyzing. This is a routine task for lawyers where they are looking at a case file and want to find all prior cases similar to this case. The key challenge here it to define what makes two documents similar and what similarity metrics we can use. Typical metrics involved in this process include cosine similarity and Kullback–Leibler divergence <span class="citation">(Kullback and Leibler <a href="#ref-kullback1951information">1951</a>)</span>.</p>
+<p>Cosine similarity is a popular measure in text analysis. Given two documents <span class="math inline">\(d_a\)</span> and <span class="math inline">\(d_b\)</span> presented as term vectors
 <span class="math inline">\(\overrightarrow{t_a}\)</span> and <span class="math inline">\(\overrightarrow{t_b}\)</span>, the cosine similarity
 is</p>
 <p><span class="math display">\[SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
@@ -978,9 +844,7 @@ Listing 7.3. Python code to measure cosine similarity between Climate Change and
 </div>
 <hr />
 
-<p>Kullback–Leibler (KL) divergence is an asymmetric measure that is often
-enhanced by averaged calculations to ensure unbiased results when
-comparing documents between each other or running a classification task.
+<p>Kullback–Leibler (KL) divergence is a measure that allows us to compare probability distributions in general and is often used to compare two documents represented as vectors.
 Given two term vectors <span class="math inline">\(\overrightarrow{t_a}\)</span> and
 <span class="math inline">\(\overrightarrow{t_b}\)</span>, the KL divergence from vector
 <span class="math inline">\(\overrightarrow{t_a}\)</span> to <span class="math inline">\(\overrightarrow{t_b}\)</span> is
@@ -995,10 +859,8 @@ and <span class="math inline">\(w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}\
 <p>A Python-based <code>scikit-learn</code> library provides an implementation of these measures as
 well as other machine learning models and approaches.</p>
 <p><strong>Knowledge repositories</strong></p>
-<p>Information retrieval can be significantly enriched by the use of
-established knowledge repositories that can provide enormous amounts of
-organized empirical data for modeling and relevance calculations.
-Established corpora, such as the Brown Corpus and
+<p>Similarity calculations can be significantly enriched by the use of
+external resources that provide relationships between words, documents, or concepts present in specific domains. Established corpora, such as the Brown Corpus and
 Lancaster–Oslo–Bergen Corpus, are one type of such preprocessed
 repositories.</p>
 <p>Wikipedia and WordNet are examples of another type of lexical and
@@ -1011,7 +873,7 @@ repository (WordNet). In Wikipedia, concepts thus can be considered as
 titles of individual Wikipedia pages and the contents of these pages can
 be considered as their extended semantic representation.</p>
 <p>Information retrieval techniques build on these advantages of WordNet
-and Wikipedia. For example, Meij et al. <span class="citation">(Meij et al. <a href="#ref-meij-09">2009</a>)</span> mapped search queries
+and Wikipedia. For example, Meij et al. <span class="citation">(Meij et al. <a href="#ref-meij-09">2009</a>)</span> mapped search queries
 to the DBpedia ontology (derived from Wikipedia topics and their
 relationships), and found that this mapping enriches the search queries
 with additional context and concept relationships. One way of using
@@ -1037,7 +899,7 @@ overall <span class="math inline">\(wiki\)</span> vector is defined as:</p>
 associated with every token <span class="math inline">\(w\)</span> in WordNet hierarchy, <span class="math inline">\(Synonyms(s)\)</span> is
 the set of words (i.e., synonyms) in the synset <span class="math inline">\(s\)</span>, <span class="math inline">\(tf_{wiki}(w)\)</span> is
 the term frequency of the word <span class="math inline">\(w\)</span> in the Wikipedia article <span class="math inline">\(wiki\)</span>, and
-<span class="math inline">\(Synsets(w)\)</span> is the set of synsets for the word <span class="math inline">\(w\)</span>.</p>
+<span class="math inline">\(Synsets(w)\)</span> is the set of synsets for the word <span class="math inline">\(w\)</span>.</p>
 <p>The overall probability of a candidate document <span class="math inline">\(d\)</span> (e.g., an NSF award
 abstract or a PhD dissertation abstract) matching the target query, or
 in our case a Wikipedia article <span class="math inline">\(wiki\)</span>, is
@@ -1045,43 +907,6 @@ in our case a Wikipedia article <span class="math inline">\(wiki\)</span>, is
 where <span class="math inline">\(Synsets(w_t)\)</span> is the set of synsets for the word <span class="math inline">\(w_t\)</span> in the
 target document document (e.g., NSF award abstract) and <span class="math inline">\(SMV_{wiki}(s)\)</span>
 is the semantic model vector of a Wikipedia page, as defined above.</p>
-<p><strong>Applications</strong></p>
-<p>Information retrieval can be used in a number of applications. Knowledge
-discovery, or information extraction, is perhaps its primary mission; in
-contrast, for users, the purpose of information retrieval applications
-is to retrieve the most relevant response to a query.</p>
-<p>Document classification is another popular task where information
-retrieval methods can be helpful. Such systems, however, typically
-require a two-step process: The first phase defines all relevant
-information needed to answer the query. The second phase clusters the
-documents according to a set of rules or by allowing the machine to
-actively learn the patterns and classes. For example, one approach is to
-generate a taxonomy of concepts with associated Wikipedia pages and then
-map other documents to these pages through Personalized PageRank. In
-this case, disciplines, such as physics, chemistry, and engineering, can
-be used as the original labels, and NSF award abstracts can be mapped to
-these disciplinary categories through the similarity metrics (i.e.,
-whichever of these disciplines scores the highest is the most likely to
-fit the disciplinary profile of an award abstract).</p>
-<p>Another approach is to use the Wikipedia structure as a clustering
-mechanism in itself. For example, the article about “nanotechnology”
-links to a number of other Wikipedia pages as referenced in its content.
-“Quantum realm,” “nanometer” or “National Nanotechnology Initiative” are
-among the meaningful concepts used in the description of nanotechnology
-that also have their own individual Wikipedia pages. Using these pages,
-we can assume that if a scientific document, such as an NSF award
-abstract, has enough similarity with any one of the articles associated
-with nanotechnology, it can be tagged as such in the classification
-exercise.</p>
-<p>The process can also be turned around: if the user knows exactly the
-clusters of documents in a given corpus, these can be mapped to an
-external knowledge repository, such as Wikipedia, to discover yet
-unknown and emerging relationships between concepts that are not
-explicitly mentioned in the Wikipedia ontology at the current moment.
-This situation is likely given the time lag between the discovery of new
-phenomena, their introduction to the research community, and their
-adoption by the wider user community responsible for writing Wikipedia
-pages.</p>
 <p><strong>Examples</strong></p>
 <p>Some examples from our recent work can demonstrate how Wikipedia-based
 labeling and labeled LDA
@@ -1118,64 +943,15 @@ Table <a href="chap-text.html#tab:table7-1">7.1</a>.</p>
 <td>Sonic hedgehog, Induced stem cell, Nervous system</td>
 </tr>
 <tr class="odd">
-<td><strong>Poetry ’n acts: The cultural politics of twentiethcentury American poets’ theater.</strong> This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform…</td>
+<td><strong>Poetry ’n acts: The cultural politics of twentieth century American poets’ theater.</strong> This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform…</td>
 <td>Literature, American; Theater</td>
 <td>Audience</td>
 <td>Counterculture of the 1960s, Novel, Modernism</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div id="sec:other" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Other approaches</h3>
-<p>Our focus in this chapter is on approaches that are language independent
-and require little (human) effort to analyze text data. In addition to
-topic modeling and information retrieval discussed above, natural
-language processing and computational linguistics are rich,
-well-developed subdisciplines of computer science that can help analyze
-text data. While covering these subfields is beyond this chapter, we
-briefly discuss some of the most widely used approaches to process and
-understand natural language texts.</p>
-<p>In contrast to the <em>unsupervised</em> approaches discussed above, most
-techniques in natural language processing are <em>supervised</em> machine
-learning algorithms<a href="#fn44" class="footnote-ref" id="fnref44"><sup>44</sup></a>. Supervised machine learning produce labels <span class="math inline">\(y\)</span>
-given inputs <span class="math inline">\(x\)</span>—the algorithm’s job is to learn how to automatically
-produce correct labels given automatic inputs <span class="math inline">\(x\)</span>.</p>
-<p>However, the algorithm must have access to many examples of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>,
-often of the order of thousands of examples. This is expensive, as the
-labels often require linguistic expertise <span class="citation">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-marcus-93">1993</a>)</span>. While it is
-possible to annotate data using crowdsourcing <span class="citation">(Snow et al. <a href="#ref-snow-08">2008</a>)</span>, this is not a
-panacea, as it often forces compromises in the complexity of the task or
-the quality of the labels.</p>
-<p>In the sequel, we discuss how different definitions of <span class="math inline">\(x\)</span> and
-<span class="math inline">\(y\)</span>—both in the scope and structure of the examples and
-labels—define unique analyses of linguistic data.</p>
-
-<p><strong>Document classification</strong></p>
-<p>If the examples <span class="math inline">\(x\)</span> are documents and <span class="math inline">\(y\)</span> are what these documents are
-about, the problem is called <em>document classification</em>. In contrast to
-the techniques in Section <a href="chap-text.html#sec:lda" reference-type="ref" reference="sec:lda">7.3.1</a>, document classification is used when you know the
-specific document types for which you are looking <em>and</em> you have many
-examples of those document types.</p>
-<p>One simple but ubiquitous example of document classification is spam
-detection: an email is either an unwanted advertisement (spam) or it is
-not. Document classification techniques such as naïve Bayes <span class="citation">(Lewis <a href="#ref-lewis-05">1998</a>)</span>
-touch essentially every email sent worldwide, making email usable even
-though most emails are spam.</p>
-
-<p><strong>Sentiment analysis</strong></p>
-<p>Instead of being what a document is about, a label <span class="math inline">\(y\)</span> could also reveal
-the speaker. A recent subfield of natural language processing is to use
-machine learning to reveal the internal state of speakers based on what
-they say about a subject <span class="citation">(Pang and Lee <a href="#ref-pang-08">2008</a>)</span>. For example, given an example of
-sentence <span class="math inline">\(x\)</span>, can we determine whether the speaker is a Liberal or a
-Conservative? Is the speaker happy or sad?</p>
-<p>Simple approaches use dictionaries and word counting methods
-<span class="citation">(Pennebaker and Francis <a href="#ref-pennebaker-99">1999</a>)</span>, but more nuanced approaches make use of
-<em>domain</em>-specific information to make better predictions. One uses
-different approaches to praise a toaster than to praise an air
-conditioner <span class="citation">(Blitzer, Dredze, and Pereira <a href="#ref-blitzer-07">2007</a>)</span>; liberals and conservatives each frame health
-care differently from how they frame energy policy <span class="citation">(Nguyen, Boyd-Graber, and Resnik <a href="#ref-nguyen-13:shlda">2013</a>)</span>.</p>
+<p>Linguistic Analysis
+So far , we’ve treated words as tokens without regard to the meaning of the word or the way it is used, or even what language the word comes from. There are several techniques in text analysis that are language specific that go deeper into the syntax of the document, paragraph, and sentence structure to extract linguistic characteristics of the document.</p>
 
 <p><strong>Part-of-speech tagging</strong></p>
 <p>When the examples <span class="math inline">\(x\)</span> are individual words and the labels <span class="math inline">\(y\)</span> represent
@@ -1190,10 +966,17 @@ likely that the next word will be a noun than a verb. Thus, the
 classification algorithms need to incorporate structure into the
 decisions. Two common algorithms for this problem are hidden Markov
 models <span class="citation">(Rabiner <a href="#ref-rabiner-89">1989</a>)</span> and conditional random fields <span class="citation">(Lafferty, McCallum, and Pereira <a href="#ref-lafferty-01">2001</a>)</span>.</p>
+
+<p><strong>Parsing</strong></p>
+<p>What can we do with these analysis? Link to Use cases</p>
 </div>
+</div>
+</div>
+<div id="word-embeddings-and-deep-learning" class="section level2">
+<h2><span class="header-section-number">7.4</span> Word Embeddings and Deep Learning</h2>
 </div>
 <div id="sec:eval" class="section level2">
-<h2><span class="header-section-number">7.4</span> Evaluation</h2>
+<h2><span class="header-section-number">7.5</span> Evaluation</h2>
 <p>Evaluation techniques are common in economics, policy analysis, and
 development. They allow researchers to justify their conclusions using
 statistical means of validation and assessment. Text, however, is less
@@ -1206,12 +989,12 @@ semantic meanings and context.</p>
 <p>Content analysis, discourse analysis, and bibliometrics are all common
 tools used by social scientists in their text mining exercises
 <span class="citation">(Stemler <a href="#ref-Stemler2001">2001</a>; Glänzel <a href="#ref-glanzel-12">2012</a>)</span>. However, they are rarely presented with
-robust evaluation metrics, such as type I and type II error rates, when
-retrieving data for further analysis<a href="#fn45" class="footnote-ref" id="fnref45"><sup>45</sup></a>. For example, bibliometricians
+robust evaluation metrics, such as type I and type II error rates, when
+retrieving data for further analysis<a href="#fn43" class="footnote-ref" id="fnref43"><sup>43</sup></a>. For example, bibliometricians
 often rely on search strings derived from expert interviews and
 workshops. However, it is hard to certify that those search strings are
 optimal. For instance, in nanotechnology research, Porter et
-al. <span class="citation">(Porter et al. <a href="#ref-porter-08">2008</a>)</span> developed a canonical search strategy for retrieving
+al. <span class="citation">(Porter et al. <a href="#ref-porter-08">2008</a>)</span> developed a canonical search strategy for retrieving
 nano-related papers from major scientific databases. Nevertheless,
 others adopt their own search string modifications and claim similar
 validity <span class="citation">(Terekhov <a href="#ref-terekhov-11">2012</a>; Guan and Ma <a href="#ref-guan-07">2007</a>)</span>.</p>
@@ -1247,14 +1030,14 @@ labels. Box 7.2 shows how to calculate it.</p>
 </p>
 </div>
 <p><strong>Precision and recall</strong></p>
-<p>Chapter <a href="chap-ml.html#chap:ml">Machine Learning</a> already touched on the importance of precision and
+<p>Chapter <a href="chap-ml.html#chap:ml">Machine Learning</a> already touched on the importance of precision and
 recall for evaluating the results of information retrieval and machine
 learning models (Box 7.3 provides a reminder of the formulae). Here we
 look at a particular example of how these metrics can be computed when
 working with scientific documents.</p>
 <div class="F00">
 <p>
-<strong>Box 7.3: Precision and recall</strong> These two metrics are commonly used in information retrieval and computational linguistics <span class="citation"><span class="citation">(Resnik and Lin <a href="#ref-resnik-10b">2010</a>)</span></span>. Precision computes the type I errors—<em>false positives</em>—in a similar manner to the purity measure; it is formally defined as <span class="math display"><span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span></span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display"><span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></span>
+<strong>Box 7.3: Precision and recall</strong> These two metrics are commonly used in information retrieval and computational linguistics <span class="citation"><span class="citation">(Resnik and Lin <a href="#ref-resnik-10b">2010</a>)</span></span>. Precision computes the type I errors—<em>false positives</em>—in a similar manner to the purity measure; it is formally defined as <span class="math display"><span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span></span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display"><span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></span>
 </p>
 </div>
 <p>We assume that a user has three sets of documents <span class="math inline">\(D_a =\{d_{a1},d_{a2},\ldots, d_n\}\)</span>, <span class="math inline">\(D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}\)</span>, and <span class="math inline">\(D_c =\{d_{c1},d_{c2},\ldots,d_i\}\)</span>. All three sets are clearly tagged with a
@@ -1277,8 +1060,7 @@ documents returned are false positives. Assuming that all document sets
 are of equal size, so that <span class="math inline">\(|D_a| = 10\)</span>, <span class="math inline">\(|D_b|=10\)</span> and <span class="math inline">\(|D_c| = 10\)</span>,
 then the precision is <span class="math inline">\(\frac{5}{12} = 0.42\)</span>.</p>
 <p><strong><em>F</em> score</strong></p>
-<p>The <em>F score</em> takes precision and recall measures a step further and
-considers the general accuracy of the model. In formal terms, the <span class="math inline">\(F\)</span>
+<p>The <em>F score</em> combines precision and recall. In formal terms, the <span class="math inline">\(F\)</span>
 score is a weighted average of the precision and recall:
 <span class="math display">\[\label{eq:text:F1}
 F_1 = 2\cdot \frac{\mathrm{Precision}\cdot \mathrm{Recall}}{\mathrm{Precision}+\mathrm{Recall}}.\]</span>
@@ -1289,7 +1071,7 @@ puts more emphasis on the recall measure and <span class="math inline">\(F_{0.5}
 emphasis on precision.</p>
 </div>
 <div id="text-analysis-tools" class="section level2">
-<h2><span class="header-section-number">7.5</span> Text analysis tools</h2>
+<h2><span class="header-section-number">7.6</span> Text analysis tools</h2>
 <p>We are fortunate to have access to a set of powerful open source text
 analysis tools. We describe three here.</p>
 <p><strong>The Natural Language Toolkit</strong></p>
@@ -1299,7 +1081,7 @@ and can be easily integrated into data processing and analytical scripts
 by a simple <code>import nltk</code> (or similar for any one of its submodules).</p>
 <p>The NLTK includes a set of tokenizers, stemmers, lemmatizers and other
 natural language processing tools typically applied in text analysis and
-machine learning. For example, a user canextract tokens from a document
+machine learning. For example, a user can extract tokens from a document
 <em>doc</em> by running the command <code>tokens = nltk.word_tokenize(doc)</code>.</p>
 <p>Useful text corpora are also present in the NLTK distribution. For
 example, the stop words list can be retrieved by running the command <code>stops=nltk.corpus.stopwords.words(language)</code>. These stop words are available for several languages within NTLK, including English, French, and Spanish.</p>
@@ -1312,7 +1094,7 @@ command in Python: <code>fdist=nltk.FreqDist(text)</code>. This command returns 
 algorithm that takes into account the probability of any given two,
 three, or more words appearing together in the entire corpus. In
 general, <span class="math inline">\(n\)</span>-grams can be discovered as easily as running <code>bigrams = nltk.bigrams(text)</code>. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing 7.4.</p>
-<p>Bird et al. <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span> provide a detailed description of NLTK tools and
+<p>Bird et al. <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span> provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website <span class="citation">(NLTK Project, <a href="#ref-NLTKweb">n.d.</a>)</span>.</p>
 <pre id="list:7.4" style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"><code>def bigram_finder(texts):
   # NLTK bigrams from a corpus of documents separated by new line
@@ -1347,7 +1129,7 @@ fields (for part-of- speech tagging), text classification, and topic
 modeling.</p>
 </div>
 <div id="summary-4" class="section level2">
-<h2><span class="header-section-number">7.6</span> Summary</h2>
+<h2><span class="header-section-number">7.7</span> Summary</h2>
 <p>Much “big data” of interest to social scientists is text: tweets,
 Facebook posts, corporate emails, and the news of the day. However, the
 meaning of these documents is buried beneath the ambiguities and
@@ -1369,7 +1151,22 @@ data may be as natural as sitting down to a conversation over coffee
 with a knowledgeable, trusted friend.</p>
 </div>
 <div id="resources-3" class="section level2">
-<h2><span class="header-section-number">7.7</span> Resources</h2>
+<h2><span class="header-section-number">7.8</span> Resources</h2>
+<p><strong>Text corpora</strong></p>
+<p>A set of multiple similar documents is called a <em>corpus</em>. For example,
+the Brown University Standard Corpus of Present-Day American English, or
+just the Brown Corpus <span class="citation">(Francis and Kucera <a href="#ref-browncorpus">1979</a>)</span>, is a collection of processed
+documents from works published in the United States in 1961. The Brown
+Corpus was a historical milestone: it was a machine-readable collection
+of a million words across 15 balanced genres with each word tagged with
+its part of speech (e.g., noun, verb, preposition). The British National
+Corpus <span class="citation">(University of Oxford <a href="#ref-bnc">2006</a>)</span> repeated the same process for British English at a larger
+scale. The Penn Treebank <span class="citation">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-marcus-93">1993</a>)</span> provides additional information:
+in addition to part-of-speech annotation, it provides <em>syntactic</em>
+annotation. For example, what is the object of the sentence “The man
+bought the hat”? These standard corpora serve as training data to train
+the classifiers and machine learning techniques to automatically analyze
+text <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span>.</p>
 <p>Text analysis is one of the more complex tasks in big data analysis.
 Because it is unstructured, text (and natural language overall) requires
 significant processing and cleaning before we can engage in interesting
@@ -1379,7 +1176,7 @@ resources that can be helpful in mastering text mining techniques:</p>
 <li><p>The Natural Language Toolkit is one of the most popular Python-based
 tools for natural language processing. It has a variety of methods
 and examples that are easily accessible online <span class="citation">(NLTK Project, <a href="#ref-NLTKweb">n.d.</a>)</span>. The book
-by Bird et al. <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span>, available online, contains multiple
+by Bird et al. <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span>, available online, contains multiple
 examples and tips on how to use NLTK.</p></li>
 <li><p>The book <em>Pattern Recognition and Machine Learning</em> by Christopher
 Bishop <span class="citation">(Bishop <a href="#ref-bishop-06">2006</a>)</span> is a useful introduction to computational
@@ -1401,30 +1198,12 @@ introductory resources for those interested in topic modeling
 <li><p>We provide an example of how to run topic modeling using MALLET on
 textual data from the National Science Foundation and Norwegian
 Research Council award abstracts <span class="citation">(Boyd-Graber, <a href="#ref-NSFsearch">n.d.</a>)</span>.</p></li>
-<li><p>Weka, developed at the University of Waikato in New Zealand, is a
-useful resource for running both complex text analysis and other
-machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a href="#ref-hall2009weka">2009</a>; University of Waikato, <a href="#ref-WekaWeb">n.d.</a>)</span>.</p></li>
 </ul>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
-<div id="ref-brody2015">
-<p>Brody, C., T. de Hoop, M. Vojtkova, R. Warnock, M. Dunbar, P. Murthy, and S. L. Dworkin. 2015. “Economic Self-Help Group Programs for Women’s Empowerment: A Systematic Review.” <em>Campbell Systematic Reviews</em> 11 (19).</p>
-</div>
-<div id="ref-oecd2005measurement">
-<p>Mortensen, Peter Stendahl, Carter Walter Bloch, and others. 2005. <em>Oslo Manual: Guidelines for Collecting and Interpreting Innovation Data</em>. Organisation for Economic Co-operation; Development.</p>
-</div>
-<div id="ref-manual2004summary">
-<p>Economic Co-operation, Organisation of, and Development. 2004. “A Summary of the Frascati Manual.” <em>Main Definitions and Conventions for the Measurement of Research and Experimental Development</em> 84.</p>
-</div>
-<div id="ref-talley2011database">
-<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6). Nature Publishing Group: 443–44.</p>
-</div>
-<div id="ref-wang-09">
-<p>Wang, Yi, Hongjie Bai, Matt Stanton, Wen-Yen Chen, and Edward Y. Chang. 2009. “PLDA: Parallel Latent Dirichlet Allocation for Large-Scale Applications.” In <em>International Conference on Algorithmic Aspects in Information and Management</em>.</p>
-</div>
 <div id="ref-halevy-09">
 <p>Halevy, Alon, Peter Norvig, and Fernando Pereira. 2009. “The Unreasonable Effectiveness of Data.” <em>IEEE Intelligent Systems</em> 24 (2). Piscataway, NJ: IEEE Educational Activities Department: 8–12.</p>
 </div>
@@ -1437,15 +1216,6 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 <div id="ref-kong-14">
 <p>Kong, Lingpeng, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. “A Dependency Parser for Tweets.” In <em>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (Emnlp)</em>, 1001–12. Association for Computational Linguistics. <a href="http://www.aclweb.org/anthology/D14-1108" class="uri">http://www.aclweb.org/anthology/D14-1108</a>.</p>
 </div>
-<div id="ref-nguyen-12">
-<p>Nguyen, Viet-An, Jordan Boyd-Graber, and Philip Resnik. 2012. “SITS: A Hierarchical Nonparametric Model Using Speaker Identity for Topic Segmentation in Multiparty Conversations.” In <em>Proceedings of the Association for Computational Linguistics</em>. Jeju, South Korea.</p>
-</div>
-<div id="ref-Nguyen:Boyd-Graber:Resnik:Miler-2015">
-<p>Nguyen, Viet-An, Jordan Boyd-Graber, Philip Resnik, and Kristina Miler. 2015. “Tea Party in the House: A Hierarchical Ideal Point Topic Model and Its Application to Republican Legislators in the 112th Congress.” In <em>Association for Computational Linguistics</em>. Beijing, China.</p>
-</div>
-<div id="ref-tuarob-13">
-<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. <a href="https://doi.org/10.1145/2467696.2467706" class="uri">https://doi.org/10.1145/2467696.2467706</a>.</p>
-</div>
 <div id="ref-Mukherjea-05">
 <p>Mukherjea, Sougata. 2005. “Information Retrieval and Knowledge Discovery Utilising a Biomedical Semantic Web.” <em>Briefings in Bioinformatics</em> 6 (3): 252–62. <a href="https://doi.org/10.1093/bib/6.3.252" class="uri">https://doi.org/10.1093/bib/6.3.252</a>.</p>
 </div>
@@ -1455,17 +1225,32 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 <div id="ref-pang-08">
 <p>Pang, Bo, and Lillian Lee. 2008. <em>Opinion Mining and Sentiment Analysis</em>. Paperback; Now Publishers.</p>
 </div>
+<div id="ref-talley2011database">
+<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6). Nature Publishing Group: 443–44.</p>
+</div>
 <div id="ref-bron-11">
 <p>Bron, Marc, Bouke Huurnink, and Maarten de Rijke. 2011. “Linking Archives Using Document Enrichment and Term Selection.” In <em>Proceedings of the 15th International Conference on Theory and Practice of Digital Libraries: Research and Advanced Technology for Digital Libraries</em>, 360–71. Springer.</p>
 </div>
-<div id="ref-browncorpus">
-<p>Francis, W. N., and H. Kucera. 1979. “Brown Corpus Manual.” Department of Linguistics, Brown University, Providence, Rhode Island, US. <a href="http://icame.uib.no/brown/bcm.html" class="uri">http://icame.uib.no/brown/bcm.html</a>.</p>
+<div id="ref-nguyen-12">
+<p>Nguyen, Viet-An, Jordan Boyd-Graber, and Philip Resnik. 2012. “SITS: A Hierarchical Nonparametric Model Using Speaker Identity for Topic Segmentation in Multiparty Conversations.” In <em>Proceedings of the Association for Computational Linguistics</em>. Jeju, South Korea.</p>
 </div>
-<div id="ref-bnc">
-<p>University of Oxford. 2006. “British National Corpus.” <a href="http://www.natcorp.ox.ac.uk/" class="uri">http://www.natcorp.ox.ac.uk/</a>.</p>
+<div id="ref-Nguyen:Boyd-Graber:Resnik:Miler-2015">
+<p>Nguyen, Viet-An, Jordan Boyd-Graber, Philip Resnik, and Kristina Miler. 2015. “Tea Party in the House: A Hierarchical Ideal Point Topic Model and Its Application to Republican Legislators in the 112th Congress.” In <em>Association for Computational Linguistics</em>. Beijing, China.</p>
 </div>
-<div id="ref-marcus-93">
-<p>Marcus, Mitchell P., Beatrice Santorini, and Mary A. Marcinkiewicz. 1993. “Building a Large Annotated Corpus of English: The Penn Treebank.” <em>Computational Linguistics</em> 19 (2): 313–30.</p>
+<div id="ref-tuarob-13">
+<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. <a href="https://doi.org/10.1145/2467696.2467706" class="uri">https://doi.org/10.1145/2467696.2467706</a>.</p>
+</div>
+<div id="ref-brody2015">
+<p>Brody, C., T. de Hoop, M. Vojtkova, R. Warnock, M. Dunbar, P. Murthy, and S. L. Dworkin. 2015. “Economic Self-Help Group Programs for Women’s Empowerment: A Systematic Review.” <em>Campbell Systematic Reviews</em> 11 (19).</p>
+</div>
+<div id="ref-wang-09">
+<p>Wang, Yi, Hongjie Bai, Matt Stanton, Wen-Yen Chen, and Edward Y. Chang. 2009. “PLDA: Parallel Latent Dirichlet Allocation for Large-Scale Applications.” In <em>International Conference on Algorithmic Aspects in Information and Management</em>.</p>
+</div>
+<div id="ref-oecd2005measurement">
+<p>Mortensen, Peter Stendahl, Carter Walter Bloch, and others. 2005. <em>Oslo Manual: Guidelines for Collecting and Interpreting Innovation Data</em>. Organisation for Economic Co-operation; Development.</p>
+</div>
+<div id="ref-manual2004summary">
+<p>Economic Co-operation, Organisation of, and Development. 2004. “A Summary of the Frascati Manual.” <em>Main Definitions and Conventions for the Measurement of Research and Experimental Development</em> 84.</p>
 </div>
 <div id="ref-bird-09">
 <p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. <em>Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit</em>. O’Reilly Media.</p>
@@ -1521,8 +1306,17 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 <div id="ref-paul-10">
 <p>Paul, Michael, and Roxana Girju. 2010. “A Two-Dimensional Topic-Aspect Model for Discovering Multi-Faceted Topics.” In <em>Association for the Advancement of Artificial Intelligence</em>.</p>
 </div>
-<div id="ref-lee:boolean-88">
-<p>Lee, Whay C., and Edward A. Fox. 1988. “Experimental Comparison of Schemes for Interpreting Boolean Queries.” TR-88-27. Computer Science, Virginia Polytechnic Institute; State University.</p>
+<div id="ref-lewis-05">
+<p>Lewis, David D. 1998. “Naive (Bayes) at Forty: The Independence Assumption in Information Retrieval.” In <em>Proceedings of European Conference of Machine Learning</em>, 4–15.</p>
+</div>
+<div id="ref-pennebaker-99">
+<p>Pennebaker, James W., and Martha E. Francis. 1999. <em>Linguistic Inquiry and Word Count</em>. Loose Leaf; Lawrence Erlbaum.</p>
+</div>
+<div id="ref-blitzer-07">
+<p>Blitzer, John, Mark Dredze, and Fernando Pereira. 2007. “Biographies, Bollywood, Boom-Boxes and Blenders: Domain Adaptation for Sentiment Classification.” In <em>Proceedings of the Association for Computational Linguistics</em>.</p>
+</div>
+<div id="ref-nguyen-13:shlda">
+<p>Nguyen, Viet-An, Jordan Boyd-Graber, and Philip Resnik. 2013. “Lexical and Hierarchical Topic Regression.” In <em>Advances in Neural Information Processing Systems</em>. Lake Tahoe, Nevada.</p>
 </div>
 <div id="ref-kullback1951information">
 <p>Kullback, Solomon, and Richard A. Leibler. 1951. “On Information and Sufficiency.” <em>Annals of Mathematical Statistics</em> 22 (1). JSTOR: 79–86.</p>
@@ -1538,21 +1332,6 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 </div>
 <div id="ref-Nguyen:Boyd-Graber:Resnik:Chang-2014">
 <p>Nguyen, Viet-An, Jordan Boyd-Graber, Philip Resnik, and Jonathan Chang. 2014. “Learning a Concept Hierarchy from Multi-Labeled Documents.” In <em>Proceedings of the Annual Conference on Neural Information Processing Systems</em>. Morgan Kaufmann.</p>
-</div>
-<div id="ref-snow-08">
-<p>Snow, Rion, Brendan O’Connor, Daniel Jurafsky, and Andrew Ng. 2008. “Cheap and Fast—but Is It Good? Evaluating Non-Expert Annotations for Natural Language Tasks.” In <em>Proceedings of Empirical Methods in Natural Language Processing</em>.</p>
-</div>
-<div id="ref-lewis-05">
-<p>Lewis, David D. 1998. “Naive (Bayes) at Forty: The Independence Assumption in Information Retrieval.” In <em>Proceedings of European Conference of Machine Learning</em>, 4–15.</p>
-</div>
-<div id="ref-pennebaker-99">
-<p>Pennebaker, James W., and Martha E. Francis. 1999. <em>Linguistic Inquiry and Word Count</em>. Loose Leaf; Lawrence Erlbaum.</p>
-</div>
-<div id="ref-blitzer-07">
-<p>Blitzer, John, Mark Dredze, and Fernando Pereira. 2007. “Biographies, Bollywood, Boom-Boxes and Blenders: Domain Adaptation for Sentiment Classification.” In <em>Proceedings of the Association for Computational Linguistics</em>.</p>
-</div>
-<div id="ref-nguyen-13:shlda">
-<p>Nguyen, Viet-An, Jordan Boyd-Graber, and Philip Resnik. 2013. “Lexical and Hierarchical Topic Regression.” In <em>Advances in Neural Information Processing Systems</em>. Lake Tahoe, Nevada.</p>
 </div>
 <div id="ref-rabiner-89">
 <p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. <a href="https://doi.org/10.1109/5.18626" class="uri">https://doi.org/10.1109/5.18626</a>.</p>
@@ -1593,6 +1372,15 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 <div id="ref-mallet">
 <p>McCallum, Andrew Kachites. 2002. “MALLET: A Machine Learning for Language Toolkit.” <a href="http://mallet.cs.umass.edu" class="uri">http://mallet.cs.umass.edu</a>.</p>
 </div>
+<div id="ref-browncorpus">
+<p>Francis, W. N., and H. Kucera. 1979. “Brown Corpus Manual.” Department of Linguistics, Brown University, Providence, Rhode Island, US. <a href="http://icame.uib.no/brown/bcm.html" class="uri">http://icame.uib.no/brown/bcm.html</a>.</p>
+</div>
+<div id="ref-bnc">
+<p>University of Oxford. 2006. “British National Corpus.” <a href="http://www.natcorp.ox.ac.uk/" class="uri">http://www.natcorp.ox.ac.uk/</a>.</p>
+</div>
+<div id="ref-marcus-93">
+<p>Marcus, Mitchell P., Beatrice Santorini, and Mary A. Marcinkiewicz. 1993. “Building a Large Annotated Corpus of English: The Penn Treebank.” <em>Computational Linguistics</em> 19 (2): 313–30.</p>
+</div>
 <div id="ref-bishop-06">
 <p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.</p>
 </div>
@@ -1602,27 +1390,19 @@ machine learning tasks and evaluations <span class="citation">(M. Hall et al. <a
 <div id="ref-NSFsearch">
 <p>Boyd-Graber, Jordan. n.d. <a href="http://www.umiacs.umd.edu/~jbg/lda_demo" class="uri">http://www.umiacs.umd.edu/~jbg/lda_demo</a>. Accessed February 1, 2016.</p>
 </div>
-<div id="ref-hall2009weka">
-<p>Hall, Mark, Eibe Frank, Geoffrey Holmes, Bernhard Pfahringer, Peter Reutemann, and Ian H Witten. 2009. “The Weka Data Mining Software: An Update.” <em>ACM SIGKDD Explorations Newsletter</em> 11 (1). ACM: 10–18.</p>
-</div>
-<div id="ref-WekaWeb">
-<p>University of Waikato. n.d. “Weka 3: Data Mining Software in Java.” <a href="http://www.cs.waikato.ac.nz/ml/weka/" class="uri">http://www.cs.waikato.ac.nz/ml/weka/</a>. Accessed February 1, 2016.</p>
-</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="39">
-<li id="fn39"><p>See Chapter 3.<a href="chap-text.html#fnref39" class="footnote-back">↩</a></p></li>
-<li id="fn40"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken
-language into text.<a href="chap-text.html#fnref40" class="footnote-back">↩</a></p></li>
-<li id="fn41"><p>Classification, a machine
-learning method, is discussed in Chapter 6.<a href="chap-text.html#fnref41" class="footnote-back">↩</a></p></li>
-<li id="fn42"><p>Cleaning and processing are discussed extensively in
-Chapter 3.<a href="chap-text.html#fnref42" class="footnote-back">↩</a></p></li>
-<li id="fn43"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref43" class="footnote-back">↩</a></p></li>
-<li id="fn44"><p>Chapter 6 reviews supervised machine learning approaches.<a href="chap-text.html#fnref44" class="footnote-back">↩</a></p></li>
-<li id="fn45"><p>Chapter 10 discusses
-how to measure and diagnose errors in big data.<a href="chap-text.html#fnref45" class="footnote-back">↩</a></p></li>
+<li id="fn39"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken
+language into text.<a href="chap-text.html#fnref39" class="footnote-back">↩</a></p></li>
+<li id="fn40"><p>Classification, a machine
+learning method, is discussed in Chapter 6.<a href="chap-text.html#fnref40" class="footnote-back">↩</a></p></li>
+<li id="fn41"><p>Cleaning and processing are discussed extensively in
+Chapter 3.<a href="chap-text.html#fnref41" class="footnote-back">↩</a></p></li>
+<li id="fn42"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref42" class="footnote-back">↩</a></p></li>
+<li id="fn43"><p>Chapter 10 discusses
+how to measure and diagnose errors in big data.<a href="chap-text.html#fnref43" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

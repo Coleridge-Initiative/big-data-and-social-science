@@ -252,17 +252,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
 <li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
 <li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> How much is a word worth?</a></li>
+<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> Turning text into a matrix: How much is a word worth?</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Approaches and applications</a><ul>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Section Name</a><ul>
 <li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-<li class="chapter" data-level="7.3.2" data-path="chap-text.html"><a href="chap-text.html#sec:ir"><i class="fa fa-check"></i><b>7.3.2</b> Information retrieval and clustering</a></li>
-<li class="chapter" data-level="7.3.3" data-path="chap-text.html"><a href="chap-text.html#sec:other"><i class="fa fa-check"></i><b>7.3.3</b> Other approaches</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.4</b> Evaluation</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.5</b> Text analysis tools</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.6</b> Summary</a></li>
-<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.7</b> Resources</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.4</b> Word Embeddings and Deep Learning</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
+<li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
@@ -359,14 +358,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="chap:link" class="section level1">
 <h1><span class="header-section-number">Chapter 3</span> Record Linkage</h1>
 <p><strong>Joshua Tokle and Stefan Bender</strong></p>
-<p>Big data differs from survey data in that it is typically necessary to
+<p>As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. Although computer scientists tend to simply
-“mash” data sets together, social scientists are rightfully concerned
+activities of interest. As social scientists, in addition to just linking data, we are also concerned
 about issues of missing links, duplicative links, and erroneous links.
 This chapter provides an overview of traditional rule-based and
-probabilistic approaches, as well as the important contribution of
-machine learning to record linkage.</p>
+probabilistic approaches, as well as the modern approaches to record linkage using machine learning.</p>
 <div id="motivation" class="section level2">
 <h2><span class="header-section-number">3.1</span> Motivation</h2>
 <p>Big data offers social scientists great opportunities to bring together
@@ -378,12 +375,12 @@ of challenges from those posed by survey data. Combining information
 from different sources about an individual, business, or geographic
 entity means that the social scientist must determine whether or not two
 entities on two different files are the same. This determination is not
-easy. In the UMETRICS data, if data are to be used to measure the impact
-of research grants, is David A. Miller from Stanford, CA, the same as
+easy. For example, in the UMETRICS data, if data are to be used to measure the impact
+of research grants, is David A. Miller from Stanford, CA, the same as
 David Andrew Miller from Fairhaven, NJ, in a list of inventors? Is
-Google the same as Alphabet if the productivity and growth of
+IBM the same as Big Blue if the productivity and growth of
 R&amp;D-intensive firms is to be studied? Or, more generally, is individual
-A the same person as the one who appears on a list of terrorists that
+A the same person as the one who appears on a list that
 has been compiled? Does the product that a customer is searching for
 match the products that business B has for sale?</p>
 <p>The consequences of poor record linkage decisions can be substantial. In
@@ -441,7 +438,7 @@ the individual data sources <span class="citation">(Abowd, Haltiwanger, and Lane
 <p><strong>Example: The Administrative Data Research Network</strong></p>
 <p>The UK’s Administrative Data Research Network<a href="#fn12" class="footnote-ref" id="fnref12"><sup>12</sup></a> (ADRN) is a major investment by
 the United Kingdom to “improve our knowledge and understanding of the
-society we live in … [and] provide a sound base for policymakers to
+society we live in … [and] provide a sound base for policymakers to
 decide how to tackle a range of complex social, economic and
 environmental issues” by linking administrative data from a variety of
 sources, such as health agencies, court records, and tax records in a
@@ -593,7 +590,7 @@ Trademark Office (USPTO) data <span class="citation">(Ventura, Nugent, and Fuchs
 States. In addition to identifying information about the patent, the
 database contains each patent’s list of inventors and assignees, the
 companies, organizations, individuals, or government agencies towhich
-the patent is assigned. … However, inventors and assignees in the
+the patent is assigned. … However, inventors and assignees in the
 USPTO database are not given unique identification numbers, making it
 difficult to track inventors and assignees across their patents or
 link their information to other data sources.</p>
@@ -609,7 +606,7 @@ than sex or year of birth.</p>
 <p>“A Harvard professor has re-identified the names of more than 40 percent
 of a sample of anonymous participants in a high-profile DNA study,
 highlighting the dangers that ever greater amounts of personal data
-available in the Internet era could unravel personal secrets. … Of the
+available in the Internet era could unravel personal secrets. … Of the
 1,130 volunteers Sweeney and her team reviewed, about 579 provided zip
 code, date of birth and gender, the three key pieces of information she
 needs to identify anonymous people combined with information from voter
@@ -717,7 +714,7 @@ theoretically appealing approach but it has the drawback that the
 similarity metric has to be computed for all pairs of records. Even so,
 computing the similarity measure for a pair of blocking keys is likely
 to be cheaper than computing the full record comparison, so there is
-still a gain in efficiency. Whang et al. <span class="citation">(Whang et al. <a href="#ref-whang2009entity">2009</a>)</span> provide a
+still a gain in efficiency. Whang et al. <span class="citation">(Whang et al. <a href="#ref-whang2009entity">2009</a>)</span> provide a
 nice review of indexing approaches.</p>
 <p>In addition to reducing the computational burden of record linkage,
 indexing plays an important secondary role. Once implemented, the
@@ -926,7 +923,7 @@ on identifying potential links using approaches that are fast and
 scalable, and approaches are developed based on work in network
 algorithms and machine learning.</p>
 <p>While simple blocking as described in
-Section <a href="chap-link.html#S:indexing">Indexing and Blocking</a>
+Section <a href="chap-link.html#S:indexing">Indexing and Blocking</a>
 is standard in Fellegi–Sunter applications, computer scientists are
 likely to use the more sophisticated clustering approach to indexing.
 Indexing may also use network information to include, for example,
@@ -940,7 +937,7 @@ requirements are similar to standard blocking <span class="citation">(Christen <
 linkage following their success in other areas of prediction and
 classification. Computer scientists couch the analytical problem as one
 of entity resolution, even though the conceptual problem is identical.
-As Wick et al. <span class="citation">(Wick et al. <a href="#ref-wick2013joint">2013</a>)</span> note:</p>
+As Wick et al. <span class="citation">(Wick et al. <a href="#ref-wick2013joint">2013</a>)</span> note:</p>
 <blockquote>
 <p>Entity resolution, the task of automatically determining which
 mentions refer to the same real-world entity, is a crucial aspect of
@@ -1052,7 +1049,7 @@ effectiveness of the probabilistic method and machine learning
 approaches to disambiguating a database of inventors in the USPTO
 database <span class="citation">(Ventura, Nugent, and Fuchs <a href="#ref-ventura2015seeing">2015</a>)</span>. Another approach is to apply clustering
 algorithms from the computer science literature to identify groups of
-records that are likely to refer to the same entity. Huang et al. 
+records that are likely to refer to the same entity. Huang et al.
 <span class="citation">(Huang, Ertekin, and Giles <a href="#ref-HEG06">2006</a>)</span> have developed a successful method based on an efficient
 computation of distance between individuals in the network. These
 distances are then fed into the DBSCAN clustering algorithm to identify
