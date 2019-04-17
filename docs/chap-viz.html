@@ -249,16 +249,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>6.11</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>7</b> Text Analysis</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> Turning text into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-human-generated-text"><i class="fa fa-check"></i><b>7.1</b> Understanding human generated text</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-is-text-data-different-than-structured-data"><i class="fa fa-check"></i><b>7.2</b> How is text data different than “structured” data?</a></li>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#what-can-we-do-with-text-data"><i class="fa fa-check"></i><b>7.3</b> What can we do with text data?</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.4</b> How to analyze text</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.4.1</b> Processing text data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.4.2</b> Turning text into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="7.4.3" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.4.3</b> Topic modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Section Name</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.4</b> Word Embeddings and Deep Learning</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.5</b> Word Embeddings and Deep Learning</a></li>
 <li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
 <li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
 <li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
@@ -416,7 +415,7 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box 9.1<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>).</p>
+(see Box 9.1<a href="#fn47" class="footnote-ref" id="fnref47"><sup>47</sup></a>).</p>
 <div class="F00">
 <p>
 <strong>Box 9.1:</strong> The development of an effective visualization is an iterative process that generally includes the following steps:
@@ -475,7 +474,7 @@ information.</p>
 <p>Another goal of visualization is to enable <em>interactive exploratory
 analysis</em> for casual users as well as professional analysts. One casual
 example is BabyNameVoyager <span class="citation">(Harrison, Reinecke, and Chang, <a href="#ref-babynamevoyager">n.d.</a>)</span>, which lets users type in
-a name and see a graph of its popularity over the past century<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>.</p>
+a name and see a graph of its popularity over the past century<a href="#fn48" class="footnote-ref" id="fnref48"><sup>48</sup></a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-2"></span>
 <img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
 <p class="caption">
@@ -906,7 +905,7 @@ Figure 9.11: NodeXL showing innovation networks of the Great Lakes manufacturing
 </p>
 </div>
 
-<p>Network data encode relationships between items<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>: for example, social
+<p>Network data encode relationships between items<a href="#fn49" class="footnote-ref" id="fnref49"><sup>49</sup></a>: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
 patterns (such as emails). The network overviews attempt to reveal the
@@ -957,7 +956,7 @@ summary of the insights gathered by analysts.</p>
 <h3><span class="header-section-number">9.3.6</span> Text data</h3>
 <p>Text is usually preprocessed (for word/paragraph counts, sentiment
 analysis, categorization, etc.) to generate metadata about text
-segments, which are then visualized<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>. Simple visualizations like tag
+segments, which are then visualized<a href="#fn50" class="footnote-ref" id="fnref50"><sup>50</sup></a>. Simple visualizations like tag
 clouds display statistics about word usage in a text collection, or can
 be used to compare two collections or text segments. While visually
 appealing, they can easily be misinterpreted and are often replaced by
@@ -1264,11 +1263,11 @@ example, the Python Plotly library) can be used.</p>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="50">
-<li id="fn50"><p>See Chapters 2, 3, 4, and
+<ol start="47">
+<li id="fn47"><p>See Chapters 2, 3, 4, and
 5 for an overview of collecting, merging, storing, and
-processing data sets.<a href="chap-viz.html#fnref50" class="footnote-back">↩</a></p></li>
-<li id="fn51"><p>As the baby name is
+processing data sets.<a href="chap-viz.html#fnref47" class="footnote-back">↩</a></p></li>
+<li id="fn48"><p>As the baby name is
 typed letter by letter, BabyNameVoyager visualizes
 the popularity of all the
 names starting with the
@@ -1282,9 +1281,9 @@ that Joyce and Joan were
 popular girl names in the
 1930s, and the use of
 “John” has declined since
-the 1960s.<a href="chap-viz.html#fnref51" class="footnote-back">↩</a></p></li>
-<li id="fn52"><p>See Chapter 8.<a href="chap-viz.html#fnref52" class="footnote-back">↩</a></p></li>
-<li id="fn53"><p>See Chapter 7 for text analysis approaches.<a href="chap-viz.html#fnref53" class="footnote-back">↩</a></p></li>
+the 1960s.<a href="chap-viz.html#fnref48" class="footnote-back">↩</a></p></li>
+<li id="fn49"><p>See Chapter 8.<a href="chap-viz.html#fnref49" class="footnote-back">↩</a></p></li>
+<li id="fn50"><p>See Chapter 7 for text analysis approaches.<a href="chap-viz.html#fnref50" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

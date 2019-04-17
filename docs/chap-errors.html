@@ -249,16 +249,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>6.11</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>7</b> Text Analysis</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-what-people-write"><i class="fa fa-check"></i><b>7.1</b> Understanding what people write</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.2</b> How to analyze text</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.2.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.2.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.2.2</b> Turning text into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-human-generated-text"><i class="fa fa-check"></i><b>7.1</b> Understanding human generated text</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-is-text-data-different-than-structured-data"><i class="fa fa-check"></i><b>7.2</b> How is text data different than “structured” data?</a></li>
+<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#what-can-we-do-with-text-data"><i class="fa fa-check"></i><b>7.3</b> What can we do with text data?</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.4</b> How to analyze text</a><ul>
+<li class="chapter" data-level="7.4.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.4.1</b> Processing text data</a></li>
+<li class="chapter" data-level="7.4.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.4.2</b> Turning text into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="7.4.3" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.4.3</b> Topic modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#sec:appapp"><i class="fa fa-check"></i><b>7.3</b> Section Name</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.3.1</b> Topic modeling</a></li>
-</ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.4</b> Word Embeddings and Deep Learning</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#sec:eval"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.5</b> Word Embeddings and Deep Learning</a></li>
 <li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
 <li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
 <li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
@@ -769,7 +768,7 @@ model misspecification, and so on.</p>
 <p>A well-known example of the risks of big data error is provided by the
 Google Flu Trends series that uses Google searches on flu symptoms,
 remedies, and other related key words to provide near-real-time
-estimates of flu activity in the USA and 24 other countries<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>. Compared to
+estimates of flu activity in the USA and 24 other countries<a href="#fn51" class="footnote-ref" id="fnref51"><sup>51</sup></a>. Compared to
 CDC data, the Google Flu Trends provided remarkably accurate indicators
 of flu incidence in the USA between 2009 and 2011. However, for the
 2012–2013 flu seasons, Google Flu Trends predicted more than double the
@@ -922,7 +921,7 @@ further exacerbated. For example, noise accumulation can be expected to
 accelerate when random noise (i.e., content errors) afflicts the data.
 Spurious correlations that give rise to both incidental endogeneity and
 coincidental correlations can render correlation analysis meaningless if
-the error levels in big data are not mitigated<a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>. In this section, we
+the error levels in big data are not mitigated<a href="#fn52" class="footnote-ref" id="fnref52"><sup>52</sup></a>. In this section, we
 consider some of the issues that arise in classification, correlation,
 and regression analysis as a result of content errors that may be either
 variable or systematic. The current literature on big data error
@@ -1402,7 +1401,7 @@ attempt to eliminate the error rather than model it.</p>
 </div>
 <div id="sec:10-5" class="section level2">
 <h2><span class="header-section-number">10.5</span> Some methods for mitigating, detecting, and compensating for errors</h2>
-<p>For survey data and other <em>designed</em> data collections, error mitigation<a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>
+<p>For survey data and other <em>designed</em> data collections, error mitigation<a href="#fn53" class="footnote-ref" id="fnref53"><sup>53</sup></a>
 begins at the data generation stage by incorporating design strategies
 that generate high-quality data that are at least adequate for the
 purposes of the data users. For example, missing data can be mitigated
@@ -1424,7 +1423,7 @@ missing cells, weighting the observations, and preparing the file,
 including the application of disclosure- limiting processes. For big
 data, many of these same operations could be needed to some extent,
 depending upon requirements of the data, its uses, and the prevailing
-statutory requirements<a href="#fn57" class="footnote-ref" id="fnref57"><sup>57</sup></a>. Of all the operations comprising data
+statutory requirements<a href="#fn54" class="footnote-ref" id="fnref54"><sup>54</sup></a>. Of all the operations comprising data
 processing, the area that has the greatest potential to both alter data
 quality and consume vast resources is data editing. For example, Biemer
 and Lyberg <span class="citation">(Biemer and Lyberg <a href="#ref-biemer2003">2003</a>)</span> note that national statistical offices may
@@ -1819,27 +1818,27 @@ survey organizations <span class="citation">(TSE15, <a href="#ref-TSEweb">n.d.</
 </div>
 <div class="footnotes">
 <hr />
-<ol start="54">
-<li id="fn54"><p>See the discussion in
-Section 1.3.<a href="chap-errors.html#fnref54" class="footnote-back">↩</a></p></li>
-<li id="fn55"><p>The volume, velocity, and
+<ol start="51">
+<li id="fn51"><p>See the discussion in
+Section 1.3.<a href="chap-errors.html#fnref51" class="footnote-back">↩</a></p></li>
+<li id="fn52"><p>The volume, velocity, and
 variety of big data make it
 challenging to analyze because of noise accumulation, spurious correlations,
 and incidental endogeneity.
 But, the three Vs are also
 the scourge of veracity—
-i.e., errors in big data.<a href="chap-errors.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>Data errors further complicate analysis and exacerbate the analytical problems. There are essentially
+i.e., errors in big data.<a href="chap-errors.html#fnref52" class="footnote-back">↩</a></p></li>
+<li id="fn53"><p>Data errors further complicate analysis and exacerbate the analytical problems. There are essentially
 three solutions: prevention,
 remediation, and the choice
-of analysis methodology.<a href="chap-errors.html#fnref56" class="footnote-back">↩</a></p></li>
-<li id="fn57"><p>For example, Title 13 in
+of analysis methodology.<a href="chap-errors.html#fnref53" class="footnote-back">↩</a></p></li>
+<li id="fn54"><p>For example, Title 13 in
 the US code is explicit in
 terms of data statutory protections and—as you will
 see in the next chapter—
 can have substantial impact
 on the quality of subsequent
-inference.<a href="chap-errors.html#fnref57" class="footnote-back">↩</a></p></li>
+inference.<a href="chap-errors.html#fnref54" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
