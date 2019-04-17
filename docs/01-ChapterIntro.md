@@ -545,7 +545,7 @@ data. The last set deals with analysis and the appropriate handling of
 data on individuals and organizations.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="70%" />
+<img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />
 <p class="caption">(\#fig:projectfig)The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis.</p>
 </div>
 
