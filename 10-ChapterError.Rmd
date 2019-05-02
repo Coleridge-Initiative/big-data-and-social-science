@@ -1,4 +1,4 @@
-Errors and Inference {#chap:errors}
+Data Quality and Inference Errors {#chap:errors}
 ====================
 
 **Paul P. Biemer**
@@ -8,7 +8,7 @@ This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
 more recent Google Flu Trends problems in
-Chapter [Introduction](#chap:intro). Although the consequences are well understood,
+Chapter [Introduction](#chap:intro). Although the consequences are well understood,
 the new types of data are so large and complex that their properties
 often cannot be studied in traditional ways. In addition, the data
 generating function is such that the data are often selective,
@@ -16,47 +16,74 @@ incomplete, and erroneous. Without proper data hygiene, the errors can
 quickly compound. This chapter provides, for the first time, a
 systematic way to think about the error framework in a big data setting.
 
+
+
+Current Structure
+Introduction
+Total error framework [data is not perfect]
+-Row error
+-Column error
+-Cell error
+Google flu example
+Error in data analysis [your analysis is not perfect]
+-Errors when your data is perfect
+-Errors when your data is not perfect
+-What type of error and what type of variables
+ -Error types
+  -random/uncorrelated
+  -Correlated
+ -Uncorrelated between variables
+ -Correlated between variables
+  Variable Types
+  -Continuous
+  -Categorical
+ -Errors when analyzing rare population groups
+ -Errors when doing correlation analysis
+  -Variable error only
+  -Both variable and systematic errors
+ -Errors when doing regression analysis
+
+
+
+
+
+
 Introduction {#sec:10-1}
 ------------
 
-The massive amounts of high-dimensional and unstructured data in big
-data bring both new opportunities and new challenges to the data
-analyst. Many of the problems with big data are well known (see, for
-example, the AAPOR report by Japec et al. [@japec2015big]). The volume,
-variety, and velocity of big data can overwhelm traditional methods of
-data analysis. Add to this complexity the fact that, as it is generated,
-big data is often selective, incomplete, and erroneous. As it is
-processed, new errors can be introduced in downstream operations.
+Show workflow/pipeline (from chapter 1 and ml)  and point out how errors in each step can lead to bad inferences. Our focus in this chapter will be to
 
-Big data is typically aggregated from disparate sources at various
-points in time and integrated to form data sets. These processes involve
-linking records together, transforming them to form new attributes (or
+How to detect the errors
+Highlight how these errors can lead to bad inferences
+How to mitigate the inference risk from these errors
+
+The Machine Learning chapter and the Bias and Fairness chapter discussed how analysis errors can lead to bad inferences and suboptimal decision making. In this chapter, we will focus on how errors in our data sources can lead to incorrect inferences.
+
+The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. [@japec2015big]): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
+
+These new sources of data are typically aggregated from disparate sources at various
+points in time and integrated to form data sets for further analysis. The processing pipeline involve linking records together, transforming them to form new attributes (or
 variables), documenting the actions taken (although sometimes
 inadequately), and interpreting the newly created features of the data.
 These activities may introduce new errors into the data set: errors that
 may be either *variable* (i.e., errors that create random noise
 resulting in poor reliability) or *systematic* (i.e., errors that tend
-to be directional, thus exacerbating biases). Using big data in
+to be directional, thus exacerbating biases). Using these new sources of data in
 statistically valid ways is increasingly challenging in this
 environment; however, it is important for data analysts to be aware of
-the error risks and the potential effects of big data error on
+the error risks and the potential effects of these errors on
 inferences and decision-making. The massiveness, high dimensionality,
-and accelerating pace of big data, combined with the risks of variable
+and accelerating pace of data, combined with the risks of variable
 and systematic data errors, requires new, robust approaches to data
 analysis.
 
-The core issue confronting big data veracity is that such data may not
+The core issue that is often the cause of these errors is that such data may not
 be generated from instruments and methods designed to produce valid and
 reliable data for scientific analysis and discovery. Rather, this is
-data that are being repurposed for uses not originally intended. Big
-data has been referred to as "found" data or "data exhaust" because it
-is generated for purposes that often do not align with those of the data
-analyst. In addition to inadvertent errors, there are also errors from
-mischief in big data; for example, automated systems have been written
+data that are being repurposed for uses not originally intended. It has been referred to as "found" data or "data exhaust" because it is generated for purposes that often do not align with those of the data analyst. In addition to inadvertent errors, there are also errors from
+mischief in the data generation process; for example, automated systems have been written
 to generate bogus content in the social media that is indistinguishable
-from legitimate or authentic data. Regardless of the source, many big
-data generators have little or no regard for the quality of the data
-that are cast off from their processes. Big data analysts must be keenly
+from legitimate or authentic data. Social scientists using this data must be keenly
 aware of these limitations and should take the necessary steps to
 understand and hopefully mitigate the effects of hidden errors on their
 results.
@@ -69,10 +96,11 @@ the errors in essentially any data set, be it structured or
 unstructured, massive or small, static or dynamic. This framework has
 been referred to as the total error framework or paradigm. We begin by
 reviewing the traditional paradigm, acknowledging its limitations for
-truly big data sets, and we suggest how this framework can be extended
-to encompass the new error structures often associated with big data.
+truly large and diverse data sets, and we suggest how this framework can be extended
+to encompass the new error structures described above.
 
 ### The traditional model {#sec:10-2.1}
+[need a diagram]
 
 Dealing with the risks that errors introduce in big data analysis can be
 facilitated through a better understanding of the sources and nature of
@@ -94,37 +122,30 @@ has quantitative analyses in mind, some of the issues discussed here are
 also of interest to more qualitative uses of big data.
 
 For surveys, the TSE framework provides useful insights regarding how
-the many steps in the data generating, reformatting, and file
-preparation processes affect estimation and inference, and may also
-suggest methods for either reducing the errors at their source or
-adjusting for their effects in the final data products to produce
-inferences of higher quality. The AAPOR Task Force Report on big data
-referenced above [@japec2015big] describes the concept of data quality
-for big data and provides a total error framework for big data that we
-consider and further extend in this chapter. This approach was closely
-modeled after the TSE framework since, as we shall see, both share a
-number of common error sources. However, the big data total error (BDTE)
-framework, as it is called in the AAPOR report, necessarily includes
-additional error sources that are unique to big data and can create
-substantial biases and uncertainties in big data products. Like the TSE
-framework, the BDTE framework aids our understanding of the limitations
-of the data, leading to better-informed analyses and applications of the
-results. It may also inform a research agenda for reducing the effects
-of error on big data analytics.
+data generating, reformatting, and file preparation processes affect estimation and inference, and suggest methods for either reducing the errors at their source or adjusting for their effects in the final products to produce inferences of higher quality. (Add classic TSE citations)
 
-In Figure \@ref(fig:fig10-1), a
-canonical data file is represented as an array consisting of rows
-(records) and columns (variables), with their size denoted by $N$ and
-$p$, respectively. Many data sets derived from big data can be
-represented in this way, at least conceptually. Later, we will consider
-data sets that do not conform to this rectangular structure and may even
-be unstructured.
+The traditional TSE framework is quite general in that it can be applied
+to essentially any data set that conform to the format in Figure
+\@ref(fig:fig10-1). However, in most practical situations it is quite limited because it makes no
+attempt to describe how the processes that the data may have contributed
+to what could be construed as data errors. In some cases, these
+processes constitute a "black box," and the best approach is to attempt
+to evaluate the quality of the end product. For survey data, the TSE
+framework provides a fairly complete description of the error-generating
+processes for survey data and survey frames [@biemer2010total]. In
+addition, there has been some effort to describe these processes for
+population registers and administrative data [@wallgren2007register].
+But at this writing, little effort has been devoted to enumerating the
+error sources and the error generating processes for big data.
+
+
+#### Types of Errors
 
 Many administrative data sets have a simple tabular structure, as do
 survey sampling frames, population registers, and accounting
-spreadsheets. Let us assume that the data set is intended to some target
-population to which inference will be made in the subsequent analysis.
-Thus, the rows are typically aligned with units or elements of this
+Spreadsheets. Figure \@ref(fig:fig10-1) is a representation of tabular data as an array consisting of rows
+(records) and columns (variables), with their size denoted by $N$ and
+$p$, respectively. The rows typically represent units or elements of our
 target population, the columns represent characteristics, variables (or
 features) of the row elements, and the cells correspond to values of the
 column features for elements on the rows.
@@ -132,7 +153,6 @@ column features for elements on the rows.
 ```{r fig10-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A typical rectangular data file format'}
 knitr::include_graphics("ChapterError/figures/fig10-1.png")
 ```
-
 
 The total error for this data set may be expressed by the following
 heuristic formula:
@@ -152,17 +172,16 @@ three types:
 -   **Erroneous inclusions**: Some rows contain elements or entities that are not part of the
     target population.
 
+Omissions:
+
 For survey sample data sets, omissions include members of the target
 population that are either inadvertently or deliberately absent from the
-frame, as well as nonsampled frame members. For big data, the
-selectivity of the capture mechanism is a common form of omissions. For
-example, a data set consisting of persons who conducted a Google search
-in the past week necessarily excludes persons not satisfying that
-criterion who may have quite different characteristics from those who
-do. Such exclusions can therefore be viewed as a source of selectivity
-bias if inference is to be made to the general population. For one,
-persons who do not have access to the Internet are excluded from the
-data set. These exclusions may be biasing in that persons with Internet
+frame, as well as nonsampled frame members. For other types of data, the
+selectivity of the capture mechanism is a common cause of omissions. For
+example, a data set consisting of people who did a Google search
+in the past week can be used to make inferences about that specific population but if our goal was to make inferences about the larger population of internet users, this data set will exclude people who did not use Google Search. This selection bias can lead to inference errors if the people who did not use Google Search were different from those who did.
+
+Such exclusions can therefore be viewed as a source of selectivity bias if inference is to be made about an even larger set of people, such as the general population. For one, persons who do not have access to the Internet are excluded from the data set. These exclusions may be biasing in that persons with Internet
 access may have quite different demographic characteristics from persons
 who do not have Internet access. The selectivity of big data capture is
 similar to frame noncoverage in survey sampling and can bias inferences
@@ -202,6 +221,8 @@ sizes of these two components of bias. Nevertheless, speculation is
 useful for understanding and interpreting the results of data analysis
 and cautioning ourselves regarding the risks of false inference.
 
+Duplication:
+
 We can also expect that big data sets, such as a data set containing
 Google searches during the previous week, could have the same person
 represented many times. People who conducted many searches during the
@@ -216,7 +237,7 @@ the analysis.
 For example, if inference is to be made to a population of persons,
 persons who tweet multiple times on a topic would be overrepresented. If
 inference is to be made to the population of tweets, including retweets,
-then such duplication does not bias inference.
+then such duplication does not bias inference. This is also common in domains such as healthcare or human services where certain people have more interactions with the systems (medical appointments, consumption of social services, etc.) and can be over-represented when doing analysis at an individual interaction level.
 
 When it is a problem, it still may not be possible to identify
 duplications in the data. Failing to account for them could generate
@@ -225,6 +246,8 @@ be identified, they can either be removed from the data file (i.e.,
 deduplication). Alternatively, if a certain number of rows, say $d$,
 correspond to the same population unit, those row values can be weighted
 by $1/d$ to correct the estimates for the duplications.
+
+Erroneous inclusions:
 
 Erroneous inclusions can also create biases. For example, Google
 searches or tweets may not be generated by a person but rather by a
@@ -249,9 +272,9 @@ Instead the column contains the number of persons on the payroll whether
 or not they received a check in the prior month, thus including, for
 example, persons on leave without pay.
 
-For big data analysis, such errors would seem to be quite common because
+When analyzing a more diverse set of data sources, such errors could happen because
 of the complexities involved in producing a data set. For example, data
-generated from a source, such as an individual tweet, may undergo a
+Generated an individual tweet may undergo a
 number of transformations before it is included in the analysis data
 set. This transformative process can be quite complex, involving parsing
 phrases, identifying words, and classifying them as to subject matter
@@ -279,7 +302,10 @@ be underestimates.
 **Cell errors**
 
 Finally, cell errors can be of three types: content error, specification
-error, or missing data. A content error occurs when the value in a cell
+error, or missing data. 
+
+Content Error:
+A content error occurs when the value in a cell
 satisfies the column definition but still deviates from the true value,
 whether or not the true value is known. For example, the value satisfies
 the definition of "number of employees" but is outdated because it does
@@ -289,34 +315,18 @@ deliberate. Thus, content errors may be the result of the measurement
 process, a transcription error, a data processing error (e.g., keying,
 coding, editing), an imputation error, or some other cause.
 
+Specification Error:
 Specification error is just as described for column error but applied to
 a cell. For example, the column is correctly defined and labeled;
 however, a few companies provided values that, although otherwise highly
 accurate, were nevertheless inconsistent with the required definition.
-Missing data, as the name implies, are just empty cells that should be
-filled. As described in Kreuter and Peng [@kreuter201412], data sets
-derived from big data are notoriously affected by all three types of
+
+Missing data:
+Missing data, as the name implies, are just empty cells. As described in Kreuter and Peng [@kreuter201412], data sets derived from big data are notoriously affected by all three types of
 cell error, particularly missing or incomplete data, perhaps because
 that is the most obvious deficiency.
 
-The traditional TSE framework is quite general in that it can be applied
-to essentially any data set that conform to the format in Figure
-\@ref(fig:fig10-1). However, in
-most practical situations it is quite limited because it makes no
-attempt to describe how the processes that the data may have contributed
-to what could be construed as data errors. In some cases, these
-processes constitute a "black box," and the best approach is to attempt
-to evaluate the quality of the end product. For survey data, the TSE
-framework provides a fairly complete description of the error-generating
-processes for survey data and survey frames [@biemer2010total]. In
-addition, there has been some effort to describe these processes for
-population registers and administrative data [@wallgren2007register].
-But at this writing, little effort has been devoted to enumerating the
-error sources and the error generating processes for big data.
-
-As previously noted, missing data can take two forms: missing
-information in a cell of a data matrix (referred to as *item
-missingness*) or missing rows (referred to as *unit missingness*), with
+Missing data can take two forms: missing information in a cell of a data matrix (referred to as *item missingness*) or missing rows (referred to as *unit missingness*), with
 the former being readily observable whereas the latter can be completely
 hidden from the analyst. Much is known from the survey research
 literature about how both types of missingness affect data analysis
@@ -376,85 +386,23 @@ variables. Model-based methods use the multivariate relationship between
 variables to handle the missing data. Thus, the more informative the
 data set, the more measures we have on important constructs, the more
 successfully we can compensate for missing data using model-based
-approaches.
+Approaches.
 
-### Extending the framework to big data {#sec:10-2.2}
+In the next section, we consider the impact of errors on some forms of
+analysis that are common in the big data literature. Due to space
+limitations, our focus is limited to the effects of content errors on
+data analysis. However, there are numerous resources available for
+studying and mitigating the effects of missing data on analysis such as books by Little and Rubin [@little2014statistical],
+Schafer [@schafer1997analysis], and Allison [@allison2001missing].
 
-The processes involved in generating big data are as varied as big data
-itself. This diversity substantially complicates the goal of providing a
-detailed error framework that is applicable to all big data.
-Nevertheless, some progress can be made by considering the steps that
-are typically involved in creating a data set from big data, which often
-includes three stages: (a) data generation (see
-Chapter [Working with Web Data and APIs]), (b) extract, transform and load (ETL), and (c)
-analysis (see, for example,
-Chapter [Text Analysis](#chap:text)). As noted there, this mapping of the process is
-oversimplified for some applications. For example, data that flow
-continuously from their sources may not be directed through an ETL
-process at all. Rather it may be gathered in real time and processed on
-an ad hoc basis. Likewise, the ETL processes may be recursive in that,
-as errors are identified, the processes may be altered and refined. In
-addition, the transform stage may generate new data (e.g., proxy
-variables). The analysis stage may also involve language transformations
-such as translation and character set transformations. Finally, there
-may downstream processes that lead to additional iterations of the
-stages in the process map. Thus, the model outline here is but an
-initial attempt to capture the tremendous complexities that may be
-involved in the big data life cycle.
-
-Figure \@ref(fig:fig10-2)
-graphically depicts the flow of data along the major steps in the
-process. One might imagine many more arrows among the boxes within the
-ETL and analysis stages that represent the recursive nature of those
-stages. The severity of the errors that arise from these processes will
-depend on the specific data sources and analytic goals involved.
-Nevertheless, we can still consider how each stage might create errors
-in a more generic fashion.
-
-```{r fig10-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Big data process map'}
-knitr::include_graphics("ChapterError/figures/fig10-2.png")
-```
-
-\vspace*{-9pt}
-For example, data generation error is somewhat analogous to errors
-arising in survey data collection. Like surveys, the data-generating
-process for big data is subject to erroneous, incomplete, and missing
-data. In addition, the data-generating sources may be selective in that
-the data collected may not represent a well-defined population or one
-that is representative of a target population of inference in an
-analysis. Thus, data generation errors include low signal-to-noise
-ratio, lost signals, incomplete or missing values, systematic errors,
-selective elements, and metadata that are lacking, absent, or erroneous.
-
-ETL processes may be quite similar to various data processing stages for
-surveys. These may include creating or enhancing metadata, record
-matching, variable coding, editing, data munging (or scrubbing), and
-data integration (i.e., linking and merging records and files across
-disparate systems). ETL errors include specification errors (including
-errors in metadata), matching errors, coding errors, editing errors,
-data munging errors, and data integration errors.
-
-Finally, the analysis of big data introduces risks for a number of
-errors that will be described in more detail in the next section. These
-risks may be due to noise accumulation, coincidental correlations, and
-incidental endogeneity. As we shall see, these errors arise as a
-consequence of big data volume and variety even when the big data itself
-is infallible. Erroneous data compound these problems and can lead to
-other issues that are described in some detail below. For example, big
-data can be subject to sampling errors when the data are filtered,
-sampled, or otherwise reduced to form more manageable or representative
-data sets. So-called nonsampling errors can arise when the analysis
+Big data can be subject to sampling errors when the data are filtered, sampled, or otherwise reduced to form more manageable or representative data sets. So-called nonsampling errors can arise when the analysis
 involves further transforming the data and weighting the data elements,
-as well as can be errors due to modeling and estimation. The latter
-errors are similar to modeling and estimation errors in surveys and may
-include inadequate or erroneous adjustments for representativeness,
-improper or erroneous weighting, computation and algorithmic errors,
-model misspecification, and so on.
+as well as can be errors due to modeling and estimation. 
 
-Illustrations of errors in big data {#sec:10-3}
+Example: Google Flu Trends {#sec:10-3}
 -----------------------------------
 
-A well-known example of the risks of big data error is provided by the
+A well-known example of the risks of bad inference is provided by the
 Google Flu Trends series that uses Google searches on flu symptoms,
 remedies, and other related key words to provide near-real-time
 estimates of flu activity in the USA and 24 other countries^[See the discussion in
@@ -463,13 +411,13 @@ CDC data, the Google Flu Trends provided remarkably accurate indicators
 of flu incidence in the USA between 2009 and 2011. However, for the
 2012--2013 flu seasons, Google Flu Trends predicted more than double the
 proportion of doctor visits for flu-like symptoms compared to the CDC
-[@butler2013google]. Lazer et al. [@lazer2014parable] cite two causes of
+[@butler2013google]. Lazer et al. [@lazer2014parable] cite two causes of
 this error: big data hubris and algorithm dynamics.
 
 Hubris occurs when the big data researcher believes that the volume of
 the data compensates for any of its deficiencies, thus obviating the
 need for traditional, scientific analytic approaches. As Lazer et
-al. [@lazer2014parable] note, big data hubris fails to recognize that
+al. [@lazer2014parable] note, big data hubris fails to recognize that
 "quantity of data does not mean that one can ignore foundational issues
 of measurement and construct validity and reliability."
 
@@ -477,7 +425,7 @@ Algorithm dynamics refers to properties of algorithms that allow them to
 adapt and "learn" as the processes generating the data change over time.
 Although explanations vary, the fact remains that Google Flu Trends was
 too high and by considerable margins for 100 out of 108 weeks starting
-in July 2012. Lazer et al. [@lazer2014parable] also blame "blue team
+in July 2012. Lazer et al. [@lazer2014parable] also blame "blue team
 dynamics," which arises when the data generating engine is modified in
 such a way that the formerly highly predictive search terms eventually
 failed to work. For example, when a Google user searched on "fever" or
@@ -510,48 +458,29 @@ algorithms are not (publicly) measured for accuracy, since they are
 often proprietary. Google Flu Trends is special in that it publicly
 failed. From what we have seen, most models fail privately and often
 without anyone at all noticing.
+--------
 
-In the next section, we consider the impact of errors on some forms of
-analysis that are common in the big data literature. Due to space
-limitations, our focus is limited to the effects of content errors on
-data analysis. However, there are numerous resources available for
-studying and mitigating the effects of missing data on analysis; in
-particular, the books by Little and Rubin [@little2014statistical],
-Schafer [@schafer1997analysis], and Allison [@allison2001missing] are
-quite relevant to big data analytics.
 
-Errors in big data analytics {#sec:10-4}
+Errors in data analysis {#sec:10-4}
 ----------------------------
 
-In this section, we consider some common types of errors in big data
-analytics. The next section considers analytic errors caused by the
-so-called "three Vs" of big data, namely, volume, velocity, and variety,
-under the assumption of perfect "veracity." If we relax the assumption
-of perfect veracity, the errors that afflict big data as a result of the
-three Vs can be exacerbated in largely unpredictable ways. Section
-[Errors resulting from lack of veracity] considers three common types of analysis when data lack veracity:
-classification, correlation, and regression. While the scope of our
-review is necessarily limited, hopefully the discussion will lay the
-foundation for further study regarding the effects of errors on big data
-analytics.
+The total error framework described above focuses on different types of errors in the data that can lead to incorrect inference. In addition to errors in the data, our analysis can also contain errors that can lead to increased risk of inference problems.  This section goes deeper into these common types of errors when analyzing a diverse set of data sources. We begin by listing types of errors that can happen under the assumption of accurate data, and move to relaxing that assumption to show that the inference errors can be exacerbated in largely unpredictable ways. Section
+[Errors resulting from data errors] then goes on to consider three common types of analysis when data is not accurate: classification, correlation, and regression. While this chapter has limited detail, hopefully the discussion will lay the foundation for further study regarding the effects of errors on inferences social scientists need to make.
 
-### Errors resulting from volume, velocity, and variety, assuming perfect veracity {#sec:10-4.1}
+Analysis errors despite accurate data
 
 Data deficiencies represent only one set of challenges for the big data
 analyst. Other challenges arise solely as a result of the massive size,
-rapid generation, and vast dimensionality of the data. As a consequence
-of these so-called three Vs of big data, Fan et al. [@fan2014challenges]
+rapid generation, and vast dimensionality of the data. Fan et al. [@fan2014challenges]
 identify three issues--- noise accumulation, spurious correlations, and
-incidental endogeneity---which will be briefly discussed in this
-section. These issues should concern big data analysts even if the data
+incidental endogeneity---which will be discussed in this
+section. These issues should concern social scientists even if the data
 could be regarded as infallible. Content errors, missing data, and other
-data deficiencies will only exacerbate
+data deficiencies will only exacerbate these problems.
 
----
+Noise accumulation**
 
-**Example: Noise accumulation**
-
-To illustrate noise accumulation, Fan et al. [@fan2014challenges]
+To illustrate noise accumulation, Fan et al. [@fan2014challenges]
 consider the following scenario. Suppose an analyst is interested in
 classifying individuals into two categories, $C_{1}$ and $C_{2}$, based
 upon the values of 1,000 variables in a big data set. Suppose further
@@ -564,12 +493,14 @@ classification error. However, as more and more variables are included
 in the rule, classification error increases because the uninformative
 variables (i.e., the 990 variables having no discriminating power)
 eventually overwhelm the informative signals (i.e., the first 10
-variables). In the Fan et al. [@fan2014challenges] example, when
+variables). In the Fan et al. [@fan2014challenges] example, when
 $m > 200$, the accumulated noise exceeds the signal embedded in the
 first 10 variables and the classification rule becomes equivalent to a
 coin-flip classification rule.
 
 ---
+
+Spurious correlations**
 
 High dimensionality can also introduce coincidental (or *spurious*)
 correlations in that many unrelated variables may be highly correlated
@@ -578,7 +509,7 @@ inferences. The phenomenon depicted in Figure
 \@ref(fig:fig10-3), is an
 illustration of this. Many more examples can be found on a website and
 in a book devoted to the topic [@spurious; @spurious2]. Fan et
-al. [@fan2014challenges] explain this phenomenon using simulated
+al. [@fan2014challenges] explain this phenomenon using simulated
 populations and relatively small sample sizes. They illustrate how, with
 800 independent (i.e., uncorrelated) variables, the analyst has a 50%
 chance of observing an absolute correlation that exceeds 0.4. Their
@@ -589,6 +520,8 @@ using high-dimensional data.
 ```{r fig10-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]'}
 knitr::include_graphics("ChapterError/figures/fig10-3.png")
 ```
+
+Incidental Endogeneity**
 
 Finally, turning to incidental endogeneity, a key assumption in
 regression analysis is that the model covariates are uncorrelated with
@@ -602,7 +535,7 @@ risks of incidental endogeneity increase as the number of variables in
 the model selection process grows large. Thus it is a particularly
 important concern for big data analytics.
 
-Fan et al. [@fan2014challenges] as well as a number of other authors
+Fan et al. [@fan2014challenges] as well as a number of other authors
 [@stock2002forecasting; @fan2009ultrahigh] (see, for example, Hall and
 Miller [@HallMiller2009]; Fan and Liao, [@FanLiao2012]) suggest robust
 statistical methods aimed at mitigating the risks of noise accumulation,
@@ -613,30 +546,19 @@ data errors are present in a data set. Biemer and Trewin
 traditional data analysis and inflate the variance of estimates in ways
 that are difficult to evaluate or mitigate in the analysis process.
 
-### Errors resulting from lack of veracity {#sec:10-4.2}
+### Analysis errors resulting from inaccurate data {#sec:10-4.2}
 
-The previous section examined some of the issues big data analysts face
+The previous sections examined some of the issues social scientists face
 as either $N$ or $p$ in Figure \@ref(fig:fig10-1) becomes extremely large. When row, column, and
-cell errors are added into the mix, these *volumatic* problems can be
+cell errors are added into the mix, these problems can be
 further exacerbated. For example, noise accumulation can be expected to
 accelerate when random noise (i.e., content errors) afflicts the data.
 Spurious correlations that give rise to both incidental endogeneity and
 coincidental correlations can render correlation analysis meaningless if
-the error levels in big data are not mitigated^[The volume, velocity, and
-variety of big data make it
-challenging to analyze because of noise accumulation, spurious correlations,
-and incidental endogeneity.
-But, the three Vs are also
-the scourge of veracity—
-i.e., errors in big data.]. In this section, we
+the error levels in big data are not mitigated. In this section, we
 consider some of the issues that arise in classification, correlation,
 and regression analysis as a result of content errors that may be either
-variable or systematic. The current literature on big data error
-acknowledges that the data may be noisy, that is, subject to variable
-errors. However, there appears to be little recognition of the problems
-associated with systematic or correlated errors, particularly those
-introduced when data are combined from disparate sources that may be
-subject to source-specific errors.
+variable or systematic.
 
 There are various important findings in this section. First, for rare
 classes, even small levels of error can impart considerable biases in
@@ -651,7 +573,9 @@ multilevel modeling can be an important mitigation strategy for dealing
 with systematic errors emanating from multiple data sources. These
 issues will be examined in some detail in the remainder of this section.
 
-#### Variable and correlated error {#sec:10-4.2.1}
+We will start by focusing on two types of errors: variable (uncorrelated) errors and correlated errors. We’ll first describe these errors for continuous data and then extend it to categorical variables in the next section
+
+#### Variable (uncorrelated) and correlated error in continuous variables {#sec:10-4.2.1}
 
 Error models are essential for understanding the effects of error on
 data sets and the estimates that may be derived from them. They allow us
@@ -764,7 +688,7 @@ types of analysis.
 
 ---
 
-#### Models for categorical data {#sec:10-4.2.2}
+#### Extending Variable and Correlated Error to Categorical Data {#sec:10-4.2.2}
 
 For variables that are categorical, the model of the previous section is
 not appropriate because the assumptions it makes about the error
@@ -802,17 +726,15 @@ are the positive predictive value (PPV) and negative predictive value
 (\mu_r = 0\vert y_r = 0).$$ The PPV (NPV) is the probability that a
 positive (negative) classification is correct.
 
-#### Misclassification and rare classes {#sec:10-4.2.3}
+####Errors when analyzing rare population groups
+ {#sec:10-4.2.3}
 
-Fan et al. [@fan2014challenges] and many others have stated that one of
-the strengths of big data is the ability to study rare population groups
-that seldom show up in large enough numbers in designed studies such as
+One of the attractions of newer sources of data such as social media is the ability to study rare population groups that seldom show up in large enough numbers in designed studies such as
 surveys and clinical trials. While this is true in theory, in practice
-content errors can quickly overwhelm such an analysis, rendering the
-data useless for this purpose. We illustrate this using the following
+content errors can affect the inferences that can be drawn from this data. We illustrate this using the following
 contrived and somewhat amusing example. The results in this section are
 particularly relevant to the approaches considered in
-Chapter [Machine Learning](#chap:ml).
+Chapter [Machine Learning](#chap:ml).
 
 ---
 
@@ -840,7 +762,7 @@ example? Let us do the math.
 The relevant probability is the PPV of the machine: given that the
 machine classifies an individual (Terry) as a terrorist, what is the
 probability the individual is truly a terrorist? Using the notation in
-Section [Models for categorical data] and Bayes' rule, we can derive the PPV as
+Section [Models for categorical data] and Bayes' rule, we can derive the PPV as
 $$\begin{aligned}
 \Pr (\mu_r = 1\vert y_r = 1) &=  \frac{\Pr (y_r = 1\vert \mu_r =
 1)\Pr(\mu_r = 1)}{\Pr (y_r = 1)} \\
@@ -849,7 +771,7 @@ $$\begin{aligned}
  &\approx  0.001.\end{aligned}$$
 
 This example calls into question whether security surveillance using
-emails, phone calls, etc. can ever be successful in finding rare threats
+emails, phone calls, etc. can ever be successful in finding rare threats
 such as terrorism since to achieve a reasonably high PPV (say, 90%)
 would require a sensitivity and specificity of at least $1-10^{-7}$, or
 less than 1 chance in 10 million of an error.
@@ -889,7 +811,7 @@ Table: (\#tab:table10-1) Positive predictive value (%) for rare subgroups, high 
   |0.0001     |      1.00  |    9.10   |  50.00|
   
 
-#### Correlation analysis {#sec:10-4.2.4}
+#### Errors in Correlation analysis {#sec:10-4.2.4}
 
 In Section [Errors resulting from volume, velocity, and variety, assuming perfect veracity], we considered the problem of incidental
 correlation that occurs when an analyst correlates pairs of variables
@@ -1022,7 +944,7 @@ systematic effects may still operate for correlation analysis without
 regard to the number of elements comprising the aggregates.
 
 For example, consider the illustration in
-Figure \@ref(fig:fig10-4) with
+Figure \@ref(fig:fig10-4) with
 $n_c = n_d =
 n$, reliability ratios (excluding systematic effects) set at $0.5$ and
 population correlation at $\rho_{\mu \vert cd} = 0.5$. In this scenario,
@@ -1048,7 +970,7 @@ can be unpredictable because both attenuation and inflation of
 correlations can occur. Aggregating data mitigates the effects of
 variable error but may have little effect on systematic errors.
 
-#### Regression analysis {#sec:10-4.2.5}
+#### Errors in Regression analysis {#sec:10-4.2.5}
 
 The effects of variable errors on regression coefficients are well known
 [@cochran1968errors; @fuller1991regression; @biemer1997review]. The
@@ -1145,14 +1067,11 @@ by repeated follow-up of nonrespondents, questionnaires can be perfected
 through pretesting and experimentation, interviewers can be trained in
 the effective methods for obtaining highly accurate responses, and
 computer-assisted interviewing instruments can be programmed to correct
-errors in the data as they are generated. For big data, the data
+errors in the data as they are generated. For data where the data
 generation process is often outside the purview of the data collectors,
-as noted in Section [Introduction](#sec:10-1), and there is limited opportunity to address
-deficiencies in the data generation process. This is because big data is
-often a by-product of systems designed with little or no thought given
-to the potential secondary uses of the data. Instead, error mitigation
-must necessarily begin at the data processing stage, which is the focus
-of this chapter, particularly with regard to data editing and cleaning.
+as noted in Section [Introduction](#sec:10-1), there is limited opportunity to address
+deficiencies in the data generation process. Instead, error mitigation
+must necessarily begin at the data processing stage. We illustrate this error mitigation process using two types of techniques - data editing and cleaning.
 
 In survey collections, data processing may involve data entry, coding
 textual responses, creating new variables, editing the data, imputing
@@ -1177,8 +1096,7 @@ Nevertheless, editing remains a key component of the quality improvement
 process for big data. Therefore, the remainder of this chapter will
 discuss the issue of editing big data.
 
-Biemer and Lyberg [@biemer2003] define data editing as a set of
-methodologies for identifying and correcting (or transforming) anomalies
+Data editing is a set of methodologies for identifying and correcting (or transforming) anomalies
 in the data. It often involves verifying that various relationships
 among related variables of the data set are plausible and, if they are
 not, attempting to make them so. Editing is typically a rule-based
@@ -1202,7 +1120,7 @@ perhaps, from an external data set.
 The identification of anomalies can be handled quite efficiently and
 automatically using editing software. Recently, data mining and machine
 learning techniques have been applied to data editing with excellent
-results (see Chandola et al. [@chandola2009anomaly] for a review).
+results (see Chandola et al. [@chandola2009anomaly] for a review).
 Tree-based methods such as classification and regression trees and
 random forests are particularly useful for creating editing rules for
 anomaly identification and resolution [@petrakos2004new]. However, some
@@ -1237,7 +1155,7 @@ macro-editing passes the edit and is deemed correct. However, because
 serious offsetting errors can be masked by aggregation, there is no
 guarantee that the elements comprising the aggregate are indeed
 accurate. Recalling the discussion in
-Section [Variable and correlated error] regarding random noise, we know that the data
+Section [Variable and correlated error] regarding random noise, we know that the data
 may be quite noisy while the aggregates may appear to be essentially
 error-free. However, macro-editing can be an effective control for
 systematic errors and egregious and some random errors that create
@@ -1265,7 +1183,7 @@ The tableplot seems particularly well suited for the three Vs of big
 data and will be discussed in some detail.
 
 Like other visualization techniques examined in
-Chapter [Information Visualization], the tableplot has the ability to summarize a
+Chapter [Information Visualization], the tableplot has the ability to summarize a
 large multivariate data set in a single plot [@malik2010interactive]. In
 editing big data, it can be used to detect outliers and unusual data
 patterns. Software for implementing this technique has been written in R
@@ -1363,7 +1281,7 @@ Summary {#sec:10-6}
 This review of big data errors should dispel the misconception that the
 volume of the data can somehow compensate for other data deficiencies.
 To think otherwise is big data "hubris," according to Lazer et
-al. [@lazer2014parable]. In fact, the errors in big data are at least as
+al. [@lazer2014parable]. In fact, the errors in big data are at least as
 severe and impactful for data analysis as are the errors in designed
 data collections. For the latter, there is a vast literature that
 developed during the last century on mitigating and adjusting for the
@@ -1426,3 +1344,4 @@ conference on the total survey error framework, supported by major
 survey organizations [@TSEweb].
 
 \addtocontents{toc}{\protect\pagebreak}
+
