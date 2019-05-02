@@ -264,17 +264,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="chap-networks.html"><a href="chap-networks.html#network-data"><i class="fa fa-check"></i><b>8.2</b> Network data</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="chap-networks.html"><a href="chap-networks.html#forms-of-network-data"><i class="fa fa-check"></i><b>8.2.1</b> Forms of network data</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>8.2</b> Turning Data into a Network</a><ul>
+<li class="chapter" data-level="8.2.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>8.2.1</b> Types of Networks</a></li>
 <li class="chapter" data-level="8.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>8.2.2</b> Inducing one-mode networks from two-mode data</a></li>
 </ul></li>
 <li class="chapter" data-level="8.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>8.3</b> Network measures</a><ul>
 <li class="chapter" data-level="8.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>8.3.1</b> Reachability</a></li>
 <li class="chapter" data-level="8.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>8.3.2</b> Whole-network measures</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="chap-networks.html"><a href="chap-networks.html#comparing-collaboration-networks"><i class="fa fa-check"></i><b>8.4</b> Comparing collaboration networks</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>8.5</b> Summary</a></li>
-<li class="chapter" data-level="8.6" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>8.6</b> Resources</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-networks.html"><a href="chap-networks.html#what-kinds-of-questions-can-now-be-answered"><i class="fa fa-check"></i><b>8.4</b> What kinds of questions can now be answered?</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-networks.html"><a href="chap-networks.html#case-study-comparing-collaboration-networks"><i class="fa fa-check"></i><b>8.5</b> Case Study: Comparing collaboration networks</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>8.6</b> Summary</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>8.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-viz.html"><a href="chap-viz.html"><i class="fa fa-check"></i><b>9</b> Information Visualization</a><ul>
 <li class="chapter" data-level="9.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
@@ -365,72 +366,80 @@ programmatic sources. The new types of data permit new units of
 analysis—particularly network analysis—largely enabled by advances
 in mathematical graph theory. This chapter provides an overview of how
 social scientists can use network theory to generate measurable
-representations of patterns of relationships connecting entities. As the
-author points out, the value of the new framework is not only in
+representations of patterns of relationships connecting entities. The value of the new framework is not only in
 constructing different right-hand-side variables but also in studying an
 entirely new unit of analysis that lies somewhere between the largely
 atomistic actors that occupy the markets of neo-classical theory and the
 tightly managed hierarchies that are the traditional object of inquiry
 of sociologists and organizational theorists.</p>
+<p>Structure:
+What is network analysis useful for? - motivating examples and use cases
+What is network analysis
+What are graphs - types of graphs, vocabulary
+Representation, etc.
+How to create networks?
+How to analyze networks?
+network measures - definitions
+Network visualization
+Answering questions through network analysis
+More examples
+Tools
+Summary</p>
 <div id="introduction-3" class="section level2">
 <h2><span class="header-section-number">8.1</span> Introduction</h2>
-<p>This chapter provides a basic introduction to the analysis of large
-networks. The following introduces the basic logic of network analysis,
-then turn to a summary of data structures and essential measures before
-presenting a primer on network visualization and a more elaborated
-descriptive case comparison of the collaboration networks of two
-research-intensive universities. Both those collaboration networks and a
-grant co-employment network for a large public university also examined
-in this chapter are derived from data produced by the multi-university
-Committee on Institutional Cooperation (CIC)’s UMETRICS project
-<span class="citation">(Lane et al. <a href="#ref-lane2015new">2015</a>)</span>. The snippets of code that are provided are from the <code>igraph</code>
-package for network analysis as implemented in Python.</p>
-<p>At their most basic, networks are measurable representations of patterns
-of relationships connecting entities in an abstract or actual space.
-What this means is that there are two fundamental questions to ask of
-any network presentation or measure, First, what are the nodes? Second,
-what are the ties? While the network methods sketched in this chapter
-are equally applicable to technical or biological networks (e.g., the
-hub-and-spoke structure of the worldwide air travel system, or the
-neuronal network of a nematode worm), I focus primarily on social
-networks; patterns of relationships among people or organizations that
-are created by and come to influence individual action. This chapter
-draws most of its examples from the world of science, technology, and
-innovation. Thus, this chapter focuses particularly on networks
-developed and maintained by the collaborations of scientists and by the
-contractual relationships organizations form in pursuit of innovation.</p>
-<p>This substantive area is of great interest because a great deal of
-research in sociology, management, and related fields demonstrates that
-networks of just these sorts are essential to understanding the process
-of innovation and outcomes at both the individual and the organizational
-level.</p>
-<p>In other words, networks offer not just another convenient set of
-right-hand-side variables, but an entirely new unit of analysis that
-lies somewhere between the largely atomistic actors that occupy the
-markets of neo-classical theory and the tightly managed hierarchies that
-are the traditional object of inquiry of sociologists and organizational
-theorists. As Walter W. Powell <span class="citation">(Powell <a href="#ref-powell2003neither">2003</a>)</span> puts it in a
-description of buyer supplier networks of small Italian firms: “when the
-entangling of obligation and reputation reaches a point where the
+<p>Social Scientists have studies networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934). What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (citation), we now have data about 100s of millions of people communicating with each other online through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Box with examples or references to these examples &gt;&gt;&gt;</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Survey paper: (maybe at end in further reading) <a href="http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf" class="uri">http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf</a></p>
+<p><a href="http://www.sn.ethz.ch//" class="uri">http://www.sn.ethz.ch//</a> Zurich Networks Labs</p>
+<p>Example 1: <a href="https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf" class="uri">https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf</a></p>
+<p>Example 2: <a href="https://abjer.github.io/project/social-fabric/" class="uri">https://abjer.github.io/project/social-fabric/</a> or <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208/</a> (same study)</p>
+<p>Example 3: diffusion of information</p>
+<p>Facebook graph example: <a href="http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf" class="uri">http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf</a></p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>This chapter provides a basic introduction to the analysis of large networks. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization technique, and discuss social science questions that these network measures and visualizations can help us answer.</p>
+<p>We use the comparison of the collaboration networks of two research-intensive universities to show how to perform network analysis but the same approach generalizes to other types of problems. The collaboration networks and a grant co-employment network for a large public university examined in this chapter are derived from data produced by the multi-university
+Committee on Institutional Cooperation (CIC)’s UMETRICS project <span class="citation">(Lane et al. <a href="#ref-lane2015new">2015</a>)</span>. The snippets of code that are provided are from the <code>igraph</code> package for network analysis as implemented in Python.</p>
+<p>What are networks?</p>
+<p>Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties) connecting the nodes? Once we have the representation set up, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.</p>
+<p>Networks offer not just another convenient set of right-hand-side variables, but an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the
+markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell <span class="citation">(Powell <a href="#ref-powell2003neither">2003</a>)</span> puts it in a description of buyer supplier networks of small Italian firms: “when the entangling of obligation and reputation reaches a point where the
 actions of the parties are interdependent, but there is no common
-ownership or legal framework … such a transaction is neither a market
+ownership or legal framework … such a transaction is neither a market
 exchange nor a hierarchical governance structure, but a separate,
 different mode of exchange.”</p>
 <p>Existing as they do between the uncoordinated actions of independent
 individuals and coordinated work of organizations, networks offer a
 unique level of analysis for the study of scientific and creative teams
 <span class="citation">(Wuchty, Jones, and Uzzi <a href="#ref-wuchty2007increasing">2007</a>)</span>, collaborations <span class="citation">(Kabo et al. <a href="#ref-kabo2015shared">2015</a>)</span>, and clusters
-of entrepreneurial firms <span class="citation">(Owen-Smith and Powell <a href="#ref-owen2004knowledge">2004</a>)</span>. The following sections
-introduce you to this approach to studying innovation and discovery,
+of entrepreneurial firms <span class="citation">(Owen-Smith and Powell <a href="#ref-owen2004knowledge">2004</a>)</span>.</p>
+<p>The following sections will introduce you to this approach to studying innovation and discovery,
 focusing on examples drawn from high-technology industries and
 particularly from the scientific collaborations among grant-employed
 researchers at UMETRICS universities. I make particular use of a network
 that connects individual researchers to grants that paid their salaries
 in 2012 for a large public university. The grants network for university
 A includes information on 9,206 individuals who were employed on 3,389
-research grants from federal science agencies in a single year.</p>
-<p>Before turning to those more specific substantive topics, the chapter
-first introduces the most common structures for large network data,
+research grants from federal science agencies in a single year. The web of partnerships that emerges from university scientists’ decentralized efforts to build effective collaborations and
+teams generates a distinctive social infrastructure for cutting- edge Science.</p>
+<p>While this chapter focuses my attention on social networks, you could easily use the techniques described here to examine the structure of networks such as the World Wide Web, the national
+railway route map of the USA, the food web of an ecosystem, or the neuronal network of a particular species of animal.</p>
+<p>The chapter first introduces the most common structures for large network data,
 briefly introduce three key social “mechanisms of action” by which
 social networks are thought to have their effects, and then present a
 series of basic measures that can be used to quantify characteristics of
@@ -443,19 +452,6 @@ challenges for the people in them, for comparing and explaining the
 productivity of collaborations and teams, and for making sense of the
 differences between organizations, industries, and markets that hinge on
 the pattern of relationships connecting their participants.</p>
-<p>But what is a network? At its simplest, a network is a pattern of
-concrete, measurable relationships connecting entities engaged in some
-common activity. While this chapter focuses my attention on social
-networks, you could easily use the techniques described here to examine
-the structure of networks such as the World Wide Web, the national
-railway route map of the USA, the food web of an ecosystem, or the
-neuronal network of a particular species of animal. Networks can be
-found everywhere, but the primary example used here is a network
-connecting individual scientists through their shared work on particular
-federal grants. The web of partnerships that emerges from university
-scientists’ decentralized efforts to build effective collaborations and
-teams generates a distinctive social infrastructure for cutting- edge
-science.</p>
 
 <p>Understanding the productivity and effects of university research thus
 requires an effort to measure and characterize the networks on which it
@@ -468,8 +464,8 @@ areas of study. What distinguishes them from one another is not the
 topics they cover but the ways in which their distinctive collaboration
 networks lead them to have quite different scientific capabilities.</p>
 </div>
-<div id="network-data" class="section level2">
-<h2><span class="header-section-number">8.2</span> Network data</h2>
+<div id="turning-data-into-a-network" class="section level2">
+<h2><span class="header-section-number">8.2</span> Turning Data into a Network</h2>
 <p>Networks are comprised of <em>nodes</em>, which represent things that can be
 connected to one another, and of ties that represent the relationships
 connecting nodes. When ties are undirected they are called <em>edges</em>. When
@@ -479,13 +475,9 @@ principle, be anything: patents and citations, web pages and hypertext
 links, scientists and collaborations, teenagers and intimate
 relationships, nations and international trade agreements. The very
 flexibility of network approaches means that the first step toward doing
-a network analysis is to clearly define what counts as a node and what
-counts as a tie.</p>
-<p>While this seems like an easy move, it often requires deep thought. For
-instance, an interest in innovation and discovery could take several
-forms. We could be interested in how universities differ in their
-capacity to respond to new requests for proposals (a macro question that
-would require the comparison of full networks across campuses). We could
+a network analysis is to first turn our data into a graph by clearly defining what counts as a node and what counts as a tie.
+In traditional social network analysis studies, there is a natural representation of the data as a network. People are often nodes, and some type of communication between them form the “ties”. While this seems like an easy move, it often requires deep thought. For
+instance, an interest in innovation and discovery could take several forms. We could be interested in how universities differ in their capacity to respond to new requests for proposals (a macro question that would require the comparison of full networks across campuses). We could
 wonder what sorts of training arrangements lead to the best outcomes for
 graduate students (a more micro- level question that requires us to
 identify individual positions in larger networks). Or we could ask what
@@ -499,8 +491,15 @@ relationships that matter) in order to construct the relevant networks.
 The next is to collect and structure the data in a fashion that is
 sufficient for analysis. Finally, measurement and visualization
 decisions must be made.</p>
-<div id="forms-of-network-data" class="section level3">
-<h3><span class="header-section-number">8.2.1</span> Forms of network data</h3>
+<div id="types-of-networks" class="section level3">
+<h3><span class="header-section-number">8.2.1</span> Types of Networks</h3>
+<p>[need a vocabulary box with network terminology]
+Nodes
+Ties
+Edges
+Directed
+Undirected
+…</p>
 <p>Network ties can be directed (flowing from one node to another) or
 undirected. In either case they can be binary (indicating the presence
 or absence of a tie) or valued (allowing for relationships of different
@@ -517,7 +516,7 @@ ties indicate the presence of a strategic alliance connecting them
 symmetric matrix or a list of edges connecting nodes. Figure
 <a href="chap-networks.html#fig:fig8-1">8.1</a> summarizes
 this simple data structure, highlighting the idea that network data of
-this form can be represented either as a matrix or as an edge list.</p>
+this form can be represented either as a matrix or as an edge list. If this data was representing acquisitions, we could turn it into a directed graph where the edge would be directed from the acquiring firm to the acquired firm.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8-1"></span>
 <img src="ChapterNetworks/figures/fig8-1.png" alt="Undirected, binary, one-mode network data" width="70%" />
 <p class="caption">
@@ -593,7 +592,7 @@ with identifier 10419 by an edge with value 1, indicating that employee
 <table>
 <thead>
 <tr class="header">
-<th>*Vertices 12595  9206</th>
+<th>*Vertices 12595 9206</th>
 <th></th>
 <th>*Edges</th>
 <th></th>
@@ -675,7 +674,7 @@ people. Transforming two-mode data into one-mode projections is a fairly
 simple matter. If <span class="math inline">\(\mathbf{X}\)</span> is a rectangular matrix, <span class="math inline">\(p \times g\)</span>,
 then a one-mode projection, <span class="math inline">\(p \times p\)</span>, can be obtained by multiplying
 <span class="math inline">\(\mathbf{X}\)</span> by its transpose <span class="math inline">\(\mathbf{X}&#39;\)</span>.
-Figure <a href="chap-networks.html#fig:fig8-3">8.3</a>
+Figure <a href="chap-networks.html#fig:fig8-3">8.3</a>
 summarizes this transformation.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig8-3"></span>
 <img src="ChapterNetworks/figures/fig8-3.png" alt="Two-mode affiliation data" width="70%" />
@@ -744,7 +743,7 @@ appropriate for particular analyses<a href="#fn42" class="footnote-ref" id="fnre
 <h2><span class="header-section-number">8.3</span> Network measures</h2>
 <p>The power of networks lies in their unique flexibility and ability to
 address many phenomena at multiple levels of analysis. But harnessing
-that power requires the application of measures that take into account
+that power requires calculating measures that take into account
 the overall structure of relationships represented in a given network.
 The key insight of structural analysis is that outcomes for any
 individual or group are a function of the complete pattern of
@@ -762,7 +761,7 @@ introduction <span class="citation">(Obstfeld <a href="#ref-obstfeld2005social">
 resources <span class="citation">(Burt <a href="#ref-burt2004structural">2004</a>)</span>. It is the reachability that networks
 create that makes them so important for understanding the work of
 science and innovation.</p>
-<p>Consider Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, which presents three schematic networks. In each,
+<p>Consider Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, which presents three schematic networks. In each,
 one focal node, ego, is colored orange. Each ego has four alters, but
 the fact that each has connections to four other nodes masks important
 differences in their structural positions. Those differences have to do
@@ -781,7 +780,7 @@ Figure 8.4: Reachability and indirect ties
 <p>Networks in which more of the possible connections among nodes are
 realized are denser and more cohesive than networks in which fewer
 potential connections are realized. Consider the two smaller networks in
-Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, each
+Figure <a href="chap-networks.html#fig:fig8-4">8.4</a>, each
 of which is comprised of five nodes. Just five ties connect those nodes
 in the network on the far right of the figure. One smaller subset of
 that network, the triangle connecting ego and two alters at the center
@@ -1117,7 +1116,7 @@ the measure. Instead of conceptualizing network size in terms of the
 number of nodes, however, this measure requires that we consider the
 number of possible pairs of actors (excluding ego) in a structure. When
 there are <span class="math inline">\(g\)</span> nodes, that quantity is <span class="math inline">\((g-1)(g-2)/2\)</span> and the
-standardized betweenness measure is
+standardized betweenness measure is
 <span class="math display">\[C_B^{\prime}(n_i)=\frac{C_B(n_i)}{(g-1)(g-2)/2}.\]</span></p>
 <p>Centrality measures of various sorts are the most commonly used means to
 examine network effects at the level of individual participants in a
@@ -1138,9 +1137,21 @@ been examining.</p>
 <a class="sourceLine" id="cb39-4" data-line-number="4">emp.vs[<span class="st">&quot;btc&quot;</span>]=<span class="kw">emp.betweenness</span>(<span class="dt">vertices=</span>emp.vs, <span class="dt">directed=</span>False)</a></code></pre></div>
 </div>
 </div>
-<div id="comparing-collaboration-networks" class="section level2">
-<h2><span class="header-section-number">8.4</span> Comparing collaboration networks</h2>
-<p>Consider Figure <a href="chap-networks.html#fig:fig8-6">8.6</a>, which presents visualizations of the main
+<div id="what-kinds-of-questions-can-now-be-answered" class="section level2">
+<h2><span class="header-section-number">8.4</span> What kinds of questions can now be answered?</h2>
+<p>Who are the most important actors (nodes) in a network?
+Most connections - degree
+Most central - centrality measures
+Most critical in connecting two disjoint groups - bridge measure
+Most influential</p>
+<ol start="2" style="list-style-type: decimal">
+<li>What types of relationships exist in this network?
+Network motifs (paper reference)</li>
+</ol>
+</div>
+<div id="case-study-comparing-collaboration-networks" class="section level2">
+<h2><span class="header-section-number">8.5</span> Case Study: Comparing collaboration networks</h2>
+<p>Consider Figure <a href="chap-networks.html#fig:fig8-6">8.6</a>, which presents visualizations of the main
 component of two university networks. Both of these representations are
 drawn from a single year (2012) of UMETRICS data. Nodes represent
 people, and ties reflect the fact that those individuals were paid with
@@ -1152,8 +1163,8 @@ better positioned to play the role of brokers in the network. A complete
 review of the many approaches to network visualization and their dangers
 in the absence of descriptive statistics such as those presented above
 is beyond the scope of this chapter, but consider the guidelines
-presented in Chapter <a href="chap-viz.html#chap:viz">Information Visualization</a> on information visualization as well as useful
-discussions by Powell et al. <span class="citation">(Powell et al. <a href="#ref-powell2005network">2005</a>)</span> and Healy and Moody
+presented in Chapter <a href="chap-viz.html#chap:viz">Information Visualization</a> on information visualization as well as useful
+discussions by Powell et al. <span class="citation">(Powell et al. <a href="#ref-powell2005network">2005</a>)</span> and Healy and Moody
 <span class="citation">(Healy and Moody <a href="#ref-healy2014data">2014</a>)</span>.</p>
 <p>Consider the two images. University A is a major public institution with
 a significant medical school. University B, likewise, is a public
@@ -1309,13 +1320,8 @@ collaborators of collaborators will collaborate is high on both
 campuses, but substantially higher at university B.</p>
 </div>
 <div id="summary-5" class="section level2">
-<h2><span class="header-section-number">8.5</span> Summary</h2>
-<p>This chapter has provided a brief overview of the basics of networks,
-using UMETRICS data as a source for examples. While network measures can
-produce new and exciting ways to characterize social dynamics, they are
-also important levels of analysis in their own right. There are
-essential concepts that need to be mastered, such as reachability,
-cohesion, brokerage, and reciprocity. Numbers are important, for a
+<h2><span class="header-section-number">8.6</span> Summary</h2>
+<p>This chapter has provided a brief overview of the basics of networks and how to do large-scale network analysis. While network measures can produce new and exciting ways to characterize social dynamics, they are also important levels of analysis in their own right. Concepts such as reachability, cohesion, brokerage, and reciprocity are important, for a
 variety of reasons—they can be used to describe networks in terms of
 their composition and community structure. This chapter provides a
 classic example of how well social science meets data science. Social
@@ -1327,7 +1333,7 @@ combination of data science and social science is key to making the
 right measurement and visualization decisions.</p>
 </div>
 <div id="resources-4" class="section level2">
-<h2><span class="header-section-number">8.6</span> Resources</h2>
+<h2><span class="header-section-number">8.7</span> Resources</h2>
 <p>For more information about network analysis <em>in general</em>, the
 International Network for Social Network Analysis
 (<a href="http://www.insna.org/" class="uri">http://www.insna.org/</a>) is a large, interdisciplinary association
@@ -1354,6 +1360,7 @@ types into other programs and packages for network analysis. <em>Gephi</em>
 (<a href="https://gephi.org/" class="uri">https://gephi.org/</a>) is another freeware package that supports
 large-scale network visualization. Though I find it less flexible than
 Pajek, it offers strong support for compelling visualizations.</p>
+<p><em>Snap</em> (&lt;snap.cs.stanford.edu&gt;)</p>
 <p><em>Network Workbench</em> (<a href="http://nwb.cns.iu.edu/" class="uri">http://nwb.cns.iu.edu/</a>) is a freeware package
 that supports extensive analysis and visualization of networks. This
 package also includes numerous shared data sets from many different
