@@ -21,27 +21,27 @@ systematic way to think about the error framework in a big data setting.
 Current Structure
 Introduction
 Total error framework [data is not perfect]
--Row error
--Column error
--Cell error
+Row error
+Column error
+Cell error
 Google flu example
 Error in data analysis [your analysis is not perfect]
--Errors when your data is perfect
--Errors when your data is not perfect
--What type of error and what type of variables
- -Error types
-  -random/uncorrelated
-  -Correlated
- -Uncorrelated between variables
- -Correlated between variables
-  Variable Types
-  -Continuous
-  -Categorical
- -Errors when analyzing rare population groups
- -Errors when doing correlation analysis
-  -Variable error only
-  -Both variable and systematic errors
- -Errors when doing regression analysis
+Errors when your data is perfect
+Errors when your data is not perfect
+What type of error and what type of variables
+Error types
+random/uncorrelated
+Correlated
+Uncorrelated between variables
+Correlated between variables
+Variable Types
+Continuous
+Categorical
+Errors when analyzing rare population groups
+Errors when doing correlation analysis
+Variable error only
+Both variable and systematic errors
+Errors when doing regression analysis
 
 
 
@@ -51,7 +51,9 @@ Error in data analysis [your analysis is not perfect]
 Introduction {#sec:10-1}
 ------------
 
-Show workflow/pipeline (from chapter 1 and ml)  and point out how errors in each step can lead to bad inferences. Our focus in this chapter will be to
+Show workflow/pipeline (from chapter 1 and ml)  and point out how errors in each step can lead to bad inferences. 
+
+Our focus in this chapter will be to understand
 
 How to detect the errors
 Highlight how these errors can lead to bad inferences
@@ -70,7 +72,7 @@ may be either *variable* (i.e., errors that create random noise
 resulting in poor reliability) or *systematic* (i.e., errors that tend
 to be directional, thus exacerbating biases). Using these new sources of data in
 statistically valid ways is increasingly challenging in this
-environment; however, it is important for data analysts to be aware of
+environment; however, it is important for social scientists to be aware of
 the error risks and the potential effects of these errors on
 inferences and decision-making. The massiveness, high dimensionality,
 and accelerating pace of data, combined with the risks of variable
@@ -389,15 +391,9 @@ successfully we can compensate for missing data using model-based
 Approaches.
 
 In the next section, we consider the impact of errors on some forms of
-analysis that are common in the big data literature. Due to space
-limitations, our focus is limited to the effects of content errors on
-data analysis. However, there are numerous resources available for
+analysis that are common in the big data literature. We will limit the focus on the effects of content errors on data analysis. However, there are numerous resources available for
 studying and mitigating the effects of missing data on analysis such as books by Little and Rubin [@little2014statistical],
 Schafer [@schafer1997analysis], and Allison [@allison2001missing].
-
-Big data can be subject to sampling errors when the data are filtered, sampled, or otherwise reduced to form more manageable or representative data sets. So-called nonsampling errors can arise when the analysis
-involves further transforming the data and weighting the data elements,
-as well as can be errors due to modeling and estimation. 
 
 Example: Google Flu Trends {#sec:10-3}
 -----------------------------------
@@ -464,13 +460,12 @@ without anyone at all noticing.
 Errors in data analysis {#sec:10-4}
 ----------------------------
 
-The total error framework described above focuses on different types of errors in the data that can lead to incorrect inference. In addition to errors in the data, our analysis can also contain errors that can lead to increased risk of inference problems.  This section goes deeper into these common types of errors when analyzing a diverse set of data sources. We begin by listing types of errors that can happen under the assumption of accurate data, and move to relaxing that assumption to show that the inference errors can be exacerbated in largely unpredictable ways. Section
-[Errors resulting from data errors] then goes on to consider three common types of analysis when data is not accurate: classification, correlation, and regression. While this chapter has limited detail, hopefully the discussion will lay the foundation for further study regarding the effects of errors on inferences social scientists need to make.
+The total error framework described above focuses on different types of errors in the data that can lead to incorrect inference. In addition to direct inference errors because of errors in the data, our analysis can also be incorrect because of  these data errors.  This section goes deeper into these common types of analysis errors when analyzing a diverse set of data sources. We begin by exploring errors that can happen under the assumption of accurate data and then go on to consider errors in three common types of analysis when data is not accurate: classification, correlation, and regression. 
 
 Analysis errors despite accurate data
 
 Data deficiencies represent only one set of challenges for the big data
-analyst. Other challenges arise solely as a result of the massive size,
+analyst. Even if data is correct, other challenges can arise solely as a result of the massive size,
 rapid generation, and vast dimensionality of the data. Fan et al. [@fan2014challenges]
 identify three issues--- noise accumulation, spurious correlations, and
 incidental endogeneity---which will be discussed in this
@@ -1053,13 +1048,11 @@ attempt to eliminate the error rather than model it.
 \enlargethispage{6pt}
 \vspace*{-4pt}
 
-Some methods for mitigating, detecting, and compensating for errors {#sec:10-5}
+Detecting and Compensating for Data Errors {#sec:10-5}
 -------------------------------------------------------------------
 
 For survey data and other *designed* data collections, error mitigation^[Data errors further complicate analysis and exacerbate the analytical problems. There are essentially
-three solutions: prevention,
-remediation, and the choice
-of analysis methodology.]
+three solutions: prevention, remediation, and the choice of analysis methodology.]
 begins at the data generation stage by incorporating design strategies
 that generate high-quality data that are at least adequate for the
 purposes of the data users. For example, missing data can be mitigated
@@ -1073,52 +1066,13 @@ as noted in Section [Introduction](#sec:10-1), there is limited opportunity to a
 deficiencies in the data generation process. Instead, error mitigation
 must necessarily begin at the data processing stage. We illustrate this error mitigation process using two types of techniques - data editing and cleaning.
 
-In survey collections, data processing may involve data entry, coding
-textual responses, creating new variables, editing the data, imputing
-missing cells, weighting the observations, and preparing the file,
-including the application of disclosure- limiting processes. For big
-data, many of these same operations could be needed to some extent,
-depending upon requirements of the data, its uses, and the prevailing
-statutory requirements^[For example, Title 13 in
-the US code is explicit in
-terms of data statutory protections and—as you will
-see in the next chapter—
-can have substantial impact
-on the quality of subsequent
-inference.]. Of all the operations comprising data
-processing, the area that has the greatest potential to both alter data
-quality and consume vast resources is data editing. For example, Biemer
-and Lyberg [@biemer2003] note that national statistical offices may
-spend as much as 40% or more of their production budgets on data editing
-for some surveys. Recent computer technologies have automated many
-formerly manual processes, which has greatly reduced these expenditures.
-Nevertheless, editing remains a key component of the quality improvement
-process for big data. Therefore, the remainder of this chapter will
-discuss the issue of editing big data.
-
 Data editing is a set of methodologies for identifying and correcting (or transforming) anomalies
 in the data. It often involves verifying that various relationships
 among related variables of the data set are plausible and, if they are
 not, attempting to make them so. Editing is typically a rule-based
 approach where rules can apply to a particular variable, a combination
 of variables, or an aggregate value that is the sum over all the rows or
-a subset of the rows in a data set.
-
-In small data sets, data editing usually starts as a *bottom-up* process
-that applies various rules to the cell values---often referred to as
-*micro-editing*. The rules specify that the values for some variable or
-combinations of variables (e.g., a ratio or difference between two
-values) should be within some specified range. Editing may reveal
-impossible values (so-called *fatal* edits) as well as values that are
-simply highly suspect (leading to *query* edits). For example, a
-pregnant male would generate a fatal edit, while a property that sold
-for \$500,000 in a low-income neighborhood might generate a query edit.
-Once the anomalous values are identified, the process attempts to deduce
-more accurate values based upon other variables in the data set or,
-perhaps, from an external data set.
-
-The identification of anomalies can be handled quite efficiently and
-automatically using editing software. Recently, data mining and machine
+a subset of the rows in a data set. Recently, data mining and machine
 learning techniques have been applied to data editing with excellent
 results (see Chandola et al. [@chandola2009anomaly] for a review).
 Tree-based methods such as classification and regression trees and
@@ -1126,7 +1080,7 @@ random forests are particularly useful for creating editing rules for
 anomaly identification and resolution [@petrakos2004new]. However, some
 human review may be necessary to resolve the most complex situations.
 
-For big data, the identification of data anomalies could result in
+For larger amounts of data, the identification of data anomalies could result in
 possibly billions of edit failures. Even if only a tiny proportion of
 these required some form of manual review for resolution, the task could
 still require the inspection of tens or hundreds of thousands of query
@@ -1139,8 +1093,7 @@ for the larger data set, or possibly to be used as a training data set,
 benchmark, or reference distribution for further processing, including
 recursive learning.
 
-To complement fully automated micro-editing, big data editing usually
-involves *top-down* or *macro-editing* approaches. For such approaches,
+To complement fully automated micro-editing, data editing  involving large amounts of data usually involves *top-down* or *macro-editing* approaches. For such approaches,
 analysts and systems inspect aggregated data for conformance to some
 benchmark values or data distributions that are known from either
 training data or prior experience. When unexpected or suspicious
@@ -1149,29 +1102,6 @@ discover and, if possible, remove the discrepancy by either altering the
 value at the source (usually a micro-data element) or delete the
 edit-failed value.
 
-\enlargethispage{-6pt}
-Note that an aggregate that is not flagged as suspicious in
-macro-editing passes the edit and is deemed correct. However, because
-serious offsetting errors can be masked by aggregation, there is no
-guarantee that the elements comprising the aggregate are indeed
-accurate. Recalling the discussion in
-Section [Variable and correlated error] regarding random noise, we know that the data
-may be quite noisy while the aggregates may appear to be essentially
-error-free. However, macro-editing can be an effective control for
-systematic errors and egregious and some random errors that create
-outliers and other data anomalies.
-
-Given the volume, velocity, and variety of big data, even macro-editing
-can be challenging when thousands of variables and billions of records
-are involved. In such cases, the *selective editing* strategies
-developed in the survey research literature can be helpful
-[@granquist1997editing; @de2011handbook]. Using selective macro-editing,
-query edits are selected based upon the importance of the variable for
-the analysis under study, the severity of the error, and the cost or
-level of effort involved in investigating the suspicious aggregate.
-Thus, only extreme errors, or less extreme errors on critical variables,
-would be investigated.
-
 There are a variety of methods that may be effective in macro-editing.
 Some of these are based upon data mining [@natarajan2010data], machine
 learning [@Clarke2014], cluster analysis
@@ -1179,15 +1109,15 @@ learning [@Clarke2014], cluster analysis
 tools such as treemaps
 [@johnson1991tree; @shneiderman1992tree; @tennekes2011top] and
 tableplots [@tennekes2013visualizing; @puts2015finding; @Tennekes2012].
-The tableplot seems particularly well suited for the three Vs of big
-data and will be discussed in some detail.
+We further explore tableplots below.
 
+TablePlots
 Like other visualization techniques examined in
 Chapter [Information Visualization], the tableplot has the ability to summarize a
 large multivariate data set in a single plot [@malik2010interactive]. In
-editing big data, it can be used to detect outliers and unusual data
+editing data, it can be used to detect outliers and unusual data
 patterns. Software for implementing this technique has been written in R
-and is available without cost from the Comprehensive R Archive Network
+and is available from the Comprehensive R Archive Network
 (<https://cran.r-project.org/>). Figure
 \@ref(fig:fig10-7) shows an example. The key idea is that micro-aggregates of two related
 variables should have similar data patterns. Inconsistent data patterns
@@ -1277,57 +1207,15 @@ graph on the right appear smoother and are less jagged.
 
 Summary {#sec:10-6}
 -------
+As social scientists, we are deeply concerned with making sure that the inferences we make from our analysis are valid. Since many of the newer data sources we are using are not collected or generated from instruments and methods designed to produce valid and reliable data for scientific analysis and discovery, they can lead to inference errors. This chapter described different types of errors that we encounter to make us aware of these limitations and take the necessary steps to understand and hopefully mitigate the effects of hidden errors on our results.
 
-This review of big data errors should dispel the misconception that the
-volume of the data can somehow compensate for other data deficiencies.
-To think otherwise is big data "hubris," according to Lazer et
-al. [@lazer2014parable]. In fact, the errors in big data are at least as
-severe and impactful for data analysis as are the errors in designed
-data collections. For the latter, there is a vast literature that
-developed during the last century on mitigating and adjusting for the
-error effects on data analysis. But for the former, the corresponding
-literature is still in its infancy. While the survey literature can form
-a foundation for the treatment of errors in big data, its utility is
-also quite limited because, unlike for smaller data sets, it is often
-quite difficult to eliminate all but the most egregious errors from big
-data due to its size. Indeed, volume, velocity, and variety may be
-regarded as the three curses of big data veracity.
+In addition to describing the types of errors, this chapter also gives an example of a solution to clean up the data before analysis. Another option that was not discussed is the possibility of using analytical techniques that attempt to model errors and compensate for them in the
+analysis. Such techniques include the use of latent class analysis for classification error [@biemer2011latent], multilevel modeling of systematic errors from multiple sources [@hox2010multilevel], and Bayesian statistics for partitioning massive data sets across multiple
+machines and then combining the results [@ibrahim2000power; @scott2013bayes].
 
-This chapter considers only a few types of data analysis that are common
-in big data analytics: classification, correlation, and regression
-analysis. We show that even when there is veracity, big data analytics
-can result in poor inference as a result of the three Vs. These issues
-include noise accumulation, spurious correlations, and incidental
-endogeneity. However, relaxing the assumption of veracity compounds
-these inferential issues and adds many new ones. Analytics can suffer in
-unpredictable ways.
+While this chapter has focused on the accuracy of the data and the validity of the inference, other data quality dimensions such as timeliness, comparability, coherence, and relevance that we have not considered in this chapter are also important. For example, timeliness often competes with accuracy because achieving acceptable levels of the latter often requires greater expenditures of resources and time. In fact, some applications of data analysis prefer results that are less accurate for the sake of timeliness. Biemer and Lyberg [@biemer2003] discuss these and other issues in some detail. 
 
-One solution we propose is to clean up the data before analysis. Another
-option that was not discussed is the possibility of using analytical
-techniques that attempt to model errors and compensate for them in the
-analysis. Such techniques include the use of latent class analysis for
-classification error [@biemer2011latent], multilevel modeling of
-systematic errors from multiple sources [@hox2010multilevel], and
-Bayesian statistics for partitioning massive data sets across multiple
-machines and then combining the results
-[@ibrahim2000power; @scott2013bayes].
-
-The BDTE perspective can be helpful when we consider using a big data
-source. In the end, it is the responsibility of big data analysts to be
-aware of the many limitations of the data and to take the necessary
-steps to limit the effects of big data error on analytical results.
-
-Finally, we note that the BDTE paradigm focuses on the accuracy
-dimension of Total Quality (writ large). Accuracy may also impinge on
-other quality dimensions such as timeliness, comparability, coherence,
-and relevance that we have not considered in this chapter. However,
-those other dimensions are equally important to some consumers of big
-data analytics. For example, timeliness often competes with accuracy
-because achieving acceptable levels of the latter often requires greater
-expenditures of resources and time. In fact, some consumers prefer
-analytic results that are less accurate for the sake of timeliness.
-Biemer and Lyberg [@biemer2003] discuss these and other issues in some
-detail.
+It is important to understand that we will rarely, if ever, get perfect data for our analysis. Every data source will have some limitation - some will be inaccurate, some will become stale,  and some will have sample bias. The key is to 1) be aware of the limitations of each data source, 2) incorporate that awareness in to the analysis that is being done with it, and 3) understand what type of inference errors it can lead to in order to appropriately communicate the results and make sound decisions.
 
 \vspace*{6pt}
 
@@ -1342,6 +1230,4 @@ The *Journal of Official Statistics* [@JOSweb] is a standard resource
 with many relevant articles. There is also an annual international
 conference on the total survey error framework, supported by major
 survey organizations [@TSEweb].
-
-\addtocontents{toc}{\protect\pagebreak}
 
