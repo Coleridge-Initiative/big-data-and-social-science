@@ -1,10 +1,8 @@
 Machine Learning {#chap:ml}
 ================
 
-\chapterauthor{Rayid Ghani and Malte Schierholz}
-\vspace*{-12pt}
-\enlargethispage{6pt}
 **Rayid Ghani and Malte Schierholz**
+
 
 This chapter introduces you to the value of machine learning in the
 social sciences, particularly focusing on the overall machine learning
@@ -69,7 +67,6 @@ $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine].
 
 \enlargethispage{6pt}
-\afterpage{\clearpage}
 
 <div class="F00">
 <p><strong>Box 6.1: Commercial machine learning examples</strong></p>
@@ -242,7 +239,7 @@ Section [Resources](#ml:res). Box 6.2 gives brief definitions of several terms 
 <div class="F00">
 <p><strong>Box 6.2: Machine learning vocabulary</strong></p>
 <ul>
-<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of &quot;learning&quot; a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
 <li><p><strong>Examples</strong>: These are data points and instances.</p></li>
 <li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
 <li><p><strong>Labels</strong>: These include the response variable, dependent variable, and target variable.</p></li>

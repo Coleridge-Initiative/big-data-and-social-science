@@ -1,18 +1,15 @@
 Record Linkage {#chap:link}
 ==============
 
-\chapterauthor{Joshua Tokle and Stefan Bender}
 **Joshua Tokle and Stefan Bender**
 
 
-Big data differs from survey data in that it is typically necessary to
+As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. Although computer scientists tend to simply
-"mash" data sets together, social scientists are rightfully concerned
+activities of interest. As social scientists, in addition to just linking data, we are also concerned
 about issues of missing links, duplicative links, and erroneous links.
 This chapter provides an overview of traditional rule-based and
-probabilistic approaches, as well as the important contribution of
-machine learning to record linkage.
+probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
 
 Motivation
 ----------
@@ -26,12 +23,12 @@ of challenges from those posed by survey data. Combining information
 from different sources about an individual, business, or geographic
 entity means that the social scientist must determine whether or not two
 entities on two different files are the same. This determination is not
-easy. In the UMETRICS data, if data are to be used to measure the impact
-of research grants, is David A. Miller from Stanford, CA, the same as
+easy. For example, in the UMETRICS data, if data are to be used to measure the impact
+of research grants, is David A. Miller from Stanford, CA, the same as
 David Andrew Miller from Fairhaven, NJ, in a list of inventors? Is
-Google the same as Alphabet if the productivity and growth of
+IBM the same as Big Blue if the productivity and growth of
 R&D-intensive firms is to be studied? Or, more generally, is individual
-A the same person as the one who appears on a list of terrorists that
+A the same person as the one who appears on a list that
 has been compiled? Does the product that a customer is searching for
 match the products that business B has for sale?
 
@@ -100,7 +97,7 @@ of a government program,
 as distinct from deliberate
 survey collection.] (ADRN) is a major investment by
 the United Kingdom to "improve our knowledge and understanding of the
-society we live in ... [and] provide a sound base for policymakers to
+society we live in ... [and] provide a sound base for policymakers to
 decide how to tackle a range of complex social, economic and
 environmental issues" by linking administrative data from a variety of
 sources, such as health agencies, court records, and tax records in a
@@ -272,7 +269,7 @@ Trademark Office (USPTO) data [@ventura2015seeing]:
 > States. In addition to identifying information about the patent, the
 > database contains each patent's list of inventors and assignees, the
 > companies, organizations, individuals, or government agencies towhich
-> the patent is assigned. ... However, inventors and assignees in the
+> the patent is assigned. ... However, inventors and assignees in the
 > USPTO database are not given unique identification numbers, making it
 > difficult to track inventors and assignees across their patents or
 > link their information to other data sources.
@@ -291,7 +288,7 @@ than sex or year of birth.
 "A Harvard professor has re-identified the names of more than 40 percent
 of a sample of anonymous participants in a high-profile DNA study,
 highlighting the dangers that ever greater amounts of personal data
-available in the Internet era could unravel personal secrets. ... Of the
+available in the Internet era could unravel personal secrets. ... Of the
 1,130 volunteers Sweeney and her team reviewed, about 579 provided zip
 code, date of birth and gender, the three key pieces of information she
 needs to identify anonymous people combined with information from voter
@@ -413,7 +410,7 @@ theoretically appealing approach but it has the drawback that the
 similarity metric has to be computed for all pairs of records. Even so,
 computing the similarity measure for a pair of blocking keys is likely
 to be cheaper than computing the full record comparison, so there is
-still a gain in efficiency. Whang et al. [@whang2009entity] provide a
+still a gain in efficiency. Whang et al. [@whang2009entity] provide a
 nice review of indexing approaches.
 
 In addition to reducing the computational burden of record linkage,
@@ -451,7 +448,7 @@ terms of a likelihood ratio [@FS69].
 
 Long strings, such as assignee and inventor names, are susceptible to
 typographical errors and name variations. For example, none of Sony
-Corporation, Sony Corporatoin and Sony Corp. will match using simple
+Corporation, Sony Corporatoin and Sony Corp. will match using simple
 exact matching. Similarly, David vs. Dave would not match
 [@ventura2015seeing].
 
@@ -653,7 +650,7 @@ scalable, and approaches are developed based on work in network
 algorithms and machine learning.
 
 While simple blocking as described in
-Section [Indexing and Blocking]
+Section [Indexing and Blocking]
 is standard in Fellegi--Sunter applications, computer scientists are
 likely to use the more sophisticated clustering approach to indexing.
 Indexing may also use network information to include, for example,
@@ -669,7 +666,7 @@ more detail in Chapter 6.] have been applied to record
 linkage following their success in other areas of prediction and
 classification. Computer scientists couch the analytical problem as one
 of entity resolution, even though the conceptual problem is identical.
-As Wick et al. [@wick2013joint] note:
+As Wick et al. [@wick2013joint] note:
 
 > Entity resolution, the task of automatically determining which
 > mentions refer to the same real-world entity, is a crucial aspect of
@@ -759,7 +756,7 @@ importance measure to narrow down the predictors to a parsimonious set.
 
 There are many published studies on the effectiveness of random forests
 and other machine learning algorithms for record linkage. Christen and
-Ahmed et al. provide some pointers
+Ahmed et al. provide some pointers
 [@christen2012survey; @elmagarmid2007duplicate].
 
 \vspace*{-3pt}
@@ -782,12 +779,12 @@ be applied to disambiguate a network. To do so, one must convert the
 network to a form that can be used as input into a record linkage
 algorithm. For example, when disambiguating a social network one might
 define a field comparison whose output gives the fraction of friends in
-common between two records. Ventura et al. demonstrated the relative
+common between two records. Ventura et al. demonstrated the relative
 effectiveness of the probabilistic method and machine learning
 approaches to disambiguating a database of inventors in the USPTO
 database [@ventura2015seeing]. Another approach is to apply clustering
 algorithms from the computer science literature to identify groups of
-records that are likely to refer to the same entity. Huang et al. 
+records that are likely to refer to the same entity. Huang et al. 
 [@HEG06] have developed a successful method based on an efficient
 computation of distance between individuals in the network. These
 distances are then fed into the DBSCAN clustering algorithm to identify
@@ -987,3 +984,4 @@ Out of many excellent resources on the subject, we note the following:
 
 -   The German Record Linkage Center is a resource for research,
     software, and ongoing conference activities [@Schnell2016].
+

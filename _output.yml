@@ -11,7 +11,6 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
-  latex_engine: xelatex
+#  latex_engine: xelatex
+  keep_tex: yes
   citation_package: natbib
-bookdown::epub_book:
-  stylesheet: style.css

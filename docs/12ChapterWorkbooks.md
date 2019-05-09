@@ -1,8 +1,8 @@
 Workbooks {#chap:workbooks}
 =========
 
-\chapterauthor{Jonathan Scott Morgan, Christina Jones, and Ahmad Emad}
 **Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
+
 
 This final chapter provides an overview of the Python workbooks that
 accompany each chapter. These workbooks combine text explanation and
