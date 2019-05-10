@@ -17,7 +17,7 @@ responsible and ethical research to take place.
 Introduction
 ------------
 
-Most big data applications in the social sciences involve data on units
+Most applications in the social sciences involve data on units
 such as individuals, households, and different types of business,
 educational, and government organizations. Indeed, the example running
 throughout this book involves data on individuals (such as faculty and
@@ -32,7 +32,7 @@ balanced against the social benefits of research access and use.
 
 **Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
-share information selectively but not publicly" [@house2014big].
+share information selectively but not publicly" [@house2014big]. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information [@nissenbaumXX]. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity [@nissenbaumXX] of the data flow when deciding which data to collect and how to analyze and share them. 
 
 **Confidentiality** is
 "preserving authorized restrictions on information access and
@@ -59,7 +59,7 @@ public use data [@duncanstatistical].
 In general, the greater the access to data and their original values,
 the greater the risk of reidentification for individual units. We depict
 this tradeoff graphically in
-Figure \@ref(fig:fig11-1). The
+Figure \@ref(fig:fig11-1). The
 concave curves in this hypothetical example depict the technological
 relationship between data utility and privacy for an organization such
 as a business firm or a statistical agency. At one extreme, all
@@ -70,7 +70,7 @@ utility is achieved. Initially, assume the organization is on the outer
 frontier. Increased external data resources (those not used by the
 organization) increase the risk of reidentification. This is represented
 by an inward shift of the utility/privacy frontier in
-Figure \@ref(fig:fig11-1).
+Figure \@ref(fig:fig11-1).
 Before the increase in external data, the organization could achieve a
 level of data utility $U^*$ and privacy $P_1$. The increase in
 externally available data now means that in order to maintain utility at
@@ -282,7 +282,7 @@ use data sets, and controlled access through a *research data center*.
 Statistical agencies have made data available in a number of ways:
 through tabular data, public use files, licensing agreements and, more
 recently, through synthetic data [@reiter2012statistical]. Hundepool et
-al. [@hundepool2010handbook] define statistical disclosure control as
+al. [@hundepool2010handbook] define statistical disclosure control as
 follows:
 
 > concepts and methods that ensure the confidentiality of micro and
@@ -321,6 +321,13 @@ to a number of operational challenges, including version control,
 identifying and managing risky researcher behavior, and management costs
 [@doyle2001confidentiality].
 
+Another approach to providing access to confidential data that has been proposed...DP
+
+Census
+Harvard DP query system (Salil etc.) https://privacytools.seas.harvard.edu/ 
+
+
+
 More recently, *synthetic data* have been created whereby key features
 of the original data are preserved but the original data are replaced by
 results from estimations (synthetic data) so that no individual or
@@ -329,21 +336,22 @@ business entity can be found in the released data
 SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and
 Program Participation (SIPP) and Social Security Administration earnings
 data, and the Synthetic Longitudinal Business Database (SynLBD)
-[@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how
+[@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how
 synthetic data sets lack utility in many research settings but are
 useful for generating flexible data sets underlying data tools and apps
 such as the Census Bureau's OnTheMap.
+
 
 **Research data centers**
 
 The second approach is establishing research data centers. Here,
 qualified researchers gain access to micro-level data after they are
-sworn in to protect the confidentially of the data they access. Strong
+sworn in to protect the confidentiality of the data they access. Strong
 input and output controls are in place to ensure that published findings
 comply with the privacy and confidentiality regulations
 [@hayden2012broken]. Some RDCs allow access through remote execution,
 where no direct access to the data is allowed, but it is not necessary
-to travel; others allow remote direct access.
+to travel; others allow remote direct access
 
 The new challenges
 ------------------
@@ -385,7 +393,7 @@ information rendering processing impossible, or use heuristics that
 establish and routinize deviations from rational decision-making
 [@Acquisti2014].
 
-It is also nearly impossible to anonymize data. Big data are often
+It is also nearly impossible to truly anonymize data. Big data are often
 structured in such a way that essentially everyone in the file is
 unique, either because so many variables exist or because they are so
 frequent or geographically detailed, that they make it easy to
@@ -486,8 +494,12 @@ forever, ownership could be claimed by yet-to-be-born relatives whose
 personal privacy could be threatened by release of information about
 blood relations.
 
-Traditional regulatory tools for managing privacy, notice, and consent
-have failed to provide a viable market mechanism allowing a form of
+The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to addresses some of the challenges.  
+Specify what data is used for
+Allow for access to the data
+Allow your data to erased   ...
+
+However, GDPR still relies on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of
 self-regulation governing industry data collection. Going forward, a
 more nuanced assessment of tradeoffs in the big data context, moving
 away from individualized assessments of the costs of privacy violations,
@@ -583,3 +595,6 @@ Data Privacy* [@TransactionsonDataPrivacy].
 The United Nations Economic Commission on Europe hosts workshops and
 conferences and produces occasional reports
 [@UnitedNationsEconomicCommissionforEurope].
+
+Collection of lecture on privacy [SIMONS SEMINAR LINK]
+

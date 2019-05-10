@@ -237,7 +237,8 @@ based on goals and types of visualizations.
 
 ```{block, type='F00'}
 **Box 9.2: A task categorization for visual data analysis**
- Select/Query
+
+Select/Query
 
 -   Filter to focus on a subset of the data
 

@@ -231,7 +231,8 @@ Box 9.2, which can be applied across different data types
 based on goals and types of visualizations.
 
 <div class="F00">
-<p><strong>Box 9.2: A task categorization for visual data analysis</strong> Select/Query</p>
+<p><strong>Box 9.2: A task categorization for visual data analysis</strong></p>
+<p>Select/Query</p>
 <ul>
 <li><p>Filter to focus on a subset of the data</p></li>
 <li><p>Retrieve details of item</p></li>

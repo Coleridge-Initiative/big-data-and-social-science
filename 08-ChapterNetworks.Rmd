@@ -19,19 +19,20 @@ atomistic actors that occupy the markets of neo-classical theory and the
 tightly managed hierarchies that are the traditional object of inquiry
 of sociologists and organizational theorists.
 
-Structure:
-What is network analysis useful for? - motivating examples and use cases
-What is network analysis
-What are graphs - types of graphs, vocabulary
-Representation, etc.
-How to create networks?
-How to analyze networks?
-network measures - definitions
-Network visualization
-Answering questions through network analysis
-More examples
-Tools
-Summary
+**Structure:**
+
+-   What is network analysis useful for? - motivating examples and use cases
+-   What is network analysis
+-   What are graphs - types of graphs, vocabulary
+-   Representation, etc.
+-   How to create networks?
+-   How to analyze networks?
+-   network measures - definitions
+-   Network visualization
+-   Answering questions through network analysis
+-   More examples
+-   Tools
+-   Summary
 
 
 Introduction
@@ -39,7 +40,9 @@ Introduction
 
 Social Scientists have studies networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934). What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (citation), we now have data about 100s of millions of people communicating with each other online through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
 
->>> Box with examples or references to these examples >>>
+---
+
+***Box with examples or references to these examples***
 
 Survey paper: (maybe at end in further reading) http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf
 
@@ -53,7 +56,7 @@ Example 3: diffusion of information
 
 Facebook graph example: http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf
 
->>>>>
+---
 
 This chapter provides a basic introduction to the analysis of large networks. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization technique, and discuss social science questions that these network measures and visualizations can help us answer.
 
@@ -151,13 +154,16 @@ decisions must be made.
 
 ### Types of Networks
 
-[need a vocabulary box with network terminology]
-Nodes
-Ties
-Edges
-Directed
-Undirected
-...
+---
+
+**Vocabulary box: network terminology]
+-   **Nodes**:
+-   **Ties**:
+-   **Edges**:
+-   **Directed**:
+-   **Undirected**:
+
+---
 
 
 Network ties can be directed (flowing from one node to another) or
