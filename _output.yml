@@ -11,6 +11,8 @@ bookdown::gitbook:
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
-#  latex_engine: xelatex
+  latex_engine: lualatex
   keep_tex: yes
-  citation_package: natbib
+  template: null
+  pandoc_args: --top-level-division=chapter
+#  citation_package: natbib
