@@ -219,9 +219,20 @@ the analysis, for example
 model of a relational data
 structure.]
 
-<div class="F00">
-<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with a problem domain, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:fig2), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include &quot;is employed by&quot; and &quot;is funded by.&quot; This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
-</div>
+\begin{F00}
+\textbf{Box 4.1: Data model} A \emph{data model} specifies the data
+elements associated with a problem domain, the properties of those data
+elements, and how those data elements relate to one another. In
+developing a data model, we commonly first identity the entities that
+are to be modeled and then define their properties and relationships.
+For example, when working on the science of science policy (see
+Figure~@ref(fig:fig2), the entities include people, products,
+institutions, and funding, each of which has various properties (e.g.,
+for a person, their name, address, employer); relationships include ``is
+employed by'' and ``is funded by.'' This conceptual data model can then
+be translated into relational tables or some other database
+representation, as we describe next.
+\end{F00}
 
 Table: (\#tab:table4-2) Key components of a DBMS
 
@@ -311,10 +322,14 @@ relational database, the researcher will necessarily define schemas,
 relationships between entities, and so forth. Analysis results can be
 stored in a relational database or back into the NoSQL store.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterDB/figures/data-fig2.png" alt="A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing" width="70%" />
-<p class="caption">(\#fig:figdb-dbs)A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/data-fig2} 
+
+}
+
+\caption{A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing}(\#fig:figdb-dbs)
+\end{figure}
 
 
 Relational DBMSs
@@ -336,10 +351,14 @@ One file contains information about grants, the other information about
 investigators. How should you proceed to manipulate and analyze these
 data?
 
-<div class="figure" style="text-align: center">
-<img src="ChapterDB/figures/figdb-1.png" alt="CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address" width="70%" />
-<p class="caption">(\#fig:figdb-1)CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/figdb-1} 
+
+}
+
+\caption{CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address}(\#fig:figdb-1)
+\end{figure}
 
 The main concept underlying the relational data model is a *table* (also
 referred to as a *relation*): a set of rows (also referred to as tuples,
@@ -367,10 +386,14 @@ database further ensures that the data comply with the model (e.g., data
 types, key uniqueness, entity relationships), essentially providing core
 quality assurance.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterDB/figures/figdb-2.png" alt="Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table" width="70%" />
-<p class="caption">(\#fig:figdb-2)Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/figdb-2} 
+
+}
+
+\caption{Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table}(\#fig:figdb-2)
+\end{figure}
 
 ### Structured Query Language (SQL)
 
@@ -940,7 +963,9 @@ and analytical capabilities and alleviating the need for external
 processing.
 
 
-``` {#fig:db:4 style="PythonStyle" caption="Embedding SQL in Python" label="fig:db:4"}
+
+
+```r
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
 
@@ -1362,10 +1387,14 @@ match. This selection is illustrated in the middle column of
 Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
 Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join" width="70%" />
-<p class="caption">(\#fig:fig-venn)Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/fig-venn} 
+
+}
+
+\caption{Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join}(\#fig:fig-venn)
+\end{figure}
 
 ---
 

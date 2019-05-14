@@ -200,10 +200,14 @@ linked. In some cases, when sufficient training data can be produced,
 more modern machine learning techniques may be applied.
 
 
-<div class="figure" style="text-align: center">
-<img src="ChapterLinkage/figures/fig3-1.png" alt="The preprocessing pipeline" width="70%" />
-<p class="caption">(\#fig:fig3-1)The preprocessing pipeline</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterLinkage/figures/fig3-1} 
+
+}
+
+\caption{The preprocessing pipeline}(\#fig:fig3-1)
+\end{figure}
 
 The canonical record linkage workflow process is shown in Figure
 \@ref(fig:fig3-1) for two data files, A and B. The goal is to
@@ -697,10 +701,14 @@ from the training data, the predictive model can be applied to unlabeled
 data to find new links. The quality of the training data set is
 critical; the model is only as good as the data it is trained on.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterLinkage/figures/fig3-2.png" alt="Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]" width="70%" />
-<p class="caption">(\#fig:fig3-2)Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterLinkage/figures/fig3-2} 
+
+}
+
+\caption{Probabilistic (left) vs. machine learning (right) approaches to linking. Source: Köpcke et al. [@kopcke2010evaluation]}(\#fig:fig3-2)
+\end{figure}
 
 \vspace*{-6pt}
 An example of a machine learning model that is popular for record

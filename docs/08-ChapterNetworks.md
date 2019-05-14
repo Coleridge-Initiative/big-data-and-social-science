@@ -184,10 +184,14 @@ symmetric matrix or a list of edges connecting nodes. Figure
 this simple data structure, highlighting the idea that network data of
 this form can be represented either as a matrix or as an edge list. If this data was representing acquisitions, we could turn it into a directed graph where the edge would be directed from the acquiring firm to the acquired firm.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-1.png" alt="Undirected, binary, one-mode network data" width="70%" />
-<p class="caption">(\#fig:fig8-1)Undirected, binary, one-mode network data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-1} 
+
+}
+
+\caption{Undirected, binary, one-mode network data}(\#fig:fig8-1)
+\end{figure}
 
 \vspace*{-12pt}
 A much more complicated network would be one that is both directed and
@@ -199,10 +203,14 @@ ties of different strengths. When networks connecting one class of nodes
 as asymmetric valued matrices or lists of arcs with associated values.
 (See Figure \@ref(fig:fig8-1).)
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-2.png" alt="Directed, valued, one-mode network data" width="70%" />
-<p class="caption">(\#fig:fig8-2)Directed, valued, one-mode network data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-2} 
+
+}
+
+\caption{Directed, valued, one-mode network data}(\#fig:fig8-2)
+\end{figure}
 
 \vspace*{-12pt}
 While many studies of small- to medium-sized social networks rely on
@@ -287,10 +295,14 @@ $\mathbf{X}$ by its transpose $\mathbf{X}'$.
 Figure \@ref(fig:fig8-3)
 summarizes this transformation.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-3.png" alt="Two-mode affiliation data" width="70%" />
-<p class="caption">(\#fig:fig8-3)Two-mode affiliation data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-3} 
+
+}
+
+\caption{Two-mode affiliation data}(\#fig:fig8-3)
+\end{figure}
 
 In the following snippet of code, I use the `igraph` package in Python to read in
 a Pajek file and then transform the original two-mode network into two
@@ -402,10 +414,14 @@ can reach each other if they
 are connected by an unbroken chain of relationships.
 These are often called indirect ties.].
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
-<p class="caption">(\#fig:fig8-4)Reachability and indirect ties</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-4} 
+
+}
+
+\caption{Reachability and indirect ties}(\#fig:fig8-4)
+\end{figure}
 
 Networks in which more of the possible connections among nodes are
 realized are denser and more cohesive than networks in which fewer
@@ -569,10 +585,14 @@ dyads is reachable ($N=2{,}996{,}157$ dyads) at distance 4. In short,
 nearly 3 million pairs of nodes are collaborators of collaborators of
 collaborators of collaborators.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-5.png" alt="Histogram of path lengths for university A employee network" width="70%" />
-<p class="caption">(\#fig:fig8-5)Histogram of path lengths for university A employee network</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-5} 
+
+}
+
+\caption{Histogram of path lengths for university A employee network}(\#fig:fig8-5)
+\end{figure}
 
 **Degree distribution**
 
@@ -878,20 +898,29 @@ scientific findings. Two otherwise similar institutions might have quite
 different capabilities based on the structure and composition of their
 collaboration networks.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-6.png" alt="The main component of two university networks" width="70%" />
-<p class="caption">(\#fig:fig8-6)The main component of two university networks</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-6} 
+
+}
+
+\caption{The main component of two university networks}(\#fig:fig8-6)
+\end{figure}
 
 The intuitions suggested by Figure \@ref(fig:fig8-6) can also be checked against some of the measures we
 have described. Figure \@ref(fig:fig8-7a), for instance, presents degree distributions for
 each of the two networks. Figure \@ref(fig:fig8-8) presents the histogram of path lengths for each network.
 
-<img src="ChapterNetworks/figures/fig8-7a.png" width="70%" style="display: block; margin: auto;" />
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-7b.png" alt="Degree distribution for two universities" width="70%" />
-<p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
-</div>
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-7a} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-7b} 
+
+}
+
+\caption{Degree distribution for two universities}(\#fig:fig8-7a)
+\end{figure}
 
 It is evident from Figure \@ref(fig:fig8-7a) that they are quite different in character.
 University A's network follows a more classic skewed distribution of the
@@ -914,10 +943,14 @@ suffices to say that the degree distribution of the networks bears out
 the intuition we drew from the images that they are significantly
 different.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-8.png" alt="Distribution of path lengths for universities A and B" width="70%" />
-<p class="caption">(\#fig:fig8-8)Distribution of path lengths for universities A and B</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-8} 
+
+}
+
+\caption{Distribution of path lengths for universities A and B}(\#fig:fig8-8)
+\end{figure}
 
 The path length histogram presented in Figure
 \@ref(fig:fig8-8) suggests a

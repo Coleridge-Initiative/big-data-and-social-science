@@ -253,11 +253,16 @@ power (e.g., thousands of computing cores)
 These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured
 as separate physical hardware.
 
-<img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
-<div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]" width="70%" />
-<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]</p>
-</div>
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterParallel/figures/data2compute} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/compute2data} 
+
+}
+
+\caption{Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]}(\#fig:fig5-1a)
+\end{figure}
 
 Running compute jobs on such hardware often goes like this. When a user
 requests to run an intensive task on a particular data set, the system
@@ -393,10 +398,14 @@ Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
 
-<div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/hadoop.png" alt="Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS" width="70%" />
-<p class="caption">(\#fig:hadoop)Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/hadoop} 
+
+}
+
+\caption{Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS}(\#fig:hadoop)
+\end{figure}
 
 ### Programming language support
 

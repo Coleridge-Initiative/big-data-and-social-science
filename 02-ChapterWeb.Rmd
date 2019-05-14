@@ -6,7 +6,20 @@ Working with Web Data and APIs {#chap:web}
 In many social science problems we have to augment our data with external data sources. Often the data we use for augmenting are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. For example, we often augment our primary data with data from the American Community Survey (ACS) or from Open Data Portals being maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used “on-demand” through APIs. Same is true for data from social media sources, such as Twitter, and Facebook. In this chapter we will cover tools that can be used by social science researchers to gather this type of external data from web pages and APIs. 
 
 
-
+```{r, include = FALSE}
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
 
 Introduction
 ------------

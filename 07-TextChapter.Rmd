@@ -735,7 +735,12 @@ general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigram
 Bird et al. [@bird-09] provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
 
-``` {#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
+```{r, eval = FALSE, include=FALSE}
+#{#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
+```
+
+
+``` {r, eval = FALSE}
 def bigram_finder(texts):
   # NLTK bigrams from a corpus of documents separated by new line
   tokens_list = nltk.word_tokenize(re.sub("\n"," ",texts))

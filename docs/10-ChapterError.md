@@ -152,10 +152,14 @@ target population, the columns represent characteristics, variables (or
 features) of the row elements, and the cells correspond to values of the
 column features for elements on the rows.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-1.png" alt="A typical rectangular data file format" width="70%" />
-<p class="caption">(\#fig:fig10-1)A typical rectangular data file format</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-1} 
+
+}
+
+\caption{A typical rectangular data file format}(\#fig:fig10-1)
+\end{figure}
 
 The total error for this data set may be expressed by the following
 heuristic formula:
@@ -513,10 +517,14 @@ results suggest that there are considerable risks of false inference
 associated with a purely empirical approach to predictive analytics
 using high-dimensional data.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-3.png" alt="An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]" width="70%" />
-<p class="caption">(\#fig:fig10-3)An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-3} 
+
+}
+
+\caption{An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]}(\#fig:fig10-3)
+\end{figure}
 
 Incidental Endogeneity**
 
@@ -915,10 +923,14 @@ negligible when $n > 30$. These results suggest that variable error can
 be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size" width="70%" />
-<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-4} 
+
+}
+
+\caption{Correlation as a function of sample size}(\#fig:fig10-4)
+\end{figure}
 
 **Both variable and systematic errors**
 
@@ -955,10 +967,14 @@ attenuated. However, at the assumed level of intra-source variation, the
 inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size" width="70%" />
-<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-5} 
+
+}
+
+\caption{Correlation as a function of sample size}(\#fig:fig10-5)
+\end{figure}
 
 To summarize these findings, correlation analysis is attenuated by
 variable errors, which can lead to null findings when conducting a
@@ -1004,10 +1020,14 @@ proportion to the reliability, $R_{x}$. As random error is added to the
 $x$-values, reliability is reduced and the fitted slope will approach
 $0$.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-6.png" alt="Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77" width="70%" />
-<p class="caption">(\#fig:fig10-6)Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-6} 
+
+}
+
+\caption{Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77}(\#fig:fig10-6)
+\end{figure}
 
 \vspace*{-6pt}
 When the dependent variable, $y$, only is subject to variable error, the
@@ -1137,10 +1157,14 @@ such as the mean or total is computed for the values in a bin and is
 displayed as a bar (for continuous variables) or as a stacked bar for
 categorical variables.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-7.png" alt="Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars" width="70%" />
-<p class="caption">(\#fig:fig10-7)Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterError/figures/fig10-7} 
+
+}
+
+\caption{Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars}(\#fig:fig10-7)
+\end{figure}
 
 \vspace*{24pt}
 The sequence of steps typically involved in producing a tableplot is as
