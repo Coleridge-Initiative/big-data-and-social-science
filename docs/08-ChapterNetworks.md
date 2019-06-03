@@ -19,19 +19,20 @@ atomistic actors that occupy the markets of neo-classical theory and the
 tightly managed hierarchies that are the traditional object of inquiry
 of sociologists and organizational theorists.
 
-Structure:
-What is network analysis useful for? - motivating examples and use cases
-What is network analysis
-What are graphs - types of graphs, vocabulary
-Representation, etc.
-How to create networks?
-How to analyze networks?
-network measures - definitions
-Network visualization
-Answering questions through network analysis
-More examples
-Tools
-Summary
+**Structure:**
+
+-   What is network analysis useful for? - motivating examples and use cases
+-   What is network analysis
+-   What are graphs - types of graphs, vocabulary
+-   Representation, etc.
+-   How to create networks?
+-   How to analyze networks?
+-   network measures - definitions
+-   Network visualization
+-   Answering questions through network analysis
+-   More examples
+-   Tools
+-   Summary
 
 
 Introduction
@@ -39,7 +40,9 @@ Introduction
 
 Social Scientists have studies networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934). What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (citation), we now have data about 100s of millions of people communicating with each other online through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
 
->>> Box with examples or references to these examples >>>
+---
+
+***Box with examples or references to these examples***
 
 Survey paper: (maybe at end in further reading) http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf
 
@@ -53,7 +56,7 @@ Example 3: diffusion of information
 
 Facebook graph example: http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf
 
->>>>>
+---
 
 This chapter provides a basic introduction to the analysis of large networks. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization technique, and discuss social science questions that these network measures and visualizations can help us answer.
 
@@ -151,13 +154,16 @@ decisions must be made.
 
 ### Types of Networks
 
-[need a vocabulary box with network terminology]
-Nodes
-Ties
-Edges
-Directed
-Undirected
-...
+---
+
+**Vocabulary box: network terminology]
+-   **Nodes**:
+-   **Ties**:
+-   **Edges**:
+-   **Directed**:
+-   **Undirected**:
+
+---
 
 
 Network ties can be directed (flowing from one node to another) or
@@ -178,10 +184,14 @@ symmetric matrix or a list of edges connecting nodes. Figure
 this simple data structure, highlighting the idea that network data of
 this form can be represented either as a matrix or as an edge list. If this data was representing acquisitions, we could turn it into a directed graph where the edge would be directed from the acquiring firm to the acquired firm.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-1.png" alt="Undirected, binary, one-mode network data" width="70%" />
-<p class="caption">(\#fig:fig8-1)Undirected, binary, one-mode network data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-1} 
+
+}
+
+\caption{Undirected, binary, one-mode network data}(\#fig:fig8-1)
+\end{figure}
 
 \vspace*{-12pt}
 A much more complicated network would be one that is both directed and
@@ -193,10 +203,14 @@ ties of different strengths. When networks connecting one class of nodes
 as asymmetric valued matrices or lists of arcs with associated values.
 (See Figure \@ref(fig:fig8-1).)
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-2.png" alt="Directed, valued, one-mode network data" width="70%" />
-<p class="caption">(\#fig:fig8-2)Directed, valued, one-mode network data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-2} 
+
+}
+
+\caption{Directed, valued, one-mode network data}(\#fig:fig8-2)
+\end{figure}
 
 \vspace*{-12pt}
 While many studies of small- to medium-sized social networks rely on
@@ -281,10 +295,14 @@ $\mathbf{X}$ by its transpose $\mathbf{X}'$.
 Figure \@ref(fig:fig8-3)
 summarizes this transformation.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-3.png" alt="Two-mode affiliation data" width="70%" />
-<p class="caption">(\#fig:fig8-3)Two-mode affiliation data</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-3} 
+
+}
+
+\caption{Two-mode affiliation data}(\#fig:fig8-3)
+\end{figure}
 
 In the following snippet of code, I use the `igraph` package in Python to read in
 a Pajek file and then transform the original two-mode network into two
@@ -396,10 +414,14 @@ can reach each other if they
 are connected by an unbroken chain of relationships.
 These are often called indirect ties.].
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-4.png" alt="Reachability and indirect ties" width="70%" />
-<p class="caption">(\#fig:fig8-4)Reachability and indirect ties</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-4} 
+
+}
+
+\caption{Reachability and indirect ties}(\#fig:fig8-4)
+\end{figure}
 
 Networks in which more of the possible connections among nodes are
 realized are denser and more cohesive than networks in which fewer
@@ -563,10 +585,14 @@ dyads is reachable ($N=2{,}996{,}157$ dyads) at distance 4. In short,
 nearly 3 million pairs of nodes are collaborators of collaborators of
 collaborators of collaborators.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-5.png" alt="Histogram of path lengths for university A employee network" width="70%" />
-<p class="caption">(\#fig:fig8-5)Histogram of path lengths for university A employee network</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-5} 
+
+}
+
+\caption{Histogram of path lengths for university A employee network}(\#fig:fig8-5)
+\end{figure}
 
 **Degree distribution**
 
@@ -872,20 +898,29 @@ scientific findings. Two otherwise similar institutions might have quite
 different capabilities based on the structure and composition of their
 collaboration networks.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-6.png" alt="The main component of two university networks" width="70%" />
-<p class="caption">(\#fig:fig8-6)The main component of two university networks</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-6} 
+
+}
+
+\caption{The main component of two university networks}(\#fig:fig8-6)
+\end{figure}
 
 The intuitions suggested by Figure \@ref(fig:fig8-6) can also be checked against some of the measures we
 have described. Figure \@ref(fig:fig8-7a), for instance, presents degree distributions for
 each of the two networks. Figure \@ref(fig:fig8-8) presents the histogram of path lengths for each network.
 
-<img src="ChapterNetworks/figures/fig8-7a.png" width="70%" style="display: block; margin: auto;" />
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-7b.png" alt="Degree distribution for two universities" width="70%" />
-<p class="caption">(\#fig:fig8-7a)Degree distribution for two universities</p>
-</div>
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-7a} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-7b} 
+
+}
+
+\caption{Degree distribution for two universities}(\#fig:fig8-7a)
+\end{figure}
 
 It is evident from Figure \@ref(fig:fig8-7a) that they are quite different in character.
 University A's network follows a more classic skewed distribution of the
@@ -908,10 +943,14 @@ suffices to say that the degree distribution of the networks bears out
 the intuition we drew from the images that they are significantly
 different.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterNetworks/figures/fig8-8.png" alt="Distribution of path lengths for universities A and B" width="70%" />
-<p class="caption">(\#fig:fig8-8)Distribution of path lengths for universities A and B</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterNetworks/figures/fig8-8} 
+
+}
+
+\caption{Distribution of path lengths for universities A and B}(\#fig:fig8-8)
+\end{figure}
 
 The path length histogram presented in Figure
 \@ref(fig:fig8-8) suggests a

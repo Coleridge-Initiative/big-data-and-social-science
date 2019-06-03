@@ -1,20 +1,18 @@
 ---
 title: "Big Data and Social Science"
+subtitle: A Practical Guide to Methods and Tools
 author:
-- Ian Foster
-- Rayid Ghani
-- Ron S. Jarmin
-- Frauke Kreuter
-- Julia Lane
+- Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane
 bibliography:
 - book.bib
 - parallel.bib
 - reclink.bib
-documentclass: book
+lot: yes
+lof: yes
+documentclass: krantz
 github-repo: Coleridge-Initiative/big-data-and-social-science
-link-citations: yes
 site: bookdown::bookdown_site
-subtitle: A Practical Guide to Methods and Tools
+link-citations: yes
 biblio-style: apalike
 ---
 

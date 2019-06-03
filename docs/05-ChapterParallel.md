@@ -4,50 +4,34 @@ Scaling up through Parallel and Distributed Computing {#chap:parallel}
 **Huy Vo and Claudio Silva**
 
 
- This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using
-parallel computing). While the focus is on widely used
-big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual
-framework to the key challenges that the approach is designed to
-Address.
+This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using parallel computing). While the focus is on widely used big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual framework to the key challenges that the approach is designed to address.
 
 This chapter will describe:
-Why we need mapreduce
-What is mapreduce
-How to use it
-Hadoop
-spark
-Benefits and challenges
-Examples
+
+-   Why we need mapreduce
+-   What is mapreduce
+-   How to use it
+-   Hadoop
+-   spark
+-   Benefits and challenges
+-   Examples
+
+-   Where the computer is
+-   Where the data is: one disk, or distributed
 
 
+-   Single processor
+-   multiprocessor
+-   distributed/parallel
+-   laptop/Desktop
 
+-   mapreduce/hadoop
+-   Server in IT center
 
+-   mapreduce/hadoop
+-   Cloud - AWS, Azure, Google
 
-Where the computer is
-Where the data is: one disk, or distributed
-
-
-Single processor
-multiprocessor
-distributed/parallel
-laptop/Desktop
-
-
-
-
-mapreduce/hadoop
-Server in IT center
-
-
-
-
-mapreduce/hadoop
-Cloud - AWS, Azure, Google
-
-
-
-
-mapreduce/hadoop
+-   mapreduce/hadoop
 
 
 
@@ -62,14 +46,14 @@ Record linkage
 ML methods can be parallelized
 
 
-This chapter will describe:
-Why we need mapreduce
-What is mapreduce
-How to use it
-Hadoop
-spark
-Benefits and challenges
-Examples
+**This chapter will describe:**
+* Why we need mapreduce
+* What is mapreduce
+* How to use it
+* Hadoop
+* spark
+* Benefits and challenges
+* Examples
 
 
 Parallel computing to deal with large amounts of data are hardly new ideas for dealing with
@@ -269,11 +253,16 @@ power (e.g., thousands of computing cores)
 These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured
 as separate physical hardware.
 
-<img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
-<div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]" width="70%" />
-<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]</p>
-</div>
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterParallel/figures/data2compute} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/compute2data} 
+
+}
+
+\caption{Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]}(\#fig:fig5-1a)
+\end{figure}
 
 Running compute jobs on such hardware often goes like this. When a user
 requests to run an intensive task on a particular data set, the system
@@ -409,10 +398,14 @@ Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
 
-<div class="figure" style="text-align: center">
-<img src="ChapterParallel/figures/hadoop.png" alt="Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS" width="70%" />
-<p class="caption">(\#fig:hadoop)Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/hadoop} 
+
+}
+
+\caption{Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS}(\#fig:hadoop)
+\end{figure}
 
 ### Programming language support
 
@@ -442,7 +435,7 @@ if __name__=='__main__':
         fields     = line.strip('\n').split(',')
         awardId    = fields[0]
         domainName = fields[3].split('@')[-1].split('.')[-2:]
-        print '%s\t%s' % (domainName,awardId)
+        print('%s\t%s' % (domainName,awardId))
 ```
 <div style="text-align: center">Listing 5.2. A Hadoop streaming mapper in Python</div>
 <br>
@@ -459,7 +452,7 @@ if __name__=='__main__':
     for line in parseInput():
         (domainName, awardIds) = line.split('\t')
         count = len(set(awardIds))
-        print '%s\t%s' % (domainName, count)
+        print('%s\t%s' % (domainName, count))
 ```
 <div style="text-align: center">Listing 5.3. A Hadoop streaming reducer in Python</div>
 <br>

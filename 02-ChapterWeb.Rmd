@@ -6,7 +6,20 @@ Working with Web Data and APIs {#chap:web}
 In many social science problems we have to augment our data with external data sources. Often the data we use for augmenting are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. For example, we often augment our primary data with data from the American Community Survey (ACS) or from Open Data Portals being maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used “on-demand” through APIs. Same is true for data from social media sources, such as Twitter, and Facebook. In this chapter we will cover tools that can be used by social science researchers to gather this type of external data from web pages and APIs. 
 
 
-
+```{r, include = FALSE}
+library(knitr)
+hook_output = knit_hooks$get('output')
+knit_hooks$set(output = function(x, options) {
+  # this hook is used only when the linewidth option is not NULL
+  if (!is.null(n <- options$linewidth)) {
+    x = knitr:::split_lines(x)
+    # any lines wider than n should be wrapped
+    if (any(nchar(x) > n)) x = strwrap(x, width = n)
+    x = paste(x, collapse = '\n')
+  }
+  hook_output(x, options)
+})
+```
 
 Introduction
 ------------
@@ -99,7 +112,7 @@ If we click on next at the bottom, the url changes to https://www.hhmi.org/scien
 
 This allows us to see that the URL is constructed using a few parameters, such as sort_by, sort_order, items_per_page, and page that can be programmatically modified to give us the search results that we want.
 
-Getting the contents of the page from the URL
+**Getting the contents of the page from the URL**
 
 The `requests` module, available natively in Jupyter Python notebooks, is a useful
 set of tools for handling interactions with websites. It lets us
@@ -138,7 +151,7 @@ constructed wrongly or that there was a server error.
 ```
 
 
-Processing the html response
+**Processing the html response**
 
 With the page successfully returned, we now need to process the text it
 contains into the data we want. This is not a trivial exercise. It is
@@ -350,7 +363,7 @@ timed delay between each page request.
 >>    page = requests.get(BASE_URL, params=query)
 >> # We use extend to add list for each page to existing list
 >>    data.extend(scrape(page))
->> print "Retrieved and scraped page number:", query.get("items_per_page")
+>> print("Retrieved and scraped page number:", query.get("items_per_page"))
 >> time.sleep(10) # robots.txt at hhmi.org specifies a crawl delay of 10 seconds
 Retrieved and scraped page number: 1
 Retrieved and scraped page number: 2

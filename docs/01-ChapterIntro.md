@@ -21,10 +21,14 @@ Research has certainly changed. Researchers draw on data that are
 leading academic journals are much less likely today to draw on
 preprocessed survey data (Figure \@ref(fig:fig1)).
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)" width="70%" />
-<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterIntro/figures/Figure1} 
+
+}
+
+\caption{Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)}(\#fig:fig1)
+\end{figure}
 
 The way in which data are used has also changed for both government
 agencies and businesses. Chief data officers are becoming as common in
@@ -497,10 +501,14 @@ results must be gleaned from the web and other sources ([Working with Web Data a
 Finally, the disparate
 complex data sets need to be stored in databases ([Databases]), integrated ([Record Linkage]), analyzed ([Machine Learning](#chap:ml)), and used to make inferences ([Errors and Inference]).
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/figure_cameron.png" alt="A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong" width="70%" />
-<p class="caption">(\#fig:fig2)A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterIntro/figures/figure_cameron} 
+
+}
+
+\caption{A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong}(\#fig:fig2)
+\end{figure}
 
 The use case serves as the thread that ties many of the ideas together.
 Rather than asking the reader to learn how to code "hello world," we
@@ -544,10 +552,14 @@ chapters describes what tools are available to process and classify
 data. The last set deals with analysis and the appropriate handling of
 data on individuals and organizations.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />
-<p class="caption">(\#fig:projectfig)The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{ChapterIntro/figures/projectflow} 
+
+}
+
+\caption{The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis.}(\#fig:projectfig)
+\end{figure}
 
 ### Part I: Capture and curation
 
@@ -587,10 +599,14 @@ programming paradigms and its most popular implementation, Apache
 Hadoop, the goal of the chapter is to provide a conceptual framework to
 the key challenges that the approach is designed to address.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure2.png" alt="The four chapters of Part I focus on *data capture* and *curation*" width="70%" />
-<p class="caption">(\#fig:fig3)The four chapters of Part I focus on *data capture* and *curation*</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterIntro/figures/Figure2} 
+
+}
+
+\caption{The four chapters of Part I focus on *data capture* and *curation*}(\#fig:fig3)
+\end{figure}
 
 ### Part II: Modeling and analysis
 
@@ -628,10 +644,14 @@ occupy the markets of neo-classical theory and the tightly managed
 hierarchies that are the traditional object of inquiry of sociologists
 and organizational theorists.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure3.png" alt="The four chapters in Part II focus on data *modeling* and *analysis*" width="70%" />
-<p class="caption">(\#fig:fig4)The four chapters in Part II focus on data *modeling* and *analysis*</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterIntro/figures/Figure3} 
+
+}
+
+\caption{The four chapters in Part II focus on data *modeling* and *analysis*}(\#fig:fig4)
+\end{figure}
 
 ### Part III: Inference and ethics
 
@@ -674,10 +694,14 @@ that accompanies each chapter---the workbooks that are designed, using *Jupyter 
 techniques and approaches in selected chapters. We hope you have a lot
 of fun with them.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on *inference* and *ethics*" width="70%" />
-<p class="caption">(\#fig:fig5)The four chapters in Part III focus on *inference* and *ethics*</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterIntro/figures/Figure4} 
+
+}
+
+\caption{The four chapters in Part III focus on *inference* and *ethics*}(\#fig:fig5)
+\end{figure}
 
 Resources {#sec:intro:resources}
 ---------

@@ -49,10 +49,14 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [@anscombe1973graphs]" width="70%" />
-<p class="caption">(\#fig:fig9-1)Anscombes quartet [@anscombe1973graphs]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-1} 
+
+}
+
+\caption{Anscombes quartet [@anscombe1973graphs]}(\#fig:fig9-1)
+\end{figure}
 
 In broad terms, visualizations are used either to present results or for
 analysis and open-ended exploration. This chapter provides an overview
@@ -72,18 +76,28 @@ guided by understanding the background and goals of the target audience
 5 for an overview of collecting, merging, storing, and
 processing data sets.]).
 
-<div class="F00">
-<p><strong>Box 9.1:</strong> The development of an effective visualization is an iterative process that generally includes the following steps:</p>
-<ul>
-<li><p>Specify user needs, tasks, accessibility requirements and criteria for success.</p></li>
-<li><p>Prepare data (clean, transform).</p></li>
-<li><p>Design visual representations.</p></li>
-<li><p>Design interaction.</p></li>
-<li><p>Plan sharing of insights, provenance.</p></li>
-<li><p>Prototype/evaluate, including usability testing.</p></li>
-<li><p>Deploy (monitor usage, provide user support, manage revision process).</p></li>
-</ul>
-</div>
+\begin{F00}
+\textbf{Box 9.1:} The development of an effective visualization is an
+iterative process that generally includes the following steps:
+
+\begin{itemize}
+\item
+  Specify user needs, tasks, accessibility requirements and criteria for
+  success.
+\item
+  Prepare data (clean, transform).
+\item
+  Design visual representations.
+\item
+  Design interaction.
+\item
+  Plan sharing of insights, provenance.
+\item
+  Prototype/evaluate, including usability testing.
+\item
+  Deploy (monitor usage, provide user support, manage revision process).
+\end{itemize}
+\end{F00}
 
 If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
@@ -118,10 +132,14 @@ popular girl names in the
 “John” has declined since
 the 1960s.].
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
-<p class="caption">(\#fig:fig9-2)A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-2} 
+
+}
+
+\caption{A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif}(\#fig:fig9-2)
+\end{figure}
 
 \vspace*{-12pt}
 Data analysis tools can enable analysis of structured and generic data
@@ -138,15 +156,23 @@ distributions of awards with formula funding, known as *Hatch funding*.
 The analyst can explore trends in new or old awards, funding resources,
 and other attributes in this rich award portfolio.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="70%" />
-<p class="caption">(\#fig:fig9-3a)Charting interface of Tableau</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3b.png" alt="A treemap visualization of agency and sub-agency spending breakdown" width="70%" />
-<p class="caption">(\#fig:fig9-3b)A treemap visualization of agency and sub-agency spending breakdown</p>
-</div>
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-3a} 
+
+}
+
+\caption{Charting interface of Tableau}(\#fig:fig9-3a)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-3b} 
+
+}
+
+\caption{A treemap visualization of agency and sub-agency spending breakdown}(\#fig:fig9-3b)
+\end{figure}
 
 Commercial tools such as Spotfire and Tableau, among many other tools
 (see Section [Resources](#sec:mylabel4)), allow users to create visualizations by
@@ -187,10 +213,14 @@ attention and to describe related insights. Providing attribution and
 data source, where applicable, is an ethical practice that also enables
 validating data, and promotes reuse to explore new perspectives.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-4.png" alt="Visual elements described by MacKinlay [@mackinlay1986automating]" width="70%" />
-<p class="caption">(\#fig:fig9-4)Visual elements described by MacKinlay [@mackinlay1986automating]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-4} 
+
+}
+
+\caption{Visual elements described by MacKinlay [@mackinlay1986automating]}(\#fig:fig9-4)
+\end{figure}
 
 \vspace*{-8pt}
 The following is a short list of guidelines: provide immediate feedback
@@ -230,44 +260,75 @@ provide an overview of common tasks for visual data analysis in
 Box 9.2, which can be applied across different data types
 based on goals and types of visualizations.
 
-<div class="F00">
-<p><strong>Box 9.2: A task categorization for visual data analysis</strong> Select/Query</p>
-<ul>
-<li><p>Filter to focus on a subset of the data</p></li>
-<li><p>Retrieve details of item</p></li>
-<li><p>Brush linked selections across multiple charts</p></li>
-<li><p>Compare across multiple selections</p></li>
-</ul>
-<p>Navigate</p>
-<ul>
-<li><p>Scroll along a dimension (1D)</p></li>
-<li><p>Pan along two dimensions (2D)</p></li>
-<li><p>Zoom along the third dimension (3D)</p></li>
-</ul>
-<p>Derive</p>
-<ul>
-<li><p>Aggregate item groups and generate characteristics</p></li>
-<li><p>Cluster item groups by algorithmic techniques</p></li>
-<li><p>Rank items to define ordering</p></li>
-</ul>
-<p>Organize</p>
-<ul>
-<li><p>Select chart type and data encodings to organize data</p></li>
-<li><p>Layout multiple components or panels in the interface</p></li>
-</ul>
-<p>Understand</p>
-<ul>
-<li><p>Observe distributions</p></li>
-<li><p>Compare items and distributions</p></li>
-<li><p>Relate items and patterns</p></li>
-</ul>
-<p>Communicate</p>
-<ul>
-<li><p>Annotate findings</p></li>
-<li><p>Share results</p></li>
-<li><p>Trace action histories</p></li>
-</ul>
-</div>
+\begin{F00}
+\textbf{Box 9.2: A task categorization for visual data analysis}
+
+Select/Query
+
+\begin{itemize}
+\item
+  Filter to focus on a subset of the data
+\item
+  Retrieve details of item
+\item
+  Brush linked selections across multiple charts
+\item
+  Compare across multiple selections
+\end{itemize}
+
+Navigate
+
+\begin{itemize}
+\item
+  Scroll along a dimension (1D)
+\item
+  Pan along two dimensions (2D)
+\item
+  Zoom along the third dimension (3D)
+\end{itemize}
+
+Derive
+
+\begin{itemize}
+\item
+  Aggregate item groups and generate characteristics
+\item
+  Cluster item groups by algorithmic techniques
+\item
+  Rank items to define ordering
+\end{itemize}
+
+Organize
+
+\begin{itemize}
+\item
+  Select chart type and data encodings to organize data
+\item
+  Layout multiple components or panels in the interface
+\end{itemize}
+
+Understand
+
+\begin{itemize}
+\item
+  Observe distributions
+\item
+  Compare items and distributions
+\item
+  Relate items and patterns
+\end{itemize}
+
+Communicate
+
+\begin{itemize}
+\item
+  Annotate findings
+\item
+  Share results
+\item
+  Trace action histories
+\end{itemize}
+\end{F00}
 
 Interactive visualization design is also closely coupled with the
 targeted devices. Conventionally, visualizations have been designed for
@@ -353,10 +414,14 @@ locations, such as flights to/from many regions of the world. Spatial
 data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="70%" />
-<p class="caption">(\#fig:fig9-5)The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-5} 
+
+}
+
+\caption{The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]}(\#fig:fig9-5)
+\end{figure}
 
 Maps are commonly combined with other visualizations. For example, in
 Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
@@ -389,15 +454,23 @@ perceptually effective after learning to read its encoding, this chart
 design may not be appropriate for audiences who may lack such training
 or familiarity.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="70%" />
-<p class="caption">(\#fig:fig9-6)Horizon graphs used to display time series</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="70%" />
-<p class="caption">(\#fig:fig9-7)EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
-</div>
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-6} 
+
+}
+
+\caption{Horizon graphs used to display time series}(\#fig:fig9-6)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-7} 
+
+}
+
+\caption{EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission}(\#fig:fig9-7)
+\end{figure}
 
 Another form of temporal analysis is understanding sequences of events.
 The study of human activity often includes analyzing event sequences.
@@ -456,22 +529,34 @@ allowing users to see that "healthcare technology" is not doing as
 poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="70%" />
-<p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
-</div>
+\begin{figure}
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="70%" />
-<p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (www.finviz.com)</p>
-</div>
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-8} 
+
+}
+
+\caption{SpaceTree (www.cs.umd.edu/hcil/spacetree/)}(\#fig:fig9-8)
+\end{figure}
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-9} 
+
+}
+
+\caption{The Finviz treemap helps users monitor the stock market (www.finviz.com)}(\#fig:fig9-9)
+\end{figure}
 
 ### Network data {#sec:viz-2.6}
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10.png" alt="NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission" width="70%" />
-<p class="caption">(\#fig:fig9-10)NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-10} 
+
+}
+
+\caption{NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission}(\#fig:fig9-10)
+\end{figure}
 
 \vspace*{12pt}
 Network data encode relationships between items^[See Chapter 8.]: for example, social
@@ -484,10 +569,14 @@ traced. Analysis can also focus on attributes of the items and the links
 in between, such as age of people in communication or the average
 duration of communications.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]" width="70%" />
-<p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-10b} 
+
+}
+
+\caption{An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]}(\#fig:fig9-10b)
+\end{figure}
 
 \vspace*{12pt}
 [Node-link diagrams]{.roman} are the most common representation of
@@ -546,10 +635,14 @@ between entities. Another view allows traversing word sequences as a
 tree. Reading original documents is critical, so all the visualization
 elements are linked to the corresponding text.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-11.png" alt="Jigsaw used to explore a collection of car reviews" width="70%" />
-<p class="caption">(\#fig:fig9-11)Jigsaw used to explore a collection of car reviews</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterViz/figures/fig9-11} 
+
+}
+
+\caption{Jigsaw used to explore a collection of car reviews}(\#fig:fig9-11)
+\end{figure}
 
 \vspace*{6pt}
 

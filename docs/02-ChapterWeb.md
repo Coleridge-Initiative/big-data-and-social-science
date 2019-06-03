@@ -99,7 +99,7 @@ If we click on next at the bottom, the url changes to https://www.hhmi.org/scien
 
 This allows us to see that the URL is constructed using a few parameters, such as sort_by, sort_order, items_per_page, and page that can be programmatically modified to give us the search results that we want.
 
-Getting the contents of the page from the URL
+**Getting the contents of the page from the URL**
 
 The `requests` module, available natively in Jupyter Python notebooks, is a useful
 set of tools for handling interactions with websites. It lets us
@@ -141,7 +141,7 @@ constructed wrongly or that there was a server error.
 ```
 
 
-Processing the html response
+**Processing the html response**
 
 With the page successfully returned, we now need to process the text it
 contains into the data we want. This is not a trivial exercise. It is
@@ -164,10 +164,14 @@ the class attribute `view-rows`. Again, there is nothing obvious about finding
 these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterWeb/figures/fig2-1.png" alt="Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read." width="70%" />
-<p class="caption">(\#fig:fig2-1)Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterWeb/figures/fig2-1} 
+
+}
+
+\caption{Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.}(\#fig:fig2-1)
+\end{figure}
 
 \vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
@@ -360,7 +364,7 @@ timed delay between each page request.
 >>    page = requests.get(BASE_URL, params=query)
 >> # We use extend to add list for each page to existing list
 >>    data.extend(scrape(page))
->> print "Retrieved and scraped page number:", query.get("items_per_page")
+>> print("Retrieved and scraped page number:", query.get("items_per_page"))
 >> time.sleep(10) # robots.txt at hhmi.org specifies a crawl delay of 10 seconds
 Retrieved and scraped page number: 1
 Retrieved and scraped page number: 2

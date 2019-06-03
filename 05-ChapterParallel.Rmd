@@ -4,50 +4,34 @@ Scaling up through Parallel and Distributed Computing {#chap:parallel}
 **Huy Vo and Claudio Silva**
 
 
- This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using
-parallel computing). While the focus is on widely used
-big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual
-framework to the key challenges that the approach is designed to
-Address.
+This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using parallel computing). While the focus is on widely used big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual framework to the key challenges that the approach is designed to address.
 
 This chapter will describe:
-Why we need mapreduce
-What is mapreduce
-How to use it
-Hadoop
-spark
-Benefits and challenges
-Examples
+
+-   Why we need mapreduce
+-   What is mapreduce
+-   How to use it
+-   Hadoop
+-   spark
+-   Benefits and challenges
+-   Examples
+
+-   Where the computer is
+-   Where the data is: one disk, or distributed
 
 
+-   Single processor
+-   multiprocessor
+-   distributed/parallel
+-   laptop/Desktop
 
+-   mapreduce/hadoop
+-   Server in IT center
 
+-   mapreduce/hadoop
+-   Cloud - AWS, Azure, Google
 
-Where the computer is
-Where the data is: one disk, or distributed
-
-
-Single processor
-multiprocessor
-distributed/parallel
-laptop/Desktop
-
-
-
-
-mapreduce/hadoop
-Server in IT center
-
-
-
-
-mapreduce/hadoop
-Cloud - AWS, Azure, Google
-
-
-
-
-mapreduce/hadoop
+-   mapreduce/hadoop
 
 
 
@@ -62,14 +46,14 @@ Record linkage
 ML methods can be parallelized
 
 
-This chapter will describe:
-Why we need mapreduce
-What is mapreduce
-How to use it
-Hadoop
-spark
-Benefits and challenges
-Examples
+**This chapter will describe:**
+* Why we need mapreduce
+* What is mapreduce
+* How to use it
+* Hadoop
+* spark
+* Benefits and challenges
+* Examples
 
 
 Parallel computing to deal with large amounts of data are hardly new ideas for dealing with
@@ -441,7 +425,7 @@ if __name__=='__main__':
         fields     = line.strip('\n').split(',')
         awardId    = fields[0]
         domainName = fields[3].split('@')[-1].split('.')[-2:]
-        print '%s\t%s' % (domainName,awardId)
+        print('%s\t%s' % (domainName,awardId))
 ```
 <div style="text-align: center">Listing 5.2. A Hadoop streaming mapper in Python</div>
 <br>
@@ -458,7 +442,7 @@ if __name__=='__main__':
     for line in parseInput():
         (domainName, awardIds) = line.split('\t')
         count = len(set(awardIds))
-        print '%s\t%s' % (domainName, count)
+        print('%s\t%s' % (domainName, count))
 ```
 <div style="text-align: center">Listing 5.3. A Hadoop streaming reducer in Python</div>
 <br>

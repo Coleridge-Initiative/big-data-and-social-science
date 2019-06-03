@@ -11,49 +11,55 @@ Understanding human generated text
 -------------------------------
 
 You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
-and understand. As social scientists, we often deal with text data that comes from a variety of sources - open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
+and understand. As social scientists, we often deal with text data that comes from a variety of sources – open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
 
-Structure of the chapter:
-How is text data different than “structured” data?
-What types of analysis can be done with text data?
-Use it by itself
-Combine it with structured data
-List the types of analysis and examples
-How do we do the analysis
-Processing Pipeline
-Tokenization
-Stemming
-Stopwords
-Linguistic analysis
-Turning text into a matrix
-Term weights
-TFIDF
-Analysis (what it is, how to do it, how to evaluate it, and applications/examples in social science)
-Finding similar documents
-Finding themes and topics (describe the methods, examples, and evaluation process)
-Clustering
-Topic models
-Classification  (describe the methods, examples, and evaluation process)
-Deep Learning and Word Embeddings
-Tools
-Summary
+**Structure of the chapter:**
+
+-   How is text data different than “structured” data?
+-   What types of analysis can be done with text data?
+-   Use it by itself
+-   Combine it with structured data
+-   List the types of analysis and examples
+-   How do we do the analysis
+-   Processing Pipeline
+-   Tokenization
+-   Stemming
+-   Stopwords
+-   Linguistic analysis
+-   Turning text into a matrix
+-   Term weights
+-   TFIDF
+-   Analysis (what it is, how to do it, how to evaluate it, and applications/examples in social science)
+-   Finding similar documents
+-   Finding themes and topics (describe the methods, examples, and evaluation process)
+-   Clustering
+-   Topic models
+-   Classification (describe the methods, examples, and evaluation process)
+-   Deep Learning and Word Embeddings
+-   Tools
+-   Summary
 
 
-Create box with text analysis vocabulary
-Corpus
-Token
-Term
-Frequency
-TFIDF
-Part of speech tags
-Parsing
+---
+
+**Text analysis vocabulary**
+
+* Corpus
+* Token
+* Term
+* Frequency
+* TFIDF
+* Part of speech tags
+* Parsing
+
+---
 
 
 ## How is text data different than “structured” data?
 
 We’re comfortable analyzing structured data that is structured into rows and columns. Text data, often also known as unstructured data(footnote: this is often the term used but is a fallacy. There is a lot of structure in text - that is makes you, the reader, understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data), is harder to analyze using traditional data analysis tools because it doesn’t come with rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves, often using methods that are designed specifically for different types of problems. 
 
-While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text. Text data also often reflects human observations that are exceptions to regular processes - the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.
+While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text]. Text data also often reflects human observations that are exceptions to regular processes - the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.
 
 ## What can we do with text data?
 We are often faced with two scenarios when we encounter text data:
@@ -127,10 +133,14 @@ How to analyze text
 -------------------
 
 Text analysis requires us to go through a series of steps:
-Processing Text Data: We take raw text data (word documents , html content scraped from webpages, etc.) and run it through some processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
-Adding Linguistic Features: This is not a critical step and is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
-Converting the text to a matrix: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions we have to make are 1) what a row is, 2) what a column is, and 3) what do we put as the value for that row and column.
-Analysis: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
+
+-   **Processing Text Data**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
+
+-   **Adding Linguistic Features**: This is not a critical step and is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
+
+-   **Converting the text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions we have to make are 1) what a row is, 2) what a column is, and 3) what do we put as the value for that row and column.
+
+-   **Analysis**: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
 ### Processing text data
@@ -256,18 +266,24 @@ corpus is negligible. Stop words are a good example when highly frequent
 words also bear limited meaning since they appear in virtually all
 documents of a given corpus.
 
-<div class="F00">
-<p><strong>Box 7.1: TFIDF</strong> For every token <span class="math inline">\(t\)</span> and every document <span class="math inline">\(d\)</span> in the corpus <span class="math inline">\(D\)</span>, TFIDF is calculated as <span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
-idf(t,D),\]</span> where term frequency is either a simple count, <span class="math display">\[tf(t,d)=f(t,d),\]</span> or a more balanced quantity, <span class="math display">\[tf(t,d) = 0.5+\frac{0.5 \times
-  f(t,d)}{\max\{f(t,d):t\in d\}},\]</span> and inverse document frequency is <span class="math display">\[\
-idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
-</div>
+\begin{F00}
+\textbf{Box 7.1: TFIDF}
+
+For every token \(t\) and every document \(d\) in the corpus \(D\),
+TFIDF is calculated as \[tfidf(t,d,D) = tf(t,d) \times
+idf(t,D),\] where term frequency is either a simple count,
+\[tf(t,d)=f(t,d),\] or a more balanced quantity,
+\[tf(t,d) = 0.5+\frac{0.5 \times
+  f(t,d)}{\max\{f(t,d):t\in d\}},\] and inverse document frequency is
+\[\
+idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]
+\end{F00}
 
 \enlargethispage{24pt}
 \vspace*{-36pt}
 
 
-Analysis
+**Analysis**
 
 Now that we have a matrix with documents as rows, words/phrases as columns and the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
 
@@ -389,9 +405,14 @@ When developing methods to find similar documents, we want to make sure that we 
 recall for evaluating the results of machine
 learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and simialr documents. 
 
-<div class="F00">
-<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors—<em>false positives</em>—and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
-</div>
+\begin{F00}
+\textbf{Box 7.3: Precision and recall} Precision computes the type I
+errors---\emph{false positives}---and is formally defined as
+\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]
+Recall accounts for type II errors---\emph{false negatives}---and is
+defined as
+\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]
+\end{F00}
 
 We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
 disciplinary label: $D_a$ are computer science documents, $D_b$ are
@@ -465,12 +486,18 @@ words at the top of the list
 [a priori]{.roman}; the goal is to discover what they are (more on
 this shortly).
 
-<img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" />
-<img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" />
-<div class="figure" style="text-align: center">
-<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
-<p class="caption">(\#fig:nyt-topics-3)Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts</p>
-</div>
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-1} \end{center}
+
+\begin{center}\includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-2} \end{center}
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-3} 
+
+}
+
+\caption{Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts}(\#fig:nyt-topics-3)
+\end{figure}
 
 In addition to assuming that there exist some number of topics that
 explain a corpus, LDA also assumes that each document in a corpus can be
@@ -484,10 +511,14 @@ The set of topics that are used by a document is called the document's
 *latent Dirichlet allocation*: each document has an allocation over
 latent topics governed by a Dirichlet distribution.
 
-<div class="figure" style="text-align: center">
-<img src="ChapterText/figures/nyt_documents.png" alt="Allocations of documents to topics" width="70%" />
-<p class="caption">(\#fig:nyt-documents)Allocations of documents to topics</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_documents} 
+
+}
+
+\caption{Allocations of documents to topics}(\#fig:nyt-documents)
+\end{figure}
 
 \vspace*{-12pt}
 
@@ -510,10 +541,14 @@ associated with an arts topic; "buy" with a business topic; and
 (Figure \@ref(fig:inference-1)).
 
 \enlargethispage{18pt}
-<div class="figure" style="text-align: center">
-<img src="ChapterText/figures/inference_1.png" alt="Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection" width="70%" />
-<p class="caption">(\#fig:inference-1)Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection</p>
-</div>
+\begin{figure}
+
+{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/inference_1} 
+
+}
+
+\caption{Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection}(\#fig:inference-1)
+\end{figure}
 
 This is where we should eventually get. However, we do not know this to
 start. So we can initially assign words to topics randomly. This will
@@ -642,10 +677,10 @@ potentially identify new fields of study [@talley2011database].
 The metrics used to evaluate text classification methods are the same as  those used in supervised learning, as described in the Machine Learning chapter. The most commonly used metrics include accuracy, precision, recall, AUC, and F1 score. [include example in notebook]
 
 
-Applications:
+**Applications**
 \vspace*{-2pt}
 
-Spam Detection:
+**Spam Detection**
 
 One simple but ubiquitous example of document classification is spam
 detection: an email is either an unwanted advertisement (spam) or it is
@@ -653,7 +688,7 @@ not. Document classification techniques such as naïve Bayes [@lewis-05]
 touch essentially every email sent worldwide, making email usable even
 though most emails are spam.
 
-Sentiment analysis**
+**Sentiment analysis**
 
 Instead of being what a document is about, a label $y$ could also reveal
 the speaker. A recent subfield of natural language processing is to use
@@ -710,7 +745,11 @@ general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigram
 Bird et al. [@bird-09] provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
 
-``` {#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
+
+
+
+
+```r
 def bigram_finder(texts):
   # NLTK bigrams from a corpus of documents separated by new line
   tokens_list = nltk.word_tokenize(re.sub("\n"," ",texts))

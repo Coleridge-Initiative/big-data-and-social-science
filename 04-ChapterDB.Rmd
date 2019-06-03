@@ -941,8 +941,11 @@ now embed the R engine, providing significant in-database statistical
 and analytical capabilities and alleviating the need for external
 processing.
 
+```{r, eval = FALSE, include = FALSE}
+#{#fig:db:4 style="PythonStyle" caption="Embedding SQL in Python" label="fig:db:4"}
+```
 
-``` {#fig:db:4 style="PythonStyle" caption="Embedding SQL in Python" label="fig:db:4"}
+``` {r, eval = FALSE}
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
 
