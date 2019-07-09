@@ -33,8 +33,7 @@ In social science, we often explore information on people, organizations, or loc
 pivot from one perspective to another, or from one kind of query to
 another. Sometimes this data from the web is completely
 unstructured, existing as web pages spread across a site, and sometimes
-they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information
-together.
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together [footnote: The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" avaiable data for research and policy purposes].
 
 Using the example of data on researchers and research outputs, we will
 Focus this chapter on obtaining information directly from web pages (*web scraping*)
@@ -82,11 +81,11 @@ data set that you might compare with other data.
 https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=24
 
 Getting information from this web page programmatically requires us to follow the following steps:
-Constructing a URL that will give us the results we want
-Fetching the page using that URL
-Processing the html response to extract the pieces of information we are lookin for (such as names and specialties of the scientists)
+1. Constructing a URL that will give us the results we want
+2. Getting the contents of the page using that URL
+3. Processing the html response to extract the pieces of information we are lookin for (such as names and specialties of the scientists)
 
-Constructing the URL
+** Constructing the URL **
 This process involves first understanding how to construct a URL that
 will do the search we want. This is most easily done by playing with
 search functionality and investigating the URL structures that are
@@ -306,7 +305,7 @@ u'http://www.hhmi.org/sites/default/files/Our%20Scientists/Investigators/Ackerma
   'url': u'http://hhmi.org/scientists/susan-l-ackerman'}]
 ```
 
-Programmatically Iterating over the Search Results
+** Programmatically Iterating over the Search Results **
 
 So now we know we can process a page from a website to generate usefully
 structured data. However, this was only the first page of results. We
