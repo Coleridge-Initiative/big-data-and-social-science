@@ -3,7 +3,7 @@ Working with Web Data and APIs {#chap:web}
 
 **Cameron Neylon**
 
-In many social science problems we have to augment our data with external data sources. Often the data we use for augmenting are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. For example, we often augment our primary data with data from the American Community Survey (ACS) or from Open Data Portals being maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used “on-demand” through APIs. Same is true for data from social media sources, such as Twitter, and Facebook. In this chapter we will cover tools that can be used by social science researchers to gather this type of external data from web pages and APIs. 
+In many social science problems we have to augment our data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals being maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools that can be used by social science researchers to programatically gather this type of external data from web pages and APIs. 
 
 
 ```{r, include = FALSE}
@@ -29,16 +29,11 @@ data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 
 
-In social science, we are often exploring information on people or on a
-group of people. The web can be a rich source of additional information.
-It can also act as pointers to new sources of information, allowing a
-pivot from one perspective to another, from one kind of query to
-another. Often this is exploratory. You have an existing core set of
-data and are looking to augment it. But equally this exploration can
-open up whole new avenues. Sometimes the data are completely
+In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a
+pivot from one perspective to another, or from one kind of query to
+another. Sometimes this data from the web is completely
 unstructured, existing as web pages spread across a site, and sometimes
-they are provided in a machine-readable form. The challenge is in having
-a sufficiently diverse toolkit to bring all of this information
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information
 together.
 
 Using the example of data on researchers and research outputs, we will
@@ -52,6 +47,10 @@ is on the importance of focusing on the purpose for which the data will
 be used as a guide for data collection. While much of this is specific
 to data about research and researchers, the ideas are generalizable to
 wider issues of data and public policy.
+
+Examples
+----------
+We would want examples of social science papers that used external sources of data that can be scraped from the Wb or from APIs. These data sources could include soial media from facebook, twitter, linkedin, instagram, or other data such as from zillow, google street view, crime reports data, 311 or 911 data.
 
 Scraping information from the web {#sec:4-1}
 ---------------------------------
