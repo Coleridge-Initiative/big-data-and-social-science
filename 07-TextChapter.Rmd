@@ -1,3 +1,10 @@
+% TODO
+% get paragraph from Jordan
+% fold TOC into text
+% finish intro abstract
+% keyword definitions
+% create table where is says: Type of Analysis Description Examples Search
+
 Text Analysis {#chap:text}
 =============
 
