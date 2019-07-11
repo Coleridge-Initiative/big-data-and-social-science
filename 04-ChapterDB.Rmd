@@ -574,7 +574,7 @@ columns. For example, given the data in
 Figure \@ref(fig:figdb-1), those columns will likely include, for a grant,
 an award identifier, title, investigator, and award amount; for an
 investigator, a name, university, and email address. In general, we will
-want to ensure that each row in our table has a key: a set of columns
+want to ensure that each row in our table has a \emph{key}: a set of columns
 that uniquely identifies that row. In our example tables, grants are
 uniquely identified by `Number` and investigators by `ID`.
 
@@ -604,7 +604,7 @@ statements, lines 1 and 2, simply set up our new database. The `create table` st
 in lines 1 and 2 creates our first table. It specifies the table
 name (`Investigators`) and, for each of the four columns, the column name and its type.^[These storage types will be familiar to many of you from statistical software packages.]
 Relational DBMSs offer a rich set of types to choose from when designing
-a schema: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
+a table: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
 for more efficient encoding of data. For example, the `Funding` field in the
 grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string in the `Grants` table, `char(15)`,
 say, to allow for large grants. By representing it as a floating point
