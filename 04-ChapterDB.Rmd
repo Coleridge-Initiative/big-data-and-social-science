@@ -5,7 +5,7 @@ Databases {#chap:db}
 
 
 Once the data have been collected and linked into different files, it is
-necessary to store and organize them. Social scientists are used to
+necessary to store and organize them. Many social scientists are used to
 working with one analytical file, often in SAS, Stata, SPSS, or R. This
 chapter, which may be the most important chapter in the book, describes
 different approaches to storing data in ways that permit rapid and
@@ -52,8 +52,7 @@ types of databases and their various features, and how different types
 can be applied in different contexts. We describe basic features like
 how to get started, set up a database schema, ingest data, query data
 within a database, and get results out. We also discuss how to link from
-databases to other tools, such as Python, R, and Stata (if you really
-have to).
+databases to other tools, such as Python, R, and Stata.
 Chapter [Programming with Big Data] describes how to apply parallel computing
 methods when needed.
 
@@ -140,14 +139,14 @@ analysis computations can be performed in database systems. A
 programming language will also often be needed. But many data access and
 manipulation computations are best handled in a database.
 
-Researchers in the social sciences frequently use **statistical packages**^[A statistical package is a specialized compute program for analysis in statistics and economics.] such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some crude
+Researchers in the social sciences frequently use **statistical packages**^[A statistical package is a specialized compute program for analysis in statistics and economics.] such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some
 data management, statistical analysis, and graphics capabilities in a
 single package, a researcher can often carry out a data analysis project
 of modest size within the same environment. However, each of these
 systems has limitations that hinder its use for modern social science
 research, especially as data grow in size and complexity.
 
-Take Stata, for example. Stata always loads the entire data set into the
+Take Stata, for example. Stata loads the entire data set into the
 computer's working memory, and thus you would have no problems loading
 data set 1. However, depending on your computer's memory, it could have
 problems dealing with with data set 2 and certainly would not be able to
@@ -234,7 +233,6 @@ for a person, their name, address, employer); relationships include "is
 employed by" and "is funded by." This conceptual data model can then be
 translated into relational tables or some other database representation,
 as we describe next.
-
 ```
 
 Table: (\#tab:table4-2) Key components of a DBMS
@@ -364,7 +362,7 @@ for each row in grants.csv, with columns `GrantID`, `Person`, `Funding`, and `Pr
 `Investigators` table, the substitution of an `ID` column for the `Person` column in the `Grants` table) that we will explain below.
 
 The use of the relational data model provides for physical independence:
-a given table can be stored in many different ways. SQL queries are
+a given table can be stored in many different ways. SQL queries are set of instructions to execute commands
 written in terms of the logical representation of tables (i.e., their
 schema definition). Consequently, even if the physical organization of
 the data changes (e.g., a different layout is used to store the data on
