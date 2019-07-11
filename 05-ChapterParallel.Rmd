@@ -31,30 +31,7 @@ MapReduce{#sec:intro}
 -------------------------------
 The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
-similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. 
-
-A typical MapReduce job is composed of three phases---map, shuffle, and
-reduce---taking a list of key--value pairs `[(k$_1$,v$_2$), (k$_2$,v$_2$), ..., (k$_n$,v$_n$)]` as input. In the map phase,
-each input key--value pair is run through the `map` function, and zero or more
-new key--value pairs are output. In the shuffle phase, the framework
-sorts the outputs of the map phase, grouping pairs by keys before
-sending each of them to the `reduce` function. In the reduce phase, each grouping
-of values are processed by the `reduce` function, and the result is a list of new
-values that are collected for the job output.
-
-In brief, a MapReduce job just takes a list of key--value pairs as input
-and produces a list of values as output. Users only need to implement
-interfaces of the `map` and `reduce` functions (the shuffle phase is not very
-customizable) and can leave it up to the system that implements
-MapReduce to handle all data communications and parallel computing. We
-can summarize the MapReduce logic as follows:
-
-**map**: $(k_i, v_i)$ → $[f(k^{'}_{i1}, v^{'}_{i1}),f(k^{'}_{i2}, v^{'}_{i2}),..]$
-for a user-defined function $f$.
-
-**reduce**: $(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])$ → $[v^{'''}_{1},v^{'''}_{2},..]$
-where $\{k^{'}_{i}\} \equiv \{k^{''}_{j}\}$ and $v^{'''} = g(v^{''})$
-for a user-defined function $g$.
+similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. The "map" operation takes the input and splits up the task into multiple (parallel) components, and the "reduce" operation consolidates the results of the parallel "mapped" tasks and produces the final output. In order to use the MapReduce framework, we need to break up our tasks in to map and reduce operations and implement these two operations. 
 
 \enlargethispage{12pt}
 
