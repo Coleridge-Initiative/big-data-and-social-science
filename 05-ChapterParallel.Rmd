@@ -29,16 +29,9 @@ We should find examples where mapreduce has been used for social science problem
 
 MapReduce{#sec:intro}
 -------------------------------
-The MapReduce framework only supports two operations: map and reduce. We provide an overview of the MapReduce paradigm and its most popular implementation, Apache Hadoop.
-MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
+The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
-similar approaches first described in the early 1980s. MapReduce was
-indeed inspired by the *map* and *reduce* functions of functional
-programming, though its `reduce` function is more of a *group-by-key* function,
-producing a list of values, instead of the traditional reduce, which
-outputs only a single value. MapReduce is a record-oriented model, where
-each record is treated as a *key--value* pair; thus, both and functions
-operate on key--value pair data.
+similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. 
 
 A typical MapReduce job is composed of three phases---map, shuffle, and
 reduce---taking a list of key--value pairs `[(k$_1$,v$_2$), (k$_2$,v$_2$), ..., (k$_n$,v$_n$)]` as input. In the map phase,
@@ -69,8 +62,7 @@ for a user-defined function $g$.
 
 **Example: Counting NSF awards**
 
-To gain a better understanding of these MapReduce operators, imagine
-that we have a list of NSF principal investigators, along with their
+To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on bilions of records, cuasing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
 email information and award IDs as below. Our task is to count the
 number of awards for each institution. For example, given the four
 records below, we will discover that the Berkeley Geochronology Center
