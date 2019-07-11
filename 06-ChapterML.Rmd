@@ -1,3 +1,7 @@
+% update relevant papers
+% update sentences for advanced topics
+% 
+
 Machine Learning {#chap:ml}
 ================
 
