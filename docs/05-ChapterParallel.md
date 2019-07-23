@@ -4,60 +4,12 @@ Scaling up through Parallel and Distributed Computing {#chap:parallel}
 **Huy Vo and Claudio Silva**
 
 
-This chapter provides an overview of techniques that facilitate the use of large amounts of data (often using parallel computing). While the focus is on widely used big data programming paradigm (MapReduce) and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual framework to the key challenges that the approach is designed to address.
-
-This chapter will describe:
-
--   Why we need mapreduce
--   What is mapreduce
--   How to use it
--   Hadoop
--   spark
--   Benefits and challenges
--   Examples
-
--   Where the computer is
--   Where the data is: one disk, or distributed
-
-
--   Single processor
--   multiprocessor
--   distributed/parallel
--   laptop/Desktop
-
--   mapreduce/hadoop
--   Server in IT center
-
--   mapreduce/hadoop
--   Cloud - AWS, Azure, Google
-
--   mapreduce/hadoop
-
-
+This chapter provides an overview of techniques that allow the analysis of large amounts of data using pmultiple computers concurrently. While the focus is on a widely used framework called MapReduce and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual framework to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer.
 
 Introduction
 ------------
 
-Why we need parallel computing for social sciences?
-What happens when you use traditional programming approaches with data that’s too large to fit into memory on one computer? Or when doing analysis on one computer will just take too long?
-Today, when dealing with these scenarios, social scientists might perform sampling and analyze a subset of the data or reduce the type and size of analysis that are done. The techniques described in this chapter allows us to scale the analysis by using all the data and run a larger number of …
-Network analysis
-Record linkage
-ML methods can be parallelized
-
-
-**This chapter will describe:**
-* Why we need mapreduce
-* What is mapreduce
-* How to use it
-* Hadoop
-* spark
-* Benefits and challenges
-* Examples
-
-
-Parallel computing to deal with large amounts of data are hardly new ideas for dealing with
-computational challenges. Scientists have routinely been working on data
+As the amount of data available for social science research increases, we have to determine how to perform our analysis efficiently. One way to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer is to subsample the data or to simplify the analysis.  Another approach is to use all the data by making use of multiple computers concurrently to do the analysis. The use of parallel computing to deal with large amounts of data has been a common approach in physical sciences. Data analysts have routinely been working on data
 sets much larger than a single machine can handle for several decades,
 especially at the DOE National Laboratories
 [@bigdata_old1; @crossno1993heterogeneous] where high-performance
@@ -67,41 +19,19 @@ going back to the 1980s [@CSConf].
 
 There are many ways to do distributed and parallel computing, ranging from completely flexible (but more complex to use) approaches such as Message Passing Interface (MPI) [@mpi] to more restrictive (but much easier to use) approaches such as MapReduce. MPI allows you to do anything with as much efficiency as your MPI skills allow you to code while MapReduce allows a more restrictive set of analysis to be done (possibly less efficiently) but is much easier to learn and implement. 
 
+This chapter focuses on one such framework, called MapReduce, to do large-scale data analysis distributed across multiple computers. We describe the MapReduce framework, work through an example of using it, and highlight one implementation of the framework called Hadoop in detail.
+
+
+Examples{#sec:examples}
+-------------------------------
+We should find examples where mapreduce has been used for social science problems. record linkage is one example, processing images or documents in parallel, etl, etc.
+
+
 MapReduce{#sec:intro}
 -------------------------------
-The MapReduce framework only supports two operations: map and reduce. We provide an overview of the MapReduce paradigm and its most popular implementation, Apache Hadoop.
-MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
+The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
-similar approaches first described in the early 1980s. MapReduce was
-indeed inspired by the *map* and *reduce* functions of functional
-programming, though its `reduce` function is more of a *group-by-key* function,
-producing a list of values, instead of the traditional reduce, which
-outputs only a single value. MapReduce is a record-oriented model, where
-each record is treated as a *key--value* pair; thus, both and functions
-operate on key--value pair data.
-
-A typical MapReduce job is composed of three phases---map, shuffle, and
-reduce---taking a list of key--value pairs `[(k$_1$,v$_2$), (k$_2$,v$_2$), ..., (k$_n$,v$_n$)]` as input. In the map phase,
-each input key--value pair is run through the `map` function, and zero or more
-new key--value pairs are output. In the shuffle phase, the framework
-sorts the outputs of the map phase, grouping pairs by keys before
-sending each of them to the `reduce` function. In the reduce phase, each grouping
-of values are processed by the `reduce` function, and the result is a list of new
-values that are collected for the job output.
-
-In brief, a MapReduce job just takes a list of key--value pairs as input
-and produces a list of values as output. Users only need to implement
-interfaces of the `map` and `reduce` functions (the shuffle phase is not very
-customizable) and can leave it up to the system that implements
-MapReduce to handle all data communications and parallel computing. We
-can summarize the MapReduce logic as follows:
-
-**map**: $(k_i, v_i)$ → $[f(k^{'}_{i1}, v^{'}_{i1}),f(k^{'}_{i2}, v^{'}_{i2}),..]$
-for a user-defined function $f$.
-
-**reduce**: $(k^{''}_{i}, [v^{''}_{i1},v^{''}_{i2},..])$ → $[v^{'''}_{1},v^{'''}_{2},..]$
-where $\{k^{'}_{i}\} \equiv \{k^{''}_{j}\}$ and $v^{'''} = g(v^{''})$
-for a user-defined function $g$.
+similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. The "map" operation takes the input and splits up the task into multiple (parallel) components, and the "reduce" operation consolidates the results of the parallel "mapped" tasks and produces the final output. In order to use the MapReduce framework, we need to break up our tasks in to map and reduce operations and implement these two operations. 
 
 \enlargethispage{12pt}
 
@@ -109,8 +39,7 @@ for a user-defined function $g$.
 
 **Example: Counting NSF awards**
 
-To gain a better understanding of these MapReduce operators, imagine
-that we have a list of NSF principal investigators, along with their
+To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on bilions of records, cuasing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
 email information and award IDs as below. Our task is to count the
 number of awards for each institution. For example, given the four
 records below, we will discover that the Berkeley Geochronology Center
@@ -253,16 +182,11 @@ power (e.g., thousands of computing cores)
 These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured
 as separate physical hardware.
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{ChapterParallel/figures/data2compute} \end{center}
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/compute2data} 
-
-}
-
-\caption{Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]}(\#fig:fig5-1a)
-\end{figure}
+<img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="ChapterParallel/figures/compute2data.png" alt="Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]" width="70%" />
+<p class="caption">(\#fig:fig5-1a)Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]</p>
+</div>
 
 Running compute jobs on such hardware often goes like this. When a user
 requests to run an intensive task on a particular data set, the system
@@ -398,14 +322,10 @@ Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterParallel/figures/hadoop} 
-
-}
-
-\caption{Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS}(\#fig:hadoop)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterParallel/figures/hadoop.png" alt="Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS" width="70%" />
+<p class="caption">(\#fig:hadoop)Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS</p>
+</div>
 
 ### Programming language support
 

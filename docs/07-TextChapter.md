@@ -1,3 +1,10 @@
+% TODO
+% get paragraph from Jordan
+% fold TOC into text
+% finish intro abstract
+% keyword definitions
+% create table where is says: Type of Analysis Description Examples Search
+
 Text Analysis {#chap:text}
 =============
 
@@ -13,7 +20,7 @@ Understanding human generated text
 You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
 and understand. As social scientists, we often deal with text data that comes from a variety of sources – open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
 
-**Structure of the chapter:**
+**Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:**
 
 -   How is text data different than “structured” data?
 -   What types of analysis can be done with text data?
@@ -266,18 +273,13 @@ corpus is negligible. Stop words are a good example when highly frequent
 words also bear limited meaning since they appear in virtually all
 documents of a given corpus.
 
-\begin{F00}
-\textbf{Box 7.1: TFIDF}
-
-For every token \(t\) and every document \(d\) in the corpus \(D\),
-TFIDF is calculated as \[tfidf(t,d,D) = tf(t,d) \times
-idf(t,D),\] where term frequency is either a simple count,
-\[tf(t,d)=f(t,d),\] or a more balanced quantity,
-\[tf(t,d) = 0.5+\frac{0.5 \times
-  f(t,d)}{\max\{f(t,d):t\in d\}},\] and inverse document frequency is
-\[\
-idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]
-\end{F00}
+<div class="F00">
+<p><strong>Box 7.1: TFIDF</strong></p>
+<p>For every token <span class="math inline">\(t\)</span> and every document <span class="math inline">\(d\)</span> in the corpus <span class="math inline">\(D\)</span>, TFIDF is calculated as <span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
+idf(t,D),\]</span> where term frequency is either a simple count, <span class="math display">\[tf(t,d)=f(t,d),\]</span> or a more balanced quantity, <span class="math display">\[tf(t,d) = 0.5+\frac{0.5 \times
+  f(t,d)}{\max\{f(t,d):t\in d\}},\]</span> and inverse document frequency is <span class="math display">\[\
+idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
+</div>
 
 \enlargethispage{24pt}
 \vspace*{-36pt}
@@ -405,14 +407,9 @@ When developing methods to find similar documents, we want to make sure that we 
 recall for evaluating the results of machine
 learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and simialr documents. 
 
-\begin{F00}
-\textbf{Box 7.3: Precision and recall} Precision computes the type I
-errors---\emph{false positives}---and is formally defined as
-\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]
-Recall accounts for type II errors---\emph{false negatives}---and is
-defined as
-\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]
-\end{F00}
+<div class="F00">
+<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors—<em>false positives</em>—and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+</div>
 
 We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
 disciplinary label: $D_a$ are computer science documents, $D_b$ are
@@ -486,18 +483,12 @@ words at the top of the list
 [a priori]{.roman}; the goal is to discover what they are (more on
 this shortly).
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-1} \end{center}
-
-\begin{center}\includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-2} \end{center}
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_topics-3} 
-
-}
-
-\caption{Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts}(\#fig:nyt-topics-3)
-\end{figure}
+<img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
+<p class="caption">(\#fig:nyt-topics-3)Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts</p>
+</div>
 
 In addition to assuming that there exist some number of topics that
 explain a corpus, LDA also assumes that each document in a corpus can be
@@ -511,14 +502,10 @@ The set of topics that are used by a document is called the document's
 *latent Dirichlet allocation*: each document has an allocation over
 latent topics governed by a Dirichlet distribution.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/nyt_documents} 
-
-}
-
-\caption{Allocations of documents to topics}(\#fig:nyt-documents)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterText/figures/nyt_documents.png" alt="Allocations of documents to topics" width="70%" />
+<p class="caption">(\#fig:nyt-documents)Allocations of documents to topics</p>
+</div>
 
 \vspace*{-12pt}
 
@@ -541,14 +528,10 @@ associated with an arts topic; "buy" with a business topic; and
 (Figure \@ref(fig:inference-1)).
 
 \enlargethispage{18pt}
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterText/figures/inference_1} 
-
-}
-
-\caption{Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection}(\#fig:inference-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterText/figures/inference_1.png" alt="Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection" width="70%" />
+<p class="caption">(\#fig:inference-1)Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection</p>
+</div>
 
 This is where we should eventually get. However, we do not know this to
 start. So we can initially assign words to topics randomly. This will

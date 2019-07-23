@@ -5,7 +5,7 @@ Databases {#chap:db}
 
 
 Once the data have been collected and linked into different files, it is
-necessary to store and organize them. Social scientists are used to
+necessary to store and organize them. Many social scientists are used to
 working with one analytical file, often in SAS, Stata, SPSS, or R. This
 chapter, which may be the most important chapter in the book, describes
 different approaches to storing data in ways that permit rapid and
@@ -52,8 +52,7 @@ types of databases and their various features, and how different types
 can be applied in different contexts. We describe basic features like
 how to get started, set up a database schema, ingest data, query data
 within a database, and get results out. We also discuss how to link from
-databases to other tools, such as Python, R, and Stata (if you really
-have to).
+databases to other tools, such as Python, R, and Stata.
 Chapter [Programming with Big Data] describes how to apply parallel computing
 methods when needed.
 
@@ -140,14 +139,14 @@ analysis computations can be performed in database systems. A
 programming language will also often be needed. But many data access and
 manipulation computations are best handled in a database.
 
-Researchers in the social sciences frequently use **statistical packages**^[A statistical package is a specialized compute program for analysis in statistics and economics.] such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some crude
+Researchers in the social sciences frequently use **statistical packages**^[A statistical package is a specialized compute program for analysis in statistics and economics.] such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some
 data management, statistical analysis, and graphics capabilities in a
 single package, a researcher can often carry out a data analysis project
 of modest size within the same environment. However, each of these
 systems has limitations that hinder its use for modern social science
 research, especially as data grow in size and complexity.
 
-Take Stata, for example. Stata always loads the entire data set into the
+Take Stata, for example. Stata loads the entire data set into the
 computer's working memory, and thus you would have no problems loading
 data set 1. However, depending on your computer's memory, it could have
 problems dealing with with data set 2 and certainly would not be able to
@@ -219,20 +218,9 @@ the analysis, for example
 model of a relational data
 structure.]
 
-\begin{F00}
-\textbf{Box 4.1: Data model} A \emph{data model} specifies the data
-elements associated with a problem domain, the properties of those data
-elements, and how those data elements relate to one another. In
-developing a data model, we commonly first identity the entities that
-are to be modeled and then define their properties and relationships.
-For example, when working on the science of science policy (see
-Figure~@ref(fig:fig2), the entities include people, products,
-institutions, and funding, each of which has various properties (e.g.,
-for a person, their name, address, employer); relationships include ``is
-employed by'' and ``is funded by.'' This conceptual data model can then
-be translated into relational tables or some other database
-representation, as we describe next.
-\end{F00}
+<div class="F00">
+<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with a problem domain, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:fig2), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include “is employed by” and “is funded by.” This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
+</div>
 
 Table: (\#tab:table4-2) Key components of a DBMS
 
@@ -322,14 +310,10 @@ relational database, the researcher will necessarily define schemas,
 relationships between entities, and so forth. Analysis results can be
 stored in a relational database or back into the NoSQL store.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/data-fig2} 
-
-}
-
-\caption{A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing}(\#fig:figdb-dbs)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/data-fig2.png" alt="A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing" width="70%" />
+<p class="caption">(\#fig:figdb-dbs)A research project may use a NoSQL database to accumulate large amounts of data from many different sources, and then extract selected subsets to a relational or other database for more structured processing</p>
+</div>
 
 
 Relational DBMSs
@@ -351,14 +335,10 @@ One file contains information about grants, the other information about
 investigators. How should you proceed to manipulate and analyze these
 data?
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/figdb-1} 
-
-}
-
-\caption{CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address}(\#fig:figdb-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/figdb-1.png" alt="CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address" width="70%" />
+<p class="caption">(\#fig:figdb-1)CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address</p>
+</div>
 
 The main concept underlying the relational data model is a *table* (also
 referred to as a *relation*): a set of rows (also referred to as tuples,
@@ -371,7 +351,7 @@ for each row in grants.csv, with columns `GrantID`, `Person`, `Funding`, and `Pr
 `Investigators` table, the substitution of an `ID` column for the `Person` column in the `Grants` table) that we will explain below.
 
 The use of the relational data model provides for physical independence:
-a given table can be stored in many different ways. SQL queries are
+a given table can be stored in many different ways. SQL queries are set of instructions to execute commands
 written in terms of the logical representation of tables (i.e., their
 schema definition). Consequently, even if the physical organization of
 the data changes (e.g., a different layout is used to store the data on
@@ -386,14 +366,10 @@ database further ensures that the data comply with the model (e.g., data
 types, key uniqueness, entity relationships), essentially providing core
 quality assurance.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/figdb-2} 
-
-}
-
-\caption{Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table}(\#fig:figdb-2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/figdb-2.png" alt="Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table" width="70%" />
+<p class="caption">(\#fig:figdb-2)Relational tables `Grants` and `Investigators` corresponding to the grants.csv and investigators.csv data in Figure 4.2, respectively. The only differences are the representation in a tabular form, the introduction of a unique numerical investigator identifier (`ID`) in the `Investigators` table, and the substitution of that identifier for the investigator name in the `Grants` table</p>
+</div>
 
 ### Structured Query Language (SQL)
 
@@ -592,7 +568,7 @@ columns. For example, given the data in
 Figure \@ref(fig:figdb-1), those columns will likely include, for a grant,
 an award identifier, title, investigator, and award amount; for an
 investigator, a name, university, and email address. In general, we will
-want to ensure that each row in our table has a key: a set of columns
+want to ensure that each row in our table has a \emph{key}: a set of columns
 that uniquely identifies that row. In our example tables, grants are
 uniquely identified by `Number` and investigators by `ID`.
 
@@ -622,7 +598,7 @@ statements, lines 1 and 2, simply set up our new database. The `create table` st
 in lines 1 and 2 creates our first table. It specifies the table
 name (`Investigators`) and, for each of the four columns, the column name and its type.^[These storage types will be familiar to many of you from statistical software packages.]
 Relational DBMSs offer a rich set of types to choose from when designing
-a schema: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
+a table: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
 for more efficient encoding of data. For example, the `Funding` field in the
 grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string in the `Grants` table, `char(15)`,
 say, to allow for large grants. By representing it as a floating point
@@ -1387,14 +1363,10 @@ match. This selection is illustrated in the middle column of
 Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
 Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterDB/figures/fig-venn} 
-
-}
-
-\caption{Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join}(\#fig:fig-venn)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join" width="70%" />
+<p class="caption">(\#fig:fig-venn)Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join</p>
+</div>
 
 ---
 

@@ -1,3 +1,7 @@
+% update relevant papers
+% update sentences for advanced topics
+% 
+
 Machine Learning {#chap:ml}
 ================
 
@@ -68,51 +72,16 @@ $T$, as measured by $P$, improves with experience $E$"
 
 \enlargethispage{6pt}
 
-\begin{F00}
-\textbf{Box 6.1: Commercial machine learning examples}
-
-\begin{itemize}
-\item
-  \textbf{Speech recognition}: Speech recognition software uses machine
-  learning algorithms that are built on large amounts of initial
-  training data. Machine learning allows these systems to be tuned and
-  adapt to individual variations in speaking as well as across different
-  domains.
-\item
-  \textbf{Autonomous cars}: The ongoing development of self-driving cars
-  applies techniques from machine learning. An onboard computer
-  continuously analyzes the incoming video and sensor streams in order
-  to monitor the surroundings. Incoming data are matched with annotated
-  images to recognize objects like pedestrians, traffic lights, and
-  potholes. In order to assess the different objects, huge training data
-  sets are required where similar objects already have been identified.
-  This allows the autonomous car to decide on which actions to take
-  next.
-\item
-  \textbf{Fraud detection}: Many public and private organizations face
-  the problem of fraud and abuse. Machine learning systems are widely
-  used to take historical cases of fraud and flag fraudulent
-  transactions as they take place. These systems have the benefit of
-  being adaptive, and improving with more data over time.
-\item
-  \textbf{Personalized ads}: Many online stores have personalized
-  recommendations promoting possible products of interest. Based on
-  individual shopping history and what other similar users bought in the
-  past, the website predicts products a user may like and tailors
-  recommendations. Netflix and Amazon are two examples of companies
-  whose recommendation software predicts how a customer would rate a
-  certain movie or product and then suggests items with the highest
-  predicted ratings. Of course there are some caveats here, since they
-  then adjust the recommendations to maximize profits.
-\item
-  \textbf{Face recognition}: Surveillance systems, social networking
-  platforms, and imaging software all use face detection and face
-  recognition to first detect faces in images (or video) and then tag
-  them with individuals for various tasks. These systems are trained by
-  giving examples of faces to a machine learning system which then
-  learns to detect new faces, and tag known individuals.
-\end{itemize}
-\end{F00}
+<div class="F00">
+<p><strong>Box 6.1: Commercial machine learning examples</strong></p>
+<ul>
+<li><p><strong>Speech recognition</strong>: Speech recognition software uses machine learning algorithms that are built on large amounts of initial training data. Machine learning allows these systems to be tuned and adapt to individual variations in speaking as well as across different domains.</p></li>
+<li><p><strong>Autonomous cars</strong>: The ongoing development of self-driving cars applies techniques from machine learning. An onboard computer continuously analyzes the incoming video and sensor streams in order to monitor the surroundings. Incoming data are matched with annotated images to recognize objects like pedestrians, traffic lights, and potholes. In order to assess the different objects, huge training data sets are required where similar objects already have been identified. This allows the autonomous car to decide on which actions to take next.</p></li>
+<li><p><strong>Fraud detection</strong>: Many public and private organizations face the problem of fraud and abuse. Machine learning systems are widely used to take historical cases of fraud and flag fraudulent transactions as they take place. These systems have the benefit of being adaptive, and improving with more data over time.</p></li>
+<li><p><strong>Personalized ads</strong>: Many online stores have personalized recommendations promoting possible products of interest. Based on individual shopping history and what other similar users bought in the past, the website predicts products a user may like and tailors recommendations. Netflix and Amazon are two examples of companies whose recommendation software predicts how a customer would rate a certain movie or product and then suggests items with the highest predicted ratings. Of course there are some caveats here, since they then adjust the recommendations to maximize profits.</p></li>
+<li><p><strong>Face recognition</strong>: Surveillance systems, social networking platforms, and imaging software all use face detection and face recognition to first detect faces in images (or video) and then tag them with individuals for various tasks. These systems are trained by giving examples of faces to a machine learning system which then learns to detect new faces, and tag known individuals.</p></li>
+</ul>
+</div>
 
 Machine learning grew from the need to build systems that were adaptive,
 scalable, and cost-effective to build and maintain. A lot of tasks now
@@ -256,14 +225,10 @@ vary. We do not cover the weakly supervised and semi-supervised methods
 much in this chapter, but this is an active area of research in machine
 learning. Zhu [@zhu2005semi] provides more details.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/spectrum} 
-
-}
-
-\caption{Spectrum of machine learning methods from unsupervised to supervised learning}(\#fig:spectrum)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/spectrum.png" alt="Spectrum of machine learning methods from unsupervised to supervised learning" width="70%" />
+<p class="caption">(\#fig:spectrum)Spectrum of machine learning methods from unsupervised to supervised learning</p>
+</div>
 
 Methods
 -------
@@ -275,44 +240,18 @@ the statistical theory that underlies the methods. We encourage readers
 to refer to machine learning books listed in
 Section [Resources](#ml:res). Box 6.2 gives brief definitions of several terms we will use in this section.
 
-\begin{F00}
-\textbf{Box 6.2: Machine learning vocabulary}
-
-\begin{itemize}
-\item
-  \textbf{Learning}: In machine learning, you will notice the term
-  \emph{learning} that will be used in the context of ``learning'' a
-  model. This is what you probably know as \emph{fitting} or
-  \emph{estimating} a function, or \emph{training} or \emph{building} a
-  model. These terms are all synonyms and are used interchangeably in
-  the machine learning literature.
-\item
-  \textbf{Examples}: These are data points and instances.
-\item
-  \textbf{Features}: These are independent variables, attributes,
-  predictor variables, and explanatory variables.
-\item
-  \textbf{Labels}: These include the response variable, dependent
-  variable, and target variable.
-\item
-  \textbf{Underfitting}: This happens when a model is too simple and
-  does not capture the structure of the data well enough.
-\item
-  \textbf{Overfitting}: This happens when a model is possibly too
-  complex and models the noise in the data, which can result in poor
-  generalization performance. Using in-sample measures to do model
-  selection can result in that.
-\item
-  \textbf{Regularization}: This is a general method to avoid overfitting
-  by applying additional constraints to the model that is learned. A
-  common approach is to make sure the model weights are, on average,
-  small in magnitude. Two common regularizations are \(L_1\)
-  regularization (used by the lasso), which has a penalty term that
-  encourages the sum of the absolute values of the parameters to be
-  small; and \(L_2\) regularization, which encourages the sum of the
-  squares of the parameters to be small.
-\end{itemize}
-\end{F00}
+<div class="F00">
+<p><strong>Box 6.2: Machine learning vocabulary</strong></p>
+<ul>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Examples</strong>: These are data points and instances.</p></li>
+<li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
+<li><p><strong>Labels</strong>: These include the response variable, dependent variable, and target variable.</p></li>
+<li><p><strong>Underfitting</strong>: This happens when a model is too simple and does not capture the structure of the data well enough.</p></li>
+<li><p><strong>Overfitting</strong>: This happens when a model is possibly too complex and models the noise in the data, which can result in poor generalization performance. Using in-sample measures to do model selection can result in that.</p></li>
+<li><p><strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. A common approach is to make sure the model weights are, on average, small in magnitude. Two common regularizations are <span class="math inline">\(L_1\)</span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline">\(L_2\)</span> regularization, which encourages the sum of the squares of the parameters to be small.</p></li>
+</ul>
+</div>
 
 ### Unsupervised learning methods
 
@@ -422,14 +361,10 @@ fits your needs. When the data are of the form where the mean of the
 data points cannot be computed, a related method called $K$-medoids can
 be used [@park2009simple].
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/kmeans} 
-
-}
-
-\caption{Example of $k$-means clustering with $k = 3$. The upper left panel shows the distribution of the data and the three starting points $m_1$, $m_2$, $m_3$ placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel}(\#fig:kmeans)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/kmeans.png" alt="Example of $k$-means clustering with $k = 3$. The upper left panel shows the distribution of the data and the three starting points $m_1$, $m_2$, $m_3$ placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel" width="70%" />
+<p class="caption">(\#fig:kmeans)Example of $k$-means clustering with $k = 3$. The upper left panel shows the distribution of the data and the three starting points $m_1$, $m_2$, $m_3$ placed at random. On the upper right we see what happens in the first iteration. The cluster means move to more central positions in their respective clusters. The lower left panel shows the second iteration. After six iterations the cluster means have converged to their final destinations and the result is shown in the lower right panel</p>
+</div>
 
 **Expectation-maximization (EM) clustering**
 
@@ -526,14 +461,10 @@ clustering methods work by representing data as a graph (or network),
 where data points are nodes in the graph and the edges (connections
 between nodes) represent the similarity between the two data points.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/spectral} 
-
-}
-
-\caption{The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering}(\#fig:spectral)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/spectral.png" alt="The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering" width="70%" />
+<p class="caption">(\#fig:spectral)The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering</p>
+</div>
 
 \vspace*{8pt}
 The algorithm works as follows:
@@ -723,14 +654,10 @@ neighbors. The number of neighbors ($k$) is a parameter, and the
 prediction depends heavily on how it is determined. In this example,
 point B is classified differently if $k = 3$.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/knn} 
-
-}
-
-\caption{Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.}(\#fig:knn)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/knn.png" alt="Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red (&quot;Patent not granted&quot;), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively." width="70%" />
+<p class="caption">(\#fig:knn)Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
+</div>
 
 \vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
@@ -783,14 +710,10 @@ in the middle (see Figure \@ref(fig:svm)). An important decision that linear mo
 to make is which linear separator we should prefer when there are
 several we can build.
 
-\begin{figure}
-
-{\centering \includegraphics[width=1\linewidth]{ChapterML/figures/svm} 
-
-}
-
-\caption{Support vector machines}(\#fig:svm)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/svm.png" alt="Support vector machines" width="100%" />
+<p class="caption">(\#fig:svm)Support vector machines</p>
+</div>
 
 You can see in Figure \@ref(fig:svm) that multiple lines offer a solution to the
 problem. Is any of them better than the others? We can intuitively
@@ -866,16 +789,11 @@ in the past year* and the value $4$. The second level of the tree now
 has two splits: one using *average length of visit* with value $2$ days
 and the other using the value $10$ days.
 
-
-\begin{center}\includegraphics[width=0.7\linewidth]{ChapterML/figures/tree} \end{center}
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/tree-rectangle} 
-
-}
-
-\caption{An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly}(\#fig:tree)
-\end{figure}
+<img src="ChapterML/figures/tree.png" width="70%" style="display: block; margin: auto;" />
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/tree-rectangle.png" alt="An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly" width="70%" />
+<p class="caption">(\#fig:tree)An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly</p>
+</div>
 
 
 Various algorithms exist to build decision trees. C4.5, CHAID, and CART
@@ -1193,14 +1111,10 @@ on. The performance measures on each test set can then give us an
 estimate of the performance of different methods and how much they vary
 across different random sets.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/holdout} 
-
-}
-
-\caption{Validation methodologies: holdout set and cross-validation}(\#fig:holdout)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/holdout.png" alt="Validation methodologies: holdout set and cross-validation" width="70%" />
+<p class="caption">(\#fig:holdout)Validation methodologies: holdout set and cross-validation</p>
+</div>
 
 **Cross-validation**
 
@@ -1232,14 +1146,10 @@ that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in
 practice and affects performance estimates for a model.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/temporal} 
-
-}
-
-\caption{Temporal validation}(\#fig:temporal)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/temporal.png" alt="Temporal validation" width="70%" />
+<p class="caption">(\#fig:temporal)Temporal validation</p>
+</div>
 
 In most practical problems, we want to use a validation strategy that
 emulates the way in which our models will be used and provides an
@@ -1305,14 +1215,10 @@ either correct or incorrect. This is what the four cells of the
 confusion matrix represent. We can use the confusion matrix to describe
 several commonly used evaluation metrics.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/cm} 
-
-}
-
-\caption{A *confusion matrix* created from real-valued predictions}(\#fig:cm)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/cm.png" alt="A *confusion matrix* created from real-valued predictions" width="70%" />
+<p class="caption">(\#fig:cm)A *confusion matrix* created from real-valued predictions</p>
+</div>
 
 Accuracy is the ratio of correct predictions (both positive and negative) to all
 predictions:
@@ -1363,23 +1269,15 @@ perfect recall but low precision.
 Figure \@ref(fig:pr) show a precision--recall curve that is often used
 to represent the performance of a given classifier.
 
-\begin{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/pr.png" alt="Precision-recall curve" width="70%" />
+<p class="caption">(\#fig:pr)Precision-recall curve</p>
+</div>
 
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/pr} 
-
-}
-
-\caption{Precision-recall curve}(\#fig:pr)
-\end{figure}
-
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterML/figures/pr2} 
-
-}
-
-\caption{Precision or recall at different thresholds}(\#fig:pr2)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterML/figures/pr2.png" alt="Precision or recall at different thresholds" width="70%" />
+<p class="caption">(\#fig:pr2)Precision or recall at different thresholds</p>
+</div>
 
 If we care about optimizing for the entire precision recall space, a
 useful metric is the *area under the curve* (AUC-PR), which is the area

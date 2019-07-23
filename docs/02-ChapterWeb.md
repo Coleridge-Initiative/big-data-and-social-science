@@ -3,7 +3,7 @@ Working with Web Data and APIs {#chap:web}
 
 **Cameron Neylon**
 
-In many social science problems we have to augment our data with external data sources. Often the data we use for augmenting are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. For example, we often augment our primary data with data from the American Community Survey (ACS) or from Open Data Portals being maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used “on-demand” through APIs. Same is true for data from social media sources, such as Twitter, and Facebook. In this chapter we will cover tools that can be used by social science researchers to gather this type of external data from web pages and APIs. 
+In many social science problems we have to augment our data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools (specifically using Python) that can be used by social science researchers to programmatically gather this type of external data from web pages and APIs.
 
 
 
@@ -16,29 +16,26 @@ data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 
 
-In social science, we are often exploring information on people or on a
-group of people. The web can be a rich source of additional information.
-It can also act as pointers to new sources of information, allowing a
-pivot from one perspective to another, from one kind of query to
-another. Often this is exploratory. You have an existing core set of
-data and are looking to augment it. But equally this exploration can
-open up whole new avenues. Sometimes the data are completely
-unstructured, existing as web pages spread across a site, and sometimes
-they are provided in a machine-readable form. The challenge is in having
-a sufficiently diverse toolkit to bring all of this information
-together.
+In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a
+pivot from one perspective to another, or from one kind of query to
+another. Sometimes this data from the web is completely
+unstructured, existing in web pages spread across a site, and sometimes
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together [footnote: The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" avaiable data for research and policy purposes].
 
 Using the example of data on researchers and research outputs, we will
-Focus this chapter on obtaining information directly from web pages (*web scraping*)
-as well as explore the uses of APIs--- web services that allow an
-interaction with, and retrieval of data. You will see how
+focus this chapter on obtaining information directly from web pages (*web scraping*)
+as well as explore the uses of APIs--- web services that allow programmatic retrieval of data. You will see how
 the crucial pieces of integration often lie in making connections
 between disparate data sets and how in turn making those connections
 requires careful quality control. The emphasis throughout this chapter
 is on the importance of focusing on the purpose for which the data will
 be used as a guide for data collection. While much of this is specific
 to data about research and researchers, the ideas are generalizable to
-wider issues of data and public policy.
+wider issues of data and public policy. While we use Python as the prorgramming language in this chapter, data colection through web scraping and APIs can be done in most modern programming languages as well as using softwae that's designed specifically for this purpose.
+
+Examples
+----------
+We would want examples of social science papers that used external sources of data that can be scraped from the Wb or from APIs. These data sources could include soial media from facebook, twitter, linkedin, instagram, or other data such as from zillow, google street view, crime reports data, 311 or 911 data.
 
 Scraping information from the web {#sec:4-1}
 ---------------------------------
@@ -54,7 +51,7 @@ scraping is often a viable approach.
 Web scraping involves writing code to download and process web pages
 directly. We need to look at the website, identify how to get the information we
 want, and then process it. Many websites deliberately make this
-difficult to prevent easy access to their underlying data.
+difficult to prevent easy access to their underlying data while some website explicitly prohibit this type of activtiy in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of it's writing, it may not be valid in the future as the structure and content of the website changes.
 
 ### Obtaining data from websites {#sec:4-1.1}
 
@@ -70,11 +67,11 @@ data set that you might compare with other data.
 https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=24
 
 Getting information from this web page programmatically requires us to follow the following steps:
-Constructing a URL that will give us the results we want
-Fetching the page using that URL
-Processing the html response to extract the pieces of information we are lookin for (such as names and specialties of the scientists)
+1. Constructing a URL that will give us the results we want
+2. Getting the contents of the page using that URL
+3. Processing the html response to extract the pieces of information we are lookin for (such as names and specialties of the scientists)
 
-Constructing the URL
+** Constructing the URL **
 This process involves first understanding how to construct a URL that
 will do the search we want. This is most easily done by playing with
 search functionality and investigating the URL structures that are
@@ -144,14 +141,11 @@ constructed wrongly or that there was a server error.
 **Processing the html response**
 
 With the page successfully returned, we now need to process the text it
-contains into the data we want. This is not a trivial exercise. It is
-possible to search through and find things, but there are a range of
-tools that can help with processing HTML and XML data. Among these one
+contains into the data we want. This is not a trivial exercise. Web pages are typically written in a "maarkup" language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, the code results in giving us the html text. We then have to process this text to extract the content that we care about. There are a range of
+tools in Python that can help with processing HTML data. Among these one
 of the most popular is a module called BeautifulSoup^[Python features many useful libraries; BeautifulSoup is particularly helpful for webscraping.] [@bsoup], which
 provides a number of useful functions for this kind of processing. The
 module documentation provides more details.
-
-
 
 We need to check the details of the page source to find where the
 information we are looking for is kept (see, for example,
@@ -164,14 +158,10 @@ the class attribute `view-rows`. Again, there is nothing obvious about finding
 these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterWeb/figures/fig2-1} 
-
-}
-
-\caption{Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.}(\#fig:fig2-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterWeb/figures/fig2-1.png" alt="Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read." width="70%" />
+<p class="caption">(\#fig:fig2-1)Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.</p>
+</div>
 
 \vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
@@ -306,15 +296,15 @@ u'http://www.hhmi.org/sites/default/files/Our%20Scientists/Investigators/Ackerma
   'url': u'http://hhmi.org/scientists/susan-l-ackerman'}]
 ```
 
-Programmatically Iterating over the Search Results
+** Programmatically Iterating over the Search Results **
 
-So now we know we can process a page from a website to generate usefully
+Now we know we can process a page from a website to generate useful
 structured data. However, this was only the first page of results. We
 need to do this for each page of results if we want to capture all the
 HHMI investigators. We could just look at the number of pages that our
 search returned manually, but to make this more general we can actually
 scrape the page to find that piece of information and use that to
-calculate how many pages we need to work through.
+calculate how many pages we need to iterate through.
 
 The number of results is found in a `div` with the class "view-headers" as a
 piece of free text ("Showing 1--20 of 493 results"). We need to grab the
@@ -389,7 +379,7 @@ messy way of working. It is problematic for a number of reasons: for
 example, many websites are designed in ways that make scraping difficult
 or impossible, and other sites explicitly prohibit this kind of scripted
 analysis. (Both reasons apply in the case of the NSF and Grants.gov
-websites, which is why we use the HHMI website in our example.) The structure of websites also changes frequently, forcing you to continuously modify your code to match the structure.
+websites, which is why we use the HHMI website in our example.) The structure of websites also changes frequently, forcing you to continuously modify your code to keep up with the structure.
 
 In many cases a better choice is to process a data dump from an
 organization. For example, the NSF and Wellcome Trust both provide data
@@ -713,8 +703,8 @@ to collect information on articles from a range of sources.
 Summary {#sec:4-9}
 -------
 
-This chapter focused on approaches  to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult
-or impossible,and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match the structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they
+This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult
+or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they
 hold.  There are many good introductions to web scraping using BeautifulSoup
 and other libraries as well as API usage in general. Given the pace at
 which APIs and Python libraries change, the best and most up to date

@@ -50,14 +50,10 @@ disclosure increases [@doyle2001confidentiality]. As a result, the
 quality of data analysis is typically degraded with the production of
 public use data [@duncanstatistical].
 
-\begin{figure}
-
-{\centering \includegraphics[width=0.7\linewidth]{ChapterPrivacy/figures/fig11-1} 
-
-}
-
-\caption{The privacy--utility tradeoff}(\#fig:fig11-1)
-\end{figure}
+<div class="figure" style="text-align: center">
+<img src="ChapterPrivacy/figures/fig11-1.png" alt="The privacy--utility tradeoff" width="70%" />
+<p class="caption">(\#fig:fig11-1)The privacy--utility tradeoff</p>
+</div>
 
 \vspace*{-12pt}
 In general, the greater the access to data and their original values,
