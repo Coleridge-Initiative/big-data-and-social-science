@@ -108,8 +108,7 @@ instance, data collected through survey research might suffer from
 language barriers or cultural differences in social desirability that
 introduce measurement errors across groups.
 
-Machine Learning Pipeline Bias {#sec:mlbiasexamples}
-------------------------------
+### Machine Learning Pipeline Bias {#sec:mlbiasexamples}
 
 Biases can be introduced by the handling and transformation of data
 throughout the machine learning pipeline as well, requiring careful
@@ -175,8 +174,7 @@ In Section [metrics](#sec:metrics), we will introduce several of the metrics
 used to measure algorithmic fairness and in Section [applications](#sec:applications) we discuss how these can be used in the 
 process of evaluating and selecting machine learning models.
 
-Application Bias
-----------------
+### Application Bias
 
 A final potential source of bias worth considering is how the model or
 analysis might be put into use in practice. One way this might happen is
@@ -209,8 +207,7 @@ both the status quo and how it may change in the presence of such a
 system, putting in place legal and technical safeguards to help ensure
 that these methods are applied in socially responsible ways.
 
-Considering Bias When Deploying Your Model
-------------------------------------------
+### Considering Bias When Deploying Your Model
 
 Ultimately, what we care about is some global idea of how putting a
 model into practice will affect some overall concept of social welfare
@@ -229,7 +226,7 @@ chosen metric.
 Dealing with Bias
 -----------------
 
-## Define Bias {#sec:metrics}
+### Define Bias {#sec:metrics}
 
 Section [bias examples](#sec:mlbiasexamples) provided some examples 
 for how bias might be introduced in the process of using machine learning 
@@ -718,7 +715,7 @@ the process of choosing a model to deploy, or in making choices about
 how a chosen model is put into use. This section provides some details
 about how you might approach each of these tasks.
 
-## Auditing Model Results
+### Auditing Model Results
 
 Because the metrics describe here rely only on the predicted and actual
 labels, no specific knowledge of the process by which the predicted
@@ -737,7 +734,7 @@ processes which a model might augment or replace to help understand
 whether application of the model might improve, degrade, or leave
 unchanged the fairness of the existing system.
 
-## Model Selection
+### Model Selection
 
 As described in Chapter 6, many different types of models (each in turn
 with many tune-able hyperparameters) can be brought to bear on a given
@@ -800,7 +797,7 @@ best treated as a discussion between the data scientists and
 stakeholders in the same manner as choosing how to define fairness in
 the first place.
 
-## Other Options for Mitigating Bias
+### Other Options for Mitigating Bias
 
 Beyond incorporating measurements of equity into your model selection
 process, they can also inform how you put the model you choose into
@@ -872,7 +869,7 @@ the cited articles for more detail.
 Further Considerations
 ----------------------
 
-## Compared to What?
+### Compared to What?
 
 While building machine learning models that are completely free of bias
 is an admirable goal, it may not always be an achievable one.
@@ -889,7 +886,7 @@ current results and implemented when they are found to yield
 improvements but continually refined to improve on their outcomes over
 time as well.
 
-## Costs to Both Errors
+### Costs to Both Errors
 
 In the examples in Section [metrics](#sec:metrics), we focused on programs that
 could be considered purely assistive or purely punitive to illustrate
@@ -916,7 +913,7 @@ involves exploring a number of different options through different
 choices of models and parameters and using these options to motivate a
 conversation about the program’s goals, philosophy, and constraints.
 
-## What is the Relevant Population?
+### What is the Relevant Population?
 
 Related to the sample bias discussed in [bias sources](#sec:biassources),
 understanding the relevant population for your machine learning problem
@@ -941,7 +938,7 @@ as an element of how fairness is defined in your context. Keep in mind
 that determining (or at least making a reasonable estimate of) the
 correct population may at times require collecting additional data.
 
-## Continuous Outcomes
+### Continuous Outcomes
 
 For the sake of simplicity, we focused here on binary classification
 problems to help illustrate the sorts of considerations you might
@@ -965,7 +962,7 @@ If you would like to learn more about understanding bias and fairness in
 machine learning problems with continuous outcomes, we suggest
 consulting **** for a useful overview.
 
-## Considerations for Ongoing Measurement
+### Considerations for Ongoing Measurement
 
 The role of a data scientist is far from over when their machine
 learning model gets put into production. Making use of these models
@@ -1008,7 +1005,7 @@ considering proxies for the counterfactual, quasi-experimental inference
 methods, and expert/stakeholder review of the model’s results (both in
 aggregate and of selected individual cases).
 
-## Equity in Practice
+### Equity in Practice
 
 Much of the discussion here has been about fairness in the machine
 learning pipeline, focused on the ways in which a model may be correct
@@ -1030,7 +1027,7 @@ directly, but data scientists have a shared responsibility to understand
 the broader context in which their models will be applied and seek
 equitable outcomes in these applications.
 
-## Other Names You Might See
+### Other Names You Might See
 
 The metrics described here have been given a variety of names in the
 literature. While we have tried to use language focused on the
@@ -1107,7 +1104,7 @@ everyday use. This section highlights several recent cases, discussing
 them through the context of the metrics described above as well as
 providing some resources for you to read further about each one.
 
-## Recidivism Predictions with COMPAS {#sec:compascase}
+### Recidivism Predictions with COMPAS {#sec:compascase}
 
 Over the course of the last two decades, models of recidivism risk have
 been put into use in many jurisdictions around the country. These models
@@ -1166,7 +1163,7 @@ deciding to put it into practice, and the users making decisions based
 upon its scores to understand and explore the options for measuring
 fairness as well as the trade-offs involved in making that choice.
 
-## Facial Recognition
+### Facial Recognition
 
 A growing number of applications for facial recognition software are
 being found, from tagging friends in photos on social media to
@@ -1251,7 +1248,7 @@ highlights the role of legal and policy constraints around how models
 are used in addition to ensuring that the models are fair when and where
 they are applied.
 
-## Facebook Advertisement Targeting
+### Facebook Advertisement Targeting
 
 Social media has created new opportunities for advertisers to quickly
 and easily target their advertisements to particular subsets of the
@@ -1312,7 +1309,7 @@ own right. As of this writing, understanding how best to combat
 discrimination in ad targeting is an ongoing area of research as well as
 an active public conversation.
 
-## Tay: Microsoft’s AI Twitter Bot
+### Tay: Microsoft’s AI Twitter Bot
 
 In March, 2016, Microsoft released a Twitter chatbot named Tay with the
 intention of showcasing their AI technology for understanding
@@ -1414,7 +1411,7 @@ stages of decision-making in the modeling process: model selection,
 whether or not to deploy a model, when to retrain, the need to collect
 more and better data, and so on.
 
-## Getting Started with Aequitas
+### Getting Started with Aequitas
 
 Aequitas is a python package that can be used in several ways: as an
 imported module in your code or jupyter notebooks, as a command-line
@@ -1661,7 +1658,7 @@ default disparity metrics by not supplying an argument:
 
 -   False Negative Rate Disparity (`fnr_disparity`)
 
-## Assessing Model Fairness
+### Assessing Model Fairness
 
 Finally, the Aequitas `Fairness()` class provides three functions that
 provide a high level summary of fairness. This class builds on the
