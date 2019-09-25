@@ -8,8 +8,8 @@ Why this book? {#sec:1-1}
 --------------
 
 The world has changed for empirical social scientists. The new types of
-"big data" have generated an entire new research field---that of data
-science. That world is dominated by computer scientists who have
+data, methods, and tools have generated an entire new research field---that of data
+science. That world has traditionally been dominated by computer scientists who have
 generated new ways of creating and collecting data, developed new
 analytical and statistical techniques, and provided new ways of
 visualizing and presenting information. These new sources of data and
