@@ -1,7 +1,7 @@
 Bias and Fairness {#chap:bias}
 ================
 
-** Kit T. Rodolfa and Pedro Saleiro and Rayid Ghani**
+**Kit T. Rodolfa, Pedro Saleiro, and Rayid Ghani**
 
 Interest in algorithmic fairness and bias has been growing recently, but it's easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
 
@@ -1326,7 +1326,7 @@ Issuing a public apology, the company indicated that although the had
 anticipate the type of abuse of it encountered in the wild.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterBias/figures/tay_tweets2.png" alt="Example of Tays offensive output" width="70%" />
+<img src="ChapterBias/figures/tay_tweets2.png" alt="Example of Tays offensive output" width="80%" />
 <p class="caption">(\#fig:taytweets)Example of Tays offensive output</p>
 </div>
 
@@ -1399,7 +1399,7 @@ periodic audits to detect any fairness degradation over
 time.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="70%" />
+<img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="80%" />
 <p class="caption">(\#fig:ml_pipeline)ML pipeline</p>
 </div>
 
@@ -1480,7 +1480,7 @@ additional initial analyses and you should feel free to further explore
 the data as well.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="70%" />
+<img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="100%" />
 <p class="caption">(\#fig:tutorial_explore)Data exploration screenshot from the Aequitas tutorial</p>
 </div>
 
@@ -1543,7 +1543,7 @@ incorrectly classified as ’high’ risk (false positive rate $FPR$ of
 0.45) than incorrectly classified as ’low’ or ’medium’ risk (false
 negative rate $FNR$ of 0.28).
 
-<img src="ChapterBias/figures/tutorial_plot_crosstabs.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterBias/figures/tutorial_plot_crosstabs.png" width="100%" style="display: block; margin: auto;" />
 
 Data exploration screenshot from the Aequitas tutorial workbook, showing the predicted positive rate $PPR$, predicted prevalence $PPrev$, false negative rate $FNR$, and false positive rate $FPR$ across subgroups in the COMPAS data.
 
@@ -1635,7 +1635,7 @@ Statistically significant disparities (at the level specified with
 `significance_alpha`) will be labeled with two asterisks (\*\*), as seen
 for the `African-American` group in Figure \@ref(fig:tutorial_plot_disparity).
 
-<img src="ChapterBias/figures/tutorial_plot_disparity.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterBias/figures/tutorial_plot_disparity.png" width="100%" style="display: block; margin: auto;" />
 
 Data exploration screenshot from the Aequitas tutorial workbook, showing racial disparities on the false positive rate $FPR$. Note that the reference group, Hispanic, is indicated in gray and a statistically significant disparity for African-Americans is labeled with two asterisks (**).
 
@@ -1748,17 +1748,16 @@ visualize the results of these various fairness calculations:
     multiples of several disparity treemaps across different groups and
     metrics.
 
-<img src="ChapterBias/figures/tutorial_plot_fairness1.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterBias/figures/tutorial_plot_fairness1.png" width="100%" style="display: block; margin: auto;" />
 
 Data exploration screenshot from the Aequitas tutorial workbook,
 showing the fairness results for predicted positive rate $PPR$ across
 subgroups in the COMPAS data. Absolute values of $PPR$ are plotted for
 each group with bars colored by the results of applying fairness
 criteria to these disparities with groups meeting the criteria shown in
-green and those not meeting the criteria shown in
-red.
+green and those not meeting the criteria shown in red.
 
-<img src="ChapterBias/figures/tutorial_plot_fairness2.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterBias/figures/tutorial_plot_fairness2.png" width="100%" style="display: block; margin: auto;" />
 
 Data exploration screenshot from the Aequitas tutorial workbook,
 showing a treemap representing $FPR$ disparities across racial groups in

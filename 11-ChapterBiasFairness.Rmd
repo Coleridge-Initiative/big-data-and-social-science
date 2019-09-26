@@ -1,7 +1,7 @@
 Bias and Fairness {#chap:bias}
 ================
 
-** Kit T. Rodolfa and Pedro Saleiro and Rayid Ghani**
+**Kit T. Rodolfa, Pedro Saleiro, and Rayid Ghani**
 
 Interest in algorithmic fairness and bias has been growing recently, but it's easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
 
@@ -1325,7 +1325,7 @@ Issuing a public apology, the company indicated that although the had
 “stress-tested” the bot in several contexts, they had failed to
 anticipate the type of abuse of it encountered in the wild.
 
-```{r taytweets, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Example of Tays offensive output'}
+```{r taytweets, out.width = '80%', fig.align = 'center', echo = FALSE, fig.cap = 'Example of Tays offensive output'}
 knitr::include_graphics("ChapterBias/figures/tay_tweets2.png")
 ```
 
@@ -1397,7 +1397,7 @@ externally before accepting a model in production as well as perform
 periodic audits to detect any fairness degradation over
 time.
 
-```{r ml_pipeline, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'ML pipeline'}
+```{r ml_pipeline, out.width = '80%', fig.align = 'center', echo = FALSE, fig.cap = 'ML pipeline'}
 knitr::include_graphics("ChapterBias/figures/audit_pipeline.png")
 ```
 
@@ -1477,7 +1477,7 @@ of COMPAS scores across race. The notebook guides you through several
 additional initial analyses and you should feel free to further explore
 the data as well.
 
-```{r tutorial_explore, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Data exploration screenshot from the Aequitas tutorial'}
+```{r tutorial_explore, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'Data exploration screenshot from the Aequitas tutorial'}
 knitr::include_graphics("ChapterBias/figures/tutorial_explore.png")
 ```
 
@@ -1540,7 +1540,7 @@ incorrectly classified as ’high’ risk (false positive rate $FPR$ of
 0.45) than incorrectly classified as ’low’ or ’medium’ risk (false
 negative rate $FNR$ of 0.28).
 
-```{r tutorial_plot_crosstabs, out.width = '70%', fig.align = 'center', echo = FALSE}
+```{r tutorial_plot_crosstabs, out.width = '100%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_crosstabs.png")
 ```
 
@@ -1634,7 +1634,7 @@ Statistically significant disparities (at the level specified with
 `significance_alpha`) will be labeled with two asterisks (\*\*), as seen
 for the `African-American` group in Figure \@ref(fig:tutorial_plot_disparity).
 
-```{r tutorial_plot_disparity, out.width = '70%', fig.align = 'center', echo = FALSE}
+```{r tutorial_plot_disparity, out.width = '100%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_disparity.png")
 ```
 
@@ -1749,7 +1749,7 @@ visualize the results of these various fairness calculations:
     multiples of several disparity treemaps across different groups and
     metrics.
 
-```{r tutorial_plot_fairness1, out.width = '70%', fig.align = 'center', echo = FALSE}
+```{r tutorial_plot_fairness1, out.width = '100%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_fairness1.png")
 ```
 
@@ -1758,10 +1758,9 @@ showing the fairness results for predicted positive rate $PPR$ across
 subgroups in the COMPAS data. Absolute values of $PPR$ are plotted for
 each group with bars colored by the results of applying fairness
 criteria to these disparities with groups meeting the criteria shown in
-green and those not meeting the criteria shown in
-red.
+green and those not meeting the criteria shown in red.
 
-```{r tutorial_plot_fairness2, out.width = '70%', fig.align = 'center', echo = FALSE}
+```{r tutorial_plot_fairness2, out.width = '100%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_fairness2.png")
 ```
 

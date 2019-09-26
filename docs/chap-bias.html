@@ -373,7 +373,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
             <section class="normal" id="section-">
 <div id="chap:bias" class="section level1">
 <h1><span class="header-section-number">Chapter 11</span> Bias and Fairness</h1>
-<p>** Kit T. Rodolfa and Pedro Saleiro and Rayid Ghani**</p>
+<p><strong>Kit T. Rodolfa, Pedro Saleiro, and Rayid Ghani</strong></p>
 <p>Interest in algorithmic fairness and bias has been growing recently, but it’s easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model is “fair”. In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.</p>
 <div id="introduction-4" class="section level2">
 <h2><span class="header-section-number">11.1</span> Introduction</h2>
@@ -747,7 +747,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h3><span class="header-section-number">11.6.4</span> Tay: Microsoft’s AI Twitter Bot</h3>
 <p>In March, 2016, Microsoft released a Twitter chatbot named Tay with the intention of showcasing their AI technology for understanding conversational language. The bot was targeted at younger Twitter users, hoping to carry on fun, colloquial conversations with them while learning to improve its conversational skills through these interactions. Resulting at least in part from an attack coordinated on 4Chan, within 24 hours, Tay’s tweets had taken a decidedly dark turn, generating tweets with racist, misogynistic, and anti-Semitic messages (Figure <a href="chap-bias.html#fig:taytweets">11.1</a>. In the face of this hateful, offensive content, Microsoft had shut Tay down by the end of its first day. Issuing a public apology, the company indicated that although the had “stress-tested” the bot in several contexts, they had failed to anticipate the type of abuse of it encountered in the wild.</p>
 <div class="figure" style="text-align: center"><span id="fig:taytweets"></span>
-<img src="ChapterBias/figures/tay_tweets2.png" alt="Example of Tays offensive output" width="70%" />
+<img src="ChapterBias/figures/tay_tweets2.png" alt="Example of Tays offensive output" width="80%" />
 <p class="caption">
 Figure 11.1: Example of Tays offensive output
 </p>
@@ -767,7 +767,7 @@ Figure 11.1: Example of Tays offensive output
 </ol>
 <p>![Aequitas in the larger context of the machine learning pipeline. Audits must be carried out internally by data scientists before evaluation and model selection. Policymakers (or clients) must audit externally before accepting a model in production as well as perform periodic audits to detect any fairness degradation over time.</p>
 <div class="figure" style="text-align: center">
-<img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="70%" />
+<img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="80%" />
 <p class="caption">
 (#fig:ml_pipeline)ML pipeline
 </p>
@@ -797,7 +797,7 @@ Figure 11.1: Example of Tays offensive output
 </ul>
 <p>As you follow along in the tutorial notebook, we start with a little bit of descriptive data exploration just to get a feel for the data. Figure @ref(fig:tutorial_explore) shows the large difference in the distribution of COMPAS scores across race. The notebook guides you through several additional initial analyses and you should feel free to further explore the data as well.</p>
 <div class="figure" style="text-align: center">
-<img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="70%" />
+<img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="100%" />
 <p class="caption">
 (#fig:tutorial_explore)Data exploration screenshot from the Aequitas tutorial
 </p>
@@ -820,7 +820,7 @@ Figure 11.1: Example of Tays offensive output
 <pre><code>    aqp = Plot()
     fnr = aqp.plot_group_metric(xtab, &#39;fnr&#39;, min_group_size=0.05)</code></pre>
 <p>Additionally, you can visualize several metrics at the same time in small multiples using the <code>Plot.plot_group_metric_all()</code> method. Figure @ref(fig:tutorial_plot_crosstabs) shows an example of this method from notebook. In it, you can see that the largest <code>race</code> group, <code>African American</code>, is predicted positive more often than any other race group (predicted positive rate <span class="math inline">\(PPR\)</span> of 0.66), and are more likely to be incorrectly classified as ’high’ risk (false positive rate <span class="math inline">\(FPR\)</span> of 0.45) than incorrectly classified as ’low’ or ’medium’ risk (false negative rate <span class="math inline">\(FNR\)</span> of 0.28).</p>
-<p><img src="ChapterBias/figures/tutorial_plot_crosstabs.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterBias/figures/tutorial_plot_crosstabs.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Data exploration screenshot from the Aequitas tutorial workbook, showing the predicted positive rate <span class="math inline">\(PPR\)</span>, predicted prevalence <span class="math inline">\(PPrev\)</span>, false negative rate <span class="math inline">\(FNR\)</span>, and false positive rate <span class="math inline">\(FPR\)</span> across subgroups in the COMPAS data.</p>
 <p>To graph specific metrics of interest, you can pass a list to <code>plot_group_metric_all()</code> using the <code>metrics</code> keyword. Alternatively, you can pass <code>'all'</code> to visualize all calculated metrics or omit the keyword to plot the default metrics:</p>
 <ul>
@@ -853,7 +853,7 @@ Figure 11.1: Example of Tays offensive output
 <p>Notice that because disparities are calculated as ratios, the reference group will always have a disparity of 1.0. They can be interpreted as how much more prone the model is to making a certain type of mistake for one group relative to the reference group. For instance, calculating the <code>fpr_disparity</code> values by race with the COMPAS data indicates that black people are falsely identified as being high or medium risks 1.9 times the rate for white people, while the <code>fdr_disparity</code> values are much closer to 1.</p>
 <p>The Aequitas <code>Plot()</code> class provides methods to visualize the results of your disparity calculations, with a similar interface to the methods described for plotting the absolute metrics described above. <code>Plot.plot_disparity()</code> allows for plotting a single specified disparity metric for a single attribute while <code>Plot.plot_disparity_all()</code> allows you to plot multiple disparities and attributes in small multiples at once.</p>
 <p>Figure @ref(fig:tutorial_plot_disparity) shows an example of using the <code>plot_disparity()</code> method from the tutorial notebook. Each disparity is plotted as a treemap, with the size of the rectangle representing the size of the group and color indicating the level of disparity (with values over 1.0 in orange and those under 1.0 in blue). Notice in the figure that the reference group is colored gray and labeled <code>(Ref)</code>. Statistically significant disparities (at the level specified with <code>significance_alpha</code>) will be labeled with two asterisks (**), as seen for the <code>African-American</code> group in Figure @ref(fig:tutorial_plot_disparity).</p>
-<p><img src="ChapterBias/figures/tutorial_plot_disparity.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterBias/figures/tutorial_plot_disparity.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Data exploration screenshot from the Aequitas tutorial workbook, showing racial disparities on the false positive rate <span class="math inline">\(FPR\)</span>. Note that the reference group, Hispanic, is indicated in gray and a statistically significant disparity for African-Americans is labeled with two asterisks (**).</p>
 <p>The tutorial notebook walks through several additional examples of using <code>plot_disparity()</code> and <code>plot_disparity_all()</code>. When visualizing more than one disparity using <code>plot_disparity_all()</code>, you can specify a list of disparity metrics, <code>'all'</code> disaprity metrics, or use the Aequitas default disparity metrics by not supplying an argument:</p>
 <ul>
@@ -897,9 +897,9 @@ Figure 11.1: Example of Tays offensive output
 <li><p>With <code>Plot.plot_fairness_disparity()</code>, you can plot a treemap of the fairness results (similar to the disparity plot in Figure @ref(fig:tutorial_plot_disparity) showing the values of disparities relative to a base group and fairness results. Figure @ref(fig:tutorial_plot_fairness2) shows example usage of this method.</p></li>
 <li><p><code>Plot.plot_fairness_disparity_all()</code> allows you to plot small multiples of several disparity treemaps across different groups and metrics.</p></li>
 </ul>
-<p><img src="ChapterBias/figures/tutorial_plot_fairness1.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterBias/figures/tutorial_plot_fairness1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Data exploration screenshot from the Aequitas tutorial workbook, showing the fairness results for predicted positive rate <span class="math inline">\(PPR\)</span> across subgroups in the COMPAS data. Absolute values of <span class="math inline">\(PPR\)</span> are plotted for each group with bars colored by the results of applying fairness criteria to these disparities with groups meeting the criteria shown in green and those not meeting the criteria shown in red.</p>
-<p><img src="ChapterBias/figures/tutorial_plot_fairness2.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterBias/figures/tutorial_plot_fairness2.png" width="100%" style="display: block; margin: auto;" /></p>
 <p>Data exploration screenshot from the Aequitas tutorial workbook, showing a treemap representing <span class="math inline">\(FPR\)</span> disparities across racial groups in the COMPAS data. The size of each square represents the size of the group, with labels indicating the disparity values, and color indicating whether these values meet specified fairness thresholds (green for those meeting the criteria, red for those not meeting the criteria, and reference groups shown in gray.</p>
 <p>The graphs generated by these methods will generally show similar information to the plots of absolute metric values and disparities described above, however the application of fairness criteria is overlayed on these plots to indicate whether a group meets the specified fairness criteria for a given metric (those meeting the threshold are shown in green and those failing to meet it are shown in red). The tutorial notebook will walk you through several examples of using each of these methods, and you should feel free to explore their usage further, including how fairness results change with the application of different thresholds.</p>
 
