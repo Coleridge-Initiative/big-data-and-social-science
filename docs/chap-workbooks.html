@@ -1,15 +1,14 @@
 <!DOCTYPE html>
-<html >
-
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Big Data and Social Science</title>
-  <meta name="description" content="Big Data and Social Science">
-  <meta name="generator" content="bookdown 0.7 and GitBook 2.6.7">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 13 Workbooks | Big Data and Social Science</title>
+  <meta name="description" content="Chapter 13 Workbooks | Big Data and Social Science" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Big Data and Social Science" />
+  <meta property="og:title" content="Chapter 13 Workbooks | Big Data and Social Science" />
   <meta property="og:type" content="book" />
   
   
@@ -17,24 +16,25 @@
   <meta name="github-repo" content="Coleridge-Initiative/big-data-and-social-science" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Big Data and Social Science" />
+  <meta name="twitter:title" content="Chapter 13 Workbooks | Big Data and Social Science" />
   
   
   
 
-<meta name="author" content="Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane">
+<meta name="author" content="Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane" />
 
 
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="chap-privacy.html">
+<link rel="prev" href="chap-privacy.html"/>
 
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
@@ -49,67 +49,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(data-line-number);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -222,78 +196,78 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="5.7" data-path="chap-parallel.html"><a href="chap-parallel.html#summary-2"><i class="fa fa-check"></i><b>5.7</b> Summary</a></li>
 <li class="chapter" data-level="5.8" data-path="chap-parallel.html"><a href="chap-parallel.html#resources-2"><i class="fa fa-check"></i><b>5.8</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>6</b> Machine Learning</a><ul>
-<li class="chapter" data-level="6.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
-<li class="chapter" data-level="6.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>6.2</b> What is machine learning?</a></li>
-<li class="chapter" data-level="6.3" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>6.3</b> The machine learning process</a></li>
-<li class="chapter" data-level="6.4" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>6.4</b> Problem formulation: Mapping a problem to machine learning methods</a></li>
-<li class="chapter" data-level="6.5" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>6.5</b> Methods</a><ul>
-<li class="chapter" data-level="6.5.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>6.5.1</b> Unsupervised learning methods</a></li>
-<li class="chapter" data-level="6.5.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>6.5.2</b> Supervised learning</a></li>
+<li class="chapter" data-level="6" data-path="chap-viz.html"><a href="chap-viz.html"><i class="fa fa-check"></i><b>6</b> Information Visualization</a><ul>
+<li class="chapter" data-level="6.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-1"><i class="fa fa-check"></i><b>6.1</b> Introduction</a></li>
+<li class="chapter" data-level="6.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2"><i class="fa fa-check"></i><b>6.2</b> Developing effective visualizations</a></li>
+<li class="chapter" data-level="6.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-3"><i class="fa fa-check"></i><b>6.3</b> A data-by-tasks taxonomy</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.1"><i class="fa fa-check"></i><b>6.3.1</b> Multivariate data</a></li>
+<li class="chapter" data-level="6.3.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.2"><i class="fa fa-check"></i><b>6.3.2</b> Spatial data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.4"><i class="fa fa-check"></i><b>6.3.3</b> Temporal data</a></li>
+<li class="chapter" data-level="6.3.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.5"><i class="fa fa-check"></i><b>6.3.4</b> Hierarchical data</a></li>
+<li class="chapter" data-level="6.3.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.6"><i class="fa fa-check"></i><b>6.3.5</b> Network data</a></li>
+<li class="chapter" data-level="6.3.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.7"><i class="fa fa-check"></i><b>6.3.6</b> Text data</a></li>
 </ul></li>
-<li class="chapter" data-level="6.6" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>6.6</b> Evaluation</a><ul>
-<li class="chapter" data-level="6.6.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>6.6.1</b> Methodology</a></li>
-<li class="chapter" data-level="6.6.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>6.6.2</b> Metrics</a></li>
+<li class="chapter" data-level="6.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4"><i class="fa fa-check"></i><b>6.4</b> Challenges</a><ul>
+<li class="chapter" data-level="6.4.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.1"><i class="fa fa-check"></i><b>6.4.1</b> Scalability</a></li>
+<li class="chapter" data-level="6.4.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.2"><i class="fa fa-check"></i><b>6.4.2</b> Evaluation</a></li>
+<li class="chapter" data-level="6.4.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.3"><i class="fa fa-check"></i><b>6.4.3</b> Visual impairment</a></li>
+<li class="chapter" data-level="6.4.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.4"><i class="fa fa-check"></i><b>6.4.4</b> Visual literacy</a></li>
 </ul></li>
-<li class="chapter" data-level="6.7" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>6.7</b> Practical tips</a><ul>
-<li class="chapter" data-level="6.7.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>6.7.1</b> Features</a></li>
-<li class="chapter" data-level="6.7.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>6.7.2</b> Machine learning pipeline</a></li>
-<li class="chapter" data-level="6.7.3" data-path="chap-ml.html"><a href="chap-ml.html#multiclass-problems"><i class="fa fa-check"></i><b>6.7.3</b> Multiclass problems</a></li>
-<li class="chapter" data-level="6.7.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>6.7.4</b> Skewed or imbalanced classification problems</a></li>
+<li class="chapter" data-level="6.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-5"><i class="fa fa-check"></i><b>6.5</b> Summary</a></li>
+<li class="chapter" data-level="6.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:mylabel4"><i class="fa fa-check"></i><b>6.6</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="6.8" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>6.8</b> How can social scientists benefit from machine learning?</a></li>
-<li class="chapter" data-level="6.9" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>6.9</b> Advanced topics</a></li>
-<li class="chapter" data-level="6.10" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>6.10</b> Summary</a></li>
-<li class="chapter" data-level="6.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>6.11</b> Resources</a></li>
+<li class="chapter" data-level="7" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>7</b> Machine Learning</a><ul>
+<li class="chapter" data-level="7.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>7.2</b> What is machine learning?</a></li>
+<li class="chapter" data-level="7.3" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>7.3</b> The machine learning process</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>7.4</b> Problem formulation: Mapping a problem to machine learning methods</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>7.5</b> Methods</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>7.5.1</b> Unsupervised learning methods</a></li>
+<li class="chapter" data-level="7.5.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>7.5.2</b> Supervised learning</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>7</b> Text Analysis</a><ul>
-<li class="chapter" data-level="7.1" data-path="chap-text.html"><a href="chap-text.html#understanding-human-generated-text"><i class="fa fa-check"></i><b>7.1</b> Understanding human generated text</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-text.html"><a href="chap-text.html#how-is-text-data-different-than-structured-data"><i class="fa fa-check"></i><b>7.2</b> How is text data different than “structured” data?</a></li>
-<li class="chapter" data-level="7.3" data-path="chap-text.html"><a href="chap-text.html#what-can-we-do-with-text-data"><i class="fa fa-check"></i><b>7.3</b> What can we do with text data?</a></li>
-<li class="chapter" data-level="7.4" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>7.4</b> How to analyze text</a><ul>
-<li class="chapter" data-level="7.4.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>7.4.1</b> Processing text data</a></li>
-<li class="chapter" data-level="7.4.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>7.4.2</b> Turning text into a matrix: How much is a word worth?</a></li>
-<li class="chapter" data-level="7.4.3" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>7.4.3</b> Topic modeling</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.6</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.6.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.6.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.6.2</b> Metrics</a></li>
 </ul></li>
-<li class="chapter" data-level="7.5" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>7.5</b> Word Embeddings and Deep Learning</a></li>
-<li class="chapter" data-level="7.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>7.6</b> Text analysis tools</a></li>
-<li class="chapter" data-level="7.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>7.7</b> Summary</a></li>
-<li class="chapter" data-level="7.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>7.8</b> Resources</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.7</b> Practical tips</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>7.7.1</b> Features</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>7.7.2</b> Machine learning pipeline</a></li>
+<li class="chapter" data-level="7.7.3" data-path="chap-ml.html"><a href="chap-ml.html#multiclass-problems"><i class="fa fa-check"></i><b>7.7.3</b> Multiclass problems</a></li>
+<li class="chapter" data-level="7.7.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.7.4</b> Skewed or imbalanced classification problems</a></li>
 </ul></li>
-<li class="chapter" data-level="8" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>8</b> Networks: The Basics</a><ul>
-<li class="chapter" data-level="8.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>8.1</b> Introduction</a></li>
-<li class="chapter" data-level="8.2" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>8.2</b> Turning Data into a Network</a><ul>
-<li class="chapter" data-level="8.2.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>8.2.1</b> Types of Networks</a></li>
-<li class="chapter" data-level="8.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>8.2.2</b> Inducing one-mode networks from two-mode data</a></li>
+<li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>7.8</b> How can social scientists benefit from machine learning?</a></li>
+<li class="chapter" data-level="7.9" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>7.9</b> Advanced topics</a></li>
+<li class="chapter" data-level="7.10" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>7.10</b> Summary</a></li>
+<li class="chapter" data-level="7.11" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>7.11</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="8.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>8.3</b> Network measures</a><ul>
-<li class="chapter" data-level="8.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>8.3.1</b> Reachability</a></li>
-<li class="chapter" data-level="8.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>8.3.2</b> Whole-network measures</a></li>
+<li class="chapter" data-level="8" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>8</b> Text Analysis</a><ul>
+<li class="chapter" data-level="8.1" data-path="chap-text.html"><a href="chap-text.html#understanding-human-generated-text"><i class="fa fa-check"></i><b>8.1</b> Understanding human generated text</a></li>
+<li class="chapter" data-level="8.2" data-path="chap-text.html"><a href="chap-text.html#how-is-text-data-different-than-structured-data"><i class="fa fa-check"></i><b>8.2</b> How is text data different than “structured” data?</a></li>
+<li class="chapter" data-level="8.3" data-path="chap-text.html"><a href="chap-text.html#what-can-we-do-with-text-data"><i class="fa fa-check"></i><b>8.3</b> What can we do with text data?</a></li>
+<li class="chapter" data-level="8.4" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>8.4</b> How to analyze text</a><ul>
+<li class="chapter" data-level="8.4.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>8.4.1</b> Processing text data</a></li>
+<li class="chapter" data-level="8.4.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>8.4.2</b> Turning text into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="8.4.3" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>8.4.3</b> Topic modeling</a></li>
 </ul></li>
-<li class="chapter" data-level="8.4" data-path="chap-networks.html"><a href="chap-networks.html#what-kinds-of-questions-can-now-be-answered"><i class="fa fa-check"></i><b>8.4</b> What kinds of questions can now be answered?</a></li>
-<li class="chapter" data-level="8.5" data-path="chap-networks.html"><a href="chap-networks.html#case-study-comparing-collaboration-networks"><i class="fa fa-check"></i><b>8.5</b> Case Study: Comparing collaboration networks</a></li>
-<li class="chapter" data-level="8.6" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>8.6</b> Summary</a></li>
-<li class="chapter" data-level="8.7" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>8.7</b> Resources</a></li>
+<li class="chapter" data-level="8.5" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>8.5</b> Word Embeddings and Deep Learning</a></li>
+<li class="chapter" data-level="8.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>8.6</b> Text analysis tools</a></li>
+<li class="chapter" data-level="8.7" data-path="chap-text.html"><a href="chap-text.html#summary-4"><i class="fa fa-check"></i><b>8.7</b> Summary</a></li>
+<li class="chapter" data-level="8.8" data-path="chap-text.html"><a href="chap-text.html#resources-3"><i class="fa fa-check"></i><b>8.8</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="chap-viz.html"><a href="chap-viz.html"><i class="fa fa-check"></i><b>9</b> Information Visualization</a><ul>
-<li class="chapter" data-level="9.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-1"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2"><i class="fa fa-check"></i><b>9.2</b> Developing effective visualizations</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-3"><i class="fa fa-check"></i><b>9.3</b> A data-by-tasks taxonomy</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.1"><i class="fa fa-check"></i><b>9.3.1</b> Multivariate data</a></li>
-<li class="chapter" data-level="9.3.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.2"><i class="fa fa-check"></i><b>9.3.2</b> Spatial data</a></li>
-<li class="chapter" data-level="9.3.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.4"><i class="fa fa-check"></i><b>9.3.3</b> Temporal data</a></li>
-<li class="chapter" data-level="9.3.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.5"><i class="fa fa-check"></i><b>9.3.4</b> Hierarchical data</a></li>
-<li class="chapter" data-level="9.3.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.6"><i class="fa fa-check"></i><b>9.3.5</b> Network data</a></li>
-<li class="chapter" data-level="9.3.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-2.7"><i class="fa fa-check"></i><b>9.3.6</b> Text data</a></li>
+<li class="chapter" data-level="9" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>9</b> Networks: The Basics</a><ul>
+<li class="chapter" data-level="9.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>9.2</b> Turning Data into a Network</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>9.2.1</b> Types of Networks</a></li>
+<li class="chapter" data-level="9.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>9.2.2</b> Inducing one-mode networks from two-mode data</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4"><i class="fa fa-check"></i><b>9.4</b> Challenges</a><ul>
-<li class="chapter" data-level="9.4.1" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.1"><i class="fa fa-check"></i><b>9.4.1</b> Scalability</a></li>
-<li class="chapter" data-level="9.4.2" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.2"><i class="fa fa-check"></i><b>9.4.2</b> Evaluation</a></li>
-<li class="chapter" data-level="9.4.3" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.3"><i class="fa fa-check"></i><b>9.4.3</b> Visual impairment</a></li>
-<li class="chapter" data-level="9.4.4" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-4.4"><i class="fa fa-check"></i><b>9.4.4</b> Visual literacy</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>9.3</b> Network measures</a><ul>
+<li class="chapter" data-level="9.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>9.3.1</b> Reachability</a></li>
+<li class="chapter" data-level="9.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>9.3.2</b> Whole-network measures</a></li>
 </ul></li>
-<li class="chapter" data-level="9.5" data-path="chap-viz.html"><a href="chap-viz.html#sec:viz-5"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-viz.html"><a href="chap-viz.html#sec:mylabel4"><i class="fa fa-check"></i><b>9.6</b> Resources</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-networks.html"><a href="chap-networks.html#what-kinds-of-questions-can-now-be-answered"><i class="fa fa-check"></i><b>9.4</b> What kinds of questions can now be answered?</a></li>
+<li class="chapter" data-level="9.5" data-path="chap-networks.html"><a href="chap-networks.html#case-study-comparing-collaboration-networks"><i class="fa fa-check"></i><b>9.5</b> Case Study: Comparing collaboration networks</a></li>
+<li class="chapter" data-level="9.6" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>9.6</b> Summary</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>9.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-errors.html"><a href="chap-errors.html"><i class="fa fa-check"></i><b>10</b> Data Quality and Inference Errors</a><ul>
 <li class="chapter" data-level="10.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-1"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
@@ -308,31 +282,77 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="10.6" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-6"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
 <li class="chapter" data-level="10.7" data-path="chap-errors.html"><a href="chap-errors.html#resources-5"><i class="fa fa-check"></i><b>10.7</b> Resources</a></li>
 </ul></li>
-<li class="chapter" data-level="11" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>11</b> Privacy and Confidentiality</a><ul>
-<li class="chapter" data-level="11.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
-<li class="chapter" data-level="11.2" data-path="chap-privacy.html"><a href="chap-privacy.html#why-is-access-important"><i class="fa fa-check"></i><b>11.2</b> Why is access important?</a></li>
-<li class="chapter" data-level="11.3" data-path="chap-privacy.html"><a href="chap-privacy.html#providing-access"><i class="fa fa-check"></i><b>11.3</b> Providing access</a></li>
-<li class="chapter" data-level="11.4" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>11.4</b> The new challenges</a></li>
-<li class="chapter" data-level="11.5" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>11.5</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="11.6" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-6"><i class="fa fa-check"></i><b>11.6</b> Summary</a></li>
-<li class="chapter" data-level="11.7" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>11.7</b> Resources</a></li>
+<li class="chapter" data-level="11" data-path="chap-bias.html"><a href="chap-bias.html"><i class="fa fa-check"></i><b>11</b> Bias and Fairness</a><ul>
+<li class="chapter" data-level="11.1" data-path="chap-bias.html"><a href="chap-bias.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
+<li class="chapter" data-level="11.2" data-path="chap-bias.html"><a href="chap-bias.html#sec:biassources"><i class="fa fa-check"></i><b>11.2</b> Sources of Bias</a><ul>
+<li class="chapter" data-level="11.2.1" data-path="chap-bias.html"><a href="chap-bias.html#sample-bias"><i class="fa fa-check"></i><b>11.2.1</b> Sample Bias</a></li>
+<li class="chapter" data-level="11.2.2" data-path="chap-bias.html"><a href="chap-bias.html#label-bias"><i class="fa fa-check"></i><b>11.2.2</b> Label Bias</a></li>
+<li class="chapter" data-level="11.2.3" data-path="chap-bias.html"><a href="chap-bias.html#sec:mlbiasexamples"><i class="fa fa-check"></i><b>11.2.3</b> Machine Learning Pipeline Bias</a></li>
+<li class="chapter" data-level="11.2.4" data-path="chap-bias.html"><a href="chap-bias.html#application-bias"><i class="fa fa-check"></i><b>11.2.4</b> Application Bias</a></li>
+<li class="chapter" data-level="11.2.5" data-path="chap-bias.html"><a href="chap-bias.html#considering-bias-when-deploying-your-model"><i class="fa fa-check"></i><b>11.2.5</b> Considering Bias When Deploying Your Model</a></li>
 </ul></li>
-<li class="chapter" data-level="12" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>12</b> Workbooks</a><ul>
-<li class="chapter" data-level="12.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
-<li class="chapter" data-level="12.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#environment"><i class="fa fa-check"></i><b>12.2</b> Environment</a><ul>
-<li class="chapter" data-level="12.2.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#running-workbooks-locally"><i class="fa fa-check"></i><b>12.2.1</b> Running workbooks locally</a></li>
-<li class="chapter" data-level="12.2.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#central-workbook-server"><i class="fa fa-check"></i><b>12.2.2</b> Central workbook server</a></li>
+<li class="chapter" data-level="11.3" data-path="chap-bias.html"><a href="chap-bias.html#dealing-with-bias"><i class="fa fa-check"></i><b>11.3</b> Dealing with Bias</a><ul>
+<li class="chapter" data-level="11.3.1" data-path="chap-bias.html"><a href="chap-bias.html#sec:metrics"><i class="fa fa-check"></i><b>11.3.1</b> Define Bias</a></li>
+<li class="chapter" data-level="11.3.2" data-path="chap-bias.html"><a href="chap-bias.html#definitions"><i class="fa fa-check"></i><b>11.3.2</b> Definitions</a></li>
+<li class="chapter" data-level="11.3.3" data-path="chap-bias.html"><a href="chap-bias.html#choosing-bias-metrics"><i class="fa fa-check"></i><b>11.3.3</b> Choosing Bias Metrics</a></li>
+<li class="chapter" data-level="11.3.4" data-path="chap-bias.html"><a href="chap-bias.html#sec:punitiveexample"><i class="fa fa-check"></i><b>11.3.4</b> Punitive Example</a></li>
+<li class="chapter" data-level="11.3.5" data-path="chap-bias.html"><a href="chap-bias.html#sec:assistiveexample"><i class="fa fa-check"></i><b>11.3.5</b> Assistive Example</a></li>
+<li class="chapter" data-level="11.3.6" data-path="chap-bias.html"><a href="chap-bias.html#sec:constrainedassistive"><i class="fa fa-check"></i><b>11.3.6</b> Special Case: Resource-Constrained Programs</a></li>
 </ul></li>
-<li class="chapter" data-level="12.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#workbook-details"><i class="fa fa-check"></i><b>12.3</b> Workbook details</a><ul>
-<li class="chapter" data-level="12.3.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#social-media-and-apis"><i class="fa fa-check"></i><b>12.3.1</b> Social Media and APIs</a></li>
-<li class="chapter" data-level="12.3.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#database-basics"><i class="fa fa-check"></i><b>12.3.2</b> Database basics</a></li>
-<li class="chapter" data-level="12.3.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#data-linkage"><i class="fa fa-check"></i><b>12.3.3</b> Data Linkage</a></li>
-<li class="chapter" data-level="12.3.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning"><i class="fa fa-check"></i><b>12.3.4</b> Machine Learning</a></li>
-<li class="chapter" data-level="12.3.5" data-path="chap-workbooks.html"><a href="chap-workbooks.html#text-analysis"><i class="fa fa-check"></i><b>12.3.5</b> Text Analysis</a></li>
-<li class="chapter" data-level="12.3.6" data-path="chap-workbooks.html"><a href="chap-workbooks.html#networks"><i class="fa fa-check"></i><b>12.3.6</b> Networks</a></li>
-<li class="chapter" data-level="12.3.7" data-path="chap-workbooks.html"><a href="chap-workbooks.html#visualization"><i class="fa fa-check"></i><b>12.3.7</b> Visualization</a></li>
+<li class="chapter" data-level="11.4" data-path="chap-bias.html"><a href="chap-bias.html#sec:applications"><i class="fa fa-check"></i><b>11.4</b> Mitigating Bias</a><ul>
+<li class="chapter" data-level="11.4.1" data-path="chap-bias.html"><a href="chap-bias.html#auditing-model-results"><i class="fa fa-check"></i><b>11.4.1</b> Auditing Model Results</a></li>
+<li class="chapter" data-level="11.4.2" data-path="chap-bias.html"><a href="chap-bias.html#model-selection"><i class="fa fa-check"></i><b>11.4.2</b> Model Selection</a></li>
+<li class="chapter" data-level="11.4.3" data-path="chap-bias.html"><a href="chap-bias.html#other-options-for-mitigating-bias"><i class="fa fa-check"></i><b>11.4.3</b> Other Options for Mitigating Bias</a></li>
 </ul></li>
-<li class="chapter" data-level="12.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#resources-7"><i class="fa fa-check"></i><b>12.4</b> Resources</a></li>
+<li class="chapter" data-level="11.5" data-path="chap-bias.html"><a href="chap-bias.html#further-considerations"><i class="fa fa-check"></i><b>11.5</b> Further Considerations</a><ul>
+<li class="chapter" data-level="11.5.1" data-path="chap-bias.html"><a href="chap-bias.html#compared-to-what"><i class="fa fa-check"></i><b>11.5.1</b> Compared to What?</a></li>
+<li class="chapter" data-level="11.5.2" data-path="chap-bias.html"><a href="chap-bias.html#costs-to-both-errors"><i class="fa fa-check"></i><b>11.5.2</b> Costs to Both Errors</a></li>
+<li class="chapter" data-level="11.5.3" data-path="chap-bias.html"><a href="chap-bias.html#what-is-the-relevant-population"><i class="fa fa-check"></i><b>11.5.3</b> What is the Relevant Population?</a></li>
+<li class="chapter" data-level="11.5.4" data-path="chap-bias.html"><a href="chap-bias.html#continuous-outcomes"><i class="fa fa-check"></i><b>11.5.4</b> Continuous Outcomes</a></li>
+<li class="chapter" data-level="11.5.5" data-path="chap-bias.html"><a href="chap-bias.html#considerations-for-ongoing-measurement"><i class="fa fa-check"></i><b>11.5.5</b> Considerations for Ongoing Measurement</a></li>
+<li class="chapter" data-level="11.5.6" data-path="chap-bias.html"><a href="chap-bias.html#equity-in-practice"><i class="fa fa-check"></i><b>11.5.6</b> Equity in Practice</a></li>
+<li class="chapter" data-level="11.5.7" data-path="chap-bias.html"><a href="chap-bias.html#other-names-you-might-see"><i class="fa fa-check"></i><b>11.5.7</b> Other Names You Might See</a></li>
+</ul></li>
+<li class="chapter" data-level="11.6" data-path="chap-bias.html"><a href="chap-bias.html#fairness-in-decision-making-case-studies"><i class="fa fa-check"></i><b>11.6</b> Fairness in Decision Making: Case Studies</a><ul>
+<li class="chapter" data-level="11.6.1" data-path="chap-bias.html"><a href="chap-bias.html#sec:compascase"><i class="fa fa-check"></i><b>11.6.1</b> Recidivism Predictions with COMPAS</a></li>
+<li class="chapter" data-level="11.6.2" data-path="chap-bias.html"><a href="chap-bias.html#facial-recognition"><i class="fa fa-check"></i><b>11.6.2</b> Facial Recognition</a></li>
+<li class="chapter" data-level="11.6.3" data-path="chap-bias.html"><a href="chap-bias.html#facebook-advertisement-targeting"><i class="fa fa-check"></i><b>11.6.3</b> Facebook Advertisement Targeting</a></li>
+<li class="chapter" data-level="11.6.4" data-path="chap-bias.html"><a href="chap-bias.html#tay-microsofts-ai-twitter-bot"><i class="fa fa-check"></i><b>11.6.4</b> Tay: Microsoft’s AI Twitter Bot</a></li>
+</ul></li>
+<li class="chapter" data-level="11.7" data-path="chap-bias.html"><a href="chap-bias.html#aequitas---a-toolkit-for-auditing-bias-and-fairness-in-machine-learning-models"><i class="fa fa-check"></i><b>11.7</b> Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models</a><ul>
+<li class="chapter" data-level="11.7.1" data-path="chap-bias.html"><a href="chap-bias.html#getting-started-with-aequitas"><i class="fa fa-check"></i><b>11.7.1</b> Getting Started with Aequitas</a></li>
+<li class="chapter" data-level="11.7.2" data-path="chap-bias.html"><a href="chap-bias.html#requirements"><i class="fa fa-check"></i><b>11.7.2</b> Requirements</a></li>
+<li class="chapter" data-level="11.7.3" data-path="chap-bias.html"><a href="chap-bias.html#data-preparation"><i class="fa fa-check"></i><b>11.7.3</b> Data Preparation</a></li>
+<li class="chapter" data-level="11.7.4" data-path="chap-bias.html"><a href="chap-bias.html#working-with-bias-metrics"><i class="fa fa-check"></i><b>11.7.4</b> Working with Bias Metrics</a></li>
+<li class="chapter" data-level="11.7.5" data-path="chap-bias.html"><a href="chap-bias.html#measuring-disparities"><i class="fa fa-check"></i><b>11.7.5</b> Measuring Disparities</a></li>
+<li class="chapter" data-level="11.7.6" data-path="chap-bias.html"><a href="chap-bias.html#assessing-model-fairness"><i class="fa fa-check"></i><b>11.7.6</b> Assessing Model Fairness</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="12" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>12</b> Privacy and Confidentiality</a><ul>
+<li class="chapter" data-level="12.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
+<li class="chapter" data-level="12.2" data-path="chap-privacy.html"><a href="chap-privacy.html#why-is-access-important"><i class="fa fa-check"></i><b>12.2</b> Why is access important?</a></li>
+<li class="chapter" data-level="12.3" data-path="chap-privacy.html"><a href="chap-privacy.html#providing-access"><i class="fa fa-check"></i><b>12.3</b> Providing access</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.4</b> The new challenges</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.5</b> Legal and ethical framework</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-6"><i class="fa fa-check"></i><b>12.6</b> Summary</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.7</b> Resources</a></li>
+</ul></li>
+<li class="chapter" data-level="13" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>13</b> Workbooks</a><ul>
+<li class="chapter" data-level="13.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#introduction-6"><i class="fa fa-check"></i><b>13.1</b> Introduction</a></li>
+<li class="chapter" data-level="13.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#environment"><i class="fa fa-check"></i><b>13.2</b> Environment</a><ul>
+<li class="chapter" data-level="13.2.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#running-workbooks-locally"><i class="fa fa-check"></i><b>13.2.1</b> Running workbooks locally</a></li>
+<li class="chapter" data-level="13.2.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#central-workbook-server"><i class="fa fa-check"></i><b>13.2.2</b> Central workbook server</a></li>
+</ul></li>
+<li class="chapter" data-level="13.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#workbook-details"><i class="fa fa-check"></i><b>13.3</b> Workbook details</a><ul>
+<li class="chapter" data-level="13.3.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#social-media-and-apis"><i class="fa fa-check"></i><b>13.3.1</b> Social Media and APIs</a></li>
+<li class="chapter" data-level="13.3.2" data-path="chap-workbooks.html"><a href="chap-workbooks.html#database-basics"><i class="fa fa-check"></i><b>13.3.2</b> Database basics</a></li>
+<li class="chapter" data-level="13.3.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#data-linkage"><i class="fa fa-check"></i><b>13.3.3</b> Data Linkage</a></li>
+<li class="chapter" data-level="13.3.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning"><i class="fa fa-check"></i><b>13.3.4</b> Machine Learning</a></li>
+<li class="chapter" data-level="13.3.5" data-path="chap-workbooks.html"><a href="chap-workbooks.html#text-analysis"><i class="fa fa-check"></i><b>13.3.5</b> Text Analysis</a></li>
+<li class="chapter" data-level="13.3.6" data-path="chap-workbooks.html"><a href="chap-workbooks.html#networks"><i class="fa fa-check"></i><b>13.3.6</b> Networks</a></li>
+<li class="chapter" data-level="13.3.7" data-path="chap-workbooks.html"><a href="chap-workbooks.html#visualization"><i class="fa fa-check"></i><b>13.3.7</b> Visualization</a></li>
+</ul></li>
+<li class="chapter" data-level="13.4" data-path="chap-workbooks.html"><a href="chap-workbooks.html#resources-7"><i class="fa fa-check"></i><b>13.4</b> Resources</a></li>
 </ul></li>
 </ul>
 
@@ -352,109 +372,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="chap:workbooks" class="section level1">
-<h1><span class="header-section-number">Chapter 12</span> Workbooks</h1>
+<h1><span class="header-section-number">Chapter 13</span> Workbooks</h1>
 <p><strong>Jonathan Scott Morgan, Christina Jones, and Ahmad Emad</strong></p>
-<p>This final chapter provides an overview of the Python workbooks that
-accompany each chapter. These workbooks combine text explanation and
-code you can run, implemented in <em>Jupyter notebooks</em><a href="#fn55" class="footnote-ref" id="fnref55"><sup>55</sup></a>, to explain techniques and approaches
-selected from each chapter and to provide thorough implementation
-details, enabling students and interested practitioners to quickly get
-up to speed on and start using the technologies covered in the book. We
-hope you have a lot of fun with them.</p>
-<div id="introduction-5" class="section level2">
-<h2><span class="header-section-number">12.1</span> Introduction</h2>
-<p>We provide accompanying Juptyer IPython workbooks for mostchapters in
-this book. These workbooks explain techniques and approaches selected
-from each chapter and provide thorough implementation details so that
-students and interested practitioners can quickly start using the
-technologies covered within.</p>
-<p>The workbooks and related files are stored in the <em>Big-Data-Workbooks GitHub repository</em><a href="#fn56" class="footnote-ref" id="fnref56"><sup>56</sup></a>, and so are freely available to be downloaded by anyone at any time and run on any
-appropriately configured computer. These workbooks are a live set of
-documents that could potentially change over time, so see the repository
-for the most recent set of information.</p>
-<p>These workbooks provide a thorough overview of the work needed to
-implement the selected technologies. They combine explanation, basic
-exercises, and substantial additional Python code to provide a
-conceptual understanding of each technology, give insight into how key
-parts of the process are implemented through exercises, and then lay out
-an end-to-end pattern for implementing each in your own work. The
-workbooks are implemented using IPython notebooks, interactive documents
-that mix formatted text and Python code samples that can be edited and
-run in real time in a Jupyter notebook server, allowing you to run and
-explore the code for each technology as you read about it.</p>
+<p>This final chapter provides an overview of the Python workbooks that accompany each chapter. These workbooks combine text explanation and code you can run, implemented in <em>Jupyter notebooks</em><a href="#fn57" class="footnoteRef" id="fnref57"><sup>57</sup></a>, to explain techniques and approaches selected from each chapter and to provide thorough implementation details, enabling students and interested practitioners to quickly get up to speed on and start using the technologies covered in the book. We hope you have a lot of fun with them.</p>
+<div id="introduction-6" class="section level2">
+<h2><span class="header-section-number">13.1</span> Introduction</h2>
+<p>We provide accompanying Juptyer IPython workbooks for mostchapters in this book. These workbooks explain techniques and approaches selected from each chapter and provide thorough implementation details so that students and interested practitioners can quickly start using the technologies covered within.</p>
+<p>The workbooks and related files are stored in the <em>Big-Data-Workbooks GitHub repository</em><a href="#fn58" class="footnoteRef" id="fnref58"><sup>58</sup></a>, and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer. These workbooks are a live set of documents that could potentially change over time, so see the repository for the most recent set of information.</p>
+<p>These workbooks provide a thorough overview of the work needed to implement the selected technologies. They combine explanation, basic exercises, and substantial additional Python code to provide a conceptual understanding of each technology, give insight into how key parts of the process are implemented through exercises, and then lay out an end-to-end pattern for implementing each in your own work. The workbooks are implemented using IPython notebooks, interactive documents that mix formatted text and Python code samples that can be edited and run in real time in a Jupyter notebook server, allowing you to run and explore the code for each technology as you read about it.</p>
 </div>
 <div id="environment" class="section level2">
-<h2><span class="header-section-number">12.2</span> Environment</h2>
-<p>The Big-Data-Workbooks GitHub repository provides two different types of
-workbooks, each needing a different Python setup to run. The first type
-of workbooks is intended to be downloaded andrun locally by individual
-users. The second type is designed to be hosted, assigned, worked on,
-and graded on a single server, using <code>jupyterhub</code> (<a href="https://github.com/jupyter/jupyterhub" class="uri">https://github.com/jupyter/jupyterhub</a>) to hostand run the notebooks and <code>nbgrader</code> (<a href="https://github.com/jupyter/nbgrader" class="uri">https://github.com/jupyter/nbgrader</a>) to assign, collect, and grade.</p>
-<p>The text, images, and Python code in the workbooks are the same between
-the two versions, as are the files and programs needed to complete each.</p>
-<p>The differences in the workbooks themselves relate to the code cells
-within each notebook where users implement and test exercises. In the
-workbooks intended to be used locally, exercises are implemented in
-simple interactive code cells. In the <code>nbgrader</code> versions, these cells have
-additional metadata and contain the solutions for the exercises, making
-them a convenient answer key even if you are working on them locally.</p>
+<h2><span class="header-section-number">13.2</span> Environment</h2>
+<p>The Big-Data-Workbooks GitHub repository provides two different types of workbooks, each needing a different Python setup to run. The first type of workbooks is intended to be downloaded andrun locally by individual users. The second type is designed to be hosted, assigned, worked on, and graded on a single server, using <code>jupyterhub</code> (<a href="https://github.com/jupyter/jupyterhub" class="uri">https://github.com/jupyter/jupyterhub</a>) to hostand run the notebooks and <code>nbgrader</code> (<a href="https://github.com/jupyter/nbgrader" class="uri">https://github.com/jupyter/nbgrader</a>) to assign, collect, and grade.</p>
+<p>The text, images, and Python code in the workbooks are the same between the two versions, as are the files and programs needed to complete each.</p>
+<p>The differences in the workbooks themselves relate to the code cells within each notebook where users implement and test exercises. In the workbooks intended to be used locally, exercises are implemented in simple interactive code cells. In the <code>nbgrader</code> versions, these cells have additional metadata and contain the solutions for the exercises, making them a convenient answer key even if you are working on them locally.</p>
 <div id="running-workbooks-locally" class="section level3">
-<h3><span class="header-section-number">12.2.1</span> Running workbooks locally</h3>
-<p>To run workbooks locally, you will need to install Python on your
-system, then install <code>ipython</code>, which includes a local Jupyter server you can use
-to run the workbooks. You will also need to install additional Python
-packages needed by the workbooks, and a few additional programs.</p>
-<p>The easiest way to get this all working is to install the free Anaconda
-Python distribution provided by Continuum Analytics
-(<a href="https://www.continuum.io/downloads" class="uri">https://www.continuum.io/downloads</a>). Anaconda includes a Jupyter
-server and precompiled versions of many packages used in the workbooks.
-It includes multiple tools for installing and updating both Python and
-installed packages. It is separate from any OS-level version of Python,
-and is easy to completely uninstall.</p>
-<p>Anaconda also works on Windows as it does on Mac and Linux. Windows is a
-much different operating system from Apple’s OS X and Unix/Linux, and
-Python has historically been much trickier to install, configure, and
-use on Windows. Packages are harder to compile and install, the
-environment can be more difficult to set up, etc. Anaconda makes Python
-easier to work with on any OS, and on Windows, in a single run of the
-Anaconda installer, it integrates Python and common Python utilities
-like <code>pip</code> into Windows well enough that it approximates the ease and
-experience of using Python within OS X or Unix/Linux (no small feat).</p>
-<p>You can also create your Python environment manually, installing Python,
-package managers, and Python packages separately. Packages like <code>numpy</code> and <code>pandas</code> can
-be difficult to get working, however, particularly on Windows, and
-Anaconda simplifies this setup considerably regardless of your OS.</p>
+<h3><span class="header-section-number">13.2.1</span> Running workbooks locally</h3>
+<p>To run workbooks locally, you will need to install Python on your system, then install <code>ipython</code>, which includes a local Jupyter server you can use to run the workbooks. You will also need to install additional Python packages needed by the workbooks, and a few additional programs.</p>
+<p>The easiest way to get this all working is to install the free Anaconda Python distribution provided by Continuum Analytics (<a href="https://www.continuum.io/downloads" class="uri">https://www.continuum.io/downloads</a>). Anaconda includes a Jupyter server and precompiled versions of many packages used in the workbooks. It includes multiple tools for installing and updating both Python and installed packages. It is separate from any OS-level version of Python, and is easy to completely uninstall.</p>
+<p>Anaconda also works on Windows as it does on Mac and Linux. Windows is a much different operating system from Apple’s OS X and Unix/Linux, and Python has historically been much trickier to install, configure, and use on Windows. Packages are harder to compile and install, the environment can be more difficult to set up, etc. Anaconda makes Python easier to work with on any OS, and on Windows, in a single run of the Anaconda installer, it integrates Python and common Python utilities like <code>pip</code> into Windows well enough that it approximates the ease and experience of using Python within OS X or Unix/Linux (no small feat).</p>
+<p>You can also create your Python environment manually, installing Python, package managers, and Python packages separately. Packages like <code>numpy</code> and <code>pandas</code> can be difficult to get working, however, particularly on Windows, and Anaconda simplifies this setup considerably regardless of your OS.</p>
 </div>
 <div id="central-workbook-server" class="section level3">
-<h3><span class="header-section-number">12.2.2</span> Central workbook server</h3>
-<p>Setting up a server to host workbooks managed by <code>nbgrader</code> is more involved. Some
-of the workbooks consume multiple gigabytes of memory per user and
-substantial processing power. A hosted implementation where all users
-work on a single server requires substantial hardware, relatively
-complex configuration, and ongoing server maintenance. Detailed
-instructions are included in the Big-Data-Workbooks GitHub repository.
-It is not rocket science, but it is complicated, and you will likely
-need an IT professional to help you set up, maintain, and troubleshoot.
-Since all student work will be centralized in this one location, you
-will also want a robust, multi-destination backup plan.</p>
-<p>For more information on installing and running the workbooks that
-accompany this book, see the Big-Data-Workbooks GitHub repository.</p>
+<h3><span class="header-section-number">13.2.2</span> Central workbook server</h3>
+<p>Setting up a server to host workbooks managed by <code>nbgrader</code> is more involved. Some of the workbooks consume multiple gigabytes of memory per user and substantial processing power. A hosted implementation where all users work on a single server requires substantial hardware, relatively complex configuration, and ongoing server maintenance. Detailed instructions are included in the Big-Data-Workbooks GitHub repository. It is not rocket science, but it is complicated, and you will likely need an IT professional to help you set up, maintain, and troubleshoot. Since all student work will be centralized in this one location, you will also want a robust, multi-destination backup plan.</p>
+<p>For more information on installing and running the workbooks that accompany this book, see the Big-Data-Workbooks GitHub repository.</p>
 </div>
 </div>
 <div id="workbook-details" class="section level2">
-<h2><span class="header-section-number">12.3</span> Workbook details</h2>
-<p>Most chapters have an associated workbook, each in its own directory in
-the Big-Data-Workbooks GitHub repository. Below is a list of the
-workbooks, along with a short summary of the topics that each covers.</p>
+<h2><span class="header-section-number">13.3</span> Workbook details</h2>
+<p>Most chapters have an associated workbook, each in its own directory in the Big-Data-Workbooks GitHub repository. Below is a list of the workbooks, along with a short summary of the topics that each covers.</p>
 <div id="social-media-and-apis" class="section level3">
-<h3><span class="header-section-number">12.3.1</span> Social Media and APIs</h3>
-<p>The Social Media and APIs workbook introduces you to the use of
-Internet-based web service APIs for retrieving data from online data
-stores. Examples include retrieving information on articles from
-Crossref (provider of Digital Object Identifiers used as unique IDs for
-publications) and using the PLOS Search and ALM APIs to retrieve
-information on how articles are shared and referenced in social media,
-focusing on Twitter. In this workbook, you will learn how to:</p>
+<h3><span class="header-section-number">13.3.1</span> Social Media and APIs</h3>
+<p>The Social Media and APIs workbook introduces you to the use of Internet-based web service APIs for retrieving data from online data stores. Examples include retrieving information on articles from Crossref (provider of Digital Object Identifiers used as unique IDs for publications) and using the PLOS Search and ALM APIs to retrieve information on how articles are shared and referenced in social media, focusing on Twitter. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Set up user API keys,</p></li>
 <li><p>Connect to Internet-based data stores using APIs,</p></li>
@@ -463,14 +413,8 @@ focusing on Twitter. In this workbook, you will learn how to:</p>
 </ul>
 </div>
 <div id="database-basics" class="section level3">
-<h3><span class="header-section-number">12.3.2</span> Database basics</h3>
-<p>In the Database workbook you will learn the practical benefits that stem
-from using a database management system. You will implement basic SQL
-commands to query grants, patents, and vendor data, and thus learn how
-to interact with data stored in a relational database. You will also be
-introduced to using Python to execute and interact with the results of
-SQL queries, so you can write programs that interact with data stored in
-a database. In this workbook, you will learn how to:</p>
+<h3><span class="header-section-number">13.3.2</span> Database basics</h3>
+<p>In the Database workbook you will learn the practical benefits that stem from using a database management system. You will implement basic SQL commands to query grants, patents, and vendor data, and thus learn how to interact with data stored in a relational database. You will also be introduced to using Python to execute and interact with the results of SQL queries, so you can write programs that interact with data stored in a database. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Connect to a database through Python,</p></li>
 <li><p>Query the database by using SQL in Python,</p></li>
@@ -479,98 +423,55 @@ a database. In this workbook, you will learn how to:</p>
 </ul>
 </div>
 <div id="data-linkage" class="section level3">
-<h3><span class="header-section-number">12.3.3</span> Data Linkage</h3>
-<p>In the Data Linkage workbook you will use Python to clean input data,
-including using regular expressions, then learn and implement the basic
-concepts behind the probabilistic record linkage: using different types
-of string comparators to compare multiple pieces of information between
-two records to produce a score that indicates how likely it is that the
-records are data about the same underlying entity. In this workbook, you
-will learn how to:</p>
+<h3><span class="header-section-number">13.3.3</span> Data Linkage</h3>
+<p>In the Data Linkage workbook you will use Python to clean input data, including using regular expressions, then learn and implement the basic concepts behind the probabilistic record linkage: using different types of string comparators to compare multiple pieces of information between two records to produce a score that indicates how likely it is that the records are data about the same underlying entity. In this workbook, you will learn how to:</p>
 <ul>
-<li><p>Parse a name string into first, middle, and last names using
-Python’s <code>split</code> method and regular expressions,</p></li>
-<li><p>Use and evaluate the results of common computationalstring
-comparison algorithms including Levenshtein
-distance,Levenshtein–Damerau distance, and Jaro–Winkler distance,</p></li>
-<li><p>Understand the Fellegi–Sunter probabilistic record linkagemethod,
-with step-by-step implementation guide.</p></li>
+<li><p>Parse a name string into first, middle, and last names using Python’s <code>split</code> method and regular expressions,</p></li>
+<li><p>Use and evaluate the results of common computationalstring comparison algorithms including Levenshtein distance,Levenshtein–Damerau distance, and Jaro–Winkler distance,</p></li>
+<li><p>Understand the Fellegi–Sunter probabilistic record linkagemethod, with step-by-step implementation guide.</p></li>
 </ul>
 </div>
 <div id="machine-learning" class="section level3">
-<h3><span class="header-section-number">12.3.4</span> Machine Learning</h3>
-<p>In the Machine Learning workbook you will train a machine learning model
-to predict missing information, working through the process of cleaning
-and prepping data for training and testing a model, then training and
-testing a model to impute values for a missing categorical variable,
-predicting the academic department of a given grant’s primary
-investigator based on other traits of the grant. In this workbook, you
-will learn how to:</p>
+<h3><span class="header-section-number">13.3.4</span> Machine Learning</h3>
+<p>In the Machine Learning workbook you will train a machine learning model to predict missing information, working through the process of cleaning and prepping data for training and testing a model, then training and testing a model to impute values for a missing categorical variable, predicting the academic department of a given grant’s primary investigator based on other traits of the grant. In this workbook, you will learn how to:</p>
 <ul>
-<li><p>Read, clean, filter, and store data with Python’s <code>pandas</code> data analysis
-package,</p></li>
-<li><p>Recognize the types of data cleaning and refining needed to make
-data more compatible with machine learning models,</p></li>
+<li><p>Read, clean, filter, and store data with Python’s <code>pandas</code> data analysis package,</p></li>
+<li><p>Recognize the types of data cleaning and refining needed to make data more compatible with machine learning models,</p></li>
 <li><p>Clean and refine data,</p></li>
 <li><p>Manage memory when working with large data sets,</p></li>
-<li><p>Employ strategies for dividing data to properly train and test a
-machine learning model,</p></li>
-<li><p>Use the <code>scikit-learn</code> Python package to train, fit, and evaluate machine learning
-models.</p></li>
+<li><p>Employ strategies for dividing data to properly train and test a machine learning model,</p></li>
+<li><p>Use the <code>scikit-learn</code> Python package to train, fit, and evaluate machine learning models.</p></li>
 </ul>
 </div>
 <div id="text-analysis" class="section level3">
-<h3><span class="header-section-number">12.3.5</span> Text Analysis</h3>
-<p>In the Text Analysis workbook, you will derive a list of topics from
-text documents using MALLET, a Java-based tool that analyzes clusters of
-words across a set of documents to derive common topics within the
-documents, defined by sets of key words that are consistently used
-together. In this workbook, you will learn how to:</p>
+<h3><span class="header-section-number">13.3.5</span> Text Analysis</h3>
+<p>In the Text Analysis workbook, you will derive a list of topics from text documents using MALLET, a Java-based tool that analyzes clusters of words across a set of documents to derive common topics within the documents, defined by sets of key words that are consistently used together. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Clean and prepare data for automated text analysis,</p></li>
 <li><p>Set up data for use in MALLET,</p></li>
 <li><p>Derive a set of topics from a collection of text documents,</p></li>
-<li><p>Create a model that detects these topics in documents, and use this
-model to categorize documents.</p></li>
+<li><p>Create a model that detects these topics in documents, and use this model to categorize documents.</p></li>
 </ul>
 </div>
 <div id="networks" class="section level3">
-<h3><span class="header-section-number">12.3.6</span> Networks</h3>
-<p>In the Networks workbook you will create network data where the nodes
-are researchers who have been awarded grants, and ties are created
-between each researcher on a given grant. You will use Python to read
-the grant data and translate them into network data, then use the <code>networkx</code> Python
-library to calculate node- and graph-level network statistics and <code>igraph</code> to
-create and refine network visualizations. You will also be introduced to
-graph databases, an alternative way of storing and querying network
-data. In this workbook, you will learn how to:</p>
+<h3><span class="header-section-number">13.3.6</span> Networks</h3>
+<p>In the Networks workbook you will create network data where the nodes are researchers who have been awarded grants, and ties are created between each researcher on a given grant. You will use Python to read the grant data and translate them into network data, then use the <code>networkx</code> Python library to calculate node- and graph-level network statistics and <code>igraph</code> to create and refine network visualizations. You will also be introduced to graph databases, an alternative way of storing and querying network data. In this workbook, you will learn how to:</p>
 <ul>
-<li><p>Develop strategies for detecting potential network data in
-relational data sets,</p></li>
+<li><p>Develop strategies for detecting potential network data in relational data sets,</p></li>
 <li><p>Use Python to derive network data from a relational database,</p></li>
 <li><p>Store and query network data using a graph database like <code>neo4j</code>,</p></li>
-<li><p>Load network data into <code>networkx</code>, then use it to calculate node- and
-graph-level network statistics,</p></li>
-<li><p>Use <code>networkx</code> to export graph data into commonly shared formats (<code>graphml</code>, edge lists,
-different tabular formats, etc.),</p></li>
-<li><p>Load network data into the <code>igraph</code> Python package and then create graph
-visualizations.</p></li>
+<li><p>Load network data into <code>networkx</code>, then use it to calculate node- and graph-level network statistics,</p></li>
+<li><p>Use <code>networkx</code> to export graph data into commonly shared formats (<code>graphml</code>, edge lists, different tabular formats, etc.),</p></li>
+<li><p>Load network data into the <code>igraph</code> Python package and then create graph visualizations.</p></li>
 </ul>
 </div>
 <div id="visualization" class="section level3">
-<h3><span class="header-section-number">12.3.7</span> Visualization</h3>
-<p>The Visualization workbook introduces you to Tableau, a data analysis
-and visualization software package that is easy to learn and use.
-Tableau allows you to connect to and integrate multiple data sources
-into complex visualizations without writing code. It allows you to
-dynamically shift between views of data to build anything from single
-visualizations to an interactive dashboard that contains multiple views
-of your data. In this workbook, you will learn how to:</p>
+<h3><span class="header-section-number">13.3.7</span> Visualization</h3>
+<p>The Visualization workbook introduces you to Tableau, a data analysis and visualization software package that is easy to learn and use. Tableau allows you to connect to and integrate multiple data sources into complex visualizations without writing code. It allows you to dynamically shift between views of data to build anything from single visualizations to an interactive dashboard that contains multiple views of your data. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Connect Tableau to a relational database,</p></li>
 <li><p>Interact with Tableau’s interface,</p></li>
-<li><p>Select, combine, and filter the tables and columns included in
-visualizations,</p></li>
+<li><p>Select, combine, and filter the tables and columns included in visualizations,</p></li>
 <li><p>Create bar charts, timeline graphs, and heat maps,</p></li>
 <li><p>Group and aggregate data,</p></li>
 <li><p>Create a dashboard that combines multiple views of your data.</p></li>
@@ -578,24 +479,11 @@ visualizations,</p></li>
 </div>
 </div>
 <div id="resources-7" class="section level2">
-<h2><span class="header-section-number">12.4</span> Resources</h2>
-<p>We noted in
-Section <a href="chap-intro.html#sec:intro:resources">Introduction: Resources</a> the importance of Python, MySQL, and
-Git/GitHub for the social scientist who intends to work with large data.
-See that section for pointers to useful online resources, and also this
-book’s website, at <a href="https://github.com/BigDataSocialScience" class="uri">https://github.com/BigDataSocialScience</a>, where we
-have collected many useful web links, including the following.</p>
-<p>For more on getting started with Anaconda, see Continuum’s Anaconda
-documentation <span class="citation">(Analytics, <a href="#ref-Anaconda">n.d.</a>)</span>, Anaconda FAQ <span class="citation">(Analytics, <a href="#ref-AnacondaFAQ">n.d.</a>)</span>, and Anaconda
-quick start guide <span class="citation">(Analytics, <a href="#ref-AnacondaQSG">n.d.</a>)</span>.</p>
-<p>For more information on IPython and the Jupyter notebook server, see the
-IPython site <span class="citation">(IPython development team, <a href="#ref-ipython">n.d.</a>)</span>, IPython documentation <span class="citation">(IPython development team, <a href="#ref-ipythondoc">n.d.</a>)</span>, Jupyter
-Project site <span class="citation">(Jupyter, <a href="#ref-juypter">n.d.</a>)</span>, and Jupyter Project documentation
-<span class="citation">(Jupyter, <a href="#ref-juypterdoc">n.d.</a>)</span>.</p>
-<p>For more information on using <code>jupyterhub</code> and <code>nbgrader</code> to host, distribute, and grade
-workbooks using a central server, see the <code>jupyterhub</code> GitHub repository
-<span class="citation">(Jupyter, <a href="#ref-juypterhub">n.d.</a>)</span>, <code>jupyterhub</code> documentation <span class="citation">(Jupyter, <a href="#ref-juypterhubdoc">n.d.</a>)</span>, <code>nbgrader</code> GitHub repository
-<span class="citation">(Jupyter, <a href="#ref-nbgrader">n.d.</a>)</span>, <code>nbgrader</code> and documentation <span class="citation">(Jupyter, <a href="#ref-nbgraderdoc">n.d.</a>)</span>.</p>
+<h2><span class="header-section-number">13.4</span> Resources</h2>
+<p>We noted in Section <a href="chap-intro.html#sec:intro:resources">Introduction: Resources</a> the importance of Python, MySQL, and Git/GitHub for the social scientist who intends to work with large data. See that section for pointers to useful online resources, and also this book’s website, at <a href="https://github.com/BigDataSocialScience" class="uri">https://github.com/BigDataSocialScience</a>, where we have collected many useful web links, including the following.</p>
+<p>For more on getting started with Anaconda, see Continuum’s Anaconda documentation <span class="citation">(Analytics, n.d.)</span>, Anaconda FAQ <span class="citation">(Analytics, n.d.)</span>, and Anaconda quick start guide <span class="citation">(Analytics, n.d.)</span>.</p>
+<p>For more information on IPython and the Jupyter notebook server, see the IPython site <span class="citation">(IPython development team, n.d.)</span>, IPython documentation <span class="citation">(IPython development team, n.d.)</span>, Jupyter Project site <span class="citation">(Jupyter, n.d.)</span>, and Jupyter Project documentation <span class="citation">(Jupyter, n.d.)</span>.</p>
+<p>For more information on using <code>jupyterhub</code> and <code>nbgrader</code> to host, distribute, and grade workbooks using a central server, see the <code>jupyterhub</code> GitHub repository <span class="citation">(Jupyter, n.d.)</span>, <code>jupyterhub</code> documentation <span class="citation">(Jupyter, n.d.)</span>, <code>nbgrader</code> GitHub repository <span class="citation">(Jupyter, n.d.)</span>, <code>nbgrader</code> and documentation <span class="citation">(Jupyter, n.d.)</span>.</p>
 
 <div id="refs" class="references">
 <div>
@@ -668,13 +556,13 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Art Branch Inc. n.d. “SQL Cheatsheet.” <a href="http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf" class="uri">http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf</a>. Accessed December 1, 2015.</p>
 </div>
 <div>
-<p>Baldeschwieler, Eric. n.d. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/" class="uri">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
+<p>Baldeschwieler, Eric. 2011. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/" class="uri">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
 </div>
 <div>
 <p>Barabási, Albert-László, and Réka Albert. 1999. “Emergence of Scaling in Random Networks.” <em>Science</em> 286 (5439). American Association for the Advancement of Science: 509–12.</p>
 </div>
 <div>
-<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. n.d. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>.</p>
+<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. 2006. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>, August.</p>
 </div>
 <div>
 <p>Barocas, Solon, and Helen Nissenbaum. 2014a. “Big Data’s End Run Around Procedural Privacy Protections.” <em>Communications of the ACM</em> 57 (11). ACM: 31–33.</p>
@@ -749,7 +637,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Brewer, Eric. 2012. “CAP Twelve Years Later: How the ‘Rules’ Have Changed.” <em>Computer</em> 45 (2). IEEE: 23–29.</p>
 </div>
 <div>
-<p>Broekstra, Jeen, Arjohn Kampman, and Frank Van Harmelen. 2002. “Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema.” In <em>The Semantic Web—Iswc 2002</em>, 54–68. Springer.</p>
+<p>Broekstra, Jeen, Arjohn Kampman, and Frank Van Harmelen. 2002. “Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema.” In <em>The Semantic Web—ISWC 2002</em>, 54–68. Springer.</p>
 </div>
 <div>
 <p>Brown, Clair, John Haltiwanger, and Julia Lane. 2008. <em>Economic Turbulence: Is a Volatile Economy Good for America?</em> University of Chicago Press.</p>
@@ -758,7 +646,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Brynjolfsson, Erik, Lorin M. Hitt, and Heekyung Hellen Kim. 2011. “Strength in Numbers: How Does Data-Driven Decisionmaking Affect Firm Performance?” Available at SSRN 1819486.</p>
 </div>
 <div>
-<p>Bureau of Labor Statistics. n.d. “The Employment Situation—November 2015.” <a href="http://www.bls.gov/news.release/archives/empsit_12042015.pdf" class="uri">http://www.bls.gov/news.release/archives/empsit_12042015.pdf</a>.</p>
+<p>Bureau of Labor Statistics. 2015. “The Employment Situation—November 2015.” <a href="http://www.bls.gov/news.release/archives/empsit_12042015.pdf" class="uri">http://www.bls.gov/news.release/archives/empsit_12042015.pdf</a>.</p>
 </div>
 <div>
 <p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1). Elsevier: 69–72.</p>
@@ -794,7 +682,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Chandola, Varun, Arindam Banerjee, and Vipin Kumar. 2009. “Anomaly Detection: A Survey.” <em>ACM Computing Surveys</em> 41 (3). ACM: 15.</p>
 </div>
 <div>
-<p>Chapelle, O., and S. S. Keerthi. 2010. “Efficient Algorithms for Ranking with SVMs.” <em>Information Retrieval</em> 13 (3). Hingham, MA: Kluwer Academic Publishers: 201–15. <a href="https://doi.org/10.1007/s10791-009-9109-9" class="uri">https://doi.org/10.1007/s10791-009-9109-9</a>.</p>
+<p>Chapelle, O., and S. S. Keerthi. 2010. “Efficient Algorithms for Ranking with SVMs.” <em>Information Retrieval</em> 13 (3). Hingham, MA: Kluwer Academic Publishers: 201–15. doi:<a href="https://doi.org/10.1007/s10791-009-9109-9">10.1007/s10791-009-9109-9</a>.</p>
 </div>
 <div>
 <p>Chawla, Nitesh V. 2005. “Data Mining for Imbalanced Datasets: An Overview.” In <em>The Data Mining and Knowledge Discovery Handbook</em>, edited by Oded Maimon and Lior Rokach, 853–67. Springer. <a href="http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05" class="uri">http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05</a>.</p>
@@ -845,13 +733,13 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Dean, Jeffrey, and Sanjay Ghemawat. 2004. “MapReduce: Simplified Data Processing on Large Clusters.” In <em>Proceedings of the 6th Conference on Symposium on Opearting Systems Design &amp; Implementation—Volume 6</em>. OSDI’04. USENIX Association. <a href="http://dl.acm.org/citation.cfm?id=1251254.1251264" class="uri">http://dl.acm.org/citation.cfm?id=1251254.1251264</a>.</p>
 </div>
 <div>
-<p>DeBelius, Danny. n.d. “Let’s Tesselate: Hexagons for Tile Grid Maps.” <em>NPR Visuals Team Blog</em>, <a href="http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html" class="uri">http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html</a>.</p>
+<p>DeBelius, Danny. 2015. “Let’s Tesselate: Hexagons for Tile Grid Maps.” <em>NPR Visuals Team Blog</em>, <a href="http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html" class="uri">http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html</a>.</p>
 </div>
 <div>
-<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. n.d. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em>.</p>
+<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. to appear. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em>.</p>
 </div>
 <div>
-<p>DeWitt, David J., and Michael Stonebraker. n.d. “MapReduce: A Major Step Backwards.” <a href="http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf" class="uri">http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf</a>.</p>
+<p>DeWitt, David J., and Michael Stonebraker. 2008. “MapReduce: A Major Step Backwards.” <a href="http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf" class="uri">http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf</a>.</p>
 </div>
 <div>
 <p>Donohue III, John J., and Justin Wolfers. 2006. “Uses and Abuses of Empirical Evidence in the Death Penalty Debate.” National Bureau of Economic Research.</p>
@@ -905,13 +793,13 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Evans, J. A., and J. G. Foster. 2011. “Metaknowledge.” <em>Science</em> 331 (6018): 721–25.</p>
 </div>
 <div>
-<p>Fan, Jianqing, Fang Han, and Han Liu. 2014. “Challenges of Big Data Analysis.” <em>National Science Review</em> 1 (2). Oxford University Press: 293–314.</p>
-</div>
-<div>
 <p>Fan, Jianqing, and Yuan Liao. 2012. “Endogeneity in Ultrahigh Dimension.” Princeton University.</p>
 </div>
 <div>
 <p>———. 2014. “Endogeneity in High Dimensions.” <em>Annals of Statistics</em> 42 (3). NIH Public Access: 872.</p>
+</div>
+<div>
+<p>Fan, Jianqing, Fang Han, and Han Liu. 2014. “Challenges of Big Data Analysis.” <em>National Science Review</em> 1 (2). Oxford University Press: 293–314.</p>
 </div>
 <div>
 <p>Fan, Jianqing, Richard Samworth, and Yichao Wu. 2009. “Ultrahigh Dimensional Feature Selection: Beyond the Linear Model.” <em>Journal of Machine Learning Research</em> 10. JMLR. org: 2013–38.</p>
@@ -1052,7 +940,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Herzog, Thomas N., Fritz J. Scheuren, and William E. Winkler. 2007. <em>Data Quality and Record Linkage Techniques</em>. Springer.</p>
 </div>
 <div>
-<p>Hill, Kashmir. n.d. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6" class="uri">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
+<p>Hill, Kashmir. 2012. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6" class="uri">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
 </div>
 <div>
 <p>Hofmann, Thomas. 1999. “Probabilistic Latent Semantic Analysis.” In <em>Proceedings of Uncertainty in Artificial Intelligence</em>.</p>
@@ -1115,10 +1003,10 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Japec, Lilli, Frauke Kreuter, Marcus Berg, Paul Biemer, Paul Decker, Cliff Lampe, Julia Lane, Cathy O’Neil, and Abe Usher. 2015. “Big Data in Survey Research: AAPOR Task Force Report.” <em>Public Opinion Quarterly</em> 79 (4). AAPOR: 839–80.</p>
 </div>
 <div>
-<p>Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. “Expanding the Role of Synthetic Data at the US Census Bureau.” <em>Statistical Journal of the IAOS</em> 30 (2): 117–21.</p>
+<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
 </div>
 <div>
-<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
+<p>Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. “Expanding the Role of Synthetic Data at the US Census Bureau.” <em>Statistical Journal of the IAOS</em> 30 (2): 117–21.</p>
 </div>
 <div>
 <p>Johnson, Brian, and Ben Shneiderman. 1991. “Tree-Maps: A Space-Filling Approach to the Visualization of Hierarchical Information Structures.” In <em>Proceedings of the Ieee Conference on Visualization</em>, 284–91. IEEE.</p>
@@ -1133,16 +1021,16 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>JPC. n.d. “Journal of Privacy and Confidentiality.” <a href="http://repository.cmu.edu/jpc/" class="uri">http://repository.cmu.edu/jpc/</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
-<p>Jupyter. n.d. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/" class="uri">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
-</div>
-<div>
-<p>———. n.d. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/" class="uri">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div>
-<p>———. n.d. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/" class="uri">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+<p>Jupyter. n.d. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/" class="uri">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>———. n.d. “Jupyter Project Website.” <a href="http://jupyter.org/" class="uri">http://jupyter.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div>
+<p>———. n.d. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/" class="uri">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
+</div>
+<div>
+<p>———. n.d. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/" class="uri">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>———. n.d. “Nbgrader Documentation.” <a href="http://nbgrader.readthedocs.org/" class="uri">http://nbgrader.readthedocs.org/</a>. Accessed February 1, 2016.</p>
@@ -1202,7 +1090,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Kullback, Solomon, and Richard A. Leibler. 1951. “On Information and Sufficiency.” <em>Annals of Mathematical Statistics</em> 22 (1). JSTOR: 79–86.</p>
 </div>
 <div>
-<p>Kumar, Mohit, Rayid Ghani, and Zhu-Song Mei. 2010. “Data Mining to Predict and Prevent Errors in Health Insurance Claims Processing.” In <em>Proceedings of the 16th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 65–74. KDD ’10. ACM. <a href="https://doi.org/10.1145/1835804.1835816" class="uri">https://doi.org/10.1145/1835804.1835816</a>.</p>
+<p>Kumar, Mohit, Rayid Ghani, and Zhu-Song Mei. 2010. “Data Mining to Predict and Prevent Errors in Health Insurance Claims Processing.” In <em>Proceedings of the 16th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 65–74. KDD ’10. ACM. doi:<a href="https://doi.org/10.1145/1835804.1835816">10.1145/1835804.1835816</a>.</p>
 </div>
 <div>
 <p>Lafferty, John D., Andrew McCallum, and Fernando C. N. Pereira. 2001. “Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data.” In <em>Proceedings of the Eighteenth International Conference on Machine Learning</em>, 282–89. Morgan Kaufmann.</p>
@@ -1211,7 +1099,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Lahiri, Partha, and Michael D Larsen. 2005. “Regression Analysis with Linked Data.” <em>Journal of the American Statistical Association</em> 100 (469). Taylor &amp; Francis: 222–30.</p>
 </div>
 <div>
-<p>Lakkaraju, Himabindu, Everaldo Aguiar, Carl Shan, David Miller, Nasir Bhanpuri, Rayid Ghani, and Kecia L. Addison. 2015. “A Machine Learning Framework to Identify Students at Risk of Adverse Academic Outcomes.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 1909–18. KDD ’15. ACM. <a href="https://doi.org/10.1145/2783258.2788620" class="uri">https://doi.org/10.1145/2783258.2788620</a>.</p>
+<p>Lakkaraju, Himabindu, Everaldo Aguiar, Carl Shan, David Miller, Nasir Bhanpuri, Rayid Ghani, and Kecia L. Addison. 2015. “A Machine Learning Framework to Identify Students at Risk of Adverse Academic Outcomes.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 1909–18. KDD ’15. ACM. doi:<a href="https://doi.org/10.1145/2783258.2788620">10.1145/2783258.2788620</a>.</p>
 </div>
 <div>
 <p>Lam, Heidi, Enrico Bertini, Petra Isenberg, Catherine Plaisant, and Sheelagh Carpendale. 2012. “Empirical Studies in Information Visualization: Seven Scenarios.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 18 (9). IEEE: 1520–36.</p>
@@ -1259,7 +1147,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Liu, Zhicheng, and Jeffrey Heer. 2014. “The Effects of Interactive Latency on Exploratory Visual Analysis.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12). IEEE: 2122–31.</p>
 </div>
 <div>
-<p>Lockwood, Glenn K. n.d. “Conceptual Overview of Map-Reduce and Hadoop.” <a href="http://www.glennklockwood.com/data-intensive/hadoop/overview.html" class="uri">http://www.glennklockwood.com/data-intensive/hadoop/overview.html</a>.</p>
+<p>Lockwood, Glenn K. 2015. “Conceptual Overview of Map-Reduce and Hadoop.” <a href="http://www.glennklockwood.com/data-intensive/hadoop/overview.html" class="uri">http://www.glennklockwood.com/data-intensive/hadoop/overview.html</a>.</p>
 </div>
 <div>
 <p>Lohr, Sharon. 2009. <em>Sampling: Design and Analysis</em>. Cengage Learning.</p>
@@ -1289,7 +1177,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Mas, Alexandre, and Enrico Moretti. 2009. “Peers at Work.” <em>American Economic Review</em> 99 (1): 112–45. <a href="http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112" class="uri">http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112</a>.</p>
 </div>
 <div>
-<p>Maskeri, Girish, Santonu Sarkar, and Kenneth Heafield. 2008. “Mining Business Topics in Source Code Using Latent Dirichlet Allocation.” In <em>Proceedings of the 1st India Software Engineering Conference</em>, 113–20. ACM. <a href="https://doi.org/http://doi.acm.org/10.1145/1342211.1342234" class="uri">https://doi.org/http://doi.acm.org/10.1145/1342211.1342234</a>.</p>
+<p>Maskeri, Girish, Santonu Sarkar, and Kenneth Heafield. 2008. “Mining Business Topics in Source Code Using Latent Dirichlet Allocation.” In <em>Proceedings of the 1st India Software Engineering Conference</em>, 113–20. ACM. doi:<a href="https://doi.org/http://doi.acm.org/10.1145/1342211.1342234">http://doi.acm.org/10.1145/1342211.1342234</a>.</p>
 </div>
 <div>
 <p>McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. <em>SP 800-122. Guide to Protecting the Confidentiality of Personally Identifiable Information (Pii)</em>. National Institute of Standards; Technology.</p>
@@ -1298,7 +1186,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>McCallum, Andrew Kachites. 2002. “MALLET: A Machine Learning for Language Toolkit.” <a href="http://mallet.cs.umass.edu" class="uri">http://mallet.cs.umass.edu</a>.</p>
 </div>
 <div>
-<p>Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten Rijke. 2009. “Learning Semantic Query Suggestions.” In <em>Proceedings of the 8th International Semantic Web Conference</em>, 424–40. ISWC ’09. Chantilly, VA: Springer. <a href="https://doi.org/10.1007/978-3-642-04930-9_27" class="uri">https://doi.org/10.1007/978-3-642-04930-9_27</a>.</p>
+<p>Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten Rijke. 2009. “Learning Semantic Query Suggestions.” In <em>Proceedings of the 8th International Semantic Web Conference</em>, 424–40. ISWC ’09. Chantilly, VA: Springer. doi:<a href="https://doi.org/10.1007/978-3-642-04930-9_27">10.1007/978-3-642-04930-9_27</a>.</p>
 </div>
 <div>
 <p>Meyer, Bruce D., Wallace K. C. Mok, and James X. Sullivan. 2015. “Household Surveys in Crisis.” <em>Journal of Economic Perspectives</em> 29 (4): 199–226.</p>
@@ -1307,7 +1195,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Mitchell, Tom M. 1997. <em>Machine Learning</em>. McGraw-Hill.</p>
 </div>
 <div>
-<p>Moffatt, C. L. n.d. “Visual Representation of SQL Joins.” <a href="http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins" class="uri">http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</a>.</p>
+<p>Moffatt, C. L. 1999. “Visual Representation of SQL Joins.” <a href="http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins" class="uri">http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</a>.</p>
 </div>
 <div>
 <p>Molinaro, Anthony. 2005. <em>SQL Cookbook: Query Solutions and Techniques for Database Developers</em>. O’Reilly Media.</p>
@@ -1430,7 +1318,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>PostGIS Project Steering Committee. n.d. “PostGIS Documentation.” <a href="http://postgis.net/documentation/" class="uri">http://postgis.net/documentation/</a>. Accessed December 1, 2015.</p>
 </div>
 <div>
-<p>Potash, Eric, Joe Brew, Alexander Loewi, Subhabrata Majumdar, Andrew Reece, Joe Walsh, Eric Rozier, Emile Jorgenson, Raed Mansour, and Rayid Ghani. 2015. “Predictive Modeling for Public Health: Preventing Childhood Lead Poisoning.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 2039–47. KDD ’15. ACM. <a href="https://doi.org/10.1145/2783258.2788629" class="uri">https://doi.org/10.1145/2783258.2788629</a>.</p>
+<p>Potash, Eric, Joe Brew, Alexander Loewi, Subhabrata Majumdar, Andrew Reece, Joe Walsh, Eric Rozier, Emile Jorgenson, Raed Mansour, and Rayid Ghani. 2015. “Predictive Modeling for Public Health: Preventing Childhood Lead Poisoning.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 2039–47. KDD ’15. ACM. doi:<a href="https://doi.org/10.1145/2783258.2788629">10.1145/2783258.2788629</a>.</p>
 </div>
 <div>
 <p>Powell, W. 2003. “Neither Market nor Hierarchy.” <em>Sociology of Organizations: Classic, Contemporary, and Critical Readings</em> 315: 104–17.</p>
@@ -1445,7 +1333,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Puts, Marco, Piet Daas, and Ton de Waal. 2015. “Finding Errors in Big Data.” <em>Significance</em> 12 (3). Wiley Online Library: 26–29.</p>
 </div>
 <div>
-<p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. <a href="https://doi.org/10.1109/5.18626" class="uri">https://doi.org/10.1109/5.18626</a>.</p>
+<p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. doi:<a href="https://doi.org/10.1109/5.18626">10.1109/5.18626</a>.</p>
 </div>
 <div>
 <p>Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” <em>Source Code for Biology and Medicine</em> 8 (1): 7.</p>
@@ -1481,10 +1369,10 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Saraiya, Purvi, Chris North, and Karen Duca. 2005. “An Insight-Based Methodology for Evaluating Bioinformatics Visualizations.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 11 (4). IEEE: 443–56.</p>
 </div>
 <div>
-<p>Schafer, Joseph L. 1997. <em>Analysis of Incomplete Multivariate Data</em>. CRC Press.</p>
+<p>Schafer, Joseph L, and John W Graham. 2002. “Missing Data: Our View of the State of the Art.” <em>Psychological Methods</em> 7 (2). American Psychological Association: 147.</p>
 </div>
 <div>
-<p>Schafer, Joseph L, and John W Graham. 2002. “Missing Data: Our View of the State of the Art.” <em>Psychological Methods</em> 7 (2). American Psychological Association: 147.</p>
+<p>Schafer, Joseph L. 1997. <em>Analysis of Incomplete Multivariate Data</em>. CRC Press.</p>
 </div>
 <div>
 <p>Schermann, Michael, Holmer Hemsen, Christoph Buchmüller, Till Bitter, Helmut Krcmar, Volker Markl, and Thomas Hoeren. 2014. “Big Data.” <em>Business &amp; Information Systems Engineering</em> 6 (5). Springer: 261–66.</p>
@@ -1514,7 +1402,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Sesame. n.d. “Sesame RDF Triple Store.” <a href="http://rdf4j.org" class="uri">http://rdf4j.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 Acm/Ieee Conference on Supercomputing</em>, 230–41. ACM. <a href="https://doi.org/10.1145/125826.125954" class="uri">https://doi.org/10.1145/125826.125954</a>.</p>
+<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 Acm/Ieee Conference on Supercomputing</em>, 230–41. ACM. doi:<a href="https://doi.org/10.1145/125826.125954">10.1145/125826.125954</a>.</p>
 </div>
 <div>
 <p>Severance, Charles. 2013. “Python for Informatics: Exploring Information.” <a href="http://www.pythonlearn.com/book.php" class="uri">http://www.pythonlearn.com/book.php</a>; CreateSpace.</p>
@@ -1541,7 +1429,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Silberschatz, Abraham, Henry F. Korth, and S. Sudarshan. 2010. <em>Database System Concepts, 6th Edition</em>. McGraw-Hill.</p>
 </div>
 <div>
-<p>Smola, Alex J., and Bernhard Schölkopf. 2004. “A Tutorial on Support Vector Regression.” <em>Statistics and Computing</em> 14 (3). Hingham, MA: Kluwer Academic Publishers: 199–222. <a href="https://doi.org/10.1023/B:STCO.0000035301.49549.88" class="uri">https://doi.org/10.1023/B:STCO.0000035301.49549.88</a>.</p>
+<p>Smola, Alex J., and Bernhard Schölkopf. 2004. “A Tutorial on Support Vector Regression.” <em>Statistics and Computing</em> 14 (3). Hingham, MA: Kluwer Academic Publishers: 199–222. doi:<a href="https://doi.org/10.1023/B:STCO.0000035301.49549.88">10.1023/B:STCO.0000035301.49549.88</a>.</p>
 </div>
 <div>
 <p>Snow, John. 1855. <em>On the Mode of Communication of Cholera</em>. John Churchill.</p>
@@ -1580,7 +1468,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Strandburg, Katherine J. 2014. “Monitoring, Datafication and Consent: Legal Approaches to Privacy in the Big Data Context.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div>
-<p>Strasser, Carly. n.d. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/" class="uri">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
+<p>Strasser, Carly. 2014. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/" class="uri">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
 </div>
 <div>
 <p>Strauch, Christof. 2009. “NoSQL Databases.” <a href="http://www.christof-strauch.de/nosqldbs.pdf" class="uri">http://www.christof-strauch.de/nosqldbs.pdf</a>.</p>
@@ -1598,19 +1486,19 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6). Nature Publishing Group: 443–44.</p>
 </div>
 <div>
-<p>Tanner, Adam. n.d. “Harvard Professor Re-Identifies Anonymous Volunteers in DNA Study.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39" class="uri">http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39</a>.</p>
+<p>Tanner, Adam. 2013. “Harvard Professor Re-Identifies Anonymous Volunteers in DNA Study.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39" class="uri">http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39</a>.</p>
 </div>
 <div>
 <p>TDP. n.d. “Transactions on Data Privacy.” <a href="http://www.tdp.cat/" class="uri">http://www.tdp.cat/</a>. Accessed April 16, 2016.</p>
+</div>
+<div>
+<p>Tennekes, M., E. de Jonge, and P. Daas. 2012. “Innovative Visual Tools for Data Editing.” Presented at the United Nations Economic Commission for Europe Work Session on Statistical Data. Available online at <a href="http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf" class="uri">http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf</a>.</p>
 </div>
 <div>
 <p>Tennekes, Martijn, and Edwin de Jonge. 2011. “Top-down Data Analysis with Treemaps.” In <em>Proceedings of the International Conference on Imaging Theory and Applications and International Conference on Information Visualization Theory and Applications</em>, 236–41. SciTePress.</p>
 </div>
 <div>
 <p>Tennekes, Martijn, Edwin de Jonge, and Piet J. H. Daas. 2013. “Visualizing and Inspecting Large Datasets with Tableplots.” <em>Journal of Data Science</em> 11 (1). ???????? 43–58.</p>
-</div>
-<div>
-<p>Tennekes, M., E. de Jonge, and P. Daas. 2012. “Innovative Visual Tools for Data Editing.” Presented at the United Nations Economic Commission for Europe Work Session on Statistical Data. Available online at <a href="http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf" class="uri">http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf</a>.</p>
 </div>
 <div>
 <p>Thompson, William W., Lorraine Comanor, and David K. Shay. 2006. “Epidemiology of Seasonal Influenza: Use of Surveillance Data and Statistical Models to Estimate the Burden of Disease.” <em>Journal of Infectious Diseases</em> 194 (Supplement 2). Oxford University Press: S82–S91.</p>
@@ -1625,7 +1513,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>TSE15. n.d. “2015 International Total Survey Error Conference Website.” <a href="https://www.tse15.org" class="uri">https://www.tse15.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. <a href="https://doi.org/10.1145/2467696.2467706" class="uri">https://doi.org/10.1145/2467696.2467706</a>.</p>
+<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. doi:<a href="https://doi.org/10.1145/2467696.2467706">10.1145/2467696.2467706</a>.</p>
 </div>
 <div>
 <p>Tufte, Edward. 2001. <em>The Visual Display of Quantitative Information, 2nd Edition</em>. Cheshire, CT: Graphics Press.</p>
@@ -1643,7 +1531,7 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Valliant, Richard, Jill A Dever, and Frauke Kreuter. 2013. <em>Practical Tools for Designing and Weighting Survey Samples</em>. Springer.</p>
 </div>
 <div>
-<p>Varian, Hal R. 2014. “Big Data: New Tricks for Econometrics.” <em>Journal of Economic Perspectives</em> 28 (2): 3–28. <a href="https://doi.org/10.1257/jep.28.2.3" class="uri">https://doi.org/10.1257/jep.28.2.3</a>.</p>
+<p>Varian, Hal R. 2014. “Big Data: New Tricks for Econometrics.” <em>Journal of Economic Perspectives</em> 28 (2): 3–28. doi:<a href="https://doi.org/10.1257/jep.28.2.3">10.1257/jep.28.2.3</a>.</p>
 </div>
 <div>
 <p>Ventura, Samuel L., Rebecca Nugent, and Erica R. H. Fuchs. 2015. “Seeing the Non-Stars:(Some) Sources of Bias in Past Disambiguation Approaches and a New Public Tool Leveraging Labeled Records.” <em>Research Policy</em>. Elsevier.</p>
@@ -1694,10 +1582,10 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 <p>Wilbanks, John. 2014. “Portable Approaches to Informed Consent and Open Data.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
 <div>
-<p>Winkler, William E. 2009. “Record Linkage.” In <em>Handbook of Statistics 29A, Sample Surveys: Design, Methods and Applications</em>, edited by D. Pfeffermann and C. R. Rao, 351–80. Elsevier.</p>
+<p>Winkler, William E. 2009. “Record Linkage.” In <em>Handbook of Statistics 29a, Sample Surveys: Design, Methods and Applications</em>, edited by D. Pfeffermann and C. R. Rao, 351–80. Elsevier.</p>
 </div>
 <div>
-<p>———. 2014. “Matching and Record Linkage.” <em>Wiley Interdisciplinary Reviews: Computational Statistics</em> 6 (5). John Wiley &amp; Sons, Inc.: 313–25. <a href="https://doi.org/10.1002/wics.1317" class="uri">https://doi.org/10.1002/wics.1317</a>.</p>
+<p>———. 2014. “Matching and Record Linkage.” <em>Wiley Interdisciplinary Reviews: Computational Statistics</em> 6 (5). John Wiley &amp; Sons, Inc.: 313–25. doi:<a href="https://doi.org/10.1002/wics.1317">10.1002/wics.1317</a>.</p>
 </div>
 <div>
 <p>Wongsuphasawat, Krist, and Jimmy Lin. 2014. “Using Visualizations to Monitor Changes and Harvest Insights from a Global-Scale Logging Infrastructure at Twitter.” In <em>Proceedings of the Ieee Conference on Visual Analytics Science and Technology</em>, 113–22. IEEE.</p>
@@ -1789,145 +1677,11 @@ workbooks using a central server, see the <code>jupyterhub</code> GitHub reposit
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h3>References</h3>
-<div id="refs" class="references">
-<div id="ref-Anaconda">
-<p>Analytics, Continuum. n.d. “Anaconda.” <a href="http://docs.continuum.io/anaconda" class="uri">http://docs.continuum.io/anaconda</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-AnacondaFAQ">
-<p>Analytics, Continuum. n.d. “Anaconda FAQ.” <a href="http://docs.continuum.io/anaconda/faq" class="uri">http://docs.continuum.io/anaconda/faq</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-AnacondaQSG">
-<p>Analytics, Continuum. n.d. “Anaconda Quick Start Guide.” <a href="https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf" class="uri">https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-ipython">
-<p>IPython development team. n.d. “IPython Website.” <a href="http://ipython.org/" class="uri">http://ipython.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-ipythondoc">
-<p>IPython development team. n.d. “IPython Documentation.” <a href="http://ipython.readthedocs.org/" class="uri">http://ipython.readthedocs.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-juypter">
-<p>Jupyter. n.d. “Jupyter Project Website.” <a href="http://jupyter.org/" class="uri">http://jupyter.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-juypterdoc">
-<p>Jupyter. n.d. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/" class="uri">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-juypterhub">
-<p>Jupyter. n.d. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/" class="uri">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-juypterhubdoc">
-<p>Jupyter. n.d. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/" class="uri">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-nbgrader">
-<p>Jupyter. n.d. “Nbgrader GitHub Repository.” <a href="https://github.com/jupyter/nbgrader/" class="uri">https://github.com/jupyter/nbgrader/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-nbgraderdoc">
-<p>Jupyter. n.d. “Nbgrader Documentation.” <a href="http://nbgrader.readthedocs.org/" class="uri">http://nbgrader.readthedocs.org/</a>. Accessed February 1, 2016.</p>
-</div>
-</div>
 <div class="footnotes">
 <hr />
-<ol start="55">
-<li id="fn55"><p>See jupyter.org<a href="chap-workbooks.html#fnref55" class="footnote-back">↩</a></p></li>
-<li id="fn56"><p>github.com/BigDataSocialScience<a href="chap-workbooks.html#fnref56" class="footnote-back">↩</a></p></li>
+<ol start="57">
+<li id="fn57"><p>See jupyter.org<a href="chap-workbooks.html#fnref57">↩</a></p></li>
+<li id="fn58"><p>github.com/BigDataSocialScience<a href="chap-workbooks.html#fnref58">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -1968,7 +1722,7 @@ gitbook.start({
 "google": false,
 "linkedin": false,
 "weibo": false,
-"instapper": false,
+"instapaper": false,
 "vk": false,
 "all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
@@ -1978,8 +1732,12 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/Coleridge-Initiative/big-data-and-social-science/edit/master/12ChapterWorkbooks.Rmd",
+"link": "https://github.com/Coleridge-Initiative/big-data-and-social-science/edit/master/13-ChapterWorkbooks.Rmd",
 "text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
 },
 "download": ["big-data-and-social-science.pdf"],
 "toc": {
@@ -1994,10 +1752,11 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
-    if (src === "" || src === "true") src = "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML";
-    if (location.protocol !== "file:" && /^https?:/.test(src))
-      src = src.replace(/^https?:/, '');
+    var src = "";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
     script.src = src;
     document.getElementsByTagName("head")[0].appendChild(script);
   })();

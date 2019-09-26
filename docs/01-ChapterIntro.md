@@ -8,8 +8,8 @@ Why this book? {#sec:1-1}
 --------------
 
 The world has changed for empirical social scientists. The new types of
-"big data" have generated an entire new research field---that of data
-science. That world is dominated by computer scientists who have
+data, methods, and tools have generated an entire new research field---that of data
+science. That world has traditionally been dominated by computer scientists who have
 generated new ways of creating and collecting data, developed new
 analytical and statistical techniques, and provided new ways of
 visualizing and presenting information. These new sources of data and
@@ -52,7 +52,7 @@ scientists can be brought to bear to enhance the generalizability of the
 work done by computer scientists.
 
 We take a pragmatic approach, drawing on our experience of working with
-data. Most social scientists set out to solve a real-world social or
+data in a variety of real-world contexts. Most social scientists set out to solve a real-world social or
 economic problem: they frame the problem, identify the data, do the
 analysis, and then draw inferences. At all points, of course, the social
 scientist needs to consider the ethical ramifications of their work,
@@ -62,7 +62,8 @@ research investments and innovation---because that is a major social
 science policy issue, and one in which social scientists have been
 addressing using big data techniques. While the example is specific and
 intended to show how abstract concepts apply in practice, the approach
-is completely generalizable. The web scraping, linkage, classification,
+is completely generalizable to other important areas such as criminal justice, education, 
+public health, sustainability, economic development, and workforce development. The web scraping, linkage, classification,
 and text analysis methods on display here are canonical in nature. The
 inference and privacy and confidentiality issues are no different than
 in any other study involving human subjects, and the communication of
