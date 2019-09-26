@@ -8,9 +8,10 @@ Interest in algorithmic fairness and bias has been growing recently, but it's ea
 Introduction
 ------------
 
-In Chapter 6, you learned about several of the concepts, tools, and
-approaches used in the field of machine learning and how they can be
-used in the social sciences. In chapter 6, we focused on evaluation
+In Chapter [Machine Learning](#chap:ml), you learned about several of the
+concepts, tools, and approaches used in the field of machine learning and 
+how they can be used in the social sciences. In chapter 
+[Machine Learning](#chap:ml), we focused on evaluation
 metrics such as precision (positive predictive value), recall
 (sensitivity), area-under-curve (AUC), and accuracy, that are often used
 to measure the performance of machine learning methods. In most (if not
