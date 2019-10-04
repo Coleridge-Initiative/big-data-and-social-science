@@ -44,13 +44,11 @@ wider issues of data and public policy. While we use Python as the programming l
 
 Examples
 ----------
-In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs. One simple example of getting data from open data portals
-https://www.ncbi.nlm.nih.gov/pubmed/26920122 
-https://journals.sagepub.com/doi/full/10.1177/0894439317703579 workshop on how to use it and GitHub code https://github.com/simonmunzert/political-wikipedia-workshop
-How Censorship in China Allows Government Criticism but Silences Collective Expression GARY KING Harvard University JENNIFER PAN Harvard University MARGARET E. ROBERTS Harvard University American Political Science Review
-To do this, we have devised a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.\footnote{ If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link }
 
-https://gking.harvard.edu/files/censored.pdf
+Kim et al (https://wwwncbi.nlm.nih.gov/pubmed/26920122) use social media data about e-cigarettes from Twitter for public health research.
+Goebel and Munzert (https://journals.s.agepub.com/doi/full/10.1177/0894439317703579) used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project https://github.com/simonmunzert/political-wikipedia-workshop
+King et al. (https://gking.harvard.edu/files/censored.pdf) investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
 
 Scraping information from the web {#sec:4-1}
 ---------------------------------
