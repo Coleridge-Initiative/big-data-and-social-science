@@ -29,42 +29,41 @@ data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 
 
-In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a
-pivot from one perspective to another, or from one kind of query to
-another. Sometimes this data from the web is completely
+In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely
 unstructured, existing in web pages spread across a site, and sometimes
-they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together [footnote: The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" avaiable data for research and policy purposes].
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together [footnote: The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" available data for research and policy purposes].
 
 Using the example of data on researchers and research outputs, we will
 focus this chapter on obtaining information directly from web pages (*web scraping*)
-as well as explore the uses of APIs--- web services that allow programmatic retrieval of data. You will see how
-the crucial pieces of integration often lie in making connections
-between disparate data sets and how in turn making those connections
+as well as explore the uses of APIs--- web services that allow programmatic retrieval of data. Both in this chapter and the next, you will see how the crucial pieces of integration often lie in making connections between disparate data sets and how in turn making those connections
 requires careful quality control. The emphasis throughout this chapter
 is on the importance of focusing on the purpose for which the data will
 be used as a guide for data collection. While much of this is specific
 to data about research and researchers, the ideas are generalizable to
-wider issues of data and public policy. While we use Python as the prorgramming language in this chapter, data colection through web scraping and APIs can be done in most modern programming languages as well as using softwae that's designed specifically for this purpose.
+wider issues of data and public policy. While we use Python as the programming language in this chapter, data collection through web scraping and APIs can be done in most modern programming languages as well as using software that's designed specifically for this purpose.
 
 Examples
 ----------
-We would want examples of social science papers that used external sources of data that can be scraped from the Wb or from APIs. These data sources could include soial media from facebook, twitter, linkedin, instagram, or other data such as from zillow, google street view, crime reports data, 311 or 911 data.
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs. One simple example of getting data from open data portals
+https://www.ncbi.nlm.nih.gov/pubmed/26920122 
+https://journals.sagepub.com/doi/full/10.1177/0894439317703579 workshop on how to use it and GitHub code https://github.com/simonmunzert/political-wikipedia-workshop
+How Censorship in China Allows Government Criticism but Silences Collective Expression GARY KING Harvard University JENNIFER PAN Harvard University MARGARET E. ROBERTS Harvard University American Political Science Review
+To do this, we have devised a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable
+
+https://gking.harvard.edu/files/censored.pdf
 
 Scraping information from the web {#sec:4-1}
 ---------------------------------
 
-With the range of information available on the web, our first question
-is how to access it. The simplest approach is often to manually go
-directly to the web and look for data files or other information. For
-instance, on the NSF website [@nsfweb] it is possible to obtain data
-dumps of all grant information. Sometimes data are available through web
+With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website [@nsfweb] it is possible to obtain data
+downloads of all grant information. Sometimes data are available through web
 pages or we only want a subset of this information. In this case web
 scraping is often a viable approach.
 
 Web scraping involves writing code to download and process web pages
-directly. We need to look at the website, identify how to get the information we
-want, and then process it. Many websites deliberately make this
-difficult to prevent easy access to their underlying data while some website explicitly prohibit this type of activtiy in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of it's writing, it may not be valid in the future as the structure and content of the website changes.
+programmatically. We need to look at the website, identify how to get the information we
+want from it, and then write code to do it. Many websites deliberately make this
+difficult to prevent easy access to their underlying data while some websites explicitly prohibit this type of activity in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of this writing, it may not be valid in the future as the structure and content of the website changes.
 
 ### Obtaining data from websites {#sec:4-1.1}
 
@@ -82,7 +81,7 @@ https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&sort_or
 Getting information from this web page programmatically requires us to follow the following steps:
 1. Constructing a URL that will give us the results we want
 2. Getting the contents of the page using that URL
-3. Processing the html response to extract the pieces of information we are lookin for (such as names and specialties of the scientists)
+3. Processing the html response to extract the pieces of information we are looking for (such as names and specialties of the scientists)
 
 ** Constructing the URL **
 This process involves first understanding how to construct a URL that
@@ -151,9 +150,9 @@ constructed wrongly or that there was a server error.
 **Processing the html response**
 
 With the page successfully returned, we now need to process the text it
-contains into the data we want. This is not a trivial exercise. Web pages are typically written in a "maarkup" language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, the code results in giving us the html text. We then have to process this text to extract the content that we care about. There are a range of
-tools in Python that can help with processing HTML data. Among these one
-of the most popular is a module called BeautifulSoup^[Python features many useful libraries; BeautifulSoup is particularly helpful for webscraping.] [@bsoup], which
+contains into the data we want. This is not a trivial exercise. Web pages are typically written in a "markup" language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, running the code gives us the HTML text. We then have to process this text to extract the content that we care about. There are a range of
+tools in Python that can help with processing HTML data. One
+of the most popular is a module BeautifulSoup [@bsoup], which
 provides a number of useful functions for this kind of processing. The
 module documentation provides more details.
 
@@ -256,8 +255,8 @@ Finally, we need to process each of these segments to obtain the data we
 are looking for. This is the actual "scraping" of the page to get the
 information we want. Again, this involves looking closely at the HTML
 itself, identifying where the information is held, what tags can be used
-to find it, and often doing some postprocessing to clean it up (removing
-spaces, splitting different elements up).
+to find it, and often doing some post-processing to clean it up (removing
+spaces, splitting different elements up, etc.).
 
 Listing 2.1 provides a function to handle all of this. The
 function accepts the response object from the requests module as its
@@ -313,7 +312,7 @@ calculate how many pages we need to iterate through.
 
 The number of results is found in a `div` with the class "view-headers" as a
 piece of free text ("Showing 1--20 of 493 results"). We need to grab the
-text, split it up (I do so based on spaces), find the right number (the
+text, split it up (we do so based on spaces), find the right number (the
 one that is before the word "results") and convert that to an integer.
 Then we can divide by the number of items we requested per page (20 in
 our case) to find how many pages we need to work through. A quick mental
@@ -333,10 +332,10 @@ give results 481--493.
 24
 ```
 
-Then it is a simple matter of putting the function we constructed
+Then it is a matter of putting the function we constructed
 earlier into a loop to work through the correct number of pages. As we
 start to hit the website repeatedly, we need to consider whether we are
-being polite. Most websites have a file in the root directory called
+being \it{polite}. Most websites have a file in the root directory called
 robots.txt that contains guidance on using programs to interact with the
 website. In the case of <http://hhmi.org> the file states first that we
 are allowed (or, more properly, not forbidden) to query
@@ -383,7 +382,7 @@ or impossible, and other sites explicitly prohibit this kind of scripted
 analysis. (Both reasons apply in the case of the NSF and Grants.gov
 websites, which is why we use the HHMI website in our example.) The structure of websites also changes frequently, forcing you to continuously modify your code to keep up with the structure.
 
-In many cases a better choice is to process a data dump from an
+In many cases a better choice is to process a data download from an
 organization. For example, the NSF and Wellcome Trust both provide data
 sets for each year that include structured data on all their awarded
 grants. In practice, integrating data is a continual challenge of
@@ -391,9 +390,7 @@ figuring out what is the easiest way to proceed, what is allowed, and
 what is practical and useful. The selection of data will often be driven
 by pragmatic rather than theoretical concerns.
 
-Increasingly, however, good practice is emerging in which organizations
-provide APIs to enable scripted and programmatic access to the data they
-hold. These tools are much easier and generally more effective to work
+Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. These tools are much easier and generally more effective to work
 with. They are the focus of much of the rest of this chapter.
 
 
@@ -679,14 +676,16 @@ sources. This models a common path for analysis of research outputs:
 identifying a corpus and then seeking information on its performance.
 
 One task we often want to do is to analyze relationships between people. As an exercise, we suggest writing code that is able to generate data about relationships between researchers working in similar areas. This could involve using data sources related to researchers, publications, citations and tweets about those publications, and researchers who are citing or tweeting about them. One way of generating this data for further analysis is to use APIs that give you different pieces of this information and connect them programmatically. We could take the following steps to do that: 
+
 Given a twitter handle, get the ORCID for that twitter handle
 From the ORCID, get a list of DOIs
 For each DOI
-	Get citations, citing articles, tweets (and twitter handles) associated
+Get citations, citing articles, tweets (and twitter handles) associated
 
 The result is a list of related twitter handles that can be analyzed to look for communities and networks.
 
-You can see how this would be done in a worked-out example here <INSERT LINK/REFERENCE>.  
+You can see how this would be done in a worked-out example here todo: INSERT LINK/REFERENCE to notebook code
+
 The goal of this example is to use ORCID and Crossref to
 collect a set of identifiers and use a range of APIs to gather metadata and information the articles performance. The worked example is using the PLOS Lagotto API. Lagotto is the software that was built to support the Article Level Metrics program at PLOS, the open access publisher, and its API provides information on various metrics of PLOS articles. A
 range of other publishers and service providers, including Crossref,
@@ -721,4 +720,3 @@ Section [2.9.4](#sec:4-7.1.4){reference-type="ref"
 reference="sec:4-7.1.4"} is adapted in part from Neylon
 [@neylon2014plosaltmetrics], copyright PLOS, used here under a Creative
 Commons Attribution v 4.0License.
-
