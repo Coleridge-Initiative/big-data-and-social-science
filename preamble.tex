@@ -1,76 +1,11 @@
-%\usepackage[utf8x]{inputenc}
-%\usepackage[english]{babel}
-%\usepackage{savetrees}
-%\usepackage{verbatim}
-%\usepackage{courier}
-%\usepackage[T1]{fontenc}
-%\usepackage{textcomp}
-%\linespread{1.6}
-%\setlength{\footskip}{20pt}
-%\usepackage{framed}
-%\usepackage{setspace}
-%\usepackage{listings}
-%\usepackage{url}
-%\usepackage[breaklinks,hidelinks]{hyperref}
-%\usepackage{breakurl}%Shashi
 \usepackage{graphicx}
 \usepackage{fvextra}
 
-%\usepackage{booktabs}% http://ctan.org/pkg/booktabs
-%\newcommand{\tabitem}{~~\llap{\textbullet}~~}
-
 \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,breakanywhere,commandchars=\\\{\}}
 
-%\renewcommand\chapterstar[1]{}
-
-%\newcommand\code[1]{\cf{#1}}
-
-%\usepackage{color}
-%
-%\newcommand\ian[1]{{\color{red}[Ian: #1]}}
-%\newcommand\frauke[1]{{\color{green}[Frauke: #1]}}
-%\newcommand\julia[1]{{\color{orange}[Julia: #1]}}
-%\newcommand\rayid[1]{{\color{green}[Rayid: #1]}}
-%\newcommand\jason[1]{{\color{blue}[Jason: #1]}}
-%\newcommand\rjarmin[1]{{\color{blue}[Ron: #1]}}
-
-%\newcommand\ian[1]{}
-%\newcommand\frauke[1]{}
-%\newcommand\julia[1]{}
-%\newcommand\rayid[1]{}
-
-%\newcommand\mysql[1]{\lstinline[basicstyle=\small\tt\color{colortwo},keywordstyle=\tt,commentstyle=\tt,breaklines=false]!#1!}
-%{{\tt {\color{blue}#1}}}
-
-%\newcommand\mysqls[1]{\lstinline[basicstyle=\footnotesize\tt\color{colortwo},keywordstyle=\tt,commentstyle=\tt,breaklines=false]!#1!}
-
-%\newcommand\cfem[1]{\lstinline[basicstyle=\small\tt\itshape\color{colortwo},keywordstyle=\tt,commentstyle=\tt,breaklines=false]!#1!}
-
-%\newcommand\cfems[1]{\lstinline[basicstyle=\footnotesize\tt\itshape\color{colortwo},keywordstyle=\tt,commentstyle=\tt,breaklines=false]!#1!}
-
-%\newcommand{\scenechange}{
-%  \par
-%  \vspace{\baselineskip}
-%  \par
-%\noindent}
-%Creates a line break for a change of scene
-
-%\newcommand{\majorchange}{
-%  \par
-%  \vspace{\baselineskip}
-%  \hfill
-%  \textasteriskcentered
-%  \hfill
-%  \vspace{\baselineskip}
-%\noindent}
-%creates a major line break, split by an asterisk for scene changes at the end of a page of where a sense of a major change is required.
-
-%new margin note. Same as vocabnote, but with colortwo->colorfour
-%\newcommand{\miscnote}[2][-10pt]{\textcolor{colorone}{$^{\star}$}\marginpar{\vspace*{#1}%
-%\begin{tikzpicture}[x=27pc,y=48pt,tight background,inner frame sep=0pt]
-%\node[shape=rectangle,fill=coloroneBG,minimum width=10pc,text width= 9.2pc, minimum height=12pt,text justified,draw=colorone,line width=1pt] at (0pt,24pt) {{\small\sffamily {\textcolor{colorone}{\bfseries${\bigstar}$\ }%Vocabulary note:}
-%\color{black} #2}}};
-%\end{tikzpicture}}}
+\newcommand*{\origrightarrow}{}
+\let\oldarrow\textrightarrow
+\renewcommand*{\textrightarrow}{\fontfamily{cmr}\selectfont\origrightarrow}
 
 \newenvironment{F00}
     {\begin{center}

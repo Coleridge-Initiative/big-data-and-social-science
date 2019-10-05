@@ -10,7 +10,7 @@ Why this book? {#sec:1-1}
 The world has changed for empirical social scientists. The new types of
 data, methods, and tools have generated an entire new research field---that of data
 science. That world has traditionally been dominated by computer scientists who have
-generated new ways of creating and collecting data, developed new
+generated new ways of creating and collecting data, developed (or rebranded) new
 analytical and statistical techniques, and provided new ways of
 visualizing and presenting information. These new sources of data and
 techniques have the potential to transform the way applied social
@@ -31,7 +31,7 @@ agencies and businesses. Chief data officers are becoming as common in
 federal and state governments as chief economists were decades ago, and
 in cities like New York and Chicago, mayoral offices of data analytics
 have the ability to provide rapid answers to important policy questions
-[@lee2012rise]. But since federal, state, and local agencies lack the
+[@lee2012rise]. But since federal, state, and local agencies often lack the
 capacity to do such analysis themselves [@alawadhi2012building], they
 must make these data available either to consultants or to the research
 community. Businesses are also learning that making effective use of
@@ -46,10 +46,9 @@ indicators.
 
 The goal of this book is to provide social scientists with an
 understanding of the key elements of this new science, its value, and
-the opportunities for doing better work. The goal is also to identify
+the opportunities for using it to improve their work. The goal is also to identify
 the many ways in which the analytical toolkits possessed by social
-scientists can be brought to bear to enhance the generalizability of the
-work done by computer scientists.
+scientists can inform data science research and result in new methods needed for social science research.
 
 We take a pragmatic approach, drawing on our experience of working with
 data in a variety of real-world contexts. Most social scientists set out to solve a real-world social or
@@ -63,9 +62,7 @@ science policy issue, and one in which social scientists have been
 addressing using big data techniques. While the example is specific and
 intended to show how abstract concepts apply in practice, the approach
 is completely generalizable to other important areas such as criminal justice, education, 
-public health, sustainability, economic development, and workforce development. The web scraping, linkage, classification,
-and text analysis methods on display here are canonical in nature. The
-inference and privacy and confidentiality issues are no different than
+public health, sustainability, economic development, and workforce development. The web scraping, linkage, classification, and text analysis methods on display here are canonical in nature. The inference and privacy and confidentiality issues are no different than
 in any other study involving human subjects, and the communication of
 results through visualization is similarly generalizable.
 
@@ -74,7 +71,7 @@ Defining big data and its value {#sec:1-2}
 
 There are almost as many definitions of big data as there are new types
 of data. One approach is to define big data as *anything too big to fit onto your computer*^[This topic is discussed in more detail in Chapter 5]. Another approach is to define it as data with high 
-volume, high velocity, and great variety. We choose the description adopted 
+volume, high velocity, and great variety. Our aim is not to create yet another definition. Instead , we choose the pragmatic description adopted 
 by the American Association of Public Opinion Research: "The term 'Big Data' 
 is an imprecise description of a rich and complicated set of characteristics,
 practices, techniques, ethical issues, and outcomes all associated with data"
@@ -88,11 +85,11 @@ found that detailed data on human beings can be used to reduce crime,
 improve health delivery, and manage cities better [@keller2012big]. The
 scope is broad indeed: one of this book's editors has used such data to
 not only help win political campaigns but also show its potential for
-public policy. Society can gain as well---recent work shows data-driven
+social good and public policy. Society can gain as well---recent work shows data-driven
 businesses were 5% more productive and 6% more profitable than their
 competitors[@brynjolfsson2011strength]. In short, the vision is that
-social science researchers can potentially, by using data with high
-velocity, variety, and volume, increase the scope of their data
+social science researchers can potentially, by using new types of data and methods with high
+increase the scope of their data
 collection efforts while at the same time reducing costs and respondent
 burden, increasing timeliness, and increasing
 precision[@murphy2014social].
@@ -107,7 +104,7 @@ as well as the type of shot, can be used to improve crime data
 [@carr2015geography]; Twitter data can be used to improve predictions
 around job loss, job gain, and job postings [@antenucci2014using]; and
 eBay postings can be used to estimate demand elasticities
-[@einav2013data].
+[@einav2013data]. Of course, these new sources come with their own caveats and biases that need to be considered when drawing inferences.
 
 ---
 
@@ -145,7 +142,7 @@ probability-based survey data, methodology has been developed to
 overcome problems in the data generating process. A guiding principle
 for survey methodologists is the total survey error framework, and
 statistical methods for weighting, calibration, and other forms of
-adjustment are commonly used to mitigate errors in the survey process.
+adjustments are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
 flaws in the data generating process. Two books provide frameworks for
@@ -161,7 +158,7 @@ goals: description, causation, and prediction.
 The job of many social scientists is to provide descriptive statements
 about the population of interest. These could be univariate, bivariate,
 or even multivariate statements. [Machine Learning](#chap:ml) on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
-methods.
+Methods that include cluster analysis.
 
 Descriptive statistics are usually created based on census data or
 sample surveys to generate some summary statistics like a mean, median,
@@ -203,6 +200,9 @@ probability sample provides some degree of comfort that a sample will
 have limited coverage errors (nonzero probability of being in the
 sample), and there are methods for dealing with a variety of missing
 data problems [@little2014statistical].
+
+
+ 
 
 **Causation**
 
@@ -312,15 +312,12 @@ Data quality can be characterized in multiple ways [@christen2012data]:
 
 - **Accessibility**: Are all variables available for analysis?
 
-Social scientists have decades of experience in transformingmessy,
+Social scientists have decades of experience in transforming messy,
 noisy, and unstructured data into a well-defined, clearly structured,
 and quality-tested data set. Preprocessing is a complex and
 time-consuming process because it is "hands-on"---it requires judgment
-and cannot be effectively automated. A typical workflow comprises
-multiple steps from data definition to parsing and ends with filtering.
-It is difficult to overstate the value of preprocessing for any data
-analysis, but this is particularly true in big data. Data need to be
-parsed, standardized, deduplicated, and normalized.
+and cannot be completely automated. It is difficult to overstate the value of preprocessing for any data
+analysis, but this is particularly true in new types of data that are becoming available. Data need to be parsed, standardized, deduplicated, and normalized.
 
 **Parsing** is a fundamental step taken regardless of the data source, and refers to
 the decomposition of a complex variable into components. For example, a
@@ -404,7 +401,7 @@ Relational database management systems (DBMSs)^[This topic is discussed in more 
 business as well as the sciences to organize, process, and search large
 collections of structured data. NoSQL DBMSs are used for data that is
 extremely large and/or unstructured, such as collections of web pages,
-social media data (e.g., Twitter messages), and clinical notes.
+social media data (e.g., Twitter messages), sensor data, and clinical notes.
 Extensions to these systems and also specialized single-purpose DBMSs
 provide support for data types that are not easily handled in
 statistical packages such as geospatial data, networks, and graphs.
@@ -413,17 +410,16 @@ Open source programming systems such as Python (used extensively
 throughout this book) and R provide high-quality implementations of
 numerous data analysis and visualization methods, from regression to
 statistics, text analysis, network analysis, and much more. Finally,
-parallel computing systems such as Hadoop and Spark can be used to
+parallel computing platforms such as Hadoop and Spark can be used to
 harness parallel computer clusters for extremely large data sets and
 computationally intensive analyses.
 
 These various components may not always work together as smoothly as do
 integrated packages such as SAS, SPSS, and Stata, but they allow
-researchers to take on problems of great scale and complexity.
+researchers to take on problems of greater scale and complexity.
 Furthermore, they are developing at a tremendous rate as the result of
 work by thousands of people worldwide. For these reasons, the modern
-social scientist needs to be familiar with their characteristics and
-capabilities.
+social scientist needs to be familiar with their capabilities.
 
 The book's "use case" {#sec:1-6}
 ---------------------
@@ -437,8 +433,7 @@ and then thinking about how to apply them to a potpourri of social
 science examples.
 
 There are many examples of the use of big data in social science
-research, but relatively few that feature all the different aspects that
-are covered in this book. As a result, the chapters in the book draw
+Research. The chapters in the book draw
 heavily on a use case based on one of the first large-scale big data
 social science data infrastructures. This infrastructure, based on
 UMETRICS^[UMETRICS: Universities Measuring the Impact of Research on Innovation and Science [@lane2015new]] data housed at the University of Michigan's Institute for
@@ -535,15 +530,20 @@ variety of different formats, some of which are quite large (or
 voluminous), and with a variety of different timestamps (or velocity),
 we discuss how to store the data in different types of data formats.
 
+** Additional Examples**
+
+The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, urban infrastructure. These methods have been used to build systems to improve understanding of critical questions such as: ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’ ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
+
+
 The structure of the book
 -------------------------
 
 We organize the book in three parts, based around the way social
 scientists approach doing research. The first set of chapters addresses
 the new ways to capture, curate, and store data. The second set of
-chapters describes what tools are available to process and classify
-data. The last set deals with analysis and the appropriate handling of
-data on individuals and organizations.
+chapters describes what tools are available to process and analyze
+data. The last set deals with the appropriate handling of
+data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />
@@ -552,10 +552,9 @@ data on individuals and organizations.
 
 ### Part I: Capture and curation
 
-The four chapters in Part I (see Figure \@ref(fig:fig3)) tell you how to capture and manage data.
+The four chapters in Part I (see Figure \@ref(fig:fig3)) tell you how to collect, store, link, and manage data.
 
-[Working with Web Data and APIs] describes how to extract information from social
-media about the transmission of knowledge. The particular application
+[Working with Web Data and APIs] describes how to extract information from data sources on the Web, including social media. The particular application
 will be to develop links to authors' articles on Twitter using PLOS
 articles and to pull information about authors and articles from web
 sources by using an API. You will learn how to retrieve link data from
@@ -563,26 +562,23 @@ bookmarking services, citations from Crossref, links from Facebook, and
 information from news coverage. In keeping with the social science
 grounding that is a core feature of the book, the chapter discusses what
 data can be captured from online sources, what is potentially reliable,
-and how to manage data qualityissues.
+and how to manage data quality issues.
 
-Big data differs from survey data in that we must typically combine data
+This data differs from survey data in that we must typically combine data
 from multiple sources to get a complete picture of the activities of
 interest. Although computer scientists may sometimes simply "mash" data
 sets together, social scientists are rightfully concerned about issues
 of missing links, duplicative links, and erroneous links.
 [Record Linkage] provides an overview of traditional rule-based
-and probabilistic approaches to data linkage, as well as the important
-contributions of machine learning to the linkage problem.
+and probabilistic approaches to data linkage, as well as machine learning approaches that are more adaptive and tunable. 
 
-Once data have been collected and linked into different files, it is
+Once data have been collected and linked, it is
 necessary to store and organize it. Social scientists are used to
 working with one analytical file, often in statistical software tools
-such as SAS or Stata. [Databases], which may be the most important chapter in the
-book, describes different approaches to storing data in ways that permit
-rapid and reliable exploration andanalysis.
+such as SAS or Stata. [Databases] describes different approaches to storing data in ways that facilitate rapid, scalable, and reliable exploration and analysis.
 
 Big data is sometimes defined as data that are too big to fit onto the
-analyst's computer. [Programming with Big Data] provides an overview of clever programming techniques that facilitate the use of data (often using parallel
+analyst's computer. [Programming with Big Data](#chap:parallel) provides an overview of programming techniques that facilitate the scalable use of data (often using parallel
 computing). While the focus is on one of the most widely used big data
 programming paradigms and its most popular implementation, Apache
 Hadoop, the goal of the chapter is to provide a conceptual framework to
@@ -595,21 +591,27 @@ the key challenges that the approach is designed to address.
 
 ### Part II: Modeling and analysis
 
-The three chapters in Part II (see Figure \@ref(fig:fig4)) introduce three of the most important tools that can be used by social scientists to do new and exciting research: machine learning, text analysis, and social network analysis.
+The four chapters in Part II (see Figure \@ref(fig:fig4)) introduce four of the most important tools that can be used by social scientists to do new and exciting research: information visualization, machine learning, text analysis, and social network analysis.
+
+[Information Visualization](#chap:viz) introduces information visualization methods and
+describes how you can use those methods to explore data and communicate
+results so that data can be turned into interpretable, actionable
+information. There are many ways of presenting statistical information
+that convey content in a rigorous manner. The goal of this chapter is to
+explore different approaches and examine the information content and
+analytical validity of the different approaches. It provides an overview
+of effective visualizations. Using visualization already in early analysis stages is key to a good understanding of data quality and potential pitfalls. 
 
 [Machine Learning](#chap:ml) introduces machine learning methods. It shows the
 power of machine learning in a variety of different contexts,
-particularly focusing on clustering and classification. You will get an
+particularly focusing on clustering, classification, and prediction. You will get an
 overview of basic approaches and how those approaches are applied. The
-chapter builds from a conceptual framework and then shows you how the
-different concepts are translated into code. There is a particular focus
-on random forests and support vector machine (SVM) approaches.
+chapter builds from a conceptual framework on how to formulate social science problems as machine learning problems, how to perform machine learning analysis, and how to evaluate the analysis. These concepts are then translated into code to ensure that the analysis can be put into practical use by social science researchers and practitioners.
 
 [Text Analysis](#chap:text) describes how social scientists can make use of
-one of the most exciting advances in big data---text analysis. Vast
+text data through text analysis and natural language processing methods. Dealing with text and analysing text is not new to social scientists. What is different these days is that the vast
 amounts of data that are stored in documents can now be analyzed
-andsearched so that different types of information can be retrieved.
-Documents (and the underlying activities of the entities that generated
+and searched and analyzed at scale, so that different types of information can be retrieved. Documents (and the underlying activities of the entities that generated
 the documents) can be categorized into topics or fields as well as
 summarized. In addition, machine translation can be used to compare
 documents in different languages.
@@ -620,7 +622,7 @@ variety of economic and social contexts. The frames within which data
 are collected have typically been generated from tax or other
 programmatic sources. The new types of data permit new units of
 analysis---particularly network analysis---largely enabled by advances
-in mathematical graph theory. Thus, [Networks: The Basics] describes how social scientists can use network theory to generate measurable representations of patterns of
+in mathematical graph theory. Thus, [Networks: The Basics](#chap:networks) describes how social scientists can use network theory to generate measurable representations of patterns of
 relationships connecting entities. As the author points out, the value
 of the new framework is not only in constructing different
 right-hand-side variables but also in studying an entirely new unit of
@@ -636,16 +638,7 @@ and organizational theorists.
 
 ### Part III: Inference and ethics
 
-The four chapters in Part III (see Figure \@ref(fig:fig5)) cover three advanced topics relating to data inference and ethics---information visualization, errors and inference, and privacy and confidentiality---and introduce the workbooks that provide access to the practical exercises associated with the text.
-
-[Information Visualization] introduces information visualization methods and
-describes how you can use those methods to explore data and communicate
-results so that data can be turned into interpretable, actionable
-information. There are many ways of presenting statistical information
-that convey content in a rigorous manner. The goal of this chapter is to
-explore different approaches and examine the information content and
-analytical validity of the different approaches. It provides an overview
-of effective visualizations.
+The three chapters in Part III (see Figure \@ref(fig:fig5)) cover three advanced topics relating to data inference and ethics---errors and inference, bias, and privacy and confidentiality---and introduce the workbooks that provide access to the practical exercises associated with the text.
 
 [Errors and Inference] deals with inference and the errors associated
 with big data. Social scientists know only too well the cost associated
@@ -658,6 +651,8 @@ is such that the data are often selective, incomplete, and erroneous.
 Without proper data hygiene, errors can quickly compound. This chapter
 provides a systematic way to think about the error framework in a big
 data setting.
+
+[Bias and Fairness] Interest in algorithmic fairness and bias has been growing recently, but it’s easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model and the resulting system is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
 
 [Privacy and Confidentiality] addresses the issue that sits at the core of
 any study of human beings---privacy and confidentiality. In a new field,
@@ -672,8 +667,7 @@ place.
 
 Finally, [Workbooks] provides an overview of the practical work
 that accompanies each chapter---the workbooks that are designed, using *Jupyter notebooks*^[See jupyter.org.], to enable students and interested practitioners to apply the new
-techniques and approaches in selected chapters. We hope you have a lot
-of fun with them.
+techniques and approaches in selected chapters. This last chapter gives a broad overview of the tools needed to work with these workbooks and some instructions on how to use the workbooks if you decide to teach a class using this content. The chapter also informs broadly about the data and problems these workbooks tackle, and about the general structure of the workbooks. We are constantly expanding and updating the set of available workbooks, so check GitHub regularly if you want to see the latest version. We hope you have a lot of fun with them. 
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on *inference* and *ethics*" width="70%" />
@@ -689,10 +683,10 @@ at the eponymous website [@SOSP].
 This book is above all a *practical* introduction to the methods and
 tools that the social scientist can use to make sense of big data, and
 thus **programming** resources are also important. We make extensive use of the Python
-programming language and the MySQL database management system in both
+programming language and databases in both
 the book and its supporting workbooks. We recommend that any social
 scientist who aspires to work with large data sets become proficient in
-the use of these two systems, and also one more, GitHub. All three,
+the use of these two systems and GitHub. All three,
 fortunately, are quite accessible and are supported by excellent online
 resources. Time spent mastering them will be repaid many times over in
 more productive research.
@@ -708,7 +702,7 @@ material relevant to web data (the subject of
 [Databases]). This book is also freely available online and is
 supported by excellent online lectures and exercises.
 
-For **MySQL**, Chapter [Databases] provides introductory material and pointers to
+For **SQL**, Chapter [Databases] provides introductory material and pointers to
 additional resources, so we will not say more here.
 
 We also recommend that you master **GitHub**. A version control system is a tool
@@ -737,4 +731,3 @@ powerful computers are available to anyone with a credit card. We and
 many others have had positive experiences using such systems for the
 analysis of urban [@plenario], environmental [@elliott2014parallel], and
 genomic [@bhuvaneshwar2015case] data analysis and modeling, for example.
-Such systems may well represent the future of research computing.
