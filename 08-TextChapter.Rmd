@@ -18,7 +18,7 @@ Understanding human generated text
 -------------------------------
 
 You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
-and understand. As social scientists, we often deal with text data that comes from a variety of sources – open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
+and understand. As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
 
 **Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:**
 
@@ -64,14 +64,53 @@ and understand. As social scientists, we often deal with text data that comes fr
 
 ## How is text data different than “structured” data?
 
-We’re comfortable analyzing structured data that is structured into rows and columns. Text data, often also known as unstructured data(footnote: this is often the term used but is a fallacy. There is a lot of structure in text - that is makes you, the reader, understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data), is harder to analyze using traditional data analysis tools because it doesn’t come with rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves, often using methods that are designed specifically for different types of problems. 
+We’re comfortable analyzing structured data that is structured into
+rows and columns. Text data, often also known as unstructured
+data,(footnote: this is often the term used but is a fallacy. There is
+a lot of structure in text&mdash;the structure of chapters,
+paragraphs, sentences, and syntax within a sentence allows you reader,
+to understand what we’re writing here. Unstructured often refers to
+not having defined rows and columns in our data.) is harder to analyze
+using traditional data analysis tools because it doesn’t come with
+rows and columns, but instead consists of characters, words,
+sentences, and paragraphs. In traditional, “structured”, data, a human
+has already decided what constitutes a row (a person for example),
+what constitutes a column (their age, gender, address, for example),
+and the relationship between them. We covered that in the Database
+chapter where we created a data model for a given domain. When dealing
+with text data, we have to create that structure ourselves, often
+using methods that are designed specifically for different types of
+problems.
 
-While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text]. Text data also often reflects human observations that are exceptions to regular processes - the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.
+While creating that structure, we have to deal with human language
+being complex and nuanced, which makes analyzing it difficult. We
+often make simplifying assumptions: we assume our input is perfect
+text; we ignore humor [@halevy-09] and deception [@niculae-15;
+@ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6
+for a discussion of speech recognition, which can turn spoken language
+into text]. Text data also often reflects human observations that are
+exceptions to regular processes&mdash;the ubiquitous “other” or
+“Anything else you want to tell us” field in
+questionnaires. Recognizing this complexity, the goal of text analysis
+is to efficiently extract important information from large amounts of
+text in a comprehensible and meaningful way, and use it in our
+analysis just like we use structured data.
 
 ## What can we do with text data?
-We are often faced with two scenarios when we encounter text data:
-We have some text “corpus”, for example open-ended survey responses, and our goal is to understand the content - patterns, themes, trends - of that data.
-We have some data that consists of both structured and text data. Examples include electronic health records containing both patient medical records (structured data) and text notes from clinicians and lab results or survey responses consisting of both closed ended (multiple choice for example) and open ended responses. The goal here is not to analyze the text data in isolation but to incorporate the text data with the structured data in to our analysis. This happens regularly when we incorporate text from social media posts to data we already have about a particular person, organization, or location.
+
+We are often faced with two scenarios when we encounter text data: We
+have some text “corpus”, for example open-ended survey responses, and
+our goal is to understand the content - patterns, themes, trends - of
+that data.  We have some data that consists of both structured and
+text data. Examples include electronic health records containing both
+patient medical records (structured data) and text notes from
+clinicians and lab results or survey responses consisting of both
+closed ended (multiple choice for example) and open ended
+responses. The goal here is not to analyze the text data in isolation
+but to incorporate the text data with the structured data in to our
+analysis. This happens regularly when we incorporate text from social
+media posts to data we already have about a particular person,
+organization, or location.
 
 In both cases, there are a set of analyses that can be done with text data. We describe these analyses in the Table below:
 
@@ -614,6 +653,8 @@ provide more details on the derivation of this equation.
 
 #### Applications of topic models
 
+% TODO(jbg): Add reference to book
+
 Topic modeling is most often used for topic exploration, allowing users
 to understand the contents of large text corpora. Thus, topic models
 have been used, for example, to understand what the National Institutes
@@ -705,6 +746,18 @@ care differently from how they frame energy policy [@nguyen-13:shlda].
 Word Embeddings and Deep Learning
 -----------
 
+%TODO(jbg): Finish this subsection
+
+In discussing topic models, we learned a vector that summarized the
+content of each document.  However, modern research doesn't stop
+there, it learns vector representations of everything from documents
+down to sentences and words.
+
+% These techniques aren't always the best tools for social scientists: they're not interpretable
+
+% You can't always trust them
+
+% Given our goal is understanding, it is probably better to start first with the simpler (and faster methods) mentioned here to understand your data first.
 
 Text analysis tools
 -------------------
@@ -782,6 +835,10 @@ with enough documentation and easy enough interfaces to be used by
 novices. It offers fast, popular implementations of conditional random
 fields (for part-of- speech tagging), text classification, and topic
 modeling.
+
+% TODO(jbg): Add in Spacy.io
+
+% TODO(jbg): Add in pytorch
 
 Summary
 -------
