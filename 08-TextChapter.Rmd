@@ -334,9 +334,7 @@ idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
 
 Now that we have a matrix with documents as rows, words/phrases as columns and the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
 
-
 We’ll focus on three types of analysis: finding similar documents,  clustering, and classification. For each type of analysis, we ‘ll focus on what it allows us to do, what types of tasks social scientists will find it useful for, and how to evaluate the results of the analysis.
-
 
 Some evaluation text
 
@@ -561,8 +559,6 @@ latent topics governed by a Dirichlet distribution.
 knitr::include_graphics("ChapterText/figures/nyt_documents.png")
 ```
 
-\vspace*{-12pt}
-
 #### Inferring “topics” from raw text
 
 Algorithmically, the problem can be viewed as a black box. Given a
@@ -653,7 +649,7 @@ provide more details on the derivation of this equation.
 
 #### Applications of topic models
 
-% TODO(jbg): Add reference to book
+% TODO(jbg): Add reference to applications of TM book
 
 Topic modeling is most often used for topic exploration, allowing users
 to understand the contents of large text corpora. Thus, topic models
@@ -666,22 +662,56 @@ understand how individuals code in large programming projects
 Topic models can also be used as features to more elaborate algorithms
 such as machine translation [@Hu:Zhai:Eidelman:Boyd-Graber-2014],
 detecting objects in images [@wang-09b], or identifying political
-polarization [@paul-10]. Find a good example of topic models used in social sciences (maybe political science)
+polarization [@paul-10].  @boyd-graber-17 summarizes applications of
+topic models in the humanities, information retrieval, and social
+sciences.
 
-Evaluating clustering methods for text analysis
+@blei-07b apply topic models to classification and regression tasks
+such as sentiment analysis.  As discussed in the previous chapter,
+such methods require a feature-based representation of the data.  An
+advantage of using topic models is that the distribution over topics
+itself can serve as a feature.
 
-Objective evaluation
-Task specific evaluation
+For example, to predict whether a legislator will vote on a bill,
+@gerrish-12 learn a topic model that encodes each bill (proposed piece
+of legislation) as a vector.  To predict how a legislator will vote on
+a bill, the model takes a dot product between the bill's distribution
+over topics and a legislators ideology vector.  The higher score, the
+more compatible they are and the more likely the legislator is to vote
+on the bill.  Conversely, the lower the score, the less likely it is
+the legislator will vote on the bill.
+
+This formulation should remind you of logistic regression; however,
+the features are learned automatically rather than the feature
+engineering approach described in the last chapter.
+
+% TODO(jbg): There were some notes here about cluster vs. supervised
+%  evaluation, but should probably be elsewhere.
 
 **Document classification**
 
-The section above focused on the task of finding topics and themes in a new text data set. In many cases, we already know a set of topics  - this could be the set of topics or research fields as described by the Social Science Research Network or the set of sections (local news, international, sports, finance, etc.) in a news publication. The task we often face is to automatically categorize new documents into an existing set of categories. In text analysis, this is called text classification or categorization and uses supervised learning techniques from machine learning described in the earlier chapter.
+The section above focused on the task of finding topics and themes in
+a new text data set. In many cases, we already know a set of
+topics&emdash;this could be the set of topics or research fields as
+described by the Social Science Research Network or the set of
+sections (local news, international, sports, finance, etc.) in a news
+publication. The task we often face is to automatically categorize new
+documents into an existing set of categories. In text analysis, this
+is called text classification or categorization and uses supervised
+learning techniques from machine learning described in the earlier
+chapter.
 
-Text classification typically requires two things:
-A set of categories we want documents to be categorized into (each document can belong to one or more categories)
-Set of documents annotated/tagged with one or more categories from step 1.
+Text classification typically requires two things: A set of categories
+we want documents to be categorized into (each document can belong to
+one or more categories) Set of documents annotated/tagged with one or
+more categories from Step 1.
 
-For example, if we want to classify twitter or facebook posts as being about health or finance,  a classification method would take a small number of posts, manually tagged as belonging to either health or finance, and train a classification model. This model can then be used to automatically classify new posts as belonging to either health or finance
+For example, if we want to classify twitter or facebook posts as being
+about health or finance, a classification method would take a small
+number of posts, manually tagged as belonging to either health or
+finance, and train a classification model. This model can then be used
+to automatically classify new posts as belonging to either health or
+finance.
 
 **Diagram of Text Classification Pipeline**
 
@@ -710,13 +740,9 @@ characterize what research has been done, provide information about
 which projects are similar within or across institutions, and
 potentially identify new fields of study [@talley2011database].
 
-**Evaluating Text Classification Methods**
-
-The metrics used to evaluate text classification methods are the same as  those used in supervised learning, as described in the Machine Learning chapter. The most commonly used metrics include accuracy, precision, recall, AUC, and F1 score. [include example in notebook]
-
 
 **Applications**
-\vspace*{-2pt}
+
 
 **Spam Detection**
 
@@ -742,22 +768,66 @@ different approaches to praise a toaster than to praise an air
 conditioner [@blitzer-07]; liberals and conservatives each frame health
 care differently from how they frame energy policy [@nguyen-13:shlda].
 
+**Evaluating Text Classification Methods**
+
+The metrics used to evaluate text classification methods are the same
+as those used in supervised learning, as described in the Machine
+Learning chapter. The most commonly used metrics include accuracy,
+precision, recall, AUC, and F1 score. [include example in notebook]
+
 
 Word Embeddings and Deep Learning
 -----------
 
-%TODO(jbg): Finish this subsection
-
 In discussing topic models, we learned a vector that summarized the
-content of each document.  However, modern research doesn't stop
-there, it learns vector representations of everything from documents
-down to sentences and words.
+content of each document.  This is useful for applications where you
+can use a single, short vector to summarize a document for a
+downstream machine learning application.  However, modern research
+doesn't stop there, it learns vector representations of everything
+from documents down to sentences and words.
 
-% These techniques aren't always the best tools for social scientists: they're not interpretable
+First, let's consider this from a high-level perspective.  The goal of
+representation learning [@bengio-13] is to take an input and transform
+it into a vector that computers can understand.  Similar inputs should
+be close together in vector space.  E.g., "dog" and "poodle" should
+have similar vectors, while "dog" and "chainsaw" do not.
 
-% You can't always trust them
+A well-known technique for word representation is word2vec
+[@mikolov-13].  Using an objective function similar to logistic
+regression, it predicts, given a word, whether another word will
+appear in the same context.  For example, the dot product for "dog"
+and "pet", "dog" and "leash", and "dog" and "wag" will be high but
+those for "dog" and "rectitude", "dog" and "examine", and "dog" and
+"cloudy" will be lower.  Training a model to do this for all of the
+words in English will produce vector representations for "dog" and
+"poodle" that are quite close together.
 
-% Given our goal is understanding, it is probably better to start first with the simpler (and faster methods) mentioned here to understand your data first.
+This model has been well adopted throughout natural language
+processing [@church-17].  Downloading word2vec vectors for words and
+using them as features in your machine learning pipeline (e.g., for
+document classification by averaging the words in the document) will
+likely improve supervised classification task.
+
+But word representations are not the end of the story.  A word only
+makes sense in the context of the sentence in which it appears: e.g.,
+"I deposited my check at the bank" vs. "The airplane went into a bank
+of clouds".  A single word per vector does not capture these subtle
+effects.  More recent models named after Muppets (long, uninteresting
+story) tries to capture broader relationships between words within
+sentences to create *contextualized representations*.
+
+ELMO [@peters-18] and BERT [@devlin-18] both use deep learning to take
+word vectors (a la word2vec) to create representations that make sense
+given a word's context.  These are also useful features to use in
+supervised machine learning contexts if higher accuracy is your goal.
+
+However, these techniques are not always the best tools for social
+scientists.  They are not always interpretable&emdash;it is often hard
+to tell why you got the answer you did [@ribeiro-16], and slightly
+changing the input the models can dramatically change the results
+[@feng-18].  Given that our goal is often understanding our data, it
+is probably better to start first with the simpler (and faster
+methods) mentioned here to understand your data first.
 
 Text analysis tools
 -------------------
@@ -836,9 +906,20 @@ novices. It offers fast, popular implementations of conditional random
 fields (for part-of- speech tagging), text classification, and topic
 modeling.
 
-% TODO(jbg): Add in Spacy.io
+**Spacy.io** 
 
-% TODO(jbg): Add in pytorch
+While NLTK is optimized for teaching NLP concepts to students,
+Spacy.io [http://spacy.io] is optimize for practical application.  It
+is super-fast, contains many models for well-trodden tasks
+(classification, finding entities in sentences, etc.).  It also has
+pre-trained models (including word and sentence representations) that
+can help practicioners quickly build competitive models.
+
+**Pytorch**
+
+For the truly adventurous who want to build their own deep learning
+models for text, PyTorch [http://pytorch.org] offers the flexibility
+go from word vectors to complete deep representations of sentences.
 
 Summary
 -------
@@ -896,12 +977,6 @@ resources that can be helpful in mastering text mining techniques:
     and examples that are easily accessible online [@NLTKweb]. The book
     by Bird et al. [@bird-09], available online, contains multiple
     examples and tips on how to use NLTK.
-
--   The book *Pattern Recognition and Machine Learning* by Christopher
-    Bishop [@bishop-06] is a useful introduction to computational
-    techniques, including probabilistic methods, text analysis, and
-    machine learning. It has a number of tips and examples that are
-    helpful to both learning and experienced researchers.
 
 -   A paper by Anna Huang [@huang-08] provides a brief overview of the
     key similarity measures for text document clustering discussed in
