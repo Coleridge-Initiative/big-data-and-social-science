@@ -14,7 +14,7 @@ probabilistic approaches, as well as the modern approaches to record linkage usi
 Motivation
 ----------
 
-Big data offers social scientists great opportunities to bring together
+New sources of data offer social scientists great opportunities to bring together
 many different types of data, from many different sources. Merging
 different data sets provides new ways of creating population frames that
 are generated from the digital traces of human activity rather than,
@@ -23,7 +23,7 @@ of challenges from those posed by survey data. Combining information
 from different sources about an individual, business, or geographic
 entity means that the social scientist must determine whether or not two
 entities on two different files are the same. This determination is not
-easy. For example, in the UMETRICS data, if data are to be used to measure the impact
+easy. We regularly run into situations where we need to combine data from different agencies about the same people to understand future employment or health outcomes for people on social service benefits or those who have recently been released from prison. In the UMETRICS data for example, if data are to be used to measure the impact
 of research grants, is David A. Miller from Stanford, CA, the same as
 David Andrew Miller from Fairhaven, NJ, in a list of inventors? Is
 IBM the same as Big Blue if the productivity and growth of
@@ -51,7 +51,7 @@ understated.
 This chapter discusses current approaches to joining multiple data sets
 together---commonly called *record linkage*. Other names associated with
 record linkage are entity disambiguation, entity resolution,
-co-reference resolution, statistical matching, and data fusion, meaning
+co-reference resolution, matching, and data fusion, meaning
 that records which are linked or co-referent can be thought of as
 corresponding to the same underlying entity. The number of names is
 reflective of a vast literature in social science, statistics, computer
@@ -61,6 +61,22 @@ Winkler, Scheuren, and Christen, in particular
 ideas, we use examples from a recent paper examining the effects of
 different algorithms on studies of patent productivity
 [@ventura2015seeing].
+
+** Examples **
+
+
+
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.\footnote{ If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link }
+
+Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
+todo: <RAYID CRIME OR SOMETHING>
+The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality \cite{NCHS2012}.
+
+
+
+
+todo:
+
 
 Introduction to record linkage {#sec:recordlinkage}
 ------------------------------
@@ -131,9 +147,9 @@ To find all possible links between two data sets it would be necessary
 to compare each record of the first data set with each record of the
 second data set. The computational complexity of this grows
 quadratically with the size of the data---an important consideration,
-especially in the big data context. To compensate for this complexity,
+especially with large amounts of data. To compensate for this complexity,
 the standard second step in record linkage, after preprocessing, is
-indexing or blocking, which creates subsets of similar records and
+indexing or blocking, which uses some set of heuristics to create subsets of similar records and
 reduces the total number of comparisons.
 
 The outcome of the matching step is a set of predicted links---record
@@ -142,7 +158,7 @@ produced, the final stage of the record linkage process is to evaluate
 the result and estimate the resulting error rates. Unlike other areas of
 application for predictive algorithms, ground truth or gold standard
 data sets are rarely available. The only way to create a reliable truth
-data set sometimes is through an expensive clerical review process that
+data set sometimes is through an expensive human review process that
 may not be viable for a given application. Instead, error rates must be
 estimated.
 
@@ -233,8 +249,7 @@ Preprocessing data for record linkage
 
 As noted in the introductory chapter, all data work involves
 preprocessing, and data that need to be linked is no exception.
-Preprocessing refers to a workflow that transforms messy, noisy, and
-unstructured data into a well-defined, clearly structured, and
+Preprocessing refers to a workflow that transforms messy and noisy data into a well-defined, clearly structured, and
 quality-tested data set. Elsewhere in this book, we discuss general
 strategies for data preprocessing.^[This topic (quality of
 data, preprocessing issues)
@@ -254,7 +269,7 @@ In some situations, 90% of the improvement in matching efficiency may be
 due to preprocessing" [@winkler09].
 
 The first step in record linkage is to develop link keys, which are the
-record fields that will be used to predict link status. These can
+record fields that will be used to estimate if there is a link between two records. These can
 include common identifiers like first and last name. Survey and
 administrative data sets may include a number of clearly identifying
 variables like address, birth date, and sex. Other data sets, like
@@ -267,7 +282,7 @@ Trademark Office (USPTO) data [@ventura2015seeing]:
 > USPTO maintains an online database of all patents issued in the United
 > States. In addition to identifying information about the patent, the
 > database contains each patent's list of inventors and assignees, the
-> companies, organizations, individuals, or government agencies towhich
+> companies, organizations, individuals, or government agencies to which
 > the patent is assigned. ... However, inventors and assignees in the
 > USPTO database are not given unique identification numbers, making it
 > difficult to track inventors and assignees across their patents or
@@ -644,13 +659,13 @@ for cross-tabulated
 
 Computer scientists have contributed extensively in parallel literature
 focused on linking large data sets [@christen2012data]. Their focus is
-on identifying potential links using approaches that are fast and
+on identifying potential links using approaches that are fast, adaptive, and
 scalable, and approaches are developed based on work in network
 algorithms and machine learning.
 
 While simple blocking as described in
 Section [Indexing and Blocking]
-is standard in Fellegi--Sunter applications, computer scientists are
+is standard in Fellegi--Sunter applications, machine learning based approaches are
 likely to use the more sophisticated clustering approach to indexing.
 Indexing may also use network information to include, for example,
 records for individuals that have a similar place in a social graph.
@@ -662,10 +677,7 @@ requirements are similar to standard blocking [@christen2012data].
 
 In recent years machine learning approaches^[This topic is discussed in
 more detail in Chapter 6.] have been applied to record
-linkage following their success in other areas of prediction and
-classification. Computer scientists couch the analytical problem as one
-of entity resolution, even though the conceptual problem is identical.
-As Wick et al. [@wick2013joint] note:
+Linkage. As Wick et al. [@wick2013joint] note:
 
 > Entity resolution, the task of automatically determining which
 > mentions refer to the same real-world entity, is a crucial aspect of
@@ -685,8 +697,8 @@ As Wick et al. [@wick2013joint] note:
 
 Figure \@ref(fig:fig3-2) provides a useful comparison between
 classical record linkage and learning-based approaches. In machine
-learning there is a predictive model and an algorithm for "learning" the
-optimal set of parameters to use in the predictive algorithm. The
+learning there is a statistical model and an algorithm for "learning" the
+optimal set of parameters to use. The
 learning algorithm relies on a training data set. In record linkage,
 this would be a curated data set with true and false matches labeled as
 such. See [@ventura2015seeing] for an example and a discussion of how a
@@ -982,4 +994,6 @@ Out of many excellent resources on the subject, we note the following:
 
 -   The German Record Linkage Center is a resource for research,
     software, and ongoing conference activities [@Schnell2016].
+
+
 
