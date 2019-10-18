@@ -6,10 +6,8 @@ Databases {#chap:db}
 
 Once the data have been collected and linked into different files, it is
 necessary to store and organize them. Many social scientists are used to
-working with one analytical file, often in SAS, Stata, SPSS, or R. This
-chapter, which may be the most important chapter in the book, describes
-different approaches to storing data in ways that permit rapid and
-reliable exploration and analysis.
+working with one analytical file, often in SAS, Stata, SPSS, or R. Most organizations store (or should store) their data in databases which makes it critical for social scientists to learn how to create, manage, and use databases for data analysis. This
+chapter describes the concept of databases, different types of databases, and analysis languages (SQL for example) that allow storing and organizing of data for rapid, scalable, and reliable data exploration and analysis.
 
 Introduction {#sec:db:intro}
 ------------
@@ -17,11 +15,11 @@ Introduction {#sec:db:intro}
 We turn now to the question of how to store, organize, and manage the
 data used in data-intensive social science. As the data with which you
 work grow in volume and diversity, effective data management becomes
-increasingly important if you are to avoid issues of scale and
+increasingly important to avoid issues of scale and
 complexity from overwhelming your research processes. In particular,
 when you deal with data that get frequently updated, with changes made
 by different people, you will frequently want to use database management
-systems (DBMSs) instead of maintaining data in single files or within
+systems (DBMSs) instead of maintaining data in single text files or within
 siloed statistical packages such as SAS, SPSS, Stata, and R. Indeed, we
 go so far as to say: if you take away *just one thing* from this book,
 it should be this: *Use a database!*
@@ -30,31 +28,27 @@ As we explain in this chapter, DBMSs provide an environment that greatly
 simplifies data management and manipulation. They require a little bit
 of effort to set up, but are worth it. They permit large amounts of data
 to be organized in multiple ways that allow for efficient and rapid
-exploration via powerful declarative query languages; durable and
-reliable storage, via transactional features that maintain data
+exploration via query languages; durable and
+reliable storage that maintain data
 consistency; scaling to large data sizes; and intuitive analysis, both
-within the DBMS itself and via bridges to other data analysis packages
-and tools when specialized analyses are required. DBMSs have become a
+within the DBMS itself and via connectors to other data analysis packages
+and tools. DBMSs have become a
 critical component of a great variety of applications, from handling
 transactions in financial systems to delivering data as a service to
 power websites, dashboards, and applications. If you are using a
 production-level enterprise system, chances are there is a database in
 the back end. They are multi-purpose and well suited for organizing
-social science data and for supporting analytics for data exploration.
+social science data and for supporting data exploration.
 
 DBMSs make many easy things trivial, and many hard things easy. They are
-easy to use but can appear daunting to those unfamiliar with their
-concepts and workings. A basic understanding of databases and of when
+easy to use but can appear daunting at first. A basic understanding of databases and of when
 and how to use DBMSs is an important element of the social data
 scientist's knowledge base. We therefore provide in this chapter an
 introduction to databases and how to use them. We describe different
-types of databases and their various features, and how different types
-can be applied in different contexts. We describe basic features like
-how to get started, set up a database schema, ingest data, query data
-within a database, and get results out. We also discuss how to link from
+types of databases and their various features, and how they can be used in different contexts. We describe basic features like
+how to get started, setting up a database schema, ingesting data, querying and analyzing data
+within a database, and getting results out. We also discuss how to link from
 databases to other tools, such as Python, R, and Stata.
-Chapter [Programming with Big Data] describes how to apply parallel computing
-methods when needed.
 
 DBMS: When and why {#sec:db:when}
 ------------------
@@ -98,19 +92,21 @@ Table: (\#tab:table4-1) When to use different data management and analysis techn
 | • You want to share your data and analyses with others          |
 | **NoSQL database**                                              |
 | • Your data are unstructured                                    |
-| • Your data are extremely large                                 |
+| • Your data are extremely large			|
+|* Your analysis will happen mostly outside the database in a programming language|
+                                 |
 <br>
 
 \vspace*{-8pt}
-In the case of data set 1 (10,000 records describing research grants),
+In the case of data set 1 (10,000 records describing research grants),
 it may be feasible to leave the data in their original file, use
 spreadsheets, pivot tables, or write programs in **scripting languages**^[A scripting language is
 a programming language
 used to automate tasks that
 could otherwise be performed one by one by the
 user.] such as Python or R to
-ask questions of those files. For example, someone familiar with such
-languages can quickly create a script to extract from data set 1 all
+analyze the data in those files. For example, someone familiar with such
+languages can quickly create a script to extract from data set 1 all
 grants awarded to one investigator, compute average grant size, and
 count grants made each year in different areas.
 
@@ -139,7 +135,7 @@ analysis computations can be performed in database systems. A
 programming language will also often be needed. But many data access and
 manipulation computations are best handled in a database.
 
-Researchers in the social sciences frequently use **statistical packages**^[A statistical package is a specialized compute program for analysis in statistics and economics.] such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some
+Researchers in the social sciences frequently use statistical packages such as R, SAS, SPSS, and Stata for data analysis. Because these systems integrate some
 data management, statistical analysis, and graphics capabilities in a
 single package, a researcher can often carry out a data analysis project
 of modest size within the same environment. However, each of these
@@ -148,9 +144,9 @@ research, especially as data grow in size and complexity.
 
 Take Stata, for example. Stata loads the entire data set into the
 computer's working memory, and thus you would have no problems loading
-data set 1. However, depending on your computer's memory, it could have
-problems dealing with with data set 2 and certainly would not be able to
-handle data set 3. In addition, you would need to perform this data
+data set 1. However, depending on your computer's memory, it could have
+problems dealing with with data set 2 and most likely would not be able to
+handle data set 3. In addition, you would need to perform this data
 loading step each time you start working on the project, and your
 analyses would be limited to what Stata can do. SAS can deal with larger
 data sets, but is renowned for being hard to learn and use. Of course
@@ -167,26 +163,28 @@ combined through common
 identifier variables [182].].
 
 Those solutions essentially mimic core functions of a DBMS, and you
-would be well advised to set up such system, especially if you find
+would be well advised to set up a database, especially if you find
 yourself in a situation where the data set is constantly updated through
 different users, if groups of users have different rights to use your
 data or should only have access to subsets of the data, and if the
 analysis takes place on a server that sends results to a client
-(browser). Statistics packages also have difficulty working with more
+(browser). Some statistics packages also have difficulty working with more
 than one data source at a time---something that DBMSs are designed to do
 well.
+
+Alas, databases are not perfectly suited for every need. For example, in social science research, the reproducibility of our analysis is critical and hence versioning of the data used for analysis is critical. Most databases don’t do that out of the box. Typically, they do keep a log of all the operations (inserting, updating, updating data for example) which can facilitate versioning and rollbacks but we often need to configure the databases to allow versioning and support reproducibility.
 
 These considerations bring us to the topic of this chapter, namely **database management systems**. A DBMS^[DBMS is a system
 that interacts with users,
 other applications, and the
 database itself to capture
 and analyze data.] handles all of the issues listed above, and more. As we will see
-below when we look at concrete examples, a DBMS allows the programmer to
-define a logical design that fits the structure of their data. The DBMS
-then a *data model* (more on this below) that allows these data to be
+below when we look at concrete examples, a DBMS allows us to
+define a logical design that fits the structure of our data. The DBMS
+then creates a *data model* (more on this below) that allows these data to be
 stored, queried, and updated efficiently and reliably on disk, thus
 providing independence from underlying physical storage. It supports
-efficient access to data through *query languages* and automatic
+efficient access to data through *query languages* and (somewhat) automatic
 optimization of those queries to permit fast analysis. Importantly, it
 also support concurrent access by multiple users, which is not an option
 for file-based data storage. It supports *transactions*, meaning that
@@ -205,8 +203,7 @@ structure in ways that allow these entities and relationships to be
 queried for analysis. A *database management system* is a software suite
 designed to safely store and efficiently manage databases, and to assist
 with the maintenance and discovery of the relationships that database
-represents. In general, a DBMS encompasses three key components, as
-shown in Table \@ref(tab:table4-2): its *data model* (which defines how data are
+represents. In general, a DBMS encompasses three key components: its *data model* (which defines how data are
 represented: see Box 4.1, its *query language* (which defines how the user
 interacts with the data), and support for *transactions and crash
 recovery* (to ensure reliable execution despite system failures).^[Some key DBMS features are often lacking in
@@ -221,13 +218,13 @@ structure.]
 ```{block, type='F00'}
 **Box 4.1: Data model**
 A *data model*
-specifies the data elements associated with a problem domain, the
+specifies the data elements associated with the domain we are analyzing, the
 properties of those data elements, and how those data elements relate to
 one another. In developing a data model, we commonly first identity the
 entities that are to be modeled and then define their properties and
 relationships. For example, when working on the science of science
 policy (see
-Figure \@ref(fig:fig2), the entities include people, products,
+Figure \@ref(fig:fig2), the entities include people, products,
 institutions, and funding, each of which has various properties (e.g.,
 for a person, their name, address, employer); relationships include "is
 employed by" and "is funded by." This conceptual data model can then be
@@ -235,23 +232,15 @@ translated into relational tables or some other database representation,
 as we describe next.
 ```
 
-Table: (\#tab:table4-2) Key components of a DBMS
-
-|             |                             **Data model**                            |                         **Query language**                         |       **Transactios, crash recovery**      |
-|-------------|:-----------------------------------------------------------------:|:--------------------------------------------------------------:|:--------------------------------------:|
-| User-facing | For example: relational, semi-structured                          | For example: SQL (for relational), XPath (for semi-structured) | Transactions                           |
-| Internal    | Mapping data to storage systems; creating and maintaining indices | Query optimization and evaluation; consistency                 | Locking, concurrency control, recovery |
-<br>
-
 \vspace*{12pt}
-Literally hundreds of different open source, commercial, and
-cloud-hosted versions DBMSs are available. However, you only need to
+Hundreds of different open source, commercial, and
+cloud-hosted versions DBMSs are available and new ones pop up every day. However, you only need to
 understand a relatively small number of concepts and major database
 types to make sense of this diversity.
 Table \@ref(tab:table4-3) defines the major classes of DBMSs that we will
-consider in this book. We consider only a few of these in any detail.
+consider in this chapter. We consider only a few of these in any detail.
 
-Relational DBMSs are the most widely used and mature systems, and will
+Relational DBMSs are the most widely used systems, and will
 be the optimal solution for many social science data analysis purposes.
 We describe relational DBMSs in detail below, but in brief, they allow
 for the efficient storage, organization, and analysis of large
@@ -262,9 +251,9 @@ one to many.]: data organized as tables, in which rows
 represent entities (e.g., research grants) and columns represent
 attributes of those entities (e.g., principal investigator, institution,
 funding level). The associated Structured Query Language (SQL) can then
-be used to perform a wide range of analyses, which are executed with
+be used to perform a wide range of tasks, which are executed with
 high efficiency due to sophisticated indexing and query planning
-techniques.
+Techniques.
 
 \enlargethispage{-12pt}
 While relational DBMSs have dominated the database world for decades,
@@ -279,7 +268,7 @@ stores, and in particular variants called *document stores* that permit
 text search on the stored values, are widely used to organize and
 process the billions of records that can be obtained from web crawlers.
 We review below some of these alternatives and the factors that may
-motivate their use.
+motivate their use.
 
 Table: (\#tab:table4-3) Types of databases: relational (first row) and various types of NoSQL (other rows)
 
@@ -294,7 +283,7 @@ Table: (\#tab:table4-3) Types of databases: relational (first row) and various t
 
 Relational and NoSQL databases (and indeed other solutions, such as
 statistical packages) can also be used together. Consider, for example,
-Figure \@ref(fig:figdb-dbs), which depicts data flows commonly encountered
+Figure \@ref(fig:figdb-dbs), which depicts data flows commonly encountered
 in large research projects. Diverse data are being collected from
 different sources: JSON documents from web APIs, web pages from web
 scraping, tabular data from various administrative databases, Twitter
@@ -308,8 +297,7 @@ may not be feasible to define a unified set of schema, so diverse are
 the data and so rapidly are new data sets being acquired. Furthermore,
 the way we organize the data may vary according to our intended purpose.
 Are we interested in geographic, temporal, or thematic relationships
-among different entities? Each type of analysis may require a
-differentorganization.
+among different entities? Each type of analysis may require a different organization.
 
 \enlargethispage{-12pt}
 For these reasons, a common storage solution is to first load all data
@@ -336,12 +324,12 @@ Relational DBMSs implement the relational data model, in which data are
 represented as sets of records organized in tables. This model is
 particularly well suited for the structured, regular data with which we
 frequently deal in the social sciences; we discuss in
-Section [4.5](#sec:db:nosql){reference-type="ref"
+Section [4.5](#sec:db:nosql){reference-type="ref"
 reference="sec:db:nosql"} alternative data models, such as those used in
 NoSQL databases.
 
 We use the data shown in
-Figure \@ref(fig:figdb-1) to introduce key concepts. These two CSV format
+Figure \@ref(fig:figdb-1) to introduce key concepts. These two CSV format
 files describe grants made by the US National Science Foundation (NSF).
 One file contains information about grants, the other information about
 investigators. How should you proceed to manipulate and analyze these
@@ -356,8 +344,8 @@ referred to as a *relation*): a set of rows (also referred to as tuples,
 records, or observations), each with the same columns (also referred to
 as fields, attributes or variables). A database consists of multiple
 tables. For example, we show in
-Figure \@ref(fig:figdb-2) how the data contained in the two CSV files of
-Figure \@ref(fig:figdb-1) may be as two tables. The `Grants` table contains one tuple
+Figure \@ref(fig:figdb-2) how the data contained in the two CSV files of
+Figure \@ref(fig:figdb-1) may be as two tables. The `Grants` table contains one tuple
 for each row in grants.csv, with columns `GrantID`, `Person`, `Funding`, and `Program`. The table contains one tuple for each row in investigators.csv, with columns `ID`, `Name`, `Institution`, and `Email`. The CSV files and tables contain essentially the same information, albeit with important differences (the addition of an `ID` field in the
 `Investigators` table, the substitution of an `ID` column for the `Person` column in the `Grants` table) that we will explain below.
 
@@ -436,7 +424,7 @@ evaluated as follows:
     "\*" indicates that all columns should be kept.)
 
 The answer, given the data in
-Figure \@ref(fig:figdb-2), is the following single-row table. (The fact that
+Figure \@ref(fig:figdb-2), is the following single-row table. (The fact that
 an SQL query returns a table is important when it comes to creating more
 complex queries: the result of a query can be stored into the database
 as a new table, or passed to another query as input.)
@@ -456,7 +444,7 @@ table in order to identify those with funding less than \$200,000, a
 strategy that would be slow if the `Grants` table were large: it can instead use
 an index to retrieve the relevant records much more quickly. We discuss
 indices in more detail in
-Section [4.3.6](#sec:db:index){reference-type="ref"
+Section [4.3.6](#sec:db:index){reference-type="ref"
 reference="sec:db:index"}.
 
 The querying component of SQL supports a wide variety of manipulations
@@ -491,7 +479,7 @@ This ability to join two tables in a query is one example of how SQL
 permits concise specifications of complex computations. This joining of
 tables via a cartesian product operation is formally called a *cross
 join*. Other types of join are also supported. We describe one such, the
-*inner join*, in Section [4.6](#sec:db:spatial).
+*inner join*, in Section [4.6](#sec:db:spatial).
 
 ---
 
@@ -536,6 +524,8 @@ We obtain the following:
 
 ### Schema design and definition {#sec:db:schema}
 
+Todo: image of our database schema
+
 We have seen that a relational database comprises a set of tables. The
 task of specifying the structure of the data to be stored in a database
 is called *logical design*. This task may be performed by a database
@@ -571,7 +561,7 @@ of information is referred to as **normalization** ^[Normalization involves orga
 The second step in the design process is to define the columns that are
 to be associated with each entity. For each table, we define a set of
 columns. For example, given the data in
-Figure \@ref(fig:figdb-1), those columns will likely include, for a grant,
+Figure \@ref(fig:figdb-1), those columns will likely include, for a grant,
 an award identifier, title, investigator, and award amount; for an
 investigator, a name, university, and email address. In general, we will
 want to ensure that each row in our table has a \emph{key}: a set of columns
@@ -583,9 +573,9 @@ entities. In our example, we are concerned with just one relationship,
 namely that between grants and investigators: each grant has an
 investigator. We represent this relationship between tables by
 introducing a `Person` column in the `Grants` table, as shown in
-Figure \@ref(fig:figdb-2). Note that we do not simply duplicate the
+Figure \@ref(fig:figdb-2). Note that we do not simply duplicate the
 investigator names in the two tables, as was the case in the two CSV
-files shown in Figure \@ref(fig:figdb-1): these names might not be unique, and the
+files shown in Figure \@ref(fig:figdb-1): these names might not be unique, and the
 duplication of data across tables can lead to later inconsistencies if a
 name is updated in one table but not the other.
 
@@ -606,7 +596,7 @@ name (`Investigators`) and, for each of the four columns, the column name and it
 Relational DBMSs offer a rich set of types to choose from when designing
 a table: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
 for more efficient encoding of data. For example, the `Funding` field in the
-grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string in the `Grants` table, `char(15)`,
+grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string in the `Grants` table, `char(15)`,
 say, to allow for large grants. By representing it as a floating point
 number instead (line 15 in
 Listing 4.1), we reduce the space requirement per grant
@@ -648,10 +638,10 @@ create table Grants ( --latexlabel `\label{code:db:10}`
 
 ### Loading data
 
-So far we have created a database and two tables. To complete our simple
+So far we have created a database and two empty tables. To complete our simple
 SQL program, we show in
 Listing 4.2 the two statements that load the data of
-Figure \@ref(fig:figdb-1) into our two tables. (Here and elsewhere in this
+Figure \@ref(fig:figdb-1) into our two tables. (Here and elsewhere in this
 chapter, we use the MySQL DBMS. The SQL syntax used by different DBMSs
 differs in various, mostly minor ways.) Each statement specifies the
 name of the file from which data is to be read and the table into which
@@ -886,7 +876,7 @@ represented explicitly by the term `null`; if a data value is simply omitted,
 it may fail to load or be incorrectly represented, for example as zero
 or the empty string (`" "`) instead of `null`. Thus, for example, the second row in
 the investigators.csv file of
-Figure \@ref(fig:figdb-1):
+Figure \@ref(fig:figdb-1):
 
 `Howard Weinberg,University of North Carolina Chapel Hill,`
 
@@ -898,7 +888,7 @@ may need to be rewritten as:
 
 SQL engines are metadata poor: they do not allow extra information to be
 stored about a variable (field) beyond its base name and type (`int`, `char`, etc.,
-as introduced in Section [4.3.3](#sec:db:schema){reference-type="ref"
+as introduced in Section [4.3.3](#sec:db:schema){reference-type="ref"
 reference="sec:db:schema"}). They cannot, for example, record directly
 the fact that the column `class` can only take one of three values, `animal`, `vegetable`, or `mineral`, or what these values mean. Common practice is thus to store information
 about possible values in another table (commonly referred to as a
@@ -1030,7 +1020,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor
 
 But into what table? The two records each combine information about a
 person with information about an institute. Following the schema design
-rules given in Section [4.3.3](#sec:db:schema){reference-type="ref"
+rules given in Section [4.3.3](#sec:db:schema){reference-type="ref"
 reference="sec:db:schema"}, we should *normalize* the data by
 reorganizing them into two tables, one describing people and one
 describing institutes. Similar problems arise when JSON documents
@@ -1059,7 +1049,7 @@ normalization is yet more apparent.
 
 Thus, the loading of JSON data into a relational database usually
 requires both work on schema design
-(Section [4.3.3](#sec:db:schema){reference-type="ref"
+(Section [4.3.3](#sec:db:schema){reference-type="ref"
 reference="sec:db:schema"}) and data preparation.
 
 ---
@@ -1170,7 +1160,7 @@ for a given key.
 
 **Example: Representing investigator data in a NoSQL database**
 We might represent the contents of the investigators.csv file of
-Figure \@ref(fig:figdb-1) (in a NoSQL database) as follows.
+Figure \@ref(fig:figdb-1) (in a NoSQL database) as follows.
 
 | **Key** | **Value** |
 |----------|----------|
@@ -1249,7 +1239,7 @@ additional information that we just introduced.
 Associated query languages may permit queries within the document, such
 as regular expression searches, and retrieval of selected fields,
 providing a form of a relational DBMS's selection and projection
-capabilities (Section [4.3.2](#sec:db:sql){reference-type="ref"
+capabilities (Section [4.3.2](#sec:db:sql){reference-type="ref"
 reference="sec:db:sql"}). For example, MongoDB allows us to ask for
 documents in a collection called that have "University of Texas at
 Austin" as their institution and the Nobel as an award.
@@ -1327,7 +1317,7 @@ select illinois_schools.name
 We join the two tables and , with the constraint constraining the
 selected rows to those representing schools within the city limits. Here
 we use the inner join introduced in
-Section [4.3.2](#sec:db:sql){reference-type="ref"
+Section [4.3.2](#sec:db:sql){reference-type="ref"
 reference="sec:db:sql"}. This query could also be written as:
 
 ```{sql, eval = FALSE}
@@ -1356,8 +1346,8 @@ join*---or, more precisely, the *left excluding join*. The expression
 returns all rows from the left table (`table1`) with the matching rows in the
 right table (`table2`), with the result being `null` in the right side when there is no
 match. This selection is illustrated in the middle column of
-Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
-Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
+Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
+Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
 ```{r fig-venn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join'}
 knitr::include_graphics("ChapterDB/figures/fig-venn.png")
@@ -1368,25 +1358,23 @@ knitr::include_graphics("ChapterDB/figures/fig-venn.png")
 Which database to use?
 ----------------------
 
-The question of which DBMS to use for a social sciences data management
-and analysis project depends on many factors. We introduced some
+The question of which DBMS to use for a social science project depends on many factors. We introduced some
 relevant rules in
 Table \@ref(tab:table4-1). We expand on those considerations here.
 
 ### Relational DBMSs
 
-If your data are structured, then a relational DBMS is almost certainly
+If your data are structured into rows and columns, then a relational DBMS is almost certainly
 the right technology to use. Many open source, commercial, and
 cloud-hosted relational DBMSs exist. Among the open source DBMSs, MySQL
-and PostgreSQL (often simply Postgres) are particularly widely used.
+and PostgreSQL (often simply called Postgres) are particularly widely used.
 MySQL is the most popular. It is particularly easy to install and use,
 but does not support all features of the SQL standard. PostgreSQL is
 fully standard compliant and supports useful features such as full text
-search and the PostGIS extensions mentioned in the previous section, but
-can be more complex to work with.
+search and the PostGIS extensions mentioned in the previous section. We recommend you start with Postgres.
 
-Popular commercial relational DBMSs include IBM DB2, Microsoft SQL
-Server, and Oracle RDMS. These systems are heavily used in commercial
+Popular commercial relational DBMSs include Microsoft SQL
+Server, Oracle, IBM DB2, Teradata, and Sybase. These systems are heavily used in commercial
 settings. There are free community editions, and some large science
 projects use enterprise features via licensing: for example, the Sloan
 Digital Sky Survey uses Microsoft SQL Server [@szalay2002sdss] and the
@@ -1398,7 +1386,7 @@ PostgreSQL, and various commercial DBMSs), Microsoft Azure, and Google
 Cloud SQL. These systems obviate the need to install local software,
 administer a DBMS, or acquire hardware to run and scale your database.
 Particularly if your database is bigger than can fit on your
-workstation, a cloud-hosted solution can be a good choice.
+workstation, a cloud-hosted solution can be a good choice, both for scalability but also for ease of configuration and management.
 
 ### NoSQL DBMSs
 
@@ -1408,7 +1396,7 @@ involve some effort, the benefits of so doing are considerable. Thus,
 the use of a relational DBMS is usually to be recommended.
 
 Nevertheless, as noted in
-Section [4.2](#sec:db:when){reference-type="ref"
+Section [4.2](#sec:db:when){reference-type="ref"
 reference="sec:db:when"}, there are occasions when a NoSQL DBMS can be a
 highly effective, such as when working with large quantities of
 unstructured data. For example, researchers analyzing large collections
@@ -1416,7 +1404,7 @@ of Twitter messages frequently store the messages in a NoSQL
 document-oriented database such as MongoDB. NoSQL databases are also
 often used to organize large numbers of records from many different
 sources, as illustrated in
-Figure \@ref(fig:figdb-dbs).
+Figure \@ref(fig:figdb-dbs).
 
 Summary
 -------
@@ -1444,7 +1432,7 @@ Resources
 
 The enormous popularity of DBMSs means that there are many good books to
 be found. Classic textbooks such as those by Silberschatz et
-al. [@silberschatz2010database] and Ramakrishnan and Gherke
+al. [@silberschatz2010database] and Ramakrishnan and Gherke
 [@ramakrishnan2000database] provide a great deal of technical detail.
 The DB Engines website collects information on DBMSs [@DBengines]. There
 are also many also useful online tutorials, and of course StackExchange
@@ -1469,3 +1457,5 @@ example, Sesame [@broekstra2002sesame; @sesame]
 If you are interested in the state of database and data management
 research, the recent Beckman Report [@abadi2014beckman] provides a
 useful perspective.
+
+
