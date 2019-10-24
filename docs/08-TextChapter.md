@@ -18,7 +18,7 @@ Understanding human generated text
 -------------------------------
 
 You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
-and understand. As social scientists, we often deal with text data that comes from a variety of sources – open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
+and understand. As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
 
 **Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:**
 
@@ -64,14 +64,53 @@ and understand. As social scientists, we often deal with text data that comes fr
 
 ## How is text data different than “structured” data?
 
-We’re comfortable analyzing structured data that is structured into rows and columns. Text data, often also known as unstructured data(footnote: this is often the term used but is a fallacy. There is a lot of structure in text - that is makes you, the reader, understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data), is harder to analyze using traditional data analysis tools because it doesn’t come with rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves, often using methods that are designed specifically for different types of problems. 
+We’re comfortable analyzing structured data that is structured into
+rows and columns. Text data, often also known as unstructured
+data,(footnote: this is often the term used but is a fallacy. There is
+a lot of structure in text&mdash;the structure of chapters,
+paragraphs, sentences, and syntax within a sentence allows you reader,
+to understand what we’re writing here. Unstructured often refers to
+not having defined rows and columns in our data.) is harder to analyze
+using traditional data analysis tools because it doesn’t come with
+rows and columns, but instead consists of characters, words,
+sentences, and paragraphs. In traditional, “structured”, data, a human
+has already decided what constitutes a row (a person for example),
+what constitutes a column (their age, gender, address, for example),
+and the relationship between them. We covered that in the Database
+chapter where we created a data model for a given domain. When dealing
+with text data, we have to create that structure ourselves, often
+using methods that are designed specifically for different types of
+problems.
 
-While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor [@halevy-09] and deception [@niculae-15; @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text]. Text data also often reflects human observations that are exceptions to regular processes - the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.
+While creating that structure, we have to deal with human language
+being complex and nuanced, which makes analyzing it difficult. We
+often make simplifying assumptions: we assume our input is perfect
+text; we ignore humor [@halevy-09] and deception [@niculae-15;
+@ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6
+for a discussion of speech recognition, which can turn spoken language
+into text]. Text data also often reflects human observations that are
+exceptions to regular processes&mdash;the ubiquitous “other” or
+“Anything else you want to tell us” field in
+questionnaires. Recognizing this complexity, the goal of text analysis
+is to efficiently extract important information from large amounts of
+text in a comprehensible and meaningful way, and use it in our
+analysis just like we use structured data.
 
 ## What can we do with text data?
-We are often faced with two scenarios when we encounter text data:
-We have some text “corpus”, for example open-ended survey responses, and our goal is to understand the content - patterns, themes, trends - of that data.
-We have some data that consists of both structured and text data. Examples include electronic health records containing both patient medical records (structured data) and text notes from clinicians and lab results or survey responses consisting of both closed ended (multiple choice for example) and open ended responses. The goal here is not to analyze the text data in isolation but to incorporate the text data with the structured data in to our analysis. This happens regularly when we incorporate text from social media posts to data we already have about a particular person, organization, or location.
+
+We are often faced with two scenarios when we encounter text data: We
+have some text “corpus”, for example open-ended survey responses, and
+our goal is to understand the content - patterns, themes, trends - of
+that data.  We have some data that consists of both structured and
+text data. Examples include electronic health records containing both
+patient medical records (structured data) and text notes from
+clinicians and lab results or survey responses consisting of both
+closed ended (multiple choice for example) and open ended
+responses. The goal here is not to analyze the text data in isolation
+but to incorporate the text data with the structured data in to our
+analysis. This happens regularly when we incorporate text from social
+media posts to data we already have about a particular person,
+organization, or location.
 
 In both cases, there are a set of analyses that can be done with text data. We describe these analyses in the Table below:
 
@@ -289,9 +328,7 @@ idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
 
 Now that we have a matrix with documents as rows, words/phrases as columns and the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
 
-
 We’ll focus on three types of analysis: finding similar documents,  clustering, and classification. For each type of analysis, we ‘ll focus on what it allows us to do, what types of tasks social scientists will find it useful for, and how to evaluate the results of the analysis.
-
 
 Some evaluation text
 
@@ -507,8 +544,6 @@ latent topics governed by a Dirichlet distribution.
 <p class="caption">(\#fig:nyt-documents)Allocations of documents to topics</p>
 </div>
 
-\vspace*{-12pt}
-
 #### Inferring “topics” from raw text
 
 Algorithmically, the problem can be viewed as a black box. Given a
@@ -600,6 +635,8 @@ provide more details on the derivation of this equation.
 
 #### Applications of topic models
 
+% TODO(jbg): Add reference to applications of TM book
+
 Topic modeling is most often used for topic exploration, allowing users
 to understand the contents of large text corpora. Thus, topic models
 have been used, for example, to understand what the National Institutes
@@ -611,22 +648,56 @@ understand how individuals code in large programming projects
 Topic models can also be used as features to more elaborate algorithms
 such as machine translation [@Hu:Zhai:Eidelman:Boyd-Graber-2014],
 detecting objects in images [@wang-09b], or identifying political
-polarization [@paul-10]. Find a good example of topic models used in social sciences (maybe political science)
+polarization [@paul-10].  @boyd-graber-17 summarizes applications of
+topic models in the humanities, information retrieval, and social
+sciences.
 
-Evaluating clustering methods for text analysis
+@blei-07b apply topic models to classification and regression tasks
+such as sentiment analysis.  As discussed in the previous chapter,
+such methods require a feature-based representation of the data.  An
+advantage of using topic models is that the distribution over topics
+itself can serve as a feature.
 
-Objective evaluation
-Task specific evaluation
+For example, to predict whether a legislator will vote on a bill,
+@gerrish-12 learn a topic model that encodes each bill (proposed piece
+of legislation) as a vector.  To predict how a legislator will vote on
+a bill, the model takes a dot product between the bill's distribution
+over topics and a legislators ideology vector.  The higher score, the
+more compatible they are and the more likely the legislator is to vote
+on the bill.  Conversely, the lower the score, the less likely it is
+the legislator will vote on the bill.
+
+This formulation should remind you of logistic regression; however,
+the features are learned automatically rather than the feature
+engineering approach described in the last chapter.
+
+% TODO(jbg): There were some notes here about cluster vs. supervised
+%  evaluation, but should probably be elsewhere.
 
 **Document classification**
 
-The section above focused on the task of finding topics and themes in a new text data set. In many cases, we already know a set of topics  - this could be the set of topics or research fields as described by the Social Science Research Network or the set of sections (local news, international, sports, finance, etc.) in a news publication. The task we often face is to automatically categorize new documents into an existing set of categories. In text analysis, this is called text classification or categorization and uses supervised learning techniques from machine learning described in the earlier chapter.
+The section above focused on the task of finding topics and themes in
+a new text data set. In many cases, we already know a set of
+topics&emdash;this could be the set of topics or research fields as
+described by the Social Science Research Network or the set of
+sections (local news, international, sports, finance, etc.) in a news
+publication. The task we often face is to automatically categorize new
+documents into an existing set of categories. In text analysis, this
+is called text classification or categorization and uses supervised
+learning techniques from machine learning described in the earlier
+chapter.
 
-Text classification typically requires two things:
-A set of categories we want documents to be categorized into (each document can belong to one or more categories)
-Set of documents annotated/tagged with one or more categories from step 1.
+Text classification typically requires two things: A set of categories
+we want documents to be categorized into (each document can belong to
+one or more categories) Set of documents annotated/tagged with one or
+more categories from Step 1.
 
-For example, if we want to classify twitter or facebook posts as being about health or finance,  a classification method would take a small number of posts, manually tagged as belonging to either health or finance, and train a classification model. This model can then be used to automatically classify new posts as belonging to either health or finance
+For example, if we want to classify twitter or facebook posts as being
+about health or finance, a classification method would take a small
+number of posts, manually tagged as belonging to either health or
+finance, and train a classification model. This model can then be used
+to automatically classify new posts as belonging to either health or
+finance.
 
 **Diagram of Text Classification Pipeline**
 
@@ -655,13 +726,9 @@ characterize what research has been done, provide information about
 which projects are similar within or across institutions, and
 potentially identify new fields of study [@talley2011database].
 
-**Evaluating Text Classification Methods**
-
-The metrics used to evaluate text classification methods are the same as  those used in supervised learning, as described in the Machine Learning chapter. The most commonly used metrics include accuracy, precision, recall, AUC, and F1 score. [include example in notebook]
-
 
 **Applications**
-\vspace*{-2pt}
+
 
 **Spam Detection**
 
@@ -687,10 +754,66 @@ different approaches to praise a toaster than to praise an air
 conditioner [@blitzer-07]; liberals and conservatives each frame health
 care differently from how they frame energy policy [@nguyen-13:shlda].
 
+**Evaluating Text Classification Methods**
+
+The metrics used to evaluate text classification methods are the same
+as those used in supervised learning, as described in the Machine
+Learning chapter. The most commonly used metrics include accuracy,
+precision, recall, AUC, and F1 score. [include example in notebook]
+
 
 Word Embeddings and Deep Learning
 -----------
 
+In discussing topic models, we learned a vector that summarized the
+content of each document.  This is useful for applications where you
+can use a single, short vector to summarize a document for a
+downstream machine learning application.  However, modern research
+doesn't stop there, it learns vector representations of everything
+from documents down to sentences and words.
+
+First, let's consider this from a high-level perspective.  The goal of
+representation learning [@bengio-13] is to take an input and transform
+it into a vector that computers can understand.  Similar inputs should
+be close together in vector space.  E.g., "dog" and "poodle" should
+have similar vectors, while "dog" and "chainsaw" do not.
+
+A well-known technique for word representation is word2vec
+[@mikolov-13].  Using an objective function similar to logistic
+regression, it predicts, given a word, whether another word will
+appear in the same context.  For example, the dot product for "dog"
+and "pet", "dog" and "leash", and "dog" and "wag" will be high but
+those for "dog" and "rectitude", "dog" and "examine", and "dog" and
+"cloudy" will be lower.  Training a model to do this for all of the
+words in English will produce vector representations for "dog" and
+"poodle" that are quite close together.
+
+This model has been well adopted throughout natural language
+processing [@church-17].  Downloading word2vec vectors for words and
+using them as features in your machine learning pipeline (e.g., for
+document classification by averaging the words in the document) will
+likely improve supervised classification task.
+
+But word representations are not the end of the story.  A word only
+makes sense in the context of the sentence in which it appears: e.g.,
+"I deposited my check at the bank" vs. "The airplane went into a bank
+of clouds".  A single word per vector does not capture these subtle
+effects.  More recent models named after Muppets (long, uninteresting
+story) tries to capture broader relationships between words within
+sentences to create *contextualized representations*.
+
+ELMO [@peters-18] and BERT [@devlin-18] both use deep learning to take
+word vectors (a la word2vec) to create representations that make sense
+given a word's context.  These are also useful features to use in
+supervised machine learning contexts if higher accuracy is your goal.
+
+However, these techniques are not always the best tools for social
+scientists.  They are not always interpretable&emdash;it is often hard
+to tell why you got the answer you did [@ribeiro-16], and slightly
+changing the input the models can dramatically change the results
+[@feng-18].  Given that our goal is often understanding our data, it
+is probably better to start first with the simpler (and faster
+methods) mentioned here to understand your data first.
 
 Text analysis tools
 -------------------
@@ -768,6 +891,21 @@ novices. It offers fast, popular implementations of conditional random
 fields (for part-of- speech tagging), text classification, and topic
 modeling.
 
+**Spacy.io** 
+
+While NLTK is optimized for teaching NLP concepts to students,
+Spacy.io [http://spacy.io] is optimize for practical application.  It
+is super-fast, contains many models for well-trodden tasks
+(classification, finding entities in sentences, etc.).  It also has
+pre-trained models (including word and sentence representations) that
+can help practicioners quickly build competitive models.
+
+**Pytorch**
+
+For the truly adventurous who want to build their own deep learning
+models for text, PyTorch [http://pytorch.org] offers the flexibility
+go from word vectors to complete deep representations of sentences.
+
 Summary
 -------
 
@@ -824,12 +962,6 @@ resources that can be helpful in mastering text mining techniques:
     and examples that are easily accessible online [@NLTKweb]. The book
     by Bird et al. [@bird-09], available online, contains multiple
     examples and tips on how to use NLTK.
-
--   The book *Pattern Recognition and Machine Learning* by Christopher
-    Bishop [@bishop-06] is a useful introduction to computational
-    techniques, including probabilistic methods, text analysis, and
-    machine learning. It has a number of tips and examples that are
-    helpful to both learning and experienced researchers.
 
 -   A paper by Anna Huang [@huang-08] provides a brief overview of the
     key similarity measures for text document clustering discussed in

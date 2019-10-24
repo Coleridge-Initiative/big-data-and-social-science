@@ -4,13 +4,13 @@ Information Visualization {#chap:viz}
 **M. Adil Yalcin and Catherine Plaisant**
 
 
-This chapter will show you how to explore data and communicate results
-so that data can be turned into interpretable, actionable information.
+This chapter will show you how to explore data in the early phases of a project as well as to communicate results so that data can be turned into interpretable, actionable information.
 There are many ways of presenting statistical information that convey
 content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range
 of data types and tasks, and to explore the foundations and challenges
-of information visualization.
+of information visualization at different stages of a project.
+
 
 \vspace*{-6pt}
 
@@ -39,7 +39,7 @@ graphic design to present information, and on advances in rapid
 processing and dynamic to design user interfaces that permit powerful
 interactive visual
 
-Figure \@ref(fig:fig9-1), "Anscombe's quartet" [@anscombe1973graphs],
+Figure \@ref(fig:fig9-1), "Anscombe's quartet" [@anscombe1973graphs],
 provides a classic example of the value of visualization compared to
 basic descriptive statistical analysis. The left-hand panel includes raw
 data of four small number-pair data sets (A, B, C, D), which have the
@@ -89,7 +89,7 @@ If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
 can be developed by graphic designers, as described in classic texts
 (see [@few2009now; @edward2001visual; @edward2006beauty] or the examples
-compiled by Harrison et al. [@harrison2015infographic; @harrisonweb]).
+compiled by Harrison et al. [@harrison2015infographic; @harrisonweb]).
 If, on the other hand, the audience comprises domain experts interested
 in monitoring the overview status of dynamic processes on a continuous
 basis, *dashboards* can be used. Examples include the monitoring of
@@ -125,7 +125,7 @@ the 1960s.].
 
 \vspace*{-12pt}
 Data analysis tools can enable analysis of structured and generic data
-sets. Figure \@ref(fig:fig9-2) shows an exploratory browser of a selection of
+sets. Figure \@ref(fig:fig9-2) shows an exploratory browser of a selection of
 awards (grants) from the US Department of Agriculture, created using the
 web-based data exploration tool Keshif (<http://www.keshif.me>). The
 awards (records) are listed in the middle panel by latest start date
@@ -149,7 +149,7 @@ and other attributes in this rich award portfolio.
 </div>
 
 Commercial tools such as Spotfire and Tableau, among many other tools
-(see Section [Resources](#sec:mylabel4)), allow users to create visualizations by
+(see Section [Resources](#sec:mylabel4)), allow users to create visualizations by
 offering chart types and visual design environments to analyze their
 data, and to combine them in potent dashboards rapidly shared with
 colleagues. For example, Figure
@@ -165,7 +165,7 @@ is annotated with an explanation of the spike. On the rightmost side,
 the Show Me panel suggests the applicable chart types potentially
 appropriate for the selected attributes. This chart can be combined with
 other charts focusing on other aspects in interactive dashboards.
-Figure \@ref(fig:fig9-3b) shows a treemap [@johnson1991tree] for agency
+Figure \@ref(fig:fig9-3b) shows a treemap [@johnson1991tree] for agency
 and sub-agency spending breakdown, combined with a map showing average
 spending per state. Oklahoma state stands out with few but large
 expenditures. Mousing-over Oklahoma reveals details of these
@@ -319,7 +319,7 @@ the chart space, such as stacked charts or pie charts.
 Finally, another approach to analyzing multidimensional data is to use
 clustering algorithms to identify similar items. Clusters are typically
 represented as a tree structure (see
-Section [Hierarchical data]). For example, $k$-means clustering starts by
+Section [Hierarchical data]). For example, $k$-means clustering starts by
 users specifying how many clusters to create; the algorithm then places
 every item into the most appropriate cluster. Surprising relationships
 and interesting outliers may be identified by these techniques on
@@ -360,7 +360,7 @@ hierarchy of continents, countries, and cities).
 </div>
 
 Maps are commonly combined with other visualizations. For example, in
-Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
+Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
 to explore correlations between attributes.
@@ -378,7 +378,7 @@ last). This cyclic nature can be captured by circular visual encodings,
 such as the the conventional clock with hour, minute, and second hands.
 
 Time series data
-(Figures \@ref(fig:fig9-6) and
+(Figures \@ref(fig:fig9-6) and
 \@ref(fig:fig9-7))
 describe values measured at regular intervals, such as stock market or
 weather data. The focus of analysis is to understand temporal trends and
@@ -409,7 +409,7 @@ patterns, spotting rare ones, searching for specific sequences, or
 understanding what leads to particular types of events is important
 (e.g., what events lead to a student dropping out, precede a medical
 error, or a company filing bankruptcy).
-Figure \@ref(fig:fig9-7) shows EventFlow used to visualize sequences of
+Figure \@ref(fig:fig9-7) shows EventFlow used to visualize sequences of
 innovation activities by Illinois companies. Activity types include
 research, invention, prototyping, and commercialization. The timeline
 (right panel) shows the sequence of activities for each company. The
@@ -435,7 +435,7 @@ as "how deep is the tree?", "how many items does this branch have?", or
 "what are the characteristics of one branch compared to another?" In
 such cases, the most appropriate representation is usually a node-link
 diagram [@plaisant2002spacetree; @card2002degree]. In
-Figure \@ref(fig:fig9-8), Spacetree is used to browse a company organizational
+Figure \@ref(fig:fig9-8), Spacetree is used to browse a company organizational
 chart. Since not all the nodes of the tree fit on the screen, we see an
 iconic representation of the branches that cannot be displayed,
 indicating the size of each branch. As the tree branches are opened or
@@ -447,7 +447,7 @@ leaf nodes are of primary interest, treemaps, a space-filling approach,
 are preferable as they can show arbitrary-sized trees in a fixed
 rectangular space and map one attribute to the size of each rectangle
 and another to color. For example,
-Figure \@ref(fig:fig9-9) shows the Finviz treemap that helps users monitor
+Figure \@ref(fig:fig9-9) shows the Finviz treemap that helps users monitor
 the stock market. Each stock is shown as a rectangle. The size of the
 rectangle represents market capitalization, and color indicates whether
 the stock is going up or down. Treemaps are effective for situation
@@ -504,7 +504,7 @@ networks where nodes and edges inevitably overlap by virtue of the
 underlying network structure, and where aggregation and filtering may be
 needed before effective overviews can be presented to users.
 
-Figure \@ref(fig:fig9-10) shows the networks of inventors (white) and
+Figure \@ref(fig:fig9-10) shows the networks of inventors (white) and
 companies (orange) and their patenting connections (purple lines) in the
 network visualization NodeXL. Each company and inventor is also
 connected to a location node (blue = USA; yellow = Canada). Green lines
@@ -516,7 +516,7 @@ structure moving from the cluster in the lower right to the main cluster
 in the upper left. NodeXL is designed for interactive network
 exploration; many controls (not shown in the figure) allow users to zoom
 on areas of interest or change options.
-Figure \@ref(fig:fig9-10b) shows an example of network visualization on
+Figure \@ref(fig:fig9-10b) shows an example of network visualization on
 science as a topic used for data presentation in a book and a traveling
 exhibit. Designed for print media, it includes a clear title and
 annotations and shows a series of topic clusters at the bottom with a
@@ -538,7 +538,7 @@ the text collections, such as matrices to see relations, network
 diagrams, or parallel coordinates to see entity relationships (e.g.,
 between what, who, where, and when). Timelines can be mapped to the
 linear dimension of text.
-Figure \@ref(fig:fig9-11) shows an example using Jigsaw
+Figure \@ref(fig:fig9-11) shows an example using Jigsaw
 [@stasko2008jigsaw] for the exploration of car reviews. Entities have
 been extracted automatically (in this case make, model, features, etc.),
 and a cluster analysis has been performed, visualized in the bottom
@@ -698,3 +698,4 @@ An extended list of tools and books is available at
 <http://www.keshif.me/demo/VisTools>.
 
 \addtocontents{toc}{\protect\vspace*{8pt}}
+

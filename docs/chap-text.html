@@ -377,7 +377,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This chapter provides an overview of how social scientists can make use of text data using computational data analysis methods. We cover the types of analysis that can be done with text data (search, topic detection, classification, etc.) and give an overview of how to do these analysis, social science tasks that they’re useful for, and how to evaluate the results. We provide a set of tools that are commonly used for doing text analysis and provide ….</p>
 <div id="understanding-human-generated-text" class="section level2">
 <h2><span class="header-section-number">8.1</span> Understanding human generated text</h2>
-<p>You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read and understand. As social scientists, we often deal with text data that comes from a variety of sources – open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis.</p>
+<p>You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read and understand. As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis.</p>
 <p><strong>Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:</strong></p>
 <ul>
 <li>How is text data different than “structured” data?</li>
@@ -419,8 +419,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="how-is-text-data-different-than-structured-data" class="section level2">
 <h2><span class="header-section-number">8.2</span> How is text data different than “structured” data?</h2>
-<p>We’re comfortable analyzing structured data that is structured into rows and columns. Text data, often also known as unstructured data(footnote: this is often the term used but is a fallacy. There is a lot of structure in text - that is makes you, the reader, understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data), is harder to analyze using traditional data analysis tools because it doesn’t come with rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves, often using methods that are designed specifically for different types of problems.</p>
-<p>While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span> and deception <span class="citation">(Niculae et al. <a href="#ref-niculae-15">2015</a>; Ott et al. <a href="#ref-ott-11">2011</a>)</span>; and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a>. Text data also often reflects human observations that are exceptions to regular processes - the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.</p>
+<p>We’re comfortable analyzing structured data that is structured into rows and columns. Text data, often also known as unstructured data,(footnote: this is often the term used but is a fallacy. There is a lot of structure in text—the structure of chapters, paragraphs, sentences, and syntax within a sentence allows you reader, to understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data.) is harder to analyze using traditional data analysis tools because it doesn’t come with rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves, often using methods that are designed specifically for different types of problems.</p>
+<p>While creating that structure, we have to deal with human language being complex and nuanced, which makes analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span> and deception <span class="citation">(Niculae et al. <a href="#ref-niculae-15">2015</a>; Ott et al. <a href="#ref-ott-11">2011</a>)</span>; and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. Text data also often reflects human observations that are exceptions to regular processes—the ubiquitous “other” or “Anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text in a comprehensible and meaningful way, and use it in our analysis just like we use structured data.</p>
 </div>
 <div id="what-can-we-do-with-text-data" class="section level2">
 <h2><span class="header-section-number">8.3</span> What can we do with text data?</h2>
@@ -447,7 +447,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul>
 <div id="processing-text-data" class="section level3">
 <h3><span class="header-section-number">8.4.1</span> Processing text data</h3>
-<p>The first important step in working with text data is cleaning and processing<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a>. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.</p>
+<p>The first important step in working with text data is cleaning and processing<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a>. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.</p>
 <p><strong>Tokenization</strong></p>
 <p>The first step in processing text is deciding what terms and phrases are meaningful. Tokenization separates sentences and terms from each other. The Natural Language Toolkit (NLTK) <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span> provides simple reference implementations of standard natural language processing algorithms such as tokenization—for example, sentences are separated from each other using punctuation such as period, question mark, or exclamation mark. However, this does not cover all cases such as quotes, abbreviations, or informal communication on social media. While separating sentences in a single language is hard enough, some documents “code-switch,” combining multiple languages in a single document. These complexities are best addressed through data-driven machine learning frameworks <span class="citation">(Kiss and Strunk <a href="#ref-kiss-06">2006</a>)</span>.</p>
 <p><strong>Stop words</strong></p>
@@ -467,7 +467,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="turning-text-into-a-matrix-how-much-is-a-word-worth" class="section level3">
 <h3><span class="header-section-number">8.4.2</span> Turning text into a matrix: How much is a word worth?</h3>
-<p>The processing stages described above provide us with the columns in our matrix. Now we have to decide what value we assign that word/phrase/column. In text analysis, we typically refer to them as tokens (where a token can be a word or a phrase). One simple approach would be to give each column a binary 0 or 1 value - if this token occurs in a document, we assign that cell a value of 1 and 0 otherwise. Another approach would be to assign it the value of how many times this token occurs in that document (often known as frequency of that term or token). This is essentially a way to define the importance or value of this token in this document. Not all words are worth the same; in an article about economics, “free market” is more important than “social good.” Appropriately weighting<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a> and calibrating words is important for both human and machine consumers of text data: humans do not want to see “the” as the most frequent word of every document in summaries, and classification algorithms benefit from knowing which features are actually important to making a decision.</p>
+<p>The processing stages described above provide us with the columns in our matrix. Now we have to decide what value we assign that word/phrase/column. In text analysis, we typically refer to them as tokens (where a token can be a word or a phrase). One simple approach would be to give each column a binary 0 or 1 value - if this token occurs in a document, we assign that cell a value of 1 and 0 otherwise. Another approach would be to assign it the value of how many times this token occurs in that document (often known as frequency of that term or token). This is essentially a way to define the importance or value of this token in this document. Not all words are worth the same; in an article about economics, “free market” is more important than “social good.” Appropriately weighting<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a> and calibrating words is important for both human and machine consumers of text data: humans do not want to see “the” as the most frequent word of every document in summaries, and classification algorithms benefit from knowing which features are actually important to making a decision.</p>
 <p>Weighting words requires balancing how often a word appears in a local context (such as a document) with how much it appears overall in the document collection. Term frequency–inverse document frequency (TFIDF) <span class="citation">(Salton <a href="#ref-salton-68">1968</a>)</span> is a weighting scheme to explicitly balance these factors and prioritize the most meaningful words. The TFIDF model takes into account both the term frequency of a given token and its document frequency (Box 7.1) so that if a highly frequent word also appears in almost all documents, its meaning for the specific context of the corpus is negligible. Stop words are a good example when highly frequent words also bear limited meaning since they appear in virtually all documents of a given corpus.</p>
 <div class="F00">
 <p>
@@ -580,7 +580,6 @@ Figure 8.1: Topics are distributions over words. Here are three example topics l
 Figure 8.2: Allocations of documents to topics
 </p>
 </div>
-
 <div id="inferring-topics-from-raw-text" class="section level4">
 <h4><span class="header-section-number">8.4.3.1</span> Inferring “topics” from raw text</h4>
 <p>Algorithmically, the problem can be viewed as a black box. Given a corpus and an integer <span class="math inline">\(K\)</span> as input, provide the topics that best describe the document collection: a process called <em>posterior inference</em>. The most common algorithm for solving this problem is a technique called <em>Gibbs sampling</em> <span class="citation">(Geman and Geman <a href="#ref-geman-90">1990</a>)</span>.</p>
@@ -614,33 +613,43 @@ p(z_B = 3) = &amp; \frac{2 + 1.000}{3 + 3.000} \times \frac{1 + 1.000}{4 + 5.000
 </div>
 <div id="applications-of-topic-models" class="section level4">
 <h4><span class="header-section-number">8.4.3.2</span> Applications of topic models</h4>
+<p>% TODO(jbg): Add reference to applications of TM book</p>
 <p>Topic modeling is most often used for topic exploration, allowing users to understand the contents of large text corpora. Thus, topic models have been used, for example, to understand what the National Institutes of Health funds <span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>)</span>; to compare and contrast what was discussed in the North and South in the Civil War <span class="citation">(Nelson <a href="#ref-nelson-10">2010</a>)</span>; and to understand how individuals code in large programming projects <span class="citation">(Maskeri, Sarkar, and Heafield <a href="#ref-maskeri-08">2008</a>)</span>.</p>
-<p>Topic models can also be used as features to more elaborate algorithms such as machine translation <span class="citation">(Hu et al. <a href="#ref-Hu:Zhai:Eidelman:Boyd-Graber-2014">2014</a>)</span>, detecting objects in images <span class="citation">(Wang, Blei, and Fei-Fei <a href="#ref-wang-09b">2009</a>)</span>, or identifying political polarization <span class="citation">(Paul and Girju <a href="#ref-paul-10">2010</a>)</span>. Find a good example of topic models used in social sciences (maybe political science)</p>
-<p>Evaluating clustering methods for text analysis</p>
-<p>Objective evaluation Task specific evaluation</p>
+<p>Topic models can also be used as features to more elaborate algorithms such as machine translation <span class="citation">(Hu et al. <a href="#ref-Hu:Zhai:Eidelman:Boyd-Graber-2014">2014</a>)</span>, detecting objects in images <span class="citation">(Wang, Blei, and Fei-Fei <a href="#ref-wang-09b">2009</a>)</span>, or identifying political polarization <span class="citation">(Paul and Girju <a href="#ref-paul-10">2010</a>)</span>. <span class="citation">Boyd-Graber, Hu, and Mimno (<a href="#ref-boyd-graber-17">2017</a>)</span> summarizes applications of topic models in the humanities, information retrieval, and social sciences.</p>
+<p><span class="citation">Blei and McAuliffe (<a href="#ref-blei-07b">2007</a>)</span> apply topic models to classification and regression tasks such as sentiment analysis. As discussed in the previous chapter, such methods require a feature-based representation of the data. An advantage of using topic models is that the distribution over topics itself can serve as a feature.</p>
+<p>For example, to predict whether a legislator will vote on a bill, <span class="citation">Gerrish and Blei (<a href="#ref-gerrish-12">2012</a>)</span> learn a topic model that encodes each bill (proposed piece of legislation) as a vector. To predict how a legislator will vote on a bill, the model takes a dot product between the bill’s distribution over topics and a legislators ideology vector. The higher score, the more compatible they are and the more likely the legislator is to vote on the bill. Conversely, the lower the score, the less likely it is the legislator will vote on the bill.</p>
+<p>This formulation should remind you of logistic regression; however, the features are learned automatically rather than the feature engineering approach described in the last chapter.</p>
+<p>% TODO(jbg): There were some notes here about cluster vs. supervised % evaluation, but should probably be elsewhere.</p>
 <p><strong>Document classification</strong></p>
-<p>The section above focused on the task of finding topics and themes in a new text data set. In many cases, we already know a set of topics - this could be the set of topics or research fields as described by the Social Science Research Network or the set of sections (local news, international, sports, finance, etc.) in a news publication. The task we often face is to automatically categorize new documents into an existing set of categories. In text analysis, this is called text classification or categorization and uses supervised learning techniques from machine learning described in the earlier chapter.</p>
-<p>Text classification typically requires two things: A set of categories we want documents to be categorized into (each document can belong to one or more categories) Set of documents annotated/tagged with one or more categories from step 1.</p>
-<p>For example, if we want to classify twitter or facebook posts as being about health or finance, a classification method would take a small number of posts, manually tagged as belonging to either health or finance, and train a classification model. This model can then be used to automatically classify new posts as belonging to either health or finance</p>
+<p>The section above focused on the task of finding topics and themes in a new text data set. In many cases, we already know a set of topics&amp;emdash;this could be the set of topics or research fields as described by the Social Science Research Network or the set of sections (local news, international, sports, finance, etc.) in a news publication. The task we often face is to automatically categorize new documents into an existing set of categories. In text analysis, this is called text classification or categorization and uses supervised learning techniques from machine learning described in the earlier chapter.</p>
+<p>Text classification typically requires two things: A set of categories we want documents to be categorized into (each document can belong to one or more categories) Set of documents annotated/tagged with one or more categories from Step 1.</p>
+<p>For example, if we want to classify twitter or facebook posts as being about health or finance, a classification method would take a small number of posts, manually tagged as belonging to either health or finance, and train a classification model. This model can then be used to automatically classify new posts as belonging to either health or finance.</p>
 <p><strong>Diagram of Text Classification Pipeline</strong></p>
 <p>Processing -&gt; linguistic - &gt; matrix -&gt; classification method</p>
 <p>All of the classification (supervised learning) methods we covered in the Machine Learning chapter can be used here once the text data has been processed and converted to a matrix. Neural Networks [reference],. Random Forests [ref], and Support Vector Machines [ref] are some of the commonly used methods applied to text data.</p>
 <hr />
 <p><strong>Example: Using text to categorize scientific fields</strong></p>
 <p>The National Center for Science and Engineering Statistics, the US statistical agency charged with collecting statistics on science and engineering, uses a rule-based system to manually create categories of science; these are then used to categorize research as “physics” or “economics” <span class="citation">(Mortensen, Bloch, and others <a href="#ref-oecd2005measurement">2005</a>; Economic Co-operation and Development <a href="#ref-manual2004summary">2004</a>)</span>. In a rule-based system there is no ready response to the question “how much do we spend on climate change, food safety, or biofuels?” because existing rules have not created such categories. Text analysis techniques can be used to provide such detail without manual collation. For example, data about research awards from public sources and about people funded on research grants from UMETRICS can be linked with data about their subsequent publications and related student dissertations from ProQuest. Both award and dissertation data are text documents that can be used to characterize what research has been done, provide information about which projects are similar within or across institutions, and potentially identify new fields of study <span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>)</span>.</p>
-<p><strong>Evaluating Text Classification Methods</strong></p>
-<p>The metrics used to evaluate text classification methods are the same as those used in supervised learning, as described in the Machine Learning chapter. The most commonly used metrics include accuracy, precision, recall, AUC, and F1 score. [include example in notebook]</p>
-<p><strong>Applications</strong> </p>
+<p><strong>Applications</strong></p>
 <p><strong>Spam Detection</strong></p>
 <p>One simple but ubiquitous example of document classification is spam detection: an email is either an unwanted advertisement (spam) or it is not. Document classification techniques such as naïve Bayes <span class="citation">(Lewis <a href="#ref-lewis-05">1998</a>)</span> touch essentially every email sent worldwide, making email usable even though most emails are spam.</p>
 <p><strong>Sentiment analysis</strong></p>
 <p>Instead of being what a document is about, a label <span class="math inline">\(y\)</span> could also reveal the speaker. A recent subfield of natural language processing is to use machine learning to reveal the internal state of speakers based on what they say about a subject <span class="citation">(Pang and Lee <a href="#ref-pang-08">2008</a>)</span>. For example, given an example of sentence <span class="math inline">\(x\)</span>, can we determine whether the speaker is a Liberal or a Conservative? Is the speaker happy or sad?</p>
 <p>Simple approaches use dictionaries and word counting methods <span class="citation">(Pennebaker and Francis <a href="#ref-pennebaker-99">1999</a>)</span>, but more nuanced approaches make use of <em>domain</em>-specific information to make better predictions. One uses different approaches to praise a toaster than to praise an air conditioner <span class="citation">(Blitzer, Dredze, and Pereira <a href="#ref-blitzer-07">2007</a>)</span>; liberals and conservatives each frame health care differently from how they frame energy policy <span class="citation">(Nguyen, Boyd-Graber, and Resnik <a href="#ref-nguyen-13:shlda">2013</a>)</span>.</p>
+<p><strong>Evaluating Text Classification Methods</strong></p>
+<p>The metrics used to evaluate text classification methods are the same as those used in supervised learning, as described in the Machine Learning chapter. The most commonly used metrics include accuracy, precision, recall, AUC, and F1 score. [include example in notebook]</p>
 </div>
 </div>
 </div>
 <div id="word-embeddings-and-deep-learning" class="section level2">
 <h2><span class="header-section-number">8.5</span> Word Embeddings and Deep Learning</h2>
+<p>In discussing topic models, we learned a vector that summarized the content of each document. This is useful for applications where you can use a single, short vector to summarize a document for a downstream machine learning application. However, modern research doesn’t stop there, it learns vector representations of everything from documents down to sentences and words.</p>
+<p>First, let’s consider this from a high-level perspective. The goal of representation learning <span class="citation">(Bengio, Courville, and Vincent <a href="#ref-bengio-13">2013</a>)</span> is to take an input and transform it into a vector that computers can understand. Similar inputs should be close together in vector space. E.g., “dog” and “poodle” should have similar vectors, while “dog” and “chainsaw” do not.</p>
+<p>A well-known technique for word representation is word2vec <span class="citation">(Mikolov et al. <a href="#ref-mikolov-13">2013</a>)</span>. Using an objective function similar to logistic regression, it predicts, given a word, whether another word will appear in the same context. For example, the dot product for “dog” and “pet”, “dog” and “leash”, and “dog” and “wag” will be high but those for “dog” and “rectitude”, “dog” and “examine”, and “dog” and “cloudy” will be lower. Training a model to do this for all of the words in English will produce vector representations for “dog” and “poodle” that are quite close together.</p>
+<p>This model has been well adopted throughout natural language processing <span class="citation">(Ward <a href="#ref-church-17">2017</a>)</span>. Downloading word2vec vectors for words and using them as features in your machine learning pipeline (e.g., for document classification by averaging the words in the document) will likely improve supervised classification task.</p>
+<p>But word representations are not the end of the story. A word only makes sense in the context of the sentence in which it appears: e.g., “I deposited my check at the bank” vs. “The airplane went into a bank of clouds”. A single word per vector does not capture these subtle effects. More recent models named after Muppets (long, uninteresting story) tries to capture broader relationships between words within sentences to create <em>contextualized representations</em>.</p>
+<p>ELMO <span class="citation">(Peters et al. <a href="#ref-peters-18">2018</a>)</span> and BERT <span class="citation">(Devlin et al. <a href="#ref-devlin-18">2019</a>)</span> both use deep learning to take word vectors (a la word2vec) to create representations that make sense given a word’s context. These are also useful features to use in supervised machine learning contexts if higher accuracy is your goal.</p>
+<p>However, these techniques are not always the best tools for social scientists. They are not always interpretable&amp;emdash;it is often hard to tell why you got the answer you did <span class="citation">(Ribeiro, Singh, and Guestrin <a href="#ref-ribeiro-16">2016</a>)</span>, and slightly changing the input the models can dramatically change the results <span class="citation">(Feng et al. <a href="#ref-feng-18">2018</a>)</span>. Given that our goal is often understanding our data, it is probably better to start first with the simpler (and faster methods) mentioned here to understand your data first.</p>
 </div>
 <div id="text-analysis-tools" class="section level2">
 <h2><span class="header-section-number">8.6</span> Text analysis tools</h2>
@@ -675,6 +684,10 @@ Listing 7.4. Python code to find bigrams using NLTK
 <p>While NLTK’s emphasis is on simple reference implementations, Stanford’s CoreNLP <span class="citation">(Stanford, n.d.; Manning et al. <a href="#ref-manning2014stanford">2014</a>)</span> is focused on fast implementations of cutting-edge algorithms, particularly for syntactic analysis (e.g., determining the subject of a sentence).</p>
 <p><strong>MALLET</strong></p>
 <p>For probabilistic models of text, MALLET, the MAchine Learning for LanguagE Toolkit <span class="citation">(McCallum <a href="#ref-mallet">2002</a>)</span>, often strikes the right balance between usefulness and usability. It is written to be fast and efficient but with enough documentation and easy enough interfaces to be used by novices. It offers fast, popular implementations of conditional random fields (for part-of- speech tagging), text classification, and topic modeling.</p>
+<p><strong>Spacy.io</strong></p>
+<p>While NLTK is optimized for teaching NLP concepts to students, Spacy.io [<a href="http://spacy.io" class="uri">http://spacy.io</a>] is optimize for practical application. It is super-fast, contains many models for well-trodden tasks (classification, finding entities in sentences, etc.). It also has pre-trained models (including word and sentence representations) that can help practicioners quickly build competitive models.</p>
+<p><strong>Pytorch</strong></p>
+<p>For the truly adventurous who want to build their own deep learning models for text, PyTorch [<a href="http://pytorch.org" class="uri">http://pytorch.org</a>] offers the flexibility go from word vectors to complete deep representations of sentences.</p>
 </div>
 <div id="summary-4" class="section level2">
 <h2><span class="header-section-number">8.7</span> Summary</h2>
@@ -688,7 +701,6 @@ Listing 7.4. Python code to find bigrams using NLTK
 <p>Text analysis is one of the more complex tasks in big data analysis. Because it is unstructured, text (and natural language overall) requires significant processing and cleaning before we can engage in interesting analysis and learning. In this chapter we have referenced several resources that can be helpful in mastering text mining techniques:</p>
 <ul>
 <li><p>The Natural Language Toolkit is one of the most popular Python-based tools for natural language processing. It has a variety of methods and examples that are easily accessible online <span class="citation">(NLTK Project, n.d.)</span>. The book by Bird et al. <span class="citation">(Bird, Klein, and Loper <a href="#ref-bird-09">2009</a>)</span>, available online, contains multiple examples and tips on how to use NLTK.</p></li>
-<li><p>The book <em>Pattern Recognition and Machine Learning</em> by Christopher Bishop <span class="citation">(Bishop <a href="#ref-bishop-06">2006</a>)</span> is a useful introduction to computational techniques, including probabilistic methods, text analysis, and machine learning. It has a number of tips and examples that are helpful to both learning and experienced researchers.</p></li>
 <li><p>A paper by Anna Huang <span class="citation">(Huang <a href="#ref-huang-08">2008</a>)</span> provides a brief overview of the key similarity measures for text document clustering discussed in this chapter, including their strengths and weaknesses in different contexts.</p></li>
 <li><p>Materials at the MALLET website <span class="citation">(McCallum <a href="#ref-mallet">2002</a>)</span> can be specialized for the unprepared reader but are helpful when looking for specific solutions with topic modeling and machine classification using this toolkit.</p></li>
 <li><p>David Blei, one of the authors of the latent Dirichlet allocation algorithm (topic modeling), maintains a helpful web page with introductory resources for those interested in topic modeling <span class="citation">(Blei, n.d.)</span>.</p></li>
@@ -699,14 +711,17 @@ Listing 7.4. Python code to find bigrams using NLTK
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
+<div id="ref-bengio-13">
+<p>Bengio, Y., A. Courville, and P. Vincent. 2013. “Representation Learning: A Review and New Perspectives.” <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 35 (8): 1798–1828. doi:<a href="https://doi.org/10.1109/TPAMI.2013.50">10.1109/TPAMI.2013.50</a>.</p>
+</div>
 <div id="ref-bird-09">
 <p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. <em>Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit</em>. O’Reilly Media.</p>
 </div>
-<div id="ref-bishop-06">
-<p>Bishop, Christopher M. 2006. <em>Pattern Recognition and Machine Learning</em>. Springer.</p>
-</div>
 <div id="ref-blei-09">
 <p>Blei, David M., and John Lafferty. 2009. “Topic Models.” In <em>Text Mining: Theory and Applications</em>, edited by Ashok Srivastava and Mehran Sahami. Taylor &amp; Francis.</p>
+</div>
+<div id="ref-blei-07b">
+<p>Blei, David M., and Jon D. McAuliffe. 2007. “Supervised Topic Models.” In <em>Advances in Neural Information Processing Systems</em>.</p>
 </div>
 <div id="ref-blei-03">
 <p>Blei, David M., Andrew Ng, and Michael Jordan. 2003. “Latent Dirichlet Allocation.” <em>Journal of Machine Learning Research</em> 3: 993–1022.</p>
@@ -714,17 +729,29 @@ Listing 7.4. Python code to find bigrams using NLTK
 <div id="ref-blitzer-07">
 <p>Blitzer, John, Mark Dredze, and Fernando Pereira. 2007. “Biographies, Bollywood, Boom-Boxes and Blenders: Domain Adaptation for Sentiment Classification.” In <em>Proceedings of the Association for Computational Linguistics</em>.</p>
 </div>
+<div id="ref-boyd-graber-17">
+<p>Boyd-Graber, Jordan, Yuening Hu, and David Mimno. 2017. <em>Applications of Topic Models</em>. Edited by Doug Oard. Vol. 11. Foundations and Trends in Information Retrieval 2–3. NOW Publishers. <a href="http://www.nowpublishers.com/article/Details/INR-030" class="uri">http://www.nowpublishers.com/article/Details/INR-030</a>.</p>
+</div>
+<div id="ref-devlin-18">
+<p>Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. “BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding.” In <em>Conference of the North American Chapter of the Association for Computational Linguistics</em>.</p>
+</div>
 <div id="ref-Dunning-93">
 <p>Dunning, Ted. 1993. “Accurate Methods for the Statistics of Surprise and Coincidence.” <em>Computational Linguistics</em> 19 (1). Cambridge, MA: MIT Press: 61–74. <a href="http://dl.acm.org/citation.cfm?id=972450.972454" class="uri">http://dl.acm.org/citation.cfm?id=972450.972454</a>.</p>
 </div>
 <div id="ref-manual2004summary">
 <p>Economic Co-operation, Organisation of, and Development. 2004. “A Summary of the Frascati Manual.” <em>Main Definitions and Conventions for the Measurement of Research and Experimental Development</em> 84.</p>
 </div>
+<div id="ref-feng-18">
+<p>Feng, Shi, Eric Wallace, Alvin Grissom II, Pedro Rodriguez, Mohit Iyyer, and Jordan Boyd-Graber. 2018. “Pathologies of Neural Models Make Interpretation Difficult.” In <em>Empirical Methods in Natural Language Processing</em>. Brussels, Belgium. <a href="docs/2018_emnlp_rs.pdf" class="uri">docs/2018_emnlp_rs.pdf</a>.</p>
+</div>
 <div id="ref-browncorpus">
 <p>Francis, W. N., and H. Kucera. 1979. “Brown Corpus Manual.” Department of Linguistics, Brown University, Providence, Rhode Island, US. <a href="http://icame.uib.no/brown/bcm.html" class="uri">http://icame.uib.no/brown/bcm.html</a>.</p>
 </div>
 <div id="ref-geman-90">
 <p>Geman, S., and D. Geman. 1990. “Stochastic Relaxation, Gibbs Distributions, and the Bayesian Restoration of Images.” In <em>Readings in Uncertain Reasoning</em>, edited by Glenn Shafer and Judea Pearl, 452–72. Morgan Kaufmann.</p>
+</div>
+<div id="ref-gerrish-12">
+<p>Gerrish, Sean M., and David M. Blei. 2012. “The Issue-Adjusted Ideal Point Model.” <em>arXiv</em>.</p>
 </div>
 <div id="ref-griffiths-04">
 <p>Griffiths, Thomas L., and Mark Steyvers. 2004. “Finding Scientific Topics.” <em>Proceedings of the National Academy of Sciences</em> 101 (Suppl. 1): 5228–35.</p>
@@ -777,6 +804,9 @@ Listing 7.4. Python code to find bigrams using NLTK
 <div id="ref-meij-09">
 <p>Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten Rijke. 2009. “Learning Semantic Query Suggestions.” In <em>Proceedings of the 8th International Semantic Web Conference</em>, 424–40. ISWC ’09. Chantilly, VA: Springer. doi:<a href="https://doi.org/10.1007/978-3-642-04930-9_27">10.1007/978-3-642-04930-9_27</a>.</p>
 </div>
+<div id="ref-mikolov-13">
+<p>Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean. 2013. “Distributed Representations of Words and Phrases and Their Compositionality.” In <em>Advances in Neural Information Processing Systems</em>, 3111–9. Morgan Kaufmann.</p>
+</div>
 <div id="ref-oecd2005measurement">
 <p>Mortensen, Peter Stendahl, Carter Walter Bloch, and others. 2005. <em>Oslo Manual: Guidelines for Collecting and Interpreting Innovation Data</em>. Organisation for Economic Co-operation; Development.</p>
 </div>
@@ -813,11 +843,17 @@ Listing 7.4. Python code to find bigrams using NLTK
 <div id="ref-pennebaker-99">
 <p>Pennebaker, James W., and Martha E. Francis. 1999. <em>Linguistic Inquiry and Word Count</em>. Loose Leaf; Lawrence Erlbaum.</p>
 </div>
+<div id="ref-peters-18">
+<p>Peters, Matthew, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. “Deep Contextualized Word Representations.” In <em>Conference of the North American Chapter of the Association for Computational Linguistics</em>.</p>
+</div>
 <div id="ref-rabiner-89">
 <p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. doi:<a href="https://doi.org/10.1109/5.18626">10.1109/5.18626</a>.</p>
 </div>
 <div id="ref-ramage-09">
 <p>Ramage, Daniel, David Hall, Ramesh Nallapati, and Christopher Manning. 2009. “Labeled LDA: A Supervised Topic Model for Credit Attribution in Multi-Labeled Corpora.” In <em>Proceedings of Empirical Methods in Natural Language Processing</em>.</p>
+</div>
+<div id="ref-ribeiro-16">
+<p>Ribeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. “‘Why Should I Trust You?’: Explaining the Predictions of Any Classifier.” In <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, ca, Usa, August 13-17, 2016</em>, 1135–44.</p>
 </div>
 <div id="ref-salton-68">
 <p>Salton, Gerard. 1968. <em>Automatic Information Organization and Retrieval.</em> McGraw-Hill.</p>
@@ -843,13 +879,16 @@ Listing 7.4. Python code to find bigrams using NLTK
 <div id="ref-wang-09">
 <p>Wang, Yi, Hongjie Bai, Matt Stanton, Wen-Yen Chen, and Edward Y. Chang. 2009. “PLDA: Parallel Latent Dirichlet Allocation for Large-Scale Applications.” In <em>International Conference on Algorithmic Aspects in Information and Management</em>.</p>
 </div>
+<div id="ref-church-17">
+<p>Ward, Kenneth Church. 2017. “Word2Vec.” <em>Natural Language Engineering</em> 23 (1). Cambridge University Press: 155–62. doi:<a href="https://doi.org/10.1017/S1351324916000334">10.1017/S1351324916000334</a>.</p>
+</div>
 </div>
 <div class="footnotes">
 <hr />
-<ol start="42">
-<li id="fn42"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text<a href="chap-text.html#fnref42">↩</a></p></li>
-<li id="fn43"><p>Cleaning and processing are discussed extensively in Chapter 3.<a href="chap-text.html#fnref43">↩</a></p></li>
-<li id="fn44"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref44">↩</a></p></li>
+<ol start="41">
+<li id="fn41"><p>See Chapter 6 for a discussion of speech recognition, which can turn spoken language into text<a href="chap-text.html#fnref41">↩</a></p></li>
+<li id="fn42"><p>Cleaning and processing are discussed extensively in Chapter 3.<a href="chap-text.html#fnref42">↩</a></p></li>
+<li id="fn43"><p>Term weighting is an example of feature engineering discussed in Chapter 6.<a href="chap-text.html#fnref43">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

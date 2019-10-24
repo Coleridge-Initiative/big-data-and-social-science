@@ -4,12 +4,12 @@ Scaling up through Parallel and Distributed Computing {#chap:parallel}
 **Huy Vo and Claudio Silva**
 
 
-This chapter provides an overview of techniques that allow the analysis of large amounts of data using pmultiple computers concurrently. While the focus is on a widely used framework called MapReduce and popular implementations such as Apache Hadoop and Spark, the goal the chapter is to provide a conceptual framework to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer.
+This chapter provides an overview of techniques that allow us to analyze large amounts of data using distributed computing (multiple computers concurrently). While the focus is on a widely used framework called MapReduce and popular implementations such as Apache Hadoop and Spark, the goal of the chapter is to provide a conceptual and practical framework to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer. It is important to note that these frameworks do not result in analysis that is better - they are useful because they allow us to process large amounts of data faster and/or without getting access to a single massive computer with lots of memory (RAM) and processing power.
 
 Introduction
 ------------
 
-As the amount of data available for social science research increases, we have to determine how to perform our analysis efficiently. One way to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer is to subsample the data or to simplify the analysis.  Another approach is to use all the data by making use of multiple computers concurrently to do the analysis. The use of parallel computing to deal with large amounts of data has been a common approach in physical sciences. Data analysts have routinely been working on data
+As the amount of data available for social science research increases, we have to determine how to perform our analysis quickly and efficiently. One way to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer is to subsample the data or to simplify the analysis.  Another approach is to use all the data by making use of multiple computers concurrently to do the analysis. The use of parallel computing to deal with large amounts of data has been a common approach in physical sciences. Data analysts have routinely been working on data
 sets much larger than a single machine can handle for several decades,
 especially at the DOE National Laboratories
 [@bigdata_old1; @crossno1993heterogeneous] where high-performance
@@ -24,8 +24,12 @@ This chapter focuses on one such framework, called MapReduce, to do large-scale 
 
 Examples{#sec:examples}
 -------------------------------
-We should find examples where mapreduce has been used for social science problems. record linkage is one example, processing images or documents in parallel, etl, etc.
 
+Aghbari, Bahutair, and Kamel (2019) introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
+
+Kolb et al developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember \ref{chap:link}?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+
+https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/ describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
 MapReduce{#sec:intro}
 -------------------------------
@@ -114,7 +118,7 @@ processing. (A downside of this diversity of interest is that available
 features and capabilities can vary considerably, depending on the
 specific implementation of MapReduce that is being used.)
 
-As mentioned above, MapReduce is a programming model. In order to implement an analysis in MapReduce, we need to select an implementation of MapReduce. Two most commonly used n implementations of the MapReduce model are Hadoop and Spark, that we describe in more detail below.
+As mentioned above, MapReduce is a programming model. In order to implement an analysis in MapReduce, we need to select an implementation of MapReduce. Two most commonly used implementations of the MapReduce model are Hadoop and Spark, that we describe in more detail below.
 
 Apache Hadoop MapReduce
 -----------------------
@@ -416,7 +420,7 @@ of the simplicity of the model.
     these processes each time a job is submitted, which in turns results
     in this major overhead. Moreover, the brute force approach of
     maintaining fault tolerance by storing everything on HDFS is
-    expensive, especially when for large data sets.
+    expensive, especially for large data sets.
 
 -   **Hadoop streaming support for non-Java applications**: As mentioned previously, non-Java applications may only be
     integrated with Hadoop through the Hadoop streaming API. However,
@@ -672,4 +676,6 @@ See, for example, the tutorials on the Apache Hadoop [@AHweb] and Spark
 [@ASweb] websites. Albanese describes how to use Hadoop for social
 science [@socialhadoop], and Lin and Dyer discuss the use of MapReduce
 for text analysis [@lin2010data].
+
+
 

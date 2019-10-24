@@ -69,14 +69,12 @@ different algorithms on studies of patent productivity
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.\footnote{ If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link }
 
 Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
-todo: <RAYID CRIME OR SOMETHING>
+
+<!-- todo: <RAYID CRIME OR SOMETHING> --> 
+
 The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality \cite{NCHS2012}.
 
-
-
-
-todo:
-
+<!-- todo: --> 
 
 Introduction to record linkage {#sec:recordlinkage}
 ------------------------------
