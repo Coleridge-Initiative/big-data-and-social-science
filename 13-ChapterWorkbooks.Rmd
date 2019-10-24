@@ -6,7 +6,7 @@ Workbooks {#chap:workbooks}
 
 This final chapter provides an overview of the Python workbooks that
 accompany each chapter. These workbooks combine text explanation and
-code you can run, implemented in *Jupyter notebooks*^[See jupyter.org], to explain techniques and approaches
+code you can run, implemented in *Jupyter notebooks* (<https://jupyter.org/>), to explain techniques and approaches
 selected from each chapter and to provide thorough implementation
 details, enabling students and interested practitioners to quickly get
 up to speed on and start using the technologies covered in the book. We
@@ -21,7 +21,7 @@ from each chapter and provide thorough implementation details so that
 students and interested practitioners can quickly start using the
 technologies covered within.
 
-The workbooks and related files are stored in the *Big-Data-Workbooks GitHub repository*^[github.com/BigDataSocialScience], and so are freely available to be downloaded by anyone at any time and run on any
+The workbooks and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any
 appropriately configured computer. These workbooks are a live set of
 documents that could potentially change over time, so see the repository
 for the most recent set of information.
@@ -261,11 +261,10 @@ of your data. In this workbook, you will learn how to:
 Resources
 ---------
 
-We noted in
-Section [Introduction: Resources](#sec:intro:resources) the importance of Python, MySQL, and
-Git/GitHub for the social scientist who intends to work with large data.
-See that section for pointers to useful online resources, and also this
-book's website, at <https://github.com/BigDataSocialScience>, where we
+We noted in Section [Introduction: Resources](#chap:intro) the importance 
+of Python, MySQL, and Git/GitHub for the social scientist who intends to 
+work with large data. See that section for pointers to useful online 
+resources, and also this book's website, at <https://github.com/BigDataSocialScience>, where we
 have collected many useful web links, including the following.
 
 For more on getting started with Anaconda, see Continuum's Anaconda
@@ -277,7 +276,8 @@ IPython site [@ipython], IPython documentation [@ipythondoc], Jupyter
 Project site [@juypter], and Jupyter Project documentation
 [@juypterdoc].
 
-For more information on using `jupyterhub` and `nbgrader` to host, distribute, and grade
-workbooks using a central server, see the `jupyterhub` GitHub repository
-[@juypterhub], `jupyterhub` documentation [@juypterhubdoc], `nbgrader` GitHub repository
-[@nbgrader], `nbgrader` and documentation [@nbgraderdoc].
+For more information on using `jupyterhub` and `nbgrader` to host, 
+distribute, and grade workbooks using a central server, see the `jupyterhub`
+GitHub repository [@juypterhub], `jupyterhub` documentation 
+[@juypterhubdoc], `nbgrader` GitHub repository [@nbgrader], `nbgrader` 
+and documentation [@nbgraderdoc].
