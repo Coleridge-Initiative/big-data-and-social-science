@@ -15,10 +15,10 @@ hope you have a lot of fun with them.
 Introduction
 ------------
 
-We provide accompanying Juptyer IPython workbooks for most chapters in
+We provide accompanying Juptyer workbooks for most chapters in
 this book. The workbooks are structured in two sets. *Workbook Set 1* 
-includes workbooks that can be run online, which allows to quickly interact 
-with the code examples. *Workbook Set 2* provides workbooks that can be 
+includes workbooks that can be run online, which allows yo to quickly interact 
+with the code examples. *Workbook Set 2* provides additional workbooks that can be 
 run locally or on a Server (that needs to be configured first). The 
 workbooks of these sets explain and exemplify techniques and approaches 
 from the book chapters by using different substantive examples and data 
@@ -30,7 +30,7 @@ exercises, and substantial additional Python code to provide a
 conceptual understanding of each technology, give insight into how key
 parts of the process are implemented through exercises, and then lay out
 an end-to-end pattern for implementing each in your own work. The
-workbooks are implemented using IPython notebooks, interactive documents
+workbooks are implemented using Jupyter notebooks, interactive documents
 that mix formatted text and Python code samples that can be edited and
 run in real time in a Jupyter notebook server, allowing you to run and
 explore the code for each technology as you read about it.
@@ -41,18 +41,22 @@ Workbook Set 1
 The workbooks of set 1 are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
 locally. Individual workbooks can be opened by following the 
-corresponding Binder link (*interact*). The full set of workbooks is
+corresponding Binder link. The full set of workbooks is
 available in the *Big-Data-Social-Science GitHub repository*
 (<https://github.com/kimbrianj/bdss-notebooks>). Additional workbooks
 may be added over time and made available in this repository.
+
+To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/kimbrianj/bdss-notebooks/master>)
 
 ### Workbook details
 
 At this point, online workbooks are available for selected topics that are
 covered in the book. Below is a list of the online workbooks, along with a 
-short summary of the content that each covers.
+short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
 
 #### Dataset Exploration
+
+Link to workbook: 
 
 The *Dataset Exploration* workbook introduces you to the main data source 
 that is used in the online workbooks, the North Carolina Department of
@@ -68,6 +72,19 @@ Python and continues by exploring the imported data using the `numpy` and `panda
 -   Begin to understand the SQL query language,
 
 -   Explore aggregate statistics in Python.
+
+#### APIs 
+
+The APIs notebook introduces you to the use of
+Internet-based web service APIs for retrieving data from online data
+stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:
+
+-   Construct a URL query,
+
+-   Get a response from the URL,
+
+-   Retrieve the data in JSON form.
+
 
 #### Machine Learning -- Creating Labels
 
