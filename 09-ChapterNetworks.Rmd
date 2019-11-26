@@ -109,8 +109,6 @@ productivity of collaborations and teams, and for making sense of the
 differences between organizations, industries, and markets that hinge on
 the pattern of relationships connecting their participants.
 
-
-\enlargethispage{12pt}
 Understanding the productivity and effects of university research thus
 requires an effort to measure and characterize the networks on which it
 depends. As suggested, those networks influence outcomes in three ways:
@@ -188,7 +186,6 @@ this form can be represented either as a matrix or as an edge list. If this data
 knitr::include_graphics("ChapterNetworks/figures/fig8-1.png")
 ```
 
-\vspace*{-12pt}
 A much more complicated network would be one that is both directed and
 valued. One example might be a network of nations connected by flows of
 international trade. Goods and services flow from one nation to another
@@ -202,7 +199,6 @@ as asymmetric valued matrices or lists of arcs with associated values.
 knitr::include_graphics("ChapterNetworks/figures/fig8-2.png")
 ```
 
-\vspace*{-12pt}
 While many studies of small- to medium-sized social networks rely on
 one-mode data. Large-scale social network data of this type are
 relatively rare, but one-mode data of this sort are fairly common in
@@ -332,7 +328,6 @@ summary(pr_g_proj2)
 emp=pr_g_proj1
 ```
 
-\vspace*{12pt}
 We now can work with the graph `emp`, which represents the collaborative
 network of federally funded research on this campus. Care must be taken
 when inducing one-mode network projections from two-mode network data
@@ -658,7 +653,6 @@ print(pd.Series(local_clust).describe())
 #--------------------------------------------------#
 ```
 
-\pagebreak
 Together, these summary statistics---number of nodes, average path
 length, distribution of path lengths, degree distribution, and the
 clustering coefficient---offer a robust set of measures to examine and

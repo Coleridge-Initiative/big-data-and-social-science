@@ -64,9 +64,7 @@ different algorithms on studies of patent productivity
 
 ** Examples **
 
-
-
-In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.\footnote{ If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link }
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
 Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
 
@@ -710,7 +708,6 @@ critical; the model is only as good as the data it is trained on.
 knitr::include_graphics("ChapterLinkage/figures/fig3-2.png")
 ```
 
-\vspace*{-6pt}
 An example of a machine learning model that is popular for record
 linkage is the random forest model^[See Chapter 6.] [@Breiman01]. This is a
 classification model that fits a large number of classification trees to
@@ -742,7 +739,6 @@ error rates would be small. If the subset of records with date of birth
 is representative of the complete data set, then the output from the
 probabilistic record linkage can be used as "truth" data.
 
-\enlargethispage{12pt}
 Given a quality training data set, machine learning approaches may have
 advantages over probabilistic record linkage. Consider the random forest
 model. Random forests are more robust to correlated predictor variables,
@@ -767,11 +763,8 @@ and other machine learning algorithms for record linkage. Christen and
 Ahmed et al. provide some pointers
 [@christen2012survey; @elmagarmid2007duplicate].
 
-\vspace*{-3pt}
-
 ### Disambiguating networks
 
-\enlargethispage{18pt}
 The problem of disambiguating entities in a network is closely related
 to record linkage: in both cases the goal is to consolidate multiple
 records corresponding to the same entity. Rather than finding the same
@@ -797,8 +790,6 @@ records that are likely to refer to the same entity. Huang et al.
 computation of distance between individuals in the network. These
 distances are then fed into the DBSCAN clustering algorithm to identify
 unique entities.
-
-\vspace*{-3pt}
 
 Classification
 --------------
@@ -902,7 +893,6 @@ it is preferable to extract a set of "best" links with the property that
 each record in one file links to at most one record in the second file.
 A set of links with this property is said to be one-to-one.
 
-\enlargethispage{12pt}
 One possible definition of "best" is a set of one-to-one links such that
 the sum of the match scores of all included links is maximal. This is an
 example of what is known as the *assignment problem* in combinatorial
@@ -992,6 +982,4 @@ Out of many excellent resources on the subject, we note the following:
 
 -   The German Record Linkage Center is a resource for research,
     software, and ongoing conference activities [@Schnell2016].
-
-
 

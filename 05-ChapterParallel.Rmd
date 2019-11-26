@@ -27,7 +27,7 @@ Examples{#sec:examples}
 
 Aghbari, Bahutair, and Kamel (2019) introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
-Kolb et al developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember \ref{chap:link}?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+Kolb et al developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
 
 https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/ describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
@@ -36,8 +36,6 @@ MapReduce{#sec:intro}
 The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
 similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. The "map" operation takes the input and splits up the task into multiple (parallel) components, and the "reduce" operation consolidates the results of the parallel "mapped" tasks and produces the final output. In order to use the MapReduce framework, we need to break up our tasks in to map and reduce operations and implement these two operations. 
-
-\enlargethispage{12pt}
 
 ---
 
@@ -101,7 +99,6 @@ function.
 `("utah.edu", \[0958915\])` → `("utah.edu", 1)`
 `("nyu.edu", \[1301647\])` → `("nyu.edu", 1)`
 
-\pagebreak
 As we have seen so far, the MapReduce programming model is quite simple
 and straightforward, yet it supports a simple parallelization model. In
 fact, it has been said to be *too* simple and criticized as "a major
@@ -121,7 +118,6 @@ As mentioned above, MapReduce is a programming model. In order to implement an a
 
 Apache Hadoop MapReduce
 -----------------------
-
 
 Apache Hadoop (or Hadoop)^[The term *Hadoop* refers to the creator’s son’s toy elephant.] was originally designed to run in environments with thousands of
 machines. Supporting such a large computing environment puts several
@@ -188,6 +184,7 @@ as separate physical hardware.
 ```{r fig5_1b, out.width = '70%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterParallel/figures/data2compute.png")
 ```
+
 ```{r fig5-1a, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Top: The traditional parallel computing model where data are brought to the computing nodes. Bottom: Hadoop’s parallel computing model: bringing compute to the data [@HadoopParallelModel]'}
 knitr::include_graphics("ChapterParallel/figures/compute2data.png")
 ```
@@ -325,14 +322,12 @@ records on separate lines. However, this behavior is fully customizable.
 Similarly, the map phase reducers are also executed concurrently in
 Hadoop.
 
-
 ```{r hadoop, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Data transfer and communication of a MapReduce job in Hadoop. Data blocks are assigned to several maps, which emit key--value pairs that are shuffled and sorted in parallel. The reduce step emits one or more pairs, with results stored on the HDFS'}
 knitr::include_graphics("ChapterParallel/figures/hadoop.png")
 ```
 
 ### Programming language support
 
-\enlargethispage{6pt}
 Hadoop is written entirely in Java, thus it is best supporting
 applications written in Java. However, Hadoop also provides a *streaming
 API* that allows arbitrary code to be run inside the Hadoop MapReduce
@@ -656,7 +651,6 @@ for loans originated in different census tracts</div>
 Summary
 -------
 
-
 Analyzing large amounts of data means that it is necessary to both store very large collections
 of data and perform aggregate computations on those data. This chapter
 Describes an important data storage approach (the Hadoop Distributed
@@ -675,6 +669,3 @@ See, for example, the tutorials on the Apache Hadoop [@AHweb] and Spark
 [@ASweb] websites. Albanese describes how to use Hadoop for social
 science [@socialhadoop], and Lin and Dyer discuss the use of MapReduce
 for text analysis [@lin2010data].
-
-
-

@@ -54,7 +54,6 @@ public use data [@duncanstatistical].
 knitr::include_graphics("ChapterPrivacy/figures/fig11-1.png")
 ```
 
-\vspace*{-12pt}
 In general, the greater the access to data and their original values,
 the greater the risk of reidentification for individual units. We depict
 this tradeoff graphically in

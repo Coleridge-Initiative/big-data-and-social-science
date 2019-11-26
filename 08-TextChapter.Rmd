@@ -263,10 +263,8 @@ are common tools used to derive lemmas and stems for tokens, and all
 have implementations in the NLTK [@bird-09].
 
 Linguistic Analysis
- So far , we’ve treated words as tokens without regard to the meaning of the word or the way it is used, or even what language the word comes from. There are several techniques in text analysis that are language specific that go deeper into the syntax of the document, paragraph, and sentence structure to extract linguistic characteristics of the document. 
+So far, we’ve treated words as tokens without regard to the meaning of the word or the way it is used, or even what language the word comes from. There are several techniques in text analysis that are language specific that go deeper into the syntax of the document, paragraph, and sentence structure to extract linguistic characteristics of the document. 
 
-
-\vspace*{-2pt}
 **Part-of-speech tagging**
 
 When the examples $x$ are individual words and the labels $y$ represent
@@ -283,9 +281,7 @@ classification algorithms need to incorporate structure into the
 decisions. Two common algorithms for this problem are hidden Markov
 models [@rabiner-89] and conditional random fields [@lafferty-01].
 
-\vspace*{-2pt}
 **Parsing**
-
 
 All text-processing steps are critical to successful analysis. Some of
 them bear more importance than others, depending on the specific
@@ -297,8 +293,6 @@ before performing $n$-gram indexing, and a stemmer should not be used
 where data are complex and require accounting for all possible forms and
 meanings of words. Reviewing interim results at every stage of the
 process can be helpful.
-
-
 
 ### Turning text into a matrix: How much is a word worth?
 
@@ -325,10 +319,6 @@ $$tf(t,d) = 0.5+\frac{0.5 \times
 $$\
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
 ```
-
-\enlargethispage{24pt}
-\vspace*{-36pt}
-
 
 **Analysis**
 
@@ -536,9 +526,11 @@ this shortly).
 ```{r nyt_topics-1, out.width = '70%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterText/figures/nyt_topics-1.png")
 ```
+
 ```{r nyt_topics-2, out.width = '70%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterText/figures/nyt_topics-2.png")
 ```
+
 ```{r nyt-topics-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 seems to be about technology, Topic 2 about business, and Topic 3 about the arts'}
 knitr::include_graphics("ChapterText/figures/nyt_topics-3.png")
 ```
@@ -577,7 +569,6 @@ associated with an arts topic; "buy" with a business topic; and
 "Internet" with a technology topic
 (Figure \@ref(fig:inference-1)).
 
-\enlargethispage{18pt}
 ```{r inference-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Each word is associated with a topic. Gibbs sampling inference iteratively resamples the topic assignments for each word to discover the most likely topic assignments that explain the document collection'}
 knitr::include_graphics("ChapterText/figures/inference_1.png")
 ```
@@ -868,7 +859,6 @@ techniques. See also the official NLTK website [@NLTKweb].
 ```{r, eval = FALSE, include=FALSE}
 #{#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
 ```
-
 
 ``` {r, eval = FALSE}
 def bigram_finder(texts):
