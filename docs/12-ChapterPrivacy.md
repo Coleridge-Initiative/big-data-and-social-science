@@ -1,4 +1,4 @@
-Privacy and Confidentiality {#chap:privacy}
+ Privacy and Confidentiality {#chap:privacy}
 ===========================
 
 **Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane**
@@ -27,7 +27,7 @@ used responsibly and ethically---that the subjects under study suffer no
 harm from their data being accessed, analyzed, and reported. A clear
 distinction must be made between analysis done for the public good and
 that done for private gain. In practical terms, this requires that the
-private interests of individual privacy and data confidentiality be
+interests of individual privacy and data confidentiality be
 balanced against the social benefits of research access and use.
 
 **Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
@@ -55,7 +55,6 @@ public use data [@duncanstatistical].
 <p class="caption">(\#fig:fig11-1)The privacy--utility tradeoff</p>
 </div>
 
-\vspace*{-12pt}
 In general, the greater the access to data and their original values,
 the greater the risk of reidentification for individual units. We depict
 this tradeoff graphically in
@@ -75,19 +74,18 @@ Before the increase in external data, the organization could achieve a
 level of data utility $U^*$ and privacy $P_1$. The increase in
 externally available data now means that in order to maintain utility at
 $U^*$, privacy is reduced to $P_2$. This simple example represents the
-challenge to all organization that release statistical or analytical
-products obtained from underlying identifiable data in the era of big
-data. As more data become available externally, the more difficult it is
+challenge to all organizations that release statistical or analytical
+products obtained from underlying identifiable data. As more data from external sources becomes available, it becomes more difficult
 to maintain privacy.
 
-Before the big data era, national statistical agencies had the capacity
+Previously, national statistical agencies had the capacity
 and the mandate to make dissemination decisions: they assessed the risk,
 they understood the data user community and the associated utility from
 data releases. And they had the wherewithal to address the legal,
 technical, and statistical issues associated with protecting
 confidentiality [@trewin2007managing].
 
-But in a world of big data, many once-settled issues have new
+But in a world of massive amounts of data, many once-settled issues have new
 complications, and wholly new issues arise that need to be addressed,
 albeit under the same rubrics. The new types of data have much greater
 potential utility, often because it is possible to study small cells or
@@ -128,7 +126,7 @@ some of this information (say, income) for a person, and knows that this
 person is in the survey. With these two pieces of information, it is
 likely possible to uniquely identify the person in the survey data.
 
-Big data increases the risk precisely for this reason. Much data is
+Larger amounts of data increase the risk precisely for this reason. Much data is
 available for reidentification purposes [@ohm2010broken]. Most
 obviously, the risk of reidentification is much greater because the new
 types of data have much richer detail and a much larger public community
@@ -141,7 +139,7 @@ deidentified. In the 1990s, Massachusetts Group Insurance released
 researcher Latanya Sweeney quickly reidentified the hospital records of
 the then Governor William Weld using nothing more than state voter
 records about residence and date of birth [@sweeney2001computational].
-In 2006, the release of supposedly deidentified web search data by AOL
+In 2006, the release of supposedly de-identified web search data by AOL
 resulted in two *New York Times* reports being able to reidentify a
 customer simply from her browsing habits [@barbaro2006face]. And in
 2012, statisticians at the department store, Target, used a young
@@ -154,12 +152,12 @@ likely to be collected and used within the same entity---for example,
 within an agency that collects administrative data or within a
 university that collects data for research
 purposes---organization-specific procedures were (usually) in place and
-sufficient to regulate the usage of these data. In a world of big data,
+sufficient to regulate the usage of these data. Today,
 legal ownership is less clear.
 
 Who has the legal authority to make decisions about permission, access,
 and dissemination and under what circumstances? The answer is often not
-clear. The challenge in the case of big data is that data sources are
+clear. The challenge today is that data sources are
 often combined, collected for one purpose, and used for another. Data
 providers often have a poor understanding of whether or how their data
 will be used.
@@ -191,7 +189,7 @@ questions that need to be addressed in the future.
 Why is access important?
 ------------------------
 
-This book gives detailed examples of the potential of big data to
+This book gives detailed examples of the potential of data to
 provide insights into a variety of social science
 questions---particularly the relationship between investments in R&D and
 innovation. But that potential is only realized if researchers have
@@ -211,7 +209,7 @@ data sets to be combined. High-quality link keys uniquely identify the
 subjects under study and typically are derived from items such as
 individual names, birth dates, social security numbers, and business
 names, addresses, and tax ID numbers. From a privacy and confidentiality
-perspective, link keys are among most sensitive information in many data
+perspective, link keys are among the most sensitive information in many data
 sets of interest to social scientists. This is why many organizations
 replace link keys containing personal identifiable information (PII)^[PII is "any information about an individual maintained by an agency, including (1) any information
 that can be used to distinguish or trace an individual’s identity, such as name,
@@ -321,26 +319,19 @@ to a number of operational challenges, including version control,
 identifying and managing risky researcher behavior, and management costs
 [@doyle2001confidentiality].
 
-Another approach to providing access to confidential data that has been proposed...DP
-
-Census
-Harvard DP query system (Salil etc.) https://privacytools.seas.harvard.edu/ 
+Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2018; @abowed2018].
 
 
 
-More recently, *synthetic data* have been created whereby key features
-of the original data are preserved but the original data are replaced by
-results from estimations (synthetic data) so that no individual or
-business entity can be found in the released data
-[@drechsler2011synthetic]. Two examples of synthetic data sets are the
-SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and
-Program Participation (SIPP) and Social Security Administration earnings
+Another approach that has had some resurgence is the use  of *synthetic data* where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or  business entity can be found in the released data
+[@drechsler2011synthetic]. One of the earlier examples of such work was the IBM Quest system (cite : http://www.vldb.org/conf/1994/P487.PDF) that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings
 data, and the Synthetic Longitudinal Business Database (SynLBD)
 [@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how
 synthetic data sets lack utility in many research settings but are
 useful for generating flexible data sets underlying data tools and apps
-such as the Census Bureau's OnTheMap.
+such as the Census Bureau's OnTheMap.  
 
+It  is important to keep in mind that the utility of synthetic data sets as a general purpose “anonymization” tool is fairly limited. Synthetic data generation typically requires explicitly defining which properties of the original data need to be preserved (such as univariate or bivariate distributions of certain variables), and as such can be of limited use in most social science research.
 
 **Research data centers**
 
@@ -352,6 +343,14 @@ comply with the privacy and confidentiality regulations
 [@hayden2012broken]. Some RDCs allow access through remote execution,
 where no direct access to the data is allowed, but it is not necessary
 to travel; others allow remote direct access
+
+
+Non-Tabular data
+-------------------
+In addition to tabular data, a lot of new sources of data consist of text, audio, image, and video content.  The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that   is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:
+
+Text Anonymization. Typical approaches here range from simply removing Personally identifiable information (PII) through regular expressions and dictionaries (cite:https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-8-32)  to machine learning based approaches that balance the confidentiality of the entities in the data and the utility of the text (cite: https://www.aaai.org/ocs/index.php/IAAI/IAAI-11/paper/viewPaper/3528)
+Image and Video Anonymization: The  most common use of anonymization techniques  in image and video data is to redact, blur, or remove faces of individuals in order to protect their identity. This can be extended to other attributes of the person, such as clothing or the rest of the body but the primary focus so far has been on detecting, and then blurring or modifying the faces of individuals in the data. https://www.spiedigitallibrary.org/journals/journal-of-electronic-imaging/volume-26/issue-05/051406/Video-redaction-a-survey-and-comparison-of-enabling-technologies/10.1117/1.JEI.26.5.051406.full?SSO=1 provide a survey of video redaction methods.  Cite: https://arxiv.org/abs/1909.04538 recently presented a method to automatically anonymize faces in images while retaining the original data distribution.
 
 The new challenges
 ------------------
@@ -476,7 +475,7 @@ lack of clarity is exacerbated because some laws treat data as property
 and some treat it as information [@Cecil2003].
 
 The ethics of the use of big data are also not clear, because analysis
-may result in being discriminately against unfairly, being limited in
+may result in being discriminately used against unfairly, being limited in
 one's life choices, being trapped inside stereotypes, being unable to
 delineate personal boundaries, or being wrongly judged, embarrassed, or
 harassed. There is an entire research agenda to be pursued that examines
@@ -494,25 +493,20 @@ forever, ownership could be claimed by yet-to-be-born relatives whose
 personal privacy could be threatened by release of information about
 blood relations.
 
-The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to addresses some of the challenges.  
-Specify what data is used for
-Allow for access to the data
-Allow your data to erased   ...
+The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDP pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
 
-However, GDPR still relies on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of
-self-regulation governing industry data collection. Going forward, a
-more nuanced assessment of tradeoffs in the big data context, moving
+However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving
 away from individualized assessments of the costs of privacy violations,
-is needed [@Strandburg2014]. Ohm advocates for a new conceptualization
-of legal policy regarding privacy in the big data context that uses five
-guiding principles for reform: first, that rules take into account the
+is needed [@Strandburg2014]. 
+
+Ohm advocates for a new conceptualization of legal policy regarding privacy in the big data context that uses five guiding principles for reform: first, that rules take into account the
 varying levels of inherent risk to individuals across different data
 sets; second, that traditional definitions of PII need to be rethought;
 third, that regulation has a role in creating and policing walls between
 data sets; fourth, that those analyzing big data must be reminded, with
 a frequency in proportion to the sensitivity of the data, that they are
 dealing with people; and finally, that the ethics of big data research
-must be an open topic for continual reassessment.
+must be an open topic for continual reassessment [@Ohm2014].
 
 Summary
 -------
@@ -597,4 +591,7 @@ conferences and produces occasional reports
 [@UnitedNationsEconomicCommissionforEurope].
 
 Collection of lecture on privacy [SIMONS SEMINAR LINK]
+
+
+
 

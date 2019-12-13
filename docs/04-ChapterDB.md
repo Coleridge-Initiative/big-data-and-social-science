@@ -97,7 +97,6 @@ Table: (\#tab:table4-1) When to use different data management and analysis techn
                                  |
 <br>
 
-\vspace*{-8pt}
 In the case of data set 1 (10,000 records describing research grants),
 it may be feasible to leave the data in their original file, use
 spreadsheets, pivot tables, or write programs in **scripting languages**^[A scripting language is
@@ -216,10 +215,9 @@ model of a relational data
 structure.]
 
 <div class="F00">
-<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with the domain we are analyzing, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:fig2), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include &quot;is employed by&quot; and &quot;is funded by.&quot; This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
+<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with the domain we are analyzing, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:figdb-dbs), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include &quot;is employed by&quot; and &quot;is funded by.&quot; This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
 </div>
 
-\vspace*{12pt}
 Hundreds of different open source, commercial, and
 cloud-hosted versions DBMSs are available and new ones pop up every day. However, you only need to
 understand a relatively small number of concepts and major database
@@ -242,7 +240,6 @@ be used to perform a wide range of tasks, which are executed with
 high efficiency due to sophisticated indexing and query planning
 Techniques.
 
-\enlargethispage{-12pt}
 While relational DBMSs have dominated the database world for decades,
 other database technologies have become popular for various classes of
 applications in recent years. As we will see, these alternative NoSQL
@@ -286,7 +283,6 @@ the way we organize the data may vary according to our intended purpose.
 Are we interested in geographic, temporal, or thematic relationships
 among different entities? Each type of analysis may require a different organization.
 
-\enlargethispage{-12pt}
 For these reasons, a common storage solution is to first load all data
 into a large NoSQL database. This approach makes all data available via
 a common (albeit limited) query interface. Researchers can then extract
@@ -558,7 +554,7 @@ columns. For example, given the data in
 Figure \@ref(fig:figdb-1), those columns will likely include, for a grant,
 an award identifier, title, investigator, and award amount; for an
 investigator, a name, university, and email address. In general, we will
-want to ensure that each row in our table has a \emph{key}: a set of columns
+want to ensure that each row in our table has a key: a set of columns
 that uniquely identifies that row. In our example tables, grants are
 uniquely identified by `Number` and investigators by `ID`.
 
@@ -984,7 +980,6 @@ be loaded into a relational DBMS. Consider, for example, the following
 JSON format data, a simplified version of data shown in
 Chapter [Working with Web Data and APIs].
 
-\pagebreak
 
 ```r
 [
@@ -1011,8 +1006,7 @@ tables. Using one of the many utilities for converting JSON into CSV, we
 can construct the following CSV file, which we can load into an SQL
 table using the method shown earlier.
 
-
-```style
+``` {style="inline"}
 institute,name,role,state,town
 Janelia Campus,Laurence Abbott,Senior Fellow,VA,Ashburn
 Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor
@@ -1270,8 +1264,6 @@ navigation of such graphs, as when answering queries such as "find all
 the friends of the friends of my friends"---a task that would require
 multiple joins in a relational database.
 
-\enlargethispage{6pt}
-
 Spatial databases {#sec:db:spatial}
 -----------------
 
@@ -1462,5 +1454,4 @@ example, Sesame [@broekstra2002sesame; @sesame]
 If you are interested in the state of database and data management
 research, the recent Beckman Report [@abadi2014beckman] provides a
 useful perspective.
-
 

@@ -12,8 +12,6 @@ of data types and tasks, and to explore the foundations and challenges
 of information visualization at different stages of a project.
 
 
-\vspace*{-6pt}
-
 Introduction {#sec:viz-1}
 ------------
 
@@ -123,7 +121,6 @@ the 1960s.].
 <p class="caption">(\#fig:fig9-2)A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
 </div>
 
-\vspace*{-12pt}
 Data analysis tools can enable analysis of structured and generic data
 sets. Figure \@ref(fig:fig9-2) shows an exploratory browser of a selection of
 awards (grants) from the US Department of Agriculture, created using the
@@ -192,7 +189,6 @@ validating data, and promotes reuse to explore new perspectives.
 <p class="caption">(\#fig:fig9-4)Visual elements described by MacKinlay [@mackinlay1986automating]</p>
 </div>
 
-\vspace*{-8pt}
 The following is a short list of guidelines: provide immediate feedback
 upon interaction with the visualization; generate tightly coupled views
 (i.e., so that selection in one view updates the others); and use a high
@@ -208,8 +204,6 @@ discussions, see various textbooks
 
 We provide a summary of the basic tasks that users typically perform
 during visual analysis of data in the next section.
-
-\vspace*{-3pt}
 
 A data-by-tasks taxonomy {#sec:viz-3}
 ------------------------
@@ -277,8 +271,6 @@ range of device forms, such as mobile devices with small displays and
 touch interaction, is becoming common. Creating visualizations for new
 forms requires special care, though basic design principles such as
 "less is more" still apply.
-
-\vspace*{-3pt}
 
 ### Multivariate data {#sec:viz-2.1}
 
@@ -418,8 +410,6 @@ prototyping activity of the company. In most of the sequences shown
 here, the company's first prototype is preceded by two or more patents
 with a lag of about a year.
 
-\enlargethispage{12pt}
-
 ### Hierarchical data {#sec:viz-2.5}
 
 Data are often organized in a hierarchical fashion. Each item appears in
@@ -474,7 +464,6 @@ focus on that industry.
 <p class="caption">(\#fig:fig9-10)NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
-\vspace*{12pt}
 Network data encode relationships between items^[See Chapter 8.]: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
@@ -490,7 +479,6 @@ duration of communications.
 <p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
 </div>
 
-\vspace*{12pt}
 [Node-link diagrams]{.roman} are the most common representation of
 network structures and overviews (Figures
 \@ref(fig:fig9-10) and
@@ -522,8 +510,6 @@ exhibit. Designed for print media, it includes a clear title and
 annotations and shows a series of topic clusters at the bottom with a
 summary of the insights gathered by analysts.
 
-\vspace*{6pt}
-
 ### Text data {#sec:viz-2.7}
 
 Text is usually preprocessed (for word/paragraph counts, sentiment
@@ -551,8 +537,6 @@ elements are linked to the corresponding text.
 <img src="ChapterViz/figures/fig9-11.png" alt="Jigsaw used to explore a collection of car reviews" width="70%" />
 <p class="caption">(\#fig:fig9-11)Jigsaw used to explore a collection of car reviews</p>
 </div>
-
-\vspace*{6pt}
 
 Challenges {#sec:viz-4}
 ----------
@@ -696,6 +680,3 @@ example, the Python Plotly library) can be used.
 
 An extended list of tools and books is available at
 <http://www.keshif.me/demo/VisTools>.
-
-\addtocontents{toc}{\protect\vspace*{8pt}}
-

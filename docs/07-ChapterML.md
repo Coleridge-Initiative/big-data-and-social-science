@@ -70,8 +70,6 @@ of tasks $T$ and performance measure $P$, if its performance at tasks in
 $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine].
 
-\enlargethispage{6pt}
-
 <div class="F00">
 <p><strong>Box 6.1: Commercial machine learning examples</strong></p>
 <ul>
@@ -301,7 +299,7 @@ Euclidean distance, but other commonly used metrics are Manhattan,
 Minkowski, Chebyshev, cosine, Hamming, Pearson, and Mahalanobis. Often,
 domain-specific similarity metrics can be designed for use in specific
 problems. For example, when performing the record linkage tasks
-discussed in Chapter [Record Linkage], you can design a similarity metric that compares
+discussed in Chapter [Record Linkage], you can design a similarity metric that compares
 two first names and assigns them a high similarity (low distance) if
 they both map to the same canonical name, so that, for example, Sammy
 and Sam map to Samuel.
@@ -331,7 +329,6 @@ describe the cluster using the features in your data. A good example of
 a tool that allows interactive clustering from text data is Ontogen
 [@Ontogen].
 
-\enlargethispage{6pt}
 **$k$-means clustering**
 
 The most commonly used clustering algorithm is called $k$-means, where
@@ -368,7 +365,6 @@ be used [@park2009simple].
 
 **Expectation-maximization (EM) clustering**
 
-\hspace*{3pt}
 You may be familiar with the EM algorithm in the context of imputing
 missing data. EM is a general approach to maximum likelihood in the
 presence of incomplete data. However, it is also used as a clustering
@@ -425,7 +421,6 @@ shift is computationally slow but can be easily parallelized.
 
 **Hierarchical clustering**
 
-\hspace*{-1pt}
 The clustering methods that we have seen so far, often termed
 *partitioning* methods, produce a flat set of clusters with no
 hierarchy. Sometimes, we want to generate a hierarchy of clusters, and
@@ -449,7 +444,7 @@ later on.
 
 **Spectral clustering**
 
-Figure \@ref(fig:spectral) shows the clusters that $k$-means would
+Figure \@ref(fig:spectral) shows the clusters that $k$-means would
 generate on the data set in the figure. It is obvious that the clusters
 produced are not the clusters you would want, and that is one drawback
 of methods such as $k$-means. Two points that are far away from each
@@ -466,7 +461,6 @@ between nodes) represent the similarity between the two data points.
 <p class="caption">(\#fig:spectral)The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering</p>
 </div>
 
-\vspace*{8pt}
 The algorithm works as follows:
 
 1.  Compute a similarity matrix from the data. This involves determining
@@ -649,7 +643,7 @@ predictions having high variance but can capture the local structure of
 the data. Larger values of $k$ build more global models that are lower
 in variance but may not capture local structure in the data as well.
 
-Figure \@ref(fig:knn) provides an example for $k = 1, 3, 5$ nearest
+Figure \@ref(fig:knn) provides an example for $k = 1, 3, 5$ nearest
 neighbors. The number of neighbors ($k$) is a parameter, and the
 prediction depends heavily on how it is determined. In this example,
 point B is classified differently if $k = 3$.
@@ -659,7 +653,6 @@ point B is classified differently if $k = 3$.
 <p class="caption">(\#fig:knn)Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
 </div>
 
-\vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
 useful in applications where data are coming in extremely quickly and a
 model needs to be updated frequently. All the work, however, gets pushed
@@ -695,7 +688,6 @@ method is completely oblivious to the type of target variable and can
 potentially be used to predict text documents, images, and videos, based
 on the aggregation function after the nearest neighbors are found.
 
-\vspace*{-4pt}
 **Support vector machines**
 
 Support vector machines are one of the most popular and best-performing
@@ -706,7 +698,7 @@ for, and how to use them.
 
 We are all familiar with linear models that separate two classes by
 fitting a line in two dimensions (or a hyperplane in higher dimensions)
-in the middle (see Figure \@ref(fig:svm)). An important decision that linear models have
+in the middle (see Figure \@ref(fig:svm)). An important decision that linear models have
 to make is which linear separator we should prefer when there are
 several we can build.
 
@@ -715,7 +707,7 @@ several we can build.
 <p class="caption">(\#fig:svm)Support vector machines</p>
 </div>
 
-You can see in Figure \@ref(fig:svm) that multiple lines offer a solution to the
+You can see in Figure \@ref(fig:svm) that multiple lines offer a solution to the
 problem. Is any of them better than the others? We can intuitively
 define a criterion to estimate the worth of the lines: A line is bad if
 it passes too close to the points because it will be noise sensitive and
@@ -790,11 +782,11 @@ has two splits: one using *average length of visit* with value $2$ days
 and the other using the value $10$ days.
 
 <img src="ChapterML/figures/tree.png" width="70%" style="display: block; margin: auto;" />
+
 <div class="figure" style="text-align: center">
 <img src="ChapterML/figures/tree-rectangle.png" alt="An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly" width="70%" />
 <p class="caption">(\#fig:tree)An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly</p>
 </div>
-
 
 Various algorithms exist to build decision trees. C4.5, CHAID, and CART
 (Classification and Regression Trees) are the most Each needs to
@@ -1089,7 +1081,7 @@ is to generalize to new data, and validating models in-sample does not
 allow us to do that. We focus here on evaluation methodologies that
 allow us to optimize (as best as we can) for generalization performance.
 The methods are illustrated in
-Figure \@ref(fig:holdout).
+Figure \@ref(fig:holdout).
 
 **Out-of-sample and holdout set**
 
@@ -1140,7 +1132,6 @@ possible) and making sure the model is tested on each data point.
 
 **Temporal validation**
 
-\hspace*{4pt}
 The cross-validation and holdout set approaches described above assume
 that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in
@@ -1159,7 +1150,7 @@ available to us before $t_i$ to avoid training on data from the
 "future." We then predict and evaluate on data from $t_i$ to $t_i$ + $d$
 and iterate, expanding the training window while keeping the test window
 size constant at $d$.
-Figure \@ref(fig:temporal) shows this validation process with
+Figure \@ref(fig:temporal) shows this validation process with
 $t_i=2010$ and $d=1$ year. The test set window $d$ depends on a few
 factors related to how the model will be deployed to best emulate
 reality:
@@ -1225,7 +1216,7 @@ predictions:
 $$\textrm{Accuracy}=\frac{TP + TN}{TP + TN + FP + FN}=\frac{TP + TN}{P+N}=\frac{TP + TN}{P'+N'},$$
 where $TP$ denotes true positives, $TN$ true negatives, $FP$ false
 positives, $FN$ false negatives, and other symbols denote row or column
-totals as in Figure . Accuracy is the most commonly described evaluation
+totals as in Figure. Accuracy is the most commonly described evaluation
 metric for classification but is surprisingly the least useful in
 practical situations (at least by itself). One problem with accuracy is
 that it does not give us an idea of *lift* compared to baseline. For
@@ -1266,7 +1257,7 @@ only predicts a 1 when it is absolutely sure (say, a threshold of
 but will miss most 1s (low recall). At the other extreme, a classifier
 that says 1 to every data point (a threshold of 0.0001) will have
 perfect recall but low precision.
-Figure \@ref(fig:pr) show a precision--recall curve that is often used
+Figure \@ref(fig:pr) show a precision--recall curve that is often used
 to represent the performance of a given classifier.
 
 <div class="figure" style="text-align: center">
@@ -1311,7 +1302,6 @@ manually (inspections, investigations for fraud, etc.). The literature
 provides many case studies of such applications
 [@Kumar2010; @Lakkaraju2015; @Potash2015].
 
-\enlargethispage{6pt}
 One last metric we want to mention is a class of cost-sensitive metrics
 where different costs (or benefits) can be associated with the different
 cells in the confusion matrix. So far, we have implicitly assumed that
@@ -1508,7 +1498,7 @@ improve some social science tasks:
     an overview of different automatic methods for text analysis.
     Grimmer and Stewart [@grimmer2013text] give examples that are more
     specific for social scientists, and
-    Chapter [Text analysis](#chap:text) provides more details on this topic.
+    Chapter [Text analysis](#chap:text) provides more details on this topic.
 
 -   **Adaptive surveys**: Some survey questions have a large number of possible answer
     categories. For example, international job classifications describe

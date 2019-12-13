@@ -1009,7 +1009,6 @@ $0$.
 <p class="caption">(\#fig:fig10-6)Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77</p>
 </div>
 
-\vspace*{-6pt}
 When the dependent variable, $y$, only is subject to variable error, the
 regression deteriorates, but the expected values of the slope and
 intercept coefficients are still equal to true to their population
@@ -1049,9 +1048,6 @@ ${\varepsilon }'_{ijk} = b_i + \varepsilon_{ijk}$ and
 $\mathrm{Var}({\varepsilon }'_{ijk} ) = \sigma_b^2 + \sigma_{\varepsilon
 \vert j}^2$. The next section considers other mitigation strategies that
 attempt to eliminate the error rather than model it.
-
-\enlargethispage{6pt}
-\vspace*{-4pt}
 
 Detecting and Compensating for Data Errors {#sec:10-5}
 -------------------------------------------------------------------
@@ -1142,7 +1138,6 @@ categorical variables.
 <p class="caption">(\#fig:fig10-7)Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars</p>
 </div>
 
-\vspace*{24pt}
 The sequence of steps typically involved in producing a tableplot is as
 follows:
 
@@ -1222,8 +1217,6 @@ machines and then combining the results [@ibrahim2000power; @scott2013bayes].
 While this chapter has focused on the accuracy of the data and the validity of the inference, other data quality dimensions such as timeliness, comparability, coherence, and relevance that we have not considered in this chapter are also important. For example, timeliness often competes with accuracy because achieving acceptable levels of the latter often requires greater expenditures of resources and time. In fact, some applications of data analysis prefer results that are less accurate for the sake of timeliness. Biemer and Lyberg [@biemer2003] discuss these and other issues in some detail. 
 
 It is important to understand that we will rarely, if ever, get perfect data for our analysis. Every data source will have some limitation - some will be inaccurate, some will become stale,  and some will have sample bias. The key is to 1) be aware of the limitations of each data source, 2) incorporate that awareness in to the analysis that is being done with it, and 3) understand what type of inference errors it can lead to in order to appropriately communicate the results and make sound decisions.
-
-\vspace*{6pt}
 
 Resources
 ---------

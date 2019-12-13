@@ -18,7 +18,7 @@ of more traditional data sources?
 
 In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely
 unstructured, existing in web pages spread across a site, and sometimes
-they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together [footnote: The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" available data for research and policy purposes].
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.^[The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" available data for research and policy purposes.]
 
 Using the example of data on researchers and research outputs, we will
 focus this chapter on obtaining information directly from web pages (*web scraping*)
@@ -31,7 +31,7 @@ wider issues of data and public policy. While we use Python as the programming l
 
 Examples
 ----------
-In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.\footnote{ If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link }
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
 Kim et al (https://wwwncbi.nlm.nih.gov/pubmed/26920122) use social media data about e-cigarettes from Twitter for public health research.
 Goebel and Munzert (https://journals.s.agepub.com/doi/full/10.1177/0894439317703579) used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project https://github.com/simonmunzert/political-wikipedia-workshop
@@ -60,7 +60,6 @@ But there does not appear to be a downloadable data set of this
 information. However, we can automate the process with code to create a
 data set that you might compare with other data.
 
-
 https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=24
 
 Getting information from this web page programmatically requires us to follow the following steps:
@@ -80,8 +79,6 @@ of as a query. As we want to see *all* investigators, we do not need to
 limit the search, and so with some fiddling we come up with a URL like
 the following. (We have broken the one-line URL into three lines for
 ease of presentation.)
-
-\enlargethispage{6pt}
 
 http://www.hhmi.org/scientists/browse?kw=&sort_by=field_scientist_last_name&sort_order=ASC&items_per_page=24&page=0
 
@@ -134,7 +131,6 @@ constructed wrongly or that there was a server error.
 200
 ```
 
-
 **Processing the html response**
 
 With the page successfully returned, we now need to process the text it
@@ -160,7 +156,6 @@ specific case you happen to be looking at.
 <p class="caption">(\#fig:fig2-1)Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.</p>
 </div>
 
-\vspace*{-8pt}
 We first process the page using the BeautifulSoup module (into the
 variable `soup`) and then find the `div` element that holds the information on
 investigators (`investigator_list`). As this element is unique on the page (I checked using
@@ -176,7 +171,6 @@ detailing a single investigator (`investigators`).
 >> investigators = investigator_list.find_all("div", class_ = "views-row")
 ```
 
-\enlargethispage{24pt}
 As we specified in our query parameters that we wanted 24 results per
 page, we should check whether our list of page sections has the right
 length.
@@ -187,7 +181,6 @@ length.
 20
 ```
 
-\enlargethispage{12pt}
 
 ```r
 # Given a request response object, parse for HHMI investigators
@@ -242,7 +235,6 @@ def scrape(page_response):
 <div style="text-align: center">Listing 2.1. Python code to parse for HHMI investigators</div>
 <br>
 
-\pagebreak
 Finally, we need to process each of these segments to obtain the data we
 are looking for. This is the actual "scraping" of the page to get the
 information we want. Again, this involves looking closely at the HTML
@@ -329,7 +321,7 @@ give results 481--493.
 Then it is a matter of putting the function we constructed
 earlier into a loop to work through the correct number of pages. As we
 start to hit the website repeatedly, we need to consider whether we are
-being \it{polite}. Most websites have a file in the root directory called
+being polite. Most websites have a file in the root directory called
 robots.txt that contains guidance on using programs to interact with the
 website. In the case of <http://hhmi.org> the file states first that we
 are allowed (or, more properly, not forbidden) to query
@@ -341,7 +333,6 @@ you so desire. The file also states that there is a requested
 between each query. This request is easily accommodated by adding a
 timed delay between each page request.
 
-\pagebreak
 
 ```r
 >> for page_num in range(num_pages):
@@ -389,8 +380,6 @@ by pragmatic rather than theoretical concerns.
 Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. These tools are much easier and generally more effective to work
 with. They are the focus of much of the rest of this chapter.
 
-
----
 
 Application Programming Interfaces (APIs) {#sec:4-3}
 -----------------
@@ -605,7 +594,6 @@ API to make various API calls straightforward. This wrapper only works
 with the public ORCID API and can therefore only access publicly
 available data.
 
-\pagebreak
 Using the API and wrapper together provides a convenient means of
 getting this information. For instance, given an ORCID, it is
 straightforward to get profile information. Here we get a list of
@@ -694,7 +682,6 @@ collect a set of identifiers and use a range of APIs to gather metadata and info
 range of other publishers and service providers, including Crossref,
 also provide an instance of this API, meaning the same tools can be used
 to collect information on articles from a range of sources.
-
 
 
 Summary {#sec:4-9}

@@ -3,10 +3,10 @@ Workbooks {#chap:workbooks}
 
 **Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
 
-
 This final chapter provides an overview of the Python workbooks that
-accompany each chapter. These workbooks combine text explanation and
-code you can run, implemented in *Jupyter notebooks* (<https://jupyter.org/>), to explain techniques and approaches
+accompany this book. The workbooks combine text explanation and
+code you can run, implemented in *Jupyter notebooks* 
+(<https://jupyter.org/>), to explain techniques and approaches
 selected from each chapter and to provide thorough implementation
 details, enabling students and interested practitioners to quickly get
 up to speed on and start using the technologies covered in the book. We
@@ -15,36 +15,127 @@ hope you have a lot of fun with them.
 Introduction
 ------------
 
-We provide accompanying Juptyer IPython workbooks for mostchapters in
-this book. These workbooks explain techniques and approaches selected
-from each chapter and provide thorough implementation details so that
-students and interested practitioners can quickly start using the
-technologies covered within.
+We provide accompanying Juptyer workbooks for most chapters in
+this book. The workbooks are structured in two sets. *Workbook Set 1* 
+includes workbooks that can be run online, which allows yo to quickly interact 
+with the code examples. *Workbook Set 2* provides additional workbooks that can be 
+run locally or on a Server (that needs to be configured first). The 
+workbooks of these sets explain and exemplify techniques and approaches 
+from the book chapters by using different substantive examples and data 
+sources.
 
-The workbooks and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any
-appropriately configured computer. These workbooks are a live set of
-documents that could potentially change over time, so see the repository
-for the most recent set of information.
-
-These workbooks provide a thorough overview of the work needed to
+In summary, the workbooks provide a thorough overview of the work needed to
 implement the selected technologies. They combine explanation, basic
 exercises, and substantial additional Python code to provide a
 conceptual understanding of each technology, give insight into how key
 parts of the process are implemented through exercises, and then lay out
 an end-to-end pattern for implementing each in your own work. The
-workbooks are implemented using IPython notebooks, interactive documents
+workbooks are implemented using Jupyter notebooks, interactive documents
 that mix formatted text and Python code samples that can be edited and
 run in real time in a Jupyter notebook server, allowing you to run and
 explore the code for each technology as you read about it.
 
-Environment
+Workbook Set 1
 -----------
 
-The Big-Data-Workbooks GitHub repository provides two different types of
+The workbooks of set 1 are designed to be run online using Binder
+(<https://mybinder.org/>) and don't need additional software installed 
+locally. Individual workbooks can be opened by following the 
+corresponding Binder link. The full set of workbooks is
+available in the *Big-Data-Social-Science GitHub repository*
+(<https://github.com/kimbrianj/bdss-notebooks>). Additional workbooks
+may be added over time and made available in this repository.
+
+To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/kimbrianj/bdss-notebooks/master>)
+
+### Workbook details
+
+At this point, online workbooks are available for selected topics that are
+covered in the book. Below is a list of the online workbooks, along with a 
+short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
+
+#### Dataset Exploration
+
+Link to workbook: 
+
+The *Dataset Exploration* workbook introduces you to the main data source 
+that is used in the online workbooks, the North Carolina Department of
+Corrections Data 
+(<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this 
+context, it exemplifies how to interact with data in a database, work with 
+missing values and date variables and join tables by using SQL in Python. The 
+workbook also explains how to pull data from a database into a dataframe in
+Python and continues by exploring the imported data using the `numpy` and `pandas` packages. In this workbook, you will learn how to:
+
+-   Connect to and query a database through Python,
+
+-   Begin to understand the SQL query language,
+
+-   Explore aggregate statistics in Python.
+
+#### APIs 
+
+The APIs notebook introduces you to the use of
+Internet-based web service APIs for retrieving data from online data
+stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:
+
+-   Construct a URL query,
+
+-   Get a response from the URL,
+
+-   Retrieve the data in JSON form.
+
+
+#### Machine Learning -- Creating Labels
+
+The *Machine Learning Creating Labels* workbook exemplifies how to create an 
+outcome variable (label) for a machine learning task by using SQL in Python. 
+It uses the North Carolina Department of Corrections Data to build an 
+outcome that measures recidivism, i.e. whether a former inmate returns to 
+jail in a given period of time. It also shows how to define a Python 
+function to automate programming tasks. In this workbook, you will learn 
+how to:
+
+-   Define and compute a prediction target in the machine learning framework,
+
+-   Use SQL with data that has a temporal structure (multiple records per observation).
+
+#### Machine Learning -- Creating Features
+
+The *Machine Learning Creating Features* workbook prepares predictors 
+(features) for the machine learning task that has been introduced in the 
+*Machine Learning Creating Labels* workbook. It is shown how to use SQL 
+in Python for generating features that are expected to predict recidivism,
+such as the number of times someone has been admitted to prison prior to 
+a given date. In this workbook, you will learn how to:
+
+-   Generate features with SQL for a given prediction problem,
+
+-   Automate SQL tasks by defining Python functions.
+
+#### Machine Learning -- Model Training and Evaluation
+
+The *Machine Learning Model Training and Evaluation* workbook uses the label and features that were created in the previous workbooks to construct a training and test set for model building and evaluation. It exemplifies how to train machine learning models using `scikit-learn` in Python and how to evaluate prediction performance for classification tasks. In addition, it is shown how to construct and compare multiple machine learning models in a for-loop in Python. In this workbook, you will learn how to:
+
+-   Pre-process data to provide valid inputs for machine learning models  
+
+-   Properly divide data with a temporal structure into training and test sets,
+
+-   Train and evaluate machine learning models for classification using Python.
+
+Workbook Set 2
+-----------
+
+The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any
+appropriately configured computer. These workbooks are a live set of
+documents that could potentially change over time, so see the repository
+for the most recent set of information.
+
+The *Big-Data-Workbooks GitHub repository* provides two different types of
 workbooks, each needing a different Python setup to run. The first type
-of workbooks is intended to be downloaded andrun locally by individual
+of workbooks is intended to be downloaded and run locally by individual
 users. The second type is designed to be hosted, assigned, worked on,
-and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to hostand run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
+and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
 
 The text, images, and Python code in the workbooks are the same between
 the two versions, as are the files and programs needed to complete each.
@@ -82,14 +173,15 @@ like `pip` into Windows well enough that it approximates the ease and
 experience of using Python within OS X or Unix/Linux (no small feat).
 
 You can also create your Python environment manually, installing Python,
-package managers, and Python packages separately. Packages like `numpy` and `pandas` can
-be difficult to get working, however, particularly on Windows, and
-Anaconda simplifies this setup considerably regardless of your OS.
+package managers, and Python packages separately. Packages like `numpy` 
+and `pandas` can be difficult to get working, however, particularly on 
+Windows, and Anaconda simplifies this setup considerably regardless of 
+your OS.
 
 ### Central workbook server
 
-Setting up a server to host workbooks managed by `nbgrader` is more involved. Some
-of the workbooks consume multiple gigabytes of memory per user and
+Setting up a server to host workbooks managed by `nbgrader` is more involved. 
+Some of the workbooks consume multiple gigabytes of memory per user and
 substantial processing power. A hosted implementation where all users
 work on a single server requires substantial hardware, relatively
 complex configuration, and ongoing server maintenance. Detailed
@@ -102,14 +194,13 @@ will also want a robust, multi-destination backup plan.
 For more information on installing and running the workbooks that
 accompany this book, see the Big-Data-Workbooks GitHub repository.
 
-Workbook details
-----------------
+### Workbook details
 
 Most chapters have an associated workbook, each in its own directory in
 the Big-Data-Workbooks GitHub repository. Below is a list of the
 workbooks, along with a short summary of the topics that each covers.
 
-### Social Media and APIs
+#### Social Media and APIs
 
 The Social Media and APIs workbook introduces you to the use of
 Internet-based web service APIs for retrieving data from online data
@@ -127,7 +218,7 @@ focusing on Twitter. In this workbook, you will learn how to:
 
 -   Conduct basic analysis of publication data.
 
-### Database basics
+#### Database basics
 
 In the Database workbook you will learn the practical benefits that stem
 from using a database management system. You will implement basic SQL
@@ -145,7 +236,7 @@ a database. In this workbook, you will learn how to:
 
 -   Close database connections.
 
-### Data Linkage
+#### Data Linkage
 
 In the Data Linkage workbook you will use Python to clean input data,
 including using regular expressions, then learn and implement the basic
@@ -158,14 +249,14 @@ will learn how to:
 -   Parse a name string into first, middle, and last names using
     Python's `split` method and regular expressions,
 
--   Use and evaluate the results of common computationalstring
+-   Use and evaluate the results of common computational string
     comparison algorithms including Levenshtein
-    distance,Levenshtein--Damerau distance, and Jaro--Winkler distance,
+    distance, Levenshtein--Damerau distance, and Jaro--Winkler distance,
 
--   Understand the Fellegi--Sunter probabilistic record linkagemethod,
+-   Understand the Fellegi--Sunter probabilistic record linkage method,
     with step-by-step implementation guide.
 
-### Machine Learning
+#### Machine Learning
 
 In the Machine Learning workbook you will train a machine learning model
 to predict missing information, working through the process of cleaning
@@ -191,7 +282,7 @@ will learn how to:
 -   Use the `scikit-learn` Python package to train, fit, and evaluate machine learning
     models.
 
-### Text Analysis
+#### Text Analysis
 
 In the Text Analysis workbook, you will derive a list of topics from
 text documents using MALLET, a Java-based tool that analyzes clusters of
@@ -208,7 +299,7 @@ together. In this workbook, you will learn how to:
 -   Create a model that detects these topics in documents, and use this
     model to categorize documents.
 
-### Networks
+#### Networks
 
 In the Networks workbook you will create network data where the nodes
 are researchers who have been awarded grants, and ties are created
@@ -235,7 +326,7 @@ data. In this workbook, you will learn how to:
 -   Load network data into the `igraph` Python package and then create graph
     visualizations.
 
-### Visualization
+#### Visualization
 
 The Visualization workbook introduces you to Tableau, a data analysis
 and visualization software package that is easy to learn and use.
