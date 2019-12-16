@@ -540,7 +540,7 @@ scientists approach doing research. The first set of chapters addresses
 the new ways to capture, curate, and store data. The second set of
 chapters describes what tools are available to process and analyze
 data. The last set deals with the appropriate handling of
-data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done.
+data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don't cover that in this book but refer readers to resources such as "Data Science Project Scoping" (cite:) for more information.
 
 ```{r projectfig, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis.'}
 knitr::include_graphics("ChapterIntro/figures/projectflow.png")
