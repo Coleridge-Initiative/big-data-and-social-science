@@ -76,8 +76,7 @@ is an imprecise description of a rich and complicated set of characteristics,
 practices, techniques, ethical issues, and outcomes all associated with data"
 [@japec2015big].
 
-The value of the new types of data for social science is quite
-substantial. Personal data has been hailed as the "new oil" of the
+While the term "big data" may be a buzzword, what's real is the significant value of new types of data and new methods for social science . Personal data has been hailed as the "new oil" of the
 twenty-first century, and the benefits to policy, society, and public
 opinion research are undeniable [@greenwood2014]. Policymakers have
 found that detailed data on human beings can be used to reduce crime,
