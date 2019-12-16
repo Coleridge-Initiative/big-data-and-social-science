@@ -135,7 +135,7 @@ Social science, inference, and big data {#sec:1.3}
 ---------------------------------------
 
 The goal of empirical social science is to make inferences about a
-population from available data. That requirement exists regardless of
+population from available data. That requirement  exists regardless of
 the data source---and is a guiding principle for this book. For
 probability-based survey data, methodology has been developed to
 overcome problems in the data generating process. A guiding principle
@@ -144,7 +144,7 @@ statistical methods for weighting, calibration, and other forms of
 adjustments are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
-flaws in the data generating process. Two books provide frameworks for
+flaws in the data generating process [@imbensrubin2015]. Two books provide frameworks for
 *survey quality*^[This topic is discussed in more detail in Chapter 10.][@groves2004survey; @biemer2003].
 
 Across the social sciences, including economics, public policy,
