@@ -24,7 +24,7 @@ knit_hooks$set(output = function(x, options) {
 Introduction
 ------------
 
-A tremendous lure of the Internet is the availability of vast amounts of
+The Internet is an excllent resource for vast amounts of
 data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 
