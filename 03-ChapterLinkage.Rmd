@@ -6,7 +6,7 @@ Record Linkage {#chap:link}
 
 As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. As social scientists, in addition to just linking data, we are also concerned
+activities of interest. As social scientists, in addition to just linking data to get additional information, we are also concerned
 about issues of missing links, duplicative links, and erroneous links.
 This chapter provides an overview of traditional rule-based and
 probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
