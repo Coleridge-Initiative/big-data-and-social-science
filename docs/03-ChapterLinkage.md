@@ -6,7 +6,7 @@ Record Linkage {#chap:link}
 
 As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. As social scientists, in addition to just linking data, we are also concerned
+activities of interest. As social scientists, in addition to just linking data to get additional information, we are also concerned
 about issues of missing links, duplicative links, and erroneous links.
 This chapter provides an overview of traditional rule-based and
 probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
@@ -68,7 +68,7 @@ In addition to the worked examples in this chapter here are a few other papers t
 
 Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
 
-<!-- todo: <RAYID CRIME OR SOMETHING> --> 
+Rodolfa et al \cite() use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney's office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver's license number (where available), and California Information and Identification (CII) number (where available).
 
 The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality \cite{NCHS2012}.
 

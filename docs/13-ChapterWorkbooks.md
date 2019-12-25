@@ -54,24 +54,31 @@ At this point, online workbooks are available for selected topics that are
 covered in the book. Below is a list of the online workbooks, along with a 
 short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
 
+#### Databases
+
+The Databases notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source 
+that is used in the online workbooks, the North Carolina Department of
+Corrections Data 
+(<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this notebook, you will
+
+- Build basic queries using SQL,
+
+- Understand and perform various joins. 
+
+
 #### Dataset Exploration
 
 Link to workbook: 
 
-The *Dataset Exploration* workbook introduces you to the main data source 
-that is used in the online workbooks, the North Carolina Department of
-Corrections Data 
-(<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this 
-context, it exemplifies how to interact with data in a database, work with 
+The *Dataset Exploration* further explores the North Carolina Department of Correction data, demonstrating how to work with 
 missing values and date variables and join tables by using SQL in Python. The 
 workbook also explains how to pull data from a database into a dataframe in
 Python and continues by exploring the imported data using the `numpy` and `pandas` packages. In this workbook, you will learn how to:
 
 -   Connect to and query a database through Python,
 
--   Begin to understand the SQL query language,
-
 -   Explore aggregate statistics in Python.
+
 
 #### APIs 
 

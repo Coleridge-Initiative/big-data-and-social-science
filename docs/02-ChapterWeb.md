@@ -11,7 +11,7 @@ In many social science problems we have to augment our data with external data s
 Introduction
 ------------
 
-A tremendous lure of the Internet is the availability of vast amounts of
+The Internet is an excllent resource for vast amounts of
 data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 
@@ -29,7 +29,7 @@ be used as a guide for data collection. While much of this is specific
 to data about research and researchers, the ideas are generalizable to
 wider issues of data and public policy. While we use Python as the programming language in this chapter, data collection through web scraping and APIs can be done in most modern programming languages as well as using software that's designed specifically for this purpose.
 
-Examples
+Examples (put this in a box)
 ----------
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Big Data and Social Science</title>
   <meta name="description" content="Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -49,41 +52,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -119,7 +147,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="2" data-path="chap-web.html"><a href="chap-web.html"><i class="fa fa-check"></i><b>2</b> Working with Web Data and APIs</a><ul>
 <li class="chapter" data-level="2.1" data-path="chap-web.html"><a href="chap-web.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
-<li class="chapter" data-level="2.2" data-path="chap-web.html"><a href="chap-web.html#examples"><i class="fa fa-check"></i><b>2.2</b> Examples</a></li>
+<li class="chapter" data-level="2.2" data-path="chap-web.html"><a href="chap-web.html#examples-put-this-in-a-box"><i class="fa fa-check"></i><b>2.2</b> Examples (put this in a box)</a></li>
 <li class="chapter" data-level="2.3" data-path="chap-web.html"><a href="chap-web.html#sec:4-1"><i class="fa fa-check"></i><b>2.3</b> Scraping information from the web</a><ul>
 <li class="chapter" data-level="2.3.1" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.1"><i class="fa fa-check"></i><b>2.3.1</b> Obtaining data from websites</a></li>
 <li class="chapter" data-level="2.3.2" data-path="chap-web.html"><a href="chap-web.html#sec:4-1.2"><i class="fa fa-check"></i><b>2.3.2</b> Limits of scraping</a></li>
@@ -218,22 +246,24 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>7</b> Machine Learning</a><ul>
 <li class="chapter" data-level="7.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>7.2</b> What is machine learning?</a></li>
-<li class="chapter" data-level="7.3" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>7.3</b> The machine learning process</a></li>
-<li class="chapter" data-level="7.4" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>7.4</b> Problem formulation: Mapping a problem to machine learning methods</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>7.5</b> Methods</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>7.5.1</b> Unsupervised learning methods</a></li>
-<li class="chapter" data-level="7.5.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>7.5.2</b> Supervised learning</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>7.2</b> What is machine learning?</a><ul>
+<li class="chapter" data-level="7.2.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>7.2.1</b> Features</a></li>
 </ul></li>
+<li class="chapter" data-level="7.3" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>7.3</b> Methods</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>7.3.1</b> Unsupervised learning methods</a></li>
+<li class="chapter" data-level="7.3.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>7.3.2</b> Supervised learning</a></li>
+<li class="chapter" data-level="7.3.3" data-path="chap-ml.html"><a href="chap-ml.html#binary-vs-multiclass-classification-problems"><i class="fa fa-check"></i><b>7.3.3</b> Binary vs Multiclass classification problems</a></li>
+<li class="chapter" data-level="7.3.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.3.4</b> Skewed or imbalanced classification problems</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="chap-ml.html"><a href="chap-ml.html#global-interpretability"><i class="fa fa-check"></i><b>7.4</b> Global Interpretability</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-ml.html"><a href="chap-ml.html#individual-level-explanations"><i class="fa fa-check"></i><b>7.5</b> Individual-Level Explanations</a></li>
 <li class="chapter" data-level="7.6" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.6</b> Evaluation</a><ul>
 <li class="chapter" data-level="7.6.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.6.1</b> Methodology</a></li>
 <li class="chapter" data-level="7.6.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.6.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.7</b> Practical tips</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>7.7.1</b> Features</a></li>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.7.1</b> Avoiding Leakage</a></li>
 <li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>7.7.2</b> Machine learning pipeline</a></li>
-<li class="chapter" data-level="7.7.3" data-path="chap-ml.html"><a href="chap-ml.html#multiclass-problems"><i class="fa fa-check"></i><b>7.7.3</b> Multiclass problems</a></li>
-<li class="chapter" data-level="7.7.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.7.4</b> Skewed or imbalanced classification problems</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>7.8</b> How can social scientists benefit from machine learning?</a></li>
 <li class="chapter" data-level="7.9" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>7.9</b> Advanced topics</a></li>
@@ -405,11 +435,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -417,12 +449,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -434,6 +465,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -450,7 +485,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

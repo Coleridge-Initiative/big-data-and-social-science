@@ -15,7 +15,7 @@ Introduction {#sec:db:intro}
 We turn now to the question of how to store, organize, and manage the
 data used in data-intensive social science. As the data with which you
 work grow in volume and diversity, effective data management becomes
-increasingly important to avoid issues of scale and
+increasingly important to avoid scale and
 complexity from overwhelming your research processes. In particular,
 when you deal with data that get frequently updated, with changes made
 by different people, you will frequently want to use database management
@@ -25,7 +25,7 @@ go so far as to say: if you take away *just one thing* from this book,
 it should be this: *Use a database!*
 
 As we explain in this chapter, DBMSs provide an environment that greatly
-simplifies data management and manipulation. They require a little bit
+simplifies data management. They require a little bit
 of effort to set up, but are worth it. They permit large amounts of data
 to be organized in multiple ways that allow for efficient and rapid
 exploration via query languages; durable and
@@ -33,9 +33,9 @@ reliable storage that maintain data
 consistency; scaling to large data sizes; and intuitive analysis, both
 within the DBMS itself and via connectors to other data analysis packages
 and tools. DBMSs have become a
-critical component of a great variety of applications, from handling
-transactions in financial systems to delivering data as a service to
-power websites, dashboards, and applications. If you are using a
+critical component of a great variety of systems, from handling
+transactions in financial systems to delivering data to
+power websites, dashboards, and software that we use every day. If you are using a
 production-level enterprise system, chances are there is a database in
 the back end. They are multi-purpose and well suited for organizing
 social science data and for supporting data exploration.
@@ -215,7 +215,7 @@ model of a relational data
 structure.]
 
 <div class="F00">
-<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with the domain we are analyzing, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:figdb-dbs), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include &quot;is employed by&quot; and &quot;is funded by.&quot; This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
+<p><strong>Box 4.1: Data model</strong> A <em>data model</em> specifies the data elements associated with the domain we are analyzing, the properties of those data elements, and how those data elements relate to one another. In developing a data model, we commonly first identity the entities that are to be modeled and then define their properties and relationships. For example, when working on the science of science policy (see Figure @ref(fig:figdb-dbs), the entities include people, products, institutions, and funding, each of which has various properties (e.g., for a person, their name, address, employer); relationships include “is employed by” and “is funded by.” This conceptual data model can then be translated into relational tables or some other database representation, as we describe next.</p>
 </div>
 
 Hundreds of different open source, commercial, and

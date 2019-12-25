@@ -77,8 +77,7 @@ is an imprecise description of a rich and complicated set of characteristics,
 practices, techniques, ethical issues, and outcomes all associated with data"
 [@japec2015big].
 
-The value of the new types of data for social science is quite
-substantial. Personal data has been hailed as the "new oil" of the
+While the term "big data" may be a buzzword, what's real is the significant value of new types of data and new methods for social science . Personal data has been hailed as the "new oil" of the
 twenty-first century, and the benefits to policy, society, and public
 opinion research are undeniable [@greenwood2014]. Policymakers have
 found that detailed data on human beings can be used to reduce crime,
@@ -136,7 +135,7 @@ Social science, inference, and big data {#sec:1.3}
 ---------------------------------------
 
 The goal of empirical social science is to make inferences about a
-population from available data. That requirement exists regardless of
+population from available data. That requirement  exists regardless of
 the data source---and is a guiding principle for this book. For
 probability-based survey data, methodology has been developed to
 overcome problems in the data generating process. A guiding principle
@@ -145,7 +144,7 @@ statistical methods for weighting, calibration, and other forms of
 adjustments are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
-flaws in the data generating process. Two books provide frameworks for
+flaws in the data generating process [@imbensrubin2015]. Two books provide frameworks for
 *survey quality*^[This topic is discussed in more detail in Chapter 10.][@groves2004survey; @biemer2003].
 
 Across the social sciences, including economics, public policy,
@@ -532,7 +531,7 @@ we discuss how to store the data in different types of data formats.
 
 ** Additional Examples**
 
-The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, urban infrastructure. These methods have been used to build systems to improve understanding of critical questions such as: ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’ ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
+The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, and urban infrastructure. These methods have been used to build systems to improve the understanding  of critical questions such as: ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’ ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
 
 
 The structure of the book
@@ -543,7 +542,7 @@ scientists approach doing research. The first set of chapters addresses
 the new ways to capture, curate, and store data. The second set of
 chapters describes what tools are available to process and analyze
 data. The last set deals with the appropriate handling of
-data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done.
+data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don't cover that in this book but refer readers to resources such as "Data Science Project Scoping" (cite:) for more information.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />
