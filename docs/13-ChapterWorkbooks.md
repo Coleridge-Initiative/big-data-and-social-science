@@ -1,7 +1,7 @@
 Workbooks {#chap:workbooks}
 =========
 
-**Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
+**Christoph Kern, Brian Kim, Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
 
 This final chapter provides an overview of the Python workbooks that
 accompany this book. The workbooks combine text explanation and
@@ -17,7 +17,7 @@ Introduction
 
 We provide accompanying Juptyer workbooks for most chapters in
 this book. The workbooks are structured in two sets. *Workbook Set 1* 
-includes workbooks that can be run online, which allows yo to quickly interact 
+includes workbooks that can be run online, which allows you to quickly interact 
 with the code examples. *Workbook Set 2* provides additional workbooks that can be 
 run locally or on a Server (that needs to be configured first). The 
 workbooks of these sets explain and exemplify techniques and approaches 
@@ -71,7 +71,7 @@ Corrections Data
 Link to workbook: 
 
 The *Dataset Exploration* further explores the North Carolina Department of Correction data, demonstrating how to work with 
-missing values and date variables and join tables by using SQL in Python. The 
+missing values and date variables and join tables by using SQL in Python. Though some of the SQL from the Databses notebook is revisited here, the focus is on practicing Python code and using Python for data analysis. The 
 workbook also explains how to pull data from a database into a dataframe in
 Python and continues by exploring the imported data using the `numpy` and `pandas` packages. In this workbook, you will learn how to:
 
@@ -91,6 +91,16 @@ stores. This notebook walks through the process of retrieving data about patents
 -   Get a response from the URL,
 
 -   Retrieve the data in JSON form.
+
+#### Text Analysis 
+
+In the Text Analysis notebook, you will use the data that you pulled from the PatentsView API in the API notebook to find topics from patent abstracts. This will involve going through every step of the process, from extracting the data to cleaning and preparing to using topic modeling algorithms. In this workbook, you will learn how to:
+
+- Clean and prepare text data,
+
+- Apply Latent Dirichlet Allocation for topic modeling,
+
+- Improve and iterate models to focus in on identified topics.
 
 
 #### Machine Learning -- Creating Labels
