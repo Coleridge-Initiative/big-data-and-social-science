@@ -1,3 +1,9 @@
+% FK notes from 1/3/2020
+% Brian -- let's change your personal repository to coleridge for the binder (or anywhere else)
+% make use of the side notes for the printed version (we will have them back like the old layout was)
+% 4 levels down in the structuring is too much. Check with the editor how they want to do this. I would recommend just going with non-numbered sections at that point.
+
+
 Workbooks {#chap:workbooks}
 =========
 
