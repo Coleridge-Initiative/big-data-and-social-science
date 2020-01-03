@@ -1,4 +1,4 @@
-% reviewing now
+% done
 
 Record Linkage {#chap:link}
 ==============
@@ -8,8 +8,7 @@ Record Linkage {#chap:link}
 
 As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. As social scientists, in addition to just linking data to get additional information, we are also concerned
-about issues of missing links, duplicative links, and erroneous links.
+activities of interest. In addition to just linking data to get additional information, we are also concerned about issues of missing links, duplicative links, and erroneous links.
 This chapter provides an overview of traditional rule-based and
 probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
 
@@ -24,8 +23,10 @@ say, tax records. These opportunities, however, create different kinds
 of challenges from those posed by survey data. Combining information
 from different sources about an individual, business, or geographic
 entity means that the social scientist must determine whether or not two
-entities on two different files are the same. This determination is not
-easy. We regularly run into situations where we need to combine data from different agencies about the same people to understand future employment or health outcomes for people on social service benefits or those who have recently been released from prison. In the UMETRICS data for example, if data are to be used to measure the impact
+entities in two different data sources are the same. This determination is not
+always easy.
+
+We regularly run into situations where we need to combine data from different agencies about the same people to understand future employment or health outcomes for people on social service benefits or those who have recently been released from prison. In the UMETRICS data for example, if data are to be used to measure the impact
 of research grants, is David A. Miller from Stanford, CA, the same as
 David Andrew Miller from Fairhaven, NJ, in a list of inventors? Is
 IBM the same as Big Blue if the productivity and growth of
@@ -51,30 +52,33 @@ to multiple individuals, then that inventor's productivity will be
 understated.
 
 This chapter discusses current approaches to joining multiple data sets
-together---commonly called *record linkage*. Other names associated with
+together---commonly called *record linkage*. ^[Other names associated with
 record linkage are entity disambiguation, entity resolution,
 co-reference resolution, matching, and data fusion, meaning
 that records which are linked or co-referent can be thought of as
 corresponding to the same underlying entity. The number of names is
 reflective of a vast literature in social science, statistics, computer
-science, and information sciences. We draw heavily here on work by
+science, and information sciences.]
+
+We draw heavily here on work by
 Winkler, Scheuren, and Christen, in particular
 [@herzog2007data; @christen2012survey; @christen2012data]. To ground
 ideas, we use examples from a recent paper examining the effects of
 different algorithms on studies of patent productivity
 [@ventura2015seeing].
 
+**BOX**
 ** Examples **
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
 Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
 
-Rodolfa et al \cite() use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney's office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver's license number (where available), and California Information and Identification (CII) number (where available).
+Rodolfa et al \cite(*todo*) use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney's office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver's license number (where available), and California Information and Identification (CII) number (where available).
 
 The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality \cite{NCHS2012}.
 
-<!-- todo: --> 
+**BOX**
 
 Introduction to record linkage {#sec:recordlinkage}
 ------------------------------
@@ -653,13 +657,13 @@ Chipperfield and Chambers have developed an approach based on the
 bootstrap to account for record linkage errors when making inferences
 for cross-tabulated
 
-### Machine learning approaches to linking
+### Machine learning approaches to record linkage
 
 Computer scientists have contributed extensively in parallel literature
 focused on linking large data sets [@christen2012data]. Their focus is
 on identifying potential links using approaches that are fast, adaptive, and
 scalable, and approaches are developed based on work in network
-algorithms and machine learning.
+analysis and machine learning.
 
 While simple blocking as described in
 Section [Indexing and Blocking]
@@ -710,17 +714,6 @@ critical; the model is only as good as the data it is trained on.
 knitr::include_graphics("ChapterLinkage/figures/fig3-2.png")
 ```
 
-An example of a machine learning model that is popular for record
-linkage is the random forest model^[See Chapter 6.] [@Breiman01]. This is a
-classification model that fits a large number of classification trees to
-a labeled training data set. Each individual tree is trained on a
-bootstrap sample of all labeled cases using a random subset of predictor
-variables. After creating the classification trees, new cases are
-labeled by giving each tree a vote and keeping the label that receives
-the most votes. This highly randomized approach corrects for a problem
-with simple classification trees, which is that they may overfit to
-training data.
-
 As shown in Figure
 \@ref(fig:fig3-2), a major difference between probabilistic
 and machine learning approaches is the need for labeled training data to
@@ -742,25 +735,7 @@ is representative of the complete data set, then the output from the
 probabilistic record linkage can be used as "truth" data.
 
 Given a quality training data set, machine learning approaches may have
-advantages over probabilistic record linkage. Consider the random forest
-model. Random forests are more robust to correlated predictor variables,
-because only a random subset of predictors is included in any individual
-classification tree. The conditional independence assumption, to which
-we alluded in our discussion of the probabilistic model, can be dropped.
-An estimate of the generalization error can be computed in the form of
-"out-of-bag error." A measure of variable importance is computed that
-gives an idea of how powerful a particular field comparison is in terms
-of correctly predicting link status. Finally, unlike the Fellegi--Sunter
-model, predictor variables can be continuous.
-
-The combination of being robust to correlated variables and providing a
-variable importance measure makes random forests a useful diagnostic
-tool for record linkage models. It is possible to refine the record
-linkage model iteratively, by first including many predictor variables,
-including variants of the same comparison, and then using the variable
-importance measure to narrow down the predictors to a parsimonious set.
-
-There are many published studies on the effectiveness of random forests
+advantages over probabilistic record linkage.   There are many published studies on the effectiveness of random forests
 and other machine learning algorithms for record linkage. Christen and
 Ahmed et al. provide some pointers
 [@christen2012survey; @elmagarmid2007duplicate].
