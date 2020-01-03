@@ -24,6 +24,6 @@ As with any book, there are many people to be thanked. We are grateful to Christ
 
 We are also grateful to the students of three "Big Data for Federal Statistics" classes in which we piloted this material, and to the instructors and speakers beyond those who  contributed as authors to this edited volume---Dan Black, Nick Collier, Ophir Frieder, Lee Giles, Bob Goerge, Laure Haak, Madian Khabsa, Jonathan Ozik, Ben Shneiderman, and Abe Usher. The book would not exist without them.
 
-We thank Trent Buskirk, Davon Clarke, Chase Coleman, Stephanie Eckman, Matt Gee, Laurel Haak, Jen Helsby, Madian Khabsa, Ulrich Kohler, Charlotte Oslund, Rod Little, Arnaud Sahuguet, Tim Savage, Severin Thaler, and Joe Walsh for their helpful comments on drafts of this material.
+We thank Trent Buskirk, Davon Clarke, Chase Coleman, Stephanie Eckman, Matt Gee, Laurel Haak, Jen Helsby, Madian Khabsa, Ulrich Kohler, Charlotte Oslund, Rod Little, Arnaud Sahuguet, Tim Savage, Severin Thaler, and Joe Walsh for their helpful comments on drafts of this material. In particular we thank Stas Kolenikov for a very detailed review of the first edition.
 
 We also owe a great debt to the copyeditor, Richard Leigh; the project editor, Charlotte Byrnes; and the publisher, Rob Calver, for their hard work and dedication.
