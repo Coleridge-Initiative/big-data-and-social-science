@@ -634,9 +634,7 @@ create table Grants ( --latexlabel `\label{code:db:10}`
 
 ### Loading data
 
-So far we have created a database and two empty tables. To complete our simple
-SQL program, we show in
-Listing 4.2 the two statements that load the data of
+So far we have created a database and two empty tables. The next step is to fill in the tables with data. We can of course do that row by row manually but in most cases, we will be importing that data from another source, let's say a CSV file. Listing 4.2 shows the two statements that load the data of
 Figure \@ref(fig:figdb-1) into our two tables. (Here and elsewhere in this
 chapter, we use the MySQL DBMS. The SQL syntax used by different DBMSs
 differs in various, mostly minor ways.) Each statement specifies the
@@ -907,13 +905,13 @@ Linking DBMSs and other tools
 -----------------------------
 
 Query languages such as SQL are not general-purpose programming
-languages; they support easy, efficient access to large data sets, but
-are not intended to be used for complex calculations. When complex
+languages; they support easy, efficient access to large data sets, are extremely efficient for specific types of analysis, but
+may not be the right choice for all analysis. When complex
 computations are required, one can embed query language statements into
 a programming language or statistical package. For example, we might
 want to calculate the interquartile range of funding for all grants.
 While this calculation can be accomplished in SQL, the resulting SQL
-code will be complicated. Languages like Python make such statistical
+code will be complicated (depending on which flavor of SQL your database supports). Languages like Python make such statistical
 calculations straightforward, so it is natural to write a Python (or R,
 SAS, Stata, etc.) program that connects to the DBMS that contains our
 data, fetches the required data from the DBMS, and then calculates the
@@ -921,7 +919,7 @@ interquartile range of those data. The program can then, if desired,
 store the result of this calculation back into the database.
 
 Many relational DBMSs also have built-in analytical functions or often
-now embed the R engine, providing significant in-database statistical
+now support different programming languages, providing significant in-database statistical
 and analytical capabilities and alleviating the need for external
 processing.
 
@@ -1001,7 +999,7 @@ Chapter [Working with Web Data and APIs].
 ]
 ```
 
-While some relational DBMSs provide built-in support for JSON objects,
+While some relational DBMSs (such as PostgresQL) provide built-in support for JSON objects,
 we assume here that we want to convert these data into normal SQL
 tables. Using one of the many utilities for converting JSON into CSV, we
 can construct the following CSV file, which we can load into an SQL
@@ -1053,7 +1051,7 @@ NoSQL databases {#sec:db:nosql}
 ---------------
 
 While relational DBMSs have dominated the database world for several
-decades, other database technologies exist and indeed have popular for
+decades, other database technologies exist and indeed have become popular for
 various classes of applications in recent years. As we will see, these
 alternative technologies have typically been motivated by a desire to
 scale the quantities of data and/or number of users that can be
@@ -1064,10 +1062,10 @@ that may motivate their use.
 ### Challenges of scale: The CAP theorem
 
 For many years, the big relational database vendors (Oracle, IBM,
-Sybase, and to a lesser extent Microsoft) have been the mainstay of how
+Sybase, Microsoft) have been the mainstay of how
 data were stored. During the Internet boom, startups looking for
 low-cost alternatives to commercial relational DBMSs turned to MySQL and
-PostgreSQL. However, these systems proved inadequate for big sites as
+PostgreSQL. However, these systems proved inadequate for big websites as
 they could not cope well with large traffic spikes, for example when
 many customers all suddenly wanted to order the same item. That is, they
 did not *scale*.
@@ -1077,7 +1075,7 @@ replicate data across multiple computers, for example by distributing
 different tables, or different rows from the same table, over multiple
 computers. However, partitioning and replication also introduce
 challenges, as we now explain. Let us first define some terms. In a
-system that comprises multiple computers:
+system that comprises of multiple computers:
 
 -   **Consistency** indicates that all computers see the same data at the same time.
 
@@ -1364,7 +1362,7 @@ and PostgreSQL (often simply called Postgres) are particularly widely used.
 MySQL is the most popular. It is particularly easy to install and use,
 but does not support all features of the SQL standard. PostgreSQL is
 fully standard compliant and supports useful features such as full text
-search and the PostGIS extensions mentioned in the previous section. We recommend you start with Postgres.
+search and the PostGIS extensions mentioned in the previous section. [bold]We recommend you start with Postgres[bold].
 
 Popular commercial relational DBMSs include Microsoft SQL
 Server, Oracle, IBM DB2, Teradata, and Sybase. These systems are heavily used in commercial
@@ -1383,7 +1381,7 @@ workstation, a cloud-hosted solution can be a good choice, both for scalability 
 
 ### NoSQL DBMSs
 
-Few social science problems have the scale that might motivate the use
+Some social science problems have the scale that might motivate the use
 of a NoSQL DBMS. Furthermore, while defining and enforcing a schema can
 involve some effort, the benefits of so doing are considerable. Thus,
 the use of a relational DBMS is usually to be recommended.
