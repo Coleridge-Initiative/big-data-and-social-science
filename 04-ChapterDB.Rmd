@@ -1,3 +1,5 @@
+% done except image for schema
+
 Databases {#chap:db}
 =========
 
