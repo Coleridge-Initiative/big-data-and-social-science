@@ -1,6 +1,6 @@
-% update relevant papers
-% update sentences for advanced topics
-% 
+% TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
+% TODO: add coleridge ML cheat sheat as box or reference / resources at the end
+% TODO: add ML process image  [Coleridge slides] 
 
 Machine Learning {#chap:ml}
 ================
@@ -29,8 +29,6 @@ simply called something else. For example, you already are familiar with
 logistic regression (a classification method that falls under the
 supervised learning framework in machine learning) and cluster analysis
 (a form of unsupervised learning). You will also learn about new methods
-
-Insert box: https://www.google.com/url?q=https://static1.squarespace.com/static/584e336fe3df28e18000d637/t/5d8a6e3b0d83ee7fbc2e1127/1569353275448/ML%2Bcheatsheet%2B%25281%2529.pdf&sa=D&ust=1575585953463000&usg=AFQjCNHRaOCyM_LYxWAZ5b1PfjW5Gubwqg
 
 that are more exclusively used in machine learning, such as random
 Forests, support vector machines, and neural networks. We will keep formalisms to a
@@ -72,7 +70,7 @@ $T$, as measured by $P$, improves with experience $E$"
 \enlargethispage{6pt}
 
 ```{block, type='F00'}
-**Box 6.1: Commercial machine learning examples**
+**Box 7.1: Commercial machine learning examples**
 
 -   **Speech recognition**: Speech recognition software uses machine learning algorithms that
     are built on large amounts of initial training data. Machine
@@ -116,7 +114,7 @@ $T$, as measured by $P$, improves with experience $E$"
 \enlargethispage{6pt}
 
 ```{block, type='F00'}
-**Box 6.2: Social Science machine learning examples**
+**Box 7.2: Social Science machine learning examples**
 Potash et al (reference) worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
 
 Carton et al (reference) used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.
@@ -136,12 +134,12 @@ where experts would spend considerable time and effort developing and
 maintaining the rules. The problem with those systems was that they were
 rigid, not adaptive, hard to scale, and expensive to maintain. Machine
 learning systems started becoming popular because they could improve the
-system along all of these dimensions^[See Chapter 3.]. Box 6.1
+system along all of these dimensions^[See Chapter 3.]. Box 7.1
 mentions several examples where machine learning is being used in
 commercial applications today. Social scientists are uniquely placed
 today to take advantage of the same advances in machine learning by
 having better methods to solve several key problems they are tackling.
-Box 6.2 describes a few social science and policy problems that are being tackled using machine learning today.
+Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.
 
 This chapter is not an exhaustive introduction to machine learning.
 There are many books that have done an excellent job of that
@@ -157,7 +155,7 @@ the same for most social science audiences), such as statistical
 learning, data mining, and pattern recognition.
 
 Types of analysis
-__________________-
+
 A lot of the data analysis tasks that social scientists do can be broken down into four types
 Description: The goal is to describe patterns or groupings in historical data. You’re already familiar with descriptive statistics and exploratory data analysis methods, and we will cover more advanced versions of those later in this chapter under Unsupervised Learning.
 Detection: The goal here is not to necessarily understand historical behavior but to detect new or emerging anomalies, events, or patterns as they happen. A typical example is early outbreak detection for infectious diseases in order to inform public health officials.
@@ -166,7 +164,7 @@ Behavior Change (or Causal Inference): The goal here is to understand the causal
 
 In this chapter, we will mostly focus on Description and Prediction methods but there is a lot of work going in developing and using machine learning methods for detection as well as for behavior change and causal inference.
 
-The Machine Learning process [todo:image]
+The Machine Learning process 
 ----------------------------
 
 When solving problems using machine learning methods, it is important to
@@ -337,10 +335,10 @@ to supervised learning methods. We focus here on the intuition behind
 the methods and the algorithm, as well as some practical tips, rather than on
 the statistical theory that underlies the methods. We encourage readers
 to refer to machine learning books listed in
-Section [Resources](#ml:res). Box 6.2 gives brief definitions of several terms we will use in this section.
+Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms we will use in this section.
 
 ```{block, type='F00'}
-**Box 6.2: Machine learning vocabulary**
+**Box 7.2: Machine learning vocabulary**
 
 -  **Learning**: In machine learning, you will notice the term *learning* that will
     be used in the context of "learning" a model. This is what you
@@ -1228,17 +1226,18 @@ original data since you will not know the class labels of new data in
 practice and will not be able to resample.
 
 
-Model interpretability
-_________
+**Model interpretability**
+
 As social scientists (or good machine learning practitioners), we do not only care about building machine learning models but also want to understand what the models “learned”, and how to use them to make inferences and decisions. Understanding, or interpreting machine learning models is a key requirement for most social science and policy problems. There are various reasons for this including:
 
-Debugging and improving models
+*Debugging and improving models*
+
 Creating trust in the models and hence increasing adoption
 Improving the decisions being made using the models
 Selecting  appropriate interventions 
 Legal Requirements 
 
-Global versus Individual Interpretability
+*Global versus Individual Interpretability*
 
 When thinking about model interpretability, there are two levels of interpretability:
 Global: At the overall model level
@@ -1246,8 +1245,8 @@ Individual: Explaining an individual classification/prediction that’s made by 
 
 Both of these are important for different reasons. We need global interpretability to help understand the overall model but we also need explanations for individual classifications when these models are helping a person make decisions about individual cases. A social worker identifying the risk of a client going back to the homeless shelter and determining appropriate interventions to reduce that risk, or a counselor in an employment agency determining how likely an individual is to be long-term unemployed and connecting them with appropriate training programs or job opportunities need individual-level explanations of predictions/recommendations that the machine learning model is generating.
 
-Global Interpretability
----------------------------
+**Global Interpretability**
+
 Each method/model needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to print the tree and use that to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we look at the coefficients and odds-ratios, but it may be difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing “feature importances”: how important it found different features that it was provided, and we often use that as a proxy for global model interpretability.
 
 Another way of interpreting the model is not by digging deeper into what the model but by how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get a high level idea of what the model is doing on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.
@@ -1428,7 +1427,7 @@ predictions:
 $$\textrm{Accuracy}=\frac{TP + TN}{TP + TN + FP + FN}=\frac{TP + TN}{P+N}=\frac{TP + TN}{P'+N'},$$
 where $TP$ denotes true positives, $TN$ true negatives, $FP$ false
 positives, $FN$ false negatives, and other symbols denote row or column
-totals as in Figure . Accuracy is the most commonly described evaluation
+totals. Accuracy is the most commonly described evaluation
 metric for classification but is surprisingly the least useful in
 practical situations (at least by itself). One problem with accuracy is
 that it does not give us an idea of *lift* compared to baseline. For
