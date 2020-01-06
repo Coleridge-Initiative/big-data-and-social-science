@@ -4,10 +4,10 @@ Databases {#chap:db}
 **Ian Foster and Pascal Heus**
 
 
-Once the data have been collected and linked into different files, it is
+Once the data have been collected and linked, it is
 necessary to store and organize them. Many social scientists are used to
-working with one analytical file, often in SAS, Stata, SPSS, or R. Most organizations store (or should store) their data in databases which makes it critical for social scientists to learn how to create, manage, and use databases for data analysis. This
-chapter describes the concept of databases, different types of databases, and analysis languages (SQL for example) that allow storing and organizing of data for rapid, scalable, and reliable data exploration and analysis.
+working with one analytical file, often in SAS, Stata, SPSS, or R. Most organizations store (or should store) their data in databases which makes it critical for social scientists to learn how to create, manage, and use databases for data storage and analysis. This
+chapter describes the concept of databases, different types of databases, and analysis languages (SQL) that allow storing and organizing of data for rapid and efficient data exploration and analysis.
 
 Introduction {#sec:db:intro}
 ------------
@@ -18,14 +18,14 @@ work grow in volume and diversity, effective data management becomes
 increasingly important to avoid scale and
 complexity from overwhelming your research processes. In particular,
 when you deal with data that get frequently updated, with changes made
-by different people, you will frequently want to use database management
-systems (DBMSs) instead of maintaining data in single text files or within
+by different people, you will want to use database management
+systems (DBMSs) instead of maintaining data in text files or within
 siloed statistical packages such as SAS, SPSS, Stata, and R. Indeed, we
 go so far as to say: if you take away *just one thing* from this book,
 it should be this: *Use a database!*
 
-As we explain in this chapter, DBMSs provide an environment that greatly
-simplifies data management. They require a little bit
+As we explain in this chapter, DBMSs greatly
+simplify data management. They require a little bit
 of effort to set up, but are worth it. They permit large amounts of data
 to be organized in multiple ways that allow for efficient and rapid
 exploration via query languages; durable and
@@ -33,12 +33,12 @@ reliable storage that maintain data
 consistency; scaling to large data sizes; and intuitive analysis, both
 within the DBMS itself and via connectors to other data analysis packages
 and tools. DBMSs have become a
-critical component of a great variety of systems, from handling
+critical component of most real-world systems, from handling
 transactions in financial systems to delivering data to
 power websites, dashboards, and software that we use every day. If you are using a
 production-level enterprise system, chances are there is a database in
-the back end. They are multi-purpose and well suited for organizing
-social science data and for supporting data exploration.
+the back-end. They are multi-purpose and well suited for organizing
+social science data and for supporting data exploration and analysis.
 
 DBMSs make many easy things trivial, and many hard things easy. They are
 easy to use but can appear daunting at first. A basic understanding of databases and of when
@@ -48,7 +48,7 @@ introduction to databases and how to use them. We describe different
 types of databases and their various features, and how they can be used in different contexts. We describe basic features like
 how to get started, setting up a database schema, ingesting data, querying and analyzing data
 within a database, and getting results out. We also discuss how to link from
-databases to other tools, such as Python, R, and Stata.
+databases to other tools, such as Python, R, and (if you have to) Stata.
 
 DBMS: When and why {#sec:db:when}
 ------------------
@@ -57,7 +57,7 @@ Consider the following three data sets:
 
 1.  10,000 records describing research grants, each specifying the
     principal investigator, institution, research area, proposal title,
-    award date, and funding amount in comma-separated-value (CSV)
+    award date, and funding amount in a comma-separated-value (CSV)
     format.
 
 2.  10 million records in a variety of formats from funding agencies,
@@ -275,7 +275,7 @@ Table: (\#tab:table4-3) Types of databases: relational (first row) and various t
 | Key–value store     | Dynamo, Redis                                   | Dynamic schema; easy scaling; high throughput                      | Not immediately consistent; no higher-level queries          | Web applications                                                 |
 | Column store        | Cassandra, HBase                                | Same as key–value; distributed; better compression at column level | Not immediately consistent; using all columns is inefficient | Large-scale analysis                                             |
 | Document store      | CouchDB, MongoDB                                | Index entire document (JSON)                                       | Not immediately consistent; no higher-level queries          | Web applications                                                 |
-| Graph database      | Neo4j, InfiniteGraph                            | Graph queries are fast                                             | Difficult to do non-graph analysis                           | Recommendation systems, networks, routing                        |
+| Graph database      | Neo4j, InfiniteGraph                            | Graph queries are fast                                             | May not be efficient to do non-graph analysis                           | Recommendation systems, networks, routing                        |
 <br>
 
 Relational and NoSQL databases (and indeed other solutions, such as
@@ -290,13 +290,12 @@ have no idea of what **schema**^[A schema defines the
 structure of a database in
 a formal language defined
 by the DBMS. See Section 4.3.3.] to use for the different data sets, and indeed it
-may not be feasible to define a unified set of schema, so diverse are
-the data and so rapidly are new data sets being acquired. Furthermore,
+may not be feasible to define a unified set of schema, as the data may be diverse and new data sets may be getting acquired continuously. Furthermore,
 the way we organize the data may vary according to our intended purpose.
 Are we interested in geographic, temporal, or thematic relationships
-among different entities? Each type of analysis may require a different organization.
+among different entities? Each type of analysis may require a different way of organizing.
 
-For these reasons, a common storage solution is to first load all data
+For these reasons, a common storage solution may be to first load all data
 into a large NoSQL database. This approach makes all data available via
 a common (albeit limited) query interface. Researchers can then extract
 from this database the specific elements that are of interest for their
@@ -318,7 +317,7 @@ Relational DBMSs
 We now provide a more detailed description of relational DBMSs.
 Relational DBMSs implement the relational data model, in which data are
 represented as sets of records organized in tables. This model is
-particularly well suited for the structured, regular data with which we
+particularly well suited for the structured data with which we
 frequently deal in the social sciences; we discuss in
 Section [4.5](#sec:db:nosql){reference-type="ref"
 reference="sec:db:nosql"} alternative data models, such as those used in
@@ -346,7 +345,7 @@ for each row in grants.csv, with columns `GrantID`, `Person`, `Funding`, and `Pr
 `Investigators` table, the substitution of an `ID` column for the `Person` column in the `Grants` table) that we will explain below.
 
 The use of the relational data model provides for physical independence:
-a given table can be stored in many different ways. SQL queries are set of instructions to execute commands
+a given table can be stored in many different ways. SQL queries are sets of instructions to execute commands
 written in terms of the logical representation of tables (i.e., their
 schema definition). Consequently, even if the physical organization of
 the data changes (e.g., a different layout is used to store the data on
@@ -370,7 +369,7 @@ knitr::include_graphics("ChapterDB/figures/figdb-2.png")
 We use query languages to manipulate data in a database (e.g., to add,
 update, or delete data elements) and to retrieve (raw and aggregated)
 data from a database (e.g., data elements that certain properties).
-Relational DBMSs support SQL, a simple, powerful query language with a
+Most Relational DBMSs support SQL, a simple, powerful query language with a
 strong formal foundation based on logic, a foundation that allows
 relational DBMSs to perform a wide variety of sophisticated
 optimizations. SQL is used for three main purposes:
@@ -385,8 +384,7 @@ We introduce each of these features in the following, although not in
 that order, and certainly not completely. Our goal here is to give
 enough information to provide the reader with insights into how
 relational databases work and what they do well; an in-depth SQL
-tutorial is beyond the scope of this book but is something we highly
-recommend readers seek elsewhere.
+tutorial is beyond the scope of this book but we highly recommend checking the references at the end of this chapter.
 
 ### Manipulating and querying data {#sec:db:sql}
 
@@ -521,6 +519,8 @@ We obtain the following:
 ### Schema design and definition {#sec:db:schema}
 
 Todo: image of our database schema
+
+When you're using a pre-existing database, you'll be given the database design that includes tables, rows, and columns. But, when you are starting with yor own data and need to create a database, the first step is to come up with the design of the database.
 
 We have seen that a relational database comprises a set of tables. The
 task of specifying the structure of the data to be stored in a database
