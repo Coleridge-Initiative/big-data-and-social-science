@@ -1,3 +1,5 @@
+% reviewing now
+
 % TODO
 % get paragraph from Jordan
 % fold TOC into text
@@ -64,7 +66,7 @@ and understand. As social scientists, we often deal with text data that comes fr
 
 ## How is text data different than “structured” data?
 
-We’re comfortable analyzing structured data that is structured into
+We’re comfortable analyzing structured data that is organized as
 rows and columns. Text data, often also known as unstructured
 data,(footnote: this is often the term used but is a fallacy. There is
 a lot of structure in text&mdash;the structure of chapters,
@@ -89,8 +91,8 @@ text; we ignore humor [@halevy-09] and deception [@niculae-15;
 @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6
 for a discussion of speech recognition, which can turn spoken language
 into text]. Text data also often reflects human observations that are
-exceptions to regular processes&mdash;the ubiquitous “other” or
-“Anything else you want to tell us” field in
+exceptions to regular processes&mdash;the ubiquitous “other” or the
+“anything else you want to tell us” field in
 questionnaires. Recognizing this complexity, the goal of text analysis
 is to efficiently extract important information from large amounts of
 text in a comprehensible and meaningful way, and use it in our
@@ -98,7 +100,7 @@ analysis just like we use structured data.
 
 ## What can we do with text data?
 
-We are often faced with two scenarios when we encounter text data: We
+In social science research, we are often faced with two scenarios when we encounter text data: We
 have some text “corpus”, for example open-ended survey responses, and
 our goal is to understand the content - patterns, themes, trends - of
 that data.  We have some data that consists of both structured and
@@ -112,11 +114,10 @@ analysis. This happens regularly when we incorporate text from social
 media posts to data we already have about a particular person,
 organization, or location.
 
-In both cases, there are a set of analyses that can be done with text data. We describe these analyses in the Table below:
+In both cases, there are a set of analyses that can be done with text data. We describe these analyses in the table below:
+TODO: finish table
 
-Type of Analysis
-Description
-Examples
+Type of Analysis | Description | Examples
 Search
 
 
@@ -189,9 +190,10 @@ Text analysis requires us to go through a series of steps:
 -   **Analysis**: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
+TODO: add image for pipeline
+
+
 ### Processing text data
-
-
 
 The first important step in working with text data is cleaning and processing^[Cleaning and processing are discussed extensively in Chapter 3.]. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.
 
