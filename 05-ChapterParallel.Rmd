@@ -1,4 +1,6 @@
-% done
+% todo
+% reference is strange: [@CSConf] in printed version Wikipedia nda
+
 
 Scaling up through Parallel and Distributed Computing {#chap:parallel}
 =========================
