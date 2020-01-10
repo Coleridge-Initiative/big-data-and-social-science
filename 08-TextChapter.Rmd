@@ -97,69 +97,60 @@ analysis just like we use tabular data.
 
 ## What can we do with text data?
 
-There are a lot of tyypes iof analysis that we can do with text data. Table X gives a summary of these types of analysis. For this chapter, we will focus on two types of needs that social scientists have when encountering text data: 
-
-1. We have some text “corpus”, for example open-ended survey responses or news articles or research publications, and
-our goal is to understand the content - patterns, themes, trends - of
-that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or resawerch publication has meta-data that can be augmented with information generated from the text analysis.
-
-2. The second use case is less focused on "discovery" and understanding new content and instead focuses on classifying content into a pre-defined set of categories. 
+There are a lot of tyypes iof analysis that we can do with text data. Table X gives a summary of these types of analysis. 
 
 TODO: finish table
 
 Type of Analysis | Description | Examples
-Search
+
+Search | Finding relevant contenxt based on some information need, often specified as a set of keywords/phrases but can be more structuerd. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of
+relevant publications related to early grade reading in Latin America and the Caribbean.
 
 
-For example, we used these techniques in systematic
-    literature reviews to facilitate the discovery and retrieval of
-    relevant publications related to early grade reading in Latin
-    America and the Caribbean.
-
-
-Topic Detection / Clustering
-provide a big picture of the contents
-    of thousands of documents in a comprehensible format by discovering
-    only the most important words and phrases in those documents.
+Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in a new text corpus | 
 
 
 
+Classification | Used to classify text content into one or more of predefined categories | 
 
-Classification
 
-
-Sentiment analysis 
+Sentiment analysis | 
 Examples using machine learning to
 analyze the flow and topic segmentation of political debates and
 behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to
 assign automated tags to documents [@tuarob-13].
+
+
 Word Clustering/Synonyms
-
-
 
 
 Named Entity Extraction
 
 
-
-
 General Extraction
 
-
-
-
 Summarization
-
 
 For example, Wang et
     al. [@wang-09] use topic modeling to produce category-sensitive text
     summaries and annotations on large-scale document collections.
+
 Translation
 Automatic translation of text from one language to another
 Look at reaction to a political event in newspapers of different countries in different languages
 Visualization
 Visualization of text data and / or visual mashups combining text with other forms of data (maps, networks, etc.)
 
+
+
+
+For this chapter, we will focus on two types of needs that social scientists have when encountering text data: 
+
+1. We have some text “corpus”, for example open-ended survey responses or news articles or research publications, and
+our goal is to understand the content - patterns, themes, trends - of
+that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or resawerch publication has meta-data that can be augmented with information generated from the text analysis.
+
+2. The second use case is less focused on "discovery" and understanding new content and instead focuses on classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are discussing such as healthcare, education, foreign policy, etc. Or we may have research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework.
 
 
 
