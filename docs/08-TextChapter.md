@@ -1,9 +1,11 @@
+<!--
+% reviewing now
+
 % TODO
-% get paragraph from Jordan
 % fold TOC into text
-% finish intro abstract
 % keyword definitions
-% create table where is says: Type of Analysis Description Examples Search
+% create table where it says: Type of Analysis Description Examples Search
+--> 
 
 Text Analysis {#chap:text}
 =============
@@ -12,13 +14,12 @@ Text Analysis {#chap:text}
 
 
 This chapter provides an overview of how social scientists can make use
-of text data using computational data analysis methods. We cover the types of analysis that can be done with text data (search, topic detection, classification, etc.) and give an overview of how to do these analysis, social science tasks that they’re useful for, and how to evaluate the results. We provide a set of tools that are commonly used for doing text analysis and provide ….
+of text data using computational data analysis methods. We cover the types of analysis that can be done with text data (search, topic detection, classification, etc.), give an overview of how to do these analysis, social science tasks that they’re useful for, and how to evaluate the results produced. We also provide pointers to some tools that are commonly used for doing text analysis.
 
 Understanding human generated text
 -------------------------------
 
-You wake up and read the newspaper, a Facebook post, or an academic article a colleague sent you. You, like other humans, can digest and understand rich information, but an increasingly central challenge for humans is to cope with the deluge of information we are supposed to read
-and understand. As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, and news. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we do structured (tabular) data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and efficiently incorporate large amounts of text data in your analysis. 
+As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, news articles, and research publications. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we analyze traditional tabular data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or selectively read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and incorporate large amounts of text data in your analysis. 
 
 **Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:**
 
@@ -64,111 +65,87 @@ and understand. As social scientists, we often deal with text data that comes fr
 
 ## How is text data different than “structured” data?
 
-We’re comfortable analyzing structured data that is structured into
+We’re comfortable analyzing structured data that is organized as
 rows and columns. Text data, often also known as unstructured
 data,(footnote: this is often the term used but is a fallacy. There is
-a lot of structure in text&mdash;the structure of chapters,
+a lot of structure in text - the structure of chapters,
 paragraphs, sentences, and syntax within a sentence allows you reader,
 to understand what we’re writing here. Unstructured often refers to
 not having defined rows and columns in our data.) is harder to analyze
-using traditional data analysis tools because it doesn’t come with
+using traditional data analysis tools because it doesn’t come as a set of 
 rows and columns, but instead consists of characters, words,
 sentences, and paragraphs. In traditional, “structured”, data, a human
 has already decided what constitutes a row (a person for example),
 what constitutes a column (their age, gender, address, for example),
 and the relationship between them. We covered that in the Database
 chapter where we created a data model for a given domain. When dealing
-with text data, we have to create that structure ourselves, often
-using methods that are designed specifically for different types of
-problems.
+with text data, we have to create that structure ourselves.
 
 While creating that structure, we have to deal with human language
-being complex and nuanced, which makes analyzing it difficult. We
+being complex and nuanced, which makes automatically analyzing it difficult. We
 often make simplifying assumptions: we assume our input is perfect
 text; we ignore humor [@halevy-09] and deception [@niculae-15;
 @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6
 for a discussion of speech recognition, which can turn spoken language
 into text]. Text data also often reflects human observations that are
-exceptions to regular processes&mdash;the ubiquitous “other” or
-“Anything else you want to tell us” field in
+exceptions to regular processes&mdash;the ubiquitous “other” or the
+“anything else you want to tell us” field in
 questionnaires. Recognizing this complexity, the goal of text analysis
 is to efficiently extract important information from large amounts of
-text in a comprehensible and meaningful way, and use it in our
-analysis just like we use structured data.
+text, and use it for/in our
+analysis just like we use tabular data.
 
 ## What can we do with text data?
 
-We are often faced with two scenarios when we encounter text data: We
-have some text “corpus”, for example open-ended survey responses, and
-our goal is to understand the content - patterns, themes, trends - of
-that data.  We have some data that consists of both structured and
-text data. Examples include electronic health records containing both
-patient medical records (structured data) and text notes from
-clinicians and lab results or survey responses consisting of both
-closed ended (multiple choice for example) and open ended
-responses. The goal here is not to analyze the text data in isolation
-but to incorporate the text data with the structured data in to our
-analysis. This happens regularly when we incorporate text from social
-media posts to data we already have about a particular person,
-organization, or location.
+There are a lot of tyypes iof analysis that we can do with text data. Table X gives a summary of these types of analysis. 
 
-In both cases, there are a set of analyses that can be done with text data. We describe these analyses in the Table below:
+TODO: finish table
 
-Type of Analysis
-Description
-Examples
-Search
+Type of Analysis | Description | Examples
+
+Search | Finding relevant contenxt based on some information need, often specified as a set of keywords/phrases but can be more structuerd. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of
+relevant publications related to early grade reading in Latin America and the Caribbean.
 
 
-For example, we used these techniques in systematic
-    literature reviews to facilitate the discovery and retrieval of
-    relevant publications related to early grade reading in Latin
-    America and the Caribbean.
+Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data | **Need good example** survey text analysis   
 
 
-Topic Detection / Clustering
-provide a big picture of the contents
-    of thousands of documents in a comprehensible format by discovering
-    only the most important words and phrases in those documents.
+Classification | Used to classify text content into one or more predefined categories | **Need good example** researach papers classification
 
 
-
-
-Classification
-
-
-Sentiment analysis 
-Examples using machine learning to
+Sentiment analysis | Detection of sentiment or opinions at different levels of granularity - document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to
 analyze the flow and topic segmentation of political debates and
 behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to
 assign automated tags to documents [@tuarob-13].
-Word Clustering/Synonyms
 
 
+Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue) | **Need good example**
 
 
-Named Entity Extraction
+Named Entity Extraction | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns.
 
 
+General Extraction | Recognition, tagging, and extraction of specificed classes of words/phrases that may be entities, events, relationships between entitiesm etc. | **Need good example**
 
+Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks) | **Need good example**
 
-General Extraction
-
-
-
-
-Summarization
-
-
-For example, Wang et
+Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | **Need good example** For example, Wang et
     al. [@wang-09] use topic modeling to produce category-sensitive text
     summaries and annotations on large-scale document collections.
-Translation
-Automatic translation of text from one language to another
-Look at reaction to a political event in newspapers of different countries in different languages
-Visualization
-Visualization of text data and / or visual mashups combining text with other forms of data (maps, networks, etc.)
 
+Translation |  Automatic translation of text from one language to another | 
+Look at reaction to a political event in newspapers of different countries in different languages
+
+
+
+
+For this chapter, we will focus on two types of needs that social scientists have when encountering text data: 
+
+1. We have some text “corpus”, for example open-ended survey responses or news articles or research publications, and
+our goal is to understand the content - patterns, themes, trends - of
+that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or resawerch publication has meta-data that can be augmented with information generated from the text analysis.
+
+2. The second use case is less focused on "discovery" and understanding new content and instead focuses on classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are discussing such as healthcare, education, foreign policy, etc. Or we may have research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework.
 
 
 
@@ -178,7 +155,7 @@ Visualization of text data and / or visual mashups combining text with other for
 How to analyze text
 -------------------
 
-Text analysis requires us to go through a series of steps:
+Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that goes through a series of processing steps:
 
 -   **Processing Text Data**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
 
@@ -189,9 +166,10 @@ Text analysis requires us to go through a series of steps:
 -   **Analysis**: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
+TODO: add image for pipeline
+
+
 ### Processing text data
-
-
 
 The first important step in working with text data is cleaning and processing^[Cleaning and processing are discussed extensively in Chapter 3.]. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.
 
@@ -435,7 +413,7 @@ recall for evaluating the results of machine
 learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and simialr documents. 
 
 <div class="F00">
-<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors—<em>false positives</em>—and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors---<em>false positives</em>---and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em>---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
 </div>
 
 We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a

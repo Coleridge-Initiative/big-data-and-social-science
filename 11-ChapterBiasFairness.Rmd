@@ -1,4 +1,4 @@
-% add reference ****
+<!-- % add reference **** --> 
 
 Bias and Fairness {#chap:bias}
 ================

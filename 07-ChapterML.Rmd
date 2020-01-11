@@ -1,6 +1,8 @@
+<!--
 % TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
 % TODO: add coleridge ML cheat sheat as box or reference / resources at the end
 % TODO: add ML process image  [Coleridge slides] 
+--> 
 
 Machine Learning {#chap:ml}
 ================

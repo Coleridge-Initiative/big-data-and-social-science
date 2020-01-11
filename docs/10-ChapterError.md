@@ -1,3 +1,10 @@
+<!--
+%todo- final decision if we think we need the TSE diagram depicted or not
+%add references
+%check and/or fix chapter heading / paragraph heading typesetting
+%add proper citation for cran package 
+--> 
+
 Data Quality and Inference Errors {#chap:errors}
 ====================
 
@@ -16,50 +23,10 @@ incomplete, and erroneous. Without proper data hygiene, the errors can
 quickly compound. This chapter provides, for the first time, a
 systematic way to think about the error framework in a big data setting.
 
-
-
-Current Structure
-Introduction
-Total error framework [data is not perfect]
-Row error
-Column error
-Cell error
-Google flu example
-Error in data analysis [your analysis is not perfect]
-Errors when your data is perfect
-Errors when your data is not perfect
-What type of error and what type of variables
-Error types
-random/uncorrelated
-Correlated
-Uncorrelated between variables
-Correlated between variables
-Variable Types
-Continuous
-Categorical
-Errors when analyzing rare population groups
-Errors when doing correlation analysis
-Variable error only
-Both variable and systematic errors
-Errors when doing regression analysis
-
-
-
-
-
-
 Introduction {#sec:10-1}
 ------------
 
-Show workflow/pipeline (from chapter 1 and ml)  and point out how errors in each step can lead to bad inferences. 
-
-Our focus in this chapter will be to understand
-
-How to detect the errors
-Highlight how these errors can lead to bad inferences
-How to mitigate the inference risk from these errors
-
-The Machine Learning chapter and the Bias and Fairness chapter discussed how analysis errors can lead to bad inferences and suboptimal decision making. In this chapter, we will focus on how errors in our data sources can lead to incorrect inferences.
+The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter 1 -- and the decisions made along the way -- can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
 
 The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. [@japec2015big]): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
 
@@ -102,7 +69,6 @@ truly large and diverse data sets, and we suggest how this framework can be exte
 to encompass the new error structures described above.
 
 ### The traditional model {#sec:10-2.1}
-[need a diagram]
 
 Dealing with the risks that errors introduce in big data analysis can be
 facilitated through a better understanding of the sources and nature of
@@ -123,8 +89,7 @@ should be noted that, while our discussion on issues regarding inference
 has quantitative analyses in mind, some of the issues discussed here are
 also of interest to more qualitative uses of big data.
 
-For surveys, the TSE framework provides useful insights regarding how
-data generating, reformatting, and file preparation processes affect estimation and inference, and suggest methods for either reducing the errors at their source or adjusting for their effects in the final products to produce inferences of higher quality. (Add classic TSE citations)
+For surveys, the TSE framework provides useful insights regarding how data generating, reformatting, and file preparation processes affect estimation and inference, and suggest methods for either reducing the errors at their source or adjusting for their effects in the final products to produce inferences of higher quality. (Add classic TSE citations)
 
 The traditional TSE framework is quite general in that it can be applied
 to essentially any data set that conform to the format in Figure
@@ -186,7 +151,7 @@ in the past week can be used to make inferences about that specific population b
 
 Such exclusions can therefore be viewed as a source of selectivity bias if inference is to be made about an even larger set of people, such as the general population. For one, persons who do not have access to the Internet are excluded from the data set. These exclusions may be biasing in that persons with Internet
 access may have quite different demographic characteristics from persons
-who do not have Internet access. The selectivity of big data capture is
+who do not have Internet access [@dutwinbuskirk2017]. The selectivity of big data capture is
 similar to frame noncoverage in survey sampling and can bias inferences
 when researchers fail to consider it and compensate for it in their
 analyses.
@@ -198,10 +163,9 @@ analyses.
 As an example, in the United States, the word "Jewish" is included in
 3.2 times more Google searches than "Mormon" [@SDV2015]. This does not
 mean that the Jewish population is 3.2 times larger than the Mormon
-population. Another possible explanation is that Jewish people use the
-Internet in higher proportions or have more questions that require using
-the word "Jewish." Thus Google search data are more useful for relative
-comparisons than for estimating absolute levels.
+population. Other possible explanations could that Jewish people use the
+Internet in higher proportions, have more questions that require using
+the word "Jewish", or there could be more searches for "Jewish food" food than "Mormon food." Thus Google search data are more useful for relative comparisons than for estimating absolute levels.
 
 ---
 
@@ -406,8 +370,7 @@ estimates of flu activity in the USA and 24 other countries^[See the discussion 
 Section 1.3.]. Compared to
 CDC data, the Google Flu Trends provided remarkably accurate indicators
 of flu incidence in the USA between 2009 and 2011. However, for the
-2012--2013 flu seasons, Google Flu Trends predicted more than double the
-proportion of doctor visits for flu-like symptoms compared to the CDC
+2012--2013 flu seasons, the Google Flu Trends estimates were almost double the CDC's  
 [@butler2013google]. Lazer et al. [@lazer2014parable] cite two causes of
 this error: big data hubris and algorithm dynamics.
 
@@ -467,7 +430,7 @@ Analysis errors despite accurate data
 
 Data deficiencies represent only one set of challenges for the big data
 analyst. Even if data is correct, other challenges can arise solely as a result of the massive size,
-rapid generation, and vast dimensionality of the data. Fan et al. [@fan2014challenges]
+rapid generation, and vast dimensionality of the data [@meng2018]. Fan et al. [@fan2014challenges]
 identify three issues--- noise accumulation, spurious correlations, and
 incidental endogeneity---which will be discussed in this
 section. These issues should concern social scientists even if the data
@@ -566,7 +529,7 @@ substituting these aggregates for the individual units in these
 analyses. Third, unlike random noise, systematic errors can bias
 correlation and regression analysis is unpredictable ways, and these
 biases cannot be effectively mitigated by aggregating the data. Finally,
-multilevel modeling can be an important mitigation strategy for dealing
+multilevel modeling can -- under certain circumstances -- be an important mitigation strategy for dealing
 with systematic errors emanating from multiple data sources. These
 issues will be examined in some detail in the remainder of this section.
 
@@ -948,9 +911,7 @@ n$, reliability ratios (excluding systematic effects) set at $0.5$ and
 population correlation at $\rho_{\mu \vert cd} = 0.5$. In this scenario,
 let $\rho_c = \rho_d = 0.25$. Figure
 \@ref(fig:fig10-5) shows the
-correlation as a function of the sample size with systematic errors
-(dotted line) compared to the correlation without systematic errors
-(solid line). Correlation with systematic errors is both inflated and
+correlation as a function of the sample size with systematic errors compared to the correlation without systematic errors. Correlation with systematic errors is both inflated and
 attenuated. However, at the assumed level of intra-source variation, the
 inflation factor overwhelms the attenuation factors and the result is a
 much inflated value of the correlation across all aggregate sizes.

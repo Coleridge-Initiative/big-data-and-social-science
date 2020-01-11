@@ -1,9 +1,11 @@
+<!-- % done -->  
+
 Working with Web Data and APIs {#chap:web}
 ==============================
 
 **Cameron Neylon**
 
-In many social science problems we have to augment our data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools (specifically using Python) that can be used by social science researchers to programmatically gather this type of external data from web pages and APIs.
+In many social science problems we have to augment our primary data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools (specifically using Python) that can be used by social science researchers to programmatically gather this type of external data from web pages and APIs.
 
 
 
@@ -29,13 +31,19 @@ be used as a guide for data collection. While much of this is specific
 to data about research and researchers, the ideas are generalizable to
 wider issues of data and public policy. While we use Python as the programming language in this chapter, data collection through web scraping and APIs can be done in most modern programming languages as well as using software that's designed specifically for this purpose.
 
-Examples (put this in a box)
+**BOX**
+Examples 
 ----------
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
 Kim et al (https://wwwncbi.nlm.nih.gov/pubmed/26920122) use social media data about e-cigarettes from Twitter for public health research.
+
 Goebel and Munzert (https://journals.s.agepub.com/doi/full/10.1177/0894439317703579) used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project https://github.com/simonmunzert/political-wikipedia-workshop
+
 King et al. (https://gking.harvard.edu/files/censored.pdf) investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
+
+**BOX**
+
 
 Scraping information from the web {#sec:4-1}
 ---------------------------------

@@ -1,9 +1,11 @@
+<!--
 % reviewing now
 
 % TODO
 % fold TOC into text
 % keyword definitions
 % create table where it says: Type of Analysis Description Examples Search
+--> 
 
 Text Analysis {#chap:text}
 =============

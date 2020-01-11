@@ -1,6 +1,8 @@
+<!--
 % todo Brian can you look at the examples in 9.1 and pick 3 of interest and write one or two sentences about them like we idd in other chapters? thx! Maybe we can fold in a half sentence or full sentence on what type of questions the studies tried to answer, like:  Who are the most important actors (nodes) in a network? Most connections - degree Most central - centrality measures Most critical in connecting two disjoint groups  - bridge measure Most influential 2. What types of relationships exist in this network?
 Network motifs (paper reference)
 % todo add side bar comments explaining nodes, ties, edges, directed and undirected
+--> 
 
 Networks: The Basics {#chap:networks}
 ====================

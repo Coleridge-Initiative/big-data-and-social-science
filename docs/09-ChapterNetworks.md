@@ -1,3 +1,9 @@
+<!--
+% todo Brian can you look at the examples in 9.1 and pick 3 of interest and write one or two sentences about them like we idd in other chapters? thx! Maybe we can fold in a half sentence or full sentence on what type of questions the studies tried to answer, like:  Who are the most important actors (nodes) in a network? Most connections - degree Most central - centrality measures Most critical in connecting two disjoint groups  - bridge measure Most influential 2. What types of relationships exist in this network?
+Network motifs (paper reference)
+% todo add side bar comments explaining nodes, ties, edges, directed and undirected
+--> 
+
 Networks: The Basics {#chap:networks}
 ====================
 
@@ -18,21 +24,6 @@ entirely new unit of analysis that lies somewhere between the largely
 atomistic actors that occupy the markets of neo-classical theory and the
 tightly managed hierarchies that are the traditional object of inquiry
 of sociologists and organizational theorists.
-
-**Structure:**
-
--   What is network analysis useful for? - motivating examples and use cases
--   What is network analysis
--   What are graphs - types of graphs, vocabulary
--   Representation, etc.
--   How to create networks?
--   How to analyze networks?
--   network measures - definitions
--   Network visualization
--   Answering questions through network analysis
--   More examples
--   Tools
--   Summary
 
 
 Introduction
@@ -91,7 +82,7 @@ A includes information on 9,206 individuals who were employed on 3,389
 research grants from federal science agencies in a single year. The web of partnerships that emerges from university scientists' decentralized efforts to build effective collaborations and
 teams generates a distinctive social infrastructure for cutting- edge Science.
 
-While this chapter focuses my attention on social networks, you could easily use the techniques described here to examine the structure of networks such as the World Wide Web, the national
+While this chapter focuses on social networks, you could easily use the techniques described here to examine the structure of networks such as the World Wide Web, the national
 railway route map of the USA, the food web of an ecosystem, or the neuronal network of a particular species of animal. 
 
 The chapter first introduces the most common structures for large network data,
@@ -152,19 +143,7 @@ decisions must be made.
 
 ### Types of Networks
 
----
-
-**Vocabulary box: network terminology]
--   **Nodes**:
--   **Ties**:
--   **Edges**:
--   **Directed**:
--   **Undirected**:
-
----
-
-
-Network ties can be directed (flowing from one node to another) or
+-Network ties can be directed (flowing from one node to another) or
 undirected. In either case they can be binary (indicating the presence
 or absence of a tie) or valued (allowing for relationships of different
 types or strengths). Network data can be represented in matrices or as
@@ -813,21 +792,6 @@ emp.vs["close"]=emp.closeness(vertices=emp.vs)
 emp.vs["btc"]=emp.betweenness(vertices=emp.vs, directed=False)
 ```
 
-What kinds of questions can now be answered?
----------------------------------
-
-Who are the most important actors (nodes) in a network?
-Most connections - degree
-Most central - centrality measures
-Most critical in connecting two disjoint groups  - bridge measure
-Most influential
-
-2. What types of relationships exist in this network?
-Network motifs (paper reference)
-
-
-
-
 Case Study: Comparing collaboration networks
 --------------------------------
 
@@ -1010,7 +974,7 @@ types into other programs and packages for network analysis. *Gephi*
 large-scale network visualization. Though I find it less flexible than
 Pajek, it offers strong support for compelling visualizations.
 
-*Snap* (<snap.cs.stanford.edu>)
+*Stanford Network Analysis Platform (SNAP)* (<snap.stanford.edu>) is a general purpose library for network analysis and graph mining. Is scales to very large networks, efficiently manipulates large graphs, calculates structural properties, generates regular and random graphs. 
 
 *Network Workbench* (<http://nwb.cns.iu.edu/>) is a freeware package
 that supports extensive analysis and visualization of networks. This

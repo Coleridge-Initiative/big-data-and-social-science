@@ -1,9 +1,9 @@
+<!--
 %  - add to reference: Nissenbaum, H. (2009). Privacy in context: Technology, policy, and the integrity of social life. Stanford University Press.
 % - Rayid: "check Initially, assume the organization is on the outer frontier." ... what does this mean?
 % - some references appear with n.d. in the compiled markdown
 % - Julia: on Research Data Centers, add a line how the new envisioned ADRF would allow more replicability/reproducibility and access toothers but researchers? (industry, non-profit, government) for whom current RDCs are too hard to jump through hoops?
-
-
+--> 
 
 
 
@@ -105,7 +105,8 @@ of ill people [@stanton2006high], or economic activity such as rapid
 employment growth by a small number of firms [@decker2015has].
 
 --- 
-%**BOX**
+
+**BOX**
 
 **Example: The importance of activity in the tails**
 
@@ -116,7 +117,8 @@ data indicate that more than 20% of all personal health care spending in
 2009 (\$275 billion) was on behalf of just 1% of the population
 [@healthcarespending].
 
-%**BOX**
+**BOX**
+
 ---
 
 It is important to understand where the risk of privacy breaches comes
@@ -329,7 +331,7 @@ to a number of operational challenges, including version control,
 identifying and managing risky researcher behavior, and management costs
 [@doyle2001confidentiality].
 
-Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2018; @abowed2018].
+Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
 
 
 

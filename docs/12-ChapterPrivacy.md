@@ -1,4 +1,13 @@
- Privacy and Confidentiality {#chap:privacy}
+<!--
+%  - add to reference: Nissenbaum, H. (2009). Privacy in context: Technology, policy, and the integrity of social life. Stanford University Press.
+% - Rayid: "check Initially, assume the organization is on the outer frontier." ... what does this mean?
+% - some references appear with n.d. in the compiled markdown
+% - Julia: on Research Data Centers, add a line how the new envisioned ADRF would allow more replicability/reproducibility and access toothers but researchers? (industry, non-profit, government) for whom current RDCs are too hard to jump through hoops?
+--> 
+
+
+
+Privacy and Confidentiality {#chap:privacy}
 ===========================
 
 **Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane**
@@ -32,7 +41,7 @@ balanced against the social benefits of research access and use.
 
 **Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
-share information selectively but not publicly" [@house2014big]. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information [@nissenbaumXX]. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity [@nissenbaumXX] of the data flow when deciding which data to collect and how to analyze and share them. 
+share information selectively but not publicly" [@house2014big]. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information [@nissenbaum2009]. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity of the data flow when deciding which data to collect and how to analyze and share them. 
 
 **Confidentiality** is
 "preserving authorized restrictions on information access and
@@ -96,7 +105,9 @@ population being studied; consider health care costs for a small number
 of ill people [@stanton2006high], or economic activity such as rapid
 employment growth by a small number of firms [@decker2015has].
 
----
+--- 
+
+**BOX**
 
 **Example: The importance of activity in the tails**
 
@@ -106,6 +117,8 @@ For the overall civilian population living in the community, the latest
 data indicate that more than 20% of all personal health care spending in
 2009 (\$275 billion) was on behalf of just 1% of the population
 [@healthcarespending].
+
+**BOX**
 
 ---
 
@@ -319,7 +332,7 @@ to a number of operational challenges, including version control,
 identifying and managing risky researcher behavior, and management costs
 [@doyle2001confidentiality].
 
-Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2018; @abowed2018].
+Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
 
 
 
@@ -475,7 +488,7 @@ lack of clarity is exacerbated because some laws treat data as property
 and some treat it as information [@Cecil2003].
 
 The ethics of the use of big data are also not clear, because analysis
-may result in being discriminately used against unfairly, being limited in
+may result in being discriminated against unfairly, being limited in
 one's life choices, being trapped inside stereotypes, being unable to
 delineate personal boundaries, or being wrongly judged, embarrassed, or
 harassed. There is an entire research agenda to be pursued that examines
@@ -590,7 +603,7 @@ The United Nations Economic Commission on Europe hosts workshops and
 conferences and produces occasional reports
 [@UnitedNationsEconomicCommissionforEurope].
 
-Collection of lecture on privacy [SIMONS SEMINAR LINK]
+Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing https://simons.berkeley.edu/programs/privacy2019 (available on youtube https://www.youtube.com/user/SimonsInstitute/
 
 
 

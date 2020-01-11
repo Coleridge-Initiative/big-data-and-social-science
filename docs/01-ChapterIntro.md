@@ -1,3 +1,5 @@
+<!-- % Done --> 
+
 Introduction {#chap:intro}
 ============
 
@@ -77,21 +79,20 @@ is an imprecise description of a rich and complicated set of characteristics,
 practices, techniques, ethical issues, and outcomes all associated with data"
 [@japec2015big].
 
-While the term "big data" may be a buzzword, what's real is the significant value of new types of data and new methods for social science . Personal data has been hailed as the "new oil" of the
+While the term "big data" may be a buzzword, what's real is the significant value of new types of data and new methods for social science. Personal data has been hailed as the "new oil" of the
 twenty-first century, and the benefits to policy, society, and public
 opinion research are undeniable [@greenwood2014]. Policymakers have
 found that detailed data on human beings can be used to reduce crime,
 improve health delivery, and manage cities better [@keller2012big]. The
 scope is broad indeed: one of this book's editors has used such data to
 not only help win political campaigns but also show its potential for
-social good and public policy. Society can gain as well---recent work shows data-driven
-businesses were 5% more productive and 6% more profitable than their
-competitors[@brynjolfsson2011strength]. In short, the vision is that
-social science researchers can potentially, by using new types of data and methods with high
-increase the scope of their data
+social good and public policy. For public opinion research, social scientists can  increase the scope of their data
 collection efforts while at the same time reducing costs and respondent
 burden, increasing timeliness, and increasing
-precision[@murphy2014social].
+precision[@murphy2014social]. Society can gain as well---recent work shows data-driven
+businesses were 5% more productive and 6% more profitable than their
+competitors[@brynjolfsson2011strength]. In short, the vision is that
+social science researchers can potentially, by using new types of data and methods,increase the quality and impact of their work. 
 
 ---
 
@@ -100,10 +101,10 @@ precision[@murphy2014social].
 Spotshotter data, which have fairly detailed information for each
 gunfire incident, such as the precise timestamp and the nearest address,
 as well as the type of shot, can be used to improve crime data
-[@carr2015geography]; Twitter data can be used to improve predictions
+[@carr2015geography]; Twitter data can be used to improve understanding and predictions
 around job loss, job gain, and job postings [@antenucci2014using]; and
 eBay postings can be used to estimate demand elasticities
-[@einav2013data]. Of course, these new sources come with their own caveats and biases that need to be considered when drawing inferences.
+[@einav2013data]. Of course, these new sources come with their own caveats and biases that need to be considered when drawing inferences.  We will cover this later in the book in more detail.
 
 ---
 
@@ -114,8 +115,7 @@ for example, the effect of fast food caloric labeling in health
 interventions [@Elbel2011]; the productivity of a cashier if he is
 within eyesight of a highly productive cashier but not otherwise
 [@Mas2009]. So it offers the potential to understand the effects of
-complex environmental inputs on human behavior. In addition, big data,
-by its very nature, enables us to study the tails of a distribution in a
+complex environmental inputs on human behavior. In addition, more data enables us to study the tails of a distribution in a
 way that is not possible with small data. Much of interest in human
 behavior is driven by the tails of the distribution---health care costs
 by small numbers of ill people [@stanton2006high], economic activity and
@@ -123,8 +123,8 @@ employment by a small number of firms
 [@evans1987tests; @decker2015has]---and is impossible to study with the
 small sample sizes available to researchers.
 
-Instead we are still faced with the same challenges and responsibilities
-as we were before in the survey and small data collection environment.
+At the same time, we still face the same challenges and responsibilities
+as we did before in the survey and small data collection environment.
 Indeed, social scientists have a great deal to offer to a (data) world
 that is currently looking to computer scientists to provide answers. Two
 major areas to which social scientists can contribute, based on decades
@@ -135,7 +135,7 @@ Social science, inference, and big data {#sec:1.3}
 ---------------------------------------
 
 The goal of empirical social science is to make inferences about a
-population from available data. That requirement  exists regardless of
+population from available data. That requirement exists regardless of
 the data source---and is a guiding principle for this book. For
 probability-based survey data, methodology has been developed to
 overcome problems in the data generating process. A guiding principle
@@ -254,7 +254,7 @@ inference from so-called nonprobability data.
 Forecasting or prediction tasks are a little less common among applied
 social science researchers as a whole, but are certainly an important
 element for users of official statistics---in particular, in the context
-of social and economic indicators---as generally for decision-makers in
+of social and economic indicators---as generally for decision and policy makers in
 government and business. Here, similar to the causal inference setting,
 it is of utmost importance that we do know the process that generated
 the data, and we can rule out any unknown or unobserved systematic
@@ -405,7 +405,7 @@ Extensions to these systems and also specialized single-purpose DBMSs
 provide support for data types that are not easily handled in
 statistical packages such as geospatial data, networks, and graphs.
 
-Open source programming systems such as Python (used extensively
+Open source programming languages such as Python (used extensively
 throughout this book) and R provide high-quality implementations of
 numerous data analysis and visualization methods, from regression to
 statistics, text analysis, network analysis, and much more. Finally,
@@ -529,10 +529,17 @@ variety of different formats, some of which are quite large (or
 voluminous), and with a variety of different timestamps (or velocity),
 we discuss how to store the data in different types of data formats.
 
+**BOX**
 ** Additional Examples**
 
-The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, and urban infrastructure. These methods have been used to build systems to improve the understanding  of critical questions such as: ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’ ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
-
+The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, and urban infrastructure. These methods have been used to build systems to improve the understanding  of critical questions such as: 
+ - ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’
+ 
+ -  ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and
+ 
+  - ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
+  
+**BOX**
 
 The structure of the book
 -------------------------
@@ -651,7 +658,7 @@ Without proper data hygiene, errors can quickly compound. This chapter
 provides a systematic way to think about the error framework in a big
 data setting.
 
-[Bias and Fairness] Interest in algorithmic fairness and bias has been growing recently, but it’s easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model and the resulting system is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
+[Bias and Fairness] Interest in algorithmic fairness and bias has been growing recently, but it’s easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model and the resulting system is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize one metric over others.
 
 [Privacy and Confidentiality] addresses the issue that sits at the core of
 any study of human beings---privacy and confidentiality. In a new field,

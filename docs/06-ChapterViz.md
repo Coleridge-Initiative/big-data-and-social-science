@@ -1,10 +1,12 @@
+<!-- % done --> 
+
 Information Visualization {#chap:viz}
 =========================
 
 **M. Adil Yalcin and Catherine Plaisant**
 
 
-This chapter will show you how to explore data in the early phases of a project as well as to communicate results so that data can be turned into interpretable, actionable information.
+This chapter will show you how to use visualization to explore data in the early phases of a project as well as to communicate results so that data can be turned into interpretable, actionable information.
 There are many ways of presenting statistical information that convey
 content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range

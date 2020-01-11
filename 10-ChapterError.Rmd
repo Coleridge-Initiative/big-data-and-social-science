@@ -1,7 +1,9 @@
+<!--
 %todo- final decision if we think we need the TSE diagram depicted or not
 %add references
 %check and/or fix chapter heading / paragraph heading typesetting
 %add proper citation for cran package 
+--> 
 
 Data Quality and Inference Errors {#chap:errors}
 ====================
