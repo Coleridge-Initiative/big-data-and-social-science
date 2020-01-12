@@ -5,8 +5,6 @@ author:
 - Ian Foster, Rayid Ghani, Ron S. Jarmin, Frauke Kreuter and Julia Lane
 bibliography:
 - book.bib
-- parallel.bib
-- reclink.bib
 lot: yes
 lof: yes
 documentclass: krantz
