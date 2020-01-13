@@ -1,7 +1,7 @@
 <!-- 
 % todo
 % reference is strange: [@CSConf] in printed version Wikipedia nda
-% reference hadoop https://hadoop.apache.org/docs/stable/ where currently @hadoop --> 
+--> 
 
 
 Scaling up through Parallel and Distributed Computing {#chap:parallel}

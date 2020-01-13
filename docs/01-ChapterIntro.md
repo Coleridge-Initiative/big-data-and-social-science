@@ -144,7 +144,7 @@ statistical methods for weighting, calibration, and other forms of
 adjustments are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
-flaws in the data generating process [@imbensrubin2015]. Two books provide frameworks for
+flaws in the data generating process [@imbens2015causal]. Two books provide frameworks for
 *survey quality*^[This topic is discussed in more detail in Chapter 10.][@groves2004survey; @biemer2003].
 
 Across the social sciences, including economics, public policy,
