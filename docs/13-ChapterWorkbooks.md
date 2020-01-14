@@ -7,7 +7,7 @@
 Workbooks {#chap:workbooks}
 =========
 
-**Christoph Kern, Brian Kim, Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
+**Brian Kim, Christoph Kern, Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
 
 This final chapter provides an overview of the Python workbooks that
 accompany this book. The workbooks combine text explanation and
@@ -49,18 +49,18 @@ The workbooks of set 1 are designed to be run online using Binder
 locally. Individual workbooks can be opened by following the 
 corresponding Binder link. The full set of workbooks is
 available in the *Big-Data-Social-Science GitHub repository*
-(<https://github.com/kimbrianj/bdss-notebooks>). Additional workbooks
+(<https://github.com/Coleridge-Initiative/bdss-notebooks>). Additional workbooks
 may be added over time and made available in this repository.
 
-To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/kimbrianj/bdss-notebooks/master>)
+To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>)
 
-### Workbook details
+## Workbook details
 
 At this point, online workbooks are available for selected topics that are
 covered in the book. Below is a list of the online workbooks, along with a 
 short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
 
-#### Databases
+### Databases
 
 The Databases notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source 
 that is used in the online workbooks, the North Carolina Department of
@@ -72,7 +72,7 @@ Corrections Data
 - Understand and perform various joins. 
 
 
-#### Dataset Exploration
+### Dataset Exploration
 
 Link to workbook: 
 
@@ -86,7 +86,7 @@ Python and continues by exploring the imported data using the `numpy` and `panda
 -   Explore aggregate statistics in Python.
 
 
-#### APIs 
+### APIs 
 
 The APIs notebook introduces you to the use of
 Internet-based web service APIs for retrieving data from online data
@@ -98,7 +98,7 @@ stores. This notebook walks through the process of retrieving data about patents
 
 -   Retrieve the data in JSON form.
 
-#### Text Analysis 
+### Text Analysis 
 
 In the Text Analysis notebook, you will use the data that you pulled from the PatentsView API in the API notebook to find topics from patent abstracts. This will involve going through every step of the process, from extracting the data to cleaning and preparing to using topic modeling algorithms. In this workbook, you will learn how to:
 
@@ -109,7 +109,7 @@ In the Text Analysis notebook, you will use the data that you pulled from the Pa
 - Improve and iterate models to focus in on identified topics.
 
 
-#### Machine Learning -- Creating Labels
+### Machine Learning -- Creating Labels
 
 The *Machine Learning Creating Labels* workbook exemplifies how to create an 
 outcome variable (label) for a machine learning task by using SQL in Python. 
@@ -123,7 +123,7 @@ how to:
 
 -   Use SQL with data that has a temporal structure (multiple records per observation).
 
-#### Machine Learning -- Creating Features
+### Machine Learning -- Creating Features
 
 The *Machine Learning Creating Features* workbook prepares predictors 
 (features) for the machine learning task that has been introduced in the 
@@ -136,7 +136,7 @@ a given date. In this workbook, you will learn how to:
 
 -   Automate SQL tasks by defining Python functions.
 
-#### Machine Learning -- Model Training and Evaluation
+### Machine Learning -- Model Training and Evaluation
 
 The *Machine Learning Model Training and Evaluation* workbook uses the label and features that were created in the previous workbooks to construct a training and test set for model building and evaluation. It exemplifies how to train machine learning models using `scikit-learn` in Python and how to evaluate prediction performance for classification tasks. In addition, it is shown how to construct and compare multiple machine learning models in a for-loop in Python. In this workbook, you will learn how to:
 
@@ -170,7 +170,7 @@ simple interactive code cells. In the `nbgrader` versions, these cells have
 additional metadata and contain the solutions for the exercises, making
 them a convenient answer key even if you are working on them locally.
 
-### Running workbooks locally
+## Running workbooks locally
 
 To run workbooks locally, you will need to install Python on your
 system, then install `ipython`, which includes a local Jupyter server you can use
@@ -201,7 +201,7 @@ and `pandas` can be difficult to get working, however, particularly on
 Windows, and Anaconda simplifies this setup considerably regardless of 
 your OS.
 
-### Central workbook server
+## Central workbook server
 
 Setting up a server to host workbooks managed by `nbgrader` is more involved. 
 Some of the workbooks consume multiple gigabytes of memory per user and
@@ -217,13 +217,13 @@ will also want a robust, multi-destination backup plan.
 For more information on installing and running the workbooks that
 accompany this book, see the Big-Data-Workbooks GitHub repository.
 
-### Workbook details
+## Workbook details
 
 Most chapters have an associated workbook, each in its own directory in
 the Big-Data-Workbooks GitHub repository. Below is a list of the
 workbooks, along with a short summary of the topics that each covers.
 
-#### Social Media and APIs
+### Social Media and APIs
 
 The Social Media and APIs workbook introduces you to the use of
 Internet-based web service APIs for retrieving data from online data
@@ -241,7 +241,7 @@ focusing on Twitter. In this workbook, you will learn how to:
 
 -   Conduct basic analysis of publication data.
 
-#### Database basics
+### Database basics
 
 In the Database workbook you will learn the practical benefits that stem
 from using a database management system. You will implement basic SQL
@@ -259,7 +259,7 @@ a database. In this workbook, you will learn how to:
 
 -   Close database connections.
 
-#### Data Linkage
+### Data Linkage
 
 In the Data Linkage workbook you will use Python to clean input data,
 including using regular expressions, then learn and implement the basic
@@ -279,7 +279,7 @@ will learn how to:
 -   Understand the Fellegi--Sunter probabilistic record linkage method,
     with step-by-step implementation guide.
 
-#### Machine Learning
+### Machine Learning
 
 In the Machine Learning workbook you will train a machine learning model
 to predict missing information, working through the process of cleaning
@@ -305,7 +305,7 @@ will learn how to:
 -   Use the `scikit-learn` Python package to train, fit, and evaluate machine learning
     models.
 
-#### Text Analysis
+### Text Analysis
 
 In the Text Analysis workbook, you will derive a list of topics from
 text documents using MALLET, a Java-based tool that analyzes clusters of
@@ -322,7 +322,7 @@ together. In this workbook, you will learn how to:
 -   Create a model that detects these topics in documents, and use this
     model to categorize documents.
 
-#### Networks
+### Networks
 
 In the Networks workbook you will create network data where the nodes
 are researchers who have been awarded grants, and ties are created
@@ -349,7 +349,7 @@ data. In this workbook, you will learn how to:
 -   Load network data into the `igraph` Python package and then create graph
     visualizations.
 
-#### Visualization
+### Visualization
 
 The Visualization workbook introduces you to Tableau, a data analysis
 and visualization software package that is easy to learn and use.
