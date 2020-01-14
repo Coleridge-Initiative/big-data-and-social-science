@@ -52,11 +52,7 @@ available in the *Big-Data-Social-Science GitHub repository*
 (<https://github.com/Coleridge-Initiative/bdss-notebooks>). Additional workbooks
 may be added over time and made available in this repository.
 
-To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>)
-
-## Workbook details
-
-At this point, online workbooks are available for selected topics that are
+To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>). At this point, online workbooks are available for selected topics that are
 covered in the book. Below is a list of the online workbooks, along with a 
 short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
 
@@ -170,7 +166,7 @@ simple interactive code cells. In the `nbgrader` versions, these cells have
 additional metadata and contain the solutions for the exercises, making
 them a convenient answer key even if you are working on them locally.
 
-## Running workbooks locally
+### Running workbooks locally
 
 To run workbooks locally, you will need to install Python on your
 system, then install `ipython`, which includes a local Jupyter server you can use
@@ -201,7 +197,7 @@ and `pandas` can be difficult to get working, however, particularly on
 Windows, and Anaconda simplifies this setup considerably regardless of 
 your OS.
 
-## Central workbook server
+### Central workbook server
 
 Setting up a server to host workbooks managed by `nbgrader` is more involved. 
 Some of the workbooks consume multiple gigabytes of memory per user and
@@ -217,7 +213,7 @@ will also want a robust, multi-destination backup plan.
 For more information on installing and running the workbooks that
 accompany this book, see the Big-Data-Workbooks GitHub repository.
 
-## Workbook details
+### Workbook details
 
 Most chapters have an associated workbook, each in its own directory in
 the Big-Data-Workbooks GitHub repository. Below is a list of the
