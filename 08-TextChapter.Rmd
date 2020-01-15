@@ -137,33 +137,27 @@ Translation |  Automatic translation of text from one language to another |
 Look at reaction to a political event in newspapers of different countries in different languages
 
 
-
-
-For this chapter, we will focus on two types of needs that social scientists have when encountering text data: 
+For this chapter, we will focus on two types of use cases that social scientists deal with conntaining text data: 
 
 1. We have some text “corpus”, for example open-ended survey responses or news articles or research publications, and
 our goal is to understand the content - patterns, themes, trends - of
-that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or resawerch publication has meta-data that can be augmented with information generated from the text analysis.
+that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or research publication has meta-data that can be augmented with information generated from the text analysis.
 
-2. The second use case is less focused on "discovery" and understanding new content and instead focuses on classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are discussing such as healthcare, education, foreign policy, etc. Or we may have research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework.
-
-
-
-
+2. The second use case is less focused on "discovery" and "understanding new content" and instead focuses on efficiently classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are being discussed such as healthcare, education, foreign policy, etc. Another example is analyzing research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework that we covered in the previous chapter.
 
 
 How to analyze text
 -------------------
 
-Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that goes through a series of processing steps:
+Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that processes data through a series of steps: 
 
--   **Processing Text Data**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
+-   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some inital processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
 
--   **Adding Linguistic Features**: This is not a critical step and is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
+-   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
 
--   **Converting the text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions we have to make are 1) what a row is, 2) what a column is, and 3) what do we put as the value for that row and column.
+-   **Converting the enriched text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The matrix is then used to run different analysis algortihmns, such as clustering or classification methods covdeed in the previous chapter.  The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.
 
--   **Analysis**: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
+-   **Analysis**: Once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
 TODO: add image for pipeline
