@@ -57,7 +57,7 @@ Committee on Institutional Cooperation (CIC)'s UMETRICS project [@lane2015new]. 
 
 What are networks?
 
-Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties) connecting the nodes? Once we have the representation set up, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
+Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties or edges) connecting the nodes? Once we have the representation, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
 
 Networks offer not just another convenient set of right-hand-side variables, but an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the
 markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell [@powell2003neither] puts it in a description of buyer supplier networks of small Italian firms: "when the entangling of obligation and reputation reaches a point where the
@@ -76,14 +76,14 @@ of entrepreneurial firms [@owen2004knowledge].
 The following sections will introduce you to this approach to studying innovation and discovery,
 focusing on examples drawn from high-technology industries and
 particularly from the scientific collaborations among grant-employed
-researchers at UMETRICS universities. I make particular use of a network
+researchers at UMETRICS universities. We make particular use of a network
 that connects individual researchers to grants that paid their salaries
 in 2012 for a large public university. The grants network for university
 A includes information on 9,206 individuals who were employed on 3,389
 research grants from federal science agencies in a single year. The web of partnerships that emerges from university scientists' decentralized efforts to build effective collaborations and
 teams generates a distinctive social infrastructure for cutting- edge Science.
 
-While this chapter focuses on social networks, you could easily use the techniques described here to examine the structure of networks such as the World Wide Web, the national
+While this chapter focuses on social networks, the techniques described here have beemn used to examine the structure of networks such as the World Wide Web, the national
 railway route map of the USA, the food web of an ecosystem, or the neuronal network of a particular species of animal. 
 
 The chapter first introduces the most common structures for large network data,
