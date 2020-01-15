@@ -160,8 +160,9 @@ Text analysis, specially related to the clustering and classification use cases,
 -   **Analysis**: Once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
-TODO: add image for pipeline
-
+```{r nyt_topics-1, out.width = '70%', fig.align = 'center', echo = FALSE}
+knitr::include_graphics("ChapterText/figures/textanalysispipeline.png")
+```
 
 ### Processing text data
 
@@ -491,7 +492,7 @@ LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
 words at the top of the list
-(Figure \@ref(fig:nyt-topics-3)). However, we do not know what the topics are
+(\@ref(fig:nyt-topics-3)). However, we do not know what the topics are
 [a priori]{.roman}; the goal is to discover what they are (more on
 this shortly).
 
