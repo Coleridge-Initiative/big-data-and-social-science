@@ -419,7 +419,7 @@ documents returned are false positives. Assuming that all document sets
 are of equal size, so that $|D_a| = 10$, $|D_b|=10$ and $|D_c| = 10$,
 then the precision is $\frac{5}{12} = 0.42$.
 
-***F* score**
+***F* score***
 
 The *F score* combines precision and recall. In formal terms, the $F$
 score is a weighted average of the precision and recall:
