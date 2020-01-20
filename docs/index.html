@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Big Data and Social Science</title>
   <meta name="description" content="Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,9 +39,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
 
 
 
@@ -52,66 +49,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -273,9 +245,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="8.2" data-path="chap-text.html"><a href="chap-text.html#how-is-text-data-different-than-structured-data"><i class="fa fa-check"></i><b>8.2</b> How is text data different than “structured” data?</a></li>
 <li class="chapter" data-level="8.3" data-path="chap-text.html"><a href="chap-text.html#what-can-we-do-with-text-data"><i class="fa fa-check"></i><b>8.3</b> What can we do with text data?</a></li>
 <li class="chapter" data-level="8.4" data-path="chap-text.html"><a href="chap-text.html#how-to-analyze-text"><i class="fa fa-check"></i><b>8.4</b> How to analyze text</a><ul>
-<li class="chapter" data-level="8.4.1" data-path="chap-text.html"><a href="chap-text.html#processing-text-data"><i class="fa fa-check"></i><b>8.4.1</b> Processing text data</a></li>
-<li class="chapter" data-level="8.4.2" data-path="chap-text.html"><a href="chap-text.html#turning-text-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>8.4.2</b> Turning text into a matrix: How much is a word worth?</a></li>
-<li class="chapter" data-level="8.4.3" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>8.4.3</b> Topic modeling</a></li>
+<li class="chapter" data-level="8.4.1" data-path="chap-text.html"><a href="chap-text.html#initial-processing"><i class="fa fa-check"></i><b>8.4.1</b> Initial Processing</a></li>
+<li class="chapter" data-level="8.4.2" data-path="chap-text.html"><a href="chap-text.html#linguistic-analysis"><i class="fa fa-check"></i><b>8.4.2</b> Linguistic Analysis</a></li>
+<li class="chapter" data-level="8.4.3" data-path="chap-text.html"><a href="chap-text.html#turning-text-data-into-a-matrix-how-much-is-a-word-worth"><i class="fa fa-check"></i><b>8.4.3</b> Turning text data into a matrix: How much is a word worth?</a></li>
+<li class="chapter" data-level="8.4.4" data-path="chap-text.html"><a href="chap-text.html#analysis"><i class="fa fa-check"></i><b>8.4.4</b> Analysis</a></li>
+<li class="chapter" data-level="8.4.5" data-path="chap-text.html"><a href="chap-text.html#sec:lda"><i class="fa fa-check"></i><b>8.4.5</b> Topic modeling</a></li>
 </ul></li>
 <li class="chapter" data-level="8.5" data-path="chap-text.html"><a href="chap-text.html#word-embeddings-and-deep-learning"><i class="fa fa-check"></i><b>8.5</b> Word Embeddings and Deep Learning</a></li>
 <li class="chapter" data-level="8.6" data-path="chap-text.html"><a href="chap-text.html#text-analysis-tools"><i class="fa fa-check"></i><b>8.6</b> Text analysis tools</a></li>
@@ -284,17 +258,19 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="9" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>9</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="9.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
-<li class="chapter" data-level="9.2" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>9.2</b> Turning Data into a Network</a><ul>
-<li class="chapter" data-level="9.2.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>9.2.1</b> Types of Networks</a></li>
-<li class="chapter" data-level="9.2.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>9.2.2</b> Inducing one-mode networks from two-mode data</a></li>
+<li class="chapter" data-level="9.2" data-path="chap-networks.html"><a href="chap-networks.html#what-are-networks"><i class="fa fa-check"></i><b>9.2</b> What are networks?</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-networks.html"><a href="chap-networks.html#strcuture-for-this-chapter"><i class="fa fa-check"></i><b>9.3</b> Strcuture for this chapter</a></li>
+<li class="chapter" data-level="9.4" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>9.4</b> Turning Data into a Network</a><ul>
+<li class="chapter" data-level="9.4.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>9.4.1</b> Types of Networks</a></li>
+<li class="chapter" data-level="9.4.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>9.4.2</b> Inducing one-mode networks from two-mode data</a></li>
 </ul></li>
-<li class="chapter" data-level="9.3" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>9.3</b> Network measures</a><ul>
-<li class="chapter" data-level="9.3.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>9.3.1</b> Reachability</a></li>
-<li class="chapter" data-level="9.3.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>9.3.2</b> Whole-network measures</a></li>
+<li class="chapter" data-level="9.5" data-path="chap-networks.html"><a href="chap-networks.html#network-measures"><i class="fa fa-check"></i><b>9.5</b> Network measures</a><ul>
+<li class="chapter" data-level="9.5.1" data-path="chap-networks.html"><a href="chap-networks.html#reachability"><i class="fa fa-check"></i><b>9.5.1</b> Reachability</a></li>
+<li class="chapter" data-level="9.5.2" data-path="chap-networks.html"><a href="chap-networks.html#whole-network-measures"><i class="fa fa-check"></i><b>9.5.2</b> Whole-network measures</a></li>
 </ul></li>
-<li class="chapter" data-level="9.4" data-path="chap-networks.html"><a href="chap-networks.html#case-study-comparing-collaboration-networks"><i class="fa fa-check"></i><b>9.4</b> Case Study: Comparing collaboration networks</a></li>
-<li class="chapter" data-level="9.5" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>9.5</b> Summary</a></li>
-<li class="chapter" data-level="9.6" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>9.6</b> Resources</a></li>
+<li class="chapter" data-level="9.6" data-path="chap-networks.html"><a href="chap-networks.html#case-study-comparing-collaboration-networks"><i class="fa fa-check"></i><b>9.6</b> Case Study: Comparing collaboration networks</a></li>
+<li class="chapter" data-level="9.7" data-path="chap-networks.html"><a href="chap-networks.html#summary-5"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+<li class="chapter" data-level="9.8" data-path="chap-networks.html"><a href="chap-networks.html#resources-4"><i class="fa fa-check"></i><b>9.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="10" data-path="chap-errors.html"><a href="chap-errors.html"><i class="fa fa-check"></i><b>10</b> Data Quality and Inference Errors</a><ul>
 <li class="chapter" data-level="10.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-1"><i class="fa fa-check"></i><b>10.1</b> Introduction</a></li>
@@ -446,13 +422,11 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -460,11 +434,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
+"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -476,10 +451,6 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
-"link": null,
-"text": null
-},
-"view": {
 "link": null,
 "text": null
 },
@@ -496,7 +467,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

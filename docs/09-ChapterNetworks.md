@@ -1,4 +1,5 @@
 <!--
+% working on now
 % todo Brian can you look at the examples in 9.1 and pick 3 of interest and write one or two sentences about them like we idd in other chapters? thx! Maybe we can fold in a half sentence or full sentence on what type of questions the studies tried to answer, like:  Who are the most important actors (nodes) in a network? Most connections - degree Most central - centrality measures Most critical in connecting two disjoint groups  - bridge measure Most influential 2. What types of relationships exist in this network?
 Network motifs (paper reference)
 % todo add side bar comments explaining nodes, ties, edges, directed and undirected
@@ -29,7 +30,7 @@ of sociologists and organizational theorists.
 Introduction
 ------------
 
-Social Scientists have studies networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934). What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (citation), we now have data about 100s of millions of people communicating with each other online through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
+Social Scientists have studied networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934)]. What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (Zachary, W. W. (1977). "An Information Flow Model for Conflict and Fission in Small Groups". Journal of Anthropological Research. 33 (4): 452–473.), we now have data about hundreds of millions of people communicating with each other through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
 
 ---
 
@@ -49,14 +50,15 @@ Facebook graph example: http://snap.stanford.edu/class/cs224w-readings/backstrom
 
 ---
 
-This chapter provides a basic introduction to the analysis of large networks. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization technique, and discuss social science questions that these network measures and visualizations can help us answer.
+This chapter provides a basic introduction to the analysis of large networks for social science reseaarch and practice. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization techniques, and discuss social science questions that these network measures and visualizations can help us answer.
 
 We use the comparison of the collaboration networks of two research-intensive universities to show how to perform network analysis but the same approach generalizes to other types of problems. The collaboration networks and a grant co-employment network for a large public university examined in this chapter are derived from data produced by the multi-university
 Committee on Institutional Cooperation (CIC)'s UMETRICS project [@lane2015new]. The snippets of code that are provided are from the `igraph` package for network analysis as implemented in Python.
 
 What are networks?
+------------------
 
-Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties) connecting the nodes? Once we have the representation set up, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
+Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties or edges) connecting the nodes? Once we have the representation, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
 
 Networks offer not just another convenient set of right-hand-side variables, but an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the
 markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell [@powell2003neither] puts it in a description of buyer supplier networks of small Italian firms: "when the entangling of obligation and reputation reaches a point where the
@@ -75,15 +77,18 @@ of entrepreneurial firms [@owen2004knowledge].
 The following sections will introduce you to this approach to studying innovation and discovery,
 focusing on examples drawn from high-technology industries and
 particularly from the scientific collaborations among grant-employed
-researchers at UMETRICS universities. I make particular use of a network
+researchers at UMETRICS universities. We make particular use of a network
 that connects individual researchers to grants that paid their salaries
 in 2012 for a large public university. The grants network for university
 A includes information on 9,206 individuals who were employed on 3,389
 research grants from federal science agencies in a single year. The web of partnerships that emerges from university scientists' decentralized efforts to build effective collaborations and
 teams generates a distinctive social infrastructure for cutting- edge Science.
 
-While this chapter focuses on social networks, you could easily use the techniques described here to examine the structure of networks such as the World Wide Web, the national
+While this chapter focuses on social networks, the techniques described here have been used to examine the structure of networks such as the World Wide Web, the national
 railway route map of the USA, the food web of an ecosystem, or the neuronal network of a particular species of animal. 
+
+Strcuture for this chapter
+--------------------------
 
 The chapter first introduces the most common structures for large network data,
 briefly introduce three key social "mechanisms of action" by which
@@ -116,7 +121,7 @@ Turning Data into a Network
 
 Networks are comprised of *nodes*, which represent things that can be
 connected to one another, and of ties that represent the relationships
-connecting nodes. When ties are undirected they are called *edges*. When
+connecting nodes. When ties are undirected (representing a relationshop between the nodes that is not directional) they are called *edges*. When
 they are directed (as when I lend money to you and you do or do not
 reciprocate) they are called *arcs*. Nodes, edges and arcs can, in
 principle, be anything: patents and citations, web pages and hypertext

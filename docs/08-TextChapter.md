@@ -1,5 +1,4 @@
 <!--
-% reviewing now
 
 % TODO
 % fold TOC into text
@@ -21,32 +20,6 @@ Understanding human generated text
 
 As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, news articles, and research publications. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we analyze traditional tabular data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or selectively read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and incorporate large amounts of text data in your analysis. 
 
-**Structure of the chapter [REMOVE WHEN DONE WITH EDITING]:**
-
--   How is text data different than “structured” data?
--   What types of analysis can be done with text data?
--   Use it by itself
--   Combine it with structured data
--   List the types of analysis and examples
--   How do we do the analysis
--   Processing Pipeline
--   Tokenization
--   Stemming
--   Stopwords
--   Linguistic analysis
--   Turning text into a matrix
--   Term weights
--   TFIDF
--   Analysis (what it is, how to do it, how to evaluate it, and applications/examples in social science)
--   Finding similar documents
--   Finding themes and topics (describe the methods, examples, and evaluation process)
--   Clustering
--   Topic models
--   Classification (describe the methods, examples, and evaluation process)
--   Deep Learning and Word Embeddings
--   Tools
--   Summary
-
 
 ---
 
@@ -59,6 +32,8 @@ As social scientists, we often deal with text data that comes from a variety of 
 * TFIDF
 * Part of speech tags
 * Parsing
+* n-grams
+* embeddings
 
 ---
 
@@ -137,39 +112,32 @@ Translation |  Automatic translation of text from one language to another |
 Look at reaction to a political event in newspapers of different countries in different languages
 
 
-
-
-For this chapter, we will focus on two types of needs that social scientists have when encountering text data: 
+For this chapter, we will focus on two types of use cases that social scientists deal with conntaining text data: 
 
 1. We have some text “corpus”, for example open-ended survey responses or news articles or research publications, and
 our goal is to understand the content - patterns, themes, trends - of
-that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or resawerch publication has meta-data that can be augmented with information generated from the text analysis.
+that data. This often involves methods from unsupervised machine learning (that we covered in the previous chapter). The analysis can then be combined with tabular data that might accompany the text.   For example, the survey responses may also have structured information that the respndent filled out, or the news article or research publication has meta-data that can be augmented with information generated from the text analysis.
 
-2. The second use case is less focused on "discovery" and understanding new content and instead focuses on classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are discussing such as healthcare, education, foreign policy, etc. Or we may have research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework.
-
-
-
-
+2. The second use case is less focused on "discovery" and "understanding new content" and instead focuses on efficiently classifying content into a pre-defined set of categories. The text data is similar to the previous use case but the task is different, and can often be a followup task to the previous use case. We might have news articles about politics that we need to automatically classify into issue areas that are being discussed such as healthcare, education, foreign policy, etc. Another example is analyzing research publications that we need to classify into topics or research areas. This falls into supervised learning in the machine learning framework that we covered in the previous chapter.
 
 
 How to analyze text
 -------------------
 
-Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that goes through a series of processing steps:
+Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that processes data through a series of steps: 
 
--   **Processing Text Data**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
+-   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some inital processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
 
--   **Adding Linguistic Features**: This is not a critical step and is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
+-   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
 
--   **Converting the text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions we have to make are 1) what a row is, 2) what a column is, and 3) what do we put as the value for that row and column.
+-   **Converting the enriched text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The matrix is then used to run different analysis algortihmns, such as clustering or classification methods covdeed in the previous chapter.  The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.
 
--   **Analysis**: once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll do deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
-
-
-TODO: add image for pipeline
+-   **Analysis**: Once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
 
-### Processing text data
+<img src="ChapterText/figures/textanalysispipeline.png" width="70%" style="display: block; margin: auto;" />
+
+### Initial Processing
 
 The first important step in working with text data is cleaning and processing^[Cleaning and processing are discussed extensively in Chapter 3.]. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.
 
@@ -191,11 +159,11 @@ addressed through data-driven machine learning frameworks [@kiss-06].
 
 Once the tokens are clearly separated, it is possible to perform further
 text processing at a more granular, token level. Stop words are a
-category of words that have limited semantic meaning regardless of the
-document contents. Such words can be prepositions, articles, common
+category of words that have limited semantic meaning (and hence utility) regardless of the
+document content. Such words can be prepositions, articles, common
 nouns, etc. For example, the word "the" accounts for about 7% of all
 words in the Brown Corpus, and "to" and "of" are more than 3% each
-[@malmkjar-02].
+[@malmkjar-02]. We may choose to remove stopwords if we think that they won't be useful in our analysis. For examnple, words such as "the", "is", "or" may not be useful if the task is to classify news articles into the topic of the article. On nthe other hand, they may provide information information if the task is to classify a document into the genre it belongs to or in identifying the author of the document.
 
 *Hapax legomena* are rarely occurring words that might have only one
 instance in the entire corpus. These words---names, misspellings, or
@@ -240,7 +208,7 @@ electronic dictionary WordNet), Lancaster Stemmer, and Snowball Stemmer
 are common tools used to derive lemmas and stems for tokens, and all
 have implementations in the NLTK [@bird-09].
 
-Linguistic Analysis
+### Linguistic Analysis
 So far, we’ve treated words as tokens without regard to the meaning of the word or the way it is used, or even what language the word comes from. There are several techniques in text analysis that are language specific that go deeper into the syntax of the document, paragraph, and sentence structure to extract linguistic characteristics of the document. 
 
 **Part-of-speech tagging**
@@ -272,7 +240,7 @@ where data are complex and require accounting for all possible forms and
 meanings of words. Reviewing interim results at every stage of the
 process can be helpful.
 
-### Turning text into a matrix: How much is a word worth?
+### Turning text data into a matrix: How much is a word worth?
 
 The processing stages described above provide us with the columns in our matrix. Now we have to decide what value we assign that word/phrase/column. In text analysis, we typically refer to them as tokens (where a token can be a word or a phrase). One simple approach would be to give each column a binary 0 or 1 value - if this token occurs in a document, we assign that cell a value of 1 and 0 otherwise. Another approach would be to assign it the value of how many times this token occurs in that document (often known as frequency of that term or token). This is essentially a way to define the importance or value of this token in this document. Not all words are worth the same; in an article about economics, "free market" is more important than "social good." Appropriately weighting^[Term weighting is an example of feature engineering discussed in Chapter 6.] and calibrating words is important for both human and machine consumers of text data: humans do not want to see "the" as the most frequent word of
 every document in summaries, and classification algorithms benefit from knowing which features are actually important to making a decision.
@@ -292,17 +260,15 @@ idf(t,D),\]</span> where term frequency is either a simple count, <span class="m
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
 </div>
 
-**Analysis**
+### Analysis
 
-Now that we have a matrix with documents as rows, words/phrases as columns and the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
+Now that we have a matrix with documents as rows, words/phrases as columns and let's say the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
 
-We’ll focus on three types of analysis: finding similar documents,  clustering, and classification. For each type of analysis, we ‘ll focus on what it allows us to do, what types of tasks social scientists will find it useful for, and how to evaluate the results of the analysis.
+We’ll focus on three types of analysis: finding similar documents,  clustering, and classification. For each type of analysis, we‘ll focus on what it allows us to do, what types of tasks social scientists will find it useful for, and how to evaluate the results of the analysis.
 
-Some evaluation text
+**Use Case:Finding Similar Documents**
 
-**Finding Similar Documents**
-
-One task social scientists may be interested in is finding similar documents to a document they’re analyzing. This is a routine task for lawyers where they are looking at a case file and want to find all prior cases similar to this case or during literature review where we may have a paper and we’re interested in finding similar papers. The key challenge here it to define what makes two documents similar and what similarity metrics we can use. Typical metrics involved in this process include cosine similarity and Kullback--Leibler divergence [@kullback1951information].
+One task social scientists may be interested in is finding similar documents to a document they’re analyzing. This is a routine task for lawyers where they are looking at a case file and want to find all prior cases similar to this case or during literature review where we may have a paper and we’re interested in finding similar papers. The key challenge here it to define what makes two documents similar and what similarity metrics we should use. Typical metrics involved in this process include cosine similarity and Kullback--Leibler divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two documents $d_a$ and $d_b$ presented as term vectors
 $\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the cosine similarity
@@ -410,10 +376,10 @@ is the semantic model vector of a Wikipedia page, as defined above.
 Evaluating “Find Similar” Methods:
 When developing methods to find similar documents, we want to make sure that we find all relevant documents that are similar to the document under consideration, and we want to make sure we don’t find any non-relevant documents.  Chapter [Machine Learning](#chap:ml) already touched on the importance of precision and
 recall for evaluating the results of machine
-learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and simialr documents. 
+learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and similar documents. 
 
 <div class="F00">
-<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors—<em>false positives</em>—and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors---<em>false positives</em>---and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em>---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
 </div>
 
 We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
@@ -438,7 +404,7 @@ documents returned are false positives. Assuming that all document sets
 are of equal size, so that $|D_a| = 10$, $|D_b|=10$ and $|D_c| = 10$,
 then the precision is $\frac{5}{12} = 0.42$.
 
-***F* score**
+***F* score***
 
 The *F score* combines precision and recall. In formal terms, the $F$
 score is a weighted average of the precision and recall:
@@ -468,7 +434,7 @@ Table: (\#tab:table7-1) Wikipedia articles as potential labels generated by $n$-
 
 
 
-**Clustering**
+**Use Case: Clustering**
 
 Another task social scientists often perform is finding themes, topics, and patterns in a text data set, such as open-ended survey responses, news articles, or publications. Given open ended responses from a survey on how people feel about a certain issue, we may be interested in finding out the common themes that occur in these responses. Clustering methods are designed to do exactly that. With text data, clustering is often used to explore what topics and concepts are present in a new corpus (collection of documents). It is important to note that if we already have a pre-specified set of categories and documents that are tagged with those categories, and the goal is to tag new documents, then we would use classification methods instead of clustering methods. As we covered in the previous chapter, clustering a is a form of unsupervised learning where the goal is exploration and understanding of the data.
 
@@ -484,7 +450,7 @@ LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
 words at the top of the list
-(Figure \@ref(fig:nyt-topics-3)). However, we do not know what the topics are
+(\@ref(fig:nyt-topics-3)). However, we do not know what the topics are
 [a priori]{.roman}; the goal is to discover what they are (more on
 this shortly).
 
@@ -600,11 +566,7 @@ $(0.24, 0.12, 0.64)$. We then sample the new assignment of token B to be
 topic 3 two times out of three. Griffiths and Steyvers [@griffiths-04]
 provide more details on the derivation of this equation.
 
-**Example code**
-
 #### Applications of topic models
-
-% TODO(jbg): Add reference to applications of TM book
 
 Topic modeling is most often used for topic exploration, allowing users
 to understand the contents of large text corpora. Thus, topic models
@@ -640,10 +602,7 @@ This formulation should remind you of logistic regression; however,
 the features are learned automatically rather than the feature
 engineering approach described in the last chapter.
 
-% TODO(jbg): There were some notes here about cluster vs. supervised
-%  evaluation, but should probably be elsewhere.
-
-**Document classification**
+**Use Case: Document classification**
 
 The section above focused on the task of finding topics and themes in
 a new text data set. In many cases, we already know a set of
@@ -667,10 +626,6 @@ number of posts, manually tagged as belonging to either health or
 finance, and train a classification model. This model can then be used
 to automatically classify new posts as belonging to either health or
 finance.
-
-**Diagram of Text Classification Pipeline**
-
-Processing -> linguistic - > matrix -> classification method
 
 All of the classification (supervised learning) methods we covered in the Machine Learning chapter can be used here once the text data has been processed and converted to a matrix. Neural Networks [reference],. Random Forests [ref], and Support Vector Machines [ref] are some of the commonly used methods applied to text data.
 
@@ -901,24 +856,6 @@ with a knowledgeable, trusted friend.
 Resources
 ---------
 
-**Text corpora**
-
-A set of multiple similar documents is called a *corpus*. For example,
-the Brown University Standard Corpus of Present-Day American English, or
-just the Brown Corpus [@browncorpus], is a collection of processed
-documents from works published in the United States in 1961. The Brown
-Corpus was a historical milestone: it was a machine-readable collection
-of a million words across 15 balanced genres with each word tagged with
-its part of speech (e.g., noun, verb, preposition). The British National
-Corpus [@bnc] repeated the same process for British English at a larger
-scale. The Penn Treebank [@marcus-93] provides additional information:
-in addition to part-of-speech annotation, it provides *syntactic*
-annotation. For example, what is the object of the sentence "The man
-bought the hat"? These standard corpora serve as training data to train
-the classifiers and machine learning techniques to automatically analyze
-text [@halevy-09].
-
-
 Text analysis is one of the more complex tasks in big data analysis.
 Because it is unstructured, text (and natural language overall) requires
 significant processing and cleaning before we can engage in interesting
@@ -949,4 +886,19 @@ resources that can be helpful in mastering text mining techniques:
 -   We provide an example of how to run topic modeling using MALLET on
     textual data from the National Science Foundation and Norwegian
     Research Council award abstracts [@NSFsearch].
+ 
+-   Text corpora: A set of multiple similar documents is called a *corpus*. For example,
+the Brown University Standard Corpus of Present-Day American English, or
+just the Brown Corpus [@browncorpus], is a collection of processed
+documents from works published in the United States in 1961. The Brown
+Corpus was a historical milestone: it was a machine-readable collection
+of a million words across 15 balanced genres with each word tagged with
+its part of speech (e.g., noun, verb, preposition). The British National
+Corpus [@bnc] repeated the same process for British English at a larger
+scale. The Penn Treebank [@marcus-93] provides additional information:
+in addition to part-of-speech annotation, it provides *syntactic*
+annotation. For example, what is the object of the sentence "The man
+bought the hat"? These standard corpora serve as training data to train
+the classifiers and machine learning techniques to automatically analyze
+text [@halevy-09].
 
