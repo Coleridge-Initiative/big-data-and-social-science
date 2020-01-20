@@ -779,13 +779,13 @@ Figure 11.1: Example of Tays offensive output
 <li><p>Policymakers who, before “accepting” an AI system to use in a policy decision, will run Aequitas to understand what biases exist in the system and what (if anything) they need to do in order to mitigate those biases. This process must be repeated periodically to assess the fairness degradation through time of a model in production.</p></li>
 </ol>
 <p>![Aequitas in the larger context of the machine learning pipeline. Audits must be carried out internally by data scientists before evaluation and model selection. Policymakers (or clients) must audit externally before accepting a model in production as well as perform periodic audits to detect any fairness degradation over time.</p>
-<div class="figure" style="text-align: center">
+<div class="figure" style="text-align: center"><span id="fig:ml-pipeline"></span>
 <img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="80%" />
 <p class="caption">
-(#fig:ml_pipeline)ML pipeline
+Figure 11.2: ML pipeline
 </p>
 </div>
-<p>Figure @ref(fig:ml_pipeline) puts Aequitas in the context of the machine learning workflow and shows which type of user and when the audits must be made. The main goal of Aequitas is to standardize the process of understanding model biases. By providing a toolkit for auditing by both data scientists and decision makers, it makes it possible for these different actors to take bias and fairness into consideration at all stages of decision-making in the modeling process: model selection, whether or not to deploy a model, when to retrain, the need to collect more and better data, and so on.</p>
+<p>Figure <a href="chap-bias.html#fig:ml-pipeline">11.2</a> puts Aequitas in the context of the machine learning workflow and shows which type of user and when the audits must be made. The main goal of Aequitas is to standardize the process of understanding model biases. By providing a toolkit for auditing by both data scientists and decision makers, it makes it possible for these different actors to take bias and fairness into consideration at all stages of decision-making in the modeling process: model selection, whether or not to deploy a model, when to retrain, the need to collect more and better data, and so on.</p>
 <div id="getting-started-with-aequitas" class="section level3">
 <h3><span class="header-section-number">11.7.1</span> Getting Started with Aequitas</h3>
 <p>Aequitas is a python package that can be used in several ways: as an imported module in your code or jupyter notebooks, as a command-line utility, or served as a web interface. To help orient you to its interface and explore some of the concepts covered in this chapter in more detail, we have developed a tutorial notebook around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study described in Section <a href="chap-bias.html#sec:compascase">COMPAS case</a> that you can find in the book’s supplemental materials. Each of the tutorial’s sections is described briefly below.</p>
@@ -808,11 +808,11 @@ Figure 11.1: Example of Tays offensive output
 <li><p>A <code>label_value</code> column, provided as a binary (0 or 1) value, representing the actual outcome for each entity. Again following ProPublica, the example dataset defines a recidivism outcome (<code>label_value</code> = 1) as a new arrest within two years.</p></li>
 <li><p>One or more attribute columns for which you would like to evaluate predictive fairness and disparities. Here, you can consider any attributes of interest for your particular application. For instance, the example dataset includes the columns <code>race</code>, <code>sex</code>, and <code>age_cat</code> that will be used for our tutorial.</p></li>
 </ul>
-<p>As you follow along in the tutorial notebook, we start with a little bit of descriptive data exploration just to get a feel for the data. Figure @ref(fig:tutorial_explore) shows the large difference in the distribution of COMPAS scores across race. The notebook guides you through several additional initial analyses and you should feel free to further explore the data as well.</p>
-<div class="figure" style="text-align: center">
+<p>As you follow along in the tutorial notebook, we start with a little bit of descriptive data exploration just to get a feel for the data. Figure <a href="chap-bias.html#fig:tutorial-explore">11.3</a> shows the large difference in the distribution of COMPAS scores across race. The notebook guides you through several additional initial analyses and you should feel free to further explore the data as well.</p>
+<div class="figure" style="text-align: center"><span id="fig:tutorial-explore"></span>
 <img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="100%" />
 <p class="caption">
-(#fig:tutorial_explore)Data exploration screenshot from the Aequitas tutorial
+Figure 11.3: Data exploration screenshot from the Aequitas tutorial
 </p>
 </div>
 <p>Applying Aequitas progammatically is a three step process represented by three python classes that will be described in the following sections:</p>

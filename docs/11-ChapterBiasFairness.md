@@ -1403,10 +1403,10 @@ time.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterBias/figures/audit_pipeline.png" alt="ML pipeline" width="80%" />
-<p class="caption">(\#fig:ml_pipeline)ML pipeline</p>
+<p class="caption">(\#fig:ml-pipeline)ML pipeline</p>
 </div>
 
-Figure \@ref(fig:ml_pipeline) puts Aequitas in the context of the machine
+Figure \@ref(fig:ml-pipeline) puts Aequitas in the context of the machine
 learning workflow and shows which type of user and when the audits must
 be made. The main goal of Aequitas is to standardize the process of
 understanding model biases. By providing a toolkit for auditing by both
@@ -1477,14 +1477,14 @@ the individual entity level, and contain the following columns:
     and `age_cat` that will be used for our tutorial.
 
 As you follow along in the tutorial notebook, we start with a little bit
-of descriptive data exploration just to get a feel for the data. Figure \@ref(fig:tutorial_explore) shows the large difference in the distribution
+of descriptive data exploration just to get a feel for the data. Figure \@ref(fig:tutorial-explore) shows the large difference in the distribution
 of COMPAS scores across race. The notebook guides you through several
 additional initial analyses and you should feel free to further explore
 the data as well.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterBias/figures/tutorial_explore.png" alt="Data exploration screenshot from the Aequitas tutorial" width="100%" />
-<p class="caption">(\#fig:tutorial_explore)Data exploration screenshot from the Aequitas tutorial</p>
+<p class="caption">(\#fig:tutorial-explore)Data exploration screenshot from the Aequitas tutorial</p>
 </div>
 
 Applying Aequitas progammatically is a three step process represented by
