@@ -34,6 +34,8 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 ---
 
+**todo: finish examples in this box**
+
 ***Box with examples or references to these examples***
 
 Survey paper: (maybe at end in further reading) http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf
