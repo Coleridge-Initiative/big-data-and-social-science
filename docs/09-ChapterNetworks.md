@@ -38,7 +38,7 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 Survey paper: (maybe at end in further reading) http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf
 
-http://www.sn.ethz.ch// Zurich Networks Labs
+http://www.sn.ethz.ch Zurich Networks Labs
 
 Example 1: https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf
 
@@ -148,7 +148,7 @@ decisions must be made.
 
 ### Types of Networks
 
--Network ties can be directed (flowing from one node to another) or
+Network ties can be directed (flowing from one node to another) or
 undirected. In either case they can be binary (indicating the presence
 or absence of a tie) or valued (allowing for relationships of different
 types or strengths). Network data can be represented in matrices or as
