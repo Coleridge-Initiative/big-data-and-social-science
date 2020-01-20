@@ -72,45 +72,24 @@ analysis just like we use tabular data.
 
 ## What can we do with text data?
 
-There are a lot of tyypes iof analysis that we can do with text data. Table X gives a summary of these types of analysis. 
+There are a lot of types of analysis that we can do with text data. Table \@ref(tab:table7-0) gives a summary of these types of analysis. 
 
 TODO: finish table
 
-Type of Analysis | Description | Examples
+Table: (\#tab:table7-0)
 
-Search | Finding relevant contenxt based on some information need, often specified as a set of keywords/phrases but can be more structuerd. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of
-relevant publications related to early grade reading in Latin America and the Caribbean.
-
-
+Type of Analysis | Description           | Examples                                                                                   
+-----------------|-----------------------|--------------------------------------------------------------------------------------------
+Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean.
 Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data | **Need good example** survey text analysis   
-
-
-Classification | Used to classify text content into one or more predefined categories | **Need good example** researach papers classification
-
-
-Sentiment analysis | Detection of sentiment or opinions at different levels of granularity - document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to
-analyze the flow and topic segmentation of political debates and
-behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to
-assign automated tags to documents [@tuarob-13].
-
-
+Classification | Used to classify text content into one or more predefined categories | **Need good example** research papers classification
+Sentiment analysis | Detection of sentiment or opinions at different levels of granularity - document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
 Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue) | **Need good example**
-
-
-Named Entity Extraction | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns.
-
-
-General Extraction | Recognition, tagging, and extraction of specificed classes of words/phrases that may be entities, events, relationships between entitiesm etc. | **Need good example**
-
+Named Entity Extraction | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | 
+General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities etc. | **Need good example**
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks) | **Need good example**
-
-Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | **Need good example** For example, Wang et
-    al. [@wang-09] use topic modeling to produce category-sensitive text
-    summaries and annotations on large-scale document collections.
-
-Translation |  Automatic translation of text from one language to another | 
-Look at reaction to a political event in newspapers of different countries in different languages
-
+Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | **Need good example** For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
+Translation | Automatic translation of text from one language to another | Look at reaction to a political event in newspapers of different countries in different languages
 
 For this chapter, we will focus on two types of use cases that social scientists deal with conntaining text data: 
 
