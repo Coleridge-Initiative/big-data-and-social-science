@@ -1095,7 +1095,7 @@ particular context.
 
 ****
 
-Fairness in Decision Making: Case Studies
+Case Studies
 -----------------------------------------
 
 The active conversation about algorithmic bias and fairness in both the
@@ -1309,6 +1309,8 @@ subject to these requirements, which poses technical challenges in its
 own right. As of this writing, understanding how best to combat
 discrimination in ad targeting is an ongoing area of research as well as
 an active public conversation.
+
+%remove next example?
 
 ### Tay: Microsoft’s AI Twitter Bot
 
