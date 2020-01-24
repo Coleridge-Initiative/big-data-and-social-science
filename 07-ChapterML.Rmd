@@ -1247,36 +1247,38 @@ practice and will not be able to resample.
 
 As social scientists (or good machine learning practitioners), we do not only care about building machine learning models but also want to understand what the models “learned”, and how to use them to make inferences and decisions. Understanding, or interpreting machine learning models is a key requirement for most social science and policy problems. There are various reasons for this including:
 
--  Debugging and improving models
--  Creating trust in the models and hence increasing adoption
--  Improving the decisions being made using the models
--  Selecting  appropriate interventions 
--  Legal Requirements 
+-  Providing information that can help in debugging and improving models
+-  Increasing trust in the models and hence increasing their adoption by decisionmakers
+-  Improving the decisions being made using the models by reinforcing the correct predictions and helping the decision-maker override the wrong predictions.
+-  Helping select appropriate interventions based on the explanations
+-  Providing legal recourse to people being affected by the decisions made using the models
 
 **Global versus Individual-Level Explanations**
 
-When thinking about model interpretability, there are two levels of interpretability:
+When thinking about model interpretability, there are two types of interpretability:
 
 -  Global: At the overall model level
--  Individual: Explaining an individual classification/prediction that’s made by a model.
+-  Individual: Explaining an individual classification/prediction that is made by a model.
 
 Both of these are important for different reasons. We need global interpretability to help understand the overall model but we also need explanations for individual classifications when these models are helping a person make decisions about individual cases. A social worker identifying the risk of a client going back to the homeless shelter and determining appropriate interventions to reduce that risk, or a counselor in an employment agency determining how likely an individual is to be long-term unemployed and connecting them with appropriate training programs or job opportunities need individual-level explanations of predictions/recommendations that the machine learning model is generating.
 
 *Global Interpretability*
 
-Each method/model needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to print the tree and use that to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we look at the coefficients and odds-ratios, but it may be difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing “feature importances”: how important it found different features that it was provided, and we often use that as a proxy for global model interpretability.
+Each method results in a model that needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to view the tree to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we can look at the coefficients and odds-ratios, but it is often difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing their “feature importances”\^[some measure of how uesful that fgeature was for the given model] and we often use that as a proxy for global model interpretability. 
 
-Another way of interpreting the model looks at how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get a high level idea of what the model is doing on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.
+Another way of interpreting a model is to understand  how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get an idea of what the model is doing, not in general, but on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.
 
-A different approach that some have taken in this area has been to build well-performing models that are sparse, hence inherently more interpretable, and don’t require sophisticated approaches to interpret. Examples of such work include (cite: rudin, Caruana..). These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy\footnote{We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.} of those models.
+A different approach that some have taken in this area has been to sparse\^[Using a small number of features/predictors] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include  Ustun and Rudin 2019 (Learning Optimized Risk Scores. Berk Ustun and Cynthia Rudin. Journal of Machine Learning Research 2019), (Berk Ustun and Cynthia Rudin. Supersparse linear integer models for optimized medical scoring systems.
+Machine Learning, pages 1–43, 2015. ISSN 0885-6125)., and Caruana et al. (Rich Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad. 2015. Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 1721–1730.). These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy\footnote{We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.} of those models.
 
 *Individual-Level Explanations*
 
-There has been a lot of recent work on methods for generating individual-level explanations for predictions made by machine learning models. These fall into two areas:
-Model specific methods: These are used to generate explanations for predictions made by a specific class of methods, such as neural networks or random forests.
-Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME (cite: lime), MAPLE (cite), SHAP scores (cite)
+While it's important to understand the models we are building at a global level, in many social science applications, we want to get an explanation for why a data point was classified/predicteda certain way by the model.  There has been a lot of recent work on methods for generating individual-level explanations for predictions made by machine learning models. These fall into two areas:
+1. Model specific methods: These are used to generate explanations for predictions made by a specific class of methods, such as neural networks or random forests.
+2. Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME \cite("Why Should I Trust You?": Explaining the Predictions of Any Classifier
+Marco Tulio Ribeiro, Sameer Singh, Carlos Guestrin. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2016), MAPLE \cite(Gregory Plumb, Denali Molitor, and Ameet Talwalkar. 2018. Model agnostic supervised local explanations. In Proceedings of the 32nd International Conference on Neural Information Processing Systems (NIPS’18). Curran Associates Inc., Red Hook, NY, USA, 2520–2529.), and SHAP values \cite(https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf)
 
-It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that the features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools that are useful for social scientists that are using machine learning to solve problems that require a better and deeper understanding of their predictions.
+It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that these features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools useful for social scientists using machine learning to solve problems that require a better and deeper understanding of their predictions.
 
 
 Evaluation
@@ -1293,7 +1295,7 @@ with three primary goals:
 2.  Performance estimation: How do we estimate how well our model will perform once it is
     deployed and applied to new data?
 
-3.  A deeper understanding of what types of models work well and don’t model can point to the effectiveness and applicability of existing methods and provide a better understanding of the structure of the data and the problem we are tackling.
+3.  A deeper understanding of the types of models that work well and those that don’t can point to the effectiveness and applicability of existing methods and provide a better understanding of the structure of the data and the problem we are tackling.
 
 This section will cover evaluation methodologies as well as metrics that
 are commonly used.
@@ -1548,21 +1550,39 @@ optimizes this cost-sensitive metric.
 Practical tips
 --------------
 
-Here we highlight some practical tips that will be helpful when working
-with machine learning methods.
+Here we highlight some practical tips that will be helpful when using machine learning.
 
 ### Avoiding Leakage
 
-One of the most common mistakes that gets made in machine learning is called leakage - accidentally giving information data to your model that is not available at prediction time which allows the model to perform better in the training phase than it actually will in the future. Leakage often results in sub-optimal models being selected for use in the future and artificially inflated performance metrics. Leakage can happen in obvious ways, such as including the target variable (or some transformation of it) as an input variable (or feature), or temporally, where the model, at training time,  might use data that will only become available in the future.
+Leakage is when your model has access to data at training/building time that it wouldn’t have at test/deployment/prediction time. The result is an overoptimistic model that performs much worse when deployed.
 
-It is critical to consider different sources of leakage when building machine learning models. 
+The most common forms of leakage happen because of temporal issues – including data from the future in your model because you have that when you’re doing model selection but there are many other ways leakage gets introduced. Here are the most common ones 
 
-Scaling/Standardizing: If the data being used is temporal, the scaling or standardization of variables should only happen on the training data and not on *all* of the data. Since the range of a variable on the entire data may be different than the range of that variable in the training set, using the entire range is effectively the same as using information from the “future”.
+**The Big (and obvious) One**
 
-Imputation: The same is true for imputation methods that use statistics from the data. If we’re using mean imputation, the mean needs to be calculated from the training set and not from the entire data set that we have access to.
+1. Using a proxy for the outcome variable (label) as a feature. This one is often easy to detect because you get perfect performance but is more nuanced when the proxy is some approximation of the label/outcome variable and the performance increase is more subtle to detect easily.
 
-There are more subtle forms of leakage getting introduced in your models such as …
-When training a machine learning model, our methodology should only use data that is available at the time the model is being trained.
+**Doing any transformation or inference using the entire dataset**
+
+2. Using the entire data set for Imputations. Always do imputation based on your training set only, for each training set. Including the test set allows information to leak in to your models, especially in cases where the world changes in the future (when does it not?!)
+
+3. Using the entire data set for discretizations or normalizations/scaling or many other data-based transformations. Same reason as #2. The range of a variable (age for example) can change in the future and knowing that will make your models do/look better than they actually are.
+
+4. Using the entire data set for Feature Selection. Same reasons as #2 and #3. To play it safe, first split into train and test sets, and then do everything you need to do using that data.
+
+**Using information from the future (that will not available at training or prediction time)**
+
+5.  Using (proxies/transformation of) future outcomes as features: Similar to #1
+
+6. Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary  – again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.
+
+7.  Using data (as features) that happened before model training time but is not available until later. This is fairly common in cases where there is lag/delay in data collection or access. An event may happen today but it doesn’t appear in the database until a week, a month, or a year later and while it will be available in the data set you’re using to build and select ML models, it will not be available at prediction time in deployment.
+
+8. Using data (as rows) in the training set based on information from the future. Including rows that match certain criteria (in the future) in the training set, such as everyone who got a social service in the next 3 months) leaks information to your model via a biased training set.
+
+**Humans using knowledge from the future**
+
+9.  Selecting certain models, features, and other design choices that are based on humans (ML developers, domain experts)  knowing what happened in the future. This is a gray area – we do want to use all of our domain knowledge to build more effective systems but sometimes that may not generalize into the future and result in overfitted/over-optimistic models at training time and disappointment once they’re deployed.
 
 As a general rule, if you encounter a machine learning model that is performing really well, it’s probably because you’ve made an error that is resulting in leakage. One way to dig deeper is to look at the feature importances of your model to see if the most important feature(s) may be the source of that leakage.  
 
