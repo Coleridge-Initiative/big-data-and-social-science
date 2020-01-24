@@ -31,13 +31,12 @@ simply called something else. For example, you already are familiar with
 logistic regression (a classification method that falls under the
 supervised learning framework in machine learning) and cluster analysis
 (a form of unsupervised learning). You will also learn about new methods
-
 that are more exclusively used in machine learning, such as random
-Forests, support vector machines, and neural networks. We will keep formalisms to a
+forests, support vector machines, and neural networks. We will keep formalisms to a
 minimum and focus on getting the intuition across, as well as providing
 practical tips. Our hope is this chapter will make you comfortable and
 familiar with machine learning vocabulary, concepts, and processes, and
-allow you to further explore and use these methods and tools in your own
+allows you to further explore and use these methods and tools in your own
 research and practice.
 
 What is machine learning?
@@ -125,9 +124,7 @@ Athey and  Wager (https://obsstudies.org/277-2/) use a modification of random fo
 
 
 Voigt et al (http://web.stanford.edu/~eberhard/downloads/2017-LanguageFromPoliceBodyCameraFootage.pdf) uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.
-
--  ```
-
+```
 
 Machine learning grew from the need for systems that were adaptive,
 scalable, and cost-effective to build and maintain. A lot of tasks now
@@ -288,7 +285,7 @@ knitr::include_graphics("ChapterML/figures/spectrum.png")
 ### Features
 
 Before we get to models and methods, we need to turn our raw data into “features”. In social science, they are not called features but instead are known as variables or
-Predictors (or covariates if you’re doing regression). [Good features are what makes machine learning systems
+predictors (or covariates if you’re doing regression). [Good features are what makes machine learning systems
 effective]{.roman}. Feature generation (or engineering, as it is often
 called) is where a large chunk of the time is spent in the machine learning
 process. This is also the phase where previous research and learnings from the domain being tackled can be incorporated into the machine learning process. As social science researchers or practitioners, you have spent
@@ -354,7 +351,7 @@ Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms w
     and explanatory variables.
 
 -   **Labels**: These include the response variable, dependent variable, target
-    Variable, or outcomes.
+    variable, or outcomes.
 
 -   **Underfitting**: This happens when a model is too simple and does not capture the
     structure of the data well enough.
@@ -371,7 +368,7 @@ Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms w
     which has a penalty term that encourages the sum of the absolute
     values of the parameters to be small; and $L_2$ regularization,
     which encourages the sum of the squares of the parameters to be
-    Small.
+    small.
 ```
 
 ### Unsupervised learning methods
@@ -861,8 +858,8 @@ the nonlinear features.
 You can essentially think of kernels as similarity functions and use
 them to create a linear separation of the data by (implicitly) mapping
 the data to a higher-dimensional space. Essentially, we take an
-$n$-dimensional input vector $X$, map it into a high-dimensional (
-infinite-dimensional) feature space, and construct an optimal separating
+$n$-dimensional input vector $X$, map it into a high-dimensional (infinite-dimensional)
+feature space, and construct an optimal separating
 hyperplane in this space. We refer you to relevant papers for more
 detail on SVMs and nonlinear kernels [@ShaweTaylor2004; @Scholkopf2001].
 SVMs are also related to logistic regression, but use a different
@@ -1632,7 +1629,7 @@ improve some social science tasks:
     can use the verbatim answers to suggest small sets of plausible
     answer options. The respondents can then select which option is the
     best description for their occupation, thus saving the costs for
-    coding after the interview.
+    coding after the interview (Schierholz et al. 2018 http://onlinelibrary.wiley.com/doi/10.1111/rssa.12297/full).
 
 -    **Estimating heterogeneous treatment effects**: A standard approach to causal inference is the assignment of
     different treatments (e.g., medicines) to the units of interest
