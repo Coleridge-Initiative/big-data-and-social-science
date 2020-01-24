@@ -1,11 +1,8 @@
 <!--
 % TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
-% TODO: replace links/names in the text with references to the literature
 % TODO: add coleridge ML cheat sheat as box or reference / resources at the end
 % TODO: add ML process image  [Coleridge slides] 
-% TODO: I do not understand the arguement of the sentence: "build well-performing models that are sparse, hence inherently more interpretable"
-% TODO: replace "what types of models work well and don’t" with "the"? The current sentence makes no sense
-% TODO: incomplete sentence: There are more subtle forms of leakage getting introduced in your models such as …
+
 --> 
 
 Machine Learning {#chap:ml}
