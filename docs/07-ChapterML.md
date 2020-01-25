@@ -90,8 +90,8 @@ $T$, as measured by $P$, improves with experience $E$"
 <div class="F00">
 <p><strong>Box 7.2: Social Science machine learning examples</strong> Potash et al (reference) worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.</p>
 <p>Carton et al (reference) used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.</p>
-<p>Athey and Wager (<a href="https://obsstudies.org/277-2/" class="uri">https://obsstudies.org/277-2/</a>) use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.</p>
-<p>Voigt et al (<a href="http://web.stanford.edu/~eberhard/downloads/2017-LanguageFromPoliceBodyCameraFootage.pdf" class="uri">http://web.stanford.edu/~eberhard/downloads/2017-LanguageFromPoliceBodyCameraFootage.pdf</a>) uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.</p>
+<p>Athey and Wager <span class="citation">[-@athey2019]</span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.</p>
+<p>Voigt et al <span class="citation">[-@Voigt2017]</span> uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.</p>
 </div>
 
 Machine learning grew from the need for systems that were adaptive,
@@ -406,7 +406,6 @@ describe the cluster using the features in your data. A good example of
 a tool that allows interactive clustering from text data is Ontogen
 [@Ontogen].
 
-\enlargethispage{6pt}
 **$k$-means clustering**
 
 The most commonly used clustering algorithm is called $k$-means, where
@@ -443,7 +442,6 @@ be used [@park2009simple].
 
 **Expectation-maximization (EM) clustering**
 
-\hspace*{3pt}
 You may be familiar with the EM algorithm in the context of imputing
 missing data. EM is a general approach to maximum likelihood in the
 presence of incomplete data. However, it is also used as a clustering
@@ -500,7 +498,6 @@ shift is computationally slow but can be easily parallelized.
 
 **Hierarchical clustering**
 
-\hspace*{-1pt}
 The clustering methods that we have seen so far, often termed
 *partitioning* methods, produce a flat set of clusters with no
 hierarchy. Sometimes, we want to generate a hierarchy of clusters, and
@@ -541,7 +538,6 @@ between nodes) represent the similarity between the two data points.
 <p class="caption">(\#fig:spectral)The same data set can produce drastically different clusters: (a) k-means; (b) spectral clustering</p>
 </div>
 
-\vspace*{8pt}
 The algorithm works as follows:
 
 1.  Compute a similarity matrix from the data. This involves determining
@@ -675,7 +671,7 @@ detail in Chapter 10.].
 Some of these models can be used to help with causal inference, but they
 are typically optimized for prediction tasks. We believe that there are
 many social science and policy problems where better prediction methods
-can be extremely beneficial. Cite Kleingberg et al (https://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf) <!-- reference already exists in section 7.7 -->
+can be extremely beneficial [@Kleinberg2015]. <!-- reference already exists in section 7.7 -->
 
 In this chapter, we mostly deal with binary classification problems:
 that is, problems in which the data points are to be classified into one
@@ -734,7 +730,6 @@ point B is classified differently if $k = 3$.
 <p class="caption">(\#fig:knn)Example of $k$-nearest neighbor with $k = 1, 3, 5$ neighbors. We want to predict the points A and B. The 1-nearest neighbor for both points is red ("Patent not granted"), the 3-nearest neighbor predicts point A (B) to be red (green) with probability 2/3, and the 5-nearest neighbor predicts again both points to be red with probabilities 4/5 and 3/5, respectively.</p>
 </div>
 
-\vspace*{-6pt}
 Training for $k$-NN just means storing the data, making this method
 useful in applications where data are coming in extremely quickly and a
 model needs to be updated frequently. All the work, however, gets pushed
@@ -770,7 +765,6 @@ method is completely oblivious to the type of target variable and can
 potentially be used to predict text documents, images, and videos, based
 on the aggregation function after the nearest neighbors are found.
 
-\vspace*{-4pt}
 **Support vector machines**
 
 Support vector machines are one of the most popular and best-performing
@@ -865,11 +859,11 @@ has two splits: one using *average length of visit* with value $2$ days
 and the other using the value $10$ days.
 
 <img src="ChapterML/figures/tree.png" width="70%" style="display: block; margin: auto;" />
+
 <div class="figure" style="text-align: center">
 <img src="ChapterML/figures/tree-rectangle.png" alt="An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly" width="70%" />
 <p class="caption">(\#fig:tree)An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly</p>
 </div>
-
 
 Various algorithms exist to build decision trees. C4.5, CHAID, and CART
 (Classification and Regression Trees) are the most popular. Each needs to
@@ -1116,7 +1110,7 @@ There are a few different types of neural networks that are popular today:
 
 -  Generative Adversarial Network (**GAN**s): have been shown to be quite adept at generating new, realistic images based on other training images. GANs train two models in parallel. One network (called generator) is trained to generate data (based on historical examples of previously occurring data such as images or text or video). The other network (discriminator) tries to classify these generated images as real or synthetic. During training a GAN, the goal is to generate data that is realistic enough that the discriminator network is fooled to the point that it cannot distinguish the difference between the real and the synthetic input data.
 
-Goodfellow et al. (2016) http://www.deeplearningbook.org/ provide a (mathematical) introduction to deep learning.
+Goodfellow et al. [-@Goodfellow2016] provide a (mathematical) introduction to deep learning.
 
 Currently, deep neural networks are popular for a certain class of problems and a lot of research is being done on them. It is, however, important to keep in mind that they may often require a lot more data than are available in many problems. In many problems, such as natural language processing, image, and video analysis, there are techniques to start from a pre-trained neural network model, that reduces the need for additional training data.
  Training deep neural networks also
@@ -1212,15 +1206,13 @@ Each method results in a model that needs to be interpreted in a way that is app
 
 Another way of interpreting a model is to understand  how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get an idea of what the model is doing, not in general, but on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.
 
-A different approach that some have taken in this area has been to sparse\^[Using a small number of features/predictors] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include  Ustun and Rudin 2019 (Learning Optimized Risk Scores. Berk Ustun and Cynthia Rudin. Journal of Machine Learning Research 2019), (Berk Ustun and Cynthia Rudin. Supersparse linear integer models for optimized medical scoring systems.
-Machine Learning, pages 1–43, 2015. ISSN 0885-6125)., and Caruana et al. (Rich Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad. 2015. Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 1721–1730.). These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy\footnote{We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.} of those models.
+A different approach that some have taken in this area has been to sparse\^[Using a small number of features/predictors] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include Ustun and Rudin [-@Ustun2019], Ustun and Rudin [-@Ustun2016], and Caruana et al. [-@Caruana2015]. These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy\footnote{We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.} of those models.
 
 *Individual-Level Explanations*
 
 While it's important to understand the models we are building at a global level, in many social science applications, we want to get an explanation for why a data point was classified/predicteda certain way by the model.  There has been a lot of recent work on methods for generating individual-level explanations for predictions made by machine learning models. These fall into two areas:
 1. Model specific methods: These are used to generate explanations for predictions made by a specific class of methods, such as neural networks or random forests.
-2. Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME \cite("Why Should I Trust You?": Explaining the Predictions of Any Classifier
-Marco Tulio Ribeiro, Sameer Singh, Carlos Guestrin. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2016), MAPLE \cite(Gregory Plumb, Denali Molitor, and Ameet Talwalkar. 2018. Model agnostic supervised local explanations. In Proceedings of the 32nd International Conference on Neural Information Processing Systems (NIPS’18). Curran Associates Inc., Red Hook, NY, USA, 2520–2529.), and SHAP values \cite(https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf)
+2. Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME [@ribeiro-16], MAPLE [@Plumb2018], and SHAP values [@Lundberg2017].
 
 It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that these features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools useful for social scientists using machine learning to solve problems that require a better and deeper understanding of their predictions.
 
@@ -1310,7 +1302,6 @@ possible) and making sure the model is tested on each data point.
 
 **Temporal validation**
 
-\hspace*{4pt}
 The cross-validation and holdout set approaches described above assume
 that the data have no time dependencies and that the distribution is
 stationary over time. This assumption is almost always violated in
@@ -1370,7 +1361,7 @@ important to highlight that machine learning models for classification
 typically do not predict 0/1 values directly. SVMs, random forests, and
 logistic regression all produce a score (which is sometimes a
 probability) that is then turned into 0 or 1 based on a user-specific
-threshold. You might find that certain tools (such as scikitlearn\footnote{you should never use the predict function in sci-kit-learn since it assumes a 0.5 threshold ) use a default
+threshold. You might find that certain tools (such as scikitlearn^[you should never use the predict function in sci-kit-learn since it assumes a 0.5 threshold]) use a default
 value for that threshold (often 0.5), but it is important to know that
 it is an arbitrary threshold and you should select the threshold based
 on the data, the model, and the problem you are solving. We will cover
@@ -1617,7 +1608,7 @@ improve some social science tasks:
     can use the verbatim answers to suggest small sets of plausible
     answer options. The respondents can then select which option is the
     best description for their occupation, thus saving the costs for
-    coding after the interview (Schierholz et al. 2018 http://onlinelibrary.wiley.com/doi/10.1111/rssa.12297/full).
+    coding after the interview [@Schierholz2018].
 
 -    **Estimating heterogeneous treatment effects**: A standard approach to causal inference is the assignment of
     different treatments (e.g., medicines) to the units of interest
@@ -1649,7 +1640,7 @@ interesting for you to know about and that are being actively researched
 in the machine learning community. We mention them here so you know what
 they are, but will not describe them in detail. These include:
 
--   Semi-supervised learning, where a combination of labeled and unlabeled data are used for training, given a set of assumptions. Such methods are useful when labeling data is costly and where unlabeled (not manually labeled/tagged data) can help improve the machine learning models . See the MIT Press edited volume https://www.molgen.mpg.de/3659531/MITPress--SemiSupervised-Learning.pdf for explanations and examples.
+-   Semi-supervised learning, where a combination of labeled and unlabeled data are used for training, given a set of assumptions. Such methods are useful when labeling data is costly and where unlabeled (not manually labeled/tagged data) can help improve the machine learning models. See the MIT Press edited volume [@Chapelle2006] for explanations and examples.
 
 -   Recommender systems: These are commonly used by audio and video services like YouTube to generate playlists or by online shops like Amazon to suggest additional products a custumer might wish to buy. More generally, recommender systems aim to predict the preferences a user might have. One strategy is to recommend products that have similar characteristcs to the ones already selected by the same user (independent of others). Another strategy recommends a product if other persons with a similar profile selected the same product in the past.
 
