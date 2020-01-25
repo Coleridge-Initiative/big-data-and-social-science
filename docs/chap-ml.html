@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 7 Machine Learning | Big Data and Social Science</title>
   <meta name="description" content="Chapter 7 Machine Learning | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 7 Machine Learning | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -217,28 +220,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="7" data-path="chap-ml.html"><a href="chap-ml.html"><i class="fa fa-check"></i><b>7</b> Machine Learning</a><ul>
 <li class="chapter" data-level="7.1" data-path="chap-ml.html"><a href="chap-ml.html#introduction-2"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
-<li class="chapter" data-level="7.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>7.2</b> What is machine learning?</a><ul>
-<li class="chapter" data-level="7.2.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>7.2.1</b> Features</a></li>
+<li class="chapter" data-level="7.2" data-path="chap-ml.html"><a href="chap-ml.html#what-is-machine-learning"><i class="fa fa-check"></i><b>7.2</b> What is machine learning?</a></li>
+<li class="chapter" data-level="7.3" data-path="chap-ml.html"><a href="chap-ml.html#types-of-analysis"><i class="fa fa-check"></i><b>7.3</b> Types of analysis</a></li>
+<li class="chapter" data-level="7.4" data-path="chap-ml.html"><a href="chap-ml.html#the-machine-learning-process"><i class="fa fa-check"></i><b>7.4</b> The Machine Learning process</a></li>
+<li class="chapter" data-level="7.5" data-path="chap-ml.html"><a href="chap-ml.html#problem-formulation-mapping-a-problem-to-machine-learning-methods"><i class="fa fa-check"></i><b>7.5</b> Problem formulation: Mapping a problem to machine learning methods</a><ul>
+<li class="chapter" data-level="7.5.1" data-path="chap-ml.html"><a href="chap-ml.html#features"><i class="fa fa-check"></i><b>7.5.1</b> Features</a></li>
 </ul></li>
-<li class="chapter" data-level="7.3" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>7.3</b> Methods</a><ul>
-<li class="chapter" data-level="7.3.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>7.3.1</b> Unsupervised learning methods</a></li>
-<li class="chapter" data-level="7.3.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>7.3.2</b> Supervised learning</a></li>
-<li class="chapter" data-level="7.3.3" data-path="chap-ml.html"><a href="chap-ml.html#binary-vs-multiclass-classification-problems"><i class="fa fa-check"></i><b>7.3.3</b> Binary vs Multiclass classification problems</a></li>
-<li class="chapter" data-level="7.3.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.3.4</b> Skewed or imbalanced classification problems</a></li>
+<li class="chapter" data-level="7.6" data-path="chap-ml.html"><a href="chap-ml.html#methods"><i class="fa fa-check"></i><b>7.6</b> Methods</a><ul>
+<li class="chapter" data-level="7.6.1" data-path="chap-ml.html"><a href="chap-ml.html#unsupervised-learning-methods"><i class="fa fa-check"></i><b>7.6.1</b> Unsupervised learning methods</a></li>
+<li class="chapter" data-level="7.6.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:MLchapter:super"><i class="fa fa-check"></i><b>7.6.2</b> Supervised learning</a></li>
+<li class="chapter" data-level="7.6.3" data-path="chap-ml.html"><a href="chap-ml.html#binary-vs-multiclass-classification-problems"><i class="fa fa-check"></i><b>7.6.3</b> Binary vs Multiclass classification problems</a></li>
+<li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
+<li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.4" data-path="chap-ml.html"><a href="chap-ml.html#individual-level-explanations"><i class="fa fa-check"></i><b>7.4</b> Individual-Level Explanations</a></li>
-<li class="chapter" data-level="7.5" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.5</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.5.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.5.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.5.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.5.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
-<li class="chapter" data-level="7.6" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.6</b> Practical tips</a><ul>
-<li class="chapter" data-level="7.6.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.6.1</b> Avoiding Leakage</a></li>
-<li class="chapter" data-level="7.6.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>7.6.2</b> Machine learning pipeline</a></li>
+<li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
+<li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
+<li class="chapter" data-level="7.8.2" data-path="chap-ml.html"><a href="chap-ml.html#machine-learning-pipeline"><i class="fa fa-check"></i><b>7.8.2</b> Machine learning pipeline</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>7.7</b> How can social scientists benefit from machine learning?</a></li>
-<li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>7.8</b> Advanced topics</a></li>
-<li class="chapter" data-level="7.9" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>7.9</b> Summary</a></li>
-<li class="chapter" data-level="7.10" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>7.10</b> Resources</a></li>
+<li class="chapter" data-level="7.9" data-path="chap-ml.html"><a href="chap-ml.html#how-can-social-scientists-benefit-from-machine-learning"><i class="fa fa-check"></i><b>7.9</b> How can social scientists benefit from machine learning?</a></li>
+<li class="chapter" data-level="7.10" data-path="chap-ml.html"><a href="chap-ml.html#advanced-topics"><i class="fa fa-check"></i><b>7.10</b> Advanced topics</a></li>
+<li class="chapter" data-level="7.11" data-path="chap-ml.html"><a href="chap-ml.html#summary-3"><i class="fa fa-check"></i><b>7.11</b> Summary</a></li>
+<li class="chapter" data-level="7.12" data-path="chap-ml.html"><a href="chap-ml.html#ml:res"><i class="fa fa-check"></i><b>7.12</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="8" data-path="chap-text.html"><a href="chap-text.html"><i class="fa fa-check"></i><b>8</b> Text Analysis</a><ul>
 <li class="chapter" data-level="8.1" data-path="chap-text.html"><a href="chap-text.html#understanding-human-generated-text"><i class="fa fa-check"></i><b>8.1</b> Understanding human generated text</a></li>
@@ -289,7 +295,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.1" data-path="chap-bias.html"><a href="chap-bias.html#introduction-4"><i class="fa fa-check"></i><b>11.1</b> Introduction</a></li>
 <li class="chapter" data-level="11.2" data-path="chap-bias.html"><a href="chap-bias.html#sec:biassources"><i class="fa fa-check"></i><b>11.2</b> Sources of Bias</a><ul>
 <li class="chapter" data-level="11.2.1" data-path="chap-bias.html"><a href="chap-bias.html#sample-bias"><i class="fa fa-check"></i><b>11.2.1</b> Sample Bias</a></li>
-<li class="chapter" data-level="11.2.2" data-path="chap-bias.html"><a href="chap-bias.html#label-bias"><i class="fa fa-check"></i><b>11.2.2</b> Label Bias</a></li>
+<li class="chapter" data-level="11.2.2" data-path="chap-bias.html"><a href="chap-bias.html#labeloutcome-bias"><i class="fa fa-check"></i><b>11.2.2</b> Label(Outcome) Bias</a></li>
 <li class="chapter" data-level="11.2.3" data-path="chap-bias.html"><a href="chap-bias.html#sec:mlbiasexamples"><i class="fa fa-check"></i><b>11.2.3</b> Machine Learning Pipeline Bias</a></li>
 <li class="chapter" data-level="11.2.4" data-path="chap-bias.html"><a href="chap-bias.html#application-bias"><i class="fa fa-check"></i><b>11.2.4</b> Application Bias</a></li>
 <li class="chapter" data-level="11.2.5" data-path="chap-bias.html"><a href="chap-bias.html#considering-bias-when-deploying-your-model"><i class="fa fa-check"></i><b>11.2.5</b> Considering Bias When Deploying Your Model</a></li>
@@ -316,7 +322,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.5.6" data-path="chap-bias.html"><a href="chap-bias.html#equity-in-practice"><i class="fa fa-check"></i><b>11.5.6</b> Equity in Practice</a></li>
 <li class="chapter" data-level="11.5.7" data-path="chap-bias.html"><a href="chap-bias.html#other-names-you-might-see"><i class="fa fa-check"></i><b>11.5.7</b> Other Names You Might See</a></li>
 </ul></li>
-<li class="chapter" data-level="11.6" data-path="chap-bias.html"><a href="chap-bias.html#fairness-in-decision-making-case-studies"><i class="fa fa-check"></i><b>11.6</b> Fairness in Decision Making: Case Studies</a><ul>
+<li class="chapter" data-level="11.6" data-path="chap-bias.html"><a href="chap-bias.html#case-studies"><i class="fa fa-check"></i><b>11.6</b> Case Studies</a><ul>
 <li class="chapter" data-level="11.6.1" data-path="chap-bias.html"><a href="chap-bias.html#sec:compascase"><i class="fa fa-check"></i><b>11.6.1</b> Recidivism Predictions with COMPAS</a></li>
 <li class="chapter" data-level="11.6.2" data-path="chap-bias.html"><a href="chap-bias.html#facial-recognition"><i class="fa fa-check"></i><b>11.6.2</b> Facial Recognition</a></li>
 <li class="chapter" data-level="11.6.3" data-path="chap-bias.html"><a href="chap-bias.html#facebook-advertisement-targeting"><i class="fa fa-check"></i><b>11.6.3</b> Facebook Advertisement Targeting</a></li>
@@ -351,6 +357,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="13.2.5" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning-creating-labels"><i class="fa fa-check"></i><b>13.2.5</b> Machine Learning – Creating Labels</a></li>
 <li class="chapter" data-level="13.2.6" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning-creating-features"><i class="fa fa-check"></i><b>13.2.6</b> Machine Learning – Creating Features</a></li>
 <li class="chapter" data-level="13.2.7" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning-model-training-and-evaluation"><i class="fa fa-check"></i><b>13.2.7</b> Machine Learning – Model Training and Evaluation</a></li>
+<li class="chapter" data-level="13.2.8" data-path="chap-workbooks.html"><a href="chap-workbooks.html#bias-and-fairness"><i class="fa fa-check"></i><b>13.2.8</b> Bias and Fairness</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#workbook-set-2"><i class="fa fa-check"></i><b>13.3</b> Workbook Set 2</a><ul>
 <li class="chapter" data-level="13.3.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#running-workbooks-locally"><i class="fa fa-check"></i><b>13.3.1</b> Running workbooks locally</a></li>
@@ -390,8 +397,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This chapter introduces you to the use of machine learning in tackling social science and public policy problems. We cover the end-to-end machine learning process and focus on clustering and classification methods. After reading this chapter, you should have an overview of the components of a machine learning pipeline and methods, and know how to use those in solving social science problems. We have written this chapter to give an intuitive explanation for the methods and to provide a framework and practical tips on how to use them in practice.</p>
 <div id="introduction-2" class="section level2">
 <h2><span class="header-section-number">7.1</span> Introduction</h2>
-<p>You have probably heard of “machine learning” but are not sure exactly what it is, how it differs from traditional statistics, and what you, as social scientists, can do with it. In this chapter, we will demystify machine learning, draw connections to what you already know from statistics and data analysis, and go deeper into some of the novel concepts and methods that have been developed in this field. Although the field originates from computer science, it has been influenced quite heavily by math and statistics in the past 15-20 years. As you will see, many of the concepts you will learn are not entirely new, but are simply called something else. For example, you already are familiar with logistic regression (a classification method that falls under the supervised learning framework in machine learning) and cluster analysis (a form of unsupervised learning). You will also learn about new methods</p>
-<p>that are more exclusively used in machine learning, such as random Forests, support vector machines, and neural networks. We will keep formalisms to a minimum and focus on getting the intuition across, as well as providing practical tips. Our hope is this chapter will make you comfortable and familiar with machine learning vocabulary, concepts, and processes, and allow you to further explore and use these methods and tools in your own research and practice.</p>
+<p>You have probably heard of “machine learning” but are not sure exactly what it is, how it differs from traditional statistics, and what you, as social scientists, can do with it. In this chapter, we will demystify machine learning, draw connections to what you already know from statistics and data analysis, and go deeper into some of the novel concepts and methods that have been developed in this field. Although the field originates from computer science, it has been influenced quite heavily by math and statistics in the past 15-20 years. As you will see, many of the concepts you will learn are not entirely new, but are simply called something else. For example, you already are familiar with logistic regression (a classification method that falls under the supervised learning framework in machine learning) and cluster analysis (a form of unsupervised learning). You will also learn about new methods that are more exclusively used in machine learning, such as random forests, support vector machines, and neural networks. We will keep formalisms to a minimum and focus on getting the intuition across, as well as providing practical tips. Our hope is this chapter will make you comfortable and familiar with machine learning vocabulary, concepts, and processes, and allows you to further explore and use these methods and tools in your own research and practice.</p>
 </div>
 <div id="what-is-machine-learning" class="section level2">
 <h2><span class="header-section-number">7.2</span> What is machine learning?</h2>
@@ -429,7 +435,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </li>
 </ul>
 </div>
-
+ <!--
+% Box 7.2 and section 7.7. overlap
+-->
 <div class="F00">
 <p>
 <strong>Box 7.2: Social Science machine learning examples</strong> Potash et al (reference) worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
@@ -443,140 +451,51 @@ Athey and Wager (<a href="https://obsstudies.org/277-2/" class="uri">https://obs
 <p>
 Voigt et al (<a href="http://web.stanford.edu/~eberhard/downloads/2017-LanguageFromPoliceBodyCameraFootage.pdf" class="uri">http://web.stanford.edu/~eberhard/downloads/2017-LanguageFromPoliceBodyCameraFootage.pdf</a>) uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.
 </p>
+</div>
+<p>Machine learning grew from the need for systems that were adaptive, scalable, and cost-effective to build and maintain. A lot of tasks now being done using machine learning used to be done by rule-based systems, where experts would spend considerable time and effort developing and maintaining the rules. The problem with those systems was that they were rigid, not adaptive, hard to scale, and expensive to maintain. Machine learning systems started becoming popular because they could improve the system along all of these dimensions<a href="#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a>. Box 7.1 mentions several examples where machine learning is being used in commercial applications today. Social scientists are uniquely placed today to take advantage of the same advances in machine learning by having better methods to solve several key problems they are tackling. Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.</p>
+<p>This chapter is not an exhaustive introduction to machine learning. There are many books that have done an excellent job of that <span class="citation">(Flach <a href="#ref-Flach">2012</a>; Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>; Mitchell <a href="#ref-mitchell1997machine">1997</a>)</span>. Instead, we present a short and accessible introduction to machine learning for social scientists, give an overview of the overall machine learning process, provide an intuitive introduction to machine learning methods, give some practical tips that will be helpful in using these methods, and leave a lot of the statistical theory to machine learning textbooks. As you read more about machine learning in the research literature or the media, you will encounter names of other fields that are related (and practically the same for most social science audiences), such as statistical learning, data mining, and pattern recognition.</p>
+</div>
+<div id="types-of-analysis" class="section level2">
+<h2><span class="header-section-number">7.3</span> Types of analysis</h2>
+<p>A lot of the data analysis tasks that social scientists do can be broken down into four types:</p>
 <ul>
-<li>
-```
-</li>
+<li><p><strong>Description</strong>: The goal is to describe patterns or groupings in historical data. You’re already familiar with descriptive statistics and exploratory data analysis methods, and we will cover more advanced versions of those later in this chapter under Unsupervised Learning.</p></li>
+<li><p><strong>Detection</strong>: The goal here is not to necessarily understand historical behavior but to detect new or emerging anomalies, events, or patterns as they happen. A typical example is early outbreak detection for infectious diseases in order to inform public health officials.</p></li>
+<li><p><strong>Prediction</strong>: The goal here is to use the same historical data as the description and detection methods, but use it to predict events and behaviors in the future.</p></li>
+<li><p><strong>Behavior Change (or Causal Inference)</strong>: The goal here is to understand the causal relationships in the data in order to influence the outcomes we care about.</p></li>
 </ul>
-<p>
-Machine learning grew from the need for systems that were adaptive, scalable, and cost-effective to build and maintain. A lot of tasks now being done using machine learning used to be done by rule-based systems, where experts would spend considerable time and effort developing and maintaining the rules. The problem with those systems was that they were rigid, not adaptive, hard to scale, and expensive to maintain. Machine learning systems started becoming popular because they could improve the system along all of these dimensions<a href="references.html#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a>. Box 7.1 mentions several examples where machine learning is being used in commercial applications today. Social scientists are uniquely placed today to take advantage of the same advances in machine learning by having better methods to solve several key problems they are tackling. Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.
-</p>
-<p>
-This chapter is not an exhaustive introduction to machine learning. There are many books that have done an excellent job of that <span class="citation"><span class="citation">(Flach <a href="#ref-Flach">2012</a>; Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>; Mitchell <a href="#ref-mitchell1997machine">1997</a>)</span></span>. Instead, we present a short and accessible introduction to machine learning for social scientists, give an overview of the overall machine learning process, provide an intuitive introduction to machine learning methods, give some practical tips that will be helpful in using these methods, and leave a lot of the statistical theory to machine learning textbooks. As you read more about machine learning in the research literature or the media, you will encounter names of other fields that are related (and practically the same for most social science audiences), such as statistical learning, data mining, and pattern recognition.
-</p>
-<p>
-Types of analysis
-</p>
-<p>
-A lot of the data analysis tasks that social scientists do can be broken down into four types Description: The goal is to describe patterns or groupings in historical data. You’re already familiar with descriptive statistics and exploratory data analysis methods, and we will cover more advanced versions of those later in this chapter under Unsupervised Learning. Detection: The goal here is not to necessarily understand historical behavior but to detect new or emerging anomalies, events, or patterns as they happen. A typical example is early outbreak detection for infectious diseases in order to inform public health officials. Prediction: The goal here is to use the same historical data as the description and detection methods, but use it to predict events and behaviors in the future. Behavior Change (or Causal Inference): The goal here is to understand the causal relationships in the data in order to influence the outcomes we care about.
-</p>
-<p>
-In this chapter, we will mostly focus on Description and Prediction methods but there is a lot of work going in developing and using machine learning methods for detection as well as for behavior change and causal inference.
-</p>
-<h2 id="the-machine-learning-process">
-The Machine Learning process
-</h2>
-<p>
-When solving problems using machine learning methods, it is important to think of the larger data-driven problem-solving process of which these methods are a small part<a href="references.html#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>. A typical machine learning problem requires researchers and practitioners to take the following steps:
-</p>
+<p>In this chapter, we will mostly focus on Description and Prediction methods but there is a lot of work going in developing and using machine learning methods for detection as well as for behavior change and causal inference.</p>
+</div>
+<div id="the-machine-learning-process" class="section level2">
+<h2><span class="header-section-number">7.4</span> The Machine Learning process</h2>
+<p>When solving problems using machine learning methods, it is important to think of the larger data-driven problem-solving process of which these methods are a small part<a href="#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a>. A typical machine learning problem requires researchers and practitioners to take the following steps:</p>
 <ol style="list-style-type: decimal">
-<li>
-<p>
-<strong>Understand the problem and goal</strong>: This sounds obvious but is often nontrivial. Problems typically start as vague descriptions of a goal—improving health outcomes, increasing graduation rates, understanding the effect of a variable <span class="math inline"><span class="math inline">\(X\)</span></span> on an outcome <span class="math inline"><span class="math inline">\(Y\)</span></span>, etc. It is really important to work with people who understand the domain being studied to discuss and define the problem more concretely. What is the analytical formulation of the metric that you are trying to improve? The Data Science Project Scoping Guide (<a href="http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/" class="uri">http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/</a>) is a good place to start when doing problem scoping for social science or policy problems
-</p>
-</li>
-<li>
-<p>
-<strong>Formulate it as a machine learning problem</strong>: Is it a classification problem or a regression problem? Is the goal to build a model that generates a ranked list prioritized by risk of an outcome, or is it to detect anomalies as new data come in?
-</p>
-</li>
+<li><p><strong>Understand the problem and goal</strong>: This sounds obvious but is often nontrivial. Problems typically start as vague descriptions of a goal—improving health outcomes, increasing graduation rates, understanding the effect of a variable <span class="math inline">\(X\)</span> on an outcome <span class="math inline">\(Y\)</span>, etc. It is really important to work with people who understand the domain being studied to discuss and define the problem more concretely. What is the analytical formulation of the metric that you are trying to improve? The Data Science Project Scoping Guide (<a href="http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/" class="uri">http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/</a>) is a good place to start when doing problem scoping for social science or policy problems</p></li>
+<li><p><strong>Formulate it as a machine learning problem</strong>: Is it a classification problem or a regression problem? Is the goal to build a model that generates a ranked list prioritized by risk of an outcome, or is it to detect anomalies as new data come in?</p></li>
 </ol>
-<p>
-Knowing what kinds of tasks machine learning can solve will allow you to map the problem you are working on to one or more machine learning settings and give you access to a suite of methods appropriate for that task.
-</p>
+<p>Knowing what kinds of tasks machine learning can solve will allow you to map the problem you are working on to one or more machine learning settings and give you access to a suite of methods appropriate for that task.</p>
 <ol start="3" style="list-style-type: decimal">
-<li>
-<p>
-<strong>Data exploration and preparation</strong>: Next, you need to carefully explore the data you have. What additional data do you need or have access to? What variable will you use to match records for integrating different data sources? What variables exist in the data set? Are they continuous or categorical? What about missing values? Can you use the variables in their original form or do you need to alter them in some way?
-</p>
-</li>
-<li>
-<p>
-<strong>Feature engineering</strong>: In machine learning language, what you might know as independent variables or predictors or factors or covariates are called “features.” Creating good features is probably the most important step in the machine learning process. This involves doing transformations, creating interaction terms, or aggregating over data points or over time and space.
-</p>
-</li>
-<li>
-<p>
-<strong>Modeling</strong>: Having formulated the problem and created your features, you now have a suite of methods to choose from. It would be great if there were a single method that always worked best for a specific type of problem, but that would make things too easy. Each method makes a difference assumption about the structure and distribution of the data and with large amounts of high-dimensional data<a href="references.html#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a>, it is difficult to know apriori which assumption will best match the data we have. Typically, in machine learning, you take a collection of methods and try them out to empirically validate which one works the best for your problem. This process not only helps you select the best method for your problem but also helps you understand the structure of your data. We will give an overview of leading methods that are being used today in this chapter.
-</p>
-</li>
-<li>
-<p>
-<strong>Model Interpretation</strong>: Once we have built the machine learning models, we also want to understand what they are,, which predictors they found important, and how much, what types of entities they flagged as high risk (and why), where they made errors, etc. All of these fall under the model interpretation, interpretability, explainability umbrella which is an active area of research right now in machine learning.
-</p>
-</li>
-<li>
-<p>
-<strong>Model Selection</strong>: As you build a large number of possible models, you need a way to select the model that is the “best”. This part of the chapter will cover methodology to first test the models on historical data as well as discuss a variety of evaluation metrics. While this chapter will focus mostly on traditionally used metrics, Chapter will expand on this using bias and fairness related metrics. It is important to not that sometimes the machine learning literature will call this step using historical data, the “validation” step, but we want to distinguish it here from validation, which is the next step.
-</p>
-</li>
-<li>
-<p>
-<strong>Model Validation</strong>: The next step, after model selection (using historical data) is validation validate on new data, as well as designing and running field trials or experiments.
-</p>
-</li>
-<li>
-<p>
-<strong>Deployment and Monitoring</strong>: Once you have selected the best model and validated it using historical data as well as a field trial, you are ready to put the model into practice. You still have to keep in mind that new data will be coming in, the world will be changing, and the model might also (need to) change over time. We will not cover too much of those aspects in this chapter, but they are important to keep in mind when putting the machine learning work in to practice.
-</p>
-</li>
+<li><p><strong>Data exploration and preparation</strong>: Next, you need to carefully explore the data you have. What additional data do you need or have access to? What variable will you use to match records for integrating different data sources? What variables exist in the data set? Are they continuous or categorical? What about missing values? Can you use the variables in their original form or do you need to alter them in some way?</p></li>
+<li><p><strong>Feature engineering</strong>: In machine learning language, what you might know as independent variables or predictors or factors or covariates are called “features.” Creating good features is probably the most important step in the machine learning process. This involves doing transformations, creating interaction terms, or aggregating over data points or over time and space.</p></li>
+<li><p><strong>Modeling</strong>: Having formulated the problem and created your features, you now have a suite of methods to choose from. It would be great if there were a single method that always worked best for a specific type of problem, but that would make things too easy. Each method makes a difference assumption about the structure and distribution of the data and with large amounts of high-dimensional data<a href="#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>, it is difficult to know apriori which assumption will best match the data we have. Typically, in machine learning, you take a collection of methods and try them out to empirically validate which one works the best for your problem. This process not only helps you select the best method for your problem but also helps you understand the structure of your data. We will give an overview of leading methods that are being used today in this chapter.</p></li>
+<li><p><strong>Model Interpretation</strong>: Once we have built the machine learning models, we also want to understand what they are, which predictors they found important, and how much, what types of entities they flagged as high risk (and why), where they made errors, etc. All of these fall under the model interpretation, interpretability, explainability umbrella which is an active area of research right now in machine learning.</p></li>
+<li><p><strong>Model Selection</strong>: As you build a large number of possible models, you need a way to select the model that is the “best”. This part of the chapter will cover methodology to first test the models on historical data as well as discuss a variety of evaluation metrics. While this chapter will focus mostly on traditionally used metrics, Chapter  will expand on this using bias and fairness related metrics. It is important to note that sometimes the machine learning literature will call this step the “validation” step using historical data, but we want to distinguish it here from validation, which is the next step.</p></li>
+<li><p><strong>Model Validation</strong>: The next step, after model selection (using historical data) is validation. Validate on new data, as well as designing and running field trials or experiments.</p></li>
+<li><p><strong>Deployment and Monitoring</strong>: Once you have selected the best model and validated it using historical data as well as a field trial, you are ready to put the model into practice. You still have to keep in mind that new data will be coming in, the world will be changing, and the model might also (need to) change over time. We will not cover too much of those aspects in this chapter, but they are important to keep in mind when putting the machine learning work in to practice.</p></li>
 </ol>
-<p>
-Although each step in this process is critical, this chapter will not focus on step 3 (data exploration) because we assume you already have some experience doing that, and on step 7 (deployment) because, although critical, it is outside the scope of the book.
-</p>
-<h2 id="problem-formulation-mapping-a-problem-to-machine-learning-methods">
-Problem formulation: Mapping a problem to machine learning methods
-</h2>
-<p>
-When working on a new problem, one of the first things we need to do is to map it to a class of machine learning methods. In general, the problems we will tackle, including the examples above, can be grouped into two major categories:
-</p>
+<!--Although each step in this process is critical, this chapter will not focus on step 3 (data exploration) because we assume you already have some experience doing that, and on step 7 (deployment) because, although critical, it is outside the scope of the book. MALTE: There are more steps than 3 and 7 that we mostly ignore. -->
+<p>Although each step in this process is critical, a thorough description of each is out of scope. This chapter will focus on models, terms, and techniques that form the core of machine learning.</p>
+</div>
+<div id="problem-formulation-mapping-a-problem-to-machine-learning-methods" class="section level2">
+<h2><span class="header-section-number">7.5</span> Problem formulation: Mapping a problem to machine learning methods</h2>
+<p>When working on a new problem, one of the first things we need to do is to map it to a class of machine learning methods. In general, the problems we will tackle, including the examples above, can be grouped into two major categories:</p>
 <ol style="list-style-type: decimal">
-<li>
-<p>
-<strong>Supervised learning</strong>: These are problems where there exists a target variable (continuous or discrete) that we want to predict or classify data into. Classification, prediction, and regression all fall into this category. More formally, supervised learning methods predict a value <span class="math inline"><span class="math inline">\(Y\)</span></span> given input(s) <span class="math inline"><span class="math inline">\(X\)</span></span> by learning (or estimating or fitting or training) a function <span class="math inline"><span class="math inline">\(F\)</span></span>, where <span class="math inline"><span class="math inline">\(F(X) = Y\)</span></span>. Here, <span class="math inline"><span class="math inline">\(X\)</span></span> is the set of variables (known as <em>features</em> in machine learning, or in other fields as <em>predictors</em>) provided as input and <span class="math inline"><span class="math inline">\(Y\)</span></span> is the target/dependent variable or a <em>label</em> (as it is known in machine learning).
-</p>
-<p>
-The goal of supervised learning methods is to search for that function <span class="math inline"><span class="math inline">\(F\)</span></span> that best estimates or predicts <span class="math inline"><span class="math inline">\(Y\)</span></span>. When the output <span class="math inline"><span class="math inline">\(Y\)</span></span> is categorical, this is known as <em>classification</em>. When <span class="math inline"><span class="math inline">\(Y\)</span></span> is a continuous value, this is called <em>regression</em>. Sound familiar?
-</p>
-<p>
-One key distinction in machine learning is that the goal is not just to find the best function <span class="math inline"><span class="math inline">\(F\)</span></span> that can estimate or predict <span class="math inline"><span class="math inline">\(Y\)</span></span> for observed outcomes (known <span class="math inline"><span class="math inline">\(Y\)</span></span>s) but to find one that best generalizes to new, unseen data, often in the future. This distinction makes methods more focused on generalization and less on just fitting the data we have as best as we can. It is important to note that you do that implicitly when performing regression by not adding more and more higher-order terms to get better fit statistics. By getting better fit statistics, we <em>overfit</em> to the data and the performance on new (unseen) data often goes down. Methods like the lasso <span class="citation"><span class="citation">(Tibshirani <a href="#ref-tibshirani1996regression">1996</a>)</span></span> penalize the model for having too many terms by performing what is known as <em>regularization</em><a href="references.html#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a>.
-</p>
-</li>
-<li>
-<p>
-<strong>Unsupervised learning</strong>: These are problems where there does not exist a target variable that we want to predict but we want to understand “natural” groupings or patterns in the data. Clustering is the most common example of this type of analysis where you are given <span class="math inline"><span class="math inline">\(X\)</span></span> and want to group similar <span class="math inline"><span class="math inline">\(X\)</span></span>s together. You may have heard of “segmentation” that’s used in the marketing world to group similar customers together using clustering techniques. Principal components analysis (PCA) and related methods also fall into the unsupervised learning category.
-</p>
-</li>
+<li><p><strong>Supervised learning</strong>: These are problems where there exists a target variable (continuous or discrete) that we want to predict or classify data into. Classification, prediction, and regression all fall into this category. More formally, supervised learning methods predict a value <span class="math inline">\(Y\)</span> given input(s) <span class="math inline">\(X\)</span> by learning (or estimating or fitting or training) a function <span class="math inline">\(F\)</span>, where <span class="math inline">\(F(X) = Y\)</span>. Here, <span class="math inline">\(X\)</span> is the set of variables (known as <em>features</em> in machine learning, or in other fields as <em>predictors</em>) provided as input and <span class="math inline">\(Y\)</span> is the target/dependent variable or a <em>label</em> (as it is known in machine learning).</p>
+<p>The goal of supervised learning methods is to search for that function <span class="math inline">\(F\)</span> that best estimates or predicts <span class="math inline">\(Y\)</span>. When the output <span class="math inline">\(Y\)</span> is categorical, this is known as <em>classification</em>. When <span class="math inline">\(Y\)</span> is a continuous value, this is called <em>regression</em>. Sound familiar?</p>
+<p>One key distinction in machine learning is that the goal is not just to find the best function <span class="math inline">\(F\)</span> that can estimate or predict <span class="math inline">\(Y\)</span> for observed outcomes (known <span class="math inline">\(Y\)</span>s) but to find one that best generalizes to new, unseen data, often in the future. This distinction makes methods more focused on generalization and less on just fitting the data we have as best as we can. It is important to note that you do that implicitly when performing regression by not adding more and more higher-order terms to get better fit statistics. By getting better fit statistics, we <em>overfit</em> to the data and the performance on new (unseen) data often goes down. Methods like the lasso <span class="citation">(Tibshirani <a href="#ref-tibshirani1996regression">1996</a>)</span> penalize the model for having too many terms by performing what is known as <em>regularization</em><a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>.</p></li>
+<li><p><strong>Unsupervised learning</strong>: These are problems where there does not exist a target variable that we want to predict but we want to understand “natural” groupings or patterns in the data. Clustering is the most common example of this type of analysis where you are given <span class="math inline">\(X\)</span> and want to group similar <span class="math inline">\(X\)</span>s together. You may have heard of “segmentation” that’s used in the marketing world to group similar customers together using clustering techniques. Principal components analysis (PCA) and related methods also fall into the unsupervised learning category.</p></li>
 </ol>
-<p>
-In between the two extremes of supervised and unsupervised learning, there is a spectrum of methods that have different levels of supervision involved (Figure <span class="citation">(<span class="citeproc-not-found" data-reference-id="ref"><strong>???</strong></span>)</span>(fig:spectrum)). Supervision in this case is the presence of target variables (known in machine learning as <em>labels</em>). In unsupervised learning, none of the data points have labels. In supervised learning, all data points have labels. In between, either the percentage of examples with labels can vary or the types of labels can vary. We do not cover the weakly supervised and semi-supervised methods much in this chapter, but this is an active area of research in machine learning. Zhu <span class="citation"><span class="citation">(Zhu <a href="#ref-zhu2005semi">2008</a>)</span></span> provides more details.
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>In between the two extremes of supervised and unsupervised learning, there is a spectrum of methods that have different levels of supervision involved (Figure <a href="chap-ml.html#fig:spectrum">7.1</a>). Supervision in this case is the presence of target variables (known in machine learning as <em>labels</em>). In unsupervised learning, none of the data points have labels. In supervised learning, all data points have labels. In between, either the percentage of examples with labels can vary or the types of labels can vary. We do not cover the weakly supervised and semi-supervised methods much in this chapter, but this is an active area of research in machine learning. Zhu <span class="citation">(Zhu <a href="#ref-zhu2005semi">2008</a>)</span> provides more details.</p>
 <div class="figure" style="text-align: center"><span id="fig:spectrum"></span>
 <img src="ChapterML/figures/spectrum.png" alt="Spectrum of machine learning methods from unsupervised to supervised learning" width="70%" />
 <p class="caption">
@@ -584,8 +503,8 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </p>
 </div>
 <div id="features" class="section level3">
-<h3><span class="header-section-number">7.2.1</span> Features</h3>
-<p>Before we get to models and methods, we need to turn our raw data into “features”. In social science, they are not called features but instead are known as variables or Predictors (or covariates if you’re doing regression). <span class="roman">Good features are what makes machine learning systems effective</span>. Feature generation (or engineering, as it is often called) is where a large chunk of the time is spent in the machine learning process. This is also the phase where previous research and learnings from the domain being tackled can be incorporated into the machine learning process. As social science researchers or practitioners, you have spent a lot of time constructing features, using transformations, dummy variables, and interaction terms. All of that is still required and critical in the machine learning framework. One difference you will need to get comfortable with is that instead of carefully selecting a few predictors, machine learning systems tend to encourage the creation of <em>lots</em> of features and then empirically use holdout data to perform regularization and model selection. It is common to have models that are trained on thousands of features. Of course, it is important to keep in mind that increasing the number of features requires you to have enough data so that you’re not overfitting. Commonly used approaches to create features include:</p>
+<h3><span class="header-section-number">7.5.1</span> Features</h3>
+<p>Before we get to models and methods, we need to turn our raw data into “features”. In social science, they are not called features but instead are known as variables or predictors (or covariates if you’re doing regression). <span class="roman">Good features are what makes machine learning systems effective</span>. Feature generation (or engineering, as it is often called) is where a large chunk of the time is spent in the machine learning process. This is also the phase where previous research and learnings from the domain being tackled can be incorporated into the machine learning process. As social science researchers or practitioners, you have spent a lot of time constructing features, using transformations, dummy variables, and interaction terms. All of that is still required and critical in the machine learning framework. One difference you will need to get comfortable with is that instead of carefully selecting a few predictors, machine learning systems tend to encourage the creation of <em>lots</em> of features and then empirically use holdout data to perform regularization and model selection. It is common to have models that are trained on thousands of features. Of course, it is important to keep in mind that increasing the number of features requires you to have enough data so that you’re not overfitting. Commonly used approaches to create features include:</p>
 <ul>
 <li><p><strong>Transformations</strong>, such as log, square, and square root.</p></li>
 <li><p><strong>Dummy (binary) variables</strong>: This is often done by taking categorical variables (such as city) and creating a binary variable for each value (one variable for each city in the data). These are also called indicator variables.</p></li>
@@ -597,7 +516,7 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </div>
 </div>
 <div id="methods" class="section level2">
-<h2><span class="header-section-number">7.3</span> Methods</h2>
+<h2><span class="header-section-number">7.6</span> Methods</h2>
 <p>We will start by describing unsupervised learning methods and then go on to supervised learning methods. We focus here on the intuition behind the methods and the algorithm, as well as some practical tips, rather than on the statistical theory that underlies the methods. We encourage readers to refer to machine learning books listed in Section <a href="chap-ml.html#ml:res">Resources</a>. Box 7.2 gives brief definitions of several terms we will use in this section.</p>
 <div class="F00">
 <p>
@@ -611,7 +530,7 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </li>
 <li>
 <p>
-<strong>Examples</strong>: These are data points, rows, or instances.
+<strong>Examples</strong>: These are data points, rows, observations, or instances.
 </p>
 </li>
 <li>
@@ -621,7 +540,7 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </li>
 <li>
 <p>
-<strong>Labels</strong>: These include the response variable, dependent variable, target Variable, or outcomes.
+<strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.
 </p>
 </li>
 <li>
@@ -636,13 +555,13 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </li>
 <li>
 <p>
-<strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. For example, in building logistic regression models, a common approach is to make sure the model weights are, on average, small in magnitude. Two common regularizations are <span class="math inline"><span class="math inline">\(L_1\)</span></span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline"><span class="math inline">\(L_2\)</span></span> regularization, which encourages the sum of the squares of the parameters to be Small.
+<strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. For example, in building logistic regression models, a common approach is to make sure the model weights (coefficients) are, on average, small in magnitude. Two common regularizations are <span class="math inline"><span class="math inline">\(L_1\)</span></span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline"><span class="math inline">\(L_2\)</span></span> regularization, which encourages the sum of the squares of the parameters to be small.
 </p>
 </li>
 </ul>
 </div>
 <div id="unsupervised-learning-methods" class="section level3">
-<h3><span class="header-section-number">7.3.1</span> Unsupervised learning methods</h3>
+<h3><span class="header-section-number">7.6.1</span> Unsupervised learning methods</h3>
 <p>As mentioned earlier, unsupervised learning methods are used when we do not have a target variable to estimate or predict but want to understand clusters, groups, or patterns in the data. These methods are often used for data exploration, as in the following examples:</p>
 <ol style="list-style-type: decimal">
 <li><p>When faced with a large corpus of text data—for example, email records, congressional bills, speeches, or open-ended free-text survey responses—unsupervised learning methods are often used to understand and get a handle on the patterns in our data.</p></li>
@@ -652,7 +571,7 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </ol>
 <p><strong>Clustering</strong></p>
 <p>Clustering is the most common unsupervised learning technique and is used to group data points together that are similar to each other. The goal of clustering methods is to produce with high intra-cluster (within) similarity and low inter-cluster (between) similarity.</p>
-<p>Clustering algorithms typically require a distance (or similarity) metric<a href="references.html#fn38" class="footnoteRef" id="fnref38"><sup>38</sup></a> to generate clusters. They take a data set and a distance metric (and sometimes additional parameters), and they generate clusters based on that distance metric. The most common distance metric used is Euclidean distance, but other commonly used metrics are Manhattan, Minkowski, Chebyshev, cosine, Hamming, Pearson, and Mahalanobis. Often, domain-specific similarity metrics can be designed for use in specific problems. For example, when performing the record linkage tasks discussed in Chapter <a href="chap-link.html#chap:link">Record Linkage</a>, you can design a similarity metric that compares two first names and assigns them a high similarity (low distance) if they both map to the same canonical name, so that, for example, Sammy and Sam map to Samuel.</p>
+<p>Clustering algorithms typically require a distance (or similarity) metric<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a> to generate clusters. They take a data set and a distance metric (and sometimes additional parameters), and they generate clusters based on that distance metric. The most common distance metric used is Euclidean distance, but other commonly used metrics are Manhattan, Minkowski, Chebyshev, cosine, Hamming, Pearson, and Mahalanobis. Often, domain-specific similarity metrics can be designed for use in specific problems. For example, when performing the record linkage tasks discussed in Chapter <a href="chap-link.html#chap:link">Record Linkage</a>, you can design a similarity metric that compares two first names and assigns them a high similarity (low distance) if they both map to the same canonical name, so that, for example, Sammy and Sam map to Samuel.</p>
 <p>Most clustering algorithms also require the user to specify the number of clusters (or some other parameter that indirectly determines the number of clusters) in advance as a parameter. This is often difficult to do a priori and typically makes clustering an iterative and interactive task. Another aspect of clustering that makes it interactive is often the difficulty in automatically evaluating the quality of the clusters. While various analytical clustering metrics have been developed, the best clustering is task-dependent and thus must be evaluated by the user. There may be different clusterings that can be generated with the same data. You can imagine clustering similar news stories based on the topic content, based on the writing style or based on sentiment. The right set of clusters depends on the user and the task they have. Clustering is therefore typically used for exploring the data, generating clusters, exploring the clusters, and then rerunning the clustering method with different parameters or modifying the clusters (by splitting or merging the previous set of clusters). Interpreting a cluster can be nontrivial: you can look at the centroid of a cluster, look at frequency distributions of different features (and compare them to the prior distribution of each feature), or you can build a decision tree (a supervised learning method we will cover later in this chapter) where the target variable is the cluster ID that can describe the cluster using the features in your data. A good example of a tool that allows interactive clustering from text data is Ontogen <span class="citation">(Fortuna, Grobelnik, and Mladenic <a href="#ref-Ontogen">2007</a>)</span>.</p>
 <p> <strong><span class="math inline">\(k\)</span>-means clustering</strong></p>
 <p>The most commonly used clustering algorithm is called <span class="math inline">\(k\)</span>-means, where <span class="math inline">\(k\)</span> defines the number of clusters. The algorithm works as follows:</p>
@@ -722,11 +641,11 @@ Figure 7.3: The same data set can produce drastically different clusters: (a) k-
 <p>For our purposes, association rule methods are an efficient way to take a <em>basket</em> of features (e.g., areas of publication of a researcher, different organizations an individual has worked at in their career, all the cities or neighborhoods someone may have lived in) and find co-occurrence patterns. This may sound trivial, but as data sets and number of features get larger, it becomes computationally expensive and association rule mining algorithms provide a fast and efficient way of doing it.</p>
 </div>
 <div id="sec:MLchapter:super" class="section level3">
-<h3><span class="header-section-number">7.3.2</span> Supervised learning</h3>
+<h3><span class="header-section-number">7.6.2</span> Supervised learning</h3>
 <p>We now turn to the problem of supervised learning, which typically involves methods for classification, prediction, and regression. We will mostly focus on classification methods in this chapter since many of the regression methods in machine learning are fairly similar to methods with which you are already familiar. Remember that classification means predicting a discrete (or categorical) variable. Most of the classification methods that we will cover can also be used for Regression (predicting continuous outcomes).</p>
 <p>In general, supervised learning methods take as input pairs of data points <span class="math inline">\((X,Y)\)</span> where <span class="math inline">\(X\)</span> are the predictor variables (features) and <span class="math inline">\(Y\)</span> is the target variable (label). The supervised learning method then uses these pairs as <em>training data</em> and <em>learns</em> a model <span class="math inline">\(F\)</span>, where <span class="math inline">\(F(X)\sim Y\)</span>. This model <span class="math inline">\(F\)</span> is then used to predict <span class="math inline">\(Y\)</span>s for new data points <span class="math inline">\(X\)</span>. As mentioned earlier, the goal is not to build a model that best fits known data but a model that is useful for future predictions and minimizes future generalization error. This is the key goal that differentiates many of the methods that you know from the methods that we will describe next. In order to minimize future error, we want to build models that are not just <em>overfitting</em> on past data.</p>
-<p>Another goal, often prioritized in the social sciences, that machine learning methods do not optimize for is getting a structural form of the model. Machine learning models for classification can take different structural forms (ranging from linear models, to sets of rules, to more Complex non-linear forms), and it may not always be possible to write them down in a compact form as an equation. This does not, however, make them incomprehensible or uninterpretable. Another focus of machine learning models for supervised learning is prediction, and not necessarily causal inference<a href="references.html#fn39" class="footnoteRef" id="fnref39"><sup>39</sup></a>. Some of these models can be used to help with causal inference, but they are typically optimized for prediction tasks. We believe that there are many social science and policy problems where better prediction methods can be extremely beneficial. Cite Kleingberg et al (<a href="https://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf" class="uri">https://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf</a>)</p>
-<p>In this chapter, we mostly deal with binary classification problems: that is, problems in which the data points are to be classified into one of two categories. Several of the methods that we will cover can also be used for multiclass classification (classifying a data point into one of <span class="math inline">\(n\)</span> categories) or for multi-label classification (classifying a data point into <span class="math inline">\(m\)</span> of <span class="math inline">\(n\)</span> categories where <span class="math inline">\(m\ge1\)</span>). There are also approaches to take multiclass problems and turn them into a set of binary problems that we will mention briefly at the end of the chapter.</p>
+<p>Another goal, often prioritized in the social sciences, that machine learning methods do not optimize for is getting a structural form of the model. Machine learning models for classification can take different structural forms (ranging from linear models, to sets of rules, to more complex non-linear forms), and it may not always be possible to write them down in a compact form as an equation. This does not, however, make them incomprehensible or uninterpretable. Another focus of machine learning models for supervised learning is prediction, and not necessarily causal inference<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a>. Some of these models can be used to help with causal inference, but they are typically optimized for prediction tasks. We believe that there are many social science and policy problems where better prediction methods can be extremely beneficial. Cite Kleingberg et al (<a href="https://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf" class="uri">https://www.cs.cornell.edu/home/kleinber/aer15-prediction.pdf</a>) <!-- reference already exists in section 7.7 --></p>
+<p>In this chapter, we mostly deal with binary classification problems: that is, problems in which the data points are to be classified into one of two categories. Several of the methods that we will cover can also be used for multiclass classification (classifying a data point into one of <span class="math inline">\(n\)</span> categories) or for multi-label classification (classifying a data point into <span class="math inline">\(m\)</span> of <span class="math inline">\(n\)</span> categories where <span class="math inline">\(m\ge1\)</span>). There are also approaches to take multiclass problems and turn them into a set of binary problems that we will mention briefly in the next section.</p>
 <p>Before we describe supervised learning methods, we want to recap a few principles as well as terms that we have used and will be using in the rest of the chapter.</p>
 <p><strong>Training a model</strong></p>
 <p>Once we have finished data exploration, filled in missing values, created predictor variables (features), and decided what our target variable (label) is, we now have pairs of <span class="math inline">\(X,Y\)</span> to start training (or building) the model.</p>
@@ -748,7 +667,7 @@ Figure 7.4: Example of <span class="math inline">\(k\)</span>-nearest neighbor w
 <p>Notice that the nearest-neighbor method can easily be applied to regression problems with a real-valued target variable. In fact, the method is completely oblivious to the type of target variable and can potentially be used to predict text documents, images, and videos, based on the aggregation function after the nearest neighbors are found.</p>
 <p> <strong>Support vector machines</strong></p>
 <p>Support vector machines are one of the most popular and best-performing classification methods in machine learning today. The mathematics behind SVMs has a lot of prerequisites that are beyond the scope of this book, but we will give you an intuition of how SVMs work, what they are good for, and how to use them.</p>
-<p>We are all familiar with linear models that separate two classes by fitting a line in two dimensions (or a hyperplane in higher dimensions) in the middle (see Figure <a href="chap-ml.html#fig:svm">7.5</a>). An important decision that linear models have to make is which linear separator we should prefer when there are several we can build.</p>
+<p>We are all familiar with linear models (e.g., logistic regression) that separate two classes by fitting a line in two dimensions (or a hyperplane in higher dimensions) in the middle (see Figure <a href="chap-ml.html#fig:svm">7.5</a>). An important decision that linear models have to make is which linear separator we should prefer when there are several we can build.</p>
 <div class="figure" style="text-align: center"><span id="fig:svm"></span>
 <img src="ChapterML/figures/svm.png" alt="Support vector machines" width="100%" />
 <p class="caption">
@@ -758,7 +677,7 @@ Figure 7.5: Support vector machines
 <p>You can see in Figure <a href="chap-ml.html#fig:svm">7.5</a> that multiple lines offer a solution to the problem. Is any of them better than the others? We can intuitively define a criterion to estimate the worth of the lines: A line is bad if it passes too close to the points because it will be noise sensitive and it will not generalize correctly. Therefore, our goal should be to find the line passing as far as possible from all points.</p>
 <p>The SVM algorithm is based on finding the hyperplane that maximizes the <em>margin</em> of the training data. The training examples that are closest to the hyperplane are called <em>support vectors</em> since they are <em>supporting</em> the margin (as the margin is only a function of the support vectors).</p>
 <p>An important concept to learn when working with SVMs is <em>kernels</em>. SVMs are a specific instance of a class of methods called <em>kernel methods</em>. So far, we have only talked about SVMs as linear models. Linear works well in high-dimensional data but sometimes you need nonlinear models, often in cases of low-dimensional data or in image or video data. Unfortunately, traditional ways of generating nonlinear models get computationally expensive since you have to explicitly generate all the features such as squares, cubes, and all the interactions. Kernels are a way to keep the efficiency of the linear machinery but still build models that can capture nonlinearity in the data without creating all the nonlinear features.</p>
-<p>You can essentially think of kernels as similarity functions and use them to create a linear separation of the data by (implicitly) mapping the data to a higher-dimensional space. Essentially, we take an <span class="math inline">\(n\)</span>-dimensional input vector <span class="math inline">\(X\)</span>, map it into a high-dimensional ( infinite-dimensional) feature space, and construct an optimal separating hyperplane in this space. We refer you to relevant papers for more detail on SVMs and nonlinear kernels <span class="citation">(Shawe-Taylor and Cristianini <a href="#ref-ShaweTaylor2004">2004</a>; Scholkopf and Smola <a href="#ref-Scholkopf2001">2001</a>)</span>. SVMs are also related to logistic regression, but use a different loss/penalty function <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>)</span>.</p>
+<p>You can essentially think of kernels as similarity functions and use them to create a linear separation of the data by (implicitly) mapping the data to a higher-dimensional space. Essentially, we take an <span class="math inline">\(n\)</span>-dimensional input vector <span class="math inline">\(X\)</span>, map it into a high-dimensional (infinite-dimensional) feature space, and construct an optimal separating hyperplane in this space. We refer you to relevant papers for more detail on SVMs and nonlinear kernels <span class="citation">(Shawe-Taylor and Cristianini <a href="#ref-ShaweTaylor2004">2004</a>; Scholkopf and Smola <a href="#ref-Scholkopf2001">2001</a>)</span>. SVMs are also related to logistic regression, but use a different loss/penalty function <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>)</span>.</p>
 <p>When using SVMs, there are several parameters you have to optimize, ranging from the <em>regularization</em> parameter <span class="math inline">\(C\)</span>, which determines the tradeoff between minimizing the training error and minimizing model complexity, to more kernel-specific parameters. It is often a good idea to do a grid search to find the optimal parameters. Another tip when using SVMs is to normalize the features; one common approach to doing that is to normalize each data point to be a vector of unit length.</p>
 <p>Linear SVMs are effective in high-dimensional spaces, especially when the space is sparse such as text classification where the number of data points (perhaps tens of thousands) is often much less than the number of features (a hundred thousand to a million or more). SVMs are also fairly robust when the number of irrelevant features is large (unlike the <span class="math inline">\(k\)</span>-NN approaches that we mentioned earlier) as well as when the class distribution is skewed, that is, when the class of interest is significantly less than 50% of the data.</p>
 <p>One disadvantage of SVMs is that they do not directly provide probability estimates. They assign a score based on the distance from the margin. The farther a point is from the margin, the higher the magnitude of the score. This score is good for ranking examples, but getting accurate probability estimates takes more work and requires more labeled data to be used to perform probability calibrations.</p>
@@ -772,7 +691,7 @@ Figure 7.5: Support vector machines
 Figure 7.6: An exemplary decision tree. The top figure is the standard representation for trees. The bottom figure offers an alternative view of the same tree. The feature space is partitioned into numerous rectangles, which is another way to view a tree, representing its nonlinear character more explicitly
 </p>
 </div>
-<p>Various algorithms exist to build decision trees. C4.5, CHAID, and CART (Classification and Regression Trees) are the most Each needs to determine the next best feature to split on. The goal is to find feature splits that can best reduce class impurity in the data, that is, a split that will ideally put all (or as many as possible) positive class examples on one side and all (or as many as possible) negative examples on the other side. One common measure of impurity that comes from information theory is <em>entropy</em>, and it is calculated as <span class="math display">\[H(X) = -\sum_x p(x) \log p(x).\]</span></p>
+<p>Various algorithms exist to build decision trees. C4.5, CHAID, and CART (Classification and Regression Trees) are the most popular. Each needs to determine the next best feature to split on. The goal is to find feature splits that can best reduce class impurity in the data, that is, a split that will ideally put all (or as many as possible) positive class examples on one side and all (or as many as possible) negative examples on the other side. One common measure of impurity that comes from information theory is <em>entropy</em>, and it is calculated as <span class="math display">\[H(X) = -\sum_x p(x) \log p(x).\]</span></p>
 <p>Entropy is maximum (1) when both classes have equal numbers of examples in a node. It is minimum (0) when all examples are from the same class. At each node in the tree, we can evaluate all the possible features and select the one that most reduces the entropy given the tree so far. This expected change in entropy is known as <em>information gain</em> and is one of the most common criteria used to create decision trees. Other measures that are used instead of information gain are Gini and chi-squared.</p>
 <p>If we keep constructing the tree in this manner, selecting the next best feature to split on, the tree ends up fairly deep and tends to overfit the data. To prevent overfitting, we can either have a stopping criterion or <em>prune</em> the tree after it is fully grown. Common stopping criteria include minimum number of data points to have before doing another feature split, maximum depth, and maximum purity. Typical pruning approaches use holdout data (or cross-validation, which will be discussed later in this chapter) to cut off parts of the tree.</p>
 <p>Once the tree is built, a new data point is classified by running it through the tree and, once it reaches a terminal node, using some aggregation function to give a prediction (classification or regression). Typical approaches include performing maximum likelihood (if the leaf node contains 10 examples, 8 positive and 2 negative, any data point that gets into that node will get an 80% probability of being positive). Trees used for regression often build the tree as described above but then fit a linear regression model at each leaf node.</p>
@@ -783,7 +702,7 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 <p>The intuition behind building ensembles of models is to build several models, each somewhat different. This diversity can come from various sources such as: training models on subsets of the data; training models on subsets of the features; or a combination of these two.</p>
 <p>Ensemble methods in machine learning have two things in common. First, they construct multiple, diverse predictive models from adapted versions of the training data (most often reweighted or resampled). Second, they combine the predictions of these models in some way, often by simple averaging or voting (possibly weighted).</p>
 <p><strong>Bagging</strong></p>
-<p>Bagging stands for “bootstrap aggregation”<a href="references.html#fn40" class="footnoteRef" id="fnref40"><sup>40</sup></a>: we first create bootstrap samples from the original data and then aggregate the predictions using models trained on each bootstrap sample. Given a data set of size <span class="math inline">\(N\)</span>, the method works as follows:</p>
+<p>Bagging stands for “bootstrap aggregation”<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a>: we first create bootstrap samples from the original data and then aggregate the predictions using models trained on each bootstrap sample. Given a data set of size <span class="math inline">\(N\)</span>, the method works as follows:</p>
 <ol style="list-style-type: decimal">
 <li><p>Create <span class="math inline">\(k\)</span> bootstrap samples (with replacement), each of size <span class="math inline">\(N\)</span>, resulting in <span class="math inline">\(k\)</span> data sets. Only about 63% of the original training examples will be represented in any given bootstrapped set.</p></li>
 <li><p>Train a model on each of the <span class="math inline">\(k\)</span> data sets, resulting in <span class="math inline">\(k\)</span> models.</p></li>
@@ -811,11 +730,11 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 <p><strong>Random forests</strong></p>
 <p>Given a data set of size <span class="math inline">\(N\)</span> and containing <span class="math inline">\(M\)</span> features, the random forest training algorithm works as follows:</p>
 <ol style="list-style-type: decimal">
-<li><p>Create <span class="math inline">\(n\)</span> bootstrap samples from the original data of size <span class="math inline">\(N\)</span>. Remember, this is similar to the first step in bagging. Typically <span class="math inline">\(n\)</span> ranges from 100 to a few thousand but is best determined empirically.</p></li>
+<li><p>Create <span class="math inline">\(n\)</span> bootstrap samples from the original data of size <span class="math inline">\(N\)</span>. Remember, this is similar to the first step in bagging. Increasing <span class="math inline">\(n\)</span> will lead to similar or better results, but also requires more computational resources. Typically <span class="math inline">\(n\)</span> ranges from 100 to a few thousand but is best determined empirically.</p></li>
 <li><p>For each bootstrap sample, train a decision tree using <span class="math inline">\(m\)</span> features (where <span class="math inline">\(m\)</span> is typically much smaller than <span class="math inline">\(M\)</span>) at each node of the tree. The <span class="math inline">\(m\)</span> features are selected uniformly at random from the <span class="math inline">\(M\)</span> features in the data set, and the decision tree will select the best split among the <span class="math inline">\(m\)</span> features. The value of <span class="math inline">\(m\)</span> is held constant during the forest growing.</p></li>
 <li><p>A new test example/data point is classified by all the trees, and the final classification is done by majority vote (or another appropriate aggregation method).</p></li>
 </ol>
-<p>Random forests are probably the most accurate classifiers being used today in machine learning. They can be easily parallelized, making them efficient to run on large data sets, and can handle a large number of features, even with a lot of missing values. Random forests can get complex, with hundreds or thousands of trees that are fairly deep, so it is difficult to interpret the learned model. At the same time, they provide a nice way to estimate feature importance, giving a sense of what features were important in building the classifier.</p>
+<p>Random forests often achieve remarkable results while being simple to use. They can be easily parallelized, making them efficient to run on large data sets, and can handle a large number of features, even with a lot of missing values. Random forests can get complex, with hundreds or thousands of trees that are fairly deep, so it is difficult to interpret the learned model. At the same time, they provide a nice way to estimate feature importance, giving a sense of what features were important in building the classifier.</p>
 <p>Another nice aspect of random forests is the ability to compute a proximity matrix that gives the similarity between every pair of data points. This is calculated by computing the number of times two examples land in the same terminal node. The more that happens, the closer the two examples are. We can use this proximity matrix for clustering, locating outliers, or explaining the predictions for a specific example.</p>
 <p><strong>Stacking</strong></p>
 <p>Stacking is a technique that deals with the task of learning a meta-level classifier to combine the predictions of multiple base-level classifiers. This meta-algorithm is trained to combine the model predictions to form a final set of predictions. This can be used for both regression and classification. The algorithm works as follows:</p>
@@ -828,11 +747,16 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 <p><strong>Neural networks and deep learning</strong></p>
 <p>Neural networks are a set of multi-layer classifiers where the outputs of one layer feed into the inputs of the next layer. The layers between the input and output layers are called <em>hidden layers</em>, and the more hidden layers a neural network has, the more complex functions it can learn. Neural networks were popular in the 1980s and early 1990s, but then fell out of fashion because they were slow and expensive to train, even with only one or two hidden layers. Since 2006, a set of techniques has been developed that enable learning in deeper neural networks. These techniques, with access to massive computational resources and large amounts of data, have enabled much deeper (and larger) networks to be Trained and it turns out that these perform far better on many problems than shallow neural networks (with just a single hidden layer). The reason for the better performance is the ability of deep nets to build up a complex hierarchy of concepts, learning multiple levels of representation and abstraction that help to make sense of data such as images, sound, and text.</p>
 <p>There are a few different types of neural networks that are popular today:</p>
-<p>Convolutional Neural Networks (CNNs): These are often used in detecting objects in images and in doing image search, but their applicability goes beyond just image analysis and they can be used to find patterns in other types of data as well. CNNs treat input data (such as images) in a spatial manner (in two or three dimensions for example), and are able to capture spatial dependencies in the data. Recurrent Neural Networks (RNNs): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks (references). A popular variation of RNNS is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies. Generative Adversarial Network (GANs): have been shown to be quite adept at generating new, realistic images based on other training images. GANs train two models in parallel. One network (called generator) is trained to generate data (based on historical examples of previously occurring data such as images or text or video). The other network (discriminator) tries to classify these generated images as real or synthetic. During training a GAN, the goal is to generate data that is realistic enough that the discriminator network is fooled to the point that it cannot distinguish the difference between the real and the synthetic input data.</p>
-<p>Currently, deep neural networks are popular for a certain class of problems and a lot of research is being done on them. It is, however, important to keep in mind that they may often require a lot more data than are available in many problems. In many problems, such as natural language processing, image , and video analysis, there are techniques to start from a pre-trained neural network model, that reduces the need for additional training data. Training deep neural networks also requires a lot of computational power, but that is less likely to be an issue for most people today with increased access to computing resources. Typical cases where deep learning has been shown to be effective involve lots of images, video, and text data. We are in the early stages of development of this class of methods, and although there seems to be a lot of potential, we need a much better understanding of why they are effective and the problems for which they are well suited.</p>
+<ul>
+<li><p>Convolutional Neural Networks (<strong>CNN</strong>s): These are often used in detecting objects in images and in doing image search, but their applicability goes beyond just image analysis and they can be used to find patterns in other types of data as well. CNNs treat input data (such as images) in a spatial manner (in two or three dimensions for example), and are able to capture spatial dependencies in the data.</p></li>
+<li><p>Recurrent Neural Networks (<strong>RNN</strong>s): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks (references). A popular variation of RNNs is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies.</p></li>
+<li><p>Generative Adversarial Network (<strong>GAN</strong>s): have been shown to be quite adept at generating new, realistic images based on other training images. GANs train two models in parallel. One network (called generator) is trained to generate data (based on historical examples of previously occurring data such as images or text or video). The other network (discriminator) tries to classify these generated images as real or synthetic. During training a GAN, the goal is to generate data that is realistic enough that the discriminator network is fooled to the point that it cannot distinguish the difference between the real and the synthetic input data.</p></li>
+</ul>
+<p>Goodfellow et al. (2016) <a href="http://www.deeplearningbook.org/" class="uri">http://www.deeplearningbook.org/</a> provide a (mathematical) introduction to deep learning.</p>
+<p>Currently, deep neural networks are popular for a certain class of problems and a lot of research is being done on them. It is, however, important to keep in mind that they may often require a lot more data than are available in many problems. In many problems, such as natural language processing, image, and video analysis, there are techniques to start from a pre-trained neural network model, that reduces the need for additional training data. Training deep neural networks also requires a lot of computational power, but that is less likely to be an issue for most people today with increased access to computing resources. Typical cases where deep learning has been shown to be effective involve lots of images, video, and text data. We are in the early stages of development of this class of methods, and although there seems to be a lot of potential, we need a much better understanding of why they are effective and the problems for which they are well suited.</p>
 </div>
 <div id="binary-vs-multiclass-classification-problems" class="section level3">
-<h3><span class="header-section-number">7.3.3</span> Binary vs Multiclass classification problems</h3>
+<h3><span class="header-section-number">7.6.3</span> Binary vs Multiclass classification problems</h3>
 <p>In the discussion above, we framed classification problems as binary classification problems with a 0 or 1 output. There are many problems where we have multiple classes, such as classifying companies into their industry codes or predicting whether a student will drop out, transfer, or graduate. Several solutions have been designed to deal with the multiclass classification problem:</p>
 <ul>
 <li><p><strong>Direct multiclass</strong>: Use methods that can directly perform multiclass classification. Examples of such methods are <span class="math inline">\(K\)</span>-nearest neighbor, decision trees, and random forests. There are extensions of support vector machines that exist for multiclass classification as well <span class="citation">(Crammer and Singer <a href="#ref-crammer2002">2002</a>)</span>, but they can often be slow to train.</p></li>
@@ -841,37 +765,49 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 </ul>
 </div>
 <div id="skewed-or-imbalanced-classification-problems" class="section level3">
-<h3><span class="header-section-number">7.3.4</span> Skewed or imbalanced classification problems</h3>
+<h3><span class="header-section-number">7.6.4</span> Skewed or imbalanced classification problems</h3>
 <p>A lot of problems you will deal with will not have uniform (balanced) distributions for both classes. This is often the case with problems in fraud detection, network security, and medical diagnosis where the class of interest is not very common. The same is true in many social science and public policy problems around behavior prediction, such as predicting which students will not graduate on time, which children may be at risk of getting lead poisoning, or which homes are likely to be abandoned in a given city. You will notice that applying standard machine learning methods may result in all the predictions being for the most frequent category in such situations, making it problematic to detect the infrequent classes. There has been a lot of work in machine learning research on dealing with such problems <span class="citation">(Chawla <a href="#ref-Chawla05">2005</a>; Kuhn and Johnson <a href="#ref-KuhnJohnson2013">2013</a>)</span> that we will not cover in detail here. Common approaches to deal with class imbalance include oversampling from the minority class and undersampling from the majority class. It is important to keep in mind that the sampling approaches do not need to result in a <span class="math inline">\(1:1\)</span> ratio. Many supervised learning methods described in this chapter (such as Random Forests and SVMs) can work well even with a <span class="math inline">\(10:1\)</span> imbalance. Also, it is critical to make sure that you only resample the training set; keep the distribution of the test set the same as that of the original data since you will not know the class labels of new data in practice and will not be able to resample.</p>
-<p><strong>Model interpretability</strong></p>
+</div>
+<div id="model-interpretability" class="section level3">
+<h3><span class="header-section-number">7.6.5</span> Model interpretability</h3>
 <p>As social scientists (or good machine learning practitioners), we do not only care about building machine learning models but also want to understand what the models “learned”, and how to use them to make inferences and decisions. Understanding, or interpreting machine learning models is a key requirement for most social science and policy problems. There are various reasons for this including:</p>
-<p><em>Debugging and improving models</em></p>
-<p>Creating trust in the models and hence increasing adoption Improving the decisions being made using the models Selecting appropriate interventions Legal Requirements</p>
-<p><em>Global versus Individual Interpretability</em></p>
-<p>When thinking about model interpretability, there are two levels of interpretability: Global: At the overall model level Individual: Explaining an individual classification/prediction that’s made by a model.</p>
+<ul>
+<li>Providing information that can help in debugging and improving models</li>
+<li>Increasing trust in the models and hence increasing their adoption by decisionmakers</li>
+<li>Improving the decisions being made using the models by reinforcing the correct predictions and helping the decision-maker override the wrong predictions.</li>
+<li>Helping select appropriate interventions based on the explanations</li>
+<li>Providing legal recourse to people being affected by the decisions made using the models</li>
+</ul>
+<p><strong>Global versus Individual-Level Explanations</strong></p>
+<p>When thinking about model interpretability, there are two types of interpretability:</p>
+<ul>
+<li>Global: At the overall model level</li>
+<li>Individual: Explaining an individual classification/prediction that is made by a model.</li>
+</ul>
 <p>Both of these are important for different reasons. We need global interpretability to help understand the overall model but we also need explanations for individual classifications when these models are helping a person make decisions about individual cases. A social worker identifying the risk of a client going back to the homeless shelter and determining appropriate interventions to reduce that risk, or a counselor in an employment agency determining how likely an individual is to be long-term unemployed and connecting them with appropriate training programs or job opportunities need individual-level explanations of predictions/recommendations that the machine learning model is generating.</p>
-<p><strong>Global Interpretability</strong></p>
-<p>Each method/model needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to print the tree and use that to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we look at the coefficients and odds-ratios, but it may be difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing “feature importances”: how important it found different features that it was provided, and we often use that as a proxy for global model interpretability.</p>
-<p>Another way of interpreting the model is not by digging deeper into what the model but by how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get a high level idea of what the model is doing on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.</p>
-<p>A different approach that some have taken in this area has been to build well-performing models that are sparse, hence inherently more interpretable, and don’t require sophisticated approaches to interpret. Examples of such work include (cite: rudin, Caruana..). These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy of those models.</p>
+<p><em>Global Interpretability</em></p>
+<p>Each method results in a model that needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to view the tree to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we can look at the coefficients and odds-ratios, but it is often difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing their “feature importances”^[some measure of how uesful that fgeature was for the given model] and we often use that as a proxy for global model interpretability.</p>
+<p>Another way of interpreting a model is to understand how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get an idea of what the model is doing, not in general, but on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.</p>
+<p>A different approach that some have taken in this area has been to sparse^[Using a small number of features/predictors] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include Ustun and Rudin 2019 (Learning Optimized Risk Scores. Berk Ustun and Cynthia Rudin. Journal of Machine Learning Research 2019), (Berk Ustun and Cynthia Rudin. Supersparse linear integer models for optimized medical scoring systems. Machine Learning, pages 1–43, 2015. ISSN 0885-6125)., and Caruana et al. (Rich Caruana, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad. 2015. Intelligible Models for HealthCare: Predicting Pneumonia Risk and Hospital 30-day Readmission. In Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD ’15). Association for Computing Machinery, New York, NY, USA, 1721–1730.). These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy of those models.</p>
+<p><em>Individual-Level Explanations</em></p>
+<p>While it’s important to understand the models we are building at a global level, in many social science applications, we want to get an explanation for why a data point was classified/predicteda certain way by the model. There has been a lot of recent work on methods for generating individual-level explanations for predictions made by machine learning models. These fall into two areas: 1. Model specific methods: These are used to generate explanations for predictions made by a specific class of methods, such as neural networks or random forests. 2. Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME (“Why Should I Trust You?”: Explaining the Predictions of Any Classifier Marco Tulio Ribeiro, Sameer Singh, Carlos Guestrin. ACM SIGKDD International Conference on Knowledge Discovery and Data Mining (KDD), 2016), MAPLE (Gregory Plumb, Denali Molitor, and Ameet Talwalkar. 2018. Model agnostic supervised local explanations. In Proceedings of the 32nd International Conference on Neural Information Processing Systems (NIPS’18). Curran Associates Inc., Red Hook, NY, USA, 2520–2529.), and SHAP values (<a href="https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf" class="uri">https://papers.nips.cc/paper/7062-a-unified-approach-to-interpreting-model-predictions.pdf</a>)</p>
+<p>It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that these features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools useful for social scientists using machine learning to solve problems that require a better and deeper understanding of their predictions.</p>
 </div>
-</div>
-<div id="individual-level-explanations" class="section level2">
-<h2><span class="header-section-number">7.4</span> Individual-Level Explanations</h2>
-<p>There has been a lot of recent work on methods for generating individual-level explanations for predictions made by machine learning models. These fall into two areas: Model specific methods: These are used to generate explanations for predictions made by a specific class of methods, such as neural networks or random forests. Model agnostic methods: These can be used to generate explanations for individual predictions made by any type of model. Examples of this include LIME (cite: lime), MAPLE (cite), SHAP scores (cite)</p>
-<p>It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that thee features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools that are useful for social scientists that are using machine learning to solve problems that require a better and deeper understanding of the models their predictions.</p>
 </div>
 <div id="evaluation" class="section level2">
-<h2><span class="header-section-number">7.5</span> Evaluation</h2>
+<h2><span class="header-section-number">7.7</span> Evaluation</h2>
 <p>The previous section introduced us to a variety of methods, all with certain pros and cons, and no single method guaranteed to outperform others for a given problem. This section focuses on evaluation methods, with three primary goals:</p>
 <ol style="list-style-type: decimal">
 <li><p>Model selection: How do we select a method to use in the future? What parameters should we select for that method?</p></li>
 <li><p>Performance estimation: How do we estimate how well our model will perform once it is deployed and applied to new data?</p></li>
-<li><p>A deeper understanding of what types of models work well and don’t model can point to the effectiveness and applicability of existing methods and provide a better understanding of the structure of the data and the problem we are tackling.</p></li>
+<li><p>A deeper understanding of the types of models that work well and those that don’t can point to the effectiveness and applicability of existing methods and provide a better understanding of the structure of the data and the problem we are tackling.</p></li>
 </ol>
-<p>This section will cover evaluation methodologies as well as metrics that are commonly used. We will start by describing common evaluation methodologies that use existing data and then move on to field trials. The methodologies we describe below apply both to regression and classification problems.</p>
+<p>This section will cover evaluation methodologies as well as metrics that are commonly used. <!--We will start by describing common evaluation
+methodologies that use existing data and then move on to field trials.
+The methodologies we describe below apply both to regression and
+classification problems. MALTE: no field trials. it is clear enough that we describe both regression and classification probs --></p>
 <div id="methodology" class="section level3">
-<h3><span class="header-section-number">7.5.1</span> Methodology</h3>
+<h3><span class="header-section-number">7.7.1</span> Methodology</h3>
 <p><strong>In-sample evaluation</strong></p>
 <p>As social scientists, you already evaluate methods on how well they perform in-sample (on the set that the model was trained on). As we mentioned earlier in the chapter, the goal of machine learning methods is to generalize to new data, and validating models in-sample does not allow us to do that. We focus here on evaluation methodologies that allow us to optimize (as best as we can) for generalization performance. The methods are illustrated in Figure <a href="chap-ml.html#fig:holdout">7.7</a>.</p>
 <p><strong>Out-of-sample and holdout set</strong></p>
@@ -903,7 +839,7 @@ Figure 7.8: Temporal validation
 <p>Temporal validation is similar to how time series models are evaluated (also known as backtesting) and should be the validation approach used for most practical problems.</p>
 </div>
 <div id="metrics" class="section level3">
-<h3><span class="header-section-number">7.5.2</span> Metrics</h3>
+<h3><span class="header-section-number">7.7.2</span> Metrics</h3>
 <p>The previous subsection focused on validation methodologies assuming we have an evaluation metric in mind. This section will go over commonly used evaluation metrics. You are probably familiar with using <span class="math inline">\(R^2\)</span>, analysis of the residuals, and mean squared error (MSE) to evaluate the quality of regression models. For regression problems, the MSE calculates the average squared differences between predictions <span class="math inline">\(\hat{y}_i\)</span> and true values <span class="math inline">\(y_i\)</span>. When prediction models have smaller MSE, they are better. However, the MSE itself is hard to interpret because it measures quadratic differences. Instead, the root mean squared error (RMSE) is more intuitive as it as measure of mean differences on the original scale of the response variable. Yet another alternative is the mean absolute error (MAE), which measures average absolute distances between predictions and true values.</p>
 <p>We will now describe some additional evaluation metrics commonly used in machine learning for classification. Before we dive into metrics, it is important to highlight that machine learning models for classification typically do not predict 0/1 values directly. SVMs, random forests, and logistic regression all produce a score (which is sometimes a probability) that is then turned into 0 or 1 based on a user-specific threshold. You might find that certain tools (such as scikitlearn\footnote{you should never use the predict function in sci-kit-learn since it assumes a 0.5 threshold ) use a default value for that threshold (often 0.5), but it is important to know that it is an arbitrary threshold and you should select the threshold based on the data, the model, and the problem you are solving. We will cover that a little later in this section.</p>
 <p>Once we have turned the real-valued predictions into 0/1 classification, we can now create a <em>confusion matrix</em> from these predictions, shown in Figure <a href="chap-ml.html#fig:cm">7.9</a>. Each data point belongs to either the positive class or the negative class, and for each data point the prediction of the classifier is either correct or incorrect. This is what the four cells of the confusion matrix represent. We can use the confusion matrix to describe several commonly used evaluation metrics.</p>
@@ -939,50 +875,69 @@ Figure 7.11: Precision or recall at different thresholds
 </div>
 </div>
 <div id="practical-tips" class="section level2">
-<h2><span class="header-section-number">7.6</span> Practical tips</h2>
-<p>Here we highlight some practical tips that will be helpful when working with machine learning methods.</p>
+<h2><span class="header-section-number">7.8</span> Practical tips</h2>
+<p>Here we highlight some practical tips that will be helpful when using machine learning.</p>
 <div id="avoiding-leakage" class="section level3">
-<h3><span class="header-section-number">7.6.1</span> Avoiding Leakage</h3>
-<p>One of the most common mistakes that gets made in machine learning is called leakage - accidentally giving information data to your model that is not available at prediction time which allows the model to perform better in the training phase than it actually will in the future. Leakage often results in sub-optimal models being selected for use in the future and artificially inflated performance metrics. Leakage can happen in obvious ways, such as including the target variable (or some transformation of it) as an input variable (or feature), or temporally, where the model, at training time, might use data that will only become available in the future.</p>
-<p>It is critical to consider different sources of leakage when building machine learning models.</p>
-<p>Scaling/Standardizing: If the data being used is temporal, the scaling or standardization of variables should only happen on the training data and not on <em>all</em> of the data. Since the range of a variable on the entire data may be different than the range of that variable in the training set, using the entire range is effectively the same as using information from the “future”.</p>
-<p>Imputation: The same is true for imputation methods that use statistics from the data. If we’re using mean imputation, the mean needs to be calculated from the training set and not from the entire data set that we have access to.</p>
-<p>There are more subtle forms of leakage getting introduced in your models such as … When training a machine learning model, our methodology should only use data that is available at the time the model is being trained.</p>
+<h3><span class="header-section-number">7.8.1</span> Avoiding Leakage</h3>
+<p>Leakage is when your model has access to data at training/building time that it wouldn’t have at test/deployment/prediction time. The result is an overoptimistic model that performs much worse when deployed.</p>
+<p>The most common forms of leakage happen because of temporal issues – including data from the future in your model because you have that when you’re doing model selection but there are many other ways leakage gets introduced. Here are the most common ones</p>
+<p><strong>The Big (and obvious) One</strong></p>
+<ol style="list-style-type: decimal">
+<li>Using a proxy for the outcome variable (label) as a feature. This one is often easy to detect because you get perfect performance but is more nuanced when the proxy is some approximation of the label/outcome variable and the performance increase is more subtle to detect easily.</li>
+</ol>
+<p><strong>Doing any transformation or inference using the entire dataset</strong></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Using the entire data set for Imputations. Always do imputation based on your training set only, for each training set. Including the test set allows information to leak in to your models, especially in cases where the world changes in the future (when does it not?!)</p></li>
+<li><p>Using the entire data set for discretizations or normalizations/scaling or many other data-based transformations. Same reason as #2. The range of a variable (age for example) can change in the future and knowing that will make your models do/look better than they actually are.</p></li>
+<li><p>Using the entire data set for Feature Selection. Same reasons as #2 and #3. To play it safe, first split into train and test sets, and then do everything you need to do using that data.</p></li>
+</ol>
+<p><strong>Using information from the future (that will not available at training or prediction time)</strong></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Using (proxies/transformation of) future outcomes as features: Similar to #1</p></li>
+<li><p>Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary – again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.</p></li>
+<li><p>Using data (as features) that happened before model training time but is not available until later. This is fairly common in cases where there is lag/delay in data collection or access. An event may happen today but it doesn’t appear in the database until a week, a month, or a year later and while it will be available in the data set you’re using to build and select ML models, it will not be available at prediction time in deployment.</p></li>
+<li><p>Using data (as rows) in the training set based on information from the future. Including rows that match certain criteria (in the future) in the training set, such as everyone who got a social service in the next 3 months) leaks information to your model via a biased training set.</p></li>
+</ol>
+<p><strong>Humans using knowledge from the future</strong></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Selecting certain models, features, and other design choices that are based on humans (ML developers, domain experts) knowing what happened in the future. This is a gray area – we do want to use all of our domain knowledge to build more effective systems but sometimes that may not generalize into the future and result in overfitted/over-optimistic models at training time and disappointment once they’re deployed.</li>
+</ol>
 <p>As a general rule, if you encounter a machine learning model that is performing really well, it’s probably because you’ve made an error that is resulting in leakage. One way to dig deeper is to look at the feature importances of your model to see if the most important feature(s) may be the source of that leakage.</p>
 </div>
 <div id="machine-learning-pipeline" class="section level3">
-<h3><span class="header-section-number">7.6.2</span> Machine learning pipeline</h3>
+<h3><span class="header-section-number">7.8.2</span> Machine learning pipeline</h3>
 <p>When working on machine learning projects, it is a good idea to structure your code as a modular pipeline so you can easily try different approaches and methods without major restructuring. The Python workbooks supporting this book will give you an example of a machine learning pipeline. A good pipeline will contain modules for importing data, doing exploration, feature generation, classification, and evaluation. You can then instantiate a specific workflow by combining these modules.</p>
 <p>An important component of the machine learning pipeline is comparing different methods. With all the methods out there and all the hyperparameters they come with, how do we know which model to use and which hyperparameters to select? And what happens when we add new features to the model or when the data have “temporal drift” and change over time? One simple approach is to have a nested set of loops that loop over all the methods you have access to, then enumerate all the hyperparameters for that method, create a cross-product, and loop over all of them, comparing them across different evaluation metrics and selecting the best one to use going forward. You can even add different feature subsets and time slices to this loop, as the example in the supporting workbooks will show. Triage (<a href="http://github.com/dssg/triage" class="uri">http://github.com/dssg/triage</a>) is a good example of a machine learning pipeline that is designed to solve many public policy problems.</p>
 </div>
 </div>
 <div id="how-can-social-scientists-benefit-from-machine-learning" class="section level2">
-<h2><span class="header-section-number">7.7</span> How can social scientists benefit from machine learning?</h2>
+<h2><span class="header-section-number">7.9</span> How can social scientists benefit from machine learning?</h2>
 <p>In this chapter, we have introduced you to some new methods (both unsupervised and supervised), validation methodologies, and evaluation metrics. All of these can benefit social scientists as they tackle problems in research and practice. In this section, we will give a few concrete examples where what you have learned so far can be used to improve some social science tasks:</p>
 <ul>
 <li><p><strong>Use of better prediction methods and methodology</strong>: Traditional statistics and social sciences have not focused much on methods for prediction. Machine learning researchers have spent the past 30 years developing and adapting methods focusing on that task. We believe that there is a lot of value for social science researchers and practitioners in learning more about those methods, applying them, and even augmenting them <span class="citation">(Kleinberg et al. <a href="#ref-Kleinberg2015">2015</a>)</span>. Two common tasks that can be improved using better prediction methods are generating counterfactuals (essentially a prediction problem) and matching. In addition, holdout sets and cross-validation can be used as a model selection methodology with any existing regression and classification methods, resulting in improved model selection and error estimates.</p></li>
 <li><p><strong>Model misspecification</strong>: Linear and logistic regressions are common techniques for data analysis in the social sciences. One fundamental assumption within both is that they are additive over parameters. Machine learning provides tools when this assumption is too limiting. Hainmueller and Hazlett <span class="citation">(Hainmueller and Hazlett <a href="#ref-hainmueller2014kernel">2014</a>)</span>, for example, reanalyze data that were originally analyzed with logistic regression and come to substantially different conclusions. They argue that their analysis, which is more flexible and based on supervised learning methodology, provides three additional insights when compared to the original model. First, predictive performance is similar or better, although they do not need an extensive search to find the final model specification as it was done in the original analysis. Second, their model allows them to calculate average marginal effects that are mostly similar to the original analysis. However, for one covariate they find a substantially different result, which is due to model misspecification in the original model. Finally, the reanalysis also discovers interactions that were missed in the original publication.</p></li>
 <li><p><strong>Better text analysis</strong>: Text is everywhere, but unfortunately humans are slow and expensive in analyzing text data. Thus, computers are needed to analyze large collections of text. Machine learning methods can help make this process more efficient. Feldman and Sanger <span class="citation">(Feldman and Sanger <a href="#ref-FeldmanSanger">2006</a>)</span> provide an overview of different automatic methods for text analysis. Grimmer and Stewart <span class="citation">(Grimmer and Stewart <a href="#ref-grimmer2013text">2013</a>)</span> give examples that are more specific for social scientists, and Chapter <a href="chap-text.html#chap:text">Text analysis</a> provides more details on this topic.</p></li>
-<li><p><strong>Adaptive surveys</strong>: Some survey questions have a large number of possible answer categories. For example, international job classifications describe more than 500 occupational categories, and it is prohibitive to ask all categories during the survey. Instead, respondents answer an open-ended question about their job and machine learning algorithms can use the verbatim answers to suggest small sets of plausible answer options. The respondents can then select which option is the best description for their occupation, thus saving the costs for coding after the interview.</p></li>
+<li><p><strong>Adaptive surveys</strong>: Some survey questions have a large number of possible answer categories. For example, international job classifications describe more than 500 occupational categories, and it is prohibitive to ask all categories during the survey. Instead, respondents answer an open-ended question about their job and machine learning algorithms can use the verbatim answers to suggest small sets of plausible answer options. The respondents can then select which option is the best description for their occupation, thus saving the costs for coding after the interview (Schierholz et al. 2018 <a href="http://onlinelibrary.wiley.com/doi/10.1111/rssa.12297/full" class="uri">http://onlinelibrary.wiley.com/doi/10.1111/rssa.12297/full</a>).</p></li>
 <li><p><strong>Estimating heterogeneous treatment effects</strong>: A standard approach to causal inference is the assignment of different treatments (e.g., medicines) to the units of interest (e.g., patients). Researchers then usually calculate the average treatment effect—the average difference in outcomes for both groups. It is also of interest if treatment effects differ for various subgroups (e.g., is a medicine more effective for younger people?). Traditional subgroup analysis has been criticized and challenged by various machine learning techniques <span class="citation">(Green and Kern <a href="#ref-green2012modeling">2012</a>; Imai, Ratkovic, and others <a href="#ref-imai2013estimating">2013</a>)</span>.</p></li>
 <li><p><strong>Variable selection</strong>: Although there are many methods for variable selection, regularized methods such as the lasso are highly effective and efficient when faced with large amounts of data. Varian <span class="citation">(Varian <a href="#ref-Varian2014">2014</a>)</span> goes into more detail and gives other methods from machine learning that can be useful for variable selection. We can also find interactions between pairs of variables (to feed into other models) using random forests, by looking at variables that co-occur in the same tree, and by calculating the strength of the interaction as a function of how many trees they co-occur in, how high they occur in the trees, and how far apart they are in a given tree.</p></li>
 </ul>
 </div>
 <div id="advanced-topics" class="section level2">
-<h2><span class="header-section-number">7.8</span> Advanced topics</h2>
+<h2><span class="header-section-number">7.10</span> Advanced topics</h2>
 <p>This has been a short but intense introduction to machine learning, and we have left out several important topics that are useful and interesting for you to know about and that are being actively researched in the machine learning community. We mention them here so you know what they are, but will not describe them in detail. These include:</p>
 <ul>
 <li><p>Semi-supervised learning, where a combination of labeled and unlabeled data are used for training, given a set of assumptions. Such methods are useful when labeling data is costly and where unlabeled (not manually labeled/tagged data) can help improve the machine learning models . See the MIT Press edited volume <a href="https://www.molgen.mpg.de/3659531/MITPress--SemiSupervised-Learning.pdf" class="uri">https://www.molgen.mpg.de/3659531/MITPress--SemiSupervised-Learning.pdf</a> for explanations and examples.</p></li>
+<li><p>Recommender systems: These are commonly used by audio and video services like YouTube to generate playlists or by online shops like Amazon to suggest additional products a custumer might wish to buy. More generally, recommender systems aim to predict the preferences a user might have. One strategy is to recommend products that have similar characteristcs to the ones already selected by the same user (independent of others). Another strategy recommends a product if other persons with a similar profile selected the same product in the past.</p></li>
 <li><p>Active learning, a set of machine learning algorithms that query the user or some other information source to get labels for data points that are most beneficial for the machine learning models. This is in contrast to the standard machine learning process where we often select data points to label/tag randomly. Active Learning approaches to selecting data points to label have been shown to reduce the effort needed to train machine learning models.</p></li>
 <li><p>Reinforcement learning: The “supervised“ machine learning methods we’ve covered in this chapter are “one-shot” and take data points and labels as inputs. Reinforcement Learning is a different machine learning paradigm where the machine learning program takes a series of actions/decisions, and gets delayed feedback (reward or penalty) when performing a task. The goal of reinforcement learning is to determine the next best action to take in order to maximize long term performance. This has been applied to scenarios such as playing games (checkers, chess, backgammon, etc.) and in robotics (cite:)</p></li>
 </ul>
 </div>
 <div id="summary-3" class="section level2">
-<h2><span class="header-section-number">7.9</span> Summary</h2>
+<h2><span class="header-section-number">7.11</span> Summary</h2>
 <p>Machine learning is an active research field, and in this chapter we have given you an overview of how the work developed in this field can be used by social scientists. We covered the overall machine learning process, methods, evaluation approaches and metrics, and some practical tips, as well as how all of this can benefit social scientists. The material described in this chapter is a snapshot of a fast-changing field, and as we are seeing increasing collaborations between machine learning researchers and social scientists, the hope and expectation is that the next few years will bring advances that will allow us to tackle social and policy problems much more effectively using new types of data and improved methods.</p>
 </div>
 <div id="ml:res" class="section level2">
-<h2><span class="header-section-number">7.10</span> Resources</h2>
+<h2><span class="header-section-number">7.12</span> Resources</h2>
 <p>Literature for further reading that also explains most topics from this chapter in greater depth:</p>
 <ul>
 <li><p>Hastie et al.’s <em>The Elements of Statistical Learning</em> <span class="citation">(Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>)</span> is a classic and is available online for free.</p></li>
@@ -1000,7 +955,7 @@ Figure 7.11: Precision or recall at different thresholds
 <li><p>Commercial: IBM Modeler, SAS Enterprise Miner, Matlab.</p></li>
 </ul>
 <p>Many excellent courses are available online <span class="citation">(Z., n.d.)</span>, including Hastie and Tibshirani’s <em>Statistical Learning</em> <span class="citation">(Hastie and Tibshirani, n.d.)</span>.</p>
-<p>Major conferences in this area include the International Conference on Machine Learning <span class="citation">(ICML, n.d.)</span>, the Annual Conference on Neural Information Processing Systems (NeurIPS) <span class="citation">(<span class="citeproc-not-found" data-reference-id="neurips"><strong>???</strong></span>)</span>, and the ACM International Conference on Knowledge Discovery and Data Mining (KDD) <span class="citation">(KDD, n.d.)</span>.</p>
+<p>Major conferences in this area include the International Conference on Machine Learning <span class="citation">(ICML, n.d.)</span>, the Annual Conference on Neural Information Processing Systems (NeurIPS) <span class="citation">(NeurIPS, n.d.)</span>, and the ACM International Conference on Knowledge Discovery and Data Mining (KDD) <span class="citation">(KDD, n.d.)</span>.</p>
 
 <!--
 
@@ -1100,14 +1055,14 @@ Figure 7.11: Precision or recall at different thresholds
 </div>
 <div class="footnotes">
 <hr />
-<ol start="1">
-<li id="fn1"><p>This topic is discussed in more detail in Chapter 5<a href="chap-intro.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>This topic is discussed in more detail in Chapter 10.<a href="chap-intro.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>This topic is discussed in more detail in Chapter 3.<a href="chap-intro.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>This topic is discussed in more detail in Chapter 4.<a href="chap-intro.html#fnref4">↩</a></p></li>
-<li id="fn38"><p>Distance metrics are mathematical formulas to calculate the distance between two objects. For example, <em>Manhattan distance</em> is the distance a car would drive from one place to another place in a grid-based street system, whereas <em>Euclidean distance</em> (in two-dimensional space) is the “straight-line” distance between two points.<a href="chap-ml.html#fnref38">↩</a></p></li>
-<li id="fn39"><p>The topic of causal inference is addressed in more detail in Chapter 10.<a href="chap-ml.html#fnref39">↩</a></p></li>
-<li id="fn40"><p>Bootstrap is a general statistical procedure that draws random samples of the original data with replacement.<a href="chap-ml.html#fnref40">↩</a></p></li>
+<ol start="38">
+<li id="fn38"><p>See Chapter 3.<a href="chap-ml.html#fnref38">↩</a></p></li>
+<li id="fn39"><p>See Chapter 3.<a href="chap-ml.html#fnref39">↩</a></p></li>
+<li id="fn40"><p>dimensionality of the data often refers to how many variables we have in the data<a href="chap-ml.html#fnref40">↩</a></p></li>
+<li id="fn41"><p>In statistical terms, regularization is an attempt to avoid overfitting the model<a href="chap-ml.html#fnref41">↩</a></p></li>
+<li id="fn42"><p>Distance metrics are mathematical formulas to calculate the distance between two objects. For example, <em>Manhattan distance</em> is the distance a car would drive from one place to another place in a grid-based street system, whereas <em>Euclidean distance</em> (in two-dimensional space) is the “straight-line” distance between two points.<a href="chap-ml.html#fnref42">↩</a></p></li>
+<li id="fn43"><p>The topic of causal inference is addressed in more detail in Chapter 10.<a href="chap-ml.html#fnref43">↩</a></p></li>
+<li id="fn44"><p>Bootstrap is a general statistical procedure that draws random samples of the original data with replacement.<a href="chap-ml.html#fnref44">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -1133,11 +1088,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1145,12 +1102,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1162,6 +1118,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

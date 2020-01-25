@@ -1,7 +1,7 @@
 % FK notes from 1/3/2020
-% Brian -- let's change your personal repository to coleridge for the binder (or anywhere else)
+% Brian -- let's change your personal repository to coleridge for the binder (or anywhere else) (> done)
 % make use of the side notes for the printed version (we will have them back like the old layout was)
-% 4 levels down in the structuring is too much. Check with the editor how they want to do this. I would recommend just going with non-numbered sections at that point.
+% 4 levels down in the structuring is too much. Check with the editor how they want to do this. I would recommend just going with non-numbered sections at that point. (> done)
 
 
 Workbooks {#chap:workbooks}
@@ -81,7 +81,6 @@ Python and continues by exploring the imported data using the `numpy` and `panda
 
 -   Explore aggregate statistics in Python.
 
-
 ### APIs 
 
 The APIs notebook introduces you to the use of
@@ -103,7 +102,6 @@ In the Text Analysis notebook, you will use the data that you pulled from the Pa
 - Apply Latent Dirichlet Allocation for topic modeling,
 
 - Improve and iterate models to focus in on identified topics.
-
 
 ### Machine Learning -- Creating Labels
 
@@ -136,19 +134,26 @@ a given date. In this workbook, you will learn how to:
 
 The *Machine Learning Model Training and Evaluation* workbook uses the label and features that were created in the previous workbooks to construct a training and test set for model building and evaluation. It exemplifies how to train machine learning models using `scikit-learn` in Python and how to evaluate prediction performance for classification tasks. In addition, it is shown how to construct and compare multiple machine learning models in a for-loop in Python. In this workbook, you will learn how to:
 
--   Pre-process data to provide valid inputs for machine learning models  
+-   Pre-process data to provide valid inputs for machine learning models,  
 
 -   Properly divide data with a temporal structure into training and test sets,
 
 -   Train and evaluate machine learning models for classification using Python.
 
+### Bias and Fairness
+
+The *Bias and Fairness* workbook exemplifies the usage of the bias and fairness audit toolkit Aequitas in Python. This workbook is centered around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) and demonstrates how Aequitas can be used to detect and evaluate biases of a machine learning system. Specifically, you will learn how to: 
+
+- Calculate confusion matrices for subgroups and visualize performance metrics by groups,
+
+- Measure disparities by comparing, e.g., false positive rates between groups,
+
+- Assess model fairness based on various disparity metrics.
+
 Workbook Set 2
 -----------
 
-The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any
-appropriately configured computer. These workbooks are a live set of
-documents that could potentially change over time, so see the repository
-for the most recent set of information.
+The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer.
 
 The *Big-Data-Workbooks GitHub repository* provides two different types of
 workbooks, each needing a different Python setup to run. The first type

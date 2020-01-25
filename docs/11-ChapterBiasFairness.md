@@ -5,7 +5,7 @@ Bias and Fairness {#chap:bias}
 
 **Kit T. Rodolfa, Pedro Saleiro, and Rayid Ghani**
 
-Interest in algorithmic fairness and bias has been growing recently, but it's easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model is "fair". In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
+Interest in algorithmic fairness and bias has been growing recently (for good reason), but it's easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model is statistically "fair" but it's important to remember to start from the social and policy goals for equity and fairness and map those to the statistical properties we want in our models to help achieve those goals. In this chapter, we provide an overview of these statistical metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize to one metric over others, focusing on the metrics relevant to binary classification methods used frequently in risk-based models for policy settings.
 
 Introduction
 ------------
@@ -20,7 +20,7 @@ to measure the performance of machine learning methods. In most (if not
 every) public policy problems, a key goal for the analytical systems
 being developed is to help achieve equitable outcomes.
 
-When machine learning models are being used in these systems, they
+When machine learning models are being used to make decisions, they
 cannot be separated from the social and ethical context in which they
 are applied, and those developing and deploying these models must take
 care to do so in a manner that accounts for both accuracy and fairness.
@@ -88,14 +88,14 @@ aggregate form) can provide some insight on how representative your data
 may be, including census data, surveys, and academic studies in the
 relevant area.
 
-### Label Bias
+### Label(Outcome) Bias
 
 Regardless of whether your dataset reflects a representative sample of
 the relevant population for your intervention or analysis, there may
 also be bias inherent in the labels (that is, the measured outcomes)
 associated with individuals in that data.
 
-One mechanism by which bias may be introduced is in how the label itself
+One mechanism by which bias may be introduced is in how the label/outcome itself
 is defined. For instance, a study of recidivism might use a new arrest
 as an outcome variable when it really cares about committing a new
 crime. However, if some groups are policed more heavily than others,
@@ -287,6 +287,8 @@ Based on these four categories, we can calculate several ratios that are
 instructive for thinking about the equity of a model’s predictions in
 different situations (Sections [punitive example](#sec:punitiveexample) and [assistive example](#sec:assistiveexample) provide some detailed examples here):
 
+%can we move the following definitions or the equations to the side margin?
+
 -   **False Positive Rate ($FPR$)** is the fraction of individuals with
     negative actual labels who the model misclassifies with a positive
     predicted label: $FPR = FP / (FP+TN)$
@@ -406,11 +408,11 @@ each group as reasonable place to start for assessing whether our model
 is biased. Here, we are concerned with statements like “twice as many
 people from Group A were wrongly convicted as from Group B.”
 
-In probabilistic terms, we could express this as:
+\^(In probabilistic terms, we could express this as:
 $$P(\textrm{wrongly jailed, group $i$}) = C~~~\forall~i$$ Where $C$ is a
 constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = 1~~~\forall~i,j$$ Where $FP_i$ is the number of
-false positives in group $i$.
+false positives in group $i$.)
 
 However, it is unclear whether differences in the number of false
 positives across groups reflect unfairness in the model. For instance,
@@ -423,12 +425,12 @@ By accounting for differently sized groups, we ask the question, “just
 by virtue of the fact that an individual is a member of a given group,
 what are the chances they’ll be wrongly convicted?”
 
-That is, in terms of probability,
+\^(in terms of probability,
 $$P(\textrm{wrongly jailed $\mid$ group $i$}) = C~~~\forall~i$$ Where
 $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{n_i}{n_j}~~~\forall~i,j$$ Where $FP_i$ is
 the number of false positives and $n_i$ the total number of individuals
-in group $i$.
+in group $i$.)
 
 While this metric might feel like it meets a reasonable criteria of
 avoiding treating groups differently in terms of classification errors,
@@ -450,12 +452,12 @@ could imagine the social cost of disparities manifesting directly
 through inmates observing how frequently different groups are wrongly
 convicted.
 
-In probabilistic terms,
+\^(In probabilistic terms,
 $$P(\textrm{wrongly jailed $\mid$ jailed, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{k_i}{k_j}~~~\forall~i,j$$ Where $FP_i$ is
 the number of false positives and $k_i$ the total number of *jailed*
-individuals in group $i$.
+individuals in group $i$.)
 
 The False Positive Rate ($FPR$) focuses on a different subset,
 specifically, the individuals who should **not** be subject to the
@@ -463,13 +465,13 @@ intervention. Here, this would ask, “for an *innocent* person, what are
 the chances they will be wrongly convicted by virtue of the fact that
 they’re a member of a given group?”
 
-In probabilistic terms,
+^(\In probabilistic terms,
 $$P(\textrm{wrongly jailed $\mid$ innocent, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{n_i \times (1-p_i)}{n_j \times (1-p_j)}~~~\forall~i,j$$
 Where $FP_i$ is the number of false positives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of being truly
-guilty) in group $i$.
+guilty) in group $i$.)
 
 The difference between the choosing to focus on the $FPR$ and group
 size-adjusted false positives is somewhat nuanced and warrants
@@ -496,7 +498,7 @@ positives with:
     with 30 wrongfully convicted. Suppose the other 2700 are all
     innocent.
 
-In this case, $$\begin{aligned}
+\^(In this case, $$\begin{aligned}
 &\frac{FP_A}{n_A} = \frac{10}{1000} = 1.0\% \\
 &FDR_A = \frac{10}{100} = 10.0\% \\
 &FPR_A = \frac{10}{10} = 100.0\%\end{aligned}$$
@@ -504,7 +506,7 @@ In this case, $$\begin{aligned}
 while, $$\begin{aligned}
 &\frac{FP_B}{n_B} = \frac{30}{3000} = 1.0\% \\
 &FDR_B = \frac{30}{300} = 10.0\% \\
-&FPR_B = \frac{30}{2730} = 1.1\%\end{aligned}$$
+&FPR_B = \frac{30}{2730} = 1.1\%\end{aligned}$$)
 
 That is,
 
@@ -522,14 +524,7 @@ While this is an exaggerated case for illustrative purposes, there is a
 more general principle at play here, namely: when prevalences differ
 across groups, disparities cannot be eliminated from both the $FPR$ and
 group-size adjusted false positives at the same time (in the absence of
-perfect prediction). This can be seen pretty readily from definitions of
-these metrics: $$\begin{aligned}
-    &\frac{FP_i}{FP_j} = \frac{n_i}{n_j} = \frac{n_i \times (1-p_i)}{n_j \times (1-p_j)} \\
-    &\implies p_i = p_j
-\end{aligned}$$
-
-(note that this can also be satisfied with perfect prediction, where
-$FP_i = FP_j = 0~~~\forall~i,j$)
+perfect prediction). 
 
 While there is no universal rule for choosing a bias metric (or set of
 metrics) to prioritize, it is important to keep in mind that there are
@@ -562,11 +557,11 @@ group, focusing on statements like “twice as many families with need for
 food assistance from Group A were missed by the benefit as from Group
 B.”
 
-In probabilistic terms, we could express this as:
+\^(In probabilistic terms, we could express this as:
 $$P(\textrm{missed by benefit, group $i$}) = C~~~\forall~i$$ Where $C$
 is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = 1~~~\forall~i,j$$ Where $FN_i$ is the number of
-false negatives in group $i$.
+false negatives in group $i$.)
 
 Differences in the number of false negatives by group, however, may be
 relatively limited in measuring equity when the groups are very
@@ -581,12 +576,12 @@ question of fairness is to ask, “just by virtue of the fact that an
 individual is a member of a given group, what are the chances they will
 be missed by the food subsidy?”
 
-That is, in terms of probability,
+\^(That is, in terms of probability,
 $$P(\textrm{missed by benefit $\mid$ group $i$}) = C~~~\forall~i$$ Where
 $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i}{n_j}~~~\forall~i,j$$ Where $FN_i$ is
 the number of false negatives and $n_i$ the total number of families in
-group $i$.
+group $i$.)
 
 While avoiding disparities on this metric focuses on the reasonable goal
 of treating different groups similarly in terms of classification
@@ -604,13 +599,13 @@ receiving the food subsidy. Such families will either be true negatives
 is, those who did need assistance but were missed by the program), and
 the $FOR$ asks what fraction of this set fall into the latter category.
 
-In probabilistic terms,
+\^(In probabilistic terms,
 $$P(\textrm{missed by program $\mid$ no subsidy, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i-k_i}{n_j-k_j}~~~\forall~i,j$$ Where
 $FN_i$ is the number of false negatives, $k_i$ the number of families
 receiving the subsidy, and $n_i$ is the total number of families in
-group $i$.
+group $i$.)
 
 In practice, the $FOR$ can be a useful metric in many situations,
 particularly because need can often be more easily measured among
@@ -629,13 +624,13 @@ with need for the intervention. In our example, this asks the question,
 be missed by the subsidy by virtue of the fact they’re a member of a
 given group?”
 
-In probabilistic terms,
+\^(In probabilistic terms,
 $$P(\textrm{missed by subsidy $\mid$ need assistance, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i \times p_i}{n_j \times p_j}~~~\forall~i,j$$
 Where $FN_i$ is the number of false negatives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of need for food
-assistance) in group $i$.
+assistance) in group $i$.)
 
 As with the punitive case, there is some nuance in the difference
 between choosing to focus on group-size adjusted false negatives and the
@@ -672,13 +667,13 @@ thinking about equity, asking the question, “given that the program
 cannot serve everyone with need, is it at least serving different
 populations in a manner that reflects their level of need?”
 
-In probabilistic terms,
+\^(In probabilistic terms,
 $$P(\textrm{received subsidy $\mid$ need assistance, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{TP_i}{TP_j} = \frac{n_i \times p_i}{n_j \times p_j}~~~\forall~i,j$$
 Where $TP_i$ is the number of true positives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of need for food
-assistance) in group $i$.
+assistance) in group $i$.)
 
 Note that, unlike the metrics described above, using recall as an equity
 metric doesn’t explicitly focus on the mistakes being made by the
@@ -701,7 +696,7 @@ we have used in these cases is to balance recall relative to prevalence
 (however, there’s no theoretically “right” choice here and it’s
 generally best to consider a range of options):
 
-$$\frac{recall_i}{recall_j} = \frac{p_i}{p_j}~~~\forall~i,j$$
+\^($$\frac{recall_i}{recall_j} = \frac{p_i}{p_j}~~~\forall~i,j$$)
 
 The idea here is that (assuming the program is equally effective across
 groups), balancing recall will seek to improve outcomes at an equal rate
@@ -855,6 +850,9 @@ individuals). Incorporating fairness into decisions about who is chosen
 to receive an intervention is an important first step, but shouldn’t be
 mistaken for a comprehensive solution to disparities in a program’s
 application and outcomes.
+
+%cite LA ACM FAT* paepr
+
 
 Some work is also being done investigating means for incorporating bias
 and fairness more directly in the process of model development itself.
@@ -1097,7 +1095,7 @@ particular context.
 
 ****
 
-Fairness in Decision Making: Case Studies
+Case Studies
 -----------------------------------------
 
 The active conversation about algorithmic bias and fairness in both the
@@ -1312,6 +1310,8 @@ own right. As of this writing, understanding how best to combat
 discrimination in ad targeting is an ongoing area of research as well as
 an active public conversation.
 
+%remove next example?
+
 ### Tay: Microsoft’s AI Twitter Bot
 
 In March, 2016, Microsoft released a Twitter chatbot named Tay with the
@@ -1415,6 +1415,8 @@ different actors to take bias and fairness into consideration at all
 stages of decision-making in the modeling process: model selection,
 whether or not to deploy a model, when to retrain, the need to collect
 more and better data, and so on.
+
+% move following to workbooks chapter
 
 ### Getting Started with Aequitas
 

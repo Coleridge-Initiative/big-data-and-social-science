@@ -1,4 +1,4 @@
-<!-- % Done --> 
+%ToDo: We need new flow chart graphs, they point to the wrong chapters right now.
 
 Introduction {#chap:intro}
 ============
@@ -145,7 +145,7 @@ adjustments are commonly used to mitigate errors in the survey process.
 Likewise for "broken" experimental data, techniques like propensity
 score adjustment and principal stratification are widely used to fix
 flaws in the data generating process [@imbens2015causal]. Two books provide frameworks for
-*survey quality*^[This topic is discussed in more detail in Chapter 10.][@groves2004survey; @biemer2003].
+*survey quality*^[This topic is discussed in more detail in Chapter 11.][@groves2004survey; @biemer2003].
 
 Across the social sciences, including economics, public policy,
 sociology, management, (parts of) psychology and the like, we can
