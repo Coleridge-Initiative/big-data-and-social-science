@@ -50,7 +50,7 @@ dramatic differences between the data sets, trends, and outliers
 visually.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [@anscombe1973graphs]" width="70%" />
+<img src="ChapterViz/figures/fig9-1.png" alt="Anscombes quartet [@anscombe1973graphs]" width="90%" />
 <p class="caption">(\#fig:fig9-1)Anscombes quartet [@anscombe1973graphs]</p>
 </div>
 
@@ -119,7 +119,7 @@ popular girl names in the
 the 1960s.].
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="70%" />
+<img src="ChapterViz/figures/fig9-2.png" alt="A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif" width="90%" />
 <p class="caption">(\#fig:fig9-2)A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif</p>
 </div>
 
@@ -138,12 +138,12 @@ The analyst can explore trends in new or old awards, funding resources,
 and other attributes in this rich award portfolio.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="70%" />
+<img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="90%" />
 <p class="caption">(\#fig:fig9-3a)Charting interface of Tableau</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-3b.png" alt="A treemap visualization of agency and sub-agency spending breakdown" width="70%" />
+<img src="ChapterViz/figures/fig9-3b.png" alt="A treemap visualization of agency and sub-agency spending breakdown" width="90%" />
 <p class="caption">(\#fig:fig9-3b)A treemap visualization of agency and sub-agency spending breakdown</p>
 </div>
 
@@ -187,7 +187,7 @@ data source, where applicable, is an ethical practice that also enables
 validating data, and promotes reuse to explore new perspectives.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-4.png" alt="Visual elements described by MacKinlay [@mackinlay1986automating]" width="70%" />
+<img src="ChapterViz/figures/fig9-4.png" alt="Visual elements described by MacKinlay [@mackinlay1986automating]" width="50%" />
 <p class="caption">(\#fig:fig9-4)Visual elements described by MacKinlay [@mackinlay1986automating]</p>
 </div>
 
@@ -349,7 +349,7 @@ data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="70%" />
+<img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="90%" />
 <p class="caption">(\#fig:fig9-5)The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]</p>
 </div>
 
@@ -385,12 +385,12 @@ design may not be appropriate for audiences who may lack such training
 or familiarity.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="70%" />
+<img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="90%" />
 <p class="caption">(\#fig:fig9-6)Horizon graphs used to display time series</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="70%" />
+<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="90%" />
 <p class="caption">(\#fig:fig9-7)EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
@@ -450,19 +450,19 @@ poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="70%" />
+<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="90%" />
 <p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="70%" />
+<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="90%" />
 <p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (www.finviz.com)</p>
 </div>
 
 ### Network data {#sec:viz-2.6}
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10.png" alt="NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission" width="70%" />
+<img src="ChapterViz/figures/fig9-10.png" alt="NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission" width="90%" />
 <p class="caption">(\#fig:fig9-10)NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
@@ -477,7 +477,7 @@ in between, such as age of people in communication or the average
 duration of communications.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]" width="70%" />
+<img src="ChapterViz/figures/fig9-10b.png" alt="An example from &quot;Maps of Science: Forecasting Large Trends in Science,&quot; 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]" width="90%" />
 <p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
 </div>
 
@@ -536,7 +536,7 @@ tree. Reading original documents is critical, so all the visualization
 elements are linked to the corresponding text.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-11.png" alt="Jigsaw used to explore a collection of car reviews" width="70%" />
+<img src="ChapterViz/figures/fig9-11.png" alt="Jigsaw used to explore a collection of car reviews" width="90%" />
 <p class="caption">(\#fig:fig9-11)Jigsaw used to explore a collection of car reviews</p>
 </div>
 

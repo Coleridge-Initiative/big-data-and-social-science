@@ -49,7 +49,7 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-```{r fig9-1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [@anscombe1973graphs]'}
+```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1.png")
 ```
 
@@ -127,7 +127,7 @@ popular girl names in the
 “John” has declined since
 the 1960s.].
 
-```{r fig9-2, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
+```{r fig9-2, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
 knitr::include_graphics("ChapterViz/figures/fig9-2.png")
 ```
 
@@ -145,11 +145,11 @@ distributions of awards with formula funding, known as *Hatch funding*.
 The analyst can explore trends in new or old awards, funding resources,
 and other attributes in this rich award portfolio.
 
-```{r fig9-3a, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Charting interface of Tableau'}
+```{r fig9-3a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Charting interface of Tableau'}
 knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
 ```
 
-```{r fig9-3b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A treemap visualization of agency and sub-agency spending breakdown'}
+```{r fig9-3b, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'A treemap visualization of agency and sub-agency spending breakdown'}
 knitr::include_graphics("ChapterViz/figures/fig9-3b.png")
 ```
 
@@ -192,7 +192,7 @@ attention and to describe related insights. Providing attribution and
 data source, where applicable, is an ethical practice that also enables
 validating data, and promotes reuse to explore new perspectives.
 
-```{r fig9-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Visual elements described by MacKinlay [@mackinlay1986automating]'}
+```{r fig9-4, out.width = '50%', fig.align = 'center', echo = FALSE, fig.cap = 'Visual elements described by MacKinlay [@mackinlay1986automating]'}
 knitr::include_graphics("ChapterViz/figures/fig9-4.png")
 ```
 
@@ -365,7 +365,7 @@ locations, such as flights to/from many regions of the world. Spatial
 data can be also presented with a nonspatial emphasis (e.g., as a
 hierarchy of continents, countries, and cities).
 
-```{r fig9-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
+```{r fig9-5, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
 knitr::include_graphics("ChapterViz/figures/fig9-5.png")
 ```
 
@@ -400,11 +400,11 @@ perceptually effective after learning to read its encoding, this chart
 design may not be appropriate for audiences who may lack such training
 or familiarity.
 
-```{r fig9-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Horizon graphs used to display time series'}
+```{r fig9-6, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Horizon graphs used to display time series'}
 knitr::include_graphics("ChapterViz/figures/fig9-6.png")
 ```
 
-```{r fig9-7, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission'}
+```{r fig9-7, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission'}
 knitr::include_graphics("ChapterViz/figures/fig9-7.png")
 ```
 
@@ -463,17 +463,17 @@ allowing users to see that "healthcare technology" is not doing as
 poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
-```{r fig9-8, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (www.cs.umd.edu/hcil/spacetree/)'}
+```{r fig9-8, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (www.cs.umd.edu/hcil/spacetree/)'}
 knitr::include_graphics("ChapterViz/figures/fig9-8.png")
 ```
 
-```{r fig9-9, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'The Finviz treemap helps users monitor the stock market (www.finviz.com)'}
+```{r fig9-9, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'The Finviz treemap helps users monitor the stock market (www.finviz.com)'}
 knitr::include_graphics("ChapterViz/figures/fig9-9.png")
 ```
 
 ### Network data {#sec:viz-2.6}
 
-```{r fig9-10, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission'}
+```{r fig9-10, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission'}
 knitr::include_graphics("ChapterViz/figures/fig9-10.png")
 ```
 
@@ -487,7 +487,7 @@ traced. Analysis can also focus on attributes of the items and the links
 in between, such as age of people in communication or the average
 duration of communications.
 
-```{r fig9-10b, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]'}
+```{r fig9-10b, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]'}
 knitr::include_graphics("ChapterViz/figures/fig9-10b.png")
 ```
 
@@ -545,7 +545,7 @@ between entities. Another view allows traversing word sequences as a
 tree. Reading original documents is critical, so all the visualization
 elements are linked to the corresponding text.
 
-```{r fig9-11, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Jigsaw used to explore a collection of car reviews'}
+```{r fig9-11, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Jigsaw used to explore a collection of car reviews'}
 knitr::include_graphics("ChapterViz/figures/fig9-11.png")
 ```
 
