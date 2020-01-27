@@ -300,9 +300,9 @@ follows:
 > output cannot relate a known individual (or other responding unit) to
 > an element in the output.
 
-Traditionally, confidentiality protection has been accomplished by
-releasing only *aggregated tabular data*. This practice works well in
-settings where the primary purpose is enumeration, such as census
+Traditionally, confidentiality protection was accomplished by
+releasing only *aggregated tabular data*. This practice worked well in
+settings where the primary purpose was enumeration, such as census
 taking. However, tabular data are poorly suited to describing the
 underlying distributions and covariance across variables that are often
 the focus of applied social science research [@duncanstatistical].
@@ -504,7 +504,7 @@ forever, ownership could be claimed by yet-to-be-born relatives whose
 personal privacy could be threatened by release of information about
 blood relations.
 
-The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDP pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
+The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDPR pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
 
 However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving
 away from individualized assessments of the costs of privacy violations,
@@ -524,7 +524,7 @@ Summary
 
 The excitement about how big data can change the social science research
 paradigm should be tempered by a recognition that existing ways of
-protecting confidentiality are no longer viable [@karr2014analytical].
+protecting privacy confidentiality are no longer viable [@karr2014analytical].
 There is a great deal of research that can be used to inform the
 development of such a structure, but it has been siloed into
 disconnected research areas, such as statistics, cybersecurity, and
