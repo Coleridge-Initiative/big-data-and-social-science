@@ -284,7 +284,7 @@ risks, followed by the application of an anonymization technique, and
 finally an evaluation of disclosure risks and analytical quality of the
 candidate data release(s). The two main approaches have been
 *statistical disclosure* control techniques to produce anonymized public
-use data sets, and controlled access through a *research data center*.
+use data sets, and controlled access through a *research data center* [@shlomo2018].
 
 **Statistical disclosure control techniques**
 
@@ -346,14 +346,8 @@ It  is important to keep in mind that the utility of synthetic data sets as a ge
 
 **Research data centers**
 
-The second approach is establishing research data centers. Here,
-qualified researchers gain access to micro-level data after they are
-sworn in to protect the confidentiality of the data they access. Strong
-input and output controls are in place to ensure that published findings
-comply with the privacy and confidentiality regulations
-[@hayden2012broken]. Some RDCs allow access through remote execution,
-where no direct access to the data is allowed, but it is not necessary
-to travel; others allow remote direct access
+The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the "Five Safes" which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 [@desaietal2016]. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations
+[@hayden2012broken]. 
 
 
 Non-Tabular data
