@@ -678,7 +678,7 @@ approaches are known as semantic blocking, and the computational
 requirements are similar to standard blocking [@christen2012data].
 
 In recent years machine learning approaches^[This topic is discussed in
-more detail in Chapter 6.] have been applied to record
+more detail in Chapter 7.] have been applied to record
 Linkage. As Wick et al. [@wick2013joint] note:
 
 > Entity resolution, the task of automatically determining which
@@ -875,15 +875,14 @@ the sum of the match scores of all included links is maximal. This is an
 example of what is known as the *assignment problem* in combinatorial
 optimization. In the linear case above, where we care about the sum of
 match scores, the problem can be solved exactly using the Hungarian
-algorithm [@kuhn2005hungarian]^[This topic is discussed in
-more detail in Chapter 6.].
+algorithm [@kuhn2005hungarian].
 
 Record linkage and data protection
 ----------------------------------
 
 In many social science applications data sets there is no need for data
 to include identifying fields like names and addresses. These fields may
-be left out intentionally out of concern for privacy^[See Chapter 11.], or they may simply
+be left out intentionally out of concern for privacy^[See Chapter 12.], or they may simply
 be irrelevant to the research question. For record linkage, however,
 names and addresses are among the best possible identifiers. We describe
 two approaches to the problem of balancing needs for both effective
@@ -902,8 +901,6 @@ revealed, with no identifiers attached. The TTP ensures that the
 released linked data set cannot be relinked to any of the source data
 sets. Possible third parties are safe centers, which are operated by
 lawyers, or official trusted institutions like the US Census Bureau.
-Some countries like the UK and Germany are establishing new institutions
-specifically to act as TTPs for record linkage work.
 
 The second approach is known as privacy-preserving record linkage. The
 goal of this approach is to find the same individual in separate data
@@ -925,7 +922,7 @@ identifying fields have been hashed. This solves the challenge of trust
 between the different parties. Some authors argue that transparency of
 data use and informed consent will help to build trust. In the context
 of big data this is more challenging^[This topic is discussed in
-more detail in Chapter 11.].
+more detail in Chapter 12.].
 
 Summary
 -------
