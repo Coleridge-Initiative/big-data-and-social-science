@@ -7,6 +7,7 @@ bookdown::gitbook:
       before: |
         <li><a href="./">Big Data and Social Science</a></li>
   includes:
+    in_header: google_analytics.html
     after_body: disqus.html
 bookdown::pdf_book:
   includes:
