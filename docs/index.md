@@ -14,14 +14,10 @@ link-citations: yes
 biblio-style: apalike
 ---
 
-# Preface {-}
+# Preface to the 2nd edition {-}
 
-The class on which this book is based was created in response to a very real challenge: how to introduce new ideas and methodologies about economic and social measurement into a workplace focused on producing high-quality statistics.  We are deeply grateful for the inspiration and support of Census Bureau Director John Thompson and Deputy Director Nancy Potok in designing and implementing the initial class content and structure.
+The class on which this book is based was created in response to a very real challenge: how to introduce new ideas and methodologies about economic and social measurement into a workplace focused on producing high-quality statistics.  Since the first edition of this book came out we were fortunate to train over 450 participants in the Applied Data Analytics classes, resulting in increased data analytics capacity, both in terms of human and technical resources. What we learned in delivering these classes greatly influenced the 2nd edition. We also added an entire new chapter on Bias and Fairness in Machine Learning, and re-organized the book chapters a bit.  
 
-As with any book, there are many people to be thanked. We are grateful to the over 450 participants in the Applied Data Analytics classes that have been delivered over the past three years. The Coleridge Initiative team at New York University, the University of Maryland and the University of Chicago were critical in shaping the format and structure - we are particularly grateful to Clayton Hunter, Jody Derezinski Williams, Graham Henke, Jonathan Morgan, Drew Gordon, Avishek Kumar, and Brian Kim.
+As with any book, there are many people to be thanked. he Coleridge Initiative team at New York University, the University of Maryland and the University of Chicago were critical in shaping the format and structure - we are particularly grateful to Clayton Hunter, Jody Derezinski Williams, Graham Henke, Jonathan Morgan, Drew Gordon, Avishek Kumar, Brian Kim, Christoph Kern, and all the book chapter authors for their contribution to the second edition.
 
-We are also grateful to the students of three "Big Data for Federal Statistics" classes in which we piloted the first edition of this book, and to the instructors and speakers beyond those who  contributed as authors to this edited volume---Dan Black, Nick Collier, Alex Engler, Ophir Frieder, Lee Giles, Bob Goerge, Laure Haak, Madian Khabsa, Jonathan Ozik, Ben Shneiderman, and Abe Usher. The book would not exist without them.
-
-We thank Trent Buskirk, Davon Clarke, Chase Coleman, Stephanie Eckman, Matt Gee, Laurel Haak, Jen Helsby, Madian Khabsa, Ulrich Kohler, Charlotte Oslund, Rod Little, Arnaud Sahuguet, Tim Savage, Severin Thaler, and Joe Walsh for their helpful comments on drafts of this material. In particular we thank Stas Kolenikov for a very detailed review of the first edition.
-
-We also owe a great debt to the copyeditor, Richard Leigh; the project editor, Charlotte Byrnes; and the publisher, Rob Calver, for their hard work and dedication.
+We also thank the critical reviewers solicited from CRC Press and anyone from whom we got revision suggestions online, in particular Stas Kolenikov, who carefully examined the first edition and suggested updates. We are great debt of gratitude to the copyeditor, XXX; the project editor, XXX; and the publisher, Rob Calver, for their hard work and dedication.

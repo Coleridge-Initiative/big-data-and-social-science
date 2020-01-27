@@ -285,7 +285,7 @@ risks, followed by the application of an anonymization technique, and
 finally an evaluation of disclosure risks and analytical quality of the
 candidate data release(s). The two main approaches have been
 *statistical disclosure* control techniques to produce anonymized public
-use data sets, and controlled access through a *research data center*.
+use data sets, and controlled access through a *research data center* [@shlomo2018].
 
 **Statistical disclosure control techniques**
 
@@ -301,9 +301,9 @@ follows:
 > output cannot relate a known individual (or other responding unit) to
 > an element in the output.
 
-Traditionally, confidentiality protection has been accomplished by
-releasing only *aggregated tabular data*. This practice works well in
-settings where the primary purpose is enumeration, such as census
+Traditionally, confidentiality protection was accomplished by
+releasing only *aggregated tabular data*. This practice worked well in
+settings where the primary purpose was enumeration, such as census
 taking. However, tabular data are poorly suited to describing the
 underlying distributions and covariance across variables that are often
 the focus of applied social science research [@duncanstatistical].
@@ -347,14 +347,8 @@ It  is important to keep in mind that the utility of synthetic data sets as a ge
 
 **Research data centers**
 
-The second approach is establishing research data centers. Here,
-qualified researchers gain access to micro-level data after they are
-sworn in to protect the confidentiality of the data they access. Strong
-input and output controls are in place to ensure that published findings
-comply with the privacy and confidentiality regulations
-[@hayden2012broken]. Some RDCs allow access through remote execution,
-where no direct access to the data is allowed, but it is not necessary
-to travel; others allow remote direct access
+The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the "Five Safes" which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 [@desaietal2016]. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations
+[@hayden2012broken]. 
 
 
 Non-Tabular data
@@ -505,7 +499,7 @@ forever, ownership could be claimed by yet-to-be-born relatives whose
 personal privacy could be threatened by release of information about
 blood relations.
 
-The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDP pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
+The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDPR pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
 
 However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving
 away from individualized assessments of the costs of privacy violations,
@@ -525,7 +519,7 @@ Summary
 
 The excitement about how big data can change the social science research
 paradigm should be tempered by a recognition that existing ways of
-protecting confidentiality are no longer viable [@karr2014analytical].
+protecting privacy confidentiality are no longer viable [@karr2014analytical].
 There is a great deal of research that can be used to inform the
 development of such a structure, but it has been siloed into
 disconnected research areas, such as statistics, cybersecurity, and
