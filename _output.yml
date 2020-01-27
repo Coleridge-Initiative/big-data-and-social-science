@@ -10,7 +10,7 @@ bookdown::gitbook:
     after_body: disqus.html
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: [preamble.tex, google_analytics.html]
   latex_engine: lualatex
   keep_tex: yes
   template: null

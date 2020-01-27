@@ -156,8 +156,7 @@ goals: description, causation, and prediction.
 
 The job of many social scientists is to provide descriptive statements
 about the population of interest. These could be univariate, bivariate,
-or even multivariate statements. [Machine Learning](#chap:ml) on machine learning will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*
-Methods that include cluster analysis.
+or even multivariate statements. The chapter on [Machine Learning](#chap:ml) will cover methods that go beyond simple descriptive statistics, known as *unsupervised learning*, such as cluster analysis.
 
 Descriptive statistics are usually created based on census data or
 sample surveys to generate some summary statistics like a mean, median,
