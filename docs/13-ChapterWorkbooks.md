@@ -36,8 +36,15 @@ available in the *Big-Data-Social-Science GitHub repository*
 may be added over time and made available in this repository.
 
 To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>). At this point, online workbooks are available for selected topics that are
-covered in the book. Below is a list of the online workbooks, along with a 
+covered in the book. 
+
+
+Notebooks
+------------
+
+Below is a list of the online workbooks, along with a 
 short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
+
 
 ### Databases
 
