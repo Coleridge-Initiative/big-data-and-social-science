@@ -1,13 +1,7 @@
-% FK notes from 1/3/2020
-% Brian -- let's change your personal repository to coleridge for the binder (or anywhere else) (> done)
-% make use of the side notes for the printed version (we will have them back like the old layout was)
-% 4 levels down in the structuring is too much. Check with the editor how they want to do this. I would recommend just going with non-numbered sections at that point. (> done)
-
-
 Workbooks {#chap:workbooks}
 =========
 
-**Brian Kim, Christoph Kern, Jonathan Scott Morgan, Christina Jones, and Ahmad Emad**
+**Brian Kim, Christoph Kern, Jonathan Scott Morgan, Clayton Hunter, Avishek Kumar**
 
 This final chapter provides an overview of the Python workbooks that
 accompany this book. The workbooks combine text explanation and
@@ -22,17 +16,9 @@ Introduction
 ------------
 
 We provide accompanying Juptyer workbooks for most chapters in
-this book. The workbooks are structured in two sets. *Workbook Set 1* 
-includes workbooks that can be run online, which allows you to quickly interact 
-with the code examples. *Workbook Set 2* provides additional workbooks that can be 
-run locally or on a Server (that needs to be configured first). The 
-workbooks of these sets explain and exemplify techniques and approaches 
-from the book chapters by using different substantive examples and data 
-sources.
-
-In summary, the workbooks provide a thorough overview of the work needed to
+this book. The workbooks provide a thorough overview of the work needed to
 implement the selected technologies. They combine explanation, basic
-exercises, and substantial additional Python code to provide a
+exercises, and substantial additional Python and SQL code to provide a
 conceptual understanding of each technology, give insight into how key
 parts of the process are implemented through exercises, and then lay out
 an end-to-end pattern for implementing each in your own work. The
@@ -41,10 +27,7 @@ that mix formatted text and Python code samples that can be edited and
 run in real time in a Jupyter notebook server, allowing you to run and
 explore the code for each technology as you read about it.
 
-Workbook Set 1
------------
-
-The workbooks of set 1 are designed to be run online using Binder
+The Jupyter notebooks are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
 locally. Individual workbooks can be opened by following the 
 corresponding Binder link. The full set of workbooks is
@@ -67,19 +50,18 @@ Corrections Data
 
 - Understand and perform various joins. 
 
+### Dataset Exploration and Visualization
 
-### Dataset Exploration
-
-Link to workbook: 
-
-The *Dataset Exploration* further explores the North Carolina Department of Correction data, demonstrating how to work with 
-missing values and date variables and join tables by using SQL in Python. Though some of the SQL from the Databses notebook is revisited here, the focus is on practicing Python code and using Python for data analysis. The 
+The *Dataset Exploration and Visualization* notebook further explores the North Carolina Department of Correction data, demonstrating how to work with 
+missing values and date variables and join tables by using SQL in Python. Though some of the SQL from the Databases notebook is revisited here, the focus is on practicing Python code and using Python for data analysis. The 
 workbook also explains how to pull data from a database into a dataframe in
-Python and continues by exploring the imported data using the `numpy` and `pandas` packages. In this workbook, you will learn how to:
+Python and continues by exploring the imported data using the `numpy` and `pandas` packages, as well as `matplotlib` and `seaborn` for visualizations. In this workbook, you will learn how to:
 
 -   Connect to and query a database through Python,
 
 -   Explore aggregate statistics in Python.
+
+- Create basic visualizations in Python
 
 ### APIs 
 
@@ -92,6 +74,24 @@ stores. This notebook walks through the process of retrieving data about patents
 -   Get a response from the URL,
 
 -   Retrieve the data in JSON form.
+
+### Record Linkage
+
+In the *Record Linkage* workbook you will use Python to implement the basic
+concepts behind record linkage using data from PatentsView and Federal RePORTER. This workbook will cover using probabalistic record linkage, in which different types
+of string comparators are used to compare multiple pieces of information between
+two records to produce a score that indicates how likely it is that the
+records are data about the same underlying entity. In this workbook, you
+will learn how to:
+
+-   Prepare data for record linkage,
+
+-   Use and evaluate the results of common computational string
+    comparison algorithms including Levenshtein
+    distance, Levenshtein--Damerau distance, and Jaro--Winkler distance,
+
+-   Understand the Fellegi--Sunter probabilistic record linkage method,
+    with step-by-step implementation guide.
 
 ### Text Analysis 
 
@@ -150,228 +150,228 @@ The *Bias and Fairness* workbook exemplifies the usage of the bias and fairness 
 
 - Assess model fairness based on various disparity metrics.
 
-Workbook Set 2
------------
+<!-- Workbook Set 2 -->
+<!-- ----------- -->
 
-The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer.
+<!-- The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer. -->
 
-The *Big-Data-Workbooks GitHub repository* provides two different types of
-workbooks, each needing a different Python setup to run. The first type
-of workbooks is intended to be downloaded and run locally by individual
-users. The second type is designed to be hosted, assigned, worked on,
-and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
+<!-- The *Big-Data-Workbooks GitHub repository* provides two different types of -->
+<!-- workbooks, each needing a different Python setup to run. The first type -->
+<!-- of workbooks is intended to be downloaded and run locally by individual -->
+<!-- users. The second type is designed to be hosted, assigned, worked on, -->
+<!-- and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade. -->
 
-The text, images, and Python code in the workbooks are the same between
-the two versions, as are the files and programs needed to complete each.
+<!-- The text, images, and Python code in the workbooks are the same between -->
+<!-- the two versions, as are the files and programs needed to complete each. -->
 
-The differences in the workbooks themselves relate to the code cells
-within each notebook where users implement and test exercises. In the
-workbooks intended to be used locally, exercises are implemented in
-simple interactive code cells. In the `nbgrader` versions, these cells have
-additional metadata and contain the solutions for the exercises, making
-them a convenient answer key even if you are working on them locally.
+<!-- The differences in the workbooks themselves relate to the code cells -->
+<!-- within each notebook where users implement and test exercises. In the -->
+<!-- workbooks intended to be used locally, exercises are implemented in -->
+<!-- simple interactive code cells. In the `nbgrader` versions, these cells have -->
+<!-- additional metadata and contain the solutions for the exercises, making -->
+<!-- them a convenient answer key even if you are working on them locally. -->
 
-### Running workbooks locally
+<!-- ### Running workbooks locally -->
 
-To run workbooks locally, you will need to install Python on your
-system, then install `ipython`, which includes a local Jupyter server you can use
-to run the workbooks. You will also need to install additional Python
-packages needed by the workbooks, and a few additional programs.
+<!-- To run workbooks locally, you will need to install Python on your -->
+<!-- system, then install `ipython`, which includes a local Jupyter server you can use -->
+<!-- to run the workbooks. You will also need to install additional Python -->
+<!-- packages needed by the workbooks, and a few additional programs. -->
 
-The easiest way to get this all working is to install the free Anaconda
-Python distribution provided by Continuum Analytics
-(<https://www.continuum.io/downloads>). Anaconda includes a Jupyter
-server and precompiled versions of many packages used in the workbooks.
-It includes multiple tools for installing and updating both Python and
-installed packages. It is separate from any OS-level version of Python,
-and is easy to completely uninstall.
+<!-- The easiest way to get this all working is to install the free Anaconda -->
+<!-- Python distribution provided by Continuum Analytics -->
+<!-- (<https://www.continuum.io/downloads>). Anaconda includes a Jupyter -->
+<!-- server and precompiled versions of many packages used in the workbooks. -->
+<!-- It includes multiple tools for installing and updating both Python and -->
+<!-- installed packages. It is separate from any OS-level version of Python, -->
+<!-- and is easy to completely uninstall. -->
 
-Anaconda also works on Windows as it does on Mac and Linux. Windows is a
-much different operating system from Apple's OS X and Unix/Linux, and
-Python has historically been much trickier to install, configure, and
-use on Windows. Packages are harder to compile and install, the
-environment can be more difficult to set up, etc. Anaconda makes Python
-easier to work with on any OS, and on Windows, in a single run of the
-Anaconda installer, it integrates Python and common Python utilities
-like `pip` into Windows well enough that it approximates the ease and
-experience of using Python within OS X or Unix/Linux (no small feat).
+<!-- Anaconda also works on Windows as it does on Mac and Linux. Windows is a -->
+<!-- much different operating system from Apple's OS X and Unix/Linux, and -->
+<!-- Python has historically been much trickier to install, configure, and -->
+<!-- use on Windows. Packages are harder to compile and install, the -->
+<!-- environment can be more difficult to set up, etc. Anaconda makes Python -->
+<!-- easier to work with on any OS, and on Windows, in a single run of the -->
+<!-- Anaconda installer, it integrates Python and common Python utilities -->
+<!-- like `pip` into Windows well enough that it approximates the ease and -->
+<!-- experience of using Python within OS X or Unix/Linux (no small feat). -->
 
-You can also create your Python environment manually, installing Python,
-package managers, and Python packages separately. Packages like `numpy` 
-and `pandas` can be difficult to get working, however, particularly on 
-Windows, and Anaconda simplifies this setup considerably regardless of 
-your OS.
+<!-- You can also create your Python environment manually, installing Python, -->
+<!-- package managers, and Python packages separately. Packages like `numpy`  -->
+<!-- and `pandas` can be difficult to get working, however, particularly on  -->
+<!-- Windows, and Anaconda simplifies this setup considerably regardless of  -->
+<!-- your OS. -->
 
-### Central workbook server
+<!-- ### Central workbook server -->
 
-Setting up a server to host workbooks managed by `nbgrader` is more involved. 
-Some of the workbooks consume multiple gigabytes of memory per user and
-substantial processing power. A hosted implementation where all users
-work on a single server requires substantial hardware, relatively
-complex configuration, and ongoing server maintenance. Detailed
-instructions are included in the Big-Data-Workbooks GitHub repository.
-It is not rocket science, but it is complicated, and you will likely
-need an IT professional to help you set up, maintain, and troubleshoot.
-Since all student work will be centralized in this one location, you
-will also want a robust, multi-destination backup plan.
+<!-- Setting up a server to host workbooks managed by `nbgrader` is more involved.  -->
+<!-- Some of the workbooks consume multiple gigabytes of memory per user and -->
+<!-- substantial processing power. A hosted implementation where all users -->
+<!-- work on a single server requires substantial hardware, relatively -->
+<!-- complex configuration, and ongoing server maintenance. Detailed -->
+<!-- instructions are included in the Big-Data-Workbooks GitHub repository. -->
+<!-- It is not rocket science, but it is complicated, and you will likely -->
+<!-- need an IT professional to help you set up, maintain, and troubleshoot. -->
+<!-- Since all student work will be centralized in this one location, you -->
+<!-- will also want a robust, multi-destination backup plan. -->
 
-For more information on installing and running the workbooks that
-accompany this book, see the Big-Data-Workbooks GitHub repository.
+<!-- For more information on installing and running the workbooks that -->
+<!-- accompany this book, see the Big-Data-Workbooks GitHub repository. -->
 
-### Workbook details
+<!-- ### Workbook details -->
 
-Most chapters have an associated workbook, each in its own directory in
-the Big-Data-Workbooks GitHub repository. Below is a list of the
-workbooks, along with a short summary of the topics that each covers.
+<!-- Most chapters have an associated workbook, each in its own directory in -->
+<!-- the Big-Data-Workbooks GitHub repository. Below is a list of the -->
+<!-- workbooks, along with a short summary of the topics that each covers. -->
 
-### Social Media and APIs
+<!-- ### Social Media and APIs -->
 
-The Social Media and APIs workbook introduces you to the use of
-Internet-based web service APIs for retrieving data from online data
-stores. Examples include retrieving information on articles from
-Crossref (provider of Digital Object Identifiers used as unique IDs for
-publications) and using the PLOS Search and ALM APIs to retrieve
-information on how articles are shared and referenced in social media,
-focusing on Twitter. In this workbook, you will learn how to:
+<!-- The Social Media and APIs workbook introduces you to the use of -->
+<!-- Internet-based web service APIs for retrieving data from online data -->
+<!-- stores. Examples include retrieving information on articles from -->
+<!-- Crossref (provider of Digital Object Identifiers used as unique IDs for -->
+<!-- publications) and using the PLOS Search and ALM APIs to retrieve -->
+<!-- information on how articles are shared and referenced in social media, -->
+<!-- focusing on Twitter. In this workbook, you will learn how to: -->
 
--   Set up user API keys,
+<!-- -   Set up user API keys, -->
 
--   Connect to Internet-based data stores using APIs,
+<!-- -   Connect to Internet-based data stores using APIs, -->
 
--   Collect DOIs and Article-Level Metrics data from web APIs,
+<!-- -   Collect DOIs and Article-Level Metrics data from web APIs, -->
 
--   Conduct basic analysis of publication data.
+<!-- -   Conduct basic analysis of publication data. -->
 
-### Database basics
+<!-- ### Database basics -->
 
-In the Database workbook you will learn the practical benefits that stem
-from using a database management system. You will implement basic SQL
-commands to query grants, patents, and vendor data, and thus learn how
-to interact with data stored in a relational database. You will also be
-introduced to using Python to execute and interact with the results of
-SQL queries, so you can write programs that interact with data stored in
-a database. In this workbook, you will learn how to:
+<!-- In the Database workbook you will learn the practical benefits that stem -->
+<!-- from using a database management system. You will implement basic SQL -->
+<!-- commands to query grants, patents, and vendor data, and thus learn how -->
+<!-- to interact with data stored in a relational database. You will also be -->
+<!-- introduced to using Python to execute and interact with the results of -->
+<!-- SQL queries, so you can write programs that interact with data stored in -->
+<!-- a database. In this workbook, you will learn how to: -->
 
--   Connect to a database through Python,
+<!-- -   Connect to a database through Python, -->
 
--   Query the database by using SQL in Python,
+<!-- -   Query the database by using SQL in Python, -->
 
--   Begin to understand to the SQL query language,
+<!-- -   Begin to understand to the SQL query language, -->
 
--   Close database connections.
+<!-- -   Close database connections. -->
 
-### Data Linkage
+<!-- ### Data Linkage -->
 
-In the Data Linkage workbook you will use Python to clean input data,
-including using regular expressions, then learn and implement the basic
-concepts behind the probabilistic record linkage: using different types
-of string comparators to compare multiple pieces of information between
-two records to produce a score that indicates how likely it is that the
-records are data about the same underlying entity. In this workbook, you
-will learn how to:
+<!-- In the Data Linkage workbook you will use Python to clean input data, -->
+<!-- including using regular expressions, then learn and implement the basic -->
+<!-- concepts behind the probabilistic record linkage: using different types -->
+<!-- of string comparators to compare multiple pieces of information between -->
+<!-- two records to produce a score that indicates how likely it is that the -->
+<!-- records are data about the same underlying entity. In this workbook, you -->
+<!-- will learn how to: -->
 
--   Parse a name string into first, middle, and last names using
-    Python's `split` method and regular expressions,
+<!-- -   Parse a name string into first, middle, and last names using -->
+<!--     Python's `split` method and regular expressions, -->
 
--   Use and evaluate the results of common computational string
-    comparison algorithms including Levenshtein
-    distance, Levenshtein--Damerau distance, and Jaro--Winkler distance,
+<!-- -   Use and evaluate the results of common computational string -->
+<!--     comparison algorithms including Levenshtein -->
+<!--     distance, Levenshtein--Damerau distance, and Jaro--Winkler distance, -->
 
--   Understand the Fellegi--Sunter probabilistic record linkage method,
-    with step-by-step implementation guide.
+<!-- -   Understand the Fellegi--Sunter probabilistic record linkage method, -->
+<!--     with step-by-step implementation guide. -->
 
-### Machine Learning
+<!-- ### Machine Learning -->
 
-In the Machine Learning workbook you will train a machine learning model
-to predict missing information, working through the process of cleaning
-and prepping data for training and testing a model, then training and
-testing a model to impute values for a missing categorical variable,
-predicting the academic department of a given grant's primary
-investigator based on other traits of the grant. In this workbook, you
-will learn how to:
+<!-- In the Machine Learning workbook you will train a machine learning model -->
+<!-- to predict missing information, working through the process of cleaning -->
+<!-- and prepping data for training and testing a model, then training and -->
+<!-- testing a model to impute values for a missing categorical variable, -->
+<!-- predicting the academic department of a given grant's primary -->
+<!-- investigator based on other traits of the grant. In this workbook, you -->
+<!-- will learn how to: -->
 
--   Read, clean, filter, and store data with Python's `pandas` data analysis
-    package,
+<!-- -   Read, clean, filter, and store data with Python's `pandas` data analysis -->
+<!--     package, -->
 
--   Recognize the types of data cleaning and refining needed to make
-    data more compatible with machine learning models,
+<!-- -   Recognize the types of data cleaning and refining needed to make -->
+<!--     data more compatible with machine learning models, -->
 
--   Clean and refine data,
+<!-- -   Clean and refine data, -->
 
--   Manage memory when working with large data sets,
+<!-- -   Manage memory when working with large data sets, -->
 
--   Employ strategies for dividing data to properly train and test a
-    machine learning model,
+<!-- -   Employ strategies for dividing data to properly train and test a -->
+<!--     machine learning model, -->
 
--   Use the `scikit-learn` Python package to train, fit, and evaluate machine learning
-    models.
+<!-- -   Use the `scikit-learn` Python package to train, fit, and evaluate machine learning -->
+<!--     models. -->
 
-### Text Analysis
+<!-- ### Text Analysis -->
 
-In the Text Analysis workbook, you will derive a list of topics from
-text documents using MALLET, a Java-based tool that analyzes clusters of
-words across a set of documents to derive common topics within the
-documents, defined by sets of key words that are consistently used
-together. In this workbook, you will learn how to:
+<!-- In the Text Analysis workbook, you will derive a list of topics from -->
+<!-- text documents using MALLET, a Java-based tool that analyzes clusters of -->
+<!-- words across a set of documents to derive common topics within the -->
+<!-- documents, defined by sets of key words that are consistently used -->
+<!-- together. In this workbook, you will learn how to: -->
 
--   Clean and prepare data for automated text analysis,
+<!-- -   Clean and prepare data for automated text analysis, -->
 
--   Set up data for use in MALLET,
+<!-- -   Set up data for use in MALLET, -->
 
--   Derive a set of topics from a collection of text documents,
+<!-- -   Derive a set of topics from a collection of text documents, -->
 
--   Create a model that detects these topics in documents, and use this
-    model to categorize documents.
+<!-- -   Create a model that detects these topics in documents, and use this -->
+<!--     model to categorize documents. -->
 
-### Networks
+<!-- ### Networks -->
 
-In the Networks workbook you will create network data where the nodes
-are researchers who have been awarded grants, and ties are created
-between each researcher on a given grant. You will use Python to read
-the grant data and translate them into network data, then use the `networkx` Python
-library to calculate node- and graph-level network statistics and `igraph` to
-create and refine network visualizations. You will also be introduced to
-graph databases, an alternative way of storing and querying network
-data. In this workbook, you will learn how to:
+<!-- In the Networks workbook you will create network data where the nodes -->
+<!-- are researchers who have been awarded grants, and ties are created -->
+<!-- between each researcher on a given grant. You will use Python to read -->
+<!-- the grant data and translate them into network data, then use the `networkx` Python -->
+<!-- library to calculate node- and graph-level network statistics and `igraph` to -->
+<!-- create and refine network visualizations. You will also be introduced to -->
+<!-- graph databases, an alternative way of storing and querying network -->
+<!-- data. In this workbook, you will learn how to: -->
 
--   Develop strategies for detecting potential network data in
-    relational data sets,
+<!-- -   Develop strategies for detecting potential network data in -->
+<!--     relational data sets, -->
 
--   Use Python to derive network data from a relational database,
+<!-- -   Use Python to derive network data from a relational database, -->
 
--   Store and query network data using a graph database like `neo4j`,
+<!-- -   Store and query network data using a graph database like `neo4j`, -->
 
--   Load network data into `networkx`, then use it to calculate node- and
-    graph-level network statistics,
+<!-- -   Load network data into `networkx`, then use it to calculate node- and -->
+<!--     graph-level network statistics, -->
 
--   Use `networkx` to export graph data into commonly shared formats (`graphml`, edge lists,
-    different tabular formats, etc.),
+<!-- -   Use `networkx` to export graph data into commonly shared formats (`graphml`, edge lists, -->
+<!--     different tabular formats, etc.), -->
 
--   Load network data into the `igraph` Python package and then create graph
-    visualizations.
+<!-- -   Load network data into the `igraph` Python package and then create graph -->
+<!--     visualizations. -->
 
-### Visualization
+<!-- ### Visualization -->
 
-The Visualization workbook introduces you to Tableau, a data analysis
-and visualization software package that is easy to learn and use.
-Tableau allows you to connect to and integrate multiple data sources
-into complex visualizations without writing code. It allows you to
-dynamically shift between views of data to build anything from single
-visualizations to an interactive dashboard that contains multiple views
-of your data. In this workbook, you will learn how to:
+<!-- The Visualization workbook introduces you to Tableau, a data analysis -->
+<!-- and visualization software package that is easy to learn and use. -->
+<!-- Tableau allows you to connect to and integrate multiple data sources -->
+<!-- into complex visualizations without writing code. It allows you to -->
+<!-- dynamically shift between views of data to build anything from single -->
+<!-- visualizations to an interactive dashboard that contains multiple views -->
+<!-- of your data. In this workbook, you will learn how to: -->
 
--   Connect Tableau to a relational database,
+<!-- -   Connect Tableau to a relational database, -->
 
--   Interact with Tableau's interface,
+<!-- -   Interact with Tableau's interface, -->
 
--   Select, combine, and filter the tables and columns included in
-    visualizations,
+<!-- -   Select, combine, and filter the tables and columns included in -->
+<!--     visualizations, -->
 
--   Create bar charts, timeline graphs, and heat maps,
+<!-- -   Create bar charts, timeline graphs, and heat maps, -->
 
--   Group and aggregate data,
+<!-- -   Group and aggregate data, -->
 
--   Create a dashboard that combines multiple views of your data.
+<!-- -   Create a dashboard that combines multiple views of your data. -->
 
 Resources
 ---------
