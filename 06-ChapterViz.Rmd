@@ -49,7 +49,7 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Adapted from Anscombe's quartet [@anscombe1973graphs]'}
+```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Adapted from Anscombe`s quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1.png")
 ```
 

@@ -119,6 +119,20 @@ In the Text Analysis notebook, you will use the data that you pulled from the Pa
 
 - Improve and iterate models to focus in on identified topics.
 
+### Networks
+
+In the Networks workbook you will create network data where the nodes
+are researchers who have been awarded grants, and ties are created
+between each researcher on a given grant. You will use Python to read
+the grant data and translate them into network data, calculate node- and graph-level 
+network statistics and create network visualizations. In this workbook, you will learn how to:
+
+-   Use Python to derive network data from a relational database,
+
+-   Calculate node- and graph-level network statistics,
+
+-   Load network data into the `igraph` Python package and create graph visualizations. 
+
 ### Machine Learning -- Creating Labels
 
 The *Machine Learning Creating Labels* workbook exemplifies how to create an 
