@@ -1,6 +1,5 @@
 <!-- 
-% todo
-% reference is strange: [@CSConf] in printed version Wikipedia nda
+% 
 --> 
 
 
