@@ -6,7 +6,7 @@ Information Visualization {#chap:viz}
 **M. Adil Yalcin and Catherine Plaisant**
 
 
-This chapter will show you how to use visualization to explore data in the early phases of a project as well as to communicate results so that data can be turned into interpretable, actionable information.
+This chapter will show you how to use visualization to explore data as well as to communicate results so that data can be turned into interpretable, actionable information.
 There are many ways of presenting statistical information that convey
 content in a rigorous manner. The goal of this chapter is to present an
 introductory overview of effective visualization techniques for a range
@@ -37,7 +37,7 @@ can process nonstructured representations. The science of visualization
 draws on multiple fields such as perceptual psychology, statistics, and
 graphic design to present information, and on advances in rapid
 processing and dynamic to design user interfaces that permit powerful
-interactive visual
+interactive visual analysis.
 
 Figure \@ref(fig:fig9-1), "Anscombe's quartet" [@anscombe1973graphs],
 provides a classic example of the value of visualization compared to
@@ -49,7 +49,7 @@ each point plotted on perpendicular axes (scatterplots), revealing
 dramatic differences between the data sets, trends, and outliers
 visually.
 
-```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Anscombes quartet [@anscombe1973graphs]'}
+```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Adapted from Anscombe's quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1.png")
 ```
 
@@ -74,8 +74,8 @@ processing data sets.]).
 ```{block, type='F00'}
 **Box 9.1:**
 The development of an
-effective visualization is an iterative process that generally includes
-the following steps:
+effective visualization is a continous process that generally includes
+the following activities:
 
 -   Specify user needs, tasks, accessibility requirements and criteria
     for success.
@@ -99,51 +99,19 @@ a wide range of options. If the audience is broad, then *infographics*
 can be developed by graphic designers, as described in classic texts
 (see [@few2009now; @edward2001visual; @edward2006beauty] or the examples
 compiled by Harrison et al. [@harrison2015infographic; @harrisonweb]).
-If, on the other hand, the audience comprises domain experts interested
-in monitoring the overview status of dynamic processes on a continuous
-basis, *dashboards* can be used. Examples include the monitoring of
+If, on the other hand, the audience comprises domain experts interested in monitoring the overview status of dynamic processes on a continuous basis, monitoring *dashboards* with no or little interactivity can be used. 
+ Examples include the monitoring of
 sales, or the number of tweets about people, or symptoms of the flu and
-how they compare to a baseline [@few2013information]. Dashboards can
+how they compare to a baseline [@few2013information]. Such dashboards, composed of multiple charts of different operational data, can
 increase situational awareness so that problems can be noticed and
 solved early and better decisions can be made with up-to-date
 information.
 
-Another goal of visualization is to enable *interactive exploratory
-analysis* for casual users as well as professional analysts. One casual
-example is BabyNameVoyager [@babynamevoyager], which lets users type in
-a name and see a graph of its popularity over the past century^[As the baby name is
-typed letter by letter, BabyNameVoyager visualizes
-the popularity of all the
-names starting with the
-letters entered so far, and
-it animates smoothly with
-each new letter input. For
-example, typing “Jo” shows
-all the names starting with
-“Jo”. This view reveals
-that Joyce and Joan were
-popular girl names in the
-1930s, and the use of
-“John” has declined since
-the 1960s.].
+Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager [@babynamevoyager] lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
-```{r fig9-2, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'A data analysis browser of a selection of grants from the US Department of Agriculture was created by using the web-based tool Keshif'}
-knitr::include_graphics("ChapterViz/figures/fig9-2.png")
-```
 
-Data analysis tools can enable analysis of structured and generic data
-sets. Figure \@ref(fig:fig9-2) shows an exploratory browser of a selection of
-awards (grants) from the US Department of Agriculture, created using the
-web-based data exploration tool Keshif (<http://www.keshif.me>). The
-awards (records) are listed in the middle panel by latest start date
-first. Attributes of the awards, such as funding source, are shown on
-side panels, revealing the range of their values. The awards with status
-*new* are focused per the filtering selection, and are visualized using
-darker gray colors. Lighter gray colors provide visual cues to the
-distribution of all awards. The orange selection highlights
-distributions of awards with formula funding, known as *Hatch funding*.
-The analyst can explore trends in new or old awards, funding resources,
-and other attributes in this rich award portfolio.
+In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure 6.2 shows an interactive dashboard (<gallery.keshif.me/AidWorkerSecurity>) that visualizes the Aid Worker Security Incidents dataset (<http://www.keshif.me>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
+
 
 ```{r fig9-3a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Charting interface of Tableau'}
 knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
@@ -153,11 +121,7 @@ knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
 knitr::include_graphics("ChapterViz/figures/fig9-3b.png")
 ```
 
-Commercial tools such as Spotfire and Tableau, among many other tools
-(see Section [Resources](#sec:mylabel4)), allow users to create visualizations by
-offering chart types and visual design environments to analyze their
-data, and to combine them in potent dashboards rapidly shared with
-colleagues. For example, Figure
+To create interactive charts and dashboards from new datasets for analysis, products and tools, such as Tableau, PowerBI, Keshif, and others (see Section [Resources](#sec:mylabel4)), offer a range of chart types with various parameters, as well as visual design environments that allow combining and sharing these charts in potent dashboards. For example, Figure
 \@ref(fig:fig9-3a) shows the charting interface of Tableau on a
 transaction data set. The left-hand panel shows the list of attributes
 associated with vendor transactions for a given university. The
@@ -185,9 +149,9 @@ elements, like position, length, color, angle, area, and texture
 organized in a multitude of ways, discussed in more detail by Munzner
 [@munzner2014visualization]. In addition to visual data encoding, units
 for axes, labels, and legends need to be provided as well as
-explanations of the mappings when the design is unconventional. (The
-website "A World of Terror" provides some compelling examples
-[@worldterror].) Annotations or comments can be used to guide viewer
+explanations of the mappings when the design is unconventional. A visually compelling example is “how to read this data” section of “A world of Terror” project by Periscopic (<https://terror.periscopic.com/>).
+
+Annotations or comments can be used to guide viewer
 attention and to describe related insights. Providing attribution and
 data source, where applicable, is an ethical practice that also enables
 validating data, and promotes reuse to explore new perspectives.
@@ -226,9 +190,9 @@ rows) can have a list of attributes with varying types: the growth rate
 in the last 10 years (one observation per year, time series data), their
 current population (single numerical data), the amount of trade with
 other countries (networked/linked data), and the top 10 exported
-products (if grouped by industry, hierarchical data). Furthermore, we
-provide an overview of common tasks for visual data analysis in
-Box 9.2, which can be applied across different data types
+products (if grouped by industry, hierarchical data). 
+
+In addition to common data types, Box 9.2 provides an overview of common tasks for visual data analysis, which can be applied across different data types
 based on goals and types of visualizations.
 
 ```{block, type='F00'}
@@ -282,9 +246,7 @@ Communicate
 
 -   Trace action histories
 ```
-
-Interactive visualization design is also closely coupled with the
-targeted devices. Conventionally, visualizations have been designed for
+Interactive visualization design should also consider the devices where data will be viewed and interacted. Conventionally, visualizations have been designed for
 mouse and keyboard interaction on desktop computers. However, a wider
 range of device forms, such as mobile devices with small displays and
 touch interaction, is becoming common. Creating visualizations for new
@@ -296,7 +258,7 @@ forms requires special care, though basic design principles such as
 In common tabular data, each record (row) has a list of attributes
 (columns), whose value is mostly categorical or numerical. The analysis
 of multivariate data with basic categorical and interval types aims to
-understand patterns within and across data Given a larger number of
+understand patterns within and across data attributes. Given a larger number of
 attributes, one of the challenges in data exploration and analytics is
 to select the attributes and relations to focus on. Expertise in the
 data domain can be helpful for targeting relevant attributes.
@@ -306,11 +268,11 @@ on the data and relations being explored. One-dimensional (1D) charts
 present data on a single axis only. An example is a *box-plot*, which
 shows quartile ranges for numerical data. So-called 1.5D charts list the
 range of possible values on one axis, and describe a measurement of data
-on the other. *Bar charts* are a ubiquitous example, in order to show,
+on the other. *Bar charts* are a ubiquitous chart type that can effectively visualize numeric data, 
 for example, a numeric grade per student, or grade average for
 aggregated student groups by gender. Records can also be grouped over
-numerical ranges, and bars can show the number of items in each
-grouping, which generates a *histogram* chart. Two-dimensional charts
+numerical ranges such as sales price, and bars can show the number of items in each
+grouping, which generates a *histogram* chart. Two-dimensional charts, such as scatterplots, 
 plot data along two attributes, such as *scatterplots*. Matrix (grid)
 charts can also be used to show relations between two attributes.
 *Heatmaps* visualize each matrix cell using color to represent its
