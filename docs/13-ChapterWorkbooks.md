@@ -35,15 +35,24 @@ available in the *Big-Data-Social-Science GitHub repository*
 (<https://github.com/Coleridge-Initiative/bdss-notebooks>). Additional workbooks
 may be added over time and made available in this repository.
 
-To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>). At this point, online workbooks are available for selected topics that are
-covered in the book. 
+To launch Binder and work on the notebooks, you can use the following link: (<https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master>). 
 
+The workbooks can also be run locally. In that case, you will need to install 
+Python on your system, then install `ipython`, which includes a local Jupyter 
+server you can use to run the workbooks. You will also need to install additional 
+Python packages needed by the workbooks, and a few additional programs.
+The easiest way to get this all working is to install the free Anaconda
+Python distribution 
+(<https://www.anaconda.com/distribution/>). Anaconda includes a Jupyter
+server and precompiled versions of many packages used in the workbooks.
+It includes multiple tools for installing and updating both Python and
+installed packages. It is separate from any OS-level version of Python,
+and is easy to completely uninstall.
 
 Notebooks
 ------------
 
-Below is a list of the online workbooks, along with a 
-short summary of the content that each covers. Links to each of the individual workbooks are also provided in each section.
+Below is a list of the workbooks, along with a short summary of the content that each covers.
 
 
 ### Databases
@@ -64,11 +73,11 @@ missing values and date variables and join tables by using SQL in Python. Though
 workbook also explains how to pull data from a database into a dataframe in
 Python and continues by exploring the imported data using the `numpy` and `pandas` packages, as well as `matplotlib` and `seaborn` for visualizations. In this workbook, you will learn how to:
 
--   Connect to and query a database through Python,
+- Connect to and query a database through Python,
 
--   Explore aggregate statistics in Python.
+- Explore aggregate statistics in Python,
 
-- Create basic visualizations in Python
+- Create basic visualizations in Python.
 
 ### APIs 
 
@@ -157,7 +166,15 @@ The *Bias and Fairness* workbook exemplifies the usage of the bias and fairness 
 
 - Assess model fairness based on various disparity metrics.
 
-<!-- Workbook Set 2 -->
+### Additional Workbooks
+
+An additional set of workbooks that accompanied the first edition of this book is available at (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>). This repository provides two different types of
+workbooks, each needing a different Python setup to run. The first type
+of workbooks is intended to be downloaded and run locally by individual
+users. The second type is designed to be hosted, assigned, worked on,
+and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
+
+<!-- Workbooks of the First Edition -->
 <!-- ----------- -->
 
 <!-- The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer. -->
@@ -384,12 +401,12 @@ Resources
 ---------
 
 We noted in Section [Introduction: Resources](#chap:intro) the importance 
-of Python, MySQL, and Git/GitHub for the social scientist who intends to 
+of Python, SQL, and Git/GitHub for the social scientist who intends to 
 work with large data. See that section for pointers to useful online 
-resources, and also this book's website, at <https://github.com/BigDataSocialScience>, where we
+resources, and also see <https://github.com/BigDataSocialScience>, where we
 have collected many useful web links, including the following.
 
-For more on getting started with Anaconda, see Continuum's Anaconda
+For more on getting started with Anaconda, see the Anaconda
 documentation [@Anaconda], Anaconda FAQ [@AnacondaFAQ], and Anaconda
 quick start guide [@AnacondaQSG].
 
