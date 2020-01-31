@@ -50,7 +50,7 @@ dramatic differences between the data sets, trends, and outliers
 visually.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-1.png" alt="Adapted from Anscombe`s quartet [@anscombe1973graphs]" width="90%" />
+<img src="ChapterViz/figures/fig9-1-new.png" alt="Adapted from Anscombe`s quartet [@anscombe1973graphs]" width="90%" />
 <p class="caption">(\#fig:fig9-1)Adapted from Anscombe`s quartet [@anscombe1973graphs]</p>
 </div>
 
@@ -100,9 +100,12 @@ information.
 
 Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager [@babynamevoyager] lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
+<div class="figure" style="text-align: center">
+<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents" width="90%" />
+<p class="caption">(\#fig:fig9-2a)Aid Worker Security Incidents</p>
+</div>
 
-In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure 6.2 shows an interactive dashboard (<gallery.keshif.me/AidWorkerSecurity>) that visualizes the Aid Worker Security Incidents dataset (<http://www.keshif.me>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
-
+In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows an interactive dashboard (<gallery.keshif.me/AidWorkerSecurity>) that visualizes the Aid Worker Security Incidents dataset (<http://www.keshif.me>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="90%" />
