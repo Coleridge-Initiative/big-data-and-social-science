@@ -32,9 +32,28 @@ This chapter focuses on one such framework, called MapReduce, to do large-scale 
 Examples{#sec:examples}
 -------------------------------
 
-Aghbari, Bahutair, and Kamel (2019) todo: citation introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
+Aghbari, Bahutair, and Kamel (2019) todo: citation (https://datascience.codata.org/article/10.5334/dsj-2019-013/) introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
-Kolb et al (todo citation) developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+Kolb et al (todo citation)
+
+@article{10.14778/2367502.2367527,
+author = {Kolb, Lars and Thor, Andreas and Rahm, Erhard},
+title = {Dedoop: Efficient Deduplication with Hadoop},
+year = {2012},
+issue_date = {August 2012},
+publisher = {VLDB Endowment},
+volume = {5},
+number = {12},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/2367502.2367527},
+doi = {10.14778/2367502.2367527},
+journal = {Proc. VLDB Endow.},
+month = aug,
+pages = {1878–1881},
+numpages = {4}
+}
+
+developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
 
 todo: citation https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/ describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
