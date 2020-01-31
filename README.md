@@ -13,7 +13,7 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 3. Record Linkage: fix references and possibly update ML section
 4. Databases: waiting for Ian to update if necessary. Brian is creating schema image from NCSES class and will add it.
 5. Parallel: fix citations
-6. Vizualization: Frauked working on it.
+6. Vizualization: Frauke working on it.
 7. Machine Learning: small todos at the top of the chapter - image, references.
 8. Text: needs examples in the table. waiting for jordan for updates (if any)
 9. Networks: 
