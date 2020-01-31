@@ -1,9 +1,6 @@
 <!--
 
-% TODO
-% fold TOC into text
-% keyword definitions
-% create table where it says: Type of Analysis Description Examples Search
+% todo: add examples to table
 --> 
 
 Text Analysis {#chap:text}
@@ -20,33 +17,17 @@ Understanding human generated text
 
 As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, news articles, and research publications. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we analyze traditional tabular data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or selectively read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and incorporate large amounts of text data in your analysis. 
 
-
 ---
-
-**Text analysis vocabulary**
-
-* Corpus
-* Token
-* Term
-* Frequency
-* TFIDF
-* Part of speech tags
-* Parsing
-* n-grams
-* embeddings
-
----
-
 
 ## How is text data different than “structured” data?
 
-We’re comfortable analyzing structured data that is organized as
+We’re often comfortable analyzing structured data that is organized as
 rows and columns. Text data, often also known as unstructured
-data,(footnote: this is often the term used but is a fallacy. There is
+data,\^[this is often the term used but is a fallacy. There is
 a lot of structure in text - the structure of chapters,
-paragraphs, sentences, and syntax within a sentence allows you reader,
+paragraphs, sentences, and syntax within a sentence allows you, the reader,
 to understand what we’re writing here. Unstructured often refers to
-not having defined rows and columns in our data.) is harder to analyze
+not having defined rows and columns in our data.] is harder to analyze
 using traditional data analysis tools because it doesn’t come as a set of 
 rows and columns, but instead consists of characters, words,
 sentences, and paragraphs. In traditional, “structured”, data, a human
