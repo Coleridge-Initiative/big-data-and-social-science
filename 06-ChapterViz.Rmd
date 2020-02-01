@@ -109,11 +109,10 @@ information.
 
 Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager [@babynamevoyager] lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
-```{r fig9-2a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Aid Worker Security Incidents'}
+```{r fig9-2a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)'}
 knitr::include_graphics("ChapterViz/figures/fig9-2a-new.png")
 ```
-
-In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows an interactive dashboard (<gallery.keshif.me/AidWorkerSecurity>) that visualizes the Aid Worker Security Incidents dataset (<http://www.keshif.me>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
+In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows shows an interactive dashboard that visualizes the data from the Humanitarian Outcomes' Aid Worker Security Database (https://aidworkersecurity.org/). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points. Additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
 
 ```{r fig9-3a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Charting interface of Tableau'}
 knitr::include_graphics("ChapterViz/figures/fig9-3a.png")
@@ -319,15 +318,13 @@ maps*, color encoding is used to add represent one data attribute.
 *Cartograms* aim to encode the attribute value with the size of regions
 by distorting the underlying physical space. *Tile grid maps* reduce
 each spatial area to a uniform size and shape (e.g., a square) so that
-the color-coded data are easier to observe and compare, and they arrange
-the tiles to approximate the neighbor relations between physical
-locations [@DeBelius2015; @ProtoVis2015]. Grid maps also make selection
+the color-coded data are easier to observe and compare, tile grid maps convert each spatial region to a fixed shape, such as a square tile and arrange these tiles to approximate and maintain relative physical positions of the regions  [@DeBelius2015; @ProtoVis2015]. Grid maps also make selection
 of smaller areas (such as small cities or states) easier. *Contour
 (isopleth) maps* connect areas with similar measurements and color each
 one separately. *Network maps* aim to show network connectivity between
 locations, such as flights to/from many regions of the world. Spatial
 data can be also presented with a nonspatial emphasis (e.g., as a
-hierarchy of continents, countries, and cities).
+hierarchy of continents, countries, and cities, such as by using a treemap chart.).
 
 ```{r fig9-5, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]'}
 knitr::include_graphics("ChapterViz/figures/fig9-5.png")
@@ -337,13 +334,13 @@ Maps are commonly combined with other visualizations. For example, in
 Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
-to explore correlations between attributes.
+to explore correlations between attributes. Figures \@ref(fig:fig9-2)  and \@ref(fig:fig9-4)  also demonstrate the use of different map designs in the context of larger analytical solutions.
 
 ### Temporal data {#sec:viz-2.4}
 
 Time is the unique dimension in our physical world that steadily flows
 forward. While we cannot control time, we frequently record it as a
-point or interval. Time has multiple levels of representation (year,
+point or  an interval. Figures 6.2 and 6.3 exemplify line charts that show trends over multiple years, with each single line representing a subset of the data for cross-comparison of temporal trends. Temporal data also has multiple levels of representation (year,
 month, day, hour, minute, and so on) with irregularities (leap year,
 different days per month, etc.). As we measure time based on cyclic
 events in nature (day/night), our representations are also commonly
@@ -607,7 +604,7 @@ proposed new methods for assessing visual literacy [@boy2014principled],
 but user testing with representative users in the early stages of design
 and development will remain necessary to verify that adequate designs
 are being used. Training is likely to be needed to help analysts get
-started when using more visual analytics tools. Recorded video
+started when using visual analytics tools. Recorded video
 demonstrations and online support for question answering are helpful to
 bring users from novice to expert levels.
 
@@ -653,5 +650,4 @@ For statistical analysis and batch-processing data, programming
 environments such as R or libraries for languages such as Python (for
 example, the Python Plotly library) can be used.
 
-An extended list of tools and books is available at
-<http://www.keshif.me/demo/VisTools>.
+An extended list of visualization tools and books are available at https://gallery.keshif.me/VisTools and https://gallery.keshif.me/VisBooks.
