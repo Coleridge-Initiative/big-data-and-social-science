@@ -68,7 +68,7 @@ similar approaches first described in the early 1980s. Using the MapReduce frame
 
 **Example: Counting NSF awards**
 
-To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on bilions of records, cuasing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
+To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on billions of records, causing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
 email information and award IDs as below. Our task is to count the
 number of awards for each institution. For example, given the four
 records below, we will discover that the Berkeley Geochronology Center
@@ -83,7 +83,7 @@ each have one.
 
 We observe that institutions can be distinguished by their email address
 domain name. Thus, we adopt of a strategy of first grouping all award
-IDs by domain names, and then counting the number of distinct award
+IDs by domain names, and then counting the number of distinct awards
 within each group. In order to do this, we first set the function to
 scan input lines and extract institution information and award IDs.
 Then, in the function, we simply count unique IDs on the data, since
@@ -180,7 +180,7 @@ manage the data manually, they might, for example, have to access more
 than one machine to fetch a large data file. Fortunately, Hadoop
 provides infrastructure for managing this complexity seamlessly, including command
 line programs as well as an API that users can employ to interact with
-HDFS as if it were a local file system. For example, one can run simple linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
+HDFS as if it were a local file system. For example, one can run simple Linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
 contents the same way as one would do in a Linux file system. The following code
 shows some examples of interacting with HDFS.
 
@@ -437,7 +437,7 @@ of the simplicity of the model.
     roughly 30 seconds to complete even on a modern cluster. This
     overhead makes it unsuitable for real-time data or interactive jobs.
     The problem comes mostly from the fact that Hadoop monitoring
-    processes only lives within a job, thus it needs to start and stop
+    processes only live within a job, thus it needs to start and stop
     these processes each time a job is submitted, which in turns results
     in this major overhead. Moreover, the brute force approach of
     maintaining fault tolerance by storing everything on HDFS is
