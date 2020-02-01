@@ -31,7 +31,7 @@ This chapter focuses on one such framework, called MapReduce, to do large-scale 
 Examples{#sec:examples}
 -------------------------------
 
-Aghbari, Bahutair, and Kamel (2019) todo: citation (https://datascience.codata.org/article/10.5334/dsj-2019-013/) introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
+[@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
 Kolb et al (todo citation)
 
