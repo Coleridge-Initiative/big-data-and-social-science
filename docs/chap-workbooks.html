@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Workbooks | Big Data and Social Science</title>
   <meta name="description" content="Chapter 13 Workbooks | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Workbooks | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -395,6 +398,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="introduction-6" class="section level2">
 <h2><span class="header-section-number">13.1</span> Introduction</h2>
 <p>We provide accompanying Juptyer workbooks for most chapters in this book. The workbooks provide a thorough overview of the work needed to implement the selected technologies. They combine explanation, basic exercises, and substantial additional Python and SQL code to provide a conceptual understanding of each technology, give insight into how key parts of the process are implemented through exercises, and then lay out an end-to-end pattern for implementing each in your own work. The workbooks are implemented using Jupyter notebooks, interactive documents that mix formatted text and Python code samples that can be edited and run in real time in a Jupyter notebook server, allowing you to run and explore the code for each technology as you read about it.</p>
+<p>The workbooks are centered around two main substantive examples. The first example is used in the <em>Databases</em>, <em>Dataset Exploration and Visualization</em>, <em>Machine Learning</em> and <em>Bias and Fairness</em> workbooks and focuses on corrections data. The second example includes the <em>APIs</em>, <em>Record Linkage</em> and <em>Text Analysis</em> workbooks, which use data from the PatentsView API.</p>
 <p>The Jupyter notebooks are designed to be run online using Binder (<a href="https://mybinder.org/" class="uri">https://mybinder.org/</a>) and don’t need additional software installed locally. Individual workbooks can be opened by following the corresponding Binder link. The full set of workbooks is available in the <em>Big-Data-Social-Science GitHub repository</em> (<a href="https://github.com/Coleridge-Initiative/bdss-notebooks" class="uri">https://github.com/Coleridge-Initiative/bdss-notebooks</a>). Additional workbooks may be added over time and made available in this repository.</p>
 <p>To launch Binder and work on the notebooks, you can use the following link: (<a href="https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master" class="uri">https://mybinder.org/v2/gh/Coleridge-Initiative/bdss-notebooks/master</a>).</p>
 <p>The workbooks can also be run locally. In that case, you will need to install Python on your system, then install <code>ipython</code>, which includes a local Jupyter server you can use to run the workbooks. You will also need to install additional Python packages needed by the workbooks, and a few additional programs. The easiest way to get this all working is to install the free Anaconda Python distribution (<a href="https://www.anaconda.com/distribution/" class="uri">https://www.anaconda.com/distribution/</a>). Anaconda includes a Jupyter server and precompiled versions of many packages used in the workbooks. It includes multiple tools for installing and updating both Python and installed packages. It is separate from any OS-level version of Python, and is easy to completely uninstall.</p>
@@ -404,7 +408,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Below is a list of the workbooks, along with a short summary of the content that each covers.</p>
 <div id="databases" class="section level3">
 <h3><span class="header-section-number">13.2.1</span> Databases</h3>
-<p>The Databases notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source that is used in the online workbooks, the North Carolina Department of Corrections Data (<a href="https://webapps.doc.state.nc.us/opi/downloads.do?method=view" class="uri">https://webapps.doc.state.nc.us/opi/downloads.do?method=view</a>). In this notebook, you will</p>
+<p>The <em>Databases</em> notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source that is used in the online workbooks, the North Carolina Department of Corrections Data (<a href="https://webapps.doc.state.nc.us/opi/downloads.do?method=view" class="uri">https://webapps.doc.state.nc.us/opi/downloads.do?method=view</a>). In this notebook, you will</p>
 <ul>
 <li><p>Build basic queries using SQL,</p></li>
 <li><p>Understand and perform various joins.</p></li>
@@ -421,7 +425,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="apis" class="section level3">
 <h3><span class="header-section-number">13.2.3</span> APIs</h3>
-<p>The APIs notebook introduces you to the use of Internet-based web service APIs for retrieving data from online data stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:</p>
+<p>The <em>APIs</em> notebook introduces you to the use of Internet-based web service APIs for retrieving data from online data stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Construct a URL query,</p></li>
 <li><p>Get a response from the URL,</p></li>
@@ -687,11 +691,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -699,12 +705,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -716,6 +721,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },

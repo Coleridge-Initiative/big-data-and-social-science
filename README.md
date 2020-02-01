@@ -20,4 +20,4 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 10. Errors: 
 11. Bias: 
 12. Privacy: 
-13. Notebooks: add intro to specify what got updatedand new data. update data set for bias and add paragraph for inference
+13. Notebooks: add intro to specify what got updated. update data set for bias and add paragraph for inference

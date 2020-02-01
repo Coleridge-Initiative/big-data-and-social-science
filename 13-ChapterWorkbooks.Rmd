@@ -27,6 +27,13 @@ that mix formatted text and Python code samples that can be edited and
 run in real time in a Jupyter notebook server, allowing you to run and
 explore the code for each technology as you read about it.
 
+The workbooks are centered around two main substantive examples. 
+The first example is used in the *Databases*, 
+*Dataset Exploration and Visualization*, *Machine Learning* and 
+*Bias and Fairness* workbooks and focuses on corrections data. 
+The second example includes the *APIs*, *Record Linkage* and 
+*Text Analysis* workbooks, which use data from the PatentsView API.
+
 The Jupyter notebooks are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
 locally. Individual workbooks can be opened by following the 
@@ -57,9 +64,10 @@ Below is a list of the workbooks, along with a short summary of the content that
 
 ### Databases
 
-The Databases notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source 
-that is used in the online workbooks, the North Carolina Department of
-Corrections Data 
+The *Databases* notebook builds the foundation of using SQL to query data. 
+Much of the later notebooks will involve using these tools. This workbook 
+also introduces you to the main data source that is used in the online workbooks, 
+the North Carolina Department of Corrections Data 
 (<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this notebook, you will
 
 - Build basic queries using SQL,
@@ -68,10 +76,15 @@ Corrections Data
 
 ### Dataset Exploration and Visualization
 
-The *Dataset Exploration and Visualization* notebook further explores the North Carolina Department of Correction data, demonstrating how to work with 
-missing values and date variables and join tables by using SQL in Python. Though some of the SQL from the Databases notebook is revisited here, the focus is on practicing Python code and using Python for data analysis. The 
-workbook also explains how to pull data from a database into a dataframe in
-Python and continues by exploring the imported data using the `numpy` and `pandas` packages, as well as `matplotlib` and `seaborn` for visualizations. In this workbook, you will learn how to:
+The *Dataset Exploration and Visualization* notebook further explores the 
+North Carolina Department of Correction data, demonstrating how to work with 
+missing values and date variables and join tables by using SQL in Python. 
+Though some of the SQL from the Databases notebook is revisited here, the 
+focus is on practicing Python code and using Python for data analysis. The 
+workbook also explains how to pull data from a database into a dataframe 
+in Python and continues by exploring the imported data using the `numpy` 
+and `pandas` packages, as well as `matplotlib` and `seaborn` for 
+visualizations. In this workbook, you will learn how to:
 
 - Connect to and query a database through Python,
 
@@ -81,9 +94,12 @@ Python and continues by exploring the imported data using the `numpy` and `panda
 
 ### APIs 
 
-The APIs notebook introduces you to the use of
-Internet-based web service APIs for retrieving data from online data
-stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:
+The *APIs* notebook introduces you to the use of Internet-based web service 
+APIs for retrieving data from online data stores. This notebook walks through 
+the process of retrieving data about patents from the PatentsView API from 
+the United States Patent and Trademark Office. The data consist of information 
+about patents, inventors, companies, and geographic locations since 1976. 
+In this workbook, you will learn how to:
 
 -   Construct a URL query,
 
@@ -94,11 +110,12 @@ stores. This notebook walks through the process of retrieving data about patents
 ### Record Linkage
 
 In the *Record Linkage* workbook you will use Python to implement the basic
-concepts behind record linkage using data from PatentsView and Federal RePORTER. This workbook will cover using probabalistic record linkage, in which different types
-of string comparators are used to compare multiple pieces of information between
-two records to produce a score that indicates how likely it is that the
-records are data about the same underlying entity. In this workbook, you
-will learn how to:
+concepts behind record linkage using data from PatentsView and Federal 
+RePORTER. This workbook will cover using probabalistic record linkage, 
+in which different types of string comparators are used to compare multiple 
+pieces of information between two records to produce a score that indicates 
+how likely it is that the records are data about the same underlying entity. 
+In this workbook, you will learn how to:
 
 -   Prepare data for record linkage,
 
@@ -111,7 +128,11 @@ will learn how to:
 
 ### Text Analysis 
 
-In the Text Analysis notebook, you will use the data that you pulled from the PatentsView API in the API notebook to find topics from patent abstracts. This will involve going through every step of the process, from extracting the data to cleaning and preparing to using topic modeling algorithms. In this workbook, you will learn how to:
+In the Text Analysis notebook, you will use the data that you pulled from 
+the PatentsView API in the API notebook to find topics from patent abstracts. 
+This will involve going through every step of the process, from extracting 
+the data to cleaning and preparing to using topic modeling algorithms. 
+In this workbook, you will learn how to:
 
 - Clean and prepare text data,
 
@@ -124,8 +145,9 @@ In the Text Analysis notebook, you will use the data that you pulled from the Pa
 In the Networks workbook you will create network data where the nodes
 are researchers who have been awarded grants, and ties are created
 between each researcher on a given grant. You will use Python to read
-the grant data and translate them into network data, calculate node- and graph-level 
-network statistics and create network visualizations. In this workbook, you will learn how to:
+the grant data and translate them into network data, calculate node- 
+and graph-level network statistics and create network visualizations. 
+In this workbook, you will learn how to:
 
 -   Use Python to derive network data from a relational database,
 
@@ -162,7 +184,13 @@ a given date. In this workbook, you will learn how to:
 
 ### Machine Learning -- Model Training and Evaluation
 
-The *Machine Learning Model Training and Evaluation* workbook uses the label and features that were created in the previous workbooks to construct a training and test set for model building and evaluation. It exemplifies how to train machine learning models using `scikit-learn` in Python and how to evaluate prediction performance for classification tasks. In addition, it is shown how to construct and compare multiple machine learning models in a for-loop in Python. In this workbook, you will learn how to:
+The *Machine Learning Model Training and Evaluation* workbook uses the 
+label and features that were created in the previous workbooks to construct 
+a training and test set for model building and evaluation. It exemplifies 
+how to train machine learning models using `scikit-learn` in Python and how 
+to evaluate prediction performance for classification tasks. In addition, 
+it is shown how to construct and compare multiple machine learning models 
+in a for-loop in Python. In this workbook, you will learn how to:
 
 -   Pre-process data to provide valid inputs for machine learning models,  
 
@@ -172,7 +200,12 @@ The *Machine Learning Model Training and Evaluation* workbook uses the label and
 
 ### Bias and Fairness
 
-The *Bias and Fairness* workbook exemplifies the usage of the bias and fairness audit toolkit Aequitas in Python. This workbook is centered around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) and demonstrates how Aequitas can be used to detect and evaluate biases of a machine learning system. Specifically, you will learn how to: 
+The *Bias and Fairness* workbook exemplifies the usage of the bias and 
+fairness audit toolkit Aequitas in Python. This workbook is centered 
+around the COMPAS (Correctional Offender Management Profiling for 
+Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) 
+and demonstrates how Aequitas can be used to detect and evaluate biases 
+of a machine learning system. Specifically, you will learn how to: 
 
 - Calculate confusion matrices for subgroups and visualize performance metrics by groups,
 
@@ -182,11 +215,15 @@ The *Bias and Fairness* workbook exemplifies the usage of the bias and fairness 
 
 ### Additional Workbooks
 
-An additional set of workbooks that accompanied the first edition of this book is available at (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>). This repository provides two different types of
-workbooks, each needing a different Python setup to run. The first type
-of workbooks is intended to be downloaded and run locally by individual
-users. The second type is designed to be hosted, assigned, worked on,
-and graded on a single server, using `jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) to assign, collect, and grade.
+An additional set of workbooks that accompanied the first edition of this 
+book is available at (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>). 
+This repository provides two different types of workbooks, each needing a 
+different Python setup to run. The first type of workbooks is intended to 
+be downloaded and run locally by individual users. The second type is designed 
+to be hosted, assigned, worked on, and graded on a single server, using 
+`jupyterhub` (<https://github.com/jupyter/jupyterhub>) to host and run 
+the notebooks and `nbgrader` (<https://github.com/jupyter/nbgrader>) 
+to assign, collect, and grade.
 
 <!-- Workbooks of the First Edition -->
 <!-- ----------- -->
