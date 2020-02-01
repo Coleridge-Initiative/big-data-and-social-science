@@ -401,9 +401,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>We draw heavily here on work by Winkler, Scheuren, and Christen, in particular <span class="citation">(Herzog, Scheuren, and Winkler <a href="#ref-herzog2007data">2007</a>; Christen <a href="#ref-christen2012survey">2012</a><a href="#ref-christen2012survey">a</a>; Christen <a href="#ref-christen2012data">2012</a><a href="#ref-christen2012data">b</a>)</span>. To ground ideas, we use examples from a recent paper examining the effects of different algorithms on studies of patent productivity <span class="citation">(Ventura, Nugent, and Fuchs <a href="#ref-ventura2015seeing">2015</a>)</span>.</p>
 <p><strong>BOX</strong> ** Examples **</p>
 <p>In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.<a href="#fn14" class="footnoteRef" id="fnref14"><sup>14</sup></a></p>
-<p>Glennon  used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.</p>
-<p>Rodolfa et al (<em>todo</em>) use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney’s office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver’s license number (where available), and California Information and Identification (CII) number (where available).</p>
-<p>The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare &amp; Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality .</p>
+<p>Glennon <span class="citation">(<a href="#ref-Glennon2019">2019</a>)</span> used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.</p>
+<p>Rodolfa et al. <span class="citation">(<a href="#ref-Rodolfa2020">2020</a>)</span> use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney’s office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver’s license number (where available), and California Information and Identification (CII) number (where available).</p>
+<p>The National Center for Health Statistics (NCHS) <span class="citation">(<a href="#ref-NCHS2019">2019</a>)</span> links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare &amp; Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality.</p>
 <p><strong>BOX</strong></p>
 </div>
 <div id="sec:recordlinkage" class="section level2">
@@ -599,6 +599,9 @@ Figure 3.2: Probabilistic (left) vs. machine learning (right) approaches to lin
 <div id="ref-FS69">
 <p>Fellegi, Ivan P., and Alan B. Sunter. 1969. “A Theory for Record Linkage.” <em>Journal of the American Statistical Association</em> 64 (328). Taylor &amp; Francis Group: 1183–1210.</p>
 </div>
+<div id="ref-Glennon2019">
+<p>Glennon, Britta. 2019. “How Do Restrictions on High-Skilled Immigration Affect Offshoring? Evidence from the H-1b Program.” <a href="http://brittaglennon.com/research/" class="uri">http://brittaglennon.com/research/</a>.</p>
+</div>
 <div id="ref-herzog2007data">
 <p>Herzog, Thomas N., Fritz J. Scheuren, and William E. Winkler. 2007. <em>Data Quality and Record Linkage Techniques</em>. Springer.</p>
 </div>
@@ -616,6 +619,12 @@ Figure 3.2: Probabilistic (left) vs. machine learning (right) approaches to lin
 </div>
 <div id="ref-lahiri2005regression">
 <p>Lahiri, Partha, and Michael D Larsen. 2005. “Regression Analysis with Linked Data.” <em>Journal of the American Statistical Association</em> 100 (469). Taylor &amp; Francis: 222–30.</p>
+</div>
+<div id="ref-NCHS2019">
+<p>National Center for Health Statistics. 2019. “The Linkage of National Center for Health Statistics Survey Data to the National Death Index – 2015 Linked Mortality File (Lmf): Methodology Overview and Analytic Considerations.” <a href="https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm" class="uri">https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm</a>.</p>
+</div>
+<div id="ref-Rodolfa2020">
+<p>Rodolfa, K., E. Salomon, L. Haynes, I. Mendieta, J. Larson, and R. Ghani. 2020. “Predictive Fairness to Reduce Misdemeanor Recidivism Through Social Service Interventions.” In <em>Proceedings of the Acm Conference on Fairness, Accountability, and Transparency (Acm Fat*) 2020</em>.</p>
 </div>
 <div id="ref-scheuren1993regression">
 <p>Scheuren, Fritz, and William E. Winkler. 1993. “Regression Analysis of Data Files That Are Computer Matched.” <em>Survey Methodology</em> 19 (1): 39–58.</p>
@@ -660,12 +669,12 @@ Figure 3.2: Probabilistic (left) vs. machine learning (right) approaches to lin
 <li id="fn13"><p>Other names associated with record linkage are entity disambiguation, entity resolution, co-reference resolution, matching, and data fusion, meaning that records which are linked or co-referent can be thought of as corresponding to the same underlying entity. The number of names is reflective of a vast literature in social science, statistics, computer science, and information sciences.<a href="chap-link.html#fnref13">↩</a></p></li>
 <li id="fn14"><p>If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link<a href="chap-link.html#fnref14">↩</a></p></li>
 <li id="fn15"><p>“Administrative data” typically refers to data generated by the administration of a government program, as distinct from deliberate survey collection.<a href="chap-link.html#fnref15">↩</a></p></li>
-<li id="fn16"><p>This topic is discussed in more detail in Chapter 10.<a href="chap-link.html#fnref16">↩</a></p></li>
-<li id="fn17"><p>This topic (quality of data, preprocessing issues) is discussed in more detail in Section 1.4.<a href="chap-link.html#fnref17">↩</a></p></li>
-<li id="fn18"><p>This topic is discussed in more detail in Chapter 10.<a href="chap-link.html#fnref18">↩</a></p></li>
-<li id="fn19"><p>This topic is discussed in more detail in Chapter 7.<a href="chap-link.html#fnref19">↩</a></p></li>
-<li id="fn20"><p>See Chapter 12.<a href="chap-link.html#fnref20">↩</a></p></li>
-<li id="fn21"><p>This topic is discussed in more detail in Chapter 12.<a href="chap-link.html#fnref21">↩</a></p></li>
+<li id="fn16"><p>This topic is discussed in more detail in Chapter <a href="chap-errors.html#chap:errors">Data Quality and Inference Errors</a>.<a href="chap-link.html#fnref16">↩</a></p></li>
+<li id="fn17"><p>This topic (quality of data, preprocessing issues) is discussed in more detail in Chapter <a href="chap-intro.html#chap:intro">Introduction</a>.<a href="chap-link.html#fnref17">↩</a></p></li>
+<li id="fn18"><p>This topic is discussed in more detail in Chapter <a href="chap-errors.html#chap:errors">Data Quality and Inference Errors</a>.<a href="chap-link.html#fnref18">↩</a></p></li>
+<li id="fn19"><p>This topic is discussed in more detail in Chapter <a href="chap-ml.html#chap:ml">Machine Learning</a>.<a href="chap-link.html#fnref19">↩</a></p></li>
+<li id="fn20"><p>See Chapter <a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a>.<a href="chap-link.html#fnref20">↩</a></p></li>
+<li id="fn21"><p>This topic is discussed in more detail in Chapter <a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a>.<a href="chap-link.html#fnref21">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

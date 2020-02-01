@@ -1670,6 +1670,10 @@ Resources {#ml:res}
 Literature for further reading that also explains most topics from this
 chapter in greater depth:
 
+-   Provost and Fawcett's *Data Science for Business* [@FawcettProvost]
+    is a good practical handbook for using machine learning to solve
+    real-world problems.
+
 -   Hastie et al.'s *The Elements of Statistical Learning*
     [@HastieTibshirani] is a classic and is available online for free.
 
@@ -1680,10 +1684,6 @@ chapter in greater depth:
 -   Mitchell's *Machine Learning* [@mitchell1997machine] is a classic
     introduction to some of the methods and gives a good motivation
     underlying them.
-
--   Provost and Fawcett's *Data Science for Business* [@FawcettProvost]
-    is a good practical handbook for using machine learning to solve
-    real-world problems.
 
 -   Wu et al.'s "Top 10 Algorithms in Data Mining" [@wu2008top].
 
@@ -1703,8 +1703,8 @@ Many excellent courses are available online [@MLcourses], including
 Hastie and Tibshirani's *Statistical Learning* [@SLcourse].
 
 Major conferences in this area include the International Conference on
-Machine Learning [@ICML], the Annual Conference on Neural Information
-Processing Systems (NeurIPS) [@neurips], and the ACM International Conference
-on Knowledge Discovery and Data Mining (KDD) [@kdd].
+Machine Learning, the Annual Conference on Neural Information
+Processing Systems (NeurIPS), and the ACM International Conference
+on Knowledge Discovery and Data Mining (KDD).
 
 

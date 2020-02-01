@@ -396,23 +396,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2><span class="header-section-number">8.1</span> Understanding human generated text</h2>
 <p>As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, news articles, and research publications. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we analyze traditional tabular data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or selectively read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and incorporate large amounts of text data in your analysis.</p>
 <hr />
-<p><strong>Text analysis vocabulary</strong></p>
-<ul>
-<li>Corpus</li>
-<li>Token</li>
-<li>Term</li>
-<li>Frequency</li>
-<li>TFIDF</li>
-<li>Part of speech tags</li>
-<li>Parsing</li>
-<li>n-grams</li>
-<li>embeddings</li>
-</ul>
-<hr />
 </div>
 <div id="how-is-text-data-different-than-structured-data" class="section level2">
 <h2><span class="header-section-number">8.2</span> How is text data different than “structured” data?</h2>
-<p>We’re comfortable analyzing structured data that is organized as rows and columns. Text data, often also known as unstructured data,(footnote: this is often the term used but is a fallacy. There is a lot of structure in text - the structure of chapters, paragraphs, sentences, and syntax within a sentence allows you reader, to understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data.) is harder to analyze using traditional data analysis tools because it doesn’t come as a set of rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves.</p>
+<p>We’re often comfortable analyzing structured data that is organized as rows and columns. Text data, often also known as unstructured data,^[this is often the term used but is a fallacy. There is a lot of structure in text - the structure of chapters, paragraphs, sentences, and syntax within a sentence allows you, the reader, to understand what we’re writing here. Unstructured often refers to not having defined rows and columns in our data.] is harder to analyze using traditional data analysis tools because it doesn’t come as a set of rows and columns, but instead consists of characters, words, sentences, and paragraphs. In traditional, “structured”, data, a human has already decided what constitutes a row (a person for example), what constitutes a column (their age, gender, address, for example), and the relationship between them. We covered that in the Database chapter where we created a data model for a given domain. When dealing with text data, we have to create that structure ourselves.</p>
 <p>While creating that structure, we have to deal with human language being complex and nuanced, which makes automatically analyzing it difficult. We often make simplifying assumptions: we assume our input is perfect text; we ignore humor <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span> and deception <span class="citation">(Niculae et al. <a href="#ref-niculae-15">2015</a>; Ott et al. <a href="#ref-ott-11">2011</a>)</span>; and we assume “standard” English <span class="citation">(Kong et al. <a href="#ref-kong-14">2014</a>)</span><a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a>. Text data also often reflects human observations that are exceptions to regular processes—the ubiquitous “other” or the “anything else you want to tell us” field in questionnaires. Recognizing this complexity, the goal of text analysis is to efficiently extract important information from large amounts of text, and use it for/in our analysis just like we use tabular data.</p>
 </div>
 <div id="what-can-we-do-with-text-data" class="section level2">

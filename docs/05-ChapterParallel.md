@@ -1,6 +1,5 @@
 <!-- 
-% todo
-% reference is strange: [@CSConf] in printed version Wikipedia nda
+% 
 --> 
 
 
@@ -21,7 +20,7 @@ especially at the DOE National Laboratories
 [@bigdata_old1; @crossno1993heterogeneous] where high-performance
 computing has been a major technology trend. This is also demonstrated
 by the history of research in distributed computing and data management
-going back to the 1980s [@CSConf].
+going back to the 1980s.
 
 There are many ways to do distributed and parallel computing, ranging from completely flexible (but more complex to use) approaches such as Message Passing Interface (MPI) [@mpi] to more restrictive (but much easier to use) approaches such as MapReduce. MPI allows you to do anything with as much efficiency as your MPI skills allow you to code while MapReduce allows a more restrictive set of analysis to be done (possibly less efficiently) but is much easier to learn and implement. 
 
@@ -32,11 +31,30 @@ This chapter focuses on one such framework, called MapReduce, to do large-scale 
 Examples{#sec:examples}
 -------------------------------
 
-Aghbari, Bahutair, and Kamel (2019) introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
+[@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
-Kolb et al developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+Kolb et al (todo citation)
 
-https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/ describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
+@article{10.14778/2367502.2367527,
+author = {Kolb, Lars and Thor, Andreas and Rahm, Erhard},
+title = {Dedoop: Efficient Deduplication with Hadoop},
+year = {2012},
+issue_date = {August 2012},
+publisher = {VLDB Endowment},
+volume = {5},
+number = {12},
+issn = {2150-8097},
+url = {https://doi.org/10.14778/2367502.2367527},
+doi = {10.14778/2367502.2367527},
+journal = {Proc. VLDB Endow.},
+month = aug,
+pages = {1878–1881},
+numpages = {4}
+}
+
+developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+
+todo: citation https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/ describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
 **BOX**
 
@@ -50,7 +68,7 @@ similar approaches first described in the early 1980s. Using the MapReduce frame
 
 **Example: Counting NSF awards**
 
-To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on bilions of records, cuasing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
+To gain a better understanding of these MapReduce operations, let's take a trivial task that may need to be done on billions of records, causing scalability challenges. Imagine that we have a list of NSF principal investigators, along with their
 email information and award IDs as below. Our task is to count the
 number of awards for each institution. For example, given the four
 records below, we will discover that the Berkeley Geochronology Center
@@ -65,7 +83,7 @@ each have one.
 
 We observe that institutions can be distinguished by their email address
 domain name. Thus, we adopt of a strategy of first grouping all award
-IDs by domain names, and then counting the number of distinct award
+IDs by domain names, and then counting the number of distinct awards
 within each group. In order to do this, we first set the function to
 scan input lines and extract institution information and award IDs.
 Then, in the function, we simply count unique IDs on the data, since
@@ -163,7 +181,7 @@ manage the data manually, they might, for example, have to access more
 than one machine to fetch a large data file. Fortunately, Hadoop
 provides infrastructure for managing this complexity seamlessly, including command
 line programs as well as an API that users can employ to interact with
-HDFS as if it were a local file system. For example, one can run simple linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
+HDFS as if it were a local file system. For example, one can run simple Linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
 contents the same way as one would do in a Linux file system. The following code
 shows some examples of interacting with HDFS.
 
@@ -420,7 +438,7 @@ of the simplicity of the model.
     roughly 30 seconds to complete even on a modern cluster. This
     overhead makes it unsuitable for real-time data or interactive jobs.
     The problem comes mostly from the fact that Hadoop monitoring
-    processes only lives within a job, thus it needs to start and stop
+    processes only live within a job, thus it needs to start and stop
     these processes each time a job is submitted, which in turns results
     in this major overhead. Moreover, the brute force approach of
     maintaining fault tolerance by storing everything on HDFS is

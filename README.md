@@ -10,7 +10,7 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 
 1. Intro: We need to update the introduction and graph
 2. APIs and Scraping: Need to update the notebooks and insert link/reference to it in section 2.6 (and possibly other places). Cameron is doing that right now.
-3. Record Linkage: fix references and possibly update ML section
+3. Record Linkage: add website link to submit examples and possibly update ML section
 4. Databases: waiting for Ian to update if necessary. Brian is creating schema image from NCSES class and will add it.
 5. Parallel: fix citations
 6. Vizualization: Frauke working on it.

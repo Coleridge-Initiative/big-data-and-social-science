@@ -72,11 +72,11 @@ different algorithms on studies of patent productivity
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
-Glennon \cite{http://brittaglennon.com/research/} used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
+Glennon [-@Glennon2019] used a unique matched firm-level dataset of H-1B visas and multinational firm activity show that restrictions on H-1B immigration caused increases in foreign affiliate employment. Restrictions also caused increases in foreign patenting, suggesting that there was also a change in the location of innovative activity.
 
-Rodolfa et al \cite(*todo*) use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney's office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver's license number (where available), and California Information and Identification (CII) number (where available).
+Rodolfa et al. [-@Rodolfa2020] use machine learning based record linkage to link data about the same individuals together from a criminal justice case management system to help the Los Angeles City Atorney's office develop individually-tailored social service interventions in a fair and equitable manner. Because the system lacked a global unique person-level identifier, case-level defendant data was used to link cases belonging to the same person using first and last name, date of birth, address, driver's license number (where available), and California Information and Identification (CII) number (where available).
 
-The National Center for Health Statistics (NCHS) links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality \cite{NCHS2012}.
+The National Center for Health Statistics (NCHS) [-@NCHS2019] links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality.
 
 **BOX**
 
@@ -151,8 +151,7 @@ second data set. The computational complexity of this grows
 quadratically with the size of the data---an important consideration,
 especially with large amounts of data. To compensate for this complexity,
 the standard second step in record linkage, after preprocessing, is
-indexing or blocking, which uses some set of heuristics to create subsets of similar records and
-reduces the total number of comparisons.
+indexing or blocking, which uses some set of heuristics to create subsets of similar records and reduces the total number of comparisons.
 
 The outcome of the matching step is a set of predicted links---record
 pairs that are likely to correspond to the same entity. After these are
@@ -181,8 +180,7 @@ representative of the population. It is also essential to engage in
 critical thinking about what latent variables are being captured by the
 measures in the different data sets---an "occupational classification"
 in a survey data set may be very different from a "job title" in an
-administrative record or a "current position" in LinkedIn data.^[This topic is discussed in
-more detail in Chapter 10.]
+administrative record or a "current position" in LinkedIn data.^[This topic is discussed in more detail in Chapter [Data Quality and Inference Errors](#chap:errors).]
 
 ---
 
@@ -216,7 +214,6 @@ link files that have few fields in common but whose noncommon fields
 provide additional predictive power to determine which records should be
 linked. In some cases, when sufficient training data can be produced,
 more modern machine learning techniques may be applied.
-
 
 <div class="figure" style="text-align: center">
 <img src="ChapterLinkage/figures/fig3-1.png" alt="The preprocessing pipeline" width="70%" />
@@ -255,9 +252,8 @@ preprocessing, and data that need to be linked is no exception.
 Preprocessing refers to a workflow that transforms messy and noisy data into a well-defined, clearly structured, and
 quality-tested data set. Elsewhere in this book, we discuss general
 strategies for data preprocessing.^[This topic (quality of
-data, preprocessing issues)
-is discussed in more detail
-in Section 1.4.] In this section, we focus
+data, preprocessing issues) is discussed in more detail
+in Chapter [Introduction](#chap:intro).] In this section, we focus
 specifically on preprocessing steps relating to the choice of input
 fields for the record linkage algorithm. Preprocessing for any kind of a
 new data set is a complex and time-consuming process because it is
@@ -407,8 +403,7 @@ because blocking keys are compared exactly, there is an implicit
 assumption that the included fields will not have typos or other data
 entry errors. In practice, however, the blocking fields will exhibit
 typos. If those typos are not uniformly distributed over the population,
-then there is again the possibility of bias in the linked data set^[This topic is discussed in
-more detail in Chapter 10.]. One
+then there is again the possibility of bias in the linked data set^[This topic is discussed in more detail in Chapter [Data Quality and Inference Errors](#chap:errors).]. One
 simple strategy for dealing with imperfect blocking keys is to implement
 multiple rounds of blocking and matching. After the first set of matches
 is produced, a new blocking strategy is deployed to search for
@@ -666,10 +661,10 @@ on identifying potential links using approaches that are fast, adaptive, and
 scalable, and approaches are developed based on work in network
 analysis and machine learning.
 
-While simple blocking as described in
-Section [Indexing and Blocking]
-is standard in Fellegi--Sunter applications, machine learning based approaches are
-likely to use the more sophisticated clustering approach to indexing.
+While simple blocking as described in Section 
+[Indexing and Blocking](#S:indexing) is standard in Fellegi--Sunter 
+applications, machine learning based approaches are likely to use the 
+more sophisticated clustering approach to indexing.
 Indexing may also use network information to include, for example,
 records for individuals that have a similar place in a social graph.
 When linking lists of researchers, one might specify that comparisons
@@ -679,7 +674,7 @@ approaches are known as semantic blocking, and the computational
 requirements are similar to standard blocking [@christen2012data].
 
 In recent years machine learning approaches^[This topic is discussed in
-more detail in Chapter 7.] have been applied to record
+more detail in Chapter [Machine Learning](#chap:ml).] have been applied to record
 Linkage. As Wick et al. [@wick2013joint] note:
 
 > Entity resolution, the task of automatically determining which
@@ -737,7 +732,8 @@ is representative of the complete data set, then the output from the
 probabilistic record linkage can be used as "truth" data.
 
 Given a quality training data set, machine learning approaches may have
-advantages over probabilistic record linkage.   There are many published studies on the effectiveness of random forests
+advantages over probabilistic record linkage. There are many published 
+studies on the effectiveness of random forests
 and other machine learning algorithms for record linkage. Christen and
 Ahmed et al. provide some pointers
 [@christen2012survey; @elmagarmid2007duplicate].
@@ -884,7 +880,8 @@ Record linkage and data protection
 
 In many social science applications data sets there is no need for data
 to include identifying fields like names and addresses. These fields may
-be left out intentionally out of concern for privacy^[See Chapter 12.], or they may simply
+be left out intentionally out of concern for privacy^[See Chapter 
+[Privacy and Confidentiality](#chap:privacy).], or they may simply
 be irrelevant to the research question. For record linkage, however,
 names and addresses are among the best possible identifiers. We describe
 two approaches to the problem of balancing needs for both effective
@@ -924,7 +921,7 @@ identifying fields have been hashed. This solves the challenge of trust
 between the different parties. Some authors argue that transparency of
 data use and informed consent will help to build trust. In the context
 of big data this is more challenging^[This topic is discussed in
-more detail in Chapter 12.].
+more detail in Chapter [Privacy and Confidentiality](#chap:privacy).].
 
 Summary
 -------
