@@ -401,11 +401,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="sec:examples" class="section level2">
 <h2><span class="header-section-number">5.2</span> Examples</h2>
-<p><span class="citation">(Al Aghbari, Bahutair, and Kamel <a href="#ref-aghbari2019">2019</a>)</span> introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results.</p>
-<p>Kolb et al (todo citation)</p>
-<p><span class="citation">(<span class="citeproc-not-found" data-reference-id="article"><strong>???</strong></span>)</span>{10.14778/2367502.2367527, author = {Kolb, Lars and Thor, Andreas and Rahm, Erhard}, title = {Dedoop: Efficient Deduplication with Hadoop}, year = {2012}, issue_date = {August 2012}, publisher = {VLDB Endowment}, volume = {5}, number = {12}, issn = {2150-8097}, url = {<a href="https://doi.org/10.14778/2367502.2367527" class="uri">https://doi.org/10.14778/2367502.2367527</a>}, doi = {10.14778/2367502.2367527}, journal = {Proc. VLDB Endow.}, month = aug, pages = {1878–1881}, numpages = {4} }</p>
-<p>developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter <a href="chap-workbooks.html#record-linkage">Record Linkage</a>?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.</p>
-<p>todo: citation <a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/" class="uri">https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/</a> describes the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine. Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.</p>
+<p><span class="citation">(<a href="#ref-aghbari2019">2019</a>)</span> introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results.</p>
+<p><span class="citation">(<a href="#ref-kolb2012">2012</a>)</span> developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter <a href="chap-workbooks.html#record-linkage">Record Linkage</a>?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.</p>
+<p><span class="citation">(<a href="#ref-ching2012">2012</a>)</span> describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine. Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.</p>
 <p><strong>BOX</strong></p>
 </div>
 <div id="sec:intro" class="section level2">
@@ -756,6 +754,9 @@ Listing 5.5. Python code for a Spark program to aggregate the debt–income rati
 <div id="ref-Provisioning">
 <p>Baldeschwieler, Eric. 2011. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/" class="uri">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
 </div>
+<div id="ref-ching2012">
+<p>Ching, Ravi, Averyand Murthy, Dmytro Dmytro Molkov, Ramkumar Vadali, and Paul Yang. 2012. “Under the Hood: Scheduling MapReduce Jobs More Efficiently with Corona.” <a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/" class="uri">https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/</a>.</p>
+</div>
 <div id="ref-crossno1993heterogeneous">
 <p>Crossno, Patricia J., Douglas D. Cline, and Jeffrey N Jortner. 1993. “A Heterogeneous Graphics Procedure for Visualization of Massively Parallel Solutions.” <em>ASME FED</em> 156. ASME: 65–65.</p>
 </div>
@@ -767,6 +768,9 @@ Listing 5.5. Python code for a Spark program to aggregate the debt–income rati
 </div>
 <div id="ref-mpi">
 <p>Gropp, William, Ewing Lusk, and Anthony Skjellum. 2014. <em>Using Mpi: Portable Parallel Programming with the Message-Passing Interface</em>. MIT Press.</p>
+</div>
+<div id="ref-kolb2012">
+<p>Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. “Dedoop: Efficient Deduplication with Hadoop.” <em>Proc. VLDB Endow.</em> 5 (12). VLDB Endowment: 1878–81. doi:<a href="https://doi.org/10.14778/2367502.2367527">10.14778/2367502.2367527</a>.</p>
 </div>
 <div id="ref-lin2010data">
 <p>Lin, Jimmy, and Chris Dyer. 2010. <em>Data-Intensive Text Processing with MapReduce</em>. Morgan &amp; Claypool Publishers.</p>
