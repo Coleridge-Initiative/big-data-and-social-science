@@ -36,11 +36,11 @@ Examples
 ----------
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
 
-Kim et al (https://wwwncbi.nlm.nih.gov/pubmed/26920122) use social media data about e-cigarettes from Twitter for public health research.
+Kim et al. [-@Kim2016] use social media data about e-cigarettes from Twitter for public health research.
 
-Goebel and Munzert (https://journals.s.agepub.com/doi/full/10.1177/0894439317703579) used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project https://github.com/simonmunzert/political-wikipedia-workshop
+Goebel and Munzert [-@Goebel2018] used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project (https://github.com/simonmunzert/political-wikipedia-workshop).
 
-King et al. (https://gking.harvard.edu/files/censored.pdf) investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
+King et al. [-@King2013] investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
 
 **BOX**
 
@@ -48,15 +48,9 @@ King et al. (https://gking.harvard.edu/files/censored.pdf) investigate how censo
 Scraping information from the web {#sec:4-1}
 ---------------------------------
 
-With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website [@nsfweb] it is possible to obtain data
-downloads of all grant information. Sometimes data are available through web
-pages or we only want a subset of this information. In this case web
-scraping is often a viable approach.
+With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website [@nsfweb] it is possible to obtain data downloads of all grant information. Sometimes data are available through web pages or we only want a subset of this information. In this case web scraping is often a viable approach.
 
-Web scraping involves writing code to download and process web pages
-programmatically. We need to look at the website, identify how to get the information we
-want from it, and then write code to do it. Many websites deliberately make this
-difficult to prevent easy access to their underlying data while some websites explicitly prohibit this type of activity in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of this writing, it may not be valid in the future as the structure and content of the website changes.
+Web scraping involves writing code to download and process web pages programmatically. We need to look at the website, identify how to get the information we want from it, and then write code to do it. Many websites deliberately make this difficult to prevent easy access to their underlying data while some websites explicitly prohibit this type of activity in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of this writing, it may not be valid in the future as the structure and content of the website changes.
 
 ### Obtaining data from websites {#sec:4-1.1}
 
@@ -100,8 +94,8 @@ This allows us to see that the URL is constructed using a few parameters, such a
 
 **Getting the contents of the page from the URL**
 
-The `requests` module, available natively in Jupyter Python notebooks, is a useful
-set of tools for handling interactions with websites. It lets us
+The `requests` module, available natively in Jupyter Python notebooks, is 
+a useful set of tools for handling interactions with websites. It lets us
 construct the request that we just presented in terms of a base URL and
 query terms, as follows:
 
@@ -141,17 +135,13 @@ constructed wrongly or that there was a server error.
 
 **Processing the html response**
 
-With the page successfully returned, we now need to process the text it
-contains into the data we want. This is not a trivial exercise. Web pages are typically written in a "markup" language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, running the code gives us the HTML text. We then have to process this text to extract the content that we care about. There are a range of
-tools in Python that can help with processing HTML data. One
-of the most popular is a module BeautifulSoup [@bsoup], which
-provides a number of useful functions for this kind of processing. The
-module documentation provides more details.
+With the page successfully returned, we now need to process the text it contains into the data we want. This is not a trivial exercise. Web pages are typically written in a "markup" language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, running the code gives us the HTML text. We then have to process this text to extract the content that we care about. There are a range of tools in Python that can help with processing HTML data. One of the most popular is a module BeautifulSoup [@bsoup], which provides a number of useful functions for this kind of processing. The module documentation provides more details.
 
 We need to check the details of the page source to find where the
 information we are looking for is kept (see, for example,
 \@ref(fig:fig2-1)). Here, all the details on HHMI investigators can
-be found in a `<div>` element with the class attribute `view-content`. This structure is not
+be found in a `<div>` element with the class attribute `view-content`. 
+This structure is not
 something that can be determined in advance. It requires knowledge of
 the structure of the page itself. Nested inside this `<div>` element are another
 series of `div`s, each of which corresponds to one investigator. These have
@@ -166,10 +156,11 @@ specific case you happen to be looking at.
 
 We first process the page using the BeautifulSoup module (into the
 variable `soup`) and then find the `div` element that holds the information on
-investigators (`investigator_list`). As this element is unique on the page (I checked using
-my web browser), we can use the find method. We then process that `div` (using
-`find_all`) to create an iterator object that contains each of the page segments
-detailing a single investigator (`investigators`).
+investigators (`investigator_list`). As this element is unique on the page 
+(I checked using my web browser), we can use the find method. 
+We then process that `div` (using `find_all`) to create an iterator object 
+that contains each of the page segments detailing a single investigator
+(`investigators`).
 
 
 ```r
@@ -252,7 +243,8 @@ spaces, splitting different elements up, etc.).
 
 Listing 2.1 provides a function to handle all of this. The
 function accepts the response object from the requests module as its
-input, processes the page text to soup, and then finds the `investigator_list` as above and
+input, processes the page text to soup, and then finds the 
+`investigator_list` as above and
 processes it into an actual list of the investigators. For each
 investigator it then processes the HTML to find and clean up the
 information required, converting it to a dictionary and adding it to our
@@ -263,10 +255,9 @@ You can see two dictionaries, one relating to Laurence Abbott, who is a
 senior fellow at the HHMI Janelia Farm Campus, and one for Susan
 Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar
 Harbor, Maine. Note that we have also obtained URLs that give more
-details on the researcher and their research program (`research_url` and `url` keys in the
-dictionary) that could provide a useful input to textual analysis or
-topic modeling (see
-[Text Analysis](#chap:text)).
+details on the researcher and their research program (`research_url` and
+`url` keys in the dictionary) that could provide a useful input to textual 
+analysis or topic modeling (see Chapter [Text Analysis](#chap:text)).
 
 
 ```r
@@ -375,7 +366,9 @@ messy way of working. It is problematic for a number of reasons: for
 example, many websites are designed in ways that make scraping difficult
 or impossible, and other sites explicitly prohibit this kind of scripted
 analysis. (Both reasons apply in the case of the NSF and Grants.gov
-websites, which is why we use the HHMI website in our example.) The structure of websites also changes frequently, forcing you to continuously modify your code to keep up with the structure.
+websites, which is why we use the HHMI website in our example.) The structure 
+of websites also changes frequently, forcing you to continuously modify your 
+code to keep up with the structure.
 
 In many cases a better choice is to process a data download from an
 organization. For example, the NSF and Wellcome Trust both provide data
@@ -385,8 +378,10 @@ figuring out what is the easiest way to proceed, what is allowed, and
 what is practical and useful. The selection of data will often be driven
 by pragmatic rather than theoretical concerns.
 
-Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. These tools are much easier and generally more effective to work
-with. They are the focus of much of the rest of this chapter.
+Increasingly, organizations are providing APIs to enable scripted and
+programmatic access to the data they hold. These tools are much easier and
+generally more effective to work with. They are the focus of much of the 
+rest of this chapter.
 
 
 Application Programming Interfaces (APIs) {#sec:4-3}
@@ -405,9 +400,8 @@ There is a wide range of other sources of information that can be used
 in combination with the APIs featured above to develop an overview of
 research outputs and of where and how they are being used. There are
 also other tools that can allow deeper analysis of the outputs
-themselves.
-Table \@ref(tab:table2-1) gives a partial list of key data sources and
-APIs that are relevant to the analysis of research outputs.
+themselves. Table \@ref(tab:table2-1) gives a partial list of key data 
+sources and APIs that are relevant to the analysis of research outputs.
 
 Table: (\#tab:table2-1) Popular sources of data relevant to the analysis of research outputs
 
@@ -495,22 +489,24 @@ This is a package of JavaScript Object Notation (JSON)^[JSON is an open standard
 response to a query. The query is contained entirely in the URL, which
 can be broken up into pieces: the root URL (<http://api.crossref.org>)
 and a data "query," in this case made up of a "field" (`works`) and an
-identifier (the DOI `10.1093/nar/gni170`). The Crossref API provides information about the
-article identified with this specific DOI.
+identifier (the DOI `10.1093/nar/gni170`). The Crossref API provides 
+information about the article identified with this specific DOI.
 
 Using an API {#sec:4-4}
 --------------------------
 
-Similar to what we did with web scraping, using an API involves 1) constructing HTTP requests  and 2) Processing the data that are returned. Here we use the Crossref API to
-illustrate how this is done. Crossref is the provider of DOIs used by
+Similar to what we did with web scraping, using an API involves 1) 
+constructing HTTP requests  and 2) Processing the data that are 
+returned. Here we use the Crossref API to illustrate how this is done. 
+Crossref is the provider of DOIs used by
 many publishers to uniquely identify scholarly works. Crossref is not
 the only organization to provide DOIs. The scholarly communication space
 DataCite is another important provider. The documentation is available
 at the Crossref website [@crossref].
 
-Once again the `requests` Python library provides a series of convenience functions
-that make it easier to make HTTP calls and to process returned JSON. Our
-first step is to import the module and set a base URL variable.
+Once again the `requests` Python library provides a series of convenience
+functions that make it easier to make HTTP calls and to process returned JSON.
+Our first step is to import the module and set a base URL variable.
 
 
 ```r
@@ -534,11 +530,13 @@ http://api.crossref.org/works/10.1093/nar/gni170
 200
 ```
 
-The `response` object that the `requests` library has created has a range of useful
+The `response` object that the `requests` library has created has a 
+range of useful
 information, including the URL called and the response code from the web
 server (in this case 200, which means everything is OK). We need the
 JSON body from the response object (which is currently text from the
-perspective of our script) converted to a Python dictionary. The `requests` module
+perspective of our script) converted to a Python dictionary. The 
+`requests` module
 provides a convenient function for performing this conversion, as the
 following code shows. (All strings in the output are in Unicode, hence
 the `u´` notation.)
@@ -676,10 +674,8 @@ identifying a corpus and then seeking information on its performance.
 
 One task we often want to do is to analyze relationships between people. As an exercise, we suggest writing code that is able to generate data about relationships between researchers working in similar areas. This could involve using data sources related to researchers, publications, citations and tweets about those publications, and researchers who are citing or tweeting about them. One way of generating this data for further analysis is to use APIs that give you different pieces of this information and connect them programmatically. We could take the following steps to do that: 
 
-Given a twitter handle, get the ORCID for that twitter handle
-From the ORCID, get a list of DOIs
-For each DOI
-Get citations, citing articles, tweets (and twitter handles) associated
+Given a twitter handle, get the ORCID for that twitter handle. From the ORCID, 
+get a list of DOIs. For each DOI, get citations, citing articles, tweets (and twitter handles) associated.
 
 The result is a list of related twitter handles that can be analyzed to look for communities and networks.
 
@@ -695,15 +691,9 @@ to collect information on articles from a range of sources.
 Summary {#sec:4-9}
 -------
 
-This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult
-or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they
-hold.  There are many good introductions to web scraping using BeautifulSoup
-and other libraries as well as API usage in general. Given the pace at
-which APIs and Python libraries change, the best and most up to date
-source of information is likely to be a web search.
+This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. There are many good introductions to web scraping using BeautifulSoup and other libraries as well as API usage in general. Given the pace at which APIs and Python libraries change, the best and most up to date source of information is likely to be a web search.
 
-As we collect data through scraping and APIs, we then have to understand how to effectively integrate it with our primary data since we may not have access to unique and reliable identifiers. The next chapter Chapter [Record Linkage]) deal with issues of data cleaning, 
-disambiguation, and linking different types of data sources to perform further analysis and research.
+As we collect data through scraping and APIs, we then have to understand how to effectively integrate it with our primary data since we may not have access to unique and reliable identifiers. The next chapter Chapter [Record Linkage](#chap:link) deals with issues of data cleaning, disambiguation, and linking different types of data sources to perform further analysis and research.
 
 
 Acknowledgements and copyright
