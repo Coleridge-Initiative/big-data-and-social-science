@@ -1,6 +1,4 @@
 <!--
-%todo- final decision if we think we need the TSE diagram depicted or not
-%add references
 %check and/or fix chapter heading / paragraph heading typesetting
 %add proper citation for cran package 
 --> 
@@ -209,7 +207,7 @@ then such duplication does not bias inference. This is also common in domains su
 When it is a problem, it still may not be possible to identify
 duplications in the data. Failing to account for them could generate
 duplication biases in the analysis. If these unwanted duplications can
-be identified, they can either be removed from the data file (i.e.,
+be identified, they can be removed from the data file (i.e.,
 deduplication). Alternatively, if a certain number of rows, say $d$,
 correspond to the same population unit, those row values can be weighted
 by $1/d$ to correct the estimates for the duplications.
@@ -241,7 +239,7 @@ example, persons on leave without pay.
 
 When analyzing a more diverse set of data sources, such errors could happen because
 of the complexities involved in producing a data set. For example, data
-Generated an individual tweet may undergo a
+generated from an individual tweet may undergo a
 number of transformations before it is included in the analysis data
 set. This transformative process can be quite complex, involving parsing
 phrases, identifying words, and classifying them as to subject matter
@@ -383,7 +381,7 @@ of measurement and construct validity and reliability."
 
 Algorithm dynamics refers to properties of algorithms that allow them to
 adapt and "learn" as the processes generating the data change over time.
-Although explanations vary, the fact remains that Google Flu Trends was
+Although explanations vary, the fact remains that Google Flu Trends estimates were
 too high and by considerable margins for 100 out of 108 weeks starting
 in July 2012. Lazer et al. [@lazer2014parable] also blame "blue team
 dynamics," which arises when the data generating engine is modified in
@@ -392,7 +390,7 @@ failed to work. For example, when a Google user searched on "fever" or
 "cough," Google's other programs started recommending searches for flu
 symptoms and treatments---the very search terms the algorithm used to
 predict flu. Thus, flu-related searches artificially spiked as a result
-of these changes to the algorithm and the impact these changes had on
+changes to the algorithm and the impact these changes had on
 user behavior. In survey research, this is similar to the measurement
 biases induced by interviewers who suggest to respondents who are
 coughing that they might have flu, then ask the same respondents if they
@@ -417,7 +415,7 @@ that often plagues big data analysis. In general it is an issue that
 algorithms are not (publicly) measured for accuracy, since they are
 often proprietary. Google Flu Trends is special in that it publicly
 failed. From what we have seen, most models fail privately and often
-without anyone at all noticing.
+without anyone noticing.
 --------
 
 
@@ -515,7 +513,7 @@ further exacerbated. For example, noise accumulation can be expected to
 accelerate when random noise (i.e., content errors) afflicts the data.
 Spurious correlations that give rise to both incidental endogeneity and
 coincidental correlations can render correlation analysis meaningless if
-the error levels in big data are not mitigated. In this section, we
+the error levels in big data are high. In this section, we
 consider some of the issues that arise in classification, correlation,
 and regression analysis as a result of content errors that may be either
 variable or systematic.
@@ -900,8 +898,8 @@ $$\label{eq:10-1.9}
 \rho_c^A = \frac{{\sigma_{b|c}^2}}{{\sigma_{\mu |c}^2 +
 \sigma_{b|c}^2 + n_c^{ - 1}\sigma_{\varepsilon |c}^2}},$$ which
 converges to $\rho_c^A = \sigma_{b|c}^2/(\sigma_{\mu |c}^2
-+ \sigma _{b|c}^2)$, which converges to $1 - R_c^A$. Thus, the
-systematic effects may still operate for correlation analysis without
++ \sigma _{b|c}^2)$, or approximately to $1 - R_c^A$ for large $n_c$. Thus, the
+systematic effects may still adversely affect correlation analysis without
 regard to the number of elements comprising the aggregates.
 
 For example, consider the illustration in

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 6 Information Visualization | Big Data and Social Science</title>
   <meta name="description" content="Chapter 6 Information Visualization | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 6 Information Visualization | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,9 +39,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
 
 
 
@@ -454,14 +451,14 @@ Deploy (monitor usage, provide user support, manage revision process).
 </ul>
 </div>
 <p>If the goal is to present results, there is a wide spectrum of users and a wide range of options. If the audience is broad, then <em>infographics</em> can be developed by graphic designers, as described in classic texts (see <span class="citation">(Few <a href="#ref-few2009now">2009</a>; Tufte <a href="#ref-edward2001visual">2001</a>; Tufte <a href="#ref-edward2006beauty">2006</a>)</span> or the examples compiled by Harrison et al. <span class="citation">(Harrison, Reinecke, and Chang <a href="#ref-harrison2015infographic">2015</a>; Keshif, n.d.)</span>). If, on the other hand, the audience comprises domain experts interested in monitoring the overview status of dynamic processes on a continuous basis, monitoring <em>dashboards</em> with no or little interactivity can be used. Examples include the monitoring of sales, or the number of tweets about people, or symptoms of the flu and how they compare to a baseline <span class="citation">(Few <a href="#ref-few2013information">2013</a>)</span>. Such dashboards, composed of multiple charts of different operational data, can increase situational awareness so that problems can be noticed and solved early and better decisions can be made with up-to-date information.</p>
-<p>Another goal of visualization is to enable <em>interactive exploratory analysis</em>. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager <span class="citation">(Harrison, Reinecke, and Chang, n.d.)</span> lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”</p>
+<p>Another goal of visualization is to enable <em>interactive exploratory analysis</em>. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager (<a href="http://www.babynamewizard.com/voyager/" class="uri">http://www.babynamewizard.com/voyager/</a>) lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-2a"></span>
-<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents" width="90%" />
+<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)" width="90%" />
 <p class="caption">
-Figure 6.2: Aid Worker Security Incidents
+Figure 6.2: Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)
 </p>
 </div>
-<p>In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure <a href="chap-viz.html#fig:fig9-2a">6.2</a> shows an interactive dashboard (&lt;gallery.keshif.me/AidWorkerSecurity&gt;) that visualizes the Aid Worker Security Incidents dataset (<a href="http://www.keshif.me" class="uri">http://www.keshif.me</a>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.</p>
+<p>In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure <a href="chap-viz.html#fig:fig9-2a">6.2</a> shows an interactive dashboard that visualizes the data from the Humanitarian Outcomes’ Aid Worker Security Database (<a href="https://aidworkersecurity.org/" class="uri">https://aidworkersecurity.org/</a>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points. Additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-3a"></span>
 <img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="90%" />
 <p class="caption">
@@ -626,18 +623,18 @@ Trace action histories
 <div id="sec:viz-2.2" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Spatial data</h3>
 <p>Spatial data convey a physical context, commonly in a 2D space, such as geographical maps or floor plans. Several of the most examples of information visualization include maps, from the 1861 representation of Napoleon’s ill-fated Russian campaign by Minard (popularized by Tufte <span class="citation">(Tufte <a href="#ref-edward2001visual">2001</a>)</span> and Kraak <span class="citation">(Kraak <a href="#ref-Kraak2014">2014</a>)</span>) to the interactive HomeFinder application that introduced the concept of dynamic queries <span class="citation">(Ahlberg, Williamson, and Shneiderman <a href="#ref-ahlberg1992dynamic">1992</a>)</span>. The tasks include finding adjacent items, regions containing certain items or with specific characteristics, and paths between items—and performing the basic tasks listed in Box 9.1.</p>
-<p>The primary form of visualizing spatial data is <em>maps</em>. In <em>choropleth maps</em>, color encoding is used to add represent one data attribute. <em>Cartograms</em> aim to encode the attribute value with the size of regions by distorting the underlying physical space. <em>Tile grid maps</em> reduce each spatial area to a uniform size and shape (e.g., a square) so that the color-coded data are easier to observe and compare, and they arrange the tiles to approximate the neighbor relations between physical locations <span class="citation">(DeBelius <a href="#ref-DeBelius2015">2015</a>; Stanford Visualization Group, n.d.)</span>. Grid maps also make selection of smaller areas (such as small cities or states) easier. <em>Contour (isopleth) maps</em> connect areas with similar measurements and color each one separately. <em>Network maps</em> aim to show network connectivity between locations, such as flights to/from many regions of the world. Spatial data can be also presented with a nonspatial emphasis (e.g., as a hierarchy of continents, countries, and cities).</p>
+<p>The primary form of visualizing spatial data is <em>maps</em>. In <em>choropleth maps</em>, color encoding is used to add represent one data attribute. <em>Cartograms</em> aim to encode the attribute value with the size of regions by distorting the underlying physical space. <em>Tile grid maps</em> reduce each spatial area to a uniform size and shape (e.g., a square) so that the color-coded data are easier to observe and compare, tile grid maps convert each spatial region to a fixed shape, such as a square tile and arrange these tiles to approximate and maintain relative physical positions of the regions <span class="citation">(DeBelius <a href="#ref-DeBelius2015">2015</a>; Stanford Visualization Group, n.d.)</span>. Grid maps also make selection of smaller areas (such as small cities or states) easier. <em>Contour (isopleth) maps</em> connect areas with similar measurements and color each one separately. <em>Network maps</em> aim to show network connectivity between locations, such as flights to/from many regions of the world. Spatial data can be also presented with a nonspatial emphasis (e.g., as a hierarchy of continents, countries, and cities, such as by using a treemap chart.).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-5"></span>
 <img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="90%" />
 <p class="caption">
 Figure 6.6: The US Cancer Atlas <span class="citation">(Centers for Disease Control and Prevention, n.d.)</span>. Interface based on <span class="citation">(MacEachren et al. <a href="#ref-maceachren2008design">2008</a>)</span>
 </p>
 </div>
-<p>Maps are commonly combined with other visualizations. For example, in Figure <a href="chap-viz.html#fig:fig9-5">6.6</a>, the US Cancer Atlas combines a map showing patterns across states on one attribute, with a sortable table providing additional statistical information and a scatterplot that allows users to explore correlations between attributes.</p>
+<p>Maps are commonly combined with other visualizations. For example, in Figure <a href="chap-viz.html#fig:fig9-5">6.6</a>, the US Cancer Atlas combines a map showing patterns across states on one attribute, with a sortable table providing additional statistical information and a scatterplot that allows users to explore correlations between attributes. Figures <a href="chap-viz.html#fig:fig9-2a">6.2</a> and <a href="chap-viz.html#fig:fig9-3b">6.4</a> also demonstrate the use of different map designs in the context of larger analytical solutions.</p>
 </div>
 <div id="sec:viz-2.4" class="section level3">
 <h3><span class="header-section-number">6.3.3</span> Temporal data</h3>
-<p>Time is the unique dimension in our physical world that steadily flows forward. While we cannot control time, we frequently record it as a point or interval. Time has multiple levels of representation (year, month, day, hour, minute, and so on) with irregularities (leap year, different days per month, etc.). As we measure time based on cyclic events in nature (day/night), our representations are also commonly cyclic. For example, January follows December (first month follows last). This cyclic nature can be captured by circular visual encodings, such as the the conventional clock with hour, minute, and second hands.</p>
+<p>Time is the unique dimension in our physical world that steadily flows forward. While we cannot control time, we frequently record it as a point or an interval. Figures <a href="chap-viz.html#fig:fig9-2a">6.2</a> and <a href="chap-viz.html#fig:fig9-3a">6.3</a> exemplify line charts that show trends over multiple years, with each single line representing a subset of the data for cross-comparison of temporal trends. Temporal data also has multiple levels of representation (year, month, day, hour, minute, and so on) with irregularities (leap year, different days per month, etc.). As we measure time based on cyclic events in nature (day/night), our representations are also commonly cyclic. For example, January follows December (first month follows last). This cyclic nature can be captured by circular visual encodings, such as the the conventional clock with hour, minute, and second hands.</p>
 <p>Time series data (Figures <a href="chap-viz.html#fig:fig9-6">6.7</a> and <a href="chap-viz.html#fig:fig9-7">6.8</a>) describe values measured at regular intervals, such as stock market or weather data. The focus of analysis is to understand temporal trends and anomalies, querying for specific patterns, or prediction. To show multiple time-series trends across different data categories in a very compact chart area, each trend can be shown with small height using a multi-layered color approach, creating horizon graphs. While perceptually effective after learning to read its encoding, this chart design may not be appropriate for audiences who may lack such training or familiarity.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-6"></span>
 <img src="ChapterViz/figures/fig9-6.png" alt="Horizon graphs used to display time series" width="90%" />
@@ -686,7 +683,7 @@ Figure 6.11: NodeXL showing innovation networks of the Great Lakes manufacturing
 Figure 6.12: An example from “Maps of Science: Forecasting Large Trends in Science,” 2007, The Regents of the University of California, all rights reserved <span class="citation">(Börner <a href="#ref-borner2010atlas">2010</a>)</span>
 </p>
 </div>
-<p><span class="roman">Node-link diagrams</span> are the most common representation of network structures and overviews (Figures <a href="chap-viz.html#fig:fig9-10">6.11</a> and <a href="chap-viz.html#fig:fig9-10b">6.12</a>, and may use linear (arc), circular, or force- directed layouts for positioning the nodes (items). Matrices or grid layouts are also a valuable way to represent networks <span class="citation">(Henry and Fekete <a href="#ref-henry2006matrixexplorer">2006</a>)</span>. Hybrid solutions have been proposed, with powerful ordering algorithms to reveal clusters <span class="citation">(Hansen, Shneiderman, and Smith <a href="#ref-hansen2010analyzing">2010</a>)</span>. A major challenge in network data exploration is in dealing with larger networks where nodes and edges inevitably overlap by virtue of the underlying network structure, and where aggregation and filtering may be needed before effective overviews can be presented to users.</p>
+<p>Node-link diagrams are the most common representation of network structures and overviews (Figures <a href="chap-viz.html#fig:fig9-10">6.11</a> and <a href="chap-viz.html#fig:fig9-10b">6.12</a>, and may use linear (arc), circular, or force- directed layouts for positioning the nodes (items). Matrices or grid layouts are also a valuable way to represent networks <span class="citation">(Henry and Fekete <a href="#ref-henry2006matrixexplorer">2006</a>)</span>. Hybrid solutions have been proposed, with powerful ordering algorithms to reveal clusters <span class="citation">(Hansen, Shneiderman, and Smith <a href="#ref-hansen2010analyzing">2010</a>)</span>. A major challenge in network data exploration is in dealing with larger networks where nodes and edges inevitably overlap by virtue of the underlying network structure, and where aggregation and filtering may be needed before effective overviews can be presented to users.</p>
 <p>Figure <a href="chap-viz.html#fig:fig9-10">6.11</a> shows the networks of inventors (white) and companies (orange) and their patenting connections (purple lines) in the network visualization NodeXL. Each company and inventor is also connected to a location node (blue = USA; yellow = Canada). Green lines are weak ties based on patenting in the same class and subclass, and they represent potential economic development leads. The largest of the technology clusters are shown using the <em>group-in-a-box</em> layout option, which makes the clusters more visible. Note the increasing level of structure moving from the cluster in the lower right to the main cluster in the upper left. NodeXL is designed for interactive network exploration; many controls (not shown in the figure) allow users to zoom on areas of interest or change options. Figure <a href="chap-viz.html#fig:fig9-10b">6.12</a> shows an example of network visualization on science as a topic used for data presentation in a book and a traveling exhibit. Designed for print media, it includes a clear title and annotations and shows a series of topic clusters at the bottom with a summary of the insights gathered by analysts.</p>
 </div>
 <div id="sec:viz-2.7" class="section level3">
@@ -718,7 +715,7 @@ Figure 6.13: Jigsaw used to explore a collection of car reviews
 </div>
 <div id="sec:viz-4.4" class="section level3">
 <h3><span class="header-section-number">6.4.4</span> Visual literacy</h3>
-<p>While the number of people using visualization continues to grow, not everyone is able to accurately interpret graphs and charts. When designing a visualization for a population of users who are expected to make sense of the data without training, it is important to adequately estimate the level of visual literacy of those users. Even simple scatterplots can be overwhelming for some users. Recent work has proposed new methods for assessing visual literacy <span class="citation">(Boy et al. <a href="#ref-boy2014principled">2014</a>)</span>, but user testing with representative users in the early stages of design and development will remain necessary to verify that adequate designs are being used. Training is likely to be needed to help analysts get started when using more visual analytics tools. Recorded video demonstrations and online support for question answering are helpful to bring users from novice to expert levels.</p>
+<p>While the number of people using visualization continues to grow, not everyone is able to accurately interpret graphs and charts. When designing a visualization for a population of users who are expected to make sense of the data without training, it is important to adequately estimate the level of visual literacy of those users. Even simple scatterplots can be overwhelming for some users. Recent work has proposed new methods for assessing visual literacy <span class="citation">(Boy et al. <a href="#ref-boy2014principled">2014</a>)</span>, but user testing with representative users in the early stages of design and development will remain necessary to verify that adequate designs are being used. Training is likely to be needed to help analysts get started when using visual analytics tools. Recorded video demonstrations and online support for question answering are helpful to bring users from novice to expert levels.</p>
 </div>
 </div>
 <div id="sec:viz-5" class="section level2">
@@ -729,7 +726,7 @@ Figure 6.13: Jigsaw used to explore a collection of car reviews
 <h2><span class="header-section-number">6.6</span> Resources</h2>
 <p>We have referred to various textbooks throughout this chapter. Tufte’s books remain the classics, as inspiring to read as they are instructive <span class="citation">(Tufte <a href="#ref-edward2001visual">2001</a>; Tufte <a href="#ref-edward2006beauty">2006</a>)</span>. We also recommend Few’s books on information visualization <span class="citation">(Few <a href="#ref-few2009now">2009</a>)</span> and information dashboard design <span class="citation">(Few <a href="#ref-few2013information">2013</a>)</span>. See also the book’s website for further readings.</p>
 <p>Given the wide variety of goals, tasks, and use cases of visualization, many different data visualization tools have been developed that address different needs and appeal to different skill levels. In this chapter we can only point to a few examples to get started. To generate a wide range of visualizations and dashboards, and to quickly share them online, Tableau and Tableau Public provide a flexible visualization design platform. If a custom design is required and programmers are available, d3 is the de facto low-level library of choice for many web-based visualizations, with its native integration to web standards and flexible ways to convert and manipulate data into visual objects as a JavaScript library. There exist other JavaScript web libraries that offer chart templates (such as Highcharts), or web services that can be used to create a range of charts from given (small) data sets, such as Raw or DataWrapper. To clean, transform, merge, and restructure data sources so that they can be visualized appropriately, tools like Trifacta and Alteryx can be used to create pipelines for data wrangling. For statistical analysis and batch-processing data, programming environments such as R or libraries for languages such as Python (for example, the Python Plotly library) can be used.</p>
-<p>An extended list of tools and books is available at <a href="http://www.keshif.me/demo/VisTools" class="uri">http://www.keshif.me/demo/VisTools</a>.</p>
+<p>An extended list of visualization tools and books are available at <a href="https://gallery.keshif.me/VisTools" class="uri">https://gallery.keshif.me/VisTools</a> and <a href="https://gallery.keshif.me/VisBooks" class="uri">https://gallery.keshif.me/VisBooks</a>.</p>
 
 <!--
 % TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
@@ -866,8 +863,8 @@ Figure 6.13: Jigsaw used to explore a collection of car reviews
 <hr />
 <ol start="33">
 <li id="fn33"><p>See Chapters 2, 3, 4, and 5 for an overview of collecting, merging, storing, and processing data sets.<a href="chap-viz.html#fnref33">↩</a></p></li>
-<li id="fn34"><p>See Chapter 8.<a href="chap-viz.html#fnref34">↩</a></p></li>
-<li id="fn35"><p>See Chapter 7 for text analysis approaches.<a href="chap-viz.html#fnref35">↩</a></p></li>
+<li id="fn34"><p>See Chapter <a href="chap-networks.html#chap:networks">Networks: The Basics</a>.<a href="chap-viz.html#fnref34">↩</a></p></li>
+<li id="fn35"><p>See Chapter <a href="chap-text.html#chap:text">Text Analysis</a> for text analysis approaches.<a href="chap-viz.html#fnref35">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -893,13 +890,11 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -907,11 +902,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
+"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -923,10 +919,6 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
-"link": null,
-"text": null
-},
-"view": {
 "link": null,
 "text": null
 },

@@ -53,7 +53,7 @@ visually.
 <img src="ChapterViz/figures/fig9-1-new.png" alt="Adapted from Anscombe`s quartet [@anscombe1973graphs]" width="90%" />
 <p class="caption">(\#fig:fig9-1)Adapted from Anscombe`s quartet [@anscombe1973graphs]</p>
 </div>
-
+ 
 In broad terms, visualizations are used either to present results or for
 analysis and open-ended exploration. This chapter provides an overview
 of how modern information visualization, or visual data mining, can be
@@ -90,22 +90,24 @@ a wide range of options. If the audience is broad, then *infographics*
 can be developed by graphic designers, as described in classic texts
 (see [@few2009now; @edward2001visual; @edward2006beauty] or the examples
 compiled by Harrison et al. [@harrison2015infographic; @harrisonweb]).
-If, on the other hand, the audience comprises domain experts interested in monitoring the overview status of dynamic processes on a continuous basis, monitoring *dashboards* with no or little interactivity can be used. 
- Examples include the monitoring of
-sales, or the number of tweets about people, or symptoms of the flu and
-how they compare to a baseline [@few2013information]. Such dashboards, composed of multiple charts of different operational data, can
-increase situational awareness so that problems can be noticed and
-solved early and better decisions can be made with up-to-date
-information.
+If, on the other hand, the audience comprises domain experts interested in
+monitoring the overview status of dynamic processes on a continuous basis,
+monitoring *dashboards* with no or little interactivity can be used. 
+Examples include the monitoring of sales, or the number of tweets about 
+people, or symptoms of the flu and how they compare to a baseline
+[@few2013information]. Such dashboards, composed of multiple charts of 
+different operational data, can increase situational awareness so that 
+problems can be noticed and solved early and better decisions can be 
+made with up-to-date information.
 
-Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager [@babynamevoyager] lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
+Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager (http://www.babynamewizard.com/voyager/) lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents" width="90%" />
-<p class="caption">(\#fig:fig9-2a)Aid Worker Security Incidents</p>
+<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)" width="90%" />
+<p class="caption">(\#fig:fig9-2a)Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)</p>
 </div>
 
-In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows an interactive dashboard (<gallery.keshif.me/AidWorkerSecurity>) that visualizes the Aid Worker Security Incidents dataset (<http://www.keshif.me>). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points, and additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
+In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows an interactive dashboard that visualizes the data from the Humanitarian Outcomes' Aid Worker Security Database (https://aidworkersecurity.org/). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points. Additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterViz/figures/fig9-3a.png" alt="Charting interface of Tableau" width="90%" />
@@ -145,7 +147,9 @@ elements, like position, length, color, angle, area, and texture
 organized in a multitude of ways, discussed in more detail by Munzner
 [@munzner2014visualization]. In addition to visual data encoding, units
 for axes, labels, and legends need to be provided as well as
-explanations of the mappings when the design is unconventional. A visually compelling example is “how to read this data” section of “A world of Terror” project by Periscopic (<https://terror.periscopic.com/>).
+explanations of the mappings when the design is unconventional. A visually
+compelling example is “how to read this data” section of “A world of Terror”
+project by Periscopic (https://terror.periscopic.com/).
 
 Annotations or comments can be used to guide viewer
 attention and to describe related insights. Providing attribution and
@@ -231,6 +235,7 @@ based on goals and types of visualizations.
 <li><p>Trace action histories</p></li>
 </ul>
 </div>
+
 Interactive visualization design should also consider the devices where data will be viewed and interacted. Conventionally, visualizations have been designed for
 mouse and keyboard interaction on desktop computers. However, a wider
 range of device forms, such as mobile devices with small displays and
@@ -302,15 +307,13 @@ maps*, color encoding is used to add represent one data attribute.
 *Cartograms* aim to encode the attribute value with the size of regions
 by distorting the underlying physical space. *Tile grid maps* reduce
 each spatial area to a uniform size and shape (e.g., a square) so that
-the color-coded data are easier to observe and compare, and they arrange
-the tiles to approximate the neighbor relations between physical
-locations [@DeBelius2015; @ProtoVis2015]. Grid maps also make selection
+the color-coded data are easier to observe and compare, tile grid maps convert each spatial region to a fixed shape, such as a square tile and arrange these tiles to approximate and maintain relative physical positions of the regions  [@DeBelius2015; @ProtoVis2015]. Grid maps also make selection
 of smaller areas (such as small cities or states) easier. *Contour
 (isopleth) maps* connect areas with similar measurements and color each
 one separately. *Network maps* aim to show network connectivity between
 locations, such as flights to/from many regions of the world. Spatial
 data can be also presented with a nonspatial emphasis (e.g., as a
-hierarchy of continents, countries, and cities).
+hierarchy of continents, countries, and cities, such as by using a treemap chart.).
 
 <div class="figure" style="text-align: center">
 <img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="90%" />
@@ -321,13 +324,16 @@ Maps are commonly combined with other visualizations. For example, in
 Figure \@ref(fig:fig9-5), the US Cancer Atlas combines a map showing
 patterns across states on one attribute, with a sortable table providing
 additional statistical information and a scatterplot that allows users
-to explore correlations between attributes.
+to explore correlations between attributes. Figures \@ref(fig:fig9-2a) and \@ref(fig:fig9-3b) also demonstrate the use of different map designs in the context of larger analytical solutions.
 
 ### Temporal data {#sec:viz-2.4}
 
 Time is the unique dimension in our physical world that steadily flows
 forward. While we cannot control time, we frequently record it as a
-point or interval. Time has multiple levels of representation (year,
+point or  an interval. Figures \@ref(fig:fig9-2a) and \@ref(fig:fig9-3a) 
+exemplify line charts that show trends over multiple years, with each 
+single line representing a subset of the data for cross-comparison of temporal
+trends. Temporal data also has multiple levels of representation (year,
 month, day, hour, minute, and so on) with irregularities (leap year,
 different days per month, etc.). As we measure time based on cyclic
 events in nature (day/night), our representations are also commonly
@@ -335,9 +341,7 @@ cyclic. For example, January follows December (first month follows
 last). This cyclic nature can be captured by circular visual encodings,
 such as the the conventional clock with hour, minute, and second hands.
 
-Time series data
-(Figures \@ref(fig:fig9-6) and
-\@ref(fig:fig9-7))
+Time series data (Figures \@ref(fig:fig9-6) and \@ref(fig:fig9-7))
 describe values measured at regular intervals, such as stock market or
 weather data. The focus of analysis is to understand temporal trends and
 anomalies, querying for specific patterns, or prediction. To show
@@ -430,7 +434,8 @@ focus on that industry.
 <p class="caption">(\#fig:fig9-10)NodeXL showing innovation networks of the Great Lakes manufacturing region. Created with NodeXL. Data source: USPTO. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
-Network data encode relationships between items^[See Chapter 8.]: for example, social
+Network data encode relationships between items^[See Chapter 
+[Networks: The Basics](#chap:networks).]: for example, social
 connection patterns (friendships, follows and reposts, etc.), travel
 patterns (such as trips between metro stations), and communication
 patterns (such as emails). The network overviews attempt to reveal the
@@ -445,9 +450,8 @@ duration of communications.
 <p class="caption">(\#fig:fig9-10b)An example from "Maps of Science: Forecasting Large Trends in Science," 2007, The Regents of the University of California, all rights reserved [@borner2010atlas]</p>
 </div>
 
-[Node-link diagrams]{.roman} are the most common representation of
-network structures and overviews (Figures
-\@ref(fig:fig9-10) and
+Node-link diagrams are the most common representation of network 
+structures and overviews (Figures \@ref(fig:fig9-10) and
 \@ref(fig:fig9-10b), and may use linear (arc), circular, or force-
 directed layouts for positioning the nodes (items). Matrices or grid
 layouts are also a valuable way to represent networks
@@ -480,7 +484,8 @@ summary of the insights gathered by analysts.
 
 Text is usually preprocessed (for word/paragraph counts, sentiment
 analysis, categorization, etc.) to generate metadata about text
-segments, which are then visualized^[See Chapter 7 for text analysis approaches.]. Simple visualizations like tag
+segments, which are then visualized^[See Chapter [Text Analysis](#chap:text) 
+for text analysis approaches.]. Simple visualizations like tag
 clouds display statistics about word usage in a text collection, or can
 be used to compare two collections or text segments. While visually
 appealing, they can easily be misinterpreted and are often replaced by
@@ -598,7 +603,7 @@ proposed new methods for assessing visual literacy [@boy2014principled],
 but user testing with representative users in the early stages of design
 and development will remain necessary to verify that adequate designs
 are being used. Training is likely to be needed to help analysts get
-started when using more visual analytics tools. Recorded video
+started when using visual analytics tools. Recorded video
 demonstrations and online support for question answering are helpful to
 bring users from novice to expert levels.
 
@@ -644,5 +649,4 @@ For statistical analysis and batch-processing data, programming
 environments such as R or libraries for languages such as Python (for
 example, the Python Plotly library) can be used.
 
-An extended list of tools and books is available at
-<http://www.keshif.me/demo/VisTools>.
+An extended list of visualization tools and books are available at https://gallery.keshif.me/VisTools and https://gallery.keshif.me/VisBooks.
