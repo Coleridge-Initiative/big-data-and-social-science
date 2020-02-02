@@ -52,7 +52,7 @@ visually.
 ```{r fig9-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Adapted from Anscombe`s quartet [@anscombe1973graphs]'}
 knitr::include_graphics("ChapterViz/figures/fig9-1-new.png")
 ```
-
+ 
 In broad terms, visualizations are used either to present results or for
 analysis and open-ended exploration. This chapter provides an overview
 of how modern information visualization, or visual data mining, can be
