@@ -67,9 +67,8 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box 9.1^[See Chapters 2, 3, 4, and
-5 for an overview of collecting, merging, storing, and
-processing data sets.]).
+(see Box 9.1^[See Chapters [Working with Web Data and APIs](#chap:web), 
+[Record Linkage](#chap:link), [Databases](#chap:db), and [Scaling up through Parallel and Distributed Computing](#chap:parallel) for an overview of collecting, merging, storing, and processing data sets.]).
 
 ```{block, type='F00'}
 **Box 9.1:**
