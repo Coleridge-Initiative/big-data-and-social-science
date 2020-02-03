@@ -24,8 +24,8 @@ leading academic journals are much less likely today to draw on
 preprocessed survey data (Figure \@ref(fig:fig1)).
 
 <div class="figure" style="text-align: center">
-<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)" width="70%" />
-<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)</p>
+<img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]" width="70%" />
+<p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]</p>
 </div>
 
 The way in which data are used has also changed for both government

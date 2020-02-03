@@ -23,7 +23,7 @@ Research has certainly changed. Researchers draw on data that are
 leading academic journals are much less likely today to draw on
 preprocessed survey data (Figure \@ref(fig:fig1)).
 
-```{r fig1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Use of pre-existing survey data in publications in leading journals, 1980--2010 (@Chetty2012)'}
+```{r fig1, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]'}
 knitr::include_graphics("ChapterIntro/figures/Figure1.png")
 ```
 

@@ -101,7 +101,8 @@ where experts would spend considerable time and effort developing and
 maintaining the rules. The problem with those systems was that they were
 rigid, not adaptive, hard to scale, and expensive to maintain. Machine
 learning systems started becoming popular because they could improve the
-system along all of these dimensions^[See Chapter 3.]. Box 7.1
+system along all of these dimensions^[See Chapter
+[Record Linkage](#chap:link).]. Box 7.1
 mentions several examples where machine learning is being used in
 commercial applications today. Social scientists are uniquely placed
 today to take advantage of the same advances in machine learning by
@@ -141,7 +142,8 @@ The Machine Learning process
 
 When solving problems using machine learning methods, it is important to
 think of the larger data-driven problem-solving process of which these
-methods are a small part^[See Chapter 3.]. A typical machine learning problem requires
+methods are a small part^[See Chapter [Record Linkage](#chap:link).]. 
+A typical machine learning problem requires
 researchers and practitioners to take the following steps:
 
 1.  **Understand the problem and goal**: This sounds obvious but is often nontrivial. Problems typically
@@ -182,7 +184,8 @@ Knowing what kinds of tasks machine learning can solve will allow you to map the
 7.  **Model Selection**: As you build a large number of possible models, you need a way to
     select the model that is the “best”. This part of the chapter will
     cover methodology to first test the models on
-    historical data as well as discuss a variety of evaluation metrics. While this chapter will focus mostly on traditionally used metrics, Chapter \ref{chap:bias} will expand on this using bias and fairness related metrics. It is important to note that sometimes the machine learning literature will call this step the “validation” step using historical data, but we want to distinguish it here from validation, which is the next step.
+    historical data as well as discuss a variety of evaluation metrics. While this chapter will focus mostly on traditionally used metrics, Chapter 
+    [Bias and Fairness](#chap:bias) will expand on this using bias and fairness related metrics. It is important to note that sometimes the machine learning literature will call this step the “validation” step using historical data, but we want to distinguish it here from validation, which is the next step.
 
 8. **Model Validation**: The next step, after model selection (using historical data) is validation. Validate on new data, as well as designing and running field trials or experiments.
 
@@ -376,7 +379,8 @@ Euclidean distance, but other commonly used metrics are Manhattan,
 Minkowski, Chebyshev, cosine, Hamming, Pearson, and Mahalanobis. Often,
 domain-specific similarity metrics can be designed for use in specific
 problems. For example, when performing the record linkage tasks
-discussed in Chapter [Record Linkage], you can design a similarity metric that compares
+discussed in Chapter [Record Linkage](#chap:link), you can design a 
+similarity metric that compares
 two first names and assigns them a high similarity (low distance) if
 they both map to the same canonical name, so that, for example, Sammy
 and Sam map to Samuel.
@@ -667,7 +671,7 @@ complex non-linear forms), and it may not always be possible to write them down 
 a compact form as an equation. This does not, however, make them
 incomprehensible or uninterpretable. Another focus of machine learning
 models for supervised learning is prediction, and not necessarily causal inference^[The topic of causal inference is addressed in more
-detail in Chapter 10.].
+detail in Chapter [Data Quality and Inference Errors](#chap:errors).].
 Some of these models can be used to help with causal inference, but they
 are typically optimized for prediction tasks. We believe that there are
 many social science and policy problems where better prediction methods

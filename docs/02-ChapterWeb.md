@@ -20,7 +20,7 @@ of more traditional data sources?
 
 In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely
 unstructured, existing in web pages spread across a site, and sometimes
-they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.^[The Privacy and Confidentiality chapter will discuss ethical issues when dealing with and using "publically" available data for research and policy purposes.]
+they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.^[The chapter [Privacy and Confidentiality](#chap:privacy) will discuss ethical issues when dealing with and using "publically" available data for research and policy purposes.]
 
 Using the example of data on researchers and research outputs, we will
 focus this chapter on obtaining information directly from web pages (*web scraping*)

@@ -974,7 +974,7 @@ We saw in Listing 4.2 how to load data from CSV files into SQL
 tables. Data in other formats, such as the commonly used JSON, can also
 be loaded into a relational DBMS. Consider, for example, the following
 JSON format data, a simplified version of data shown in
-Chapter [Working with Web Data and APIs].
+Chapter [Working with Web Data and APIs](#chap:web).
 
 ```{r, eval = FALSE}
 [

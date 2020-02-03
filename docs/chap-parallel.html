@@ -293,7 +293,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="10.4" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4"><i class="fa fa-check"></i><b>10.4</b> Errors in data analysis</a><ul>
 <li class="chapter" data-level="10.4.1" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-4.2"><i class="fa fa-check"></i><b>10.4.1</b> Analysis errors resulting from inaccurate data</a></li>
 </ul></li>
-<li class="chapter" data-level="10.5" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-5"><i class="fa fa-check"></i><b>10.5</b> Detecting and Compensating for Data Errors</a></li>
+<li class="chapter" data-level="10.5" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-5"><i class="fa fa-check"></i><b>10.5</b> Detecting and Compensating for Data Errors</a><ul>
+<li class="chapter" data-level="10.5.1" data-path="chap-errors.html"><a href="chap-errors.html#tableplots"><i class="fa fa-check"></i><b>10.5.1</b> TablePlots</a></li>
+</ul></li>
 <li class="chapter" data-level="10.6" data-path="chap-errors.html"><a href="chap-errors.html#sec:10-6"><i class="fa fa-check"></i><b>10.6</b> Summary</a></li>
 <li class="chapter" data-level="10.7" data-path="chap-errors.html"><a href="chap-errors.html#resources-5"><i class="fa fa-check"></i><b>10.7</b> Resources</a></li>
 </ul></li>
@@ -402,7 +404,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="sec:examples" class="section level2">
 <h2><span class="header-section-number">5.2</span> Examples</h2>
 <p>Al Aghbari et al. <span class="citation">(<a href="#ref-aghbari2019">2019</a>)</span> introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results.</p>
-<p>Kolb et al. <span class="citation">(<a href="#ref-kolb2012">2012</a>)</span> developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter <a href="chap-workbooks.html#record-linkage">Record Linkage</a>?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.</p>
+<p>Kolb et al. <span class="citation">(<a href="#ref-kolb2012">2012</a>)</span> developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter <a href="chap-link.html#chap:link">Record Linkage</a>?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.</p>
 <p>Ching et al. <span class="citation">(<a href="#ref-ching2012">2012</a>)</span> describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine. Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.</p>
 <p><strong>BOX</strong></p>
 </div>
@@ -786,7 +788,7 @@ Listing 5.5. Python code for a Spark program to aggregate the debt–income rati
 <hr />
 <ol start="31">
 <li id="fn31"><p>The term <em>Hadoop</em> refers to the creator’s son’s toy elephant.<a href="chap-parallel.html#fnref31">↩</a></p></li>
-<li id="fn32"><p>See Chapter 4.<a href="chap-parallel.html#fnref32">↩</a></p></li>
+<li id="fn32"><p>See Chapter <a href="chap-db.html#chap:db">Databases</a>.<a href="chap-parallel.html#fnref32">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

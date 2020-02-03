@@ -33,7 +33,7 @@ Examples{#sec:examples}
 
 Al Aghbari et al. [-@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
-Kolb et al. [-@kolb2012] developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+Kolb et al. [-@kolb2012] developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage](#chap:link)?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
 
 Ching et al. [-@ching2012] describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
@@ -187,8 +187,7 @@ There are two parts of the computing environment when using Hadoop:
 power (e.g., thousands of computing cores)
 2. a *storage cluster* with lots of disk space, capable of storing and serving data quickly to the compute cluster. 
 
-These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured
-as separate physical hardware.
+These two clusters have quite different hardware specifications: the first is optimized for CPU performance and the second for storage. The two systems are typically configured as separate physical hardware.
 
 <img src="ChapterParallel/figures/data2compute.png" width="70%" style="display: block; margin: auto;" />
 
@@ -462,7 +461,8 @@ Other MapReduce Implementations
 
 In addition to Apache Hadoop, other notable MapReduce implementations
 include MongoDB, GreenplumDB, Disco, Riak, and Spark. MongoDB, Riak, and
-Greenplum DB are all database systems^[See Chapter 4.] and thus their MapReduce
+Greenplum DB are all database systems^[See Chapter [Databases](#chap:db).] 
+and thus their MapReduce
 implementations focus more on the interoperability of MapReduce and the
 core components such as MongoDB's aggregation framework, and leave it up
 to users to customize the MapReduce functionalities for broader tasks.

@@ -24,7 +24,7 @@ systematic way to think about the error framework in a big data setting.
 Introduction {#sec:10-1}
 ------------
 
-The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter 1 -- and the decisions made along the way -- can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
+The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro) -- and the decisions made along the way -- can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
 
 The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. [@japec2015big]): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
 
@@ -689,8 +689,7 @@ are the positive predictive value (PPV) and negative predictive value
 (\mu_r = 0\vert y_r = 0).$$ The PPV (NPV) is the probability that a
 positive (negative) classification is correct.
 
-####Errors when analyzing rare population groups
- {#sec:10-4.2.3}
+#### Errors when analyzing rare population groups {#sec:10-4.2.3}
 
 One of the attractions of newer sources of data such as social media is the ability to study rare population groups that seldom show up in large enough numbers in designed studies such as
 surveys and clinical trials. While this is true in theory, in practice
@@ -1073,9 +1072,9 @@ tools such as treemaps
 tableplots [@tennekes2013visualizing; @puts2015finding; @Tennekes2012].
 We further explore tableplots below.
 
-TablePlots
-Like other visualization techniques examined in
-Chapter [Information Visualization], the tableplot has the ability to summarize a
+### TablePlots
+
+Like other visualization techniques examined in Chapter [Information Visualization](#chap:viz), the tableplot has the ability to summarize a
 large multivariate data set in a single plot [@malik2010interactive]. In
 editing data, it can be used to detect outliers and unusual data
 patterns. Software for implementing this technique has been written in R

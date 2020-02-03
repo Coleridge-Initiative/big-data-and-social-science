@@ -52,7 +52,7 @@ Facebook graph example: http://snap.stanford.edu/class/cs224w-readings/backstrom
 
 ---
 
-This chapter provides a basic introduction to the analysis of large networks for social science reseaarch and practice. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization techniques, and discuss social science questions that these network measures and visualizations can help us answer.
+This chapter provides a basic introduction to the analysis of large networks for social science research and practice. We describe how to use data from existing social networks as well as how to turn “non-network” data into a network to perform further analysis. We then describe different measures that can be calculated to understand the properties of the network being analyzed, show different network visualization techniques, and discuss social science questions that these network measures and visualizations can help us answer.
 
 We use the comparison of the collaboration networks of two research-intensive universities to show how to perform network analysis but the same approach generalizes to other types of problems. The collaboration networks and a grant co-employment network for a large public university examined in this chapter are derived from data produced by the multi-university
 Committee on Institutional Cooperation (CIC)'s UMETRICS project [@lane2015new]. The snippets of code that are provided are from the `igraph` package for network analysis as implemented in Python.
@@ -814,7 +814,8 @@ better positioned to play the role of brokers in the network. A complete
 review of the many approaches to network visualization and their dangers
 in the absence of descriptive statistics such as those presented above
 is beyond the scope of this chapter, but consider the guidelines
-presented in Chapter [Information Visualization] on information visualization as well as useful
+presented in Chapter [Information Visualization](#chap:viz) on 
+information visualization as well as useful
 discussions by Powell et al. [@powell2005network] and Healy and Moody
 [@healy2014data].
 
