@@ -118,7 +118,7 @@ In addition, detailed aspects of a dataset can be made explorable by advanced da
 <p class="caption">(\#fig:fig9-3b)A treemap visualization of agency and sub-agency spending breakdown</p>
 </div>
 
-To create interactive charts and dashboards from new datasets for analysis, products and tools, such as Tableau, PowerBI, Keshif, and others (see Section [Resources](#sec:mylabel4)), offer a range of chart types with various parameters, as well as visual design environments that allow combining and sharing these charts in potent dashboards. For example, Figure
+To create interactive charts and dashboards from new datasets for analysis, products and tools, such as Tableau, PowerBI, Keshif, and others (see Section [Resources](#sec:viz-6)), offer a range of chart types with various parameters, as well as visual design environments that allow combining and sharing these charts in potent dashboards. For example, Figure
 \@ref(fig:fig9-3a) shows the charting interface of Tableau on a
 transaction data set. The left-hand panel shows the list of attributes
 associated with vendor transactions for a given university. The
@@ -280,8 +280,8 @@ the chart space, such as stacked charts or pie charts.
 
 Finally, another approach to analyzing multidimensional data is to use
 clustering algorithms to identify similar items. Clusters are typically
-represented as a tree structure (see
-Section [Hierarchical data]). For example, $k$-means clustering starts by
+represented as a tree structure (see Section [Hierarchical data](#sec:viz-2.5)). 
+For example, $k$-means clustering starts by
 users specifying how many clusters to create; the algorithm then places
 every item into the most appropriate cluster. Surprising relationships
 and interesting outliers may be identified by these techniques on
@@ -619,7 +619,7 @@ general public and attention should be given to the goal of universal
 usability so the widest range of users can access and benefit from new
 approaches to data presentation and interactive analysis.
 
-Resources {#sec:mylabel4}
+Resources {#sec:viz-6}
 ---------
 
 We have referred to various textbooks throughout this chapter. Tufte's

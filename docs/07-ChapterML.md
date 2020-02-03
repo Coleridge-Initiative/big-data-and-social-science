@@ -69,8 +69,6 @@ of tasks $T$ and performance measure $P$, if its performance at tasks in
 $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine]. We like this definition because it is task-focused and allows us to think of machine learning as a tool used inside a larger system to improve outcomes that we care about.
 
-\enlargethispage{6pt}
-
 <div class="F00">
 <p><strong>Box 7.1: Commercial machine learning examples</strong></p>
 <ul>
@@ -82,8 +80,6 @@ $T$, as measured by $P$, improves with experience $E$"
 </ul>
 </div>
 
-
-\enlargethispage{6pt}
 <!--
 % Box 7.2 and section 7.7. overlap
 -->
@@ -1475,7 +1471,6 @@ manually (inspections, investigations for fraud, etc.). The literature
 provides many case studies of such applications
 [@Kumar2010; @Lakkaraju2015; @Potash2015].
 
-\enlargethispage{6pt}
 One last metric we want to mention is a class of cost-sensitive metrics
 where different costs (or benefits) can be associated with the different
 cells in the confusion matrix. So far, we have implicitly assumed that
