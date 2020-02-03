@@ -31,11 +31,11 @@ This chapter focuses on one such framework, called MapReduce, to do large-scale 
 Examples{#sec:examples}
 -------------------------------
 
-[-@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
+Al Aghbari et al. [-@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
-[-@kolb2012] developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
+Kolb et al. [-@kolb2012] developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter [Record Linkage]?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.
 
-[-@ching2012] describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
+Ching et al. [-@ching2012] describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
 **BOX**
 
@@ -63,7 +63,7 @@ each have one.
     1316375,David,Shuster,dshuster@bgc.org
 
 We observe that institutions can be distinguished by their email address
-domain name. Thus, we adopt of a strategy of first grouping all award
+domain name. Thus, we adopt a strategy of first grouping all award
 IDs by domain names, and then counting the number of distinct awards
 within each group. In order to do this, we first set the function to
 scan input lines and extract institution information and award IDs.
@@ -118,9 +118,9 @@ MapReduce is its simplicity. Its simple programming model has brought
 many non-expert users to analyzing large amounts of data. Its simple architecture has
 also inspired many developers to develop advanced capabilities, such as
 support for distributed computing, data partitioning, and streaming
-processing. (footnote: A downside of this diversity of interest is that available
+processing. A downside of this diversity of interest is that available
 features and capabilities can vary considerably, depending on the
-specific implementation of MapReduce that is being used.)
+specific implementation of MapReduce that is being used.
 
 As mentioned above, MapReduce is a programming model. In order to implement an analysis in MapReduce, we need to select an implementation of MapReduce. Two most commonly used implementations of the MapReduce model are Hadoop and Spark, that we describe in more detail below.
 
@@ -153,7 +153,7 @@ that the number of replications for each block always stays at the
 user-defined settings. Thus, if a node fails, and only two copies of
 some data exist, the system will quickly copy those data to a working
 node, thus raising the number of copies to three again. This dynamic
-replication the primary mechanism for fault tolerance in Hadoop.
+replication is the primary mechanism for fault tolerance in Hadoop.
 
 Note that data blocks are replicated and distributed across several
 machines. This could create a problem for users, because if they had to
@@ -182,7 +182,7 @@ hadoop dfs -get /hadoopiseasy/importantdata.csv
 ### Hadoop Setup: Bringing compute to the data
 
 There are two parts of the computing environment when using Hadoop: 
-a *compute cluster* with substantial computing
+1. a *compute cluster* with substantial computing
 power (e.g., thousands of computing cores)
 2. a *storage cluster* with lots of disk space, capable of storing and serving data quickly to the compute cluster. 
 
@@ -210,7 +210,7 @@ nodes without reusability. This is because the compute node scheduler
 normally does not have or keep knowledge of where data have previously
 been held. The need to copy data multiple times tends to make such a
 computation model inefficient, and I/O becomes the bottleneck when all
-tasks constantly pull data from the storage cluster (the green arrow).
+tasks constantly pull data from the storage cluster (the red arrow).
 This in turn leads to poor scalability; adding more nodes to the
 computing cluster would not increase its performance.
 
@@ -398,7 +398,7 @@ nontextual data.
 
 
 -   **Fault Tolerance**: By default, HDFS uses checksums to enforce data integrity on its file
-system use data replication for recovery of potential data losses.
+system and data replication for recovery of potential data losses.
 Taking advantage of this, Hadoop also maintains fault tolerance of
 MapReduce jobs by storing data at every step of a MapReduce job to HDFS,
 including intermediate data from the combiner. Then the system checks
@@ -413,7 +413,7 @@ of the simplicity of the model.
 
 -   **Performance**: Hadoop has proven to be a scalable implementation that can run on
     thousands of cores. However, it is also known for having a
-    relatively high job setup overheads and suboptimal running time. An
+    relatively high job setup overhead and suboptimal running time. An
     empty task in Hadoop (i.e., with no mapper or reducer) can take
     roughly 30 seconds to complete even on a modern cluster. This
     overhead makes it unsuitable for real-time data or interactive jobs.
@@ -472,7 +472,7 @@ connect to specific data stores. However, their support for general data
 processing pipelines is not as extensive as that of Hadoop.
 
 Disco, similar to Hadoop, is designed to support MapReduce in a
-distributed computing environment, but it written in Erlang with a
+distributed computing environment, but it is written in Erlang with a
 Python interface. Thus, for Python developers, Disco might be a better
 fit. However, it has significantly fewer supporting applications, such
 as access control and workflow integration, as well as a smaller
@@ -632,7 +632,7 @@ def mapper(lines):
 
         # Only count originated loans
         if originated:
-            yeild (key, value)
+            yield (key, value)
 
 def sumDebtIncome(debtIncome1, debtIncome2):
     return (debtIncome1[0] + debtIncome2[0], debtIncome1[1] + debtIncome2[1])
@@ -640,7 +640,7 @@ def sumDebtIncome(debtIncome1, debtIncome2):
 if __name__=='__main__':
     hdfsInputPath  = sys.argv[1]
     hdfsOutputFile =  sys.argv[2]
-    sc = SparkContext(appName="Counting Awards")
+    sc = SparkContext(appName="Debt-Income Ratio")
     sumValues = sc.textFile(hdfsInputPath) \
         .mapPartitions(mapper) \
         .reduceByKey(sumDebtIncome)
