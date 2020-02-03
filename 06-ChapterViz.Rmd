@@ -111,7 +111,7 @@ made with up-to-date information.
 
 Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager (http://www.babynamewizard.com/voyager/) lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
-```{r fig9-2a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)'}
+```{r fig9-2a, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Aid Worker Security Incidents Analysis Dashboard (https://gallery.keshif.me/AidWorkerSecurity)'}
 knitr::include_graphics("ChapterViz/figures/fig9-2a-new.png")
 ```
 
@@ -372,7 +372,7 @@ or familiarity.
 knitr::include_graphics("ChapterViz/figures/fig9-6.png")
 ```
 
-```{r fig9-7, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission'}
+```{r fig9-7, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'EventFlow (https://hcil.umd.edu/eventflow/) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission'}
 knitr::include_graphics("ChapterViz/figures/fig9-7.png")
 ```
 
@@ -431,11 +431,11 @@ allowing users to see that "healthcare technology" is not doing as
 poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
-```{r fig9-8, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (www.cs.umd.edu/hcil/spacetree/)'}
+```{r fig9-8, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'SpaceTree (http://www.cs.umd.edu/hcil/spacetree/)'}
 knitr::include_graphics("ChapterViz/figures/fig9-8.png")
 ```
 
-```{r fig9-9, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'The Finviz treemap helps users monitor the stock market (www.finviz.com)'}
+```{r fig9-9, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'The Finviz treemap helps users monitor the stock market (https://www.finviz.com/)'}
 knitr::include_graphics("ChapterViz/figures/fig9-9.png")
 ```
 

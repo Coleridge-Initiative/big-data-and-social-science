@@ -103,8 +103,8 @@ made with up-to-date information.
 Another goal of visualization is to enable *interactive exploratory analysis*. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager (http://www.babynamewizard.com/voyager/) lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)" width="90%" />
-<p class="caption">(\#fig:fig9-2a)Aid Worker Security Incidents Analysis Dashboard (gallery.keshif.me/AidWorkerSecurity)</p>
+<img src="ChapterViz/figures/fig9-2a-new.png" alt="Aid Worker Security Incidents Analysis Dashboard (https://gallery.keshif.me/AidWorkerSecurity)" width="90%" />
+<p class="caption">(\#fig:fig9-2a)Aid Worker Security Incidents Analysis Dashboard (https://gallery.keshif.me/AidWorkerSecurity)</p>
 </div>
 
 In addition, detailed aspects of a dataset can be made explorable by advanced data querying, navigation and view options. Figure \@ref(fig:fig9-2a) shows an interactive dashboard that visualizes the data from the Humanitarian Outcomes' Aid Worker Security Database (https://aidworkersecurity.org/). In this example, the event point locations are clustered on a map, and surrounding charts show trends in attack means, context, location types, region, country, as well as event date and the number of affected people. This view also presents a breakdown of data by location type, shown using color, includes contextual tooltips that provide details on a geographic cluster of points. Additional shortcuts on top allow navigation to key alternative insights as a storytelling tool.
@@ -358,8 +358,8 @@ or familiarity.
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="90%" />
-<p class="caption">(\#fig:fig9-7)EventFlow (www.cs.umd.edu/hcil/eventflow) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
+<img src="ChapterViz/figures/fig9-7.png" alt="EventFlow (https://hcil.umd.edu/eventflow/) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission" width="90%" />
+<p class="caption">(\#fig:fig9-7)EventFlow (https://hcil.umd.edu/eventflow/) is used to visualize sequences of innovation activities by Illinois companies. Created with EventFlow; data sources include NIH, NSF, USPTO, SBIR. Image created by C. Scott Dempwolf, used with permission</p>
 </div>
 
 Another form of temporal analysis is understanding sequences of events.
@@ -418,13 +418,13 @@ poorly as most other industries. Users can also zoom on healthcare to
 focus on that industry.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (www.cs.umd.edu/hcil/spacetree/)" width="90%" />
-<p class="caption">(\#fig:fig9-8)SpaceTree (www.cs.umd.edu/hcil/spacetree/)</p>
+<img src="ChapterViz/figures/fig9-8.png" alt="SpaceTree (http://www.cs.umd.edu/hcil/spacetree/)" width="90%" />
+<p class="caption">(\#fig:fig9-8)SpaceTree (http://www.cs.umd.edu/hcil/spacetree/)</p>
 </div>
 
 <div class="figure" style="text-align: center">
-<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (www.finviz.com)" width="90%" />
-<p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (www.finviz.com)</p>
+<img src="ChapterViz/figures/fig9-9.png" alt="The Finviz treemap helps users monitor the stock market (https://www.finviz.com/)" width="90%" />
+<p class="caption">(\#fig:fig9-9)The Finviz treemap helps users monitor the stock market (https://www.finviz.com/)</p>
 </div>
 
 ### Network data {#sec:viz-2.6}
