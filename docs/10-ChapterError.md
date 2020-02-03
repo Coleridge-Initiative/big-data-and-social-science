@@ -91,17 +91,24 @@ For surveys, the TSE framework provides useful insights regarding how data gener
 
 The traditional TSE framework is quite general in that it can be applied
 to essentially any data set that conform to the format in Figure
-\@ref(fig:fig10-1). However, in most practical situations it is quite limited because it makes no
+\@ref(fig:fig10-1). However, in most practical situations it is 
+quite limited because it makes no
 attempt to describe how the processes that the data may have contributed
 to what could be construed as data errors. In some cases, these
 processes constitute a "black box," and the best approach is to attempt
 to evaluate the quality of the end product. For survey data, the TSE
 framework provides a fairly complete description of the error-generating
-processes for survey data and survey frames [@biemer2010total]. In
-addition, there has been some effort to describe these processes for
-population registers and administrative data [@wallgren2007register].
-But at this writing, little effort has been devoted to enumerating the
-error sources and the error generating processes for big data.
+processes for survey data and survey frames [@biemer2010total]. 
+But at this writing, little effort has been devoted to
+enumerating the error sources, the error generating processes for big data.
+and the effect of these errors on some common methods for data analysis.
+Some related articles include three recent papers that discuss the some of the
+issues associated with integrating multiple data sets for official statistics,
+including the effects of integration on data uncertainty 
+[see @Holmberg2017; @Reid2017; and @Zhang2012]. There has also been some 
+effort to describe these processes for population registers and administrative
+data [@wallgren2007register]. In addition, Hseih and Murphy [-@Hsieh2017]
+develop an error model expressly for Twitter data.
 
 
 #### Types of Errors
