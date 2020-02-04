@@ -15,7 +15,19 @@ of text data using computational data analysis methods. We cover the types of an
 Understanding human generated text
 -------------------------------
 
-As social scientists, we often deal with text data that comes from a variety of sources: open ended survey responses, phone call transcriptions, social media data, notes from electronic health records, news articles, and research publications. A challenge we face when dealing with these types of data is how to efficiently analyze it just like we analyze traditional tabular data. For example, when analyzing survey responses or electronic health records data, both of which contain narrative text (from the respondents and medical practitioners respectively), the text data often gets ignored or selectively read by the analysts (manually) and used anecdotally. Text analysis techniques described in this chapter allow you to use all of the data available (structured and unstructured), and incorporate large amounts of text data in your analysis. 
+As social scientists, we often deal with text data that comes from a
+variety of sources: open ended survey responses, phone call
+transcriptions, social media data, notes from electronic health
+records, news articles, and research publications. A challenge we face
+when dealing with these types of data is how to efficiently analyze it
+just like we analyze traditional tabular data. For example, when
+analyzing survey responses or electronic health records data, both of
+which contain narrative text (from the respondents and medical
+practitioners respectively), the text data often gets ignored or
+selectively read by the analysts (manually) and used anecdotally. Text
+analysis techniques described in this chapter allow you to use all of
+the data available (structured and unstructured), and incorporate
+large amounts of text data in your analysis.
 
 ---
 
@@ -53,7 +65,9 @@ analysis just like we use tabular data.
 
 ## What can we do with text data?
 
-There are a lot of types of analysis that we can do with text data. Table \@ref(tab:table7-0) gives a summary of these types of analysis. 
+There are a lot of types of analysis that we can do with text
+data. Table \@ref(tab:table7-0) gives a summary of these types of
+analysis.
 
 TODO: finish table
 
@@ -84,7 +98,9 @@ that data. This often involves methods from unsupervised machine learning (that 
 How to analyze text
 -------------------
 
-Text analysis, specially related to the clustering and classification use cases, requires us to build an analysis pipeline that processes data through a series of steps: 
+Text analysis, specially related to the clustering and classification
+use cases, requires us to build an analysis pipeline that processes
+data through a series of steps:
 
 -   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some inital processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
 
@@ -101,7 +117,13 @@ knitr::include_graphics("ChapterText/figures/textanalysispipeline.png")
 
 ### Initial Processing
 
-The first important step in working with text data is cleaning and processing^[Cleaning and processing are discussed extensively in Chapter 3.]. Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.
+The first important step in working with text data is cleaning and
+processing^[Cleaning and processing are discussed extensively in
+Chapter 3.]. Textual data are often messy and unstructured, which
+makes many researchers and practitioners overlook their
+value. Depending on the source, cleaning and processing these data can
+require varying amounts of effort but typically involve a set of
+established techniques.
 
 **Tokenization**
 
@@ -171,7 +193,13 @@ are common tools used to derive lemmas and stems for tokens, and all
 have implementations in the NLTK [@bird-09].
 
 ### Linguistic Analysis
-So far, we’ve treated words as tokens without regard to the meaning of the word or the way it is used, or even what language the word comes from. There are several techniques in text analysis that are language specific that go deeper into the syntax of the document, paragraph, and sentence structure to extract linguistic characteristics of the document. 
+
+So far, we’ve treated words as tokens without regard to the meaning of
+the word or the way it is used, or even what language the word comes
+from. There are several techniques in text analysis that are language
+specific that go deeper into the syntax of the document, paragraph,
+and sentence structure to extract linguistic characteristics of the
+document.
 
 **Part-of-speech tagging**
 
@@ -204,15 +232,36 @@ process can be helpful.
 
 ### Turning text data into a matrix: How much is a word worth?
 
-The processing stages described above provide us with the columns in our matrix. Now we have to decide what value we assign that word/phrase/column. In text analysis, we typically refer to them as tokens (where a token can be a word or a phrase). One simple approach would be to give each column a binary 0 or 1 value - if this token occurs in a document, we assign that cell a value of 1 and 0 otherwise. Another approach would be to assign it the value of how many times this token occurs in that document (often known as frequency of that term or token). This is essentially a way to define the importance or value of this token in this document. Not all words are worth the same; in an article about economics, "free market" is more important than "social good." Appropriately weighting^[Term weighting is an example of feature engineering discussed in Chapter 6.] and calibrating words is important for both human and machine consumers of text data: humans do not want to see "the" as the most frequent word of
-every document in summaries, and classification algorithms benefit from knowing which features are actually important to making a decision.
+The processing stages described above provide us with the columns in
+our matrix. Now we have to decide what value we assign that
+word/phrase/column. In text analysis, we typically refer to them as
+tokens (where a token can be a word or a phrase). One simple approach
+would be to give each column a binary 0 or 1 value - if this token
+occurs in a document, we assign that cell a value of 1 and 0
+otherwise. Another approach would be to assign it the value of how
+many times this token occurs in that document (often known as
+frequency of that term or token). This is essentially a way to define
+the importance or value of this token in this document. Not all words
+are worth the same; in an article about economics, "free market" is
+more important than "social good." Appropriately weighting^[Term
+weighting is an example of feature engineering discussed in Chapter
+6.] and calibrating words is important for both human and machine
+consumers of text data: humans do not want to see "the" as the most
+frequent word of every document in summaries, and classification
+algorithms benefit from knowing which features are actually important
+to making a decision.
 
-Weighting words requires balancing how often a word appears in a local context (such as a document) with how much it appears overall in the document collection. Term frequency--inverse document frequency (TFIDF) [@salton-68] is a weighting scheme to explicitly balance these factors and prioritize the most meaningful words. The TFIDF model takes into account both the term frequency of a given token and its document
-frequency (Box 7.1) so that if a highly frequent word also appears
-in almost all documents, its meaning for the specific context of the
-corpus is negligible. Stop words are a good example when highly frequent
-words also bear limited meaning since they appear in virtually all
-documents of a given corpus.
+Weighting words requires balancing how often a word appears in a local
+context (such as a document) with how much it appears overall in the
+document collection. Term frequency--inverse document frequency
+(TFIDF) [@salton-68] is a weighting scheme to explicitly balance these
+factors and prioritize the most meaningful words. The TFIDF model
+takes into account both the term frequency of a given token and its
+document frequency (Box 7.1) so that if a highly frequent word also
+appears in almost all documents, its meaning for the specific context
+of the corpus is negligible. Stop words are a good example when highly
+frequent words also bear limited meaning since they appear in
+virtually all documents of a given corpus.
 
 ```{block, type='F00'}
 **Box 7.1: TFIDF**
@@ -230,17 +279,34 @@ idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
 
 ### Analysis
 
-Now that we have a matrix with documents as rows, words/phrases as columns and let's say the TFIDF score as the value of that word in that document, we are now ready to run different machine learning methods on this data. We will not recap all of the methods and evaluation methodologies already covered in Chapter 6 here but they can all be used with text data.
+Now that we have a matrix with documents as rows, words/phrases as
+columns and let's say the TFIDF score as the value of that word in
+that document, we are now ready to run different machine learning
+methods on this data. We will not recap all of the methods and
+evaluation methodologies already covered in Chapter 6 here but they
+can all be used with text data.
 
-We’ll focus on three types of analysis: finding similar documents,  clustering, and classification. For each type of analysis, we‘ll focus on what it allows us to do, what types of tasks social scientists will find it useful for, and how to evaluate the results of the analysis.
+We’ll focus on three types of analysis: finding similar documents,
+clustering, and classification. For each type of analysis, we‘ll focus
+on what it allows us to do, what types of tasks social scientists will
+find it useful for, and how to evaluate the results of the analysis.
 
 **Use Case:Finding Similar Documents**
 
-One task social scientists may be interested in is finding similar documents to a document they’re analyzing. This is a routine task for lawyers where they are looking at a case file and want to find all prior cases similar to this case or during literature review where we may have a paper and we’re interested in finding similar papers. The key challenge here it to define what makes two documents similar and what similarity metrics we should use. Typical metrics involved in this process include cosine similarity and Kullback--Leibler divergence [@kullback1951information].
+One task social scientists may be interested in is finding similar
+documents to a document they’re analyzing. This is a routine task for
+lawyers where they are looking at a case file and want to find all
+prior cases similar to this case or during literature review where we
+may have a paper and we’re interested in finding similar papers. The
+key challenge here it to define what makes two documents similar and
+what similarity metrics we should use. Typical metrics involved in
+this process include cosine similarity and Kullback--Leibler
+divergence [@kullback1951information].
 
-Cosine similarity is a popular measure in text analysis. Given two documents $d_a$ and $d_b$ presented as term vectors
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the cosine similarity
-is
+Cosine similarity is a popular measure in text analysis. Given two
+documents $d_a$ and $d_b$ presented as term vectors
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the cosine
+similarity is
 
 $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
      \overrightarrow{t_b}}{|\overrightarrow{t_a}|*|\overrightarrow{t_b}|}.$$
@@ -267,13 +333,15 @@ representations of textual data.
 Notebook XXX provides an example of measuring cosine similarity
 using these modules.
 
-Kullback--Leibler (KL) divergence is a measure that allows us to compare probability distributions in general and is often used to compare two documents represented as vectors.
-Given two term vectors $\overrightarrow{t_a}$ and
-$\overrightarrow{t_b}$, the KL divergence from vector
-$\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
-$$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m w_{t,a}\times \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$
-where $w_{t,a}$ and $w_{t,b}$ are term weights in two vectors,
-respectively.
+Kullback--Leibler (KL) divergence is a measure that allows us to
+compare probability distributions in general and is often used to
+compare two documents represented as vectors.  Given two term vectors
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the KL divergence
+from vector $\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
+$$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
+\sum\limits_{t=1}^m w_{t,a}\times
+\log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
+$w_{t,b}$ are term weights in two vectors, respectively.
 
 An averaged KL divergence metric is then defined as
 $$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
@@ -287,9 +355,10 @@ well as other machine learning models and approaches.
 **Augmenting Similarity Calculations with External Knowledge repositories**
 
 Similarity calculations can be significantly enriched by the use of
-external resources that provide relationships between words, documents, or concepts present in specific domains. Established corpora, such as the Brown Corpus and
-Lancaster--Oslo--Bergen Corpus, are one type of such preprocessed
-repositories.
+external resources that provide relationships between words,
+documents, or concepts present in specific domains. Established
+corpora, such as the Brown Corpus and Lancaster--Oslo--Bergen Corpus,
+are one type of such preprocessed repositories.
 
 Wikipedia and WordNet are examples of another type of lexical and
 semantic resources that are dynamic in nature and that can provide a
@@ -341,10 +410,15 @@ where $Synsets(w_t)$ is the set of synsets for the word $w_t$ in the
 target document document (e.g., NSF award abstract) and $SMV_{wiki}(s)$
 is the semantic model vector of a Wikipedia page, as defined above.
 
-Evaluating “Find Similar” Methods:
-When developing methods to find similar documents, we want to make sure that we find all relevant documents that are similar to the document under consideration, and we want to make sure we don’t find any non-relevant documents.  Chapter [Machine Learning](#chap:ml) already touched on the importance of precision and
-recall for evaluating the results of machine
-learning models (Box 7.3 provides a reminder of the formulae). The same metrics can be used to evaluate the two goals we have in finding relevant and similar documents. 
+Evaluating “Find Similar” Methods: When developing methods to find
+similar documents, we want to make sure that we find all relevant
+documents that are similar to the document under consideration, and we
+want to make sure we don’t find any non-relevant documents.  Chapter
+[Machine Learning](#chap:ml) already touched on the importance of
+precision and recall for evaluating the results of machine learning
+models (Box 7.3 provides a reminder of the formulae). The same metrics
+can be used to evaluate the two goals we have in finding relevant and
+similar documents.
 
 ```{block, type='F00'}
 **Box 7.3: Precision and recall**
@@ -357,9 +431,11 @@ as
 $$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
 ```
 
-We assume that a user has three sets of documents $D_a =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots, d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are clearly tagged with a
-disciplinary label: $D_a$ are computer science documents, $D_b$ are
-physics, and $D_c$ are chemistry.
+We assume that a user has three sets of documents $D_a
+=\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots,
+d_k\}$, and $D_c =\{d_{c1},d_{c2},\ldots,d_i\}$. All three sets are
+clearly tagged with a disciplinary label: $D_a$ are computer science
+documents, $D_b$ are physics, and $D_c$ are chemistry.
 
 The user also has a different set of documents---Wikipedia pages on
 "Computer Science," "Chemistry," and "Physics." Knowing that all
@@ -394,10 +470,10 @@ emphasis on precision.
 **Examples**
 
 Some examples from our recent work can demonstrate how Wikipedia-based
-labeling and labeled LDA
-[@ramage-09; @Nguyen:Boyd-Graber:Resnik:Chang-2014] cope with the task
-of document classification and labeling in the scientific domain. See
-Table \@ref(tab:table7-1).
+labeling and labeled LDA [@ramage-09;
+@Nguyen:Boyd-Graber:Resnik:Chang-2014] cope with the task of document
+classification and labeling in the scientific domain. See Table
+\@ref(tab:table7-1).
 
 Table: (\#tab:table7-1) Wikipedia articles as potential labels generated by $n$-gram indexing of NSF awards
 
@@ -411,15 +487,49 @@ Table: (\#tab:table7-1) Wikipedia articles as potential labels generated by $n$-
 
 **Use Case: Clustering**
 
-Another task social scientists often perform is finding themes, topics, and patterns in a text data set, such as open-ended survey responses, news articles, or publications. Given open ended responses from a survey on how people feel about a certain issue, we may be interested in finding out the common themes that occur in these responses. Clustering methods are designed to do exactly that. With text data, clustering is often used to explore what topics and concepts are present in a new corpus (collection of documents). It is important to note that if we already have a pre-specified set of categories and documents that are tagged with those categories, and the goal is to tag new documents, then we would use classification methods instead of clustering methods. As we covered in the previous chapter, clustering a is a form of unsupervised learning where the goal is exploration and understanding of the data.
+Another task social scientists often perform is finding themes,
+topics, and patterns in a text data set, such as open-ended survey
+responses, news articles, or publications. Given open ended responses
+from a survey on how people feel about a certain issue, we may be
+interested in finding out the common themes that occur in these
+responses. Clustering methods are designed to do exactly that. With
+text data, clustering is often used to explore what topics and
+concepts are present in a new corpus (collection of documents). It is
+important to note that if we already have a pre-specified set of
+categories and documents that are tagged with those categories, and
+the goal is to tag new documents, then we would use classification
+methods instead of clustering methods. As we covered in the previous
+chapter, clustering a is a form of unsupervised learning where the
+goal is exploration and understanding of the data.
 
-As we covered earlier, unsupervised analysis of large text corpora without extensive investment of time provides additional opportunities for social scientists and policymakers to gain insights into policy and research questions through text analysis. The clustering methods described in the Machine Learning chapter, such as k-means clustering, can be used for text data as well once the text has been converted to a matrix as described earlier. We will describe Topic Modeling, that provides us with another clustering approach specifically designed for text data. 
+As we covered earlier, unsupervised analysis of large text corpora
+without extensive investment of time provides additional opportunities
+for social scientists and policymakers to gain insights into policy
+and research questions through text analysis. The clustering methods
+described in the Machine Learning chapter, such as k-means clustering,
+can be used for text data as well once the text has been converted to
+a matrix as described earlier. We will describe Topic Modeling, that
+provides us with another clustering approach specifically designed for
+text data.
 
 ### Topic modeling {#sec:lda}
 
-Topic modeling is an approach that describes *topics* that constitute the high-level themes of a text corpus. Topic modeling is often described as an *information discovery* process: describing what “concepts” are present in a corpus. We refer to them as “concepts” or “topics” (in quotes) because they typically will be represented as a probability distribution over the words (that the topic modeling method groups together) which may or may not be semantically coherent as a “topic” to social scientists. 
+Topic modeling is an approach that describes *topics* that constitute
+the high-level themes of a text corpus. Topic modeling is often
+described as an *information discovery* process: describing what
+“concepts” are present in a corpus. We refer to them as “concepts” or
+“topics” (in quotes) because they typically will be represented as a
+probability distribution over the words (that the topic modeling
+method groups together) which may or may not be semantically coherent
+as a “topic” to social scientists.
 
-As topic modeling is a broad subfield of natural language processing and machine learning, we will restrict our focus to a single methods called Latent Dirichlet Allocation (LDA) [@blei-03]. LDA is a fully Bayesian extension of probabilistic latent semantic indexing [@hofmann-99], itself a probabilistic extension of latent semantic analysis [@landauer-97]. Blei and Lafferty [@blei-09] provide a more detailed discussion of the history of topic models.
+As topic modeling is a broad subfield of natural language processing
+and machine learning, we will restrict our focus to a single methods
+called Latent Dirichlet Allocation (LDA) [@blei-03]. LDA is a fully
+Bayesian extension of probabilistic latent semantic indexing
+[@hofmann-99], itself a probabilistic extension of latent semantic
+analysis [@landauer-97]. Blei and Lafferty [@blei-09] provide a more
+detailed discussion of the history of topic models.
 
 LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
@@ -660,7 +770,6 @@ The metrics used to evaluate text classification methods are the same
 as those used in supervised learning, as described in the Machine
 Learning chapter. The most commonly used metrics include accuracy,
 precision, recall, AUC, and F1 score. [include example in notebook]
-
 
 Word Embeddings and Deep Learning
 -----------
