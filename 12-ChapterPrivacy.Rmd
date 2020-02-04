@@ -82,7 +82,8 @@ level of data utility $U^*$ and privacy $P_1$. The increase in
 externally available data now means that in order to maintain utility at
 $U^*$, privacy is reduced to $P_2$. This simple example represents the
 challenge to all organizations that release statistical or analytical
-products obtained from underlying identifiable data. As more data from external sources becomes available, it becomes more difficult
+products obtained from underlying identifiable data. As more data from 
+external sources becomes available, it becomes more difficult
 to maintain privacy.
 
 Previously, national statistical agencies had the capacity
@@ -222,14 +223,13 @@ individual names, birth dates, social security numbers, and business
 names, addresses, and tax ID numbers. From a privacy and confidentiality
 perspective, link keys are among the most sensitive information in many data
 sets of interest to social scientists. This is why many organizations
-replace link keys containing personal identifiable information (PII)^[PII is "any information about an individual maintained by an agency, including (1) any information
-that can be used to distinguish or trace an individual’s identity, such as name,
-social security number, date
-and place of birth, mother’s
-maiden name, or biometric
-records; and (2) any other
-information that is linked
-or linkable to an individual, such as medical, educational, financial, and employment information” [254].]
+replace link keys containing personal identifiable information (PII)^[PII 
+is "any information about an individual maintained by an agency, including 
+(1) any information that can be used to distinguish or trace an individual’s 
+identity, such as name, social security number, date and place of birth, 
+mother’s maiden name, or biometric records; and (2) any other information 
+that is linked or linkable to an individual, such as medical, educational, 
+financial, and employment information” [@mccallister2010sp].]
 with privacy-protecting identifiers [@schnell2009privacy]. Regardless,
 at some point in the process those must be generated out of the original
 information, thus access to the latter is important.
@@ -284,7 +284,8 @@ risks, followed by the application of an anonymization technique, and
 finally an evaluation of disclosure risks and analytical quality of the
 candidate data release(s). The two main approaches have been
 *statistical disclosure* control techniques to produce anonymized public
-use data sets, and controlled access through a *research data center* [@shlomo2018].
+use data sets, and controlled access through a *research data center* 
+[@shlomo2018].
 
 **Statistical disclosure control techniques**
 
@@ -332,16 +333,7 @@ identifying and managing risky researcher behavior, and management costs
 
 Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
 
-
-
-Another approach that has had some resurgence is the use  of *synthetic data* where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or  business entity can be found in the released data
-[@drechsler2011synthetic]. One of the earlier examples of such work was the IBM Quest system (cite : http://www.vldb.org/conf/1994/P487.PDF) that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings
-data, and the Synthetic Longitudinal Business Database (SynLBD)
-[@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how
-synthetic data sets lack utility in many research settings but are
-useful for generating flexible data sets underlying data tools and apps
-such as the Census Bureau's OnTheMap.  
-
+Another approach that has had some resurgence is the use  of *synthetic data* where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or  business entity can be found in the released data [@drechsler2011synthetic]. One of the earlier examples of such work was the IBM Quest system [@Agrawal1994] that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings data, and the Synthetic Longitudinal Business Database (SynLBD) [@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how synthetic data sets lack utility in many research settings but are useful for generating flexible data sets underlying data tools and apps such as the Census Bureau's OnTheMap. 
 It  is important to keep in mind that the utility of synthetic data sets as a general purpose “anonymization” tool is fairly limited. Synthetic data generation typically requires explicitly defining which properties of the original data need to be preserved (such as univariate or bivariate distributions of certain variables), and as such can be of limited use in most social science research.
 
 **Research data centers**
@@ -352,10 +344,12 @@ The second approach is establishing research data centers (RDC). RDC present an 
 
 Non-Tabular data
 -------------------
-In addition to tabular data, a lot of new sources of data consist of text, audio, image, and video content.  The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that   is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:
 
-Text Anonymization. Typical approaches here range from simply removing Personally identifiable information (PII) through regular expressions and dictionaries (cite:https://bmcmedinformdecismak.biomedcentral.com/articles/10.1186/1472-6947-8-32)  to machine learning based approaches that balance the confidentiality of the entities in the data and the utility of the text (cite: https://www.aaai.org/ocs/index.php/IAAI/IAAI-11/paper/viewPaper/3528)
-Image and Video Anonymization: The  most common use of anonymization techniques  in image and video data is to redact, blur, or remove faces of individuals in order to protect their identity. This can be extended to other attributes of the person, such as clothing or the rest of the body but the primary focus so far has been on detecting, and then blurring or modifying the faces of individuals in the data. https://www.spiedigitallibrary.org/journals/journal-of-electronic-imaging/volume-26/issue-05/051406/Video-redaction-a-survey-and-comparison-of-enabling-technologies/10.1117/1.JEI.26.5.051406.full?SSO=1 provide a survey of video redaction methods.  Cite: https://arxiv.org/abs/1909.04538 recently presented a method to automatically anonymize faces in images while retaining the original data distribution.
+In addition to tabular data, a lot of new sources of data consist of text, audio, image, and video content. The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:
+
+Text Anonymization: Typical approaches here range from simply removing Personally identifiable information (PII) through regular expressions and dictionaries [@Neamatullah2008] to machine learning based approaches that balance the confidentiality of the entities in the data and the utility of the text [@Cumby2011].
+
+Image and Video Anonymization: The most common use of anonymization techniques in image and video data is to redact, blur, or remove faces of individuals in order to protect their identity. This can be extended to other attributes of the person, such as clothing or the rest of the body but the primary focus so far has been on detecting, and then blurring or modifying the faces of individuals in the data. Sah et al. [-@Sah2017] provide a survey of video redaction methods. Hukkelas et al. [-@Hukkelas2019] recently presented a method to automatically anonymize faces in images while retaining the original data distribution.
 
 The new challenges
 ------------------
@@ -500,9 +494,7 @@ blood relations.
 
 The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges.  In addition to ensuring lawful data collection practices, GDPR pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data. 
 
-However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving
-away from individualized assessments of the costs of privacy violations,
-is needed [@Strandburg2014]. 
+However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving away from individualized assessments of the costs of privacy violations, is needed [@Strandburg2014]. 
 
 Ohm advocates for a new conceptualization of legal policy regarding privacy in the big data context that uses five guiding principles for reform: first, that rules take into account the
 varying levels of inherent risk to individuals across different data
@@ -596,7 +588,4 @@ conferences and produces occasional reports
 [@UnitedNationsEconomicCommissionforEurope].
 
 Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing https://simons.berkeley.edu/programs/privacy2019 (available on youtube https://www.youtube.com/user/SimonsInstitute/
-
-
-
 
