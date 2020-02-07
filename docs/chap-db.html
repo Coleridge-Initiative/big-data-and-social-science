@@ -270,7 +270,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="9" data-path="chap-networks.html"><a href="chap-networks.html"><i class="fa fa-check"></i><b>9</b> Networks: The Basics</a><ul>
 <li class="chapter" data-level="9.1" data-path="chap-networks.html"><a href="chap-networks.html#introduction-3"><i class="fa fa-check"></i><b>9.1</b> Introduction</a></li>
 <li class="chapter" data-level="9.2" data-path="chap-networks.html"><a href="chap-networks.html#what-are-networks"><i class="fa fa-check"></i><b>9.2</b> What are networks?</a></li>
-<li class="chapter" data-level="9.3" data-path="chap-networks.html"><a href="chap-networks.html#strcuture-for-this-chapter"><i class="fa fa-check"></i><b>9.3</b> Strcuture for this chapter</a></li>
+<li class="chapter" data-level="9.3" data-path="chap-networks.html"><a href="chap-networks.html#structure-for-this-chapter"><i class="fa fa-check"></i><b>9.3</b> Structure for this chapter</a></li>
 <li class="chapter" data-level="9.4" data-path="chap-networks.html"><a href="chap-networks.html#turning-data-into-a-network"><i class="fa fa-check"></i><b>9.4</b> Turning Data into a Network</a><ul>
 <li class="chapter" data-level="9.4.1" data-path="chap-networks.html"><a href="chap-networks.html#types-of-networks"><i class="fa fa-check"></i><b>9.4.1</b> Types of Networks</a></li>
 <li class="chapter" data-level="9.4.2" data-path="chap-networks.html"><a href="chap-networks.html#inducing-one-mode-networks-from-two-mode-data"><i class="fa fa-check"></i><b>9.4.2</b> Inducing one-mode networks from two-mode data</a></li>
@@ -367,7 +367,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="13.2.8" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning-creating-features"><i class="fa fa-check"></i><b>13.2.8</b> Machine Learning – Creating Features</a></li>
 <li class="chapter" data-level="13.2.9" data-path="chap-workbooks.html"><a href="chap-workbooks.html#machine-learning-model-training-and-evaluation"><i class="fa fa-check"></i><b>13.2.9</b> Machine Learning – Model Training and Evaluation</a></li>
 <li class="chapter" data-level="13.2.10" data-path="chap-workbooks.html"><a href="chap-workbooks.html#bias-and-fairness"><i class="fa fa-check"></i><b>13.2.10</b> Bias and Fairness</a></li>
-<li class="chapter" data-level="13.2.11" data-path="chap-workbooks.html"><a href="chap-workbooks.html#additional-workbooks"><i class="fa fa-check"></i><b>13.2.11</b> Additional Workbooks</a></li>
+<li class="chapter" data-level="13.2.11" data-path="chap-workbooks.html"><a href="chap-workbooks.html#errors-and-inference"><i class="fa fa-check"></i><b>13.2.11</b> Errors and Inference</a></li>
+<li class="chapter" data-level="13.2.12" data-path="chap-workbooks.html"><a href="chap-workbooks.html#additional-workbooks"><i class="fa fa-check"></i><b>13.2.12</b> Additional Workbooks</a></li>
 </ul></li>
 <li class="chapter" data-level="13.3" data-path="chap-workbooks.html"><a href="chap-workbooks.html#resources-7"><i class="fa fa-check"></i><b>13.3</b> Resources</a></li>
 </ul></li>
@@ -707,7 +708,12 @@ Figure 4.3: Relational tables <code>Grants</code> and <code>Investigators</code>
 </div>
 <div id="sec:db:schema" class="section level3">
 <h3><span class="header-section-number">4.3.3</span> Schema design and definition</h3>
-<p>Todo: image of our database schema</p>
+<div class="figure" style="text-align: center"><span id="fig:NCSES"></span>
+<img src="ChapterDB/figures/NCSES-Database-Diagram.png" alt="A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue)." width="70%" />
+<p class="caption">
+Figure 4.4: A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue).
+</p>
+</div>
 <p>When using a pre-existing database, you will be given the database design that includes tables, rows, and columns. But, when you are starting with your own data and need to create a database, the first step is to come up with the design of the database.</p>
 <p>We have seen that a relational database comprises a set of tables. The task of specifying the structure of the data to be stored in a database is called <em>logical design</em>. This task may be performed by a database administrator, in the case of a database to be shared by many people, or directly by users, if they are creating databases themselves. More specifically, the logical design process involves defining a <em>schema</em>. A schema comprises a set of tables (including, for each table, its columns and their types), their relationships, and integrity constraints.</p>
 <p>The first step in the logical design process is to identify the entities that need to be modeled. In our example, we identified two important classes of entity: “grants” and “investigators.” We thus define a table for each; each row in these two tables will correspond to a unique grant or investigator, respectively. (In a more complete and realistic design, we would likely also identify other entities, such as institutions and research products.) During this step, we will often find ourselves breaking information up into multiple tables, so as to avoid duplicating information.</p>
@@ -1098,11 +1104,11 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
     <span class="kw">where</span> h.gid <span class="kw">is</span> <span class="kw">null</span>;</code></pre></div>
 <p>Here, we use an alternative form of the join operator, the <em>left join</em>—or, more precisely, the <em>left excluding join</em>. The expression</p>
 <p><code>table1 left join table2 on constraint</code></p>
-<p>returns all rows from the left table (<code>table1</code>) with the matching rows in the right table (<code>table2</code>), with the result being <code>null</code> in the right side when there is no match. This selection is illustrated in the middle column of Figure <a href="chap-db.html#fig:fig-venn">4.4</a>. The addition of the <code>where h.gid is null</code> then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of Figure <a href="chap-db.html#fig:fig-venn">4.4</a>. Note also the use of the <code>as</code> operator to rename the columns <code>illinois_schools</code> and <code>illinois_hospitals</code>. In this case, we rename them simply to make our query more compact.</p>
+<p>returns all rows from the left table (<code>table1</code>) with the matching rows in the right table (<code>table2</code>), with the result being <code>null</code> in the right side when there is no match. This selection is illustrated in the middle column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. The addition of the <code>where h.gid is null</code> then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. Note also the use of the <code>as</code> operator to rename the columns <code>illinois_schools</code> and <code>illinois_hospitals</code>. In this case, we rename them simply to make our query more compact.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig-venn"></span>
 <img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join" width="70%" />
 <p class="caption">
-Figure 4.4: Three types of <em>join</em> illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join
+Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join
 </p>
 </div>
 <hr />
