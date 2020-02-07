@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>References | Big Data and Social Science</title>
   <meta name="description" content="References | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="References | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -58,41 +61,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -395,19 +423,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <div id="refs" class="references">
 <div>
-<p>AAPOR. n.d. “American Association for Public Opinion Research Website.” <a href="http://www.aapor.org" class="uri">http://www.aapor.org</a>. Accessed February 1, 2016.</p>
+<p>AAPOR. n.d. “American Association for Public Opinion Research Website.” <a href="http://www.aapor.org">http://www.aapor.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Abadi, Daniel, Rakesh Agrawal, Anastasia Ailamaki, Magdalena Balazinska, Philip A Bernstein, Michael J Carey, Surajit Chaudhuri, et al. 2014. “The Beckman Report on Database Research.” <em>ACM SIGMOD Record</em> 43 (3). ACM: 61–70.</p>
+<p>Abadi, Daniel, Rakesh Agrawal, Anastasia Ailamaki, Magdalena Balazinska, Philip A Bernstein, Michael J Carey, Surajit Chaudhuri, et al. 2014. “The Beckman Report on Database Research.” <em>ACM SIGMOD Record</em> 43 (3): 61–70.</p>
 </div>
 <div>
-<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2). IOP Publishing: 543.</p>
+<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2): 543.</p>
 </div>
 <div>
 <p>Abowd, J. M. 2018. “The US Census Bureau Adopts Differential Privacy.” Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 2867-2867). ACM.</p>
 </div>
 <div>
-<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2). JSTOR: 224–29.</p>
+<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2): 224–29.</p>
 </div>
 <div>
 <p>Abowd, John M., Martha Stinson, and Gary Benedetto. 2006. “Final Report to the Social Security Administration on the SIPP/SSA/IRS Public Use File Project.” Suitland, MD: Census Bureau, Longitudinal Employer-Household Dynamics Program.</p>
@@ -425,91 +453,91 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Ahlberg, Christopher, Christopher Williamson, and Ben Shneiderman. 1992. “Dynamic Queries for Information Exploration: An Implementation and Evaluation.” In <em>Proceedings of the Sigchi Conference on Human Factors in Computing Systems</em>, 619–26. ACM.</p>
 </div>
 <div>
-<p>Al Aghbari, Zaher, Mohammed Bahutair, and Ibrahim Kamel. 2019. “GeoSimMR: A Mapreduce Algorithm for Detecting Communities Based on Distance and Interest in Social Networks.” <em>Data Science Journal</em> 18 (1): 13. doi:<a href="https://doi.org/http://doi.org/10.5334/dsj-2019-013">http://doi.org/10.5334/dsj-2019-013</a>.</p>
+<p>Al Aghbari, Zaher, Mohammed Bahutair, and Ibrahim Kamel. 2019. “GeoSimMR: A Mapreduce Algorithm for Detecting Communities Based on Distance and Interest in Social Networks.” <em>Data Science Journal</em> 18 (1): 13. <a href="https://doi.org/http://doi.org/10.5334/dsj-2019-013">https://doi.org/http://doi.org/10.5334/dsj-2019-013</a>.</p>
 </div>
 <div>
 <p>Alawadhi, Suha, Armando Aldama-Nalda, Hafedh Chourabi, J. Ramon Gil-Garcia, Sofia Leung, Sehl Mellouli, Taewoo Nam, Theresa A. Pardo, Hans J. Scholl, and Shawn Walker. 2012. “Building Understanding of Smart City Initiatives.” In <em>Electronic Government</em>, 40–53. Springer.</p>
 </div>
 <div>
-<p>Albanese, Ed. n.d. “Scaling Social Science with Hadoop.” <a href="http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/" class="uri">http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/</a>. Accessed February 1, 2016.</p>
+<p>Albanese, Ed. n.d. “Scaling Social Science with Hadoop.” <a href="http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/">http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Allison, Paul D. 2001. <em>Missing Data</em>. Sage Publications.</p>
 </div>
 <div>
-<p>American Statistical Association. n.d. “ASA Privacy and Confidentiality Subcommittee.” <a href="http://community.amstat.org/cpc/home" class="uri">http://community.amstat.org/cpc/home</a>.</p>
+<p>American Statistical Association. n.d. “ASA Privacy and Confidentiality Subcommittee.” <a href="http://community.amstat.org/cpc/home">http://community.amstat.org/cpc/home</a>.</p>
 </div>
 <div>
-<p>Analytics, Continuum. n.d. “Anaconda.” <a href="http://docs.continuum.io/anaconda" class="uri">http://docs.continuum.io/anaconda</a>. Accessed February 1, 2016.</p>
+<p>Analytics, Continuum. n.d.a. “Anaconda.” <a href="http://docs.continuum.io/anaconda">http://docs.continuum.io/anaconda</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Anaconda FAQ.” <a href="http://docs.continuum.io/anaconda/faq" class="uri">http://docs.continuum.io/anaconda/faq</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.b. “Anaconda FAQ.” <a href="http://docs.continuum.io/anaconda/faq">http://docs.continuum.io/anaconda/faq</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Anaconda Quick Start Guide.” <a href="https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf" class="uri">https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.c. “Anaconda Quick Start Guide.” <a href="https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf">https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Anscombe, Francis J. 1973. “Graphs in Statistical Analysis.” <em>American Statistician</em> 27 (1). Taylor &amp; Francis Group: 17–21.</p>
+<p>Anscombe, Francis J. 1973. “Graphs in Statistical Analysis.” <em>American Statistician</em> 27 (1): 17–21.</p>
 </div>
 <div>
 <p>Antenucci, Dolan, Michael Cafarella, Margaret Levenstein, Christopher Ré, and Matthew D. Shapiro. 2014. “Using Social Media to Measure Labor Market Flows.” National Bureau of Economic Research.</p>
 </div>
 <div>
-<p>Apache Hadoop. n.d. “HDFS Architecture.” <a href="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html" class="uri">http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a>. Accessed April 16, 2016.</p>
+<p>Apache Hadoop. n.d. “HDFS Architecture.” <a href="http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html">http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
-<p>Apache Software Foundation. n.d. “Apache Ambari.” <a href="http://ambari.apache.org" class="uri">http://ambari.apache.org</a>. Accessed February 1, 2016.</p>
+<p>Apache Software Foundation. n.d.a. “Apache Ambari.” <a href="http://ambari.apache.org">http://ambari.apache.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Apache Hadoop.” <a href="https://hadoop.apache.org/docs/stable/" class="uri">https://hadoop.apache.org/docs/stable/</a>.</p>
+<p>———. n.d.b. “Apache Hadoop.” <a href="https://hadoop.apache.org/docs/stable/">https://hadoop.apache.org/docs/stable/</a>.</p>
 </div>
 <div>
-<p>———. n.d. “Apache Hadoop Documentation Site.” <a href="https://hadoop.apache.org/docs/current/" class="uri">https://hadoop.apache.org/docs/current/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.c. “Apache Hadoop Documentation Site.” <a href="https://hadoop.apache.org/docs/current/">https://hadoop.apache.org/docs/current/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Apache Spark Documentation Site.” <a href="https://spark.apache.org/docs/current/" class="uri">https://spark.apache.org/docs/current/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.d. “Apache Spark Documentation Site.” <a href="https://spark.apache.org/docs/current/">https://spark.apache.org/docs/current/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Armbrust, Michael, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, et al. 2010. “A View of Cloud Computing.” <em>Communications of the ACM</em> 53 (4). ACM: 50–58.</p>
+<p>Armbrust, Michael, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, et al. 2010. “A View of Cloud Computing.” <em>Communications of the ACM</em> 53 (4): 50–58.</p>
 </div>
 <div>
-<p>Art Branch Inc. n.d. “SQL Cheatsheet.” <a href="http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf" class="uri">http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf</a>. Accessed December 1, 2015.</p>
+<p>Art Branch Inc. n.d. “SQL Cheatsheet.” <a href="http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf">http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf</a>. Accessed December 1, 2015.</p>
 </div>
 <div>
-<p>Athey, Susan, and Stefan Wager. 2019. “Estimating Treatment Effects with Causal Forests: An Application.” <a href="https://arxiv.org/abs/1902.07409" class="uri">https://arxiv.org/abs/1902.07409</a>.</p>
+<p>Athey, Susan, and Stefan Wager. 2019. “Estimating Treatment Effects with Causal Forests: An Application.” <a href="https://arxiv.org/abs/1902.07409">https://arxiv.org/abs/1902.07409</a>.</p>
 </div>
 <div>
-<p>Baldeschwieler, Eric. 2011. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/" class="uri">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
+<p>Baldeschwieler, Eric. n.d. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
 </div>
 <div>
-<p>Barabási, Albert-László, and Réka Albert. 1999. “Emergence of Scaling in Random Networks.” <em>Science</em> 286 (5439). American Association for the Advancement of Science: 509–12.</p>
+<p>Barabási, Albert-László, and Réka Albert. 1999. “Emergence of Scaling in Random Networks.” <em>Science</em> 286 (5439): 509–12.</p>
 </div>
 <div>
-<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. 2006. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>, August.</p>
+<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. n.d. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>.</p>
 </div>
 <div>
-<p>Barocas, Solon, and Helen Nissenbaum. 2014a. “Big Data’s End Run Around Procedural Privacy Protections.” <em>Communications of the ACM</em> 57 (11). ACM: 31–33.</p>
+<p>Barocas, Solon, and Helen Nissenbaum. 2014a. “Big Data’s End Run Around Procedural Privacy Protections.” <em>Communications of the ACM</em> 57 (11): 31–33.</p>
 </div>
 <div>
 <p>———. 2014b. “The Limits of Anonymity and Consent in the Big Data Age.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div>
-<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <em>Scientific American</em>, <a href="http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th" class="uri">http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th</a> <a href="-olympiad-of-research-on-biomedical-publication/" class="uri">-olympiad-of-research-on-biomedical-publication/</a>.</p>
+<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <em>Scientific American</em>, <a href="http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th">http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th</a> <a href="-olympiad-of-research-on-biomedical-publication/">-olympiad-of-research-on-biomedical-publication/</a>.</p>
 </div>
 <div>
 <p>Batagelj, Vladimir, and Andrej Mrvar. 1998. “Pajek—Program for Large Network Analysis.” <em>Connections</em> 21 (2): 47–57.</p>
 </div>
 <div>
-<p>Bell, Alex. 2012. “Python for Economists.” <a href="http://cs.brown.edu/~ambell/pyseminar/pyseminar.html" class="uri">http://cs.brown.edu/~ambell/pyseminar/pyseminar.html</a>.</p>
+<p>Bell, Alex. 2012. “Python for Economists.” <a href="http://cs.brown.edu/~ambell/pyseminar/pyseminar.html">http://cs.brown.edu/~ambell/pyseminar/pyseminar.html</a>.</p>
 </div>
 <div>
-<p>Bengio, Y., A. Courville, and P. Vincent. 2013. “Representation Learning: A Review and New Perspectives.” <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 35 (8): 1798–1828. doi:<a href="https://doi.org/10.1109/TPAMI.2013.50">10.1109/TPAMI.2013.50</a>.</p>
+<p>Bengio, Y., A. Courville, and P. Vincent. 2013. “Representation Learning: A Review and New Perspectives.” <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em> 35 (8): 1798–1828. <a href="https://doi.org/10.1109/TPAMI.2013.50">https://doi.org/10.1109/TPAMI.2013.50</a>.</p>
 </div>
 <div>
-<p>Bhuvaneshwar, Krithika, Dinanath Sulakhe, Robinder Gauba, Alex Rodriguez, Ravi Madduri, Utpal Dave, Lukasz Lacinski, Ian Foster, Yuriy Gusev, and Subha Madhavan. 2015. “A Case Study for Cloud Based High Throughput Analysis of NGS Data Using the Globus Genomics System.” <em>Computational and Structural Biotechnology Journal</em> 13. Elsevier: 64–74.</p>
+<p>Bhuvaneshwar, Krithika, Dinanath Sulakhe, Robinder Gauba, Alex Rodriguez, Ravi Madduri, Utpal Dave, Lukasz Lacinski, Ian Foster, Yuriy Gusev, and Subha Madhavan. 2015. “A Case Study for Cloud Based High Throughput Analysis of NGS Data Using the Globus Genomics System.” <em>Computational and Structural Biotechnology Journal</em> 13: 64–74.</p>
 </div>
 <div>
-<p>Biemer, Paul P. 2010. “Total Survey Error: Design, Implementation, and Evaluation.” <em>Public Opinion Quarterly</em> 74 (5). AAPOR: 817–48.</p>
+<p>Biemer, Paul P. 2010. “Total Survey Error: Design, Implementation, and Evaluation.” <em>Public Opinion Quarterly</em> 74 (5): 817–48.</p>
 </div>
 <div>
 <p>———. 2011. <em>Latent Class Analysis of Survey Error</em>. John Wiley &amp; Sons.</p>
@@ -524,7 +552,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Biemer, Paul P., and Dennis Trewin. 1997. “A Review of Measurement Error Effects on the Analysis of Survey Data.” In <em>Survey Measurement and Process Quality</em>, edited by L. Lyberg, P. Biemer, M. Collins, E. De Leeuw, C. Dippo, N. Schwarz, and D. Trewin, 601–32. John Wiley &amp; Sons.</p>
 </div>
 <div>
-<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61. Annual Reviews: 99–118.</p>
+<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61: 99–118.</p>
 </div>
 <div>
 <p>Bird, Steven, Ewan Klein, and Edward Loper. 2009. <em>Natural Language Processing with Python: Analyzing Text with the Natural Language Toolkit</em>. O’Reilly Media.</p>
@@ -542,25 +570,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Blitzer, John, Mark Dredze, and Fernando Pereira. 2007. “Biographies, Bollywood, Boom-Boxes and Blenders: Domain Adaptation for Sentiment Classification.” In <em>Proceedings of the Association for Computational Linguistics</em>.</p>
 </div>
 <div>
-<p>Boy, Jeremy, Ronald Rensink, Enrico Bertini, Jean-Daniel Fekete, and others. 2014. “A Principled Way of Assessing Visualization Literacy.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12). IEEE: 1963–72.</p>
-</div>
-<div>
-<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5). Taylor &amp; Francis: 662–79.</p>
-</div>
-<div>
-<p>Boyd-Graber, Jordan. n.d. <a href="http://www.umiacs.umd.edu/~jbg/lda_demo" class="uri">http://www.umiacs.umd.edu/~jbg/lda_demo</a>. Accessed February 1, 2016.</p>
-</div>
-<div>
-<p>Boyd-Graber, Jordan, Yuening Hu, and David Mimno. 2017. <em>Applications of Topic Models</em>. Edited by Doug Oard. Vol. 11. Foundations and Trends in Information Retrieval 2–3. NOW Publishers. <a href="http://www.nowpublishers.com/article/Details/INR-030" class="uri">http://www.nowpublishers.com/article/Details/INR-030</a>.</p>
-</div>
-<div>
 <p>Börner, Katy. 2010. <em>Atlas of Science: Visualizing What We Know</em>. MIT Press.</p>
 </div>
 <div>
-<p>Brewer, Eric. 2012. “CAP Twelve Years Later: How the ‘Rules’ Have Changed.” <em>Computer</em> 45 (2). IEEE: 23–29.</p>
+<p>Boy, Jeremy, Ronald Rensink, Enrico Bertini, Jean-Daniel Fekete, and others. 2014. “A Principled Way of Assessing Visualization Literacy.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12): 1963–72.</p>
 </div>
 <div>
-<p>Broekstra, Jeen, Arjohn Kampman, and Frank Van Harmelen. 2002. “Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema.” In <em>The Semantic Web—ISWC 2002</em>, 54–68. Springer.</p>
+<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5): 662–79.</p>
+</div>
+<div>
+<p>Boyd-Graber, Jordan. n.d. <a href="http://www.umiacs.umd.edu/~jbg/lda_demo">http://www.umiacs.umd.edu/~jbg/lda_demo</a>. Accessed February 1, 2016.</p>
+</div>
+<div>
+<p>Boyd-Graber, Jordan, Yuening Hu, and David Mimno. 2017. <em>Applications of Topic Models</em>. Edited by Doug Oard. Vol. 11. Foundations and Trends in Information Retrieval 2–3. NOW Publishers. <a href="http://www.nowpublishers.com/article/Details/INR-030">http://www.nowpublishers.com/article/Details/INR-030</a>.</p>
+</div>
+<div>
+<p>Brewer, Eric. 2012. “CAP Twelve Years Later: How the ‘Rules’ Have Changed.” <em>Computer</em> 45 (2): 23–29.</p>
+</div>
+<div>
+<p>Broekstra, Jeen, Arjohn Kampman, and Frank Van Harmelen. 2002. “Sesame: A Generic Architecture for Storing and Querying RDF and RDF Schema.” In <em>The Semantic Web—Iswc 2002</em>, 54–68. Springer.</p>
 </div>
 <div>
 <p>Brown, Clair, John Haltiwanger, and Julia Lane. 2008. <em>Economic Turbulence: Is a Volatile Economy Good for America?</em> University of Chicago Press.</p>
@@ -569,16 +597,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Brynjolfsson, Erik, Lorin M. Hitt, and Heekyung Hellen Kim. 2011. “Strength in Numbers: How Does Data-Driven Decisionmaking Affect Firm Performance?” Available at SSRN 1819486.</p>
 </div>
 <div>
-<p>Bureau of Labor Statistics. 2015. “The Employment Situation—November 2015.” <a href="http://www.bls.gov/news.release/archives/empsit_12042015.pdf" class="uri">http://www.bls.gov/news.release/archives/empsit_12042015.pdf</a>.</p>
+<p>Bureau of Labor Statistics. n.d. “The Employment Situation—November 2015.” <a href="http://www.bls.gov/news.release/archives/empsit_12042015.pdf">http://www.bls.gov/news.release/archives/empsit_12042015.pdf</a>.</p>
 </div>
 <div>
-<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1). Elsevier: 69–72.</p>
+<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1): 69–72.</p>
 </div>
 <div>
-<p>Burt, Ronald S. 1993. “The Social Structure of Competition.” <em>Explorations in Economic Sociology</em> 65. New York: Russel Sage Foundation: 103.</p>
+<p>Burt, Ronald S. 1993. “The Social Structure of Competition.” <em>Explorations in Economic Sociology</em> 65: 103.</p>
 </div>
 <div>
-<p>———. 2004. “Structural Holes and Good Ideas.” <em>American Journal of Sociology</em> 110 (2). JSTOR: 349–99.</p>
+<p>———. 2004. “Structural Holes and Good Ideas.” <em>American Journal of Sociology</em> 110 (2): 349–99.</p>
 </div>
 <div>
 <p>Butler, Declan. 2013. “When Google Got Flu Wrong.” <em>Nature</em> 494 (7436): 155.</p>
@@ -587,7 +615,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Card, Stuart K., and David Nation. 2002. “Degree-of-Interest Trees: A Component of an Attention-Reactive User Interface.” In <em>Proceedings of the Working Conference on Advanced Visual Interfaces</em>, 231–45. ACM.</p>
 </div>
 <div>
-<p>Carr, Jillian B., and Jennifer L. Doleac. 2015. “The Geography, Incidence, and Underreporting of Gun Violence: New Evidence Using ShotSpotter Data.” Technical report, <a href="http://jenniferdoleac.com/wp-content/uploads/2015/03/Carr_Doleac_gunfire_underreporting.pdf" class="uri">http://jenniferdoleac.com/wp-content/uploads/2015/03/Carr_Doleac_gunfire_underreporting.pdf</a>.</p>
+<p>Carr, Jillian B., and Jennifer L. Doleac. 2015. “The Geography, Incidence, and Underreporting of Gun Violence: New Evidence Using ShotSpotter Data.” Technical report, <a href="http://jenniferdoleac.com/wp-content/uploads/2015/03/Carr_Doleac_gunfire_underreporting.pdf">http://jenniferdoleac.com/wp-content/uploads/2015/03/Carr_Doleac_gunfire_underreporting.pdf</a>.</p>
 </div>
 <div>
 <p>Caruana, Rich, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad. 2015. “Intelligible Models for Healthcare: Predicting Pneumonia Risk and Hospital 30-Day Readmission.” Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery; Data Mining (KDD 15). Association for Computing Machinery, New York, NY, USA, 1721–1730.</p>
@@ -599,31 +627,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Cecil, Joe, and Donna Eden. 2003. “The Legal Foundations of Confidentiality.” In <em>Key Issues in Confidentiality Research: Results of an Nsf Workshop</em>. National Science Foundation.</p>
 </div>
 <div>
-<p>Centers for Disease Control and Prevention. n.d. “United States Cancer Statistic: An Interactive Cancer Atlas.” <a href="http://nccd.cdc.gov/DCPC_INCA" class="uri">http://nccd.cdc.gov/DCPC_INCA</a>. Accessed February 1, 2016.</p>
+<p>Centers for Disease Control and Prevention. n.d. “United States Cancer Statistic: An Interactive Cancer Atlas.” <a href="http://nccd.cdc.gov/DCPC_INCA">http://nccd.cdc.gov/DCPC_INCA</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Chai, John J. 1971. “Correlated Measurement Errors and the Least Squares Estimator of the Regression Coefficient.” <em>Journal of the American Statistical Association</em> 66 (335). Taylor &amp; Francis Group: 478–83.</p>
+<p>Chai, John J. 1971. “Correlated Measurement Errors and the Least Squares Estimator of the Regression Coefficient.” <em>Journal of the American Statistical Association</em> 66 (335): 478–83.</p>
 </div>
 <div>
-<p>Chandola, Varun, Arindam Banerjee, and Vipin Kumar. 2009. “Anomaly Detection: A Survey.” <em>ACM Computing Surveys</em> 41 (3). ACM: 15.</p>
+<p>Chandola, Varun, Arindam Banerjee, and Vipin Kumar. 2009. “Anomaly Detection: A Survey.” <em>ACM Computing Surveys</em> 41 (3): 15.</p>
 </div>
 <div>
-<p>Chapelle, O., and S. S. Keerthi. 2010. “Efficient Algorithms for Ranking with SVMs.” <em>Information Retrieval</em> 13 (3). Hingham, MA: Kluwer Academic Publishers: 201–15. doi:<a href="https://doi.org/10.1007/s10791-009-9109-9">10.1007/s10791-009-9109-9</a>.</p>
+<p>Chapelle, O., and S. S. Keerthi. 2010. “Efficient Algorithms for Ranking with SVMs.” <em>Information Retrieval</em> 13 (3): 201–15. <a href="https://doi.org/10.1007/s10791-009-9109-9">https://doi.org/10.1007/s10791-009-9109-9</a>.</p>
 </div>
 <div>
 <p>Chapelle, Olivier, Bernhard Schoelkopf, and Alexander Zien, eds. 2006. <em>Semi-Supervised Learning</em>. London, U.K.: MIT Press.</p>
 </div>
 <div>
-<p>Chawla, Nitesh V. 2005. “Data Mining for Imbalanced Datasets: An Overview.” In <em>The Data Mining and Knowledge Discovery Handbook</em>, edited by Oded Maimon and Lior Rokach, 853–67. Springer. <a href="http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05" class="uri">http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05</a>.</p>
+<p>Chawla, Nitesh V. 2005. “Data Mining for Imbalanced Datasets: An Overview.” In <em>The Data Mining and Knowledge Discovery Handbook</em>, edited by Oded Maimon and Lior Rokach, 853–67. Springer. <a href="http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05">http://dblp.uni-trier.de/db/books/collections/datamining2005.html#Chawla05</a>.</p>
 </div>
 <div>
-<p>Chetty, Raj. 2012. “The Transformative Potential of Administrative Data for Microeconometric Research.” <a href="http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf" class="uri">http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf</a>. Accessed February 1, 2016.</p>
+<p>Cheng, Justin, Lada A Adamic, Jon M Kleinberg, and Jure Leskovec. 2016. “Do Cascades Recur?” In <em>Proceedings of the 25th International Conference on World Wide Web</em>, 671–81.</p>
 </div>
 <div>
-<p>Ching, Ravi, Averyand Murthy, Dmytro Dmytro Molkov, Ramkumar Vadali, and Paul Yang. 2012. “Under the Hood: Scheduling MapReduce Jobs More Efficiently with Corona.” <a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/" class="uri">https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/</a>.</p>
+<p>Chetty, Raj. 2012. “The Transformative Potential of Administrative Data for Microeconometric Research.” <a href="http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf">http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Christen, Peter. 2012a. “A Survey of Indexing Techniques for Scalable Record Linkage and Deduplication.” <em>IEEE Transactions on Knowledge and Data Engineering</em> 24 (9). IEEE: 1537–55.</p>
+<p>Ching, Ravi, Averyand Murthy, Dmytro Dmytro Molkov, Ramkumar Vadali, and Paul Yang. 2012. “Under the Hood: Scheduling MapReduce Jobs More Efficiently with Corona.” <a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/">https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/</a>.</p>
+</div>
+<div>
+<p>Christen, Peter. 2012a. “A Survey of Indexing Techniques for Scalable Record Linkage and Deduplication.” <em>IEEE Transactions on Knowledge and Data Engineering</em> 24 (9): 1537–55.</p>
 </div>
 <div>
 <p>———. 2012b. <em>Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection</em>. Springer Science &amp; Business Media.</p>
@@ -632,31 +663,31 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Clarke, Claire. 2014. “Editing Big Data with Machine Learning Methods.” Paper presented at the Australian Bureau of Statistics Symposium, Canberra.</p>
 </div>
 <div>
-<p>Cleveland, William S., and Robert McGill. 1984. “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.” <em>Journal of the American Statistical Association</em> 79 (387). Taylor &amp; Francis: 531–54.</p>
+<p>Cleveland, William S., and Robert McGill. 1984. “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.” <em>Journal of the American Statistical Association</em> 79 (387): 531–54.</p>
 </div>
 <div>
 <p>Clifton, C., M. Kantarcioglu, A. Doan, G. Schadow, J. Vaidya, A.K. Elmagarmid, and D. Suciu. 2006. “Privacy-Preserving Data Integration and Sharing.” In <em>9th Acm Sigmod Workshop on Research Issues in Data Mining and Knowledge Discovery</em>, edited by G. Das, B. Liu, and P. S. Yu, 19–26. ACM.</p>
 </div>
 <div>
-<p>Cloudera. n.d. “Cloudera Manager.” <a href="https://www.cloudera.com/content/www/en-us/products/cloudera-manager.html" class="uri">https://www.cloudera.com/content/www/en-us/products/cloudera-manager.html</a>. Accessed April 16, 2016.</p>
+<p>Cloudera. n.d. “Cloudera Manager.” <a href="https://www.cloudera.com/content/www/en-us/products/cloudera-manager.html">https://www.cloudera.com/content/www/en-us/products/cloudera-manager.html</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
-<p>Cochran, William G. 1968. “Errors of Measurement in Statistics.” <em>Technometrics</em> 10 (4). Taylor &amp; Francis Group: 637–66.</p>
+<p>Cochran, William G. 1968. “Errors of Measurement in Statistics.” <em>Technometrics</em> 10 (4): 637–66.</p>
 </div>
 <div>
-<p>Confidentiality and Data Access Committee. n.d. “Federal Committee on Statistics and Methodology.” <a href="http://fcsm.sites.usa.gov/committees/cdac/" class="uri">http://fcsm.sites.usa.gov/committees/cdac/</a>. Accessed April 16, 2016.</p>
+<p>Confidentiality and Data Access Committee. n.d. “Federal Committee on Statistics and Methodology.” <a href="http://fcsm.sites.usa.gov/committees/cdac/">http://fcsm.sites.usa.gov/committees/cdac/</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
-<p>Consumer Financial Protection Bureau. n.d. “Home Mortgage Disclosure Act Data.” <a href="http://www.consumerfinance.gov/hmda/learn-more" class="uri">http://www.consumerfinance.gov/hmda/learn-more</a>. Accessed April 16, 2016.</p>
+<p>Consumer Financial Protection Bureau. n.d. “Home Mortgage Disclosure Act Data.” <a href="http://www.consumerfinance.gov/hmda/learn-more">http://www.consumerfinance.gov/hmda/learn-more</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
 <p>Corti, Paolo, Thomas J. Kraft, Stephen Vincent Mather, and Bborie Park. 2014. <em>PostGIS Cookbook</em>. Packt Publishing.</p>
 </div>
 <div>
-<p>Crammer, Koby, and Yoram Singer. 2002. “On the Algorithmic Implementation of Multiclass Kernel-Based Vector Machines.” <em>Journal of Machine Learning Research</em> 2. JMLR.org: 265–92. <a href="http://dl.acm.org/citation.cfm?id=944790.944813" class="uri">http://dl.acm.org/citation.cfm?id=944790.944813</a>.</p>
+<p>Crammer, Koby, and Yoram Singer. 2002. “On the Algorithmic Implementation of Multiclass Kernel-Based Vector Machines.” <em>Journal of Machine Learning Research</em> 2: 265–92. <a href="http://dl.acm.org/citation.cfm?id=944790.944813">http://dl.acm.org/citation.cfm?id=944790.944813</a>.</p>
 </div>
 <div>
-<p>Crossno, Patricia J., Douglas D. Cline, and Jeffrey N Jortner. 1993. “A Heterogeneous Graphics Procedure for Visualization of Massively Parallel Solutions.” <em>ASME FED</em> 156. ASME: 65–65.</p>
+<p>Crossno, Patricia J., Douglas D. Cline, and Jeffrey N Jortner. 1993. “A Heterogeneous Graphics Procedure for Visualization of Massively Parallel Solutions.” <em>ASME FED</em> 156: 65–65.</p>
 </div>
 <div>
 <p>Cumby, Chad, and Rayid Ghani. 2011. “A Machine Learning Based System for Semi-Automatically Redacting Documents.” AAAI Publications, Twenty-Third IAAI Conference.</p>
@@ -665,13 +696,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Czajka, John, Craig Schneider, Amang Sukasih, and Kevin Collins. 2014. “Minimizing Disclosure Risk in HHS Open Data Initiatives.” US Department of Health &amp; Human Services.</p>
 </div>
 <div>
-<p>Dean, Jeffrey, and Sanjay Ghemawat. 2004. “MapReduce: Simplified Data Processing on Large Clusters.” In <em>Proceedings of the 6th Conference on Symposium on Opearting Systems Design &amp; Implementation—Volume 6</em>. OSDI’04. USENIX Association. <a href="http://dl.acm.org/citation.cfm?id=1251254.1251264" class="uri">http://dl.acm.org/citation.cfm?id=1251254.1251264</a>.</p>
+<p>Dean, Jeffrey, and Sanjay Ghemawat. 2004. “MapReduce: Simplified Data Processing on Large Clusters.” In <em>Proceedings of the 6th Conference on Symposium on Opearting Systems Design &amp; Implementation—Volume 6</em>. OSDI’04. USENIX Association. <a href="http://dl.acm.org/citation.cfm?id=1251254.1251264">http://dl.acm.org/citation.cfm?id=1251254.1251264</a>.</p>
 </div>
 <div>
-<p>DeBelius, Danny. 2015. “Let’s Tesselate: Hexagons for Tile Grid Maps.” <em>NPR Visuals Team Blog</em>, <a href="http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html" class="uri">http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html</a>.</p>
+<p>DeBelius, Danny. n.d. “Let’s Tesselate: Hexagons for Tile Grid Maps.” <em>NPR Visuals Team Blog</em>, <a href="http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html">http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html</a>.</p>
 </div>
 <div>
-<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. to appear. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em>.</p>
+<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. n.d. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em>.</p>
 </div>
 <div>
 <p>Desai, T., F. Ritchie, and R. Welpton. 2016. “Five Safes: Designing Data Access for Research.” Working Papers 20161601, Department of Accounting, Economics; Finance, Bristol Business School, University of the West of England, Bristol.</p>
@@ -680,7 +711,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. “BERT: Pre-Training of Deep Bidirectional Transformers for Language Understanding.” In <em>Conference of the North American Chapter of the Association for Computational Linguistics</em>.</p>
 </div>
 <div>
-<p>DeWitt, David J., and Michael Stonebraker. 2008. “MapReduce: A Major Step Backwards.” <a href="http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf" class="uri">http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf</a>.</p>
+<p>DeWitt, David J., and Michael Stonebraker. n.d. “MapReduce: A Major Step Backwards.” <a href="http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf">http://www.dcs.bbk.ac.uk/~dell/teaching/cc/paper/dbc08/dewitt_mr_db.pdf</a>.</p>
 </div>
 <div>
 <p>Donohue III, John J., and Justin Wolfers. 2006. “Uses and Abuses of Empirical Evidence in the Death Penalty Debate.” National Bureau of Economic Research.</p>
@@ -692,10 +723,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Drechsler, Jörg. 2011. <em>Synthetic Datasets for Statistical Disclosure Control: Theory and Implementation</em>. Springer.</p>
 </div>
 <div>
-<p>Duan, Lian, Lida Xu, Ying Liu, and Jun Lee. 2009. “Cluster-Based Outlier Detection.” <em>Annals of Operations Research</em> 168 (1). Springer: 151–68.</p>
+<p>Duan, Lian, Lida Xu, Ying Liu, and Jun Lee. 2009. “Cluster-Based Outlier Detection.” <em>Annals of Operations Research</em> 168 (1): 151–68.</p>
 </div>
 <div>
-<p>DuGoff, Eva H., Megan Schuler, and Elizabeth A. Stuart. 2014. “Generalizing Observational Study Results: Applying Propensity Score Methods to Complex Surveys.” <em>Health Services Research</em> 49 (1). Wiley Online Library: 284–303.</p>
+<p>DuGoff, Eva H., Megan Schuler, and Elizabeth A. Stuart. 2014. “Generalizing Observational Study Results: Applying Propensity Score Methods to Complex Surveys.” <em>Health Services Research</em> 49 (1): 284–303.</p>
 </div>
 <div>
 <p>Duncan, G., M. Elliot, and J. J. Salazar-González. 2011. <em>Statistical Confidentiality: Principles and Practice</em>. Springer.</p>
@@ -704,7 +735,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Dunne, Cody, and Ben Shneiderman. 2013. “Motif Simplification: Improving Network Visualization Readability with Fan, Connector, and Clique Glyphs.” In <em>Proceedings of the Sigchi Conference on Human Factors in Computing Systems</em>, 3247–56. ACM.</p>
 </div>
 <div>
-<p>Dunning, Ted. 1993. “Accurate Methods for the Statistics of Surprise and Coincidence.” <em>Computational Linguistics</em> 19 (1). Cambridge, MA: MIT Press: 61–74. <a href="http://dl.acm.org/citation.cfm?id=972450.972454" class="uri">http://dl.acm.org/citation.cfm?id=972450.972454</a>.</p>
+<p>Dunning, Ted. 1993. “Accurate Methods for the Statistics of Surprise and Coincidence.” <em>Computational Linguistics</em> 19 (1): 61–74. <a href="http://dl.acm.org/citation.cfm?id=972450.972454">http://dl.acm.org/citation.cfm?id=972450.972454</a>.</p>
 </div>
 <div>
 <p>Dutwin, David, and Trent D. Buskirk. 2017. “Reply.” <em>Public Opinion Quarterly</em> 81 (S1): 246–49.</p>
@@ -725,34 +756,34 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Einav, Liran, and Jonathan D. Levin. 2013. “The Data Revolution and Economic Analysis.” National Bureau of Economic Research.</p>
 </div>
 <div>
-<p>Elbel, B., J. Gyamfi, and R. Kersh. 2011. “Child and Adolescent Fast-Food Choice and the Influence of Calorie Labeling: A Natural Experiment.” <em>International Journal of Obesity</em> 35 (4). Macmillan Publishers Limited: 493–500. <a href="http://dx.doi.org/10.1038/ijo.2011.4" class="uri">http://dx.doi.org/10.1038/ijo.2011.4</a>.</p>
+<p>Elbel, B., J. Gyamfi, and R. Kersh. 2011. “Child and Adolescent Fast-Food Choice and the Influence of Calorie Labeling: A Natural Experiment.” <em>International Journal of Obesity</em> 35 (4): 493–500. <a href="http://dx.doi.org/10.1038/ijo.2011.4">http://dx.doi.org/10.1038/ijo.2011.4</a>.</p>
 </div>
 <div>
 <p>Elias, Peter. 2014. “A European Perspective on Research and Big Data Access.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
 <div>
-<p>Elliott, Joshua, David Kelly, James Chryssanthacopoulos, Michael Glotter, Kanika Jhunjhnuwala, Neil Best, Michael Wilde, and Ian Foster. 2014. “The Parallel System for Integrating Impact Models and Sectors (pSIMS).” <em>Environmental Modelling &amp; Software</em> 62. Elsevier: 509–16.</p>
+<p>Elliott, Joshua, David Kelly, James Chryssanthacopoulos, Michael Glotter, Kanika Jhunjhnuwala, Neil Best, Michael Wilde, and Ian Foster. 2014. “The Parallel System for Integrating Impact Models and Sectors (pSIMS).” <em>Environmental Modelling &amp; Software</em> 62: 509–16.</p>
 </div>
 <div>
-<p>Elmagarmid, Ahmed K., Panagiotis G. Ipeirotis, and Vassilios S. Verykios. 2007. “Duplicate Record Detection: A Survey.” <em>IEEE Transactions on Knowledge and Data Engineering</em> 19 (1). IEEE: 1–16.</p>
+<p>Elmagarmid, Ahmed K., Panagiotis G. Ipeirotis, and Vassilios S. Verykios. 2007. “Duplicate Record Detection: A Survey.” <em>IEEE Transactions on Knowledge and Data Engineering</em> 19 (1): 1–16.</p>
 </div>
 <div>
-<p>Evans, David S. 1987. “Tests of Alternative Theories of Firm Growth.” <em>Journal of Political Economy</em> 95. JSTOR: 657–74.</p>
+<p>Evans, David S. 1987. “Tests of Alternative Theories of Firm Growth.” <em>Journal of Political Economy</em> 95: 657–74.</p>
 </div>
 <div>
 <p>Evans, J. A., and J. G. Foster. 2011. “Metaknowledge.” <em>Science</em> 331 (6018): 721–25.</p>
 </div>
 <div>
+<p>Fan, Jianqing, Fang Han, and Han Liu. 2014. “Challenges of Big Data Analysis.” <em>National Science Review</em> 1 (2): 293–314.</p>
+</div>
+<div>
 <p>Fan, Jianqing, and Yuan Liao. 2012. “Endogeneity in Ultrahigh Dimension.” Princeton University.</p>
 </div>
 <div>
-<p>———. 2014. “Endogeneity in High Dimensions.” <em>Annals of Statistics</em> 42 (3). NIH Public Access: 872.</p>
+<p>———. 2014. “Endogeneity in High Dimensions.” <em>Annals of Statistics</em> 42 (3): 872.</p>
 </div>
 <div>
-<p>Fan, Jianqing, Fang Han, and Han Liu. 2014. “Challenges of Big Data Analysis.” <em>National Science Review</em> 1 (2). Oxford University Press: 293–314.</p>
-</div>
-<div>
-<p>Fan, Jianqing, Richard Samworth, and Yichao Wu. 2009. “Ultrahigh Dimensional Feature Selection: Beyond the Linear Model.” <em>Journal of Machine Learning Research</em> 10. JMLR. org: 2013–38.</p>
+<p>Fan, Jianqing, Richard Samworth, and Yichao Wu. 2009. “Ultrahigh Dimensional Feature Selection: Beyond the Linear Model.” <em>Journal of Machine Learning Research</em> 10: 2013–38.</p>
 </div>
 <div>
 <p>Fekete, Jean-Daniel. 2015. “ProgressiVis: A Toolkit for Steerable Progressive Analytics and Visualization.” Paper presented at 1st Workshop on Data Systems for Interactive Analysis, Chicago, IL, October 26.</p>
@@ -764,13 +795,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Feldman, Ronen, and James Sanger. 2006. <em>Text Mining Handbook: Advanced Approaches in Analyzing Unstructured Data</em>. Cambridge University Press.</p>
 </div>
 <div>
-<p>Fellegi, Ivan P., and Alan B. Sunter. 1969. “A Theory for Record Linkage.” <em>Journal of the American Statistical Association</em> 64 (328). Taylor &amp; Francis Group: 1183–1210.</p>
+<p>Fellegi, Ivan P., and Alan B. Sunter. 1969. “A Theory for Record Linkage.” <em>Journal of the American Statistical Association</em> 64 (328): 1183–1210.</p>
 </div>
 <div>
-<p>Feng, Shi, Eric Wallace, Alvin Grissom II, Pedro Rodriguez, Mohit Iyyer, and Jordan Boyd-Graber. 2018. “Pathologies of Neural Models Make Interpretation Difficult.” In <em>Empirical Methods in Natural Language Processing</em>. Brussels, Belgium. <a href="docs/2018_emnlp_rs.pdf" class="uri">docs/2018_emnlp_rs.pdf</a>.</p>
+<p>Feng, Shi, Eric Wallace, Alvin Grissom II, Pedro Rodriguez, Mohit Iyyer, and Jordan Boyd-Graber. 2018. “Pathologies of Neural Models Make Interpretation Difficult.” In <em>Empirical Methods in Natural Language Processing</em>. Brussels, Belgium. <a href="docs/2018_emnlp_rs.pdf">docs/2018_emnlp_rs.pdf</a>.</p>
 </div>
 <div>
-<p>Ferragina, Paolo, and Ugo Scaiella. 2010. “TAGME: On-the-Fly Annotation of Short Text Fragments (by Wikipedia Entities).” In <em>Proceedings of the 19th Acm International Conference on Information and Knowledge Management</em>, 1625–8. CIKM 10. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/1871437.1871689">10.1145/1871437.1871689</a>.</p>
+<p>Ferragina, Paolo, and Ugo Scaiella. 2010. “TAGME: On-the-Fly Annotation of Short Text Fragments (by Wikipedia Entities).” In <em>Proceedings of the 19th Acm International Conference on Information and Knowledge Management</em>, 1625–8. CIKM 10. New York, NY, USA: Association for Computing Machinery. <a href="https://doi.org/10.1145/1871437.1871689">https://doi.org/10.1145/1871437.1871689</a>.</p>
 </div>
 <div>
 <p>Few, Stephen. 2009. <em>Now You See It: Simple Visualization Techniques for Quantitative Analysis</em>. Analytics Press.</p>
@@ -779,7 +810,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>———. 2013. <em>Information Dashboard Design: Displaying Data for at-a-Glance Monitoring</em>. Analytics Press.</p>
 </div>
 <div>
-<p>Fielding, Roy T., and Richard N. Taylor. 2002. “Principled Design of the Modern Web Architecture.” <em>ACM Transactions on Internet Technology</em> 2 (2). ACM: 115–50.</p>
+<p>Fielding, Roy T., and Richard N. Taylor. 2002. “Principled Design of the Modern Web Architecture.” <em>ACM Transactions on Internet Technology</em> 2 (2): 115–50.</p>
 </div>
 <div>
 <p>Fisher, Danyel, Igor Popov, Steven Drucker, and m. c. schraefel. 2012. “Trust Me, I’m Partially Right: Incremental Visualization Lets Analysts Explore Large Datasets Faster.” In <em>Proceedings of the Sigchi Conference on Human Factors in Computing Systems</em>, 1673–82. ACM.</p>
@@ -788,19 +819,19 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Flach, Peter. 2012. <em>Machine Learning: The Art and Science of Algorithms That Make Sense of Data</em>. Cambridge University Press.</p>
 </div>
 <div>
-<p>Fortuna, Blaz, Marko Grobelnik, and Dunja Mladenic. 2007. “OntoGen: Semi-Automatic Ontology Editor.” In <em>Proceedings of the 2007 Conference on Human Interface: Part Ii</em>, 309–18. Beijing, China: Springer. <a href="http://dl.acm.org/citation.cfm?id=1766591.1766627" class="uri">http://dl.acm.org/citation.cfm?id=1766591.1766627</a>.</p>
+<p>Fortuna, Blaz, Marko Grobelnik, and Dunja Mladenic. 2007. “OntoGen: Semi-Automatic Ontology Editor.” In <em>Proceedings of the 2007 Conference on Human Interface: Part Ii</em>, 309–18. Beijing, China: Springer. <a href="http://dl.acm.org/citation.cfm?id=1766591.1766627">http://dl.acm.org/citation.cfm?id=1766591.1766627</a>.</p>
 </div>
 <div>
 <p>Foster, Lucia, Ron S. Jarmin, and T. Lynn Riggs. 2009. “Resolving the Tension Between Access and Confidentiality: Past Experience and Future Plans at the US Census Bureau.” 09-33. US Census Bureau Center for Economic Studies.</p>
 </div>
 <div>
-<p>Fox, Armando, Steven D. Gribble, Yatin Chawathe, Eric A. Brewer, and Paul Gauthier. 1997. “Cluster-Based Scalable Network Services.” <em>ACM SIGOPS Operating Systems Review</em> 31 (5). ACM.</p>
+<p>Fox, Armando, Steven D. Gribble, Yatin Chawathe, Eric A. Brewer, and Paul Gauthier. 1997. “Cluster-Based Scalable Network Services.” <em>ACM SIGOPS Operating Systems Review</em> 31 (5).</p>
 </div>
 <div>
-<p>Francis, W. N., and H. Kucera. 1979. “Brown Corpus Manual.” Department of Linguistics, Brown University, Providence, Rhode Island, US. <a href="http://icame.uib.no/brown/bcm.html" class="uri">http://icame.uib.no/brown/bcm.html</a>.</p>
+<p>Francis, W. N., and H. Kucera. 1979. “Brown Corpus Manual.” Department of Linguistics, Brown University, Providence, Rhode Island, US. <a href="http://icame.uib.no/brown/bcm.html">http://icame.uib.no/brown/bcm.html</a>.</p>
 </div>
 <div>
-<p>Freeman, Linton C. 1979. “Centrality in Social Networks Conceptual Clarification.” <em>Social Networks</em> 1 (3). Elsevier: 215–39.</p>
+<p>Freeman, Linton C. 1979. “Centrality in Social Networks Conceptual Clarification.” <em>Social Networks</em> 1 (3): 215–39.</p>
 </div>
 <div>
 <p>Fuller, Wayne A. 1991. “Regression Estimation in the Presence of Measurement Error.” In <em>Measurement Errors in Surveys</em>, edited by Paul P. Biemer, Robert M. Groves, Lars E. Lyberg, Nancy A. Mathiowetz, and Seymour Sudman, 617–35. John Wiley &amp; Sons.</p>
@@ -815,25 +846,25 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Girone, Maria. 2008. “CERN Database Services for the LHC Computing Grid.” In <em>Journal of Physics: Conference Series</em>, 119:052017. 5. IOP Publishing.</p>
 </div>
 <div>
-<p>Girvan, Michelle, and Mark E. J. Newman. 2002. “Community Structure in Social and Biological Networks.” <em>Proceedings of the National Academy of Sciences</em> 99 (12). National Acad Sciences: 7821–6.</p>
+<p>Girvan, Michelle, and Mark E. J. Newman. 2002. “Community Structure in Social and Biological Networks.” <em>Proceedings of the National Academy of Sciences</em> 99 (12): 7821–6.</p>
 </div>
 <div>
-<p>Glennon, Britta. 2019. “How Do Restrictions on High-Skilled Immigration Affect Offshoring? Evidence from the H-1b Program.” <a href="http://brittaglennon.com/research/" class="uri">http://brittaglennon.com/research/</a>.</p>
+<p>Glennon, Britta. 2019. “How Do Restrictions on High-Skilled Immigration Affect Offshoring? Evidence from the H-1B Program.” <a href="http://brittaglennon.com/research/">http://brittaglennon.com/research/</a>.</p>
 </div>
 <div>
 <p>Glueck, Michael, Azam Khan, and Daniel J. Wigdor. 2014. “Dive in! Enabling Progressive Loading for Real-Time Navigation of Data Visualizations.” In <em>Proceedings of the Sigchi Conference on Human Factors in Computing Systems</em>, 561–70. ACM.</p>
 </div>
 <div>
-<p>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. <em>Deep Learning</em>. MIT Press.</p>
+<p>Göbel, Sascha, and Simon Munzert. 2018. “Political Advertising on the Wikipedia Marketplace of Information.” <em>Social Science Computer Review</em> 36 (2): 157–75.</p>
 </div>
 <div>
-<p>Göbel, Sascha, and Simon Munzert. 2018. “Political Advertising on the Wikipedia Marketplace of Information.” <em>Social Science Computer Review</em> 36 (2): 157–75.</p>
+<p>Goodfellow, Ian, Yoshua Bengio, and Aaron Courville. 2016. <em>Deep Learning</em>. MIT Press.</p>
 </div>
 <div>
 <p>Gray, Jim. 1981. “The Transaction Concept: Virtues and Limitations.” In <em>Proceedings of the Seventh International Conference on Very Large Data Bases</em>, 7:144–54.</p>
 </div>
 <div>
-<p>Green, Donald P., and Holger L. Kern. 2012. “Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees.” <em>Public Opinion Quarterly</em> 76. AAPOR: 491–511.</p>
+<p>Green, Donald P., and Holger L. Kern. 2012. “Modeling Heterogeneous Treatment Effects in Survey Experiments with Bayesian Additive Regression Trees.” <em>Public Opinion Quarterly</em> 76: 491–511.</p>
 </div>
 <div>
 <p>Greenwood, Daniel, Arkadiusz Stopczynski, Brian Sweatt, Thomas Hardjono, and Alex Pentland. 2014. “The New Deal on Data: A Framework for Institutional Controls.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 192. Cambridge University Press.</p>
@@ -842,7 +873,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Griffiths, Thomas L., and Mark Steyvers. 2004. “Finding Scientific Topics.” <em>Proceedings of the National Academy of Sciences</em> 101 (Suppl. 1): 5228–35.</p>
 </div>
 <div>
-<p>Grimmer, Justin, and Brandon M. Stewart. 2013. “Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.” <em>Political Analysis</em> 21 (3). SPM-PMSAPSA: 267–97.</p>
+<p>Grimmer, Justin, and Brandon M. Stewart. 2013. “Text as Data: The Promise and Pitfalls of Automatic Content Analysis Methods for Political Texts.” <em>Political Analysis</em> 21 (3): 267–97.</p>
 </div>
 <div>
 <p>Gropp, William, Ewing Lusk, and Anthony Skjellum. 2014. <em>Using Mpi: Portable Parallel Programming with the Message-Passing Interface</em>. MIT Press.</p>
@@ -851,22 +882,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Groves, Robert M. 2004. <em>Survey Errors and Survey Costs</em>. John Wiley &amp; Sons.</p>
 </div>
 <div>
-<p>Haak, Laurel L., Martin Fenner, Laura Paglione, Ed Pentz, and Howard Ratner. 2012. “ORCID: A System to Uniquely Identify Researchers.” <em>Learned Publishing</em> 25 (4). Association of Learned; Professional Society Publishers: 259–64.</p>
+<p>Haak, Laurel L., Martin Fenner, Laura Paglione, Ed Pentz, and Howard Ratner. 2012. “ORCID: A System to Uniquely Identify Researchers.” <em>Learned Publishing</em> 25 (4): 259–64.</p>
 </div>
 <div>
-<p>Hadoop, Apache. n.d. “HDFS Architecture.” <a href="http://spark.apache.org/docs/latest/programming-guide.html#transformations" class="uri">http://spark.apache.org/docs/latest/programming-guide.html#transformations</a>.</p>
+<p>Hadoop, Apache. n.d. “HDFS Architecture.” <a href="http://spark.apache.org/docs/latest/programming-guide.html#transformations">http://spark.apache.org/docs/latest/programming-guide.html#transformations</a>.</p>
 </div>
 <div>
-<p>Hainmueller, Jens, and Chad Hazlett. 2014. “Kernel Regularized Least Squares: Reducing Misspecification Bias with a Flexible and Interpretable Machine Learning Approach.” <em>Political Analysis</em> 22 (2). SPM-PMSAPSA: 143–68.</p>
+<p>Hainmueller, Jens, and Chad Hazlett. 2014. “Kernel Regularized Least Squares: Reducing Misspecification Bias with a Flexible and Interpretable Machine Learning Approach.” <em>Political Analysis</em> 22 (2): 143–68.</p>
 </div>
 <div>
-<p>Halevy, Alon, Peter Norvig, and Fernando Pereira. 2009. “The Unreasonable Effectiveness of Data.” <em>IEEE Intelligent Systems</em> 24 (2). Piscataway, NJ: IEEE Educational Activities Department: 8–12.</p>
+<p>Halevy, Alon, Peter Norvig, and Fernando Pereira. 2009. “The Unreasonable Effectiveness of Data.” <em>IEEE Intelligent Systems</em> 24 (2): 8–12.</p>
 </div>
 <div>
 <p>Hall, P., and H. Miller. 2009. “Using Generalized Correlation to Effect Variable Selection in Very High Dimensional Problems.” <em>Journal of Computational and Graphical Statistics</em> 18: 533–50.</p>
 </div>
 <div>
-<p>Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. “Who Creates Jobs? Small Versus Large Versus Young.” <em>Review of Economics and Statistics</em> 95 (2). MIT Press: 347–61.</p>
+<p>Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. “Who Creates Jobs? Small Versus Large Versus Young.” <em>Review of Economics and Statistics</em> 95 (2): 347–61.</p>
 </div>
 <div>
 <p>Hansen, Derek, Ben Shneiderman, and Marc A. Smith. 2010. <em>Analyzing Social Media Networks with NodeXL: Insights from a Connected World</em>. Morgan Kaufmann.</p>
@@ -875,13 +906,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Hansen, Morris H., William N. Hurwitz, and William G. Madow. 1993. <em>Sample Survey Methods and Theory</em>. John Wiley &amp; Sons.</p>
 </div>
 <div>
-<p>Harford, Tim. 2014. “Big Data: A Big Mistake?” <em>Significance</em> 11 (5). Wiley Online Library: 14–19.</p>
+<p>Harford, Tim. 2014. “Big Data: A Big Mistake?” <em>Significance</em> 11 (5): 14–19.</p>
 </div>
 <div>
 <p>Harrison, Lane, Katharina Reinecke, and Remco Chang. 2015. “Infographic Aesthetics: Designing for the First Impression.” In <em>Proceedings of the 33rd Annual Acm Conference on Human Factors in Computing Systems</em>, 1187–90. ACM.</p>
 </div>
 <div>
-<p>Hastie, Trevor, and Rob Tibshirani. n.d. “Statistical Learning Course.” <a href="https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about" class="uri">https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about</a>. Accessed February 1, 2016.</p>
+<p>Hastie, Trevor, and Rob Tibshirani. n.d. “Statistical Learning Course.” <a href="https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about">https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2001. <em>The Elements of Statistical Learning</em>. Springer.</p>
@@ -890,22 +921,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Hayden, Erica Check. 2015. “Researchers Wrestle with a Privacy Problem.” <em>Nature</em> 525 (7570): 440.</p>
 </div>
 <div>
-<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403). Macmillan Publishers Ltd., London, England: 312–14.</p>
+<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403): 312–14.</p>
 </div>
 <div>
-<p>He, Zengyou, Xiaofei Xu, and Shengchun Deng. 2003. “Discovering Cluster-Based Local Outliers.” <em>Pattern Recognition Letters</em> 24 (9). Elsevier: 1641–50.</p>
+<p>He, Zengyou, Xiaofei Xu, and Shengchun Deng. 2003. “Discovering Cluster-Based Local Outliers.” <em>Pattern Recognition Letters</em> 24 (9): 1641–50.</p>
 </div>
 <div>
-<p>Healy, Kieran, and James Moody. 2014. “Data Visualization in Sociology.” <em>Annual Review of Sociology</em> 40. Annual Reviews: 105–28.</p>
+<p>Healy, Kieran, and James Moody. 2014. “Data Visualization in Sociology.” <em>Annual Review of Sociology</em> 40: 105–28.</p>
 </div>
 <div>
-<p>Henry, Nathalie, and Jean-Daniel Fekete. 2006. “MatrixExplorer: A Dual-Representation System to Explore Social Networks.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 12 (5). IEEE: 677–84.</p>
+<p>Henry, Nathalie, and Jean-Daniel Fekete. 2006. “MatrixExplorer: A Dual-Representation System to Explore Social Networks.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 12 (5): 677–84.</p>
 </div>
 <div>
 <p>Herzog, Thomas N., Fritz J. Scheuren, and William E. Winkler. 2007. <em>Data Quality and Record Linkage Techniques</em>. Springer.</p>
 </div>
 <div>
-<p>Hill, Kashmir. 2012. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6" class="uri">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
+<p>Hill, Kashmir. n.d. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
 </div>
 <div>
 <p>Hofmann, Thomas. 1999. “Probabilistic Latent Semantic Analysis.” In <em>Proceedings of Uncertainty in Artificial Intelligence</em>.</p>
@@ -914,7 +945,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Holmberg, A., and C. Bycroft. 2017. “Statistics New Zealand’s Approach to Making Use of Alternative Data Sources in a New Era of Integrated Data.” In <em>Total Survey Error in Practice</em>, edited by Paul P. Biemer, Edith D. de Leeuw, Stephanie Eckman, Brad Edwards, Frauke Kreuter, Lars E. Lyberg, N. Clyde Tucker, and Brady T. West. Hoboken, NJ: John Wiley; Sons.</p>
 </div>
 <div>
-<p>Hothorn, Torsten. n.d. “CRAN Task View: Machine Learning &amp; Statistical Learning.” <a href="https://cran.r-project.org/web/views/MachineLearning.html" class="uri">https://cran.r-project.org/web/views/MachineLearning.html</a>. Accessed February 1, 2016.</p>
+<p>Hothorn, Torsten. n.d. “CRAN Task View: Machine Learning &amp; Statistical Learning.” <a href="https://cran.r-project.org/web/views/MachineLearning.html">https://cran.r-project.org/web/views/MachineLearning.html</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Hox, Joop. 2010. <em>Multilevel Analysis: Techniques and Applications</em>. Routledge.</p>
@@ -932,10 +963,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Huang, Jian, Seyda Ertekin, and C. Lee Giles. 2006. “Efficient Name Disambiguation for Large-Scale Databases.” In <em>Knowledge Discovery in Databases: PKDD 2006</em>, 536–44. Springer.</p>
 </div>
 <div>
-<p>Hukkelas, Hakon, Rudolf Mester, and Frank Lindseth. 2019. “DeepPrivacy: A Generative Adversarial Network for Face Anonymization.” <a href="https://arxiv.org/abs/1909.04538" class="uri">https://arxiv.org/abs/1909.04538</a>.</p>
+<p>Hukkelas, Hakon, Rudolf Mester, and Frank Lindseth. 2019. “DeepPrivacy: A Generative Adversarial Network for Face Anonymization.” <a href="https://arxiv.org/abs/1909.04538">https://arxiv.org/abs/1909.04538</a>.</p>
 </div>
 <div>
-<p>Human Microbiome Jumpstart Reference Strains Consortium, K. E. Nelson, G. M. Weinstock, and others. 2010. “A Catalog of Reference Genomes from the Human Microbiome.” <em>Science</em> 328 (5981). American Association for the Advancement of Science: 994–99.</p>
+<p>Human Microbiome Jumpstart Reference Strains Consortium, K. E. Nelson, G. M. Weinstock, and others. 2010. “A Catalog of Reference Genomes from the Human Microbiome.” <em>Science</em> 328 (5981): 994–99.</p>
 </div>
 <div>
 <p>Hundepool, Anco, Josep Domingo-Ferrer, Luisa Franconi, Sarah Giessing, Rainer Lenz, Jane Longhurst, E. Schulte Nordholt, Giovanni Seri, and P. Wolf. 2010. “Handbook on Statistical Disclosure Control.” Network of Excellence in the European Statistical System in the Field of Statistical Disclosure Control.</p>
@@ -944,10 +975,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Husband Fealing, Kaye, Julia Ingrid Lane, Jack Marburger, and Stephanie Shipp. 2011. <em>Science of Science Policy: The Handbook</em>. Stanford University Press.</p>
 </div>
 <div>
-<p>Ibrahim, Joseph G., and Ming-Hui Chen. 2000. “Power Prior Distributions for Regression Models.” <em>Statistical Science</em> 15 (1). JSTOR: 46–60.</p>
+<p>Ibrahim, Joseph G., and Ming-Hui Chen. 2000. “Power Prior Distributions for Regression Models.” <em>Statistical Science</em> 15 (1): 46–60.</p>
 </div>
 <div>
-<p>Imai, Kosuke, Marc Ratkovic, and others. 2013. “Estimating Treatment Effect Heterogeneity in Randomized Program Evaluation.” <em>Annals of Applied Statistics</em> 7 (1). Institute of Mathematical Statistics: 443–70.</p>
+<p>Imai, Kosuke, Marc Ratkovic, and others. 2013. “Estimating Treatment Effect Heterogeneity in Randomized Program Evaluation.” <em>Annals of Applied Statistics</em> 7 (1): 443–70.</p>
 </div>
 <div>
 <p>Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction</em>. Cambridge University Press.</p>
@@ -956,37 +987,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Inselberg, Alfred. 2009. <em>Parallel Coordinates</em>. Springer.</p>
 </div>
 <div>
-<p>Institute for Social Research. n.d. “Panel Study of Income Dynamics.” <a href="http://psidonline.isr.umich.edu" class="uri">http://psidonline.isr.umich.edu</a>. Accessed February 1, 2016.</p>
+<p>Institute for Social Research. n.d.a. “Panel Study of Income Dynamics.” <a href="http://psidonline.isr.umich.edu">http://psidonline.isr.umich.edu</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “PSID File Structure and Merging PSID Data Files.” Technical report. <a href="http://psidonline.isr.umich.edu/Guide/FileStructure.pdf" class="uri">http://psidonline.isr.umich.edu/Guide/FileStructure.pdf</a>. September 17, 2013.</p>
+<p>———. n.d.b. “PSID File Structure and Merging PSID Data Files.” Technical report. <a href="http://psidonline.isr.umich.edu/Guide/FileStructure.pdf">http://psidonline.isr.umich.edu/Guide/FileStructure.pdf</a>. September 17, 2013.</p>
 </div>
 <div>
-<p>International Household Survey Network. n.d. “Data Dissemination.” <a href="http://www.ihsn.org/home/projects/dissemination" class="uri">http://www.ihsn.org/home/projects/dissemination</a>. Accessed April 16, 2016.</p>
+<p>International Household Survey Network. n.d. “Data Dissemination.” <a href="http://www.ihsn.org/home/projects/dissemination">http://www.ihsn.org/home/projects/dissemination</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
 <p>Ioannidis, J. P. A. 2005. “Why Most Published Research Findings Are False.” <em>PLoS Medicine</em> 2 (8): e124.</p>
 </div>
 <div>
-<p>IPython development team. n.d. “IPython Documentation.” <a href="http://ipython.readthedocs.org/" class="uri">http://ipython.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+<p>IPython development team. n.d.a. “IPython Documentation.” <a href="http://ipython.readthedocs.org/">http://ipython.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “IPython Website.” <a href="http://ipython.org/" class="uri">http://ipython.org/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.b. “IPython Website.” <a href="http://ipython.org/">http://ipython.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Iyyer, Mohit, Varun Manjunatha, Jordan Boyd-Graber, and Hal DauméIII. 2015. “Deep Unordered Composition Rivals Syntactic Methods for Text Classification.” In <em>Acl</em>. <a href="http://www.cs.colorado.edu/~jbg/docs/2015_acl_dan.pdf" class="uri">http://www.cs.colorado.edu/~jbg/docs/2015_acl_dan.pdf</a>.</p>
+<p>Iyyer, Mohit, Varun Manjunatha, Jordan Boyd-Graber, and Hal DauméIII. 2015. “Deep Unordered Composition Rivals Syntactic Methods for Text Classification.” In <em>Acl</em>. <a href="http://www.cs.colorado.edu/~jbg/docs/2015_acl_dan.pdf">http://www.cs.colorado.edu/~jbg/docs/2015_acl_dan.pdf</a>.</p>
 </div>
 <div>
 <p>James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani. 2013. <em>An Introduction to Statistical Learning</em>. Springer.</p>
 </div>
 <div>
-<p>Japec, Lilli, Frauke Kreuter, Marcus Berg, Paul Biemer, Paul Decker, Cliff Lampe, Julia Lane, Cathy O’Neil, and Abe Usher. 2015. “Big Data in Survey Research: AAPOR Task Force Report.” <em>Public Opinion Quarterly</em> 79 (4). AAPOR: 839–80.</p>
-</div>
-<div>
-<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
+<p>Japec, Lilli, Frauke Kreuter, Marcus Berg, Paul Biemer, Paul Decker, Cliff Lampe, Julia Lane, Cathy O’Neil, and Abe Usher. 2015. “Big Data in Survey Research: AAPOR Task Force Report.” <em>Public Opinion Quarterly</em> 79 (4): 839–80.</p>
 </div>
 <div>
 <p>Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. “Expanding the Role of Synthetic Data at the US Census Bureau.” <em>Statistical Journal of the IAOS</em> 30 (2): 117–21.</p>
+</div>
+<div>
+<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
 </div>
 <div>
 <p>Johnson, Brian, and Ben Shneiderman. 1991. “Tree-Maps: A Space-Filling Approach to the Visualization of Hierarchical Information Structures.” In <em>Proceedings of the Ieee Conference on Visualization</em>, 284–91. IEEE.</p>
@@ -995,40 +1026,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Jones, Paul, and Peter Elias. 2006. “Administrative Data as a Research Resource: A Selected Audit.” ESRC National Centre for Research Methods.</p>
 </div>
 <div>
-<p>JOS. n.d. “Journal of Official Statistics Website.” Journal of Statistics Sweden; <a href="http://www.jos.nu" class="uri">http://www.jos.nu</a>. Accessed February 1, 2016.</p>
+<p>JOS. n.d. “Journal of Official Statistics Website.” Journal of Statistics Sweden; <a href="http://www.jos.nu">http://www.jos.nu</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>JPC. n.d. “Journal of Privacy and Confidentiality.” <a href="http://repository.cmu.edu/jpc/" class="uri">http://repository.cmu.edu/jpc/</a>. Accessed April 16, 2016.</p>
+<p>JPC. n.d. “Journal of Privacy and Confidentiality.” <a href="http://repository.cmu.edu/jpc/">http://repository.cmu.edu/jpc/</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
-<p>Jupyter. n.d. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/" class="uri">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+<p>Jupyter. n.d.a. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Jupyter Project Website.” <a href="http://jupyter.org/" class="uri">http://jupyter.org/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.b. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/" class="uri">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.c. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/" class="uri">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.d. “Jupyter Project Website.” <a href="http://jupyter.org/">http://jupyter.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Nbgrader Documentation.” <a href="http://nbgrader.readthedocs.org/" class="uri">http://nbgrader.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.e. “Nbgrader Documentation.” <a href="http://nbgrader.readthedocs.org/">http://nbgrader.readthedocs.org/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>———. n.d. “Nbgrader GitHub Repository.” <a href="https://github.com/jupyter/nbgrader/" class="uri">https://github.com/jupyter/nbgrader/</a>. Accessed February 1, 2016.</p>
+<p>———. n.d.f. “Nbgrader GitHub Repository.” <a href="https://github.com/jupyter/nbgrader/">https://github.com/jupyter/nbgrader/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Kabo, Felichism, Yongha Hwang, Margaret Levenstein, and Jason Owen-Smith. 2015. “Shared Paths to the Lab: A Sociospatial Network Analysis of Collaboration.” <em>Environment and Behavior</em> 47 (1). SAGE Publications: 57–84.</p>
+<p>Kabo, Felichism, Yongha Hwang, Margaret Levenstein, and Jason Owen-Smith. 2015. “Shared Paths to the Lab: A Sociospatial Network Analysis of Collaboration.” <em>Environment and Behavior</em> 47 (1): 57–84.</p>
 </div>
 <div>
 <p>Karr, Alan, and Jerome P. Reiter. 2014. “Analytical Frameworks for Data Release: A Statistical View.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div>
-<p>Keller, Sallie Ann, Steven E. Koonin, and Stephanie Shipp. 2012. “Big Data and City Living: What Can It Do for Us?” <em>Significance</em> 9 (4). Blackwell: 4–7.</p>
+<p>Keller, Sallie Ann, Steven E. Koonin, and Stephanie Shipp. 2012. “Big Data and City Living: What Can It Do for Us?” <em>Significance</em> 9 (4): 4–7.</p>
 </div>
 <div>
-<p>Keshif. n.d. “Infographics Aesthetics Dataset Browser.” <a href="http://keshif.me/demo/infographics_aesthetics" class="uri">http://keshif.me/demo/infographics_aesthetics</a>. Accessed February 1, 2016.</p>
+<p>Keshif. n.d. “Infographics Aesthetics Dataset Browser.” <a href="http://keshif.me/demo/infographics_aesthetics">http://keshif.me/demo/infographics_aesthetics</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Kim, Y., J. Huang, and S. Emery. 2016. “Garbage in, Garbage Out: Data Collection, Quality Assessment and Reporting Standards for Social Media Data Use in Health Research, Infodemiology and Digital Disease Detection.” <em>Journal of Medical Internet Research</em> 18 (2).</p>
@@ -1037,28 +1068,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>King, Gary, Jennifer Pan, and Margaret E. Roberts. 2013. “How Censorship in China Allows Government Criticism but Silences Collective Expression.” <em>American Political Science Review</em> 107 (2): 1–18.</p>
 </div>
 <div>
-<p>Kinney, Satkartar K., Jerome P. Reiter, Arnold P. Reznek, Javier Miranda, Ron S. Jarmin, and John M. Abowd. 2011. “Towards Unrestricted Public Use Business Microdata: The Synthetic Longitudinal Business Database.” <em>International Statistical Review</em> 79 (3). Wiley Online Library: 362–84.</p>
+<p>Kinney, Satkartar K., Jerome P. Reiter, Arnold P. Reznek, Javier Miranda, Ron S. Jarmin, and John M. Abowd. 2011. “Towards Unrestricted Public Use Business Microdata: The Synthetic Longitudinal Business Database.” <em>International Statistical Review</em> 79 (3): 362–84.</p>
 </div>
 <div>
 <p>Kirk, Andy. 2012. <em>Data Visualization: A Successful Design Process</em>. Packt Publishing.</p>
 </div>
 <div>
-<p>Kiss, Tibor, and Jan Strunk. 2006. “Unsupervised Multilingual Sentence Boundary Detection.” <em>Computational Linguistics</em> 32 (4). Cambridge, MA: MIT Press: 485–525.</p>
+<p>Kiss, Tibor, and Jan Strunk. 2006. “Unsupervised Multilingual Sentence Boundary Detection.” <em>Computational Linguistics</em> 32 (4): 485–525.</p>
 </div>
 <div>
-<p>Kleinberg, Jon, Jens Ludwig, Sendhil Mullainathan, and Ziad Obermeyer. 2015. “Prediction Policy Problems.” <em>American Economic Review</em> 105 (5): 491–95. <a href="http://EconPapers.repec.org/RePEc:aea:aecrev:v:105:y:2015:i:5:p:491-95" class="uri">http://EconPapers.repec.org/RePEc:aea:aecrev:v:105:y:2015:i:5:p:491-95</a>.</p>
+<p>Kleinberg, Jon, Jens Ludwig, Sendhil Mullainathan, and Ziad Obermeyer. 2015. “Prediction Policy Problems.” <em>American Economic Review</em> 105 (5): 491–95. <a href="http://EconPapers.repec.org/RePEc:aea:aecrev:v:105:y:2015:i:5:p:491-95">http://EconPapers.repec.org/RePEc:aea:aecrev:v:105:y:2015:i:5:p:491-95</a>.</p>
 </div>
 <div>
 <p>Kohler, Ulrich, and Frauke Kreuter. 2012. <em>Data Analysis Using Stata, 3rd Edition</em>. Stata Press.</p>
 </div>
 <div>
-<p>Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. “Dedoop: Efficient Deduplication with Hadoop.” <em>Proc. VLDB Endow.</em> 5 (12). VLDB Endowment: 1878–81. doi:<a href="https://doi.org/10.14778/2367502.2367527">10.14778/2367502.2367527</a>.</p>
+<p>Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. “Dedoop: Efficient Deduplication with Hadoop.” <em>Proc. VLDB Endow.</em> 5 (12): 1878–81. <a href="https://doi.org/10.14778/2367502.2367527">https://doi.org/10.14778/2367502.2367527</a>.</p>
 </div>
 <div>
-<p>Kong, Lingpeng, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. “A Dependency Parser for Tweets.” In <em>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (Emnlp)</em>, 1001–12. Association for Computational Linguistics. <a href="http://www.aclweb.org/anthology/D14-1108" class="uri">http://www.aclweb.org/anthology/D14-1108</a>.</p>
+<p>Kong, Lingpeng, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. “A Dependency Parser for Tweets.” In <em>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (Emnlp)</em>, 1001–12. Association for Computational Linguistics. <a href="http://www.aclweb.org/anthology/D14-1108">http://www.aclweb.org/anthology/D14-1108</a>.</p>
 </div>
 <div>
-<p>Köpcke, Hanna, Andreas Thor, and Erhard Rahm. 2010. “Evaluation of Entity Resolution Approaches on Real-World Match Problems.” <em>Proceedings of the VLDB Endowment</em> 3 (1–2). VLDB Endowment: 484–93.</p>
+<p>Köpcke, Hanna, Andreas Thor, and Erhard Rahm. 2010. “Evaluation of Entity Resolution Approaches on Real-World Match Problems.” <em>Proceedings of the VLDB Endowment</em> 3 (1–2): 484–93.</p>
 </div>
 <div>
 <p>Kraak, Menno-Jan. 2014. <em>Mapping Time: Illustrated by Minard’s Map of Napoleon’s Russian Campaign of 1812</em>. ESRI Press.</p>
@@ -1067,28 +1098,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Kreuter, Frauke, and Roger D. Peng. 2014. “Extracting Information from Big Data: Issues of Measurement, Inference, and Linkage.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 257–75. Cambridge University Press.</p>
 </div>
 <div>
-<p>Kuhn, H. W. 2005. “The Hungarian Method for the Assignment Problem.” <em>Naval Research Logistics</em> 52 (1). Wiley Online Library: 7–21.</p>
+<p>Kuhn, H. W. 2005. “The Hungarian Method for the Assignment Problem.” <em>Naval Research Logistics</em> 52 (1): 7–21.</p>
 </div>
 <div>
 <p>Kuhn, Max, and Kjell Johnson. 2013. <em>Applied Predictive Modeling</em>. Springer Science &amp; Business Media.</p>
 </div>
 <div>
-<p>Kullback, Solomon, and Richard A. Leibler. 1951. “On Information and Sufficiency.” <em>Annals of Mathematical Statistics</em> 22 (1). JSTOR: 79–86.</p>
+<p>Kullback, Solomon, and Richard A. Leibler. 1951. “On Information and Sufficiency.” <em>Annals of Mathematical Statistics</em> 22 (1): 79–86.</p>
 </div>
 <div>
-<p>Kumar, Mohit, Rayid Ghani, and Zhu-Song Mei. 2010. “Data Mining to Predict and Prevent Errors in Health Insurance Claims Processing.” In <em>Proceedings of the 16th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 65–74. KDD ’10. ACM. doi:<a href="https://doi.org/10.1145/1835804.1835816">10.1145/1835804.1835816</a>.</p>
+<p>Kumar, Mohit, Rayid Ghani, and Zhu-Song Mei. 2010. “Data Mining to Predict and Prevent Errors in Health Insurance Claims Processing.” In <em>Proceedings of the 16th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 65–74. KDD ’10. ACM. <a href="https://doi.org/10.1145/1835804.1835816">https://doi.org/10.1145/1835804.1835816</a>.</p>
 </div>
 <div>
 <p>Lafferty, John D., Andrew McCallum, and Fernando C. N. Pereira. 2001. “Conditional Random Fields: Probabilistic Models for Segmenting and Labeling Sequence Data.” In <em>Proceedings of the Eighteenth International Conference on Machine Learning</em>, 282–89. Morgan Kaufmann.</p>
 </div>
 <div>
-<p>Lahiri, Partha, and Michael D Larsen. 2005. “Regression Analysis with Linked Data.” <em>Journal of the American Statistical Association</em> 100 (469). Taylor &amp; Francis: 222–30.</p>
+<p>Lahiri, Partha, and Michael D Larsen. 2005. “Regression Analysis with Linked Data.” <em>Journal of the American Statistical Association</em> 100 (469): 222–30.</p>
 </div>
 <div>
-<p>Lakkaraju, Himabindu, Everaldo Aguiar, Carl Shan, David Miller, Nasir Bhanpuri, Rayid Ghani, and Kecia L. Addison. 2015. “A Machine Learning Framework to Identify Students at Risk of Adverse Academic Outcomes.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 1909–18. KDD ’15. ACM. doi:<a href="https://doi.org/10.1145/2783258.2788620">10.1145/2783258.2788620</a>.</p>
+<p>Lakkaraju, Himabindu, Everaldo Aguiar, Carl Shan, David Miller, Nasir Bhanpuri, Rayid Ghani, and Kecia L. Addison. 2015. “A Machine Learning Framework to Identify Students at Risk of Adverse Academic Outcomes.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 1909–18. KDD ’15. ACM. <a href="https://doi.org/10.1145/2783258.2788620">https://doi.org/10.1145/2783258.2788620</a>.</p>
 </div>
 <div>
-<p>Lam, Heidi, Enrico Bertini, Petra Isenberg, Catherine Plaisant, and Sheelagh Carpendale. 2012. “Empirical Studies in Information Visualization: Seven Scenarios.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 18 (9). IEEE: 1520–36.</p>
+<p>Lam, Heidi, Enrico Bertini, Petra Isenberg, Catherine Plaisant, and Sheelagh Carpendale. 2012. “Empirical Studies in Information Visualization: Seven Scenarios.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 18 (9): 1520–36.</p>
 </div>
 <div>
 <p>Landauer, T., and S. Dumais. 1997. “Solutions to Plato’s Problem: The Latent Semantic Analysis Theory of Acquisition, Induction and Representation of Knowledge.” <em>Psychological Review</em> 104 (2): 211–40.</p>
@@ -1097,10 +1128,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Lane, Julia. 2007. “Optimizing Access to Micro Data.” <em>Journal of Official Statistics</em> 23: 299–317.</p>
 </div>
 <div>
-<p>Lane, Julia I., Jason Owen-Smith, Rebecca F. Rosen, and Bruce A. Weinberg. 2015. “New Linked Data on Research Investments: Scientific Workforce, Productivity, and Public Value.” <em>Research Policy</em> 44. Elsevier: 1659–71.</p>
+<p>Lane, Julia I., Jason Owen-Smith, Rebecca F. Rosen, and Bruce A. Weinberg. 2015. “New Linked Data on Research Investments: Scientific Workforce, Productivity, and Public Value.” <em>Research Policy</em> 44: 1659–71.</p>
 </div>
 <div>
-<p>Lane, Julia, and Victoria Stodden. 2013. “What? Me Worry? What to Do About Privacy, Big Data, and Statistical Research.” <em>AMSTAT News</em> 438. American Statistical Association: 14.</p>
+<p>Lane, Julia, and Victoria Stodden. 2013. “What? Me Worry? What to Do About Privacy, Big Data, and Statistical Research.” <em>AMSTAT News</em> 438: 14.</p>
 </div>
 <div>
 <p>Lane, Julia, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, eds. 2014. <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>. Cambridge: Cambridge University Press.</p>
@@ -1112,28 +1143,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Lee, Yang, WooYoung Chung, Stuart Madnick, Richard Wang, and Hongyun Zhang. 2012. “On the Rise of the Chief Data Officers in a World of Big Data.” In <em>Pre-Icis 2012 Sim Academic Workshop, Orlando, Florida</em>.</p>
 </div>
 <div>
-<p>Levitt, Steven D., and Thomas J. Miles. 2006. “Economic Contributions to the Understanding of Crime.” <em>Annual Review of Law Social Science</em> 2. Annual Reviews: 147–64.</p>
+<p>Levitt, Steven D., and Thomas J. Miles. 2006. “Economic Contributions to the Understanding of Crime.” <em>Annual Review of Law Social Science</em> 2: 147–64.</p>
 </div>
 <div>
 <p>Lewis, David D. 1998. “Naive (Bayes) at Forty: The Independence Assumption in Information Retrieval.” In <em>Proceedings of European Conference of Machine Learning</em>, 4–15.</p>
 </div>
 <div>
-<p>Lifka, D., I. Foster, S. Mehringer, M. Parashar, P. Redfern, C. Stewart, and S. Tuecke. 2013. “XSEDE Cloud Survey Report.” Technical report, National Science Foundation, USA, <a href="http://hdl.handle.net/2142/45766" class="uri">http://hdl.handle.net/2142/45766</a>.</p>
+<p>Lifka, D., I. Foster, S. Mehringer, M. Parashar, P. Redfern, C. Stewart, and S. Tuecke. 2013. “XSEDE Cloud Survey Report.” Technical report, National Science Foundation, USA, <a href="http://hdl.handle.net/2142/45766">http://hdl.handle.net/2142/45766</a>.</p>
 </div>
 <div>
 <p>Lin, Jimmy, and Chris Dyer. 2010. <em>Data-Intensive Text Processing with MapReduce</em>. Morgan &amp; Claypool Publishers.</p>
 </div>
 <div>
-<p>Lins, Lauro, James T Klosowski, and Carlos Scheidegger. 2013. “Nanocubes for Real-Time Exploration of Spatiotemporal Datasets.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 19 (12). IEEE: 2456–65.</p>
+<p>Lins, Lauro, James T Klosowski, and Carlos Scheidegger. 2013. “Nanocubes for Real-Time Exploration of Spatiotemporal Datasets.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 19 (12): 2456–65.</p>
 </div>
 <div>
 <p>Little, Roderick J. A., and Donald B Rubin. 2014. <em>Statistical Analysis with Missing Data</em>. John Wiley &amp; Sons.</p>
 </div>
 <div>
-<p>Liu, Zhicheng, and Jeffrey Heer. 2014. “The Effects of Interactive Latency on Exploratory Visual Analysis.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12). IEEE: 2122–31.</p>
+<p>Liu, Zhicheng, and Jeffrey Heer. 2014. “The Effects of Interactive Latency on Exploratory Visual Analysis.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12): 2122–31.</p>
 </div>
 <div>
-<p>Lockwood, Glenn K. 2015. “Conceptual Overview of Map-Reduce and Hadoop.” <a href="http://www.glennklockwood.com/data-intensive/hadoop/overview.html" class="uri">http://www.glennklockwood.com/data-intensive/hadoop/overview.html</a>.</p>
+<p>Lockwood, Glenn K. n.d. “Conceptual Overview of Map-Reduce and Hadoop.” <a href="http://www.glennklockwood.com/data-intensive/hadoop/overview.html">http://www.glennklockwood.com/data-intensive/hadoop/overview.html</a>.</p>
 </div>
 <div>
 <p>Lohr, Sharon. 2009. <em>Sampling: Design and Analysis</em>. Cengage Learning.</p>
@@ -1142,40 +1173,40 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Lundberg, Scott M., and Su-In Lee. 2017. “A Unified Approach to Interpreting Model Predictions.” In <em>Proceedings of the 31st International Conference on Neural Information Processing Systems</em>, 4768–77. NIPS 17. Red Hook, NY, USA: Curran Associates Inc.</p>
 </div>
 <div>
-<p>MacEachren, Alan M., Stephen Crawford, Mamata Akella, and Gene Lengerich. 2008. “Design and Implementation of a Model, Web-Based, GIS-Enabled Cancer Atlas.” <em>Cartographic Journal</em> 45 (4). Maney Publishing: 246–60.</p>
+<p>MacEachren, Alan M., Stephen Crawford, Mamata Akella, and Gene Lengerich. 2008. “Design and Implementation of a Model, Web-Based, GIS-Enabled Cancer Atlas.” <em>Cartographic Journal</em> 45 (4): 246–60.</p>
 </div>
 <div>
-<p>MacKinlay, Jock. 1986. “Automating the Design of Graphical Presentations of Relational Information.” <em>ACM Transactions on Graphics</em> 5 (2). ACM: 110–41.</p>
+<p>MacKinlay, Jock. 1986. “Automating the Design of Graphical Presentations of Relational Information.” <em>ACM Transactions on Graphics</em> 5 (2): 110–41.</p>
 </div>
 <div>
 <p>Malik, Waqas Ahmed, Antony Unwin, and Alexander Gribov. 2010. “An Interactive Graphical System for Visualizing Data Quality–Tableplot Graphics.” In <em>Classification as a Tool for Research</em>, 331–39. Springer.</p>
 </div>
 <div>
-<p>Malmkjær, K. 2002. <em>The Linguistics Encyclopedia</em>. Routledge. <a href="https://books.google.ca/books?id=uCrXOLvD7fMC" class="uri">https://books.google.ca/books?id=uCrXOLvD7fMC</a>.</p>
+<p>Malmkjær, K. 2002. <em>The Linguistics Encyclopedia</em>. Routledge. <a href="https://books.google.ca/books?id=uCrXOLvD7fMC">https://books.google.ca/books?id=uCrXOLvD7fMC</a>.</p>
 </div>
 <div>
 <p>Manning, Christopher D., Mihai Surdeanu, John Bauer, Jenny Finkel, Steven J. Bethard, and David McClosky. 2014. “The Stanford CoreNLP Natural Language Processing Toolkit.” In <em>Proceedings of 52nd Annual Meeting of the Association for Computational Linguistics: System Demonstrations</em>, 55–60.</p>
 </div>
 <div>
-<p>Marburger, John H. 2005. “Wanted: Better Benchmarks.” <em>Science</em> 308 (5725). American Association for the Advancement of Science: 1087.</p>
+<p>Marburger, John H. 2005. “Wanted: Better Benchmarks.” <em>Science</em> 308 (5725): 1087.</p>
 </div>
 <div>
 <p>Marcus, Mitchell P., Beatrice Santorini, and Mary A. Marcinkiewicz. 1993. “Building a Large Annotated Corpus of English: The Penn Treebank.” <em>Computational Linguistics</em> 19 (2): 313–30.</p>
 </div>
 <div>
-<p>Mas, Alexandre, and Enrico Moretti. 2009. “Peers at Work.” <em>American Economic Review</em> 99 (1): 112–45. <a href="http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112" class="uri">http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112</a>.</p>
+<p>Mas, Alexandre, and Enrico Moretti. 2009. “Peers at Work.” <em>American Economic Review</em> 99 (1): 112–45. <a href="http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112">http://www.aeaweb.org/articles.php?doi=10.1257/aer.99.1.112</a>.</p>
 </div>
 <div>
-<p>Maskeri, Girish, Santonu Sarkar, and Kenneth Heafield. 2008. “Mining Business Topics in Source Code Using Latent Dirichlet Allocation.” In <em>Proceedings of the 1st India Software Engineering Conference</em>, 113–20. ACM. doi:<a href="https://doi.org/http://doi.acm.org/10.1145/1342211.1342234">http://doi.acm.org/10.1145/1342211.1342234</a>.</p>
+<p>Maskeri, Girish, Santonu Sarkar, and Kenneth Heafield. 2008. “Mining Business Topics in Source Code Using Latent Dirichlet Allocation.” In <em>Proceedings of the 1st India Software Engineering Conference</em>, 113–20. ACM. <a href="https://doi.org/http://doi.acm.org/10.1145/1342211.1342234">https://doi.org/http://doi.acm.org/10.1145/1342211.1342234</a>.</p>
 </div>
 <div>
 <p>McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. <em>SP 800-122. Guide to Protecting the Confidentiality of Personally Identifiable Information (Pii)</em>. National Institute of Standards; Technology.</p>
 </div>
 <div>
-<p>McCallum, Andrew Kachites. 2002. “MALLET: A Machine Learning for Language Toolkit.” <a href="http://mallet.cs.umass.edu" class="uri">http://mallet.cs.umass.edu</a>.</p>
+<p>McCallum, Andrew Kachites. 2002. “MALLET: A Machine Learning for Language Toolkit.” <a href="http://mallet.cs.umass.edu">http://mallet.cs.umass.edu</a>.</p>
 </div>
 <div>
-<p>Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten Rijke. 2009. “Learning Semantic Query Suggestions.” In <em>Proceedings of the 8th International Semantic Web Conference</em>, 424–40. ISWC ’09. Chantilly, VA: Springer. doi:<a href="https://doi.org/10.1007/978-3-642-04930-9_27">10.1007/978-3-642-04930-9_27</a>.</p>
+<p>Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten Rijke. 2009. “Learning Semantic Query Suggestions.” In <em>Proceedings of the 8th International Semantic Web Conference</em>, 424–40. ISWC ’09. Chantilly, VA: Springer. <a href="https://doi.org/10.1007/978-3-642-04930-9_27">https://doi.org/10.1007/978-3-642-04930-9_27</a>.</p>
 </div>
 <div>
 <p>Meng, Xiao-Li. 2018. “Statistical Paradises and Paradoxes in Big Data (I): Law of Large Populations, Big Data Paradox, and the 2016 Us Presidential Election.” <em>The Annals of Applied Statistics</em> 12 (2): 685–726.</p>
@@ -1190,19 +1221,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Mitchell, Tom M. 1997. <em>Machine Learning</em>. McGraw-Hill.</p>
 </div>
 <div>
-<p>Moffatt, C. L. 1999. “Visual Representation of SQL Joins.” <a href="http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins" class="uri">http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</a>.</p>
+<p>Moffatt, C. L. n.d. “Visual Representation of SQL Joins.” <a href="http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins">http://www.codeproject.com/Articles/33052/Visual-Representation-of-SQL-Joins</a>.</p>
 </div>
 <div>
-<p>Molina, Giovanni, Fahad AlGhamdi, Mahmoud Ghoneim, Abdelati Hawwari, Nicolas Rey-Villamizar, Mona Diab, and Thamar Solorio. 2016. “Overview for the Second Shared Task on Language Identification in Code-Switched Data.” In <em>Proceedings of the Second Workshop on Computational Approaches to Code Switching</em>, 40–49. Austin, Texas: Association for Computational Linguistics. doi:<a href="https://doi.org/10.18653/v1/W16-5805">10.18653/v1/W16-5805</a>.</p>
+<p>Molina, Giovanni, Fahad AlGhamdi, Mahmoud Ghoneim, Abdelati Hawwari, Nicolas Rey-Villamizar, Mona Diab, and Thamar Solorio. 2016. “Overview for the Second Shared Task on Language Identification in Code-Switched Data.” In <em>Proceedings of the Second Workshop on Computational Approaches to Code Switching</em>, 40–49. Austin, Texas: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/W16-5805">https://doi.org/10.18653/v1/W16-5805</a>.</p>
 </div>
 <div>
 <p>Molinaro, Anthony. 2005. <em>SQL Cookbook: Query Solutions and Techniques for Database Developers</em>. O’Reilly Media.</p>
 </div>
 <div>
+<p>Moreno, J.L., and H.H. Jennings. 1934. <em>Who Shall Survive?: A New Approach to the Problem of Human Interrelations</em>. Washington, D.C.: Nervous; Mental Disease Publishing Co.</p>
+</div>
+<div>
 <p>Morgan, Stephen L., and Christopher Winship. 2014. <em>Counterfactuals and Causal Inference</em>. Cambridge University Press.</p>
 </div>
 <div>
-<p>Mortensen, Peter Stendahl, Carter Walter Bloch, and others. 2005. <em>Oslo Manual: Guidelines for Collecting and Interpreting Innovation Data</em>. Organisation for Economic Co-operation; Development.</p>
+<p>Mortensen, Peter Stendahl, and Carter Walter Bloch. 2005. <em>Oslo Manual: Guidelines for Collecting and Interpreting Innovation Data</em>. Organisation for Economic Co-operation; Development.</p>
 </div>
 <div>
 <p>Munzner, Tamara. 2014. <em>Visualization Analysis and Design</em>. CRC Press.</p>
@@ -1217,10 +1251,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Natarajan, Kalaivany, Jiuyong Li, and Andy Koronios. 2010. <em>Data Mining Techniques for Data Cleaning</em>. Springer.</p>
 </div>
 <div>
-<p>National Center for Health Statistics. 2019. “The Linkage of National Center for Health Statistics Survey Data to the National Death Index – 2015 Linked Mortality File (Lmf): Methodology Overview and Analytic Considerations.” <a href="https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm" class="uri">https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm</a>.</p>
+<p>National Center for Health Statistics. 2019. “The Linkage of National Center for Health Statistics Survey Data to the National Death Index – 2015 Linked Mortality File (Lmf): Methodology Overview and Analytic Considerations.” <a href="https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm">https://www.cdc.gov/nchs/data-linkage/mortality-methods.htm</a>.</p>
 </div>
 <div>
-<p>National Science Foundation. n.d. “Download Awards by Year.” <a href="http://nsf.gov/awardsearch/download.jsp" class="uri">http://nsf.gov/awardsearch/download.jsp</a>. Accessed February 1, 2016.</p>
+<p>National Science Foundation. n.d. “Download Awards by Year.” <a href="http://nsf.gov/awardsearch/download.jsp">http://nsf.gov/awardsearch/download.jsp</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Navigli, Roberto, Stefano Faralli, Aitor Soroa, Oier de Lacalle, and Eneko Agirre. 2011. “Two Birds with One Stone: Learning Semantic Models for Text Categorization and Word Sense Disambiguation.” In <em>Proceedings of the 20th Acm International Conference on Information and Knowledge Management</em>. ACM.</p>
@@ -1229,10 +1263,10 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Neamatullah, Ishna, Margaret M. Douglass, Li-wei H. Lehman, Andrew Reisner, Mauricio Villarroel, William J. Long, Peter Szolovits, George B. Moody, Roger G. Mark, and Gari D. Clifford. 2008. “Automated de-Identification of Free-Text Medical Records.” <em>BMC Medical Informatics and Decision Making</em> 8.</p>
 </div>
 <div>
-<p>Nelson, Robert K. 2010. “Mining the Dispatch.” <a href="http://dsl.richmond.edu/dispatch/" class="uri">http://dsl.richmond.edu/dispatch/</a>.</p>
+<p>Nelson, Robert K. 2010. “Mining the Dispatch.” <a href="http://dsl.richmond.edu/dispatch/">http://dsl.richmond.edu/dispatch/</a>.</p>
 </div>
 <div>
-<p>Newman, Mark. 2005. “A Measure of Betweenness Centrality Based on Random Walks.” <em>Social Networks</em> 27 (1). Elsevier: 39–54.</p>
+<p>Newman, Mark. 2005. “A Measure of Betweenness Centrality Based on Random Walks.” <em>Social Networks</em> 27 (1): 39–54.</p>
 </div>
 <div>
 <p>———. 2010. <em>Networks: An Introduction</em>. Oxford University Press.</p>
@@ -1250,7 +1284,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Nguyen, Viet-An, Jordan Boyd-Graber, Philip Resnik, and Kristina Miler. 2015. “Tea Party in the House: A Hierarchical Ideal Point Topic Model and Its Application to Republican Legislators in the 112th Congress.” In <em>Association for Computational Linguistics</em>. Beijing, China.</p>
 </div>
 <div>
-<p>Niculae, Vlad, Srijan Kumar, Jordan Boyd-Graber, and Cristian Danescu-Niculescu-Mizil. 2015. “Linguistic Harbingers of Betrayal: A Case Study on an Online Strategy Game.” In <em>Association for Computational Linguistics</em>. Beijing, China. <a href="docs/2015_acl_diplomacy.pdf" class="uri">docs/2015_acl_diplomacy.pdf</a>.</p>
+<p>Niculae, Vlad, Srijan Kumar, Jordan Boyd-Graber, and Cristian Danescu-Niculescu-Mizil. 2015. “Linguistic Harbingers of Betrayal: A Case Study on an Online Strategy Game.” In <em>Association for Computational Linguistics</em>. Beijing, China. <a href="docs/2015_acl_diplomacy.pdf">docs/2015_acl_diplomacy.pdf</a>.</p>
 </div>
 <div>
 <p>Nielsen, Michael. 2012. <em>Reinventing Discovery: The New Era of Networked Science</em>. Princeton University Press.</p>
@@ -1259,16 +1293,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Nissenbaum, H. 2009. <em>Privacy in Context: Technology, Policy, and the Integrity of Social Life</em>. Stanford University Press.</p>
 </div>
 <div>
-<p>Nissenbaum, Helen. 2011. “A Contextual Approach to Privacy Online.” <em>Daedalus</em> 140 (4). MIT Press: 32–48.</p>
+<p>Nissenbaum, Helen. 2011. “A Contextual Approach to Privacy Online.” <em>Daedalus</em> 140 (4): 32–48.</p>
 </div>
 <div>
-<p>NLTK Project. n.d. “NLTK: The Natural Language Toolkit.” <a href="http://www.nltk.org" class="uri">http://www.nltk.org</a>. Accessed February 1, 2016.</p>
+<p>NLTK Project. n.d. “NLTK: The Natural Language Toolkit.” <a href="http://www.nltk.org">http://www.nltk.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Obe, Regina O., and Leo S. Hsu. 2015. <em>PostGIS in Action, 2nd Edition</em>. Manning Publications.</p>
 </div>
 <div>
-<p>Obstfeld, David. 2005. “Social Networks, the Tertius Iungens Orientation, and Involvement in Innovation.” <em>Administrative Science Quarterly</em> 50 (1). SAGE Publications: 100–130.</p>
+<p>Obstfeld, David. 2005. “Social Networks, the Tertius Iungens Orientation, and Involvement in Innovation.” <em>Administrative Science Quarterly</em> 50 (1): 100–130.</p>
 </div>
 <div>
 <p>Ohm, Paul. 2010. “Broken Promises of Privacy: Responding to the Surprising Failure of Anonymization.” <em>UCLA Law Review</em> 57: 1701.</p>
@@ -1277,22 +1311,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>———. 2014. “The Legal and Regulatory Framework: What Do the Rules Say About Data Analysis?” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Helen Nissenbaum, and Stefan Bender. Cambridge University Press.</p>
 </div>
 <div>
-<p>Olson, Judy M., and Cynthia A. Brewer. 1997. “An Evaluation of Color Selections to Accommodate Map Users with Color-Vision Impairments.” <em>Annals of the Association of American Geographers</em> 87 (1). Taylor &amp; Francis: 103–34.</p>
+<p>Olson, Judy M., and Cynthia A. Brewer. 1997. “An Evaluation of Color Selections to Accommodate Map Users with Color-Vision Impairments.” <em>Annals of the Association of American Geographers</em> 87 (1): 103–34.</p>
 </div>
 <div>
-<p>Ott, Myle, Yejin Choi, Claire Cardie, and Jeffrey T. Hancock. 2011. “Finding Deceptive Opinion Spam by Any Stretch of the Imagination.” In <em>Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies—Volume 1</em>, 309–19. HLT ’11. Stroudsburg, PA: Association for Computational Linguistics. <a href="http://dl.acm.org/citation.cfm?id=2002472.2002512" class="uri">http://dl.acm.org/citation.cfm?id=2002472.2002512</a>.</p>
+<p>Ott, Myle, Yejin Choi, Claire Cardie, and Jeffrey T. Hancock. 2011. “Finding Deceptive Opinion Spam by Any Stretch of the Imagination.” In <em>Proceedings of the 49th Annual Meeting of the Association for Computational Linguistics: Human Language Technologies—Volume 1</em>, 309–19. HLT ’11. Stroudsburg, PA: Association for Computational Linguistics. <a href="http://dl.acm.org/citation.cfm?id=2002472.2002512">http://dl.acm.org/citation.cfm?id=2002472.2002512</a>.</p>
 </div>
 <div>
-<p>Owen-Smith, Jason, and Walter W. Powell. 2003. “The Expanding Role of University Patenting in the Life Sciences: Assessing the Importance of Experience and Connectivity.” <em>Research Policy</em> 32 (9). Elsevier: 1695–1711.</p>
+<p>Owen-Smith, Jason, and Walter W. Powell. 2003. “The Expanding Role of University Patenting in the Life Sciences: Assessing the Importance of Experience and Connectivity.” <em>Research Policy</em> 32 (9): 1695–1711.</p>
 </div>
 <div>
-<p>———. 2004. “Knowledge Networks as Channels and Conduits: The Effects of Spillovers in the Boston Biotechnology Community.” <em>Organization Science</em> 15 (1). INFORMS: 5–21.</p>
+<p>———. 2004. “Knowledge Networks as Channels and Conduits: The Effects of Spillovers in the Boston Biotechnology Community.” <em>Organization Science</em> 15 (1): 5–21.</p>
 </div>
 <div>
 <p>Pang, Bo, and Lillian Lee. 2008. <em>Opinion Mining and Sentiment Analysis</em>. Paperback; Now Publishers.</p>
 </div>
 <div>
-<p>Park, Hae-Sang, and Chi-Hyuck Jun. 2009. “A Simple and Fast Algorithm for K-Medoids Clustering.” <em>Expert Systems with Applications</em> 36 (2). Elsevier: 3336–41.</p>
+<p>Park, Hae-Sang, and Chi-Hyuck Jun. 2009. “A Simple and Fast Algorithm for K-Medoids Clustering.” <em>Expert Systems with Applications</em> 36 (2): 3336–41.</p>
 </div>
 <div>
 <p>Paul, Michael, and Roxana Girju. 2010. “A Two-Dimensional Topic-Aspect Model for Discovering Multi-Faceted Topics.” In <em>Association for the Advancement of Artificial Intelligence</em>.</p>
@@ -1307,37 +1341,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Peters, Matthew, Mark Neumann, Mohit Iyyer, Matt Gardner, Christopher Clark, Kenton Lee, and Luke Zettlemoyer. 2018. “Deep Contextualized Word Representations.” In <em>Conference of the North American Chapter of the Association for Computational Linguistics</em>.</p>
 </div>
 <div>
-<p>Petrakos, George, Claudio Conversano, Gregory Farmakis, Francesco Mola, Roberta Siciliano, and Photis Stavropoulos. 2004. “New Ways of Specifying Data Edits.” <em>Journal of the Royal Statistical Society, Series A</em> 167 (2). Wiley Online Library: 249–74.</p>
+<p>Petrakos, George, Claudio Conversano, Gregory Farmakis, Francesco Mola, Roberta Siciliano, and Photis Stavropoulos. 2004. “New Ways of Specifying Data Edits.” <em>Journal of the Royal Statistical Society, Series A</em> 167 (2): 249–74.</p>
 </div>
 <div>
 <p>Plaisant, Catherine, Jesse Grosjean, and Benjamin B. Bederson. 2002. “SpaceTree: Supporting Exploration in Large Node Link Tree, Design Evolution and Empirical Evaluation.” In <em>IEEE Symposium on Information Visualization</em>, 57–64. IEEE.</p>
 </div>
 <div>
-<p>Plank, Barbara, Anders Søgaard, and Yoav Goldberg. 2016. “Multilingual Part-of-Speech Tagging with Bidirectional Long Short-Term Memory Models and Auxiliary Loss.” In <em>Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</em>, 412–18. Berlin, Germany: Association for Computational Linguistics. doi:<a href="https://doi.org/10.18653/v1/P16-2067">10.18653/v1/P16-2067</a>.</p>
+<p>Plank, Barbara, Anders Søgaard, and Yoav Goldberg. 2016. “Multilingual Part-of-Speech Tagging with Bidirectional Long Short-Term Memory Models and Auxiliary Loss.” In <em>Proceedings of the 54th Annual Meeting of the Association for Computational Linguistics (Volume 2: Short Papers)</em>, 412–18. Berlin, Germany: Association for Computational Linguistics. <a href="https://doi.org/10.18653/v1/P16-2067">https://doi.org/10.18653/v1/P16-2067</a>.</p>
 </div>
 <div>
 <p>Plumb, Gregory, Denali Molitor, and Ameet Talwalkar. 2018. “Model Agnostic Supervised Local Explanations.” Proceedings of the 32nd International Conference on Neural Information Processing Systems (NIPS 18). Curran Associates Inc., Red Hook, NY, USA, 2520–2529.</p>
 </div>
 <div>
-<p>PostGIS Project Steering Committee. n.d. “PostGIS Documentation.” <a href="http://postgis.net/documentation/" class="uri">http://postgis.net/documentation/</a>. Accessed December 1, 2015.</p>
+<p>PostGIS Project Steering Committee. n.d. “PostGIS Documentation.” <a href="http://postgis.net/documentation/">http://postgis.net/documentation/</a>. Accessed December 1, 2015.</p>
 </div>
 <div>
-<p>Potash, Eric, Joe Brew, Alexander Loewi, Subhabrata Majumdar, Andrew Reece, Joe Walsh, Eric Rozier, Emile Jorgenson, Raed Mansour, and Rayid Ghani. 2015. “Predictive Modeling for Public Health: Preventing Childhood Lead Poisoning.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 2039–47. KDD ’15. ACM. doi:<a href="https://doi.org/10.1145/2783258.2788629">10.1145/2783258.2788629</a>.</p>
+<p>Potash, Eric, Joe Brew, Alexander Loewi, Subhabrata Majumdar, Andrew Reece, Joe Walsh, Eric Rozier, Emile Jorgenson, Raed Mansour, and Rayid Ghani. 2015. “Predictive Modeling for Public Health: Preventing Childhood Lead Poisoning.” In <em>Proceedings of the 21th Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 2039–47. KDD ’15. ACM. <a href="https://doi.org/10.1145/2783258.2788629">https://doi.org/10.1145/2783258.2788629</a>.</p>
 </div>
 <div>
 <p>Powell, W. 2003. “Neither Market nor Hierarchy.” <em>Sociology of Organizations: Classic, Contemporary, and Critical Readings</em> 315: 104–17.</p>
 </div>
 <div>
-<p>Powell, Walter W., Douglas R. White, Kenneth W. Koput, and Jason Owen-Smith. 2005. “Network Dynamics and Field Evolution: The Growth of Interorganizational Collaboration in the Life Sciences.” <em>American Journal of Sociology</em> 110 (4). JSTOR: 1132–1205.</p>
+<p>Powell, Walter W., Douglas R. White, Kenneth W. Koput, and Jason Owen-Smith. 2005. “Network Dynamics and Field Evolution: The Growth of Interorganizational Collaboration in the Life Sciences.” <em>American Journal of Sociology</em> 110 (4): 1132–1205.</p>
 </div>
 <div>
 <p>Provost, Foster, and Tom Fawcett. 2013. <em>Data Science for Business: What You Need to Know About Data Mining and Data-Analytic Thinking</em>. O’Reilly Media.</p>
 </div>
 <div>
-<p>Puts, Marco, Piet Daas, and Ton de Waal. 2015. “Finding Errors in Big Data.” <em>Significance</em> 12 (3). Wiley Online Library: 26–29.</p>
+<p>Puts, Marco, Piet Daas, and Ton de Waal. 2015. “Finding Errors in Big Data.” <em>Significance</em> 12 (3): 26–29.</p>
 </div>
 <div>
-<p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. doi:<a href="https://doi.org/10.1109/5.18626">10.1109/5.18626</a>.</p>
+<p>Rabiner, Lawrence R. 1989. “A Tutorial on Hidden Markov Models and Selected Applications in Speech Recognition.” <em>Proceedings of the IEEE</em> 77 (2): 257–86. <a href="https://doi.org/10.1109/5.18626">https://doi.org/10.1109/5.18626</a>.</p>
 </div>
 <div>
 <p>Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” <em>Source Code for Biology and Medicine</em> 8 (1): 7.</p>
@@ -1352,13 +1386,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Reid, G., F. Zabala, and A. Holmberg. 2017. “Extending Tse to Administrative Data: A Quality Framework and Case Studies from Stats Nz.” <em>Journal of Official Statistics</em> 33 (2): 477–511.</p>
 </div>
 <div>
-<p>Reiter, Jerome P. 2012. “Statistical Approaches to Protecting Confidentiality for Microdata and Their Effects on the Quality of Statistical Inferences.” <em>Public Opinion Quarterly</em> 76 (1). AAPOR: 163–81.</p>
+<p>Reiter, Jerome P. 2012. “Statistical Approaches to Protecting Confidentiality for Microdata and Their Effects on the Quality of Statistical Inferences.” <em>Public Opinion Quarterly</em> 76 (1): 163–81.</p>
 </div>
 <div>
-<p>Ribeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. “‘Why Should I Trust You?’: Explaining the Predictions of Any Classifier.” In <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, ca, Usa, August 13-17, 2016</em>, 1135–44.</p>
+<p>Ribeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. “"Why Should I Trust You?": Explaining the Predictions of Any Classifier.” In <em>Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining, San Francisco, ca, Usa, August 13-17, 2016</em>, 1135–44.</p>
 </div>
 <div>
-<p>Richardson, Leonard. n.d. “Beautiful Soup.” <a href="http://www.crummy.com/software/BeautifulSoup/" class="uri">http://www.crummy.com/software/BeautifulSoup/</a>. Accessed February 1, 2016.</p>
+<p>Richardson, Leonard. n.d. “Beautiful Soup.” <a href="http://www.crummy.com/software/BeautifulSoup/">http://www.crummy.com/software/BeautifulSoup/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Rodolfa, K., E. Salomon, L. Haynes, I. Mendieta, J. Larson, and R. Ghani. 2020. “Predictive Fairness to Reduce Misdemeanor Recidivism Through Social Service Interventions.” In <em>Proceedings of the Acm Conference on Fairness, Accountability, and Transparency (Acm Fat*) 2020</em>.</p>
@@ -1373,28 +1407,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Sah, Shagan, Ameya Shringi, Raymond Ptucha, Aaron M. Burry, and Robert P. Loce. 2017. “Video Redaction: A Survey and Comparison of Enabling Technologies.” <em>Journal of Electronic Imaging</em> 26 (5): 1–14.</p>
 </div>
 <div>
-<p>Saket, Bahador, Paolo Simonetto, Stephen Kobourov, and Katy Börner. 2014. “Node, Node-Link, and Node-Link-Group Diagrams: An Evaluation.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12). IEEE: 2231–40.</p>
+<p>Saket, Bahador, Paolo Simonetto, Stephen Kobourov, and Katy Börner. 2014. “Node, Node-Link, and Node-Link-Group Diagrams: An Evaluation.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 20 (12): 2231–40.</p>
 </div>
 <div>
 <p>Salton, Gerard. 1968. <em>Automatic Information Organization and Retrieval.</em> McGraw-Hill.</p>
 </div>
 <div>
-<p>Samuel, Arthur L. 1959. “Some Studies in Machine Learning Using the Game of Checkers.” <em>IBM Journal of Research and Development</em> 3 (3). IBM: 210–29.</p>
+<p>Samuel, Arthur L. 1959. “Some Studies in Machine Learning Using the Game of Checkers.” <em>IBM Journal of Research and Development</em> 3 (3): 210–29.</p>
 </div>
 <div>
-<p>Sandhaus, Evan. 2008. “The New York Times Annotated Corpus.” Philadelphia: <em>Linguistic Data Consortium</em>, <a href="http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp? catalogId=LDC2008T19" class="uri">http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp? catalogId=LDC2008T19</a>.</p>
+<p>Sandhaus, Evan. 2008. “The New York Times Annotated Corpus.” Philadelphia: <em>Linguistic Data Consortium</em>, <a href="http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp? catalogId=LDC2008T19">http://www.ldc.upenn.edu/Catalog/CatalogEntry.jsp? catalogId=LDC2008T19</a>.</p>
 </div>
 <div>
-<p>Saraiya, Purvi, Chris North, and Karen Duca. 2005. “An Insight-Based Methodology for Evaluating Bioinformatics Visualizations.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 11 (4). IEEE: 443–56.</p>
-</div>
-<div>
-<p>Schafer, Joseph L, and John W Graham. 2002. “Missing Data: Our View of the State of the Art.” <em>Psychological Methods</em> 7 (2). American Psychological Association: 147.</p>
+<p>Saraiya, Purvi, Chris North, and Karen Duca. 2005. “An Insight-Based Methodology for Evaluating Bioinformatics Visualizations.” <em>IEEE Transactions on Visualization and Computer Graphics</em> 11 (4): 443–56.</p>
 </div>
 <div>
 <p>Schafer, Joseph L. 1997. <em>Analysis of Incomplete Multivariate Data</em>. CRC Press.</p>
 </div>
 <div>
-<p>Schermann, Michael, Holmer Hemsen, Christoph Buchmüller, Till Bitter, Helmut Krcmar, Volker Markl, and Thomas Hoeren. 2014. “Big Data.” <em>Business &amp; Information Systems Engineering</em> 6 (5). Springer: 261–66.</p>
+<p>Schafer, Joseph L, and John W Graham. 2002. “Missing Data: Our View of the State of the Art.” <em>Psychological Methods</em> 7 (2): 147.</p>
+</div>
+<div>
+<p>Schermann, Michael, Holmer Hemsen, Christoph Buchmüller, Till Bitter, Helmut Krcmar, Volker Markl, and Thomas Hoeren. 2014. “Big Data.” <em>Business &amp; Information Systems Engineering</em> 6 (5): 261–66.</p>
 </div>
 <div>
 <p>Scheuren, Fritz, and William E. Winkler. 1993. “Regression Analysis of Data Files That Are Computer Matched.” <em>Survey Methodology</em> 19 (1): 39–58.</p>
@@ -1409,7 +1443,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>———. 2016. “German Record Linkage Center.”</p>
 </div>
 <div>
-<p>Schnell, Rainer, Tobias Bachteler, and Jörg Reiher. 2009. “Privacy-Preserving Record Linkage Using Bloom Filters.” <em>BMC Medical Informatics and Decision Making</em> 9 (1). BioMed Central Ltd: 41.</p>
+<p>Schnell, Rainer, Tobias Bachteler, and Jörg Reiher. 2009. “Privacy-Preserving Record Linkage Using Bloom Filters.” <em>BMC Medical Informatics and Decision Making</em> 9 (1): 41.</p>
 </div>
 <div>
 <p>Schoenman, Julie A. 2012. “The Concentration of Health Care Spending.” NIHCM Foundation Data Brief. National Institute for Health Care Management.</p>
@@ -1421,85 +1455,88 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Scott, Steven L., Alexander W. Blocker, Fernando V. Bonassi, H. Chipman, E. George, and R. McCulloch. 2013. “Bayes and Big Data: The consensus Monte Carlo Algorithm.” In <em>EFaBBayes 250 Conference</em>. Vol. 16.</p>
 </div>
 <div>
-<p>Sesame. n.d. “Sesame RDF Triple Store.” <a href="http://rdf4j.org" class="uri">http://rdf4j.org</a>. Accessed February 1, 2016.</p>
+<p>Sesame. n.d. “Sesame RDF Triple Store.” <a href="http://rdf4j.org">http://rdf4j.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 Acm/Ieee Conference on Supercomputing</em>, 230–41. ACM. doi:<a href="https://doi.org/10.1145/125826.125954">10.1145/125826.125954</a>.</p>
+<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 Acm/Ieee Conference on Supercomputing</em>, 230–41. ACM. <a href="https://doi.org/10.1145/125826.125954">https://doi.org/10.1145/125826.125954</a>.</p>
 </div>
 <div>
-<p>Severance, Charles. 2013. “Python for Informatics: Exploring Information.” <a href="http://www.pythonlearn.com/book.php" class="uri">http://www.pythonlearn.com/book.php</a>; CreateSpace.</p>
+<p>Severance, Charles. 2013. “Python for Informatics: Exploring Information.” <a href="http://www.pythonlearn.com/book.php">http://www.pythonlearn.com/book.php</a>; CreateSpace.</p>
 </div>
 <div>
 <p>Shawe-Taylor, John, and Nello Cristianini. 2004. <em>Kernel Methods for Pattern Analysis</em>. Cambridge University Press.</p>
 </div>
 <div>
-<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52. Elsevier: 167–79.</p>
+<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52: 167–79.</p>
 </div>
 <div>
-<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1). doi:<a href="https://doi.org/10.29012/jpc.v8i1">10.29012/jpc.v8i1</a>.</p>
+<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1). <a href="https://doi.org/10.29012/jpc.v8i1">https://doi.org/10.29012/jpc.v8i1</a>.</p>
 </div>
 <div>
-<p>Shneiderman, Ben. 1992. “Tree Visualization with Tree-Maps: 2-D Space-Filling Approach.” <em>ACM Transactions on Graphics</em> 11 (1). ACM: 92–99.</p>
+<p>Shneiderman, Ben. 1992. “Tree Visualization with Tree-Maps: 2-D Space-Filling Approach.” <em>ACM Transactions on Graphics</em> 11 (1): 92–99.</p>
 </div>
 <div>
 <p>———. 2008. “Extreme Visualization: Squeezing a Billion Records into a Million Pixels.” In <em>Proceedings of the 2008 Acm Sigmod International Conference on Management of Data</em>, 3–12. ACM.</p>
 </div>
 <div>
-<p>Shneiderman, Ben, and Catherine Plaisant. 2015. “Sharpening Analytic Focus to Cope with Big Data Volume and Variety.” <em>Computer Graphics and Applications, IEEE</em> 35 (3). IEEE: 10–14.</p>
+<p>Shneiderman, Ben, and Catherine Plaisant. 2015. “Sharpening Analytic Focus to Cope with Big Data Volume and Variety.” <em>Computer Graphics and Applications, IEEE</em> 35 (3): 10–14.</p>
 </div>
 <div>
-<p>Sies, Helmut. 1988. “A New Parameter for Sex Education.” <em>Nature</em> 332 (495). Nature Publishing Group.</p>
+<p>Sies, Helmut. 1988. “A New Parameter for Sex Education.” <em>Nature</em> 332 (495).</p>
 </div>
 <div>
 <p>Silberschatz, Abraham, Henry F. Korth, and S. Sudarshan. 2010. <em>Database System Concepts, 6th Edition</em>. McGraw-Hill.</p>
 </div>
 <div>
-<p>Smola, Alex J., and Bernhard Schölkopf. 2004. “A Tutorial on Support Vector Regression.” <em>Statistics and Computing</em> 14 (3). Hingham, MA: Kluwer Academic Publishers: 199–222. doi:<a href="https://doi.org/10.1023/B:STCO.0000035301.49549.88">10.1023/B:STCO.0000035301.49549.88</a>.</p>
+<p>Smola, Alex J., and Bernhard Schölkopf. 2004. “A Tutorial on Support Vector Regression.” <em>Statistics and Computing</em> 14 (3): 199–222. <a href="https://doi.org/10.1023/B:STCO.0000035301.49549.88">https://doi.org/10.1023/B:STCO.0000035301.49549.88</a>.</p>
 </div>
 <div>
 <p>Snow, John. 1855. <em>On the Mode of Communication of Cholera</em>. John Churchill.</p>
 </div>
 <div>
-<p>Solid IT. n.d. “DB Engines.” <a href="http://db-engines.com/en/" class="uri">http://db-engines.com/en/</a>. Accessed February 1, 2016.</p>
+<p>Solid IT. n.d. “DB Engines.” <a href="http://db-engines.com/en/">http://db-engines.com/en/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>SOSP. n.d. “Science of Science Policy.” <a href="http://www.scienceofsciencepolicy.net/" class="uri">http://www.scienceofsciencepolicy.net/</a>. Accessed February 1, 2016.</p>
+<p>SOSP. n.d. “Science of Science Policy.” <a href="http://www.scienceofsciencepolicy.net/">http://www.scienceofsciencepolicy.net/</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1). AAPOR: 125–33.</p>
+<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1): 125–33.</p>
 </div>
 <div>
-<p>Stanford. n.d. “Stanford CoreNLP—a Suite of Core NLP Tools.” <a href="http://nlp.stanford.edu/software/corenlp.shtml" class="uri">http://nlp.stanford.edu/software/corenlp.shtml</a>. Accessed February 1, 2016.</p>
+<p>Stanford. n.d. “Stanford CoreNLP—a Suite of Core NLP Tools.” <a href="http://nlp.stanford.edu/software/corenlp.shtml">http://nlp.stanford.edu/software/corenlp.shtml</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Stanford Visualization Group. n.d. “Dorling Cartograms in ProtoVis.” <a href="http://mbostock.github.io/protovis/ex/cartogram.html" class="uri">http://mbostock.github.io/protovis/ex/cartogram.html</a>. Accessed January 10, 2015.</p>
+<p>Stanford Visualization Group. n.d. “Dorling Cartograms in ProtoVis.” <a href="http://mbostock.github.io/protovis/ex/cartogram.html">http://mbostock.github.io/protovis/ex/cartogram.html</a>. Accessed January 10, 2015.</p>
 </div>
 <div>
 <p>Stanton, Mark W, and MK Rutherford. 2006. <em>The High Concentration of Us Health Care Expenditures</em>. Agency for Healthcare Research; Quality.</p>
 </div>
 <div>
-<p>Stasko, John, Carsten Görg, and Zhicheng Liu. 2008. “Jigsaw: Supporting Investigative Analysis Through Interactive Visualization.” <em>Information Visualization</em> 7 (2). SAGE Publications: 118–32.</p>
+<p>Stasko, John, Carsten Görg, and Zhicheng Liu. 2008. “Jigsaw: Supporting Investigative Analysis Through Interactive Visualization.” <em>Information Visualization</em> 7 (2): 118–32.</p>
 </div>
 <div>
 <p>Steorts, Rebecca C, Rob Hall, and Stephen E Fienberg. 2014. “SMERED: A Bayesian Approach to Graphical Record Linkage and de-Duplication.” Preprint, arXiv 1403.0211.</p>
 </div>
 <div>
-<p>Stephens-Davidowitz, S., and H. Varian. 2015. “A Hands-on Guide to Google Data.” <a href="http://people.ischool.berkeley.edu/~hal/Papers/2015/primer.pdf" class="uri">http://people.ischool.berkeley.edu/~hal/Papers/2015/primer.pdf</a>. Accessed October 12.</p>
+<p>Stephens-Davidowitz, S., and H. Varian. 2015. “A Hands-on Guide to Google Data.” <a href="http://people.ischool.berkeley.edu/~hal/Papers/2015/primer.pdf">http://people.ischool.berkeley.edu/~hal/Papers/2015/primer.pdf</a>. Accessed October 12.</p>
 </div>
 <div>
-<p>Stock, James H., and Mark W. Watson. 2002. “Forecasting Using Principal Components from a Large Number of Predictors.” <em>Journal of the American Statistical Association</em> 97 (460). Taylor &amp; Francis: 1167–79.</p>
+<p>Stock, James H., and Mark W. Watson. 2002. “Forecasting Using Principal Components from a Large Number of Predictors.” <em>Journal of the American Statistical Association</em> 97 (460): 1167–79.</p>
+</div>
+<div>
+<p>Stopczynski, Arkadiusz, Vedran Sekara, Piotr Sapiezynski, Andrea Cuttone, Mette My Madsen, Jakob Eg Larsen, and Sune Lehmann. 2014. “Measuring Large-Scale Social Networks with High Resolution.” <em>PloS One</em> 9 (4).</p>
 </div>
 <div>
 <p>Strandburg, Katherine J. 2014. “Monitoring, Datafication and Consent: Legal Approaches to Privacy in the Big Data Context.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div>
-<p>Strasser, Carly. 2014. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/" class="uri">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
+<p>Strasser, Carly. n.d. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
 </div>
 <div>
-<p>Strauch, Christof. 2009. “NoSQL Databases.” <a href="http://www.christof-strauch.de/nosqldbs.pdf" class="uri">http://www.christof-strauch.de/nosqldbs.pdf</a>.</p>
+<p>Strauch, Christof. 2009. “NoSQL Databases.” <a href="http://www.christof-strauch.de/nosqldbs.pdf">http://www.christof-strauch.de/nosqldbs.pdf</a>.</p>
 </div>
 <div>
-<p>Stuart, Elizabeth A. 2010. “Matching Methods for Causal Inference: A Review and a Look Forward.” <em>Statistical Science</em> 25 (1). NIH Public Access: 1.</p>
+<p>Stuart, Elizabeth A. 2010. “Matching Methods for Causal Inference: A Review and a Look Forward.” <em>Statistical Science</em> 25 (1): 1.</p>
 </div>
 <div>
 <p>Sweeney, Latanya. 2001. “Computational Disclosure Control: A Primer on Data Privacy Protection.” MIT.</p>
@@ -1508,37 +1545,37 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Szalay, Alexander S., Jim Gray, Ani R. Thakar, Peter Z. Kunszt, Tanu Malik, Jordan Raddick, Christopher Stoughton, and Jan vandenBerg. 2002. “The SDSS Skyserver: Public Access to the Sloan Digital Sky Server Data.” In <em>Proceedings of the 2002 Acm Sigmod International Conference on Management of Data</em>, 570–81. ACM.</p>
 </div>
 <div>
-<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6). Nature Publishing Group: 443–44.</p>
+<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6): 443–44.</p>
 </div>
 <div>
-<p>Tanner, Adam. 2013. “Harvard Professor Re-Identifies Anonymous Volunteers in DNA Study.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39" class="uri">http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39</a>.</p>
+<p>Tanner, Adam. n.d. “Harvard Professor Re-Identifies Anonymous Volunteers in DNA Study.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39">http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/#6cc7f6b43e39</a>.</p>
 </div>
 <div>
-<p>TDP. n.d. “Transactions on Data Privacy.” <a href="http://www.tdp.cat/" class="uri">http://www.tdp.cat/</a>. Accessed April 16, 2016.</p>
-</div>
-<div>
-<p>Tennekes, M., E. de Jonge, and P. Daas. 2012. “Innovative Visual Tools for Data Editing.” Presented at the United Nations Economic Commission for Europe Work Session on Statistical Data. Available online at <a href="http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf" class="uri">http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf</a>.</p>
+<p>TDP. n.d. “Transactions on Data Privacy.” <a href="http://www.tdp.cat/">http://www.tdp.cat/</a>. Accessed April 16, 2016.</p>
 </div>
 <div>
 <p>Tennekes, Martijn, and Edwin de Jonge. 2011. “Top-down Data Analysis with Treemaps.” In <em>Proceedings of the International Conference on Imaging Theory and Applications and International Conference on Information Visualization Theory and Applications</em>, 236–41. SciTePress.</p>
 </div>
 <div>
-<p>Tennekes, Martijn, Edwin de Jonge, and Piet J. H. Daas. 2013. “Visualizing and Inspecting Large Datasets with Tableplots.” <em>Journal of Data Science</em> 11 (1). ???????? 43–58.</p>
+<p>Tennekes, Martijn, Edwin de Jonge, and Piet J. H. Daas. 2013. “Visualizing and Inspecting Large Datasets with Tableplots.” <em>Journal of Data Science</em> 11 (1): 43–58.</p>
 </div>
 <div>
-<p>Thompson, William W., Lorraine Comanor, and David K. Shay. 2006. “Epidemiology of Seasonal Influenza: Use of Surveillance Data and Statistical Models to Estimate the Burden of Disease.” <em>Journal of Infectious Diseases</em> 194 (Supplement 2). Oxford University Press: S82–S91.</p>
+<p>Tennekes, M., E. de Jonge, and P. Daas. 2012. “Innovative Visual Tools for Data Editing.” Presented at the United Nations Economic Commission for Europe Work Session on Statistical Data. Available online at <a href="http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf">http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf</a>.</p>
 </div>
 <div>
-<p>Tibshirani, Robert. 1996. “Regression Shrinkage and Selection via the Lasso.” <em>Journal of the Royal Statistical Society, Series B</em>. JSTOR, 267–88.</p>
+<p>Thompson, William W., Lorraine Comanor, and David K. Shay. 2006. “Epidemiology of Seasonal Influenza: Use of Surveillance Data and Statistical Models to Estimate the Burden of Disease.” <em>Journal of Infectious Diseases</em> 194 (Supplement 2): S82–S91.</p>
+</div>
+<div>
+<p>Tibshirani, Robert. 1996. “Regression Shrinkage and Selection via the Lasso.” <em>Journal of the Royal Statistical Society, Series B</em>, 267–88.</p>
 </div>
 <div>
 <p>Trewin, D., A. Andersen, T. Beridze, L. Biggeri, I. Fellegi, and T. Toczynski. 2007. “Managing Statistical Confidentiality and Microdata Access: Principles and Guidelines of Good Practice.” Geneva: Conference of European Statisticians, United Nations Economic Commision for Europe.</p>
 </div>
 <div>
-<p>TSE15. n.d. “2015 International Total Survey Error Conference Website.” <a href="https://www.tse15.org" class="uri">https://www.tse15.org</a>. Accessed February 1, 2016.</p>
+<p>TSE15. n.d. “2015 International Total Survey Error Conference Website.” <a href="https://www.tse15.org">https://www.tse15.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. doi:<a href="https://doi.org/10.1145/2467696.2467706">10.1145/2467696.2467706</a>.</p>
+<p>Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. “Automatic Tag Recommendation for Metadata Annotation Using Probabilistic Topic Modeling.” In <em>Proceedings of the 13th Acm/Ieee-Cs Joint Conference on Digital Libraries</em>, 239–48. JCDL ’13. ACM. <a href="https://doi.org/10.1145/2467696.2467706">https://doi.org/10.1145/2467696.2467706</a>.</p>
 </div>
 <div>
 <p>Tufte, Edward. 2001. <em>The Visual Display of Quantitative Information, 2nd Edition</em>. Cheshire, CT: Graphics Press.</p>
@@ -1547,10 +1584,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>———. 2006. <em>Beautiful Evidence, 2nd Edition</em>. Cheshire, CT: Graphics Press.</p>
 </div>
 <div>
-<p>United Nations Economic Commission for Europe. n.d. “Statistical confidentiality and disclosure protection.” <a href="http://www.unece.org/stats/mos/meth/confidentiality.html" class="uri">http://www.unece.org/stats/mos/meth/confidentiality.html</a>. Accessed April 16, 2016.</p>
+<p>Ugander, Johan, Brian Karrer, Lars Backstrom, and Cameron Marlow. 2011. “The Anatomy of the Facebook Social Graph.” <em>arXiv Preprint arXiv:1111.4503</em>.</p>
 </div>
 <div>
-<p>University of Oxford. 2006. “British National Corpus.” <a href="http://www.natcorp.ox.ac.uk/" class="uri">http://www.natcorp.ox.ac.uk/</a>.</p>
+<p>United Nations Economic Commission for Europe. n.d. “Statistical confidentiality and disclosure protection.” <a href="http://www.unece.org/stats/mos/meth/confidentiality.html">http://www.unece.org/stats/mos/meth/confidentiality.html</a>. Accessed April 16, 2016.</p>
+</div>
+<div>
+<p>University of Oxford. 2006. “British National Corpus.” <a href="http://www.natcorp.ox.ac.uk/">http://www.natcorp.ox.ac.uk/</a>.</p>
 </div>
 <div>
 <p>Ustun, Berk, and Cynthia Rudin. 2016. “Supersparse Linear Integer Models for Optimized Medical Scoring Systems.” <em>Machine Learning</em> 102: 349–91.</p>
@@ -1562,16 +1602,16 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Valliant, Richard, Jill A Dever, and Frauke Kreuter. 2013. <em>Practical Tools for Designing and Weighting Survey Samples</em>. Springer.</p>
 </div>
 <div>
-<p>Varian, Hal R. 2014. “Big Data: New Tricks for Econometrics.” <em>Journal of Economic Perspectives</em> 28 (2): 3–28. doi:<a href="https://doi.org/10.1257/jep.28.2.3">10.1257/jep.28.2.3</a>.</p>
+<p>Varian, Hal R. 2014. “Big Data: New Tricks for Econometrics.” <em>Journal of Economic Perspectives</em> 28 (2): 3–28. <a href="https://doi.org/10.1257/jep.28.2.3">https://doi.org/10.1257/jep.28.2.3</a>.</p>
 </div>
 <div>
-<p>Ventura, Samuel L., Rebecca Nugent, and Erica R. H. Fuchs. 2015. “Seeing the Non-Stars:(Some) Sources of Bias in Past Disambiguation Approaches and a New Public Tool Leveraging Labeled Records.” <em>Research Policy</em>. Elsevier.</p>
+<p>Ventura, Samuel L., Rebecca Nugent, and Erica R. H. Fuchs. 2015. “Seeing the Non-Stars:(Some) Sources of Bias in Past Disambiguation Approaches and a New Public Tool Leveraging Labeled Records.” <em>Research Policy</em>.</p>
 </div>
 <div>
 <p>Vigen, Tyler. 2015. <em>Spurious Correlations</em>. Hachette Books.</p>
 </div>
 <div>
-<p>———. n.d. “Spurious Correlations.” <a href="http://www.tylervigen.com/spurious-correlations" class="uri">http://www.tylervigen.com/spurious-correlations</a>. Accessed February 1, 2016.</p>
+<p>———. n.d. “Spurious Correlations.” <a href="http://www.tylervigen.com/spurious-correlations">http://www.tylervigen.com/spurious-correlations</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
 <p>Voigt, Rob, Nicholas P. Camp, Vinodkumar Prabhakaran, William L. Hamilton, Rebecca C. Hetey, Camilla M. Griffiths, David Jurgens, Dan Jurafsky, and Jennifer L. Eberhardt. 2017. “Language from Police Body Camera Footage Shows Racial Disparities in Officer Respect.” <em>Proceedings of the National Academy of Sciences</em> 114 (25): 6521–6.</p>
@@ -1589,58 +1629,61 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Wang, Yi, Hongjie Bai, Matt Stanton, Wen-Yen Chen, and Edward Y. Chang. 2009. “PLDA: Parallel Latent Dirichlet Allocation for Large-Scale Applications.” In <em>International Conference on Algorithmic Aspects in Information and Management</em>.</p>
 </div>
 <div>
-<p>Ward, Karl J. n.d. “Crossref REST API.” <a href="http://api.crossref.org" class="uri">http://api.crossref.org</a>. Accessed February 1, 2016.</p>
+<p>Ward, Karl J. n.d. “Crossref REST API.” <a href="http://api.crossref.org">http://api.crossref.org</a>. Accessed February 1, 2016.</p>
 </div>
 <div>
-<p>Ward, Kenneth Church. 2017. “Word2Vec.” <em>Natural Language Engineering</em> 23 (1). Cambridge University Press: 155–62. doi:<a href="https://doi.org/10.1017/S1351324916000334">10.1017/S1351324916000334</a>.</p>
+<p>Ward, Kenneth Church. 2017. “Word2Vec.” <em>Natural Language Engineering</em> 23 (1): 155–62. <a href="https://doi.org/10.1017/S1351324916000334">https://doi.org/10.1017/S1351324916000334</a>.</p>
 </div>
 <div>
 <p>Ward, Matthew O., Georges Grinstein, and Daniel Keim. 2010. <em>Interactive Data Visualization: Foundations, Techniques, and Applications</em>. CRC Press.</p>
 </div>
 <div>
-<p>Weinberg, Bruce A., Jason Owen-Smith, Rebecca F Rosen, Lou Schwarz, Barbara McFadden Allen, Roy E. Weiss, and Julia Lane. 2014. “Science Funding and Short-Term Economic Activity.” <em>Science</em> 344 (6179). NIH Public Access: 41.</p>
+<p>Weinberg, Bruce A., Jason Owen-Smith, Rebecca F Rosen, Lou Schwarz, Barbara McFadden Allen, Roy E. Weiss, and Julia Lane. 2014. “Science Funding and Short-Term Economic Activity.” <em>Science</em> 344 (6179): 41.</p>
 </div>
 <div>
 <p>Whang, Steven Euijong, David Menestrina, Georgia Koutrika, Martin Theobald, and Hector Garcia-Molina. 2009. “Entity Resolution with Iterative Blocking.” In <em>Proceedings of the 2009 Acm Sigmod International Conference on Management of Data</em>, 219–32. ACM.</p>
 </div>
 <div>
-<p>White, Harrison C., Scott A. Boorman, and Ronald L. Breiger. 1976. “Social Structure from Multiple Networks. I. Block Models of Roles and Positions.” <em>American Journal of Sociology</em>. JSTOR, 730–80.</p>
+<p>White, Harrison C., Scott A. Boorman, and Ronald L. Breiger. 1976. “Social Structure from Multiple Networks. I. Block Models of Roles and Positions.” <em>American Journal of Sociology</em>, 730–80.</p>
 </div>
 <div>
 <p>Wick, Michael, Sameer Singh, Harshal Pandya, and Andrew McCallum. 2013. “A Joint Model for Discovering and Linking Entities.” In <em>Proceedings of the 2013 Workshop on Automated Knowledge Base Construction</em>, 67–72. ACM.</p>
 </div>
 <div>
-<p>Wikipedia. n.d. “Representational State Transfer.” <a href="https://en.wikipedia.org/wiki/Representational_state_transfer" class="uri">https://en.wikipedia.org/wiki/Representational_state_transfer</a>. Accessed January 10, 2016.</p>
+<p>Wikipedia. n.d. “Representational State Transfer.” <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">https://en.wikipedia.org/wiki/Representational_state_transfer</a>. Accessed January 10, 2016.</p>
 </div>
 <div>
 <p>Wilbanks, John. 2014. “Portable Approaches to Informed Consent and Open Data.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
 <div>
-<p>Winkler, William E. 2009. “Record Linkage.” In <em>Handbook of Statistics 29a, Sample Surveys: Design, Methods and Applications</em>, edited by D. Pfeffermann and C. R. Rao, 351–80. Elsevier.</p>
+<p>Winkler, William E. 2009. “Record Linkage.” In <em>Handbook of Statistics 29A, Sample Surveys: Design, Methods and Applications</em>, edited by D. Pfeffermann and C. R. Rao, 351–80. Elsevier.</p>
 </div>
 <div>
-<p>———. 2014. “Matching and Record Linkage.” <em>Wiley Interdisciplinary Reviews: Computational Statistics</em> 6 (5). John Wiley &amp; Sons, Inc.: 313–25. doi:<a href="https://doi.org/10.1002/wics.1317">10.1002/wics.1317</a>.</p>
+<p>———. 2014. “Matching and Record Linkage.” <em>Wiley Interdisciplinary Reviews: Computational Statistics</em> 6 (5): 313–25. <a href="https://doi.org/10.1002/wics.1317">https://doi.org/10.1002/wics.1317</a>.</p>
 </div>
 <div>
 <p>Wongsuphasawat, Krist, and Jimmy Lin. 2014. “Using Visualizations to Monitor Changes and Harvest Insights from a Global-Scale Logging Infrastructure at Twitter.” In <em>Proceedings of the Ieee Conference on Visual Analytics Science and Technology</em>, 113–22. IEEE.</p>
 </div>
 <div>
-<p>Wu, Xindong, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, et al. 2008. “Top 10 Algorithms in Data Mining.” <em>Knowledge and Information Systems</em> 14 (1). Springer: 1–37.</p>
+<p>Wu, Xindong, Vipin Kumar, J. Ross Quinlan, Joydeep Ghosh, Qiang Yang, Hiroshi Motoda, Geoffrey J. McLachlan, et al. 2008. “Top 10 Algorithms in Data Mining.” <em>Knowledge and Information Systems</em> 14 (1): 1–37.</p>
 </div>
 <div>
-<p>Wuchty, Stefan, Benjamin F Jones, and Brian Uzzi. 2007. “The Increasing Dominance of Teams in Production of Knowledge.” <em>Science</em> 316 (5827). American Association for the Advancement of Science: 1036–9.</p>
+<p>Wuchty, Stefan, Benjamin F Jones, and Brian Uzzi. 2007. “The Increasing Dominance of Teams in Production of Knowledge.” <em>Science</em> 316 (5827): 1036–9.</p>
 </div>
 <div>
-<p>Yates, Dave, and Scott Paquette. 2010. “Emergency Knowledge Management and Social Media Technologies: A Case Study of the 2010 Haitian Earthquake.” In <em>Proceedings of the 73rd Asis&amp;T Annual Meeting on Navigating Streams in an Information Ecosystem - Volume 47</em>, 42:1–42:9. ASIS&amp;T ’10. Silver Springs, MD: American Society for Information Science. <a href="http://dl.acm.org/citation.cfm?id=1920331.1920391" class="uri">http://dl.acm.org/citation.cfm?id=1920331.1920391</a>.</p>
+<p>Yates, Dave, and Scott Paquette. 2010. “Emergency Knowledge Management and Social Media Technologies: A Case Study of the 2010 Haitian Earthquake.” In <em>Proceedings of the 73rd Asis&amp;T Annual Meeting on Navigating Streams in an Information Ecosystem - Volume 47</em>, 42:1–42:9. ASIS&amp;T ’10. Silver Springs, MD: American Society for Information Science. <a href="http://dl.acm.org/citation.cfm?id=1920331.1920391">http://dl.acm.org/citation.cfm?id=1920331.1920391</a>.</p>
 </div>
 <div>
 <p>Yost, Beth, Yonca Haciahmetoglu, and Chris North. 2007. “Beyond Visual Acuity: The Perceptual Scalability of Information Visualizations for Large Displays.” In <em>Proceedings of the Sigchi Conference on Human Factors in Computing Systems</em>, 101–10. ACM.</p>
 </div>
 <div>
-<p>Z., Zygmunt. n.d. “Machine Learning Courses Online.” <a href="http://fastml.com/machine-learning-courses-online" class="uri">http://fastml.com/machine-learning-courses-online</a>, January 7, 2013.</p>
+<p>Z., Zygmunt. n.d. “Machine Learning Courses Online.” <a href="http://fastml.com/machine-learning-courses-online">http://fastml.com/machine-learning-courses-online</a>, January 7, 2013.</p>
 </div>
 <div>
-<p>Zayatz, Laura. 2007. “Disclosure Avoidance Practices and Research at the US Census Bureau: An Update.” <em>Journal of Official Statistics</em> 23 (2). Statistics Sweden (SCB): 253.</p>
+<p>Zachary, W. W. 1977. “An Information Flow Model for Conflict and Fission in Small Groups.” <em>Journal of Anthropological Research</em> 33 (4): 452–73.</p>
+</div>
+<div>
+<p>Zayatz, Laura. 2007. “Disclosure Avoidance Practices and Research at the US Census Bureau: An Update.” <em>Journal of Official Statistics</em> 23 (2): 253.</p>
 </div>
 <div>
 <p>Zeng, Qing T., Doug Redd, Thomas C. Rindflesch, and Jonathan R. Nebeker. 2012. “Synonym, Topic Model and Predicate-Based Query Expansion for Retrieving Clinical Documents.” In <em>American Medical Informatics Association Annual Symposium</em>.</p>
@@ -1652,13 +1695,104 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Zhu, Jun, Ning Chen, Hugh Perkins, and Bo Zhang. 2013. “Gibbs Max-Margin Topic Models with Fast Sampling Algorithms.” In <em>Proceedings of the International Conference of Machine Learning</em>.</p>
 </div>
 <div>
-<p>Zhu, Xiaojin. 2008. “Semi-Supervised Learning Literature Survey.” <a href="http://pages.cs.wisc.edu/~jerryzhu/pub/ssl_survey.pdf" class="uri">http://pages.cs.wisc.edu/~jerryzhu/pub/ssl_survey.pdf</a>.</p>
+<p>Zhu, Xiaojin. 2008. “Semi-Supervised Learning Literature Survey.” <a href="http://pages.cs.wisc.edu/~jerryzhu/pub/ssl_survey.pdf">http://pages.cs.wisc.edu/~jerryzhu/pub/ssl_survey.pdf</a>.</p>
 </div>
 <div>
-<p>Zolas, Nikolas, Nathan Goldschlag, Ron Jarmin, Paula Stephan, Jason Owen-Smith, Rebecca F Rosen, Barbara McFadden Allen, Bruce A Weinberg, and Julia Lane. 2015. “Wrapping It up in a Person: Examining Employment and Earnings Outcomes for Ph.D. Recipients.” <em>Science</em> 350 (6266). American Association for the Advancement of Science: 1367–71.</p>
+<p>Zolas, Nikolas, Nathan Goldschlag, Ron Jarmin, Paula Stephan, Jason Owen-Smith, Rebecca F Rosen, Barbara McFadden Allen, Bruce A Weinberg, and Julia Lane. 2015. “Wrapping It up in a Person: Examining Employment and Earnings Outcomes for Ph.D. Recipients.” <em>Science</em> 350 (6266): 1367–71.</p>
 </div>
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -1745,11 +1879,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1757,12 +1893,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1774,6 +1909,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -1790,7 +1929,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))

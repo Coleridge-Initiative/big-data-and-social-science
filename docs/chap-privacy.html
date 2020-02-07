@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 12 Privacy and Confidentiality | Big Data and Social Science</title>
   <meta name="description" content="Chapter 12 Privacy and Confidentiality | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 12 Privacy and Confidentiality | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -58,41 +61,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -393,109 +421,513 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="chap:privacy" class="section level1">
 <h1><span class="header-section-number">Chapter 12</span> Privacy and Confidentiality</h1>
 <p><strong>Stefan Bender, Ron Jarmin, Frauke Kreuter, and Julia Lane</strong></p>
-<p>This chapter addresses the issue that sits at the core of any study of human beings—privacy and confidentiality. In a new field, like the one covered in this book, it is critical that many researchers have access to the data so that work can be replicated and built upon—that there be a scientific basis to data science. Yet the rules that social scientists have traditionally used for survey data, namely anonymity and informed consent, no longer apply when data are collected in the wild. This concluding chapter identifies the issues that must be addressed for responsible and ethical research to take place.</p>
+<p>This chapter addresses the issue that sits at the core of any study of
+human beings—privacy and confidentiality. In a new field, like the one
+covered in this book, it is critical that many researchers have access
+to the data so that work can be replicated and built upon—that there
+be a scientific basis to data science. Yet the rules that social
+scientists have traditionally used for survey data, namely anonymity and
+informed consent, no longer apply when data are collected in the wild.
+This concluding chapter identifies the issues that must be addressed for
+responsible and ethical research to take place.</p>
 <div id="introduction-5" class="section level2">
 <h2><span class="header-section-number">12.1</span> Introduction</h2>
-<p>Most applications in the social sciences involve data on units such as individuals, households, and different types of business, educational, and government organizations. Indeed, the example running throughout this book involves data on individuals (such as faculty and students) and organizations (such as universities and firms). In circumstances such as these, researchers must ensure that such data are used responsibly and ethically—that the subjects under study suffer no harm from their data being accessed, analyzed, and reported. A clear distinction must be made between analysis done for the public good and that done for private gain. In practical terms, this requires that the interests of individual privacy and data confidentiality be balanced against the social benefits of research access and use.</p>
-<p><strong>Privacy</strong> “encompasses not only the famous ‘right to be left alone,’ or keeping one’s personal matters and relationships secret, but also the ability to share information selectively but not publicly” <span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>)</span>. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2009">2009</a>)</span>. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity of the data flow when deciding which data to collect and how to analyze and share them.</p>
-<p><strong>Confidentiality</strong> is “preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information” <span class="citation">(McCallister, Grance, and Scarfone <a href="#ref-mccallister2010sp">2010</a>)</span>. Doing so is not easy—the challenge to the research community is how to balance the <em>risk</em> of providing access with the associated utility <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>. To give a simple example, if means and percentages are presented for a <em>large</em> number of people, it will be difficult to infer an individual’s value from such output, even if one knew that a certain individual or unit contributed to the formation of that mean or percentage. However, if those means and percentages are presented for subgroups or in multivariate tables with small cell sizes, the risk for disclosure increases <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>. As a result, the quality of data analysis is typically degraded with the production of public use data <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
+<p>Most applications in the social sciences involve data on units
+such as individuals, households, and different types of business,
+educational, and government organizations. Indeed, the example running
+throughout this book involves data on individuals (such as faculty and
+students) and organizations (such as universities and firms). In
+circumstances such as these, researchers must ensure that such data are
+used responsibly and ethically—that the subjects under study suffer no
+harm from their data being accessed, analyzed, and reported. A clear
+distinction must be made between analysis done for the public good and
+that done for private gain. In practical terms, this requires that the
+interests of individual privacy and data confidentiality be
+balanced against the social benefits of research access and use.</p>
+<p><strong>Privacy</strong> “encompasses not only the famous ‘right to be left alone,’ or keeping
+one’s personal matters and relationships secret, but also the ability to
+share information selectively but not publicly” <span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>)</span>. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2009">2009</a>)</span>. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity of the data flow when deciding which data to collect and how to analyze and share them.</p>
+<p><strong>Confidentiality</strong> is
+“preserving authorized restrictions on information access and
+disclosure, including means for protecting personal privacy and
+proprietary information” <span class="citation">(McCallister, Grance, and Scarfone <a href="#ref-mccallister2010sp">2010</a>)</span>. Doing so is not
+easy—the challenge to the research community is how to balance the
+<em>risk</em> of providing access with the associated utility
+<span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>. To give a simple example, if means and percentages
+are presented for a <em>large</em> number of people, it will be difficult to
+infer an individual’s value from such output, even if one knew that a
+certain individual or unit contributed to the formation of that mean or
+percentage. However, if those means and percentages are presented for
+subgroups or in multivariate tables with small cell sizes, the risk for
+disclosure increases <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>. As a result, the
+quality of data analysis is typically degraded with the production of
+public use data <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig11-1"></span>
 <img src="ChapterPrivacy/figures/fig11-1.png" alt="The privacy--utility tradeoff" width="70%" />
 <p class="caption">
 Figure 12.1: The privacy–utility tradeoff
 </p>
 </div>
-<p>In general, the greater the access to data and their original values, the greater the risk of reidentification for individual units. We depict this tradeoff graphically in Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>. The concave curves in this hypothetical example depict the technological relationship between data utility and privacy for an organization such as a business firm or a statistical agency. At one extreme, all information is available to anybody about all units, and therefore high analytic utility is associated with the data that are not at all protected. At the other extreme, nobody has access to any data and no utility is achieved. Initially, assume the organization is on the outer frontier. Increased external data resources (those not used by the organization) increase the risk of reidentification. This is represented by an inward shift of the utility/privacy frontier in Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>. Before the increase in external data, the organization could achieve a level of data utility <span class="math inline">\(U^*\)</span> and privacy <span class="math inline">\(P_1\)</span>. The increase in externally available data now means that in order to maintain utility at <span class="math inline">\(U^*\)</span>, privacy is reduced to <span class="math inline">\(P_2\)</span>. This simple example represents the challenge to all organizations that release statistical or analytical products obtained from underlying identifiable data. As more data from external sources becomes available, it becomes more difficult to maintain privacy.</p>
-<p>Previously, national statistical agencies had the capacity and the mandate to make dissemination decisions: they assessed the risk, they understood the data user community and the associated utility from data releases. And they had the wherewithal to address the legal, technical, and statistical issues associated with protecting confidentiality <span class="citation">(Trewin et al. <a href="#ref-trewin2007managing">2007</a>)</span>.</p>
-<p>But in a world of massive amounts of data, many once-settled issues have new complications, and wholly new issues arise that need to be addressed, albeit under the same rubrics. The new types of data have much greater potential utility, often because it is possible to study small cells or the tails of a distribution in ways not possible with small data. In fact, in many social science applications, the tails of the distribution are often the most interesting and hardest-to-reach parts of the population being studied; consider health care costs for a small number of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, or economic activity such as rapid employment growth by a small number of firms <span class="citation">(Decker et al. to appear)</span>.</p>
+<p>In general, the greater the access to data and their original values,
+the greater the risk of reidentification for individual units. We depict
+this tradeoff graphically in
+Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>. The
+concave curves in this hypothetical example depict the technological
+relationship between data utility and privacy for an organization such
+as a business firm or a statistical agency. At one extreme, all
+information is available to anybody about all units, and therefore high
+analytic utility is associated with the data that are not at all
+protected. At the other extreme, nobody has access to any data and no
+utility is achieved. Initially, assume the organization is on the outer
+frontier. Increased external data resources (those not used by the
+organization) increase the risk of reidentification. This is represented
+by an inward shift of the utility/privacy frontier in
+Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>.
+Before the increase in external data, the organization could achieve a
+level of data utility <span class="math inline">\(U^*\)</span> and privacy <span class="math inline">\(P_1\)</span>. The increase in
+externally available data now means that in order to maintain utility at
+<span class="math inline">\(U^*\)</span>, privacy is reduced to <span class="math inline">\(P_2\)</span>. This simple example represents the
+challenge to all organizations that release statistical or analytical
+products obtained from underlying identifiable data. As more data from
+external sources becomes available, it becomes more difficult
+to maintain privacy.</p>
+<p>Previously, national statistical agencies had the capacity
+and the mandate to make dissemination decisions: they assessed the risk,
+they understood the data user community and the associated utility from
+data releases. And they had the wherewithal to address the legal,
+technical, and statistical issues associated with protecting
+confidentiality <span class="citation">(Trewin et al. <a href="#ref-trewin2007managing">2007</a>)</span>.</p>
+<p>But in a world of massive amounts of data, many once-settled issues have new
+complications, and wholly new issues arise that need to be addressed,
+albeit under the same rubrics. The new types of data have much greater
+potential utility, often because it is possible to study small cells or
+the tails of a distribution in ways not possible with small data. In
+fact, in many social science applications, the tails of the distribution
+are often the most interesting and hardest-to-reach parts of the
+population being studied; consider health care costs for a small number
+of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, or economic activity such as rapid
+employment growth by a small number of firms <span class="citation">(Decker et al., <a href="#ref-decker2015has">n.d.</a>)</span>.</p>
 <hr />
 <p><strong>BOX</strong></p>
 <p><strong>Example: The importance of activity in the tails</strong></p>
-<p>Spending on health care services in the United States is highly concentrated among a small proportion of people with extremely high use. For the overall civilian population living in the community, the latest data indicate that more than 20% of all personal health care spending in 2009 ($275 billion) was on behalf of just 1% of the population <span class="citation">(Schoenman <a href="#ref-healthcarespending">2012</a>)</span>.</p>
+<p>Spending on health care services in the United States is highly
+concentrated among a small proportion of people with extremely high use.
+For the overall civilian population living in the community, the latest
+data indicate that more than 20% of all personal health care spending in
+2009 ($275 billion) was on behalf of just 1% of the population
+<span class="citation">(Schoenman <a href="#ref-healthcarespending">2012</a>)</span>.</p>
 <p><strong>BOX</strong></p>
 <hr />
-<p>It is important to understand where the risk of privacy breaches comes from. Let us assume for a moment that we conducted a traditional small-scale survey with 1,000 respondents. The survey contains information on political attitudes, spending and saving in a given year, and income, as well as background variables on income and education. If name and address are saved together with this data, and someone gets access to the data, obviously it is easy to identify individuals and gain access to information that is otherwise not public. If the personal identifiable information (name and address) are removed from this data file, the risk is much reduced. If someone has access to the survey data and sees all the individual values, it might be difficult to assess with certainty who among the 320 million inhabitants in the USA is associated with an individual data record. However, the risk is higher if one knows some of this information (say, income) for a person, and knows that this person is in the survey. With these two pieces of information, it is likely possible to uniquely identify the person in the survey data.</p>
-<p>Larger amounts of data increase the risk precisely for this reason. Much data is available for reidentification purposes <span class="citation">(Ohm <a href="#ref-ohm2010broken">2010</a>)</span>. Most obviously, the risk of reidentification is much greater because the new types of data have much richer detail and a much larger public community has access to ways to reidentify individuals. There are many famous examples of reidentification occurring even when obvious personal information, such as name and social security number, has been removed and the data provider thought that the data were consequently deidentified. In the 1990s, Massachusetts Group Insurance released “deidentified” data on the hospital visits of state employees; researcher Latanya Sweeney quickly reidentified the hospital records of the then Governor William Weld using nothing more than state voter records about residence and date of birth <span class="citation">(Sweeney <a href="#ref-sweeney2001computational">2001</a>)</span>. In 2006, the release of supposedly de-identified web search data by AOL resulted in two <em>New York Times</em> reports being able to reidentify a customer simply from her browsing habits <span class="citation">(Barbaro, Zeller, and Hansell <a href="#ref-barbaro2006face">2006</a>)</span>. And in 2012, statisticians at the department store, Target, used a young teenager’s shopping patterns to determine that she was pregnant before her father did <span class="citation">(Hill <a href="#ref-hill2012target">2012</a>)</span>.</p>
-<p>But there are also less obvious problems. What is the legal framework when the ownership of data is unclear? In the past, when data were more likely to be collected and used within the same entity—for example, within an agency that collects administrative data or within a university that collects data for research purposes—organization-specific procedures were (usually) in place and sufficient to regulate the usage of these data. Today, legal ownership is less clear.</p>
-<p>Who has the legal authority to make decisions about permission, access, and dissemination and under what circumstances? The answer is often not clear. The challenge today is that data sources are often combined, collected for one purpose, and used for another. Data providers often have a poor understanding of whether or how their data will be used.</p>
+<p>It is important to understand where the risk of privacy breaches comes
+from. Let us assume for a moment that we conducted a traditional
+small-scale survey with 1,000 respondents. The survey contains
+information on political attitudes, spending and saving in a given year,
+and income, as well as background variables on income and education. If
+name and address are saved together with this data, and someone gets
+access to the data, obviously it is easy to identify individuals and
+gain access to information that is otherwise not public. If the personal
+identifiable information (name and address) are removed from this data
+file, the risk is much reduced. If someone has access to the survey data
+and sees all the individual values, it might be difficult to assess with
+certainty who among the 320 million inhabitants in the USA is associated
+with an individual data record. However, the risk is higher if one knows
+some of this information (say, income) for a person, and knows that this
+person is in the survey. With these two pieces of information, it is
+likely possible to uniquely identify the person in the survey data.</p>
+<p>Larger amounts of data increase the risk precisely for this reason. Much data is
+available for reidentification purposes <span class="citation">(Ohm <a href="#ref-ohm2010broken">2010</a>)</span>. Most
+obviously, the risk of reidentification is much greater because the new
+types of data have much richer detail and a much larger public community
+has access to ways to reidentify individuals. There are many famous
+examples of reidentification occurring even when obvious personal
+information, such as name and social security number, has been removed
+and the data provider thought that the data were consequently
+deidentified. In the 1990s, Massachusetts Group Insurance released
+“deidentified” data on the hospital visits of state employees;
+researcher Latanya Sweeney quickly reidentified the hospital records of
+the then Governor William Weld using nothing more than state voter
+records about residence and date of birth <span class="citation">(Sweeney <a href="#ref-sweeney2001computational">2001</a>)</span>.
+In 2006, the release of supposedly de-identified web search data by AOL
+resulted in two <em>New York Times</em> reports being able to reidentify a
+customer simply from her browsing habits <span class="citation">(Barbaro, Zeller, and Hansell, <a href="#ref-barbaro2006face">n.d.</a>)</span>. And in
+2012, statisticians at the department store, Target, used a young
+teenager’s shopping patterns to determine that she was pregnant before
+her father did <span class="citation">(Hill, <a href="#ref-hill2012target">n.d.</a>)</span>.</p>
+<p>But there are also less obvious problems. What is the legal framework
+when the ownership of data is unclear? In the past, when data were more
+likely to be collected and used within the same entity—for example,
+within an agency that collects administrative data or within a
+university that collects data for research
+purposes—organization-specific procedures were (usually) in place and
+sufficient to regulate the usage of these data. Today,
+legal ownership is less clear.</p>
+<p>Who has the legal authority to make decisions about permission, access,
+and dissemination and under what circumstances? The answer is often not
+clear. The challenge today is that data sources are
+often combined, collected for one purpose, and used for another. Data
+providers often have a poor understanding of whether or how their data
+will be used.</p>
 <hr />
 <p><strong>Example: Knowledge is power</strong></p>
-<p>In a discussion of legal approaches to privacy in the context of big data, Strandburg <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span> says: “‘Big data’ has great potential to benefit society. At the same time, its availability creates significant potential for mistaken, misguided or malevolent uses of personal information. The conundrum for the law is to provide space for big data to fulfill its potential for societal benefit, while protecting citizens adequately from related individual and social harms. Current privacy law evolved to address different concerns and must be adapted to confront big data’s challenges.”</p>
+<p>In a discussion of legal approaches to privacy in the context of big
+data, Strandburg <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span> says: “‘Big data’ has great potential
+to benefit society. At the same time, its availability creates
+significant potential for mistaken, misguided or malevolent uses of
+personal information. The conundrum for the law is to provide space for
+big data to fulfill its potential for societal benefit, while protecting
+citizens adequately from related individual and social harms. Current
+privacy law evolved to address different concerns and must be adapted to
+confront big data’s challenges.”</p>
 <hr />
-<p>It is critical to address privacy and confidentiality issues if the full public value of big data is to be realized. This chapter highlights why the challenges need to be met (i.e., why access to data is crucial), review the pre-big data past, point out challenges with this approach in the context of big data, briefly describe the current state of play from a legal, technical, and statistical perspective, and point to open questions that need to be addressed in the future.</p>
+<p>It is critical to address privacy and confidentiality issues if the full
+public value of big data is to be realized. This chapter highlights why
+the challenges need to be met (i.e., why access to data is crucial),
+review the pre-big data past, point out challenges with this approach in
+the context of big data, briefly describe the current state of play from
+a legal, technical, and statistical perspective, and point to open
+questions that need to be addressed in the future.</p>
 </div>
 <div id="why-is-access-important" class="section level2">
 <h2><span class="header-section-number">12.2</span> Why is access important?</h2>
-<p>This book gives detailed examples of the potential of data to provide insights into a variety of social science questions—particularly the relationship between investments in R&amp;D and innovation. But that potential is only realized if researchers have access to the data <span class="citation">(Lane <a href="#ref-Lane2007">2007</a>)</span>: not only to perform primary analyses but also to validate the data generation process (in particular, data linkage), replicate analyses, and build a knowledge infrastructure around complex data sets.</p>
+<p>This book gives detailed examples of the potential of data to
+provide insights into a variety of social science
+questions—particularly the relationship between investments in R&amp;D and
+innovation. But that potential is only realized if researchers have
+access to the data <span class="citation">(Lane <a href="#ref-Lane2007">2007</a>)</span>: not only to perform primary analyses but
+also to validate the data generation process (in particular, data
+linkage), replicate analyses, and build a knowledge infrastructure
+around complex data sets.</p>
 <p><strong>Validating the data generating process</strong></p>
-<p>Research designs requiring a combination of data sources and/or analysis of the tails of populations challenge the traditional paradigm of conducting statistical analysis on deidentified or aggregated data. In order to combine data sets, someone in the chain that transforms raw data into research outputs needs access to link keys contained in the data sets to be combined. High-quality link keys uniquely identify the subjects under study and typically are derived from items such as individual names, birth dates, social security numbers, and business names, addresses, and tax ID numbers. From a privacy and confidentiality perspective, link keys are among the most sensitive information in many data sets of interest to social scientists. This is why many organizations replace link keys containing personal identifiable information (PII)<a href="#fn58" class="footnoteRef" id="fnref58"><sup>58</sup></a> with privacy-protecting identifiers <span class="citation">(Schnell, Bachteler, and Reiher <a href="#ref-schnell2009privacy">2009</a>)</span>. Regardless, at some point in the process those must be generated out of the original information, thus access to the latter is important.</p>
+<p>Research designs requiring a combination of data sources and/or analysis
+of the tails of populations challenge the traditional paradigm of
+conducting statistical analysis on deidentified or aggregated data. In
+order to combine data sets, someone in the chain that transforms raw
+data into research outputs needs access to link keys contained in the
+data sets to be combined. High-quality link keys uniquely identify the
+subjects under study and typically are derived from items such as
+individual names, birth dates, social security numbers, and business
+names, addresses, and tax ID numbers. From a privacy and confidentiality
+perspective, link keys are among the most sensitive information in many data
+sets of interest to social scientists. This is why many organizations
+replace link keys containing personal identifiable information (PII)<a href="#fn61" class="footnote-ref" id="fnref61"><sup>61</sup></a>
+with privacy-protecting identifiers <span class="citation">(Schnell, Bachteler, and Reiher <a href="#ref-schnell2009privacy">2009</a>)</span>. Regardless,
+at some point in the process those must be generated out of the original
+information, thus access to the latter is important.</p>
 <p><strong>Replication</strong></p>
-<p>John Ioannidis has claimed that most published research findings are false <span class="citation">(Ioannidis <a href="#ref-Ioannidis2005">2005</a>)</span>; for example, the unsuccessful replication of genome-wide association studies, at less than 1%, is staggering <span class="citation">(Bastian <a href="#ref-Bastian2013">2013</a>)</span>. Inadequate understanding of coverage, incentive, and quality issues, together with the lack of a comparison group, can result in biased analysis—famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction <span class="citation">(Donohue III and Wolfers <a href="#ref-donohue2006uses">2006</a>; Levitt and Miles <a href="#ref-levitt2006economic">2006</a>)</span>. Similarly, overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, Internet-savvy people with cell phones and away from elderly or impoverished neighborhoods <span class="citation">(Shelton et al. <a href="#ref-shelton2014mapping">2014</a>)</span>, just as bad survey methodology led the <em>Literary Digest</em> to incorrectly call the 1936 election <span class="citation">(Squire <a href="#ref-squire19881936">1988</a>)</span>. The first step to replication is data access; such access can enable other researchers to ascertain whether the assumptions of a particular statistical model are met, what relevant information is included or excluded, and whether valid inferences can be drawn from the data <span class="citation">(Kreuter and Peng <a href="#ref-kreuter201412">2014</a>)</span>.</p>
+<p>John Ioannidis has claimed that most published research findings are
+false <span class="citation">(Ioannidis <a href="#ref-Ioannidis2005">2005</a>)</span>; for example, the unsuccessful replication of
+genome-wide association studies, at less than 1%, is staggering
+<span class="citation">(Bastian <a href="#ref-Bastian2013">2013</a>)</span>. Inadequate understanding of coverage, incentive, and
+quality issues, together with the lack of a comparison group, can result
+in biased analysis—famously in the case of using administrative
+records on crime to make inference about the role of death penalty
+policy in crime reduction <span class="citation">(Donohue III and Wolfers <a href="#ref-donohue2006uses">2006</a>; Levitt and Miles <a href="#ref-levitt2006economic">2006</a>)</span>.
+Similarly, overreliance on, say, Twitter data, in targeting resources
+after hurricanes can lead to the misallocation of resources towards
+young, Internet-savvy people with cell phones and away from elderly or
+impoverished neighborhoods <span class="citation">(Shelton et al. <a href="#ref-shelton2014mapping">2014</a>)</span>, just as bad survey
+methodology led the <em>Literary Digest</em> to incorrectly call the 1936
+election <span class="citation">(Squire <a href="#ref-squire19881936">1988</a>)</span>. The first step to replication is data
+access; such access can enable other researchers to ascertain whether
+the assumptions of a particular statistical model are met, what relevant
+information is included or excluded, and whether valid inferences can be
+drawn from the data <span class="citation">(Kreuter and Peng <a href="#ref-kreuter201412">2014</a>)</span>.</p>
 <p><strong>Building knowledge infrastructure</strong></p>
-<p>Creating a community of practice around a data infrastructure can result in tremendous new insights, as the Sloan Digital Sky Survey and the Polymath project have shown <span class="citation">(Nielsen <a href="#ref-nielsen2012reinventing">2012</a>)</span>. In the social science arena, the Census Bureau has developed a productive ecosystem that is predicated on access to approved external experts to build, conduct research using, and improve key data assets such as the Longitudinal Business Database <span class="citation">(Jarmin and Miranda <a href="#ref-jarmin2002longitudinal">2002</a>)</span> and Longitudinal Employer Household Dynamics <span class="citation">(Abowd, Haltiwanger, and Lane <a href="#ref-abowd2004integrated">2004</a>)</span>, which have yielded a host of new data products and critical policy-relevant insights on business dynamics <span class="citation">(Haltiwanger, Jarmin, and Miranda <a href="#ref-haltiwanger2013creates">2013</a>)</span> and labor market volatility <span class="citation">(Brown, Haltiwanger, and Lane <a href="#ref-brown2008economic">2008</a>)</span>, respectively. Without providing robust, but secure, access to confidential data, researchers at the Census Bureau would have been unable to undertake the innovations that made these new products and insights possible.</p>
+<p>Creating a community of practice around a data infrastructure can result
+in tremendous new insights, as the Sloan Digital Sky Survey and the
+Polymath project have shown <span class="citation">(Nielsen <a href="#ref-nielsen2012reinventing">2012</a>)</span>. In the social
+science arena, the Census Bureau has developed a productive ecosystem
+that is predicated on access to approved external experts to build,
+conduct research using, and improve key data assets such as the
+Longitudinal Business Database <span class="citation">(Jarmin and Miranda <a href="#ref-jarmin2002longitudinal">2002</a>)</span> and
+Longitudinal Employer Household Dynamics <span class="citation">(Abowd, Haltiwanger, and Lane <a href="#ref-abowd2004integrated">2004</a>)</span>, which
+have yielded a host of new data products and critical policy-relevant
+insights on business dynamics <span class="citation">(Haltiwanger, Jarmin, and Miranda <a href="#ref-haltiwanger2013creates">2013</a>)</span> and labor market
+volatility <span class="citation">(Brown, Haltiwanger, and Lane <a href="#ref-brown2008economic">2008</a>)</span>, respectively. Without providing robust,
+but secure, access to confidential data, researchers at the Census
+Bureau would have been unable to undertake the innovations that made
+these new products and insights possible.</p>
 </div>
 <div id="providing-access" class="section level2">
 <h2><span class="header-section-number">12.3</span> Providing access</h2>
-<p>The approaches to providing access have evolved over time. Statistical agencies often employ a range of approaches depending on the needs of heterogeneous data users <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>; Foster, Jarmin, and Riggs <a href="#ref-foster2009resolving">2009</a>)</span>. Dissemination of data to the public usually occurs in three steps: an evaluation of disclosure risks, followed by the application of an anonymization technique, and finally an evaluation of disclosure risks and analytical quality of the candidate data release(s). The two main approaches have been <em>statistical disclosure</em> control techniques to produce anonymized public use data sets, and controlled access through a <em>research data center</em> <span class="citation">(Shlomo <a href="#ref-shlomo2018">2018</a>)</span>.</p>
+<p>The approaches to providing access have evolved over time. Statistical
+agencies often employ a range of approaches depending on the needs of
+heterogeneous data users
+<span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>; Foster, Jarmin, and Riggs <a href="#ref-foster2009resolving">2009</a>)</span>. Dissemination of data
+to the public usually occurs in three steps: an evaluation of disclosure
+risks, followed by the application of an anonymization technique, and
+finally an evaluation of disclosure risks and analytical quality of the
+candidate data release(s). The two main approaches have been
+<em>statistical disclosure</em> control techniques to produce anonymized public
+use data sets, and controlled access through a <em>research data center</em>
+<span class="citation">(Shlomo <a href="#ref-shlomo2018">2018</a>)</span>.</p>
 <p><strong>Statistical disclosure control techniques</strong></p>
-<p>Statistical agencies have made data available in a number of ways: through tabular data, public use files, licensing agreements and, more recently, through synthetic data <span class="citation">(Reiter <a href="#ref-reiter2012statistical">2012</a>)</span>. Hundepool et al. <span class="citation">(Hundepool et al. <a href="#ref-hundepool2010handbook">2010</a>)</span> define statistical disclosure control as follows:</p>
+<p>Statistical agencies have made data available in a number of ways:
+through tabular data, public use files, licensing agreements and, more
+recently, through synthetic data <span class="citation">(Reiter <a href="#ref-reiter2012statistical">2012</a>)</span>. Hundepool et
+al. <span class="citation">(Hundepool et al. <a href="#ref-hundepool2010handbook">2010</a>)</span> define statistical disclosure control as
+follows:</p>
 <blockquote>
-<p>concepts and methods that ensure the confidentiality of micro and aggregated data that are to be published. It is methodology used to design statistical outputs in a way that someone with access to that output cannot relate a known individual (or other responding unit) to an element in the output.</p>
+<p>concepts and methods that ensure the confidentiality of micro and
+aggregated data that are to be published. It is methodology used to
+design statistical outputs in a way that someone with access to that
+output cannot relate a known individual (or other responding unit) to
+an element in the output.</p>
 </blockquote>
-<p>Traditionally, confidentiality protection was accomplished by releasing only <em>aggregated tabular data</em>. This practice worked well in settings where the primary purpose was enumeration, such as census taking. However, tabular data are poorly suited to describing the underlying distributions and covariance across variables that are often the focus of applied social science research <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
-<p>To provide researchers access to data that permitted analysis of the underlying variance–covariance structure of the data, some agencies have constructed public use micro-data samples. To product confidentiality in such <em>public use files</em>, a number of statistical disclosure control procedures are typically applied. These include stripping all identifying (e.g., PII) fields from the data, topcoding highly skewed variables (e.g., income), and swapping records <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>; Zayatz <a href="#ref-zayatz2007disclosure">2007</a>)</span>. However, the mosaic effect—where disparate pieces of information can be combined to reidentify individuals—dramatically increases the risk of releasing public use files <span class="citation">(Czajka et al. <a href="#ref-czajka2014minimizing">2014</a>)</span>. In addition, there is more and more evidence that the statistical disclosure procedure applied to produce them decreases their utility across many applications <span class="citation">(Burkhauser, Feng, and Larrimore <a href="#ref-burkhauser2010improving">2010</a>)</span>.</p>
-<p>Some agencies provide access to confidential micro-data through <em>licensing</em> arrangements. A contract specifies the conditions of use and what safeguards must be in place. In some cases, the agency has the authority to conduct random inspections. However, this approach has led to a number of operational challenges, including version control, identifying and managing risky researcher behavior, and management costs <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>.</p>
+<p>Traditionally, confidentiality protection was accomplished by
+releasing only <em>aggregated tabular data</em>. This practice worked well in
+settings where the primary purpose was enumeration, such as census
+taking. However, tabular data are poorly suited to describing the
+underlying distributions and covariance across variables that are often
+the focus of applied social science research <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
+<p>To provide researchers access to data that permitted analysis of the
+underlying variance–covariance structure of the data, some agencies
+have constructed public use micro-data samples. To product
+confidentiality in such <em>public use files</em>, a number of statistical
+disclosure control procedures are typically applied. These include
+stripping all identifying (e.g., PII) fields from the data, topcoding
+highly skewed variables (e.g., income), and swapping records
+<span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>; Zayatz <a href="#ref-zayatz2007disclosure">2007</a>)</span>. However, the mosaic
+effect—where disparate pieces of information can be combined to
+reidentify individuals—dramatically increases the risk of releasing
+public use files <span class="citation">(Czajka et al. <a href="#ref-czajka2014minimizing">2014</a>)</span>. In addition, there is more and
+more evidence that the statistical disclosure procedure applied to
+produce them decreases their utility across many applications
+<span class="citation">(Burkhauser, Feng, and Larrimore <a href="#ref-burkhauser2010improving">2010</a>)</span>.</p>
+<p>Some agencies provide access to confidential micro-data through
+<em>licensing</em> arrangements. A contract specifies the conditions of use and
+what safeguards must be in place. In some cases, the agency has the
+authority to conduct random inspections. However, this approach has led
+to a number of operational challenges, including version control,
+identifying and managing risky researcher behavior, and management costs
+<span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>.</p>
 <p>Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith <span class="citation">(Dwork and Roth <a href="#ref-Dworkroth2014">2014</a>)</span>. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see <span class="citation">(Ruggles et al. <a href="#ref-ruggles2019">2019</a>; Abowd <a href="#ref-abowed2018">2018</a>)</span>.</p>
-<p>Another approach that has had some resurgence is the use of <em>synthetic data</em> where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or business entity can be found in the released data <span class="citation">(Drechsler <a href="#ref-drechsler2011synthetic">2011</a>)</span>. One of the earlier examples of such work was the IBM Quest system <span class="citation">(Agrawal and Srikant <a href="#ref-Agrawal1994">1994</a>)</span> that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta <span class="citation">(Abowd, Stinson, and Benedetto <a href="#ref-abowd2006final">2006</a>)</span> of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings data, and the Synthetic Longitudinal Business Database (SynLBD) <span class="citation">(Kinney et al. <a href="#ref-kinney2011towards">2011</a>)</span>. Jarmin et al. <span class="citation">(Jarmin, Louis, and Miranda <a href="#ref-jarmin2014expanding">2014</a>)</span> discuss how synthetic data sets lack utility in many research settings but are useful for generating flexible data sets underlying data tools and apps such as the Census Bureau’s OnTheMap. It is important to keep in mind that the utility of synthetic data sets as a general purpose “anonymization” tool is fairly limited. Synthetic data generation typically requires explicitly defining which properties of the original data need to be preserved (such as univariate or bivariate distributions of certain variables), and as such can be of limited use in most social science research.</p>
+<p>Another approach that has had some resurgence is the use of <em>synthetic data</em> where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or business entity can be found in the released data <span class="citation">(Drechsler <a href="#ref-drechsler2011synthetic">2011</a>)</span>. One of the earlier examples of such work was the IBM Quest system <span class="citation">(Agrawal and Srikant <a href="#ref-Agrawal1994">1994</a>)</span> that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta <span class="citation">(Abowd, Stinson, and Benedetto <a href="#ref-abowd2006final">2006</a>)</span> of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings data, and the Synthetic Longitudinal Business Database (SynLBD) <span class="citation">(Kinney et al. <a href="#ref-kinney2011towards">2011</a>)</span>. Jarmin et al. <span class="citation">(Jarmin, Louis, and Miranda <a href="#ref-jarmin2014expanding">2014</a>)</span> discuss how synthetic data sets lack utility in many research settings but are useful for generating flexible data sets underlying data tools and apps such as the Census Bureau’s OnTheMap.
+It is important to keep in mind that the utility of synthetic data sets as a general purpose “anonymization” tool is fairly limited. Synthetic data generation typically requires explicitly defining which properties of the original data need to be preserved (such as univariate or bivariate distributions of certain variables), and as such can be of limited use in most social science research.</p>
 <p><strong>Research data centers</strong></p>
-<p>The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the “Five Safes” which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 <span class="citation">(Desai, Ritchie, and Welpton <a href="#ref-desaietal2016">2016</a>)</span>. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations <span class="citation">(Hayden <a href="#ref-hayden2012broken">2012</a>)</span>.</p>
+<p>The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the “Five Safes” which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 <span class="citation">(Desai, Ritchie, and Welpton <a href="#ref-desaietal2016">2016</a>)</span>. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations
+<span class="citation">(Hayden <a href="#ref-hayden2012broken">2012</a>)</span>.</p>
 </div>
 <div id="non-tabular-data" class="section level2">
 <h2><span class="header-section-number">12.4</span> Non-Tabular data</h2>
 <p>In addition to tabular data, a lot of new sources of data consist of text, audio, image, and video content. The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:</p>
 <p>Text Anonymization: Typical approaches here range from simply removing Personally identifiable information (PII) through regular expressions and dictionaries <span class="citation">(Neamatullah et al. <a href="#ref-Neamatullah2008">2008</a>)</span> to machine learning based approaches that balance the confidentiality of the entities in the data and the utility of the text <span class="citation">(Cumby and Ghani <a href="#ref-Cumby2011">2011</a>)</span>.</p>
-<p>Image and Video Anonymization: The most common use of anonymization techniques in image and video data is to redact, blur, or remove faces of individuals in order to protect their identity. This can be extended to other attributes of the person, such as clothing or the rest of the body but the primary focus so far has been on detecting, and then blurring or modifying the faces of individuals in the data. Sah et al. <span class="citation">(<a href="#ref-Sah2017">2017</a>)</span> provide a survey of video redaction methods. Hukkelas et al. <span class="citation">(<a href="#ref-Hukkelas2019">2019</a>)</span> recently presented a method to automatically anonymize faces in images while retaining the original data distribution.</p>
+<p>Image and Video Anonymization: The most common use of anonymization techniques in image and video data is to redact, blur, or remove faces of individuals in order to protect their identity. This can be extended to other attributes of the person, such as clothing or the rest of the body but the primary focus so far has been on detecting, and then blurring or modifying the faces of individuals in the data. Sah et al. <span class="citation">(<a href="#ref-Sah2017">2017</a>)</span> provide a survey of video redaction methods. Hukkelas et al. <span class="citation">(<a href="#ref-Hukkelas2019">2019</a>)</span> recently presented a method to automatically anonymize faces in images while retaining the original data distribution.</p>
 </div>
 <div id="the-new-challenges" class="section level2">
 <h2><span class="header-section-number">12.5</span> The new challenges</h2>
-<p>While there are well-established policies and protocols surrounding access to and use of survey and administrative data, a major new challenge is the lack of clear guidelines governing the collection of data about human activity in a world in which all public, and some private, actions generate data that can be harvested <span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>; Ohm <a href="#ref-ohm2010broken">2010</a>; Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. The twin pillars on which so much of social science have rested—informed consent and anonymization—are virtually useless in a big data setting where multiple data sets can be and are linked together using individual identifiers by a variety of players beyond social scientists with formal training and whose work is overseen by institutional review boards. This rapid expansion in data and their use is very much driven by the increased utility of the linked information to businesses, policymakers, and ultimately the taxpayer. In addition, there are no obvious data stewards and custodians who can be entrusted with preserving the privacy and confidentiality with regard to both the source data collected from sensors, social media, and many other sources, and the related analyses <span class="citation">(Lane and Stodden <a href="#ref-lane2013me">2013</a>)</span>.</p>
-<p>It is clear that informed consent as historically construed is no longer feasible. As Nissenbaum <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2011contextual">2011</a>)</span> points out, notification is either comprehensive or comprehensible, but not both. While ideally human subjects are offered true freedom of choice based on a sound and sufficient understanding of what the choice entails, in reality the flow of data is so complex and the interest in the data usage so diverse that simplicity and clarity in the consent statement unavoidably result in losses of fidelity, as anyone who has accepted a Google Maps agreement is likely to understand <span class="citation">(Hayden <a href="#ref-check2015researchers">2015</a>)</span>. In addition, informed consent requires a greater understanding of the breadth of type of privacy breaches, the nature of harm as diffused over time, and an improved valuation of privacy in the big data context. Consumers may value their own privacy in variously flawed ways. They may, for example, have incomplete information, or an overabundance of information rendering processing impossible, or use heuristics that establish and routinize deviations from rational decision-making <span class="citation">(Acquisti <a href="#ref-Acquisti2014">2014</a>)</span>.</p>
-<p>It is also nearly impossible to truly anonymize data. Big data are often structured in such a way that essentially everyone in the file is unique, either because so many variables exist or because they are so frequent or geographically detailed, that they make it easy to reidentify individual patterns <span class="citation">(Narayanan and Shmatikov <a href="#ref-narayanan2008robust">2008</a>)</span>. It is also no longer possible to rely on sampling or measurement error in external files as a buffer for data protection, since most data are not in the hands of statistical agencies.</p>
-<p>There are no data stewards controlling access to individual data. Data are often so interconnected (think social media network data) that one person’s action can disclose information about another person without that person even knowing that their data are being accessed. The group of students posting pictures about a beer party is an obvious example, but, in a research context, if the principal investigator grants access to the proposal, information could be divulged about colleagues and students. In other words, volunteered information of a minority of individuals can unlock the same information about many—a type of “tyranny of the minority” <span class="citation">(Barocas and Nissenbaum <a href="#ref-barocas2014bigger">2014</a><a href="#ref-barocas2014bigger">b</a>)</span>.</p>
-<p>There are particular issues raised by the new potential to link information based on a variety of attributes that do not include PII. Barocas and Nissenbaum write as follows <span class="citation">(Barocas and Nissenbaum <a href="#ref-barocas2014big">2014</a><a href="#ref-barocas2014big">a</a>)</span>:</p>
+<p>While there are well-established policies and protocols surrounding
+access to and use of survey and administrative data, a major new
+challenge is the lack of clear guidelines governing the collection of
+data about human activity in a world in which all public, and some
+private, actions generate data that can be harvested
+<span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>; Ohm <a href="#ref-ohm2010broken">2010</a>; Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. The twin pillars on
+which so much of social science have rested—informed consent and
+anonymization—are virtually useless in a big data setting where
+multiple data sets can be and are linked together using individual
+identifiers by a variety of players beyond social scientists with formal
+training and whose work is overseen by institutional review boards. This
+rapid expansion in data and their use is very much driven by the
+increased utility of the linked information to businesses, policymakers,
+and ultimately the taxpayer. In addition, there are no obvious data
+stewards and custodians who can be entrusted with preserving the privacy
+and confidentiality with regard to both the source data collected from
+sensors, social media, and many other sources, and the related analyses
+<span class="citation">(Lane and Stodden <a href="#ref-lane2013me">2013</a>)</span>.</p>
+<p>It is clear that informed consent as historically construed is no longer
+feasible. As Nissenbaum <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2011contextual">2011</a>)</span> points out,
+notification is either comprehensive or comprehensible, but not both.
+While ideally human subjects are offered true freedom of choice based on
+a sound and sufficient understanding of what the choice entails, in
+reality the flow of data is so complex and the interest in the data
+usage so diverse that simplicity and clarity in the consent statement
+unavoidably result in losses of fidelity, as anyone who has accepted a
+Google Maps agreement is likely to understand <span class="citation">(Hayden <a href="#ref-check2015researchers">2015</a>)</span>.
+In addition, informed consent requires a greater understanding of the
+breadth of type of privacy breaches, the nature of harm as diffused over
+time, and an improved valuation of privacy in the big data context.
+Consumers may value their own privacy in variously flawed ways. They
+may, for example, have incomplete information, or an overabundance of
+information rendering processing impossible, or use heuristics that
+establish and routinize deviations from rational decision-making
+<span class="citation">(Acquisti <a href="#ref-Acquisti2014">2014</a>)</span>.</p>
+<p>It is also nearly impossible to truly anonymize data. Big data are often
+structured in such a way that essentially everyone in the file is
+unique, either because so many variables exist or because they are so
+frequent or geographically detailed, that they make it easy to
+reidentify individual patterns <span class="citation">(Narayanan and Shmatikov <a href="#ref-narayanan2008robust">2008</a>)</span>. It is also no
+longer possible to rely on sampling or measurement error in external
+files as a buffer for data protection, since most data are not in the
+hands of statistical agencies.</p>
+<p>There are no data stewards controlling access to individual data. Data
+are often so interconnected (think social media network data) that one
+person’s action can disclose information about another person without
+that person even knowing that their data are being accessed. The group
+of students posting pictures about a beer party is an obvious example,
+but, in a research context, if the principal investigator grants access
+to the proposal, information could be divulged about colleagues and
+students. In other words, volunteered information of a minority of
+individuals can unlock the same information about many—a type of
+“tyranny of the minority” <span class="citation">(Barocas and Nissenbaum <a href="#ref-barocas2014bigger">2014</a><a href="#ref-barocas2014bigger">b</a>)</span>.</p>
+<p>There are particular issues raised by the new potential to link
+information based on a variety of attributes that do not include PII.
+Barocas and Nissenbaum write as follows <span class="citation">(Barocas and Nissenbaum <a href="#ref-barocas2014big">2014</a><a href="#ref-barocas2014big">a</a>)</span>:</p>
 <blockquote>
-<p>Rather than attempt to deanonymize medical records, for instance, an attacker (or commercial actor) might instead infer a rule that relates a string of more easily observable or accessible indicators to a specific medical condition, rendering large populations vulnerable to such inferences even in the absence of PII. Ironically, this is often the very thing about big data that generate the most excitement: the capacity to detect subtle correlations and draw actionable inferences. But it is this same feature that renders the traditional protections afforded by anonymity (again, more accurately, pseudonymity) much less effective.</p>
+<p>Rather than attempt to deanonymize medical records, for instance, an
+attacker (or commercial actor) might instead infer a rule that relates
+a string of more easily observable or accessible indicators to a
+specific medical condition, rendering large populations vulnerable to
+such inferences even in the absence of PII. Ironically, this is often
+the very thing about big data that generate the most excitement: the
+capacity to detect subtle correlations and draw actionable inferences.
+But it is this same feature that renders the traditional protections
+afforded by anonymity (again, more accurately, pseudonymity) much less
+effective.</p>
 </blockquote>
 <p>In light of these challenges, Barocas and Nissenbaum continue</p>
 <blockquote>
-<p>the value of anonymity inheres not in namelessness, and not even in the extension of the previous value of namelessness to all uniquely identifying information, but instead to something we called “reachability,” the possibility of knocking on your door, hauling you out of bed, calling your phone number, threatening you with sanction, holding you accountable—with or without access to identifying information.</p>
+<p>the value of anonymity inheres not in namelessness, and not even in
+the extension of the previous value of namelessness to all uniquely
+identifying information, but instead to something we called
+“reachability,” the possibility of knocking on your door, hauling you
+out of bed, calling your phone number, threatening you with sanction,
+holding you accountable—with or without access to identifying
+information.</p>
 </blockquote>
-<p>It is clear that the concepts used in the larger discussion of privacy and big data require updating. How we understand and assess harms from privacy violations needs updating. And we must rethink established approaches to managing privacy in the big data context. The next section discusses the framework for doing so.</p>
+<p>It is clear that the concepts used in the larger discussion of privacy
+and big data require updating. How we understand and assess harms from
+privacy violations needs updating. And we must rethink established
+approaches to managing privacy in the big data context. The next section
+discusses the framework for doing so.</p>
 </div>
 <div id="legal-and-ethical-framework" class="section level2">
 <h2><span class="header-section-number">12.6</span> Legal and ethical framework</h2>
-<p>The Fourth Amendment to the US Constitution, which constrains the government’s power to “search” the citizenry’s “persons, houses, papers, and effects” is usually cited as the legal framework for privacy and confidentiality issues. In the US a “sectoral” approach to privacy regulation, for example, the Family Education Rights and Privacy Act and the Health Insurance Portability and Accountability Act, is also used in situations where different economic areas have separate privacy laws <span class="citation">(Ohm <a href="#ref-Ohm2014">2014</a>)</span>. In addition, current legal restrictions and guidance on data collection in the industrial setting include the Fair Information Practice Principles dating from 1973 and underlying the Fair Credit Reporting Act from 1970 and the Privacy Act from 1974 <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. Federal agencies often have statutory oversight, such as Title 13 of the US Code for the Census Bureau, the Confidential Information Protection and Statistical Efficiency Act for federal statistical agencies, and Title 26 of the US Code for the Internal Revenue Service.</p>
-<p>Yet the generation of big data often takes place in the open, or through commercial transactions with a business, and hence is not covered by these frameworks. There are major questions as to what is reasonably private and what constitutes unwarranted intrusion <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. There is a lack of clarity on who owns the new types of data—whether it is the person who is the subject of the information, the person or organization who collects these data (the data custodian), the person who compiles, analyzes, or otherwise adds value to the information, the person who purchases an interest in the data, or society at large. The lack of clarity is exacerbated because some laws treat data as property and some treat it as information <span class="citation">(Cecil and Eden <a href="#ref-Cecil2003">2003</a>)</span>.</p>
-<p>The ethics of the use of big data are also not clear, because analysis may result in being discriminated against unfairly, being limited in one’s life choices, being trapped inside stereotypes, being unable to delineate personal boundaries, or being wrongly judged, embarrassed, or harassed. There is an entire research agenda to be pursued that examines the ways that big data may threaten interests and values, distinguishes the origins and nature of threats to individual and social integrity, and identifies different solutions <span class="citation">(Boyd and Crawford <a href="#ref-boyd2012critical">2012</a>)</span>. The approach should be to describe what norms and expectations are likely to be violated if a person agrees to provide data, rather than to describe what will be done during the research.</p>
-<p>What is clear is that most data are housed no longer in statistical agencies, with well-defined rules of conduct, but in businesses or administrative agencies. In addition, since digital data can be alive forever, ownership could be claimed by yet-to-be-born relatives whose personal privacy could be threatened by release of information about blood relations.</p>
+<p>The Fourth Amendment to the US Constitution, which constrains the
+government’s power to “search” the citizenry’s “persons, houses, papers,
+and effects” is usually cited as the legal framework for privacy and
+confidentiality issues. In the US a “sectoral” approach to privacy
+regulation, for example, the Family Education Rights and Privacy Act and
+the Health Insurance Portability and Accountability Act, is also used in
+situations where different economic areas have separate privacy laws
+<span class="citation">(Ohm <a href="#ref-Ohm2014">2014</a>)</span>. In addition, current legal restrictions and guidance on data
+collection in the industrial setting include the Fair Information
+Practice Principles dating from 1973 and underlying the Fair Credit
+Reporting Act from 1970 and the Privacy Act from 1974 <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>.
+Federal agencies often have statutory oversight, such as Title 13 of the
+US Code for the Census Bureau, the Confidential Information Protection
+and Statistical Efficiency Act for federal statistical agencies, and
+Title 26 of the US Code for the Internal Revenue Service.</p>
+<p>Yet the generation of big data often takes place in the open, or through
+commercial transactions with a business, and hence is not covered by
+these frameworks. There are major questions as to what is reasonably
+private and what constitutes unwarranted intrusion <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>.
+There is a lack of clarity on who owns the new types of data—whether
+it is the person who is the subject of the information, the person or
+organization who collects these data (the data custodian), the person
+who compiles, analyzes, or otherwise adds value to the information, the
+person who purchases an interest in the data, or society at large. The
+lack of clarity is exacerbated because some laws treat data as property
+and some treat it as information <span class="citation">(Cecil and Eden <a href="#ref-Cecil2003">2003</a>)</span>.</p>
+<p>The ethics of the use of big data are also not clear, because analysis
+may result in being discriminated against unfairly, being limited in
+one’s life choices, being trapped inside stereotypes, being unable to
+delineate personal boundaries, or being wrongly judged, embarrassed, or
+harassed. There is an entire research agenda to be pursued that examines
+the ways that big data may threaten interests and values, distinguishes
+the origins and nature of threats to individual and social integrity,
+and identifies different solutions <span class="citation">(Boyd and Crawford <a href="#ref-boyd2012critical">2012</a>)</span>. The approach
+should be to describe what norms and expectations are likely to be
+violated if a person agrees to provide data, rather than to describe
+what will be done during the research.</p>
+<p>What is clear is that most data are housed no longer in statistical
+agencies, with well-defined rules of conduct, but in businesses or
+administrative agencies. In addition, since digital data can be alive
+forever, ownership could be claimed by yet-to-be-born relatives whose
+personal privacy could be threatened by release of information about
+blood relations.</p>
 <p>The new European Data Protection Regulation (GDPR), which is in effect since May, 2018, was designed to address some of the challenges. In addition to ensuring lawful data collection practices, GDPR pushes for purpose limitation and data minimisation. This principle requires organisations to clearly state for what purpose personal data is collected, to collect the data only for the time needed to complete the purpose, and to collect only those personal data that is needed to achieve the specified processing purposes. In the U.S. the California Consumer Privacy Act (CCPA) is in effect since January 2020, and here too companies have now have time limits to process customer data.</p>
 <p>However, GDPR and other regulations of this type, still rely on traditional regulatory tools for managing privacy, which is notice, and consent. Both have failed to provide a viable market mechanism allowing a form of self-regulation governing industry data collection. Going forward, a more nuanced assessment of tradeoffs in the big data context, moving away from individualized assessments of the costs of privacy violations, is needed <span class="citation">(Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>.</p>
-<p>Ohm advocates for a new conceptualization of legal policy regarding privacy in the big data context that uses five guiding principles for reform: first, that rules take into account the varying levels of inherent risk to individuals across different data sets; second, that traditional definitions of PII need to be rethought; third, that regulation has a role in creating and policing walls between data sets; fourth, that those analyzing big data must be reminded, with a frequency in proportion to the sensitivity of the data, that they are dealing with people; and finally, that the ethics of big data research must be an open topic for continual reassessment <span class="citation">(Ohm <a href="#ref-Ohm2014">2014</a>)</span>.</p>
+<p>Ohm advocates for a new conceptualization of legal policy regarding privacy in the big data context that uses five guiding principles for reform: first, that rules take into account the
+varying levels of inherent risk to individuals across different data
+sets; second, that traditional definitions of PII need to be rethought;
+third, that regulation has a role in creating and policing walls between
+data sets; fourth, that those analyzing big data must be reminded, with
+a frequency in proportion to the sensitivity of the data, that they are
+dealing with people; and finally, that the ethics of big data research
+must be an open topic for continual reassessment <span class="citation">(Ohm <a href="#ref-Ohm2014">2014</a>)</span>.</p>
 </div>
 <div id="summary-6" class="section level2">
 <h2><span class="header-section-number">12.7</span> Summary</h2>
-<p>The excitement about how big data can change the social science research paradigm should be tempered by a recognition that existing ways of protecting privacy confidentiality are no longer viable <span class="citation">(Karr and Reiter <a href="#ref-karr2014analytical">2014</a>)</span>. There is a great deal of research that can be used to inform the development of such a structure, but it has been siloed into disconnected research areas, such as statistics, cybersecurity, and cryptography, as well as a variety of different practical applications, including the successful development of remote access secure data enclaves. We must piece together the knowledge from these various fields to develop ways in which vast new sets of data on human beings can be collected, integrated, and analyzed while protecting them <span class="citation">(Lane et al. <a href="#ref-lane2014">2014</a>)</span>.</p>
-<p>It is possible that the confidentiality risks of disseminating data may be so high that traditional access models will no longer hold; that the data access model of the future will be to take the analysis to the data rather than the data to the analyst or the analyst to the data. One potential approach is to create an integrated system including (a) unrestricted access to highly redacted data, most likely some version of synthetic data, followed by (b) means for approved researchers to access the confidential data via remote access solutions, combined with (c) verification servers that allows users to assess the quality of their inferences with the redacted data so as to be more efficient with their use (if necessary) of the remote data access. Such verification servers might be a web-accessible system based on a confidential database with an associated public micro-data release, which helps to analyze the confidential database <span class="citation">(Karr and Reiter <a href="#ref-karr2014analytical">2014</a>)</span>. Such approaches are starting to be developed, both in the USA and in Europe <span class="citation">(Elias <a href="#ref-Elias2014">2014</a>; Jones and Elias <a href="#ref-jones2006administrative">2006</a>)</span>.</p>
-<p>There is also some evidence that people do not require complete protection, and will gladly share even private information provided that certain social norms are met <span class="citation">(Wilbanks <a href="#ref-Wilbanks2014">2014</a>; Pentland et al. <a href="#ref-Pentland2014">2014</a>)</span>. There is a research agenda around identifying those norms as well; characterizing the interests and wishes of actors (the information senders and recipients or providers and users); the nature of the attributes (especially types of information about the providers, including how these might be transformed or linked); and identifying transmission principles (the constraints underlying the information flows).</p>
-<p>However, it is likely that it is no longer possible for a lone social scientist to address these challenges. One-off access agreements to individuals are conducive to neither the production of high-quality science nor the high-quality protection of data <span class="citation">(Schermann et al. <a href="#ref-schermann2014big">2014</a>)</span>. The curation, protection, and dissemination of data on human subjects cannot be an artisan activity but should be seen as a major research infrastructure investment, like investments in the physical and life sciences <span class="citation">(Bird <a href="#ref-bird2011computing">2011</a>; Abazajian et al. <a href="#ref-abazajian2009seventh">2009</a>; Human Microbiome Jumpstart Reference Strains Consortium et al. <a href="#ref-human2010catalog">2010</a>)</span>. In practice, this means that linkages become professionalized and replicable, research is fostered within research data centers that protect privacy in a systematic manner, knowledge is shared about the process of privacy protections disseminated in a professional fashion, and there is ongoing documentation about the value of evidence-based research. It is thus that the risk–utility tradeoff depicted in Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a> can be shifted in a manner that serves the public good.</p>
+<p>The excitement about how big data can change the social science research
+paradigm should be tempered by a recognition that existing ways of
+protecting privacy confidentiality are no longer viable <span class="citation">(Karr and Reiter <a href="#ref-karr2014analytical">2014</a>)</span>.
+There is a great deal of research that can be used to inform the
+development of such a structure, but it has been siloed into
+disconnected research areas, such as statistics, cybersecurity, and
+cryptography, as well as a variety of different practical applications,
+including the successful development of remote access secure data
+enclaves. We must piece together the knowledge from these various fields
+to develop ways in which vast new sets of data on human beings can be
+collected, integrated, and analyzed while protecting them <span class="citation">(Lane et al. <a href="#ref-lane2014">2014</a>)</span>.</p>
+<p>It is possible that the confidentiality risks of disseminating data may
+be so high that traditional access models will no longer hold; that the
+data access model of the future will be to take the analysis to the data
+rather than the data to the analyst or the analyst to the data. One
+potential approach is to create an integrated system including (a)
+unrestricted access to highly redacted data, most likely some version of
+synthetic data, followed by (b) means for approved researchers to access
+the confidential data via remote access solutions, combined with (c)
+verification servers that allows users to assess the quality of their
+inferences with the redacted data so as to be more efficient with their
+use (if necessary) of the remote data access. Such verification servers
+might be a web-accessible system based on a confidential database with
+an associated public micro-data release, which helps to analyze the
+confidential database <span class="citation">(Karr and Reiter <a href="#ref-karr2014analytical">2014</a>)</span>. Such approaches are
+starting to be developed, both in the USA and in Europe
+<span class="citation">(Elias <a href="#ref-Elias2014">2014</a>; Jones and Elias <a href="#ref-jones2006administrative">2006</a>)</span>.</p>
+<p>There is also some evidence that people do not require complete
+protection, and will gladly share even private information provided that
+certain social norms are met <span class="citation">(Wilbanks <a href="#ref-Wilbanks2014">2014</a>; Pentland et al. <a href="#ref-Pentland2014">2014</a>)</span>. There is a
+research agenda around identifying those norms as well; characterizing
+the interests and wishes of actors (the information senders and
+recipients or providers and users); the nature of the attributes
+(especially types of information about the providers, including how
+these might be transformed or linked); and identifying transmission
+principles (the constraints underlying the information flows).</p>
+<p>However, it is likely that it is no longer possible for a lone social
+scientist to address these challenges. One-off access agreements to
+individuals are conducive to neither the production of high-quality
+science nor the high-quality protection of data <span class="citation">(Schermann et al. <a href="#ref-schermann2014big">2014</a>)</span>. The
+curation, protection, and dissemination of data on human subjects cannot
+be an artisan activity but should be seen as a major research
+infrastructure investment, like investments in the physical and life
+sciences <span class="citation">(Bird <a href="#ref-bird2011computing">2011</a>; Abazajian et al. <a href="#ref-abazajian2009seventh">2009</a>; Human Microbiome Jumpstart Reference Strains Consortium et al. <a href="#ref-human2010catalog">2010</a>)</span>.
+In practice, this means that linkages become professionalized and
+replicable, research is fostered within research data centers that
+protect privacy in a systematic manner, knowledge is shared about the
+process of privacy protections disseminated in a professional fashion,
+and there is ongoing documentation about the value of evidence-based
+research. It is thus that the risk–utility tradeoff depicted in
+Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a> can
+be shifted in a manner that serves the public good.</p>
 </div>
 <div id="resources-6" class="section level2">
 <h2><span class="header-section-number">12.8</span> Resources</h2>
-<p>The American Statistical Association’s Privacy and Confidentiality website provides a useful source of information <span class="citation">(American Statistical Association, n.d.)</span>.</p>
-<p>An overview of federal activities is provided by the Confidentiality and Data Access Committee of the Federal Committee on Statistics and Methodology <span class="citation">(Confidentiality and Data Access Committee, n.d.)</span>.</p>
-<p>The World Bank and International Household Survey Network provide a good overview of data dissemination “best practices” <span class="citation">(International Household Survey Network, n.d.)</span>.</p>
-<p>There is a <em>Journal of Privacy and Confidentiality</em> based at Carnegie Mellon University <span class="citation">(JPC, n.d.)</span>, and also a journal called <em>Transactions in Data Privacy</em> <span class="citation">(TDP, n.d.)</span>.</p>
-<p>The United Nations Economic Commission on Europe hosts workshops and conferences and produces occasional reports <span class="citation">(United Nations Economic Commission for Europe, n.d.)</span>.</p>
+<p>The American Statistical Association’s Privacy and Confidentiality
+website provides a useful source of information
+<span class="citation">(American Statistical Association, <a href="#ref-AmericanStatisticalAssociation">n.d.</a>)</span>.</p>
+<p>An overview of federal activities is provided by the Confidentiality and
+Data Access Committee of the Federal Committee on Statistics and
+Methodology <span class="citation">(Confidentiality and Data Access Committee, <a href="#ref-ConfidentialityandDataAccessCommittee">n.d.</a>)</span>.</p>
+<p>The World Bank and International Household Survey Network provide a good
+overview of data dissemination “best practices”
+<span class="citation">(International Household Survey Network, <a href="#ref-InternationalHouseholdSurveyNetwork">n.d.</a>)</span>.</p>
+<p>There is a <em>Journal of Privacy and Confidentiality</em> based at Carnegie
+Mellon University <span class="citation">(JPC, <a href="#ref-JPC">n.d.</a>)</span>, and also a journal called <em>Transactions in
+Data Privacy</em> <span class="citation">(TDP, <a href="#ref-TransactionsonDataPrivacy">n.d.</a>)</span>.</p>
+<p>The United Nations Economic Commission on Europe hosts workshops and
+conferences and produces occasional reports
+<span class="citation">(United Nations Economic Commission for Europe, <a href="#ref-UnitedNationsEconomicCommissionforEurope">n.d.</a>)</span>.</p>
 <p>Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing <a href="https://simons.berkeley.edu/programs/privacy2019" class="uri">https://simons.berkeley.edu/programs/privacy2019</a> (available on youtube <a href="https://www.youtube.com/user/SimonsInstitute/" class="uri">https://www.youtube.com/user/SimonsInstitute/</a></p>
 
 </div>
@@ -503,13 +935,13 @@ Figure 12.1: The privacy–utility tradeoff
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-abazajian2009seventh">
-<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2). IOP Publishing: 543.</p>
+<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2): 543.</p>
 </div>
 <div id="ref-abowed2018">
 <p>Abowd, J. M. 2018. “The US Census Bureau Adopts Differential Privacy.” Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 2867-2867). ACM.</p>
 </div>
 <div id="ref-abowd2004integrated">
-<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2). JSTOR: 224–29.</p>
+<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2): 224–29.</p>
 </div>
 <div id="ref-abowd2006final">
 <p>Abowd, John M., Martha Stinson, and Gary Benedetto. 2006. “Final Report to the Social Security Administration on the SIPP/SSA/IRS Public Use File Project.” Suitland, MD: Census Bureau, Longitudinal Employer-Household Dynamics Program.</p>
@@ -523,38 +955,47 @@ Figure 12.1: The privacy–utility tradeoff
 <div id="ref-Agrawal1994">
 <p>Agrawal, Rakesh, and Ramakrishnan Srikant. 1994. “Fast Algorithms for Mining Association Rules in Large Databases.” In <em>Proceedings of the 20th International Conference on Very Large Data Bases</em>.</p>
 </div>
+<div id="ref-AmericanStatisticalAssociation">
+<p>American Statistical Association. n.d. “ASA Privacy and Confidentiality Subcommittee.” <a href="http://community.amstat.org/cpc/home">http://community.amstat.org/cpc/home</a>.</p>
+</div>
 <div id="ref-barbaro2006face">
-<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. 2006. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>, August.</p>
+<p>Barbaro, Michael, Tom Zeller, and Saul Hansell. n.d. “A Face Is Exposed for AOL Searcher No. 4417749.” <em>New York Times</em>.</p>
 </div>
 <div id="ref-barocas2014big">
-<p>Barocas, Solon, and Helen Nissenbaum. 2014a. “Big Data’s End Run Around Procedural Privacy Protections.” <em>Communications of the ACM</em> 57 (11). ACM: 31–33.</p>
+<p>Barocas, Solon, and Helen Nissenbaum. 2014a. “Big Data’s End Run Around Procedural Privacy Protections.” <em>Communications of the ACM</em> 57 (11): 31–33.</p>
 </div>
 <div id="ref-barocas2014bigger">
 <p>Barocas, Solon, and Helen Nissenbaum. 2014b. “The Limits of Anonymity and Consent in the Big Data Age.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div id="ref-Bastian2013">
-<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <em>Scientific American</em>, <a href="http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th" class="uri">http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th</a> <a href="-olympiad-of-research-on-biomedical-publication/" class="uri">-olympiad-of-research-on-biomedical-publication/</a>.</p>
+<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <em>Scientific American</em>, <a href="http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th">http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th</a> <a href="-olympiad-of-research-on-biomedical-publication/">-olympiad-of-research-on-biomedical-publication/</a>.</p>
 </div>
 <div id="ref-bird2011computing">
-<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61. Annual Reviews: 99–118.</p>
+<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61: 99–118.</p>
 </div>
 <div id="ref-boyd2012critical">
-<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5). Taylor &amp; Francis: 662–79.</p>
+<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5): 662–79.</p>
 </div>
 <div id="ref-brown2008economic">
 <p>Brown, Clair, John Haltiwanger, and Julia Lane. 2008. <em>Economic Turbulence: Is a Volatile Economy Good for America?</em> University of Chicago Press.</p>
 </div>
 <div id="ref-burkhauser2010improving">
-<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1). Elsevier: 69–72.</p>
+<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1): 69–72.</p>
 </div>
 <div id="ref-Cecil2003">
 <p>Cecil, Joe, and Donna Eden. 2003. “The Legal Foundations of Confidentiality.” In <em>Key Issues in Confidentiality Research: Results of an Nsf Workshop</em>. National Science Foundation.</p>
+</div>
+<div id="ref-ConfidentialityandDataAccessCommittee">
+<p>Confidentiality and Data Access Committee. n.d. “Federal Committee on Statistics and Methodology.” <a href="http://fcsm.sites.usa.gov/committees/cdac/">http://fcsm.sites.usa.gov/committees/cdac/</a>. Accessed April 16, 2016.</p>
 </div>
 <div id="ref-Cumby2011">
 <p>Cumby, Chad, and Rayid Ghani. 2011. “A Machine Learning Based System for Semi-Automatically Redacting Documents.” AAAI Publications, Twenty-Third IAAI Conference.</p>
 </div>
 <div id="ref-czajka2014minimizing">
 <p>Czajka, John, Craig Schneider, Amang Sukasih, and Kevin Collins. 2014. “Minimizing Disclosure Risk in HHS Open Data Initiatives.” US Department of Health &amp; Human Services.</p>
+</div>
+<div id="ref-decker2015has">
+<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. n.d. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em>.</p>
 </div>
 <div id="ref-desaietal2016">
 <p>Desai, T., F. Ritchie, and R. Welpton. 2016. “Five Safes: Designing Data Access for Research.” Working Papers 20161601, Department of Accounting, Economics; Finance, Bristol Business School, University of the West of England, Bristol.</p>
@@ -581,43 +1022,49 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Foster, Lucia, Ron S. Jarmin, and T. Lynn Riggs. 2009. “Resolving the Tension Between Access and Confidentiality: Past Experience and Future Plans at the US Census Bureau.” 09-33. US Census Bureau Center for Economic Studies.</p>
 </div>
 <div id="ref-haltiwanger2013creates">
-<p>Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. “Who Creates Jobs? Small Versus Large Versus Young.” <em>Review of Economics and Statistics</em> 95 (2). MIT Press: 347–61.</p>
+<p>Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. “Who Creates Jobs? Small Versus Large Versus Young.” <em>Review of Economics and Statistics</em> 95 (2): 347–61.</p>
 </div>
 <div id="ref-check2015researchers">
 <p>Hayden, Erica Check. 2015. “Researchers Wrestle with a Privacy Problem.” <em>Nature</em> 525 (7570): 440.</p>
 </div>
 <div id="ref-hayden2012broken">
-<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403). Macmillan Publishers Ltd., London, England: 312–14.</p>
+<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403): 312–14.</p>
 </div>
 <div id="ref-hill2012target">
-<p>Hill, Kashmir. 2012. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6" class="uri">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
+<p>Hill, Kashmir. n.d. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
 </div>
 <div id="ref-Hukkelas2019">
-<p>Hukkelas, Hakon, Rudolf Mester, and Frank Lindseth. 2019. “DeepPrivacy: A Generative Adversarial Network for Face Anonymization.” <a href="https://arxiv.org/abs/1909.04538" class="uri">https://arxiv.org/abs/1909.04538</a>.</p>
+<p>Hukkelas, Hakon, Rudolf Mester, and Frank Lindseth. 2019. “DeepPrivacy: A Generative Adversarial Network for Face Anonymization.” <a href="https://arxiv.org/abs/1909.04538">https://arxiv.org/abs/1909.04538</a>.</p>
 </div>
 <div id="ref-human2010catalog">
-<p>Human Microbiome Jumpstart Reference Strains Consortium, K. E. Nelson, G. M. Weinstock, and others. 2010. “A Catalog of Reference Genomes from the Human Microbiome.” <em>Science</em> 328 (5981). American Association for the Advancement of Science: 994–99.</p>
+<p>Human Microbiome Jumpstart Reference Strains Consortium, K. E. Nelson, G. M. Weinstock, and others. 2010. “A Catalog of Reference Genomes from the Human Microbiome.” <em>Science</em> 328 (5981): 994–99.</p>
 </div>
 <div id="ref-hundepool2010handbook">
 <p>Hundepool, Anco, Josep Domingo-Ferrer, Luisa Franconi, Sarah Giessing, Rainer Lenz, Jane Longhurst, E. Schulte Nordholt, Giovanni Seri, and P. Wolf. 2010. “Handbook on Statistical Disclosure Control.” Network of Excellence in the European Statistical System in the Field of Statistical Disclosure Control.</p>
 </div>
+<div id="ref-InternationalHouseholdSurveyNetwork">
+<p>International Household Survey Network. n.d. “Data Dissemination.” <a href="http://www.ihsn.org/home/projects/dissemination">http://www.ihsn.org/home/projects/dissemination</a>. Accessed April 16, 2016.</p>
+</div>
 <div id="ref-Ioannidis2005">
 <p>Ioannidis, J. P. A. 2005. “Why Most Published Research Findings Are False.” <em>PLoS Medicine</em> 2 (8): e124.</p>
-</div>
-<div id="ref-jarmin2002longitudinal">
-<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
 </div>
 <div id="ref-jarmin2014expanding">
 <p>Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. “Expanding the Role of Synthetic Data at the US Census Bureau.” <em>Statistical Journal of the IAOS</em> 30 (2): 117–21.</p>
 </div>
+<div id="ref-jarmin2002longitudinal">
+<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
+</div>
 <div id="ref-jones2006administrative">
 <p>Jones, Paul, and Peter Elias. 2006. “Administrative Data as a Research Resource: A Selected Audit.” ESRC National Centre for Research Methods.</p>
+</div>
+<div id="ref-JPC">
+<p>JPC. n.d. “Journal of Privacy and Confidentiality.” <a href="http://repository.cmu.edu/jpc/">http://repository.cmu.edu/jpc/</a>. Accessed April 16, 2016.</p>
 </div>
 <div id="ref-karr2014analytical">
 <p>Karr, Alan, and Jerome P. Reiter. 2014. “Analytical Frameworks for Data Release: A Statistical View.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div id="ref-kinney2011towards">
-<p>Kinney, Satkartar K., Jerome P. Reiter, Arnold P. Reznek, Javier Miranda, Ron S. Jarmin, and John M. Abowd. 2011. “Towards Unrestricted Public Use Business Microdata: The Synthetic Longitudinal Business Database.” <em>International Statistical Review</em> 79 (3). Wiley Online Library: 362–84.</p>
+<p>Kinney, Satkartar K., Jerome P. Reiter, Arnold P. Reznek, Javier Miranda, Ron S. Jarmin, and John M. Abowd. 2011. “Towards Unrestricted Public Use Business Microdata: The Synthetic Longitudinal Business Database.” <em>International Statistical Review</em> 79 (3): 362–84.</p>
 </div>
 <div id="ref-kreuter201412">
 <p>Kreuter, Frauke, and Roger D. Peng. 2014. “Extracting Information from Big Data: Issues of Measurement, Inference, and Linkage.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 257–75. Cambridge University Press.</p>
@@ -626,13 +1073,13 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Lane, Julia. 2007. “Optimizing Access to Micro Data.” <em>Journal of Official Statistics</em> 23: 299–317.</p>
 </div>
 <div id="ref-lane2013me">
-<p>Lane, Julia, and Victoria Stodden. 2013. “What? Me Worry? What to Do About Privacy, Big Data, and Statistical Research.” <em>AMSTAT News</em> 438. American Statistical Association: 14.</p>
+<p>Lane, Julia, and Victoria Stodden. 2013. “What? Me Worry? What to Do About Privacy, Big Data, and Statistical Research.” <em>AMSTAT News</em> 438: 14.</p>
 </div>
 <div id="ref-lane2014">
 <p>Lane, Julia, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, eds. 2014. <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>. Cambridge: Cambridge University Press.</p>
 </div>
 <div id="ref-levitt2006economic">
-<p>Levitt, Steven D., and Thomas J. Miles. 2006. “Economic Contributions to the Understanding of Crime.” <em>Annual Review of Law Social Science</em> 2. Annual Reviews: 147–64.</p>
+<p>Levitt, Steven D., and Thomas J. Miles. 2006. “Economic Contributions to the Understanding of Crime.” <em>Annual Review of Law Social Science</em> 2: 147–64.</p>
 </div>
 <div id="ref-mccallister2010sp">
 <p>McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. <em>SP 800-122. Guide to Protecting the Confidentiality of Personally Identifiable Information (Pii)</em>. National Institute of Standards; Technology.</p>
@@ -650,7 +1097,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Nissenbaum, H. 2009. <em>Privacy in Context: Technology, Policy, and the Integrity of Social Life</em>. Stanford University Press.</p>
 </div>
 <div id="ref-nissenbaum2011contextual">
-<p>Nissenbaum, Helen. 2011. “A Contextual Approach to Privacy Online.” <em>Daedalus</em> 140 (4). MIT Press: 32–48.</p>
+<p>Nissenbaum, Helen. 2011. “A Contextual Approach to Privacy Online.” <em>Daedalus</em> 140 (4): 32–48.</p>
 </div>
 <div id="ref-ohm2010broken">
 <p>Ohm, Paul. 2010. “Broken Promises of Privacy: Responding to the Surprising Failure of Anonymization.” <em>UCLA Law Review</em> 57: 1701.</p>
@@ -662,7 +1109,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Pentland, Alex, Daniel Greenwood, Brian Sweatt, Arek Stopczynski, and Yves-Alexandre de Montjoye. 2014. “Institutional Controls: The New Deal on Data.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
 <div id="ref-reiter2012statistical">
-<p>Reiter, Jerome P. 2012. “Statistical Approaches to Protecting Confidentiality for Microdata and Their Effects on the Quality of Statistical Inferences.” <em>Public Opinion Quarterly</em> 76 (1). AAPOR: 163–81.</p>
+<p>Reiter, Jerome P. 2012. “Statistical Approaches to Protecting Confidentiality for Microdata and Their Effects on the Quality of Statistical Inferences.” <em>Public Opinion Quarterly</em> 76 (1): 163–81.</p>
 </div>
 <div id="ref-ruggles2019">
 <p>Ruggles, S., C. Fitch, Magnuson D., and J. Schroeder. 2019. “Differential Privacy and Census Data: Implications for Social and Economic Research.” AEA Papers; Proceedings (Vol. 109, pp. 403-08).</p>
@@ -671,22 +1118,22 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Sah, Shagan, Ameya Shringi, Raymond Ptucha, Aaron M. Burry, and Robert P. Loce. 2017. “Video Redaction: A Survey and Comparison of Enabling Technologies.” <em>Journal of Electronic Imaging</em> 26 (5): 1–14.</p>
 </div>
 <div id="ref-schermann2014big">
-<p>Schermann, Michael, Holmer Hemsen, Christoph Buchmüller, Till Bitter, Helmut Krcmar, Volker Markl, and Thomas Hoeren. 2014. “Big Data.” <em>Business &amp; Information Systems Engineering</em> 6 (5). Springer: 261–66.</p>
+<p>Schermann, Michael, Holmer Hemsen, Christoph Buchmüller, Till Bitter, Helmut Krcmar, Volker Markl, and Thomas Hoeren. 2014. “Big Data.” <em>Business &amp; Information Systems Engineering</em> 6 (5): 261–66.</p>
 </div>
 <div id="ref-schnell2009privacy">
-<p>Schnell, Rainer, Tobias Bachteler, and Jörg Reiher. 2009. “Privacy-Preserving Record Linkage Using Bloom Filters.” <em>BMC Medical Informatics and Decision Making</em> 9 (1). BioMed Central Ltd: 41.</p>
+<p>Schnell, Rainer, Tobias Bachteler, and Jörg Reiher. 2009. “Privacy-Preserving Record Linkage Using Bloom Filters.” <em>BMC Medical Informatics and Decision Making</em> 9 (1): 41.</p>
 </div>
 <div id="ref-healthcarespending">
 <p>Schoenman, Julie A. 2012. “The Concentration of Health Care Spending.” NIHCM Foundation Data Brief. National Institute for Health Care Management.</p>
 </div>
 <div id="ref-shelton2014mapping">
-<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52. Elsevier: 167–79.</p>
+<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52: 167–79.</p>
 </div>
 <div id="ref-shlomo2018">
-<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1). doi:<a href="https://doi.org/10.29012/jpc.v8i1">10.29012/jpc.v8i1</a>.</p>
+<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1). <a href="https://doi.org/10.29012/jpc.v8i1">https://doi.org/10.29012/jpc.v8i1</a>.</p>
 </div>
 <div id="ref-squire19881936">
-<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1). AAPOR: 125–33.</p>
+<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1): 125–33.</p>
 </div>
 <div id="ref-stanton2006high">
 <p>Stanton, Mark W, and MK Rutherford. 2006. <em>The High Concentration of Us Health Care Expenditures</em>. Agency for Healthcare Research; Quality.</p>
@@ -697,21 +1144,21 @@ Figure 12.1: The privacy–utility tradeoff
 <div id="ref-sweeney2001computational">
 <p>Sweeney, Latanya. 2001. “Computational Disclosure Control: A Primer on Data Privacy Protection.” MIT.</p>
 </div>
+<div id="ref-TransactionsonDataPrivacy">
+<p>TDP. n.d. “Transactions on Data Privacy.” <a href="http://www.tdp.cat/">http://www.tdp.cat/</a>. Accessed April 16, 2016.</p>
+</div>
 <div id="ref-trewin2007managing">
 <p>Trewin, D., A. Andersen, T. Beridze, L. Biggeri, I. Fellegi, and T. Toczynski. 2007. “Managing Statistical Confidentiality and Microdata Access: Principles and Guidelines of Good Practice.” Geneva: Conference of European Statisticians, United Nations Economic Commision for Europe.</p>
+</div>
+<div id="ref-UnitedNationsEconomicCommissionforEurope">
+<p>United Nations Economic Commission for Europe. n.d. “Statistical confidentiality and disclosure protection.” <a href="http://www.unece.org/stats/mos/meth/confidentiality.html">http://www.unece.org/stats/mos/meth/confidentiality.html</a>. Accessed April 16, 2016.</p>
 </div>
 <div id="ref-Wilbanks2014">
 <p>Wilbanks, John. 2014. “Portable Approaches to Informed Consent and Open Data.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
 <div id="ref-zayatz2007disclosure">
-<p>Zayatz, Laura. 2007. “Disclosure Avoidance Practices and Research at the US Census Bureau: An Update.” <em>Journal of Official Statistics</em> 23 (2). Statistics Sweden (SCB): 253.</p>
+<p>Zayatz, Laura. 2007. “Disclosure Avoidance Practices and Research at the US Census Bureau: An Update.” <em>Journal of Official Statistics</em> 23 (2): 253.</p>
 </div>
-</div>
-<div class="footnotes">
-<hr />
-<ol start="58">
-<li id="fn58"><p>PII is “any information about an individual maintained by an agency, including (1) any information that can be used to distinguish or trace an individual’s identity, such as name, social security number, date and place of birth, mother’s maiden name, or biometric records; and (2) any other information that is linked or linkable to an individual, such as medical, educational, financial, and employment information” <span class="citation">(McCallister, Grance, and Scarfone <a href="#ref-mccallister2010sp">2010</a>)</span>.<a href="chap-privacy.html#fnref58">↩</a></p></li>
-</ol>
 </div>
 <div id="disqus_thread"></div>
 <script>
@@ -736,11 +1183,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -748,12 +1197,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -765,6 +1213,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -781,7 +1233,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
