@@ -1,7 +1,7 @@
 <!--
 
 % todo: add examples to table
---> 
+-->
 
 Text Analysis {#chap:text}
 =============
@@ -39,12 +39,12 @@ large amounts of text data in your analysis.
 
 We’re often comfortable analyzing structured data that is organized as
 rows and columns. Text data, often also known as unstructured
-data,\^[this is often the term used but is a fallacy. There is
+data,^[this is often the term used but is a fallacy. There is
 a lot of structure in text&mdash;the structure of chapters,
 paragraphs, sentences, and syntax [@marcus-93] within a sentence allows you, the reader,
 to understand what we’re writing here. Unstructured often refers to
 not having defined rows and columns in our data.] is harder to analyze
-using traditional data analysis tools because it doesn’t come as a set of 
+using traditional data analysis tools because it doesn’t come as a set of
 rows and columns, but instead consists of characters, words,
 sentences, and paragraphs. In traditional, “structured”, data, a human
 has already decided what constitutes a row (a person for example),
@@ -57,7 +57,8 @@ While creating that structure, we have to deal with human language
 being complex and nuanced, which makes automatically analyzing it difficult. We
 often make simplifying assumptions: we assume our input is perfect
 text; we ignore humor [@halevy-09] and deception [@niculae-15;
-@ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 6
+@ott-11]; and we assume "standard" English [@kong-14]^[See Chapter
+[Machine Learning](#chap:ml)
 for a discussion of speech recognition, which can turn spoken language
 into text]. Text data also often reflects human observations that are
 exceptions to regular processes&mdash;the ubiquitous “other” or the
@@ -82,19 +83,19 @@ Type of Analysis | Description           | Examples
 Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean.
 Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
 Classification | Used to classify text content into one or more predefined categories | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].
-Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&emdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
+Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
 Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue) | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
 General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities etc. | **Need good example**
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks) | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
-Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | **Need good example** For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
+Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
 Translation | Automatic translation of text from one language to another | Look at reaction to a political event in newspapers of different countries in different languages
 
-For this chapter, we will focus on two types of use cases that social scientists deal with conntaining text data: 
+For this chapter, we will focus on two types of use cases that social scientists deal with conntaining text data:
 
 1. We have some text “corpus”, for example open-ended survey responses
 or news articles or research publications, and our goal is to
-understand the content&emdash;patterns, themes, trends&emdash;of that
+understand the content&mdash;patterns, themes, trends&mdash;of that
 data. This often involves methods from unsupervised machine learning
 (that we covered in the previous chapter). The analysis can then be
 combined with tabular data that might accompany the text.  For
@@ -123,11 +124,11 @@ Text analysis, specially related to the clustering and classification
 use cases, requires us to build an analysis pipeline that processes
 data through a series of steps:
 
--   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some inital processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
+-   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some inital processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis.
 
--   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
+-   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence.
 
--   **Converting the enriched text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The matrix is then used to run different analysis algortihmns, such as clustering or classification methods covdeed in the previous chapter.  The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.
+-   **Converting the enriched text to a matrix**: Once we’ve cleaned up the text and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The matrix is then used to run different analysis algorithms, such as clustering or classification methods covered in the previous chapter. The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.
 
 -   **Analysis**: Once we have a matrix, then we can apply the methods we covered in the Machine Learning chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
@@ -138,7 +139,8 @@ data through a series of steps:
 
 The first important step in working with text data is cleaning and
 processing^[Cleaning and processing are discussed extensively in
-Chapter 3.]. Textual data are often messy and unstructured, which
+Chapter [Record Linkage](#chap:link).]. Textual data are often
+messy and unstructured, which
 makes many researchers and practitioners overlook their
 value. Depending on the source, cleaning and processing these data can
 require varying amounts of effort but typically involve a set of
@@ -194,7 +196,7 @@ data. Given the complexity of natural language, words can take multiple
 forms dependent on the syntactic structure with limited change of their
 original meaning. For example, the word "system" morphologically has a
 plural "systems" or an adjective "systematic." All these words are
-semantically similar and&emdash;for many tasks&emdash;should be treated the same.
+semantically similar and&mdash;for many tasks&mdash;should be treated the same.
 For example, if a document has the word "system" occurring three times,
 "systems" once, and "systematic" twice, one can assume that the word
 "system" with similar meaning and morphological structure can cover all
@@ -267,7 +269,8 @@ the importance or value of this token in this document. Not all words
 are worth the same; in an article about economics, "free market" is
 more important than "social good." Appropriately weighting^[Term
 weighting is an example of feature engineering discussed in Chapter
-6.] and calibrating words is important for both human and machine
+[Machine Learning](#chap:ml).]
+and calibrating words is important for both human and machine
 consumers of text data: humans do not want to see "the" as the most
 frequent word of every document in summaries, and classification
 algorithms benefit from knowing which features are actually important
@@ -299,8 +302,9 @@ Now that we have a matrix with documents as rows, words/phrases as
 columns and let's say the TFIDF score as the value of that word in
 that document, we are now ready to run different machine learning
 methods on this data. We will not recap all of the methods and
-evaluation methodologies already covered in Chapter 6 here but they
-can all be used with text data.
+evaluation methodologies already covered in Chapter
+[Machine Learning](#chap:ml) here but they can all be used with
+text data.
 
 We’ll focus on three types of analysis: finding similar documents,
 clustering, and classification. For each type of analysis, we‘ll focus
@@ -326,7 +330,7 @@ similarity is
 
 $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
      \overrightarrow{t_b}}{|\overrightarrow{t_a}|*|\overrightarrow{t_b}|}.$$
-     
+
 ---
 
 **Example: Measuring cosine similarity between documents**
@@ -437,7 +441,7 @@ can be used to evaluate the two goals we have in finding relevant and
 similar documents.
 
 <div class="F00">
-<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors—<em>false positives</em>—and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors—<em>false negatives</em>—and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors---<em>false positives</em>---and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em>---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
 </div>
 
 We assume that a user has three sets of documents $D_a
@@ -544,8 +548,7 @@ LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
 words at the top of the list
-(\@ref(fig:nyt-topics-3)). However, we do not know what the topics are
-[a priori]{.roman}; the goal is to discover what they are (more on
+(\@ref(fig:nyt-topics-3)). However, we do not know what the topics are a priori; the goal is to discover what they are (more on
 this shortly).
 
 <img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" />
@@ -700,7 +703,7 @@ engineering approach described in the last chapter.
 
 The section above focused on the task of finding topics and themes in
 a new text data set. In many cases, we already know a set of
-topics&emdash;this could be the set of topics or research fields as
+topics&mdash;this could be the set of topics or research fields as
 described by the Social Science Research Network or the set of
 sections (local news, international, sports, finance, etc.) in a news
 publication. The task we often face is to automatically categorize new
@@ -829,7 +832,7 @@ given a word's *context*.  These are also useful features to use in
 supervised machine learning contexts if higher accuracy is your goal.
 
 However, these techniques are not always the best tools for social
-scientists.  They are not always interpretable&emdash;it is often hard
+scientists.  They are not always interpretable&mdash;it is often hard
 to tell why you got the answer you did [@ribeiro-16], and slightly
 changing the input the models can dramatically change the results
 [@feng-18].  Given that our goal is often understanding our data, it
@@ -911,7 +914,7 @@ novices. It offers fast, popular implementations of conditional random
 fields (for part-of- speech tagging), text classification, and topic
 modeling.
 
-**Spacy.io** 
+**Spacy.io**
 
 While NLTK is optimized for teaching NLP concepts to students,
 Spacy.io [http://spacy.io] is optimized for practical application.  It
@@ -1003,4 +1006,3 @@ annotation. For example, what is the object of the sentence "The man
 bought the hat"? These standard corpora serve as training data to train
 the classifiers and machine learning techniques to automatically analyze
 text [@halevy-09].
-
