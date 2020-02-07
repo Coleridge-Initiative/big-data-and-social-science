@@ -34,21 +34,16 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 ---
 
-**todo: finish examples in this box**
+<!-- todo: finish examples in this box -->
+<!-- - Survey paper: http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf -->
 
-***Box with examples or references to these examples***
+**Box 9.1: Network Analysis Examples**
 
-Survey paper: (maybe at end in further reading) http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf
+- **Example 1: Cascading Information**^[https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf] [@ugander2011]. By using network analysis, researchers were able to characterize how information travels and recurs in patterns, exhibiting multiple bursts of popularity.
 
-http://www.sn.ethz.ch Zurich Networks Labs
+- **Example 2: Large-Scale Social Networks**^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208] [@stopczynski2014]. Using data from a variety of sources to determine how people are connected, Stopczynski et al. are able to observe how communities form and social interactions change over time.
 
-Example 1: https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf
-
-Example 2: https://abjer.github.io/project/social-fabric/ or https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208/ (same study)
-
-Example 3: diffusion of information
-
-Facebook graph example: http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf
+- **Example 3: Facebook Social Graph .**^[http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf] [@cheng2016]. A study of the Facebook friendship network was able to characterize how connected people were on the social networking site. By studying clustering and friendship preferences, the researchers were able to see how communities form and explore the "six degrees of separation" phenomenon on Facebook.
 
 ---
 
@@ -60,7 +55,7 @@ Committee on Institutional Cooperation (CIC)'s UMETRICS project [@lane2015new]. 
 What are networks?
 ------------------
 
-Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes? Second, what are the relationships (ties or edges) connecting the nodes? Once we have the representation, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
+Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes, or entities that are connected? Second, what are the relationships (ties or edges) connecting the nodes? Once we have the representation, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
 
 Networks offer not just another convenient set of right-hand-side variables, but an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the
 markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell [@powell2003neither] puts it in a description of buyer supplier networks of small Italian firms: "when the entangling of obligation and reputation reaches a point where the
@@ -121,7 +116,7 @@ networks lead them to have quite different scientific capabilities.
 Turning Data into a Network
 ------------
 
-Networks are comprised of *nodes*, which represent things that can be
+Networks are comprised of *nodes*, which represent entities that can be
 connected to one another, and of ties that represent the relationships
 connecting nodes. When ties are undirected (representing a relationshop between the nodes that is not directional) they are called *edges*. When
 they are directed (as when I lend money to you and you do or do not

@@ -32,17 +32,14 @@ The first example is used in the *Databases*,
 *Dataset Exploration and Visualization*, *Machine Learning* and 
 *Bias and Fairness* workbooks and focuses on corrections data. 
 The second example includes the *APIs*, *Record Linkage* and 
-*Text Analysis* workbooks, which use patent and grant data to investigate innovation and funding.
+*Text Analysis* workbooks, which use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
 
 The Jupyter notebooks are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
 locally. Individual workbooks can be opened by following the 
 corresponding Binder link. The full set of workbooks is
-available in the *Big-Data-Social-Science GitHub repository*
-(<https://github.com/Coleridge-Initiative/bdss-notebooks>). Additional workbooks
-may be added over time and made available in this repository.
-
-To launch Binder and work on the notebooks, you can use the following link: (<https://workbooks.coleridgeinitiative.org>). 
+available at (<https://workbooks.coleridgeinitiative.org>). Additional workbooks
+may be added over time and made available in this repository. 
 
 The workbooks can also be run locally. In that case, you will need to install 
 Python on your system, then install `ipython`, which includes a local Jupyter 
@@ -213,7 +210,7 @@ of a machine learning system. Specifically, you will learn how to:
 
 ### Errors and Inference
 
-The *Errors and Inference* workbook walks through how one might think critically about issues that might arise in their analysis. In this notebook, you will evaluate machine learning models and learn about ways to improve the data to use as much information as possible to make conclusions. Specifically, you will learn how to: 
+The *Errors and Inference* workbook walks through how one might think critically about issues that might arise in their analysis. In this notebook, you will evaluate the machine learning models from previous notebooks and learn about ways to improve the data to use as much information as possible to make conclusions. Specifically, you will learn how to: 
 
 - Perform sensitivity analysis with machine learning models,
 
