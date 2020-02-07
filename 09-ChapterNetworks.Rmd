@@ -30,7 +30,7 @@ of sociologists and organizational theorists.
 Introduction
 ------------
 
-Social Scientists have studied networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [citation Moreno, J.L., Jennings, H.H.: Who Shall Survive?: A New Approach to the Problem of Human Interrelations. Nervous and Mental Disease Publishing Co., Washington, D.C. (1934)]. What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club (Zachary, W. W. (1977). "An Information Flow Model for Conflict and Fission in Small Groups". Journal of Anthropological Research. 33 (4): 452–473.), we now have data about hundreds of millions of people communicating with each other through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
+Social Scientists have studied networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [@moreno1934]. What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club [@zachary1977], we now have data about hundreds of millions of people communicating with each other through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
 
 ---
 
@@ -84,12 +84,12 @@ that connects individual researchers to grants that paid their salaries
 in 2012 for a large public university. The grants network for university
 A includes information on 9,206 individuals who were employed on 3,389
 research grants from federal science agencies in a single year. The web of partnerships that emerges from university scientists' decentralized efforts to build effective collaborations and
-teams generates a distinctive social infrastructure for cutting- edge Science.
+teams generates a distinctive social infrastructure for cutting-edge science.
 
 While this chapter focuses on social networks, the techniques described here have been used to examine the structure of networks such as the World Wide Web, the national
 railway route map of the USA, the food web of an ecosystem, or the neuronal network of a particular species of animal. 
 
-Strcuture for this chapter
+Structure for this chapter
 --------------------------
 
 The chapter first introduces the most common structures for large network data,
@@ -185,7 +185,7 @@ as asymmetric valued matrices or lists of arcs with associated values.
 knitr::include_graphics("ChapterNetworks/figures/fig8-2.png")
 ```
 
-While many studies of small- to medium-sized social networks rely on
+Many studies of small- to medium-sized social networks rely on
 one-mode data. Large-scale social network data of this type are
 relatively rare, but one-mode data of this sort are fairly common in
 relationships among other types of nodes such as web pages or citations
@@ -280,7 +280,7 @@ describe below can also be used with the grant-by-grant projection,
 which provides a different view of how federally funded research is put
 together by collaborative relationships on campus.
 
-```{r, eval=FALSE}
+```{python, eval=FALSE}
 from igraph import *
 
 # Read the graph
@@ -445,7 +445,7 @@ nodes reachable through the largest component. In the code snippet
 below, I identify the weakly connected components of the employee
 network, `emp`.
 
-```{r, eval=FALSE}
+```{python, eval=FALSE}
 # Add component membership
 emp.vs["membership"] = emp.clusters(mode="weak").membership
 
@@ -480,7 +480,9 @@ it easier for information or resources to flow among members in the
 network. Longer path lengths, by comparison, are associated with greater
 difficulty in the diffusion and transmission of information or
 resources. Let $g$ be the number of nodes or vertices in a network. Then
-$$l_G=\frac{1}{g(g-1)}\sum_{i\neq j}d(n_i,n_j).$$ As with other measures
+$$l_G=\frac{1}{g(g-1)}\sum_{i\neq j}d(n_i,n_j),$$ where $d(n_i,n_j)$ is the path length between $n_i$ and $n_j$. Typically, the path length is defined as the length of the shortest path^[A *shortest path* is a path that requires the fewest steps, taking into account values of ties if applicable. In networks with unvalued ties, most pairs have several of those. In networks with valued ties, the shortest path may not be the one with the fewest vertices.] between two nodes.
+
+As with other measures
 based on reachability, it is most common to report the average path
 length for the largest connected component of the network because the
 graph-theoretic distance between two unconnected nodes is infinite. In
@@ -494,7 +496,7 @@ distance among all nodes and returns a matrix of those distances. That
 matrix (saved as `empdist`) can be used to calculate additional measures or to
 visualize the graph-theoretic proximities among nodes.
 
-```{r, eval=FALSE}
+```{python, eval=FALSE}
 # Calculate distances and construct distance table
 
 dfreq=emp.path_length_hist(directed=False)
@@ -618,7 +620,7 @@ clustering coefficients whose average represents the local measure for
 the employee $\times$ employee network projection of the university A
 UMETRICS data.
 
-```{r, eval=FALSE}
+```{python, eval=FALSE}
 # Calculate clustering coefficients
 emp.transitivity_undirected()
 # 0.7241
@@ -690,17 +692,8 @@ have more to do with the indirect ties that increase reachability. Both
 make explicit use of the idea that reachability is the source of many of
 the important social and economic benefits of salutary network
 positions, but they do so with different substantive emphases. Both of
-these approaches rely on the idea of a network geodesic, the longest
-shortest path^[A *shortest path* is a path that does not repeat any
-nodes or ties. Most pairs
-have several of those. The
-*geodesic* is the longest
-shortest path. So, if two
-people are directly connected (path length 1) and
-connected through shared
-ties to another person
-(path length 2), then their
-geodesic distance is two.] connecting any pair of actors. Because these measures rely
+these approaches rely on the idea of a network geodesic, the
+shortest path connecting any pair of actors. Because these measures rely
 on reachability, they are only useful when applied to components. When
 nodes have no ties (degree 0) they are called *isolates*. The geodesic
 distances are infinite and thus path-based centrality measures cannot be
@@ -782,7 +775,7 @@ a different set of measures. The code snippet presented below calculates
 each of these measures for the university A employee network we have
 been examining.
 
-```{r, eval=FALSE}
+```{python, eval=FALSE}
 # Calculate centrality measures
 emp.vs["degree"]=emp.degree()
 emp.vs["close"]=emp.closeness(vertices=emp.vs)

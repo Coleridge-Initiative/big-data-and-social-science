@@ -524,8 +524,11 @@ We obtain the following:
 
 ### Schema design and definition {#sec:db:schema}
 
-Todo: image of our database schema
 
+<div class="figure" style="text-align: center">
+<img src="ChapterDB/figures/NCSES-Database-Diagram.png" alt="A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue)." width="70%" />
+<p class="caption">(\#fig:NCSES)A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue).</p>
+</div>
 When using a pre-existing database, you will be given the database design that includes tables, rows, and columns. 
 But, when you are starting with your own data and need to create a database, the first step is to come up with the design of the database.
 
