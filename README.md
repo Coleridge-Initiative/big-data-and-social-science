@@ -1,6 +1,6 @@
 # Big Data and Social Science 
 
-You can view this textbook at [https://coleridge-initiative.github.io/big-data-and-social-science/](https://coleridge-initiative.github.io/big-data-and-social-science/)
+You can view this textbook at [https://textbook.coleridgeinitiative.org/](https://textbook.coleridgeinitiative.org/)
 
 ## Soliciting feedback and improvement suggestions for the second edition
 
