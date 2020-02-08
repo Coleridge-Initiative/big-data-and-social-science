@@ -407,7 +407,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="what-can-we-do-with-text-data" class="section level2">
 <h2><span class="header-section-number">8.3</span> What can we do with text data?</h2>
 <p>There are a lot of types of analysis that we can do with text data. Table <a href="chap-text.html#tab:table7-0">8.1</a> gives a summary of these types of analysis. <!-- TODO: finish table 
-Please try to be consistent with either always putting an '.' at the end of a cell or never.
 --></p>
 <table>
 <caption><span id="tab:table7-0">Table 8.1: </span></caption>
@@ -426,17 +425,17 @@ Please try to be consistent with either always putting an '.' at the end of a ce
 <tbody>
 <tr class="odd">
 <td>Search</td>
-<td>Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured</td>
-<td>For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean <!-- Comment: provide reference? --></td>
+<td>Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured.</td>
+<td>For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? --></td>
 </tr>
 <tr class="even">
 <td>Topic Detection / Clustering</td>
-<td>Used to explore and understand what types of words, phrases, and topics exist in text data</td>
+<td>Used to explore and understand what types of words, phrases, and topics exist in text data.</td>
 <td>Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm’s communication.</td>
 </tr>
 <tr class="odd">
 <td>Classification</td>
-<td>Used to classify text content into one or more predefined categories</td>
+<td>Used to classify text content into one or more predefined categories.</td>
 <td>Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter <span class="citation">(Yates and Paquette <a href="#ref-yates-10">2010</a>)</span>.<!-- Comment: content of news articles or tweets might be more practically relevant --></td>
 </tr>
 <tr class="even">
@@ -446,7 +445,7 @@ Please try to be consistent with either always putting an '.' at the end of a ce
 </tr>
 <tr class="odd">
 <td>Word Clustering/Synonyms</td>
-<td>Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue)<!-- Comment: unclear: (such as IBM and Deep Blue) --></td>
+<td>Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue).<!-- Comment: unclear: (such as IBM and Deep Blue) --></td>
 <td>In a search engine, when a user searches for “Russian astronaut”, also return search results for “Soviet cosmonaut” <span class="citation">(Zeng et al. <a href="#ref-Zeng-2012">2012</a>)</span>.</td>
 </tr>
 <tr class="even">
@@ -461,7 +460,7 @@ Please try to be consistent with either always putting an '.' at the end of a ce
 </tr>
 <tr class="even">
 <td>Visualization</td>
-<td>Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks)</td>
+<td>Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks).</td>
 <td>Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other <span class="citation">(Edmund M Talley et al. <a href="#ref-EdmundMTalley2011">2011</a>)</span>.</td>
 </tr>
 <tr class="odd">
@@ -471,8 +470,8 @@ Please try to be consistent with either always putting an '.' at the end of a ce
 </tr>
 <tr class="even">
 <td>Translation</td>
-<td>Automatic translation of text from one language to another</td>
-<td>Look at reaction to a political event in newspapers of different countries in different languages</td>
+<td>Automatic translation of text from one language to another.</td>
+<td>Look at reaction to a political event in newspapers of different countries in different languages.</td>
 </tr>
 </tbody>
 </table>
@@ -491,7 +490,7 @@ Please try to be consistent with either always putting an '.' at the end of a ce
 <li><p><strong>Converting the enriched text to a matrix</strong>: Once we’ve cleaned up the text data and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.</p></li>
 <li><p><strong>Analysis</strong>: Once we have a matrix, then we can apply the methods we covered in the previous chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.</p></li>
 </ul>
-<p><img src="ChapterText/figures/textanalysispipeline.png" width="70%" style="display: block; margin: auto;" /> <!-- Comment: You might want to make this graphic bigger, i.e. >70%. There is space; and it becomes hard to read. --> <!-- Comment: Try to be consistent in this graphic with capitalization, e.g. why should it be row but Column? Dito for Stopwords vs rare words; (Optional); Matrix. Choose one way of capitalization, please. --></p>
+<p><img src="ChapterText/figures/textanalysispipeline.png" width="90%" style="display: block; margin: auto;" /> <!-- Comment: Try to be consistent in this graphic with capitalization, e.g. why should it be row but Column? Dito for Stopwords vs rare words; (Optional); Matrix. Choose one way of capitalization, please. --></p>
 <div id="initial-processing" class="section level3">
 <h3><span class="header-section-number">8.4.1</span> Initial Processing</h3>
 <p>The first important step in working with text data is cleaning and processing.<a href="#fn46" class="footnoteRef" id="fnref46"><sup>46</sup></a> Textual data are often messy and unstructured, which makes many researchers and practitioners overlook their value. Depending on the source, cleaning and processing these data can require varying amounts of effort but typically involve a set of established techniques.</p>
@@ -628,11 +627,10 @@ F_1 = 2\cdot \frac{\mathrm{Precision}\cdot \mathrm{Recall}}{\mathrm{Precision}+\
 <p>Topic modeling is an approach that describes <em>topics</em> that constitute the high-level themes of a text corpus. Topic modeling is often described as an <em>information discovery</em> process: describing what “concepts” are present in a corpus. We refer to them as “concepts” or “topics” (in quotes) because they typically will be represented as a probability distribution over the words (that the topic modeling method groups together) which may or may not be semantically coherent as a “topic” to social scientists.</p>
 <p>As topic modeling is a broad subfield of natural language processing and machine learning, we will restrict our focus to a single method called Latent Dirichlet Allocation (LDA) <span class="citation">(Blei, Ng, and Jordan <a href="#ref-blei-03">2003</a>)</span>. LDA is a fully Bayesian extension of probabilistic latent semantic indexing <span class="citation">(Hofmann <a href="#ref-hofmann-99">1999</a>)</span>, itself a probabilistic extension of latent semantic analysis <span class="citation">(Landauer and Dumais <a href="#ref-landauer-97">1997</a>)</span>. <span class="citation">Blei and Lafferty (<a href="#ref-blei-09">2009</a>)</span> provide a more detailed discussion of the history of topic models.</p>
 <p>LDA, like all topic models, assumes that there are topics that form the building blocks of a corpus. Topics are distributions over words and are often shown as a ranked list of words, with the highest probability words at the top of the list (see Figure <a href="chap-text.html#fig:nyt-topics-3">8.1</a>). However, we do not know what the topics are a priori; the goal is to discover what they are (more on this shortly).</p>
-<!-- Comment: This first figure is way bigger (in terms of fonts) than the others. It also doesn't fit on one page! -->
-<p><img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" /></p>
-<p><img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterText/figures/nyt_topics-1.png" width="50%" style="display: block; margin: auto;" /></p>
+<p><img src="ChapterText/figures/nyt_topics-2.png" width="50%" style="display: block; margin: auto;" /></p>
 <div class="figure" style="text-align: center"><span id="fig:nyt-topics-3"></span>
-<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
+<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts" width="50%" />
 <p class="caption">
 Figure 8.1: Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the <em>New York Times</em> <span class="citation">(Sandhaus <a href="#ref-sandhaus-08">2008</a>)</span>. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts
 </p>
@@ -720,7 +718,7 @@ p(z_B = 3) = &amp; \frac{2 + 1.000}{3 + 3.000} \times \frac{1 + 1.000}{4 + 5.000
 <p>Similarly, the Brown Corpus or WordNet can be called by running <code>from nltk.corpus import wordnet/brown</code>. After the corpora are loaded, their various properties can be explored and used in text analysis; for example, <code>dogsyn = wordnet.synsets('dog')</code> will return a list of WordNet synsets related to the word “dog.”</p>
 <p>Term frequency distribution and <span class="math inline">\(n\)</span>-gram indexing are other techniques implemented in NLTK. For example, a user can compute frequency distribution of individual terms within a document <em>doc</em> by running a command in Python: <code>fdist = nltk.FreqDist(text)</code>. This command returns a dictionary of all tokens with associated frequency within <em>doc</em>.</p>
 <p><span class="math inline">\(N\)</span>-gram indexing is implemented as a chain-linked collocations algorithm that takes into account the probability of any given two, three, or more words appearing together in the entire corpus. In general, <span class="math inline">\(n\)</span>-grams can be discovered as easily as running <code>bigrams = nltk.bigrams(text)</code>. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing 7.4.</p>
-<p><span class="citation">Bird, Klein, and Loper (<a href="#ref-bird-09">2009</a>)</span> provide a detailed description of NLTK tools and techniques. See also the official NLTK website <span class="citation">(NLTK Project, n.d.)</span>. <!--Comment: NLTKweb: This reference is broken. --></p>
+<p><span class="citation">Bird, Klein, and Loper (<a href="#ref-bird-09">2009</a>)</span> provide a detailed description of NLTK tools and techniques. See also the official NLTK website <span class="citation">(NLTK Project, n.d.)</span>.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">def <span class="kw">bigram_finder</span>(texts)<span class="op">:</span>
 <span class="st">  </span><span class="co"># NLTK bigrams from a corpus of documents separated by new line</span>
 <span class="st">  </span>tokens_list =<span class="st"> </span><span class="kw">nltk.word_tokenize</span>(<span class="kw">re.sub</span>(<span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>,<span class="st">&quot; &quot;</span>,texts))
@@ -741,7 +739,6 @@ Listing 7.4. Python code to find bigrams using NLTK
 </div>
 <!-- Comment: Why is called Listing 7.4? There are no Listings 7.1-7.3? Also, this chapter 8 not chapter 7. -->
 <p><strong>Stanford CoreNLP</strong></p>
-<!--Comment: @corenlp: This reference is broken. -->
 <p>While NLTK’s emphasis is on simple reference implementations, Stanford’s CoreNLP <span class="citation">(Stanford, n.d.; Manning et al. <a href="#ref-manning2014stanford">2014</a>)</span> is focused on fast implementations of cutting-edge algorithms, particularly for syntactic analysis (e.g., determining the subject of a sentence).</p>
 <p><strong>MALLET</strong></p>
 <p>For probabilistic models of text, MALLET, the MAchine Learning for LanguagE Toolkit <span class="citation">(McCallum <a href="#ref-mallet">2002</a>)</span>, often strikes the right balance between usefulness and usability. It is written to be fast and efficient but with enough documentation and easy enough interfaces to be used by novices. It offers fast, popular implementations of conditional random fields (for part-of-speech tagging), text classification, and topic modeling.</p>
@@ -762,10 +759,11 @@ Listing 7.4. Python code to find bigrams using NLTK
 <li><p>The Natural Language Toolkit is one of the most popular Python-based tools for natural language processing. It has a variety of methods and examples that are easily accessible online <span class="citation">(NLTK Project, n.d.)</span>. The book by <span class="citation">Bird, Klein, and Loper (<a href="#ref-bird-09">2009</a>)</span>, available online, contains multiple examples and tips on how to use NLTK. This is a great package to use if you want to <em>understand</em> these models.</p></li>
 <li><p>A paper by Anna Huang <span class="citation">(Huang <a href="#ref-huang-08">2008</a>)</span> provides a brief overview of the key similarity measures for text document clustering discussed in this chapter, including their strengths and weaknesses in different contexts.</p></li>
 <li><p>Materials at the MALLET website <span class="citation">(McCallum <a href="#ref-mallet">2002</a>)</span> can be specialized for the unprepared reader but are helpful when looking for specific solutions with topic modeling and machine classification using this toolkit.</p></li>
-<li><p>We provide an example of how to run topic modeling using MALLET on textual data from the National Science Foundation and Norwegian Research Council award abstracts <span class="citation">(Boyd-Graber, n.d.)</span>. <!-- Comment: This reference @NSFsearch is broken. --></p></li>
+<li><p>We provide an example of how to run topic modeling using MALLET on textual data from the National Science Foundation and Norwegian Research Council award abstracts <span class="citation">(Boyd-Graber, n.d.)</span>.</p></li>
 <li><p>If you do not care about understanding and just want models that are easy to use and fast, spaCy [<a href="https://spacy.io/" class="uri">https://spacy.io/</a>] has a useful minimal core of models for the average user. spaCy is the most useful toolkit for the preprocessing steps of dataset preparation.</p></li>
 <li><p>For more advanced models (classification, tagging, etc.), the AllenNLP toolkit [<a href="https://allennlp.org/" class="uri">https://allennlp.org/</a>] is useful if you want to run state of the art models and tweak them just slightly.</p></li>
-<li><p>Text corpora: A set of multiple similar documents is called a <em>corpus</em>. For example, the Brown University Standard Corpus of Present-Day American English, or just the Brown Corpus <span class="citation">(Francis and Kucera <a href="#ref-browncorpus">1979</a>)</span>, is a collection of processed documents from works published in the United States in 1961. The Brown Corpus was a historical milestone: it was a machine-readable collection of a million words across 15 balanced genres with each word tagged with its part of speech (e.g., noun, verb, preposition). The British National Corpus <span class="citation">(University of Oxford <a href="#ref-bnc">2006</a>)</span> repeated the same process for British English at a larger scale. The Penn Treebank <span class="citation">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-marcus-93">1993</a>)</span> provides additional information: in addition to part-of-speech annotation, it provides <em>syntactic</em> annotation. For example, what is the object of the sentence “The man bought the hat”? These standard corpora serve as training data to train the classifiers and machine learning techniques to automatically analyze text <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span>.</p></li>
+<li><p>Text corpora: A set of multiple similar documents is called a <em>corpus</em>. For<br />
+example, the Brown University Standard Corpus of Present-Day American English, or just the Brown Corpus <span class="citation">(Francis and Kucera <a href="#ref-browncorpus">1979</a>)</span>, is a collection of processed documents from works published in the United States in 1961. The Brown Corpus was a historical milestone: it was a machine-readable collection of a million words across 15 balanced genres with each word tagged with its part of speech (e.g., noun, verb, preposition). The British National Corpus <span class="citation">(University of Oxford <a href="#ref-bnc">2006</a>)</span> repeated the same process for British English at a larger scale. The Penn Treebank <span class="citation">(Marcus, Santorini, and Marcinkiewicz <a href="#ref-marcus-93">1993</a>)</span> provides additional information: in addition to part-of-speech annotation, it provides <em>syntactic</em> annotation. For example, what is the object of the sentence “The man bought the hat”? These standard corpora serve as training data to train the classifiers and machine learning techniques to automatically analyze text <span class="citation">(Halevy, Norvig, and Pereira <a href="#ref-halevy-09">2009</a>)</span>.</p></li>
 </ul>
 
 <!--

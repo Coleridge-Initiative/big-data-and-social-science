@@ -81,23 +81,22 @@ There are a lot of types of analysis that we can do with text
 data. Table \@ref(tab:table7-0) gives a summary of these types of
 analysis.
 <!-- TODO: finish table 
-Please try to be consistent with either always putting an '.' at the end of a cell or never.
 -->
 
 Table: (\#tab:table7-0)
 
 Type of Analysis | Description           | Examples                                                                                   
 -----------------|-----------------------|--------------------------------------------------------------------------------------------
-Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean <!-- Comment: provide reference? -->
-Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
-Classification | Used to classify text content into one or more predefined categories | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].<!-- Comment: content of news articles or tweets might be more practically relevant -->
+Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? -->
+Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data. | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
+Classification | Used to classify text content into one or more predefined categories. | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].<!-- Comment: content of news articles or tweets might be more practically relevant -->
 Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
-Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue)<!-- Comment: unclear: (such as IBM and Deep Blue) --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
+Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue).<!-- Comment: unclear: (such as IBM and Deep Blue) --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
 General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | **Need good example**
-Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks) | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
+Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
 Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
-Translation | Automatic translation of text from one language to another | Look at reaction to a political event in newspapers of different countries in different languages
+Translation | Automatic translation of text from one language to another. | Look at reaction to a political event in newspapers of different countries in different languages.
 
 For this chapter, we will focus on two types of use cases that social scientists deal with containing text data: 
 
@@ -140,8 +139,7 @@ data through a series of steps:
 
 -   **Analysis**: Once we have a matrix, then we can apply the methods we covered in the previous chapter (such as clustering and classification) as well as any other data analysis methods available to us. Later in this chapter, we’ll go deeper into applying these methods to text data as well as describe new methods that are specifically designed for text analysis.
 
-<img src="ChapterText/figures/textanalysispipeline.png" width="70%" style="display: block; margin: auto;" />
-<!-- Comment: You might want to make this graphic bigger, i.e. >70%. There is space; and it becomes hard to read. -->
+<img src="ChapterText/figures/textanalysispipeline.png" width="90%" style="display: block; margin: auto;" />
 <!-- Comment: Try to be consistent in this graphic with capitalization, e.g. why should it be row but Column? Dito for Stopwords vs rare words; (Optional); Matrix. Choose one way of capitalization, please. -->
 
 ### Initial Processing
@@ -174,9 +172,9 @@ through data-driven machine learning frameworks [@kiss-06].
 
 Once the tokens are clearly separated, it is possible to perform further
 text processing at a more granular, token level. Stop words are a
-category of words that have limited semantic meaning (and hence utility) regardless of the
-document content. Such words can be prepositions, articles, common
-nouns, etc. For example, the word "the" accounts for about 7% of all
+category of words that have limited semantic meaning (and hence utility) 
+regardless of the document content. Such words can be prepositions, articles, 
+common nouns, etc. For example, the word "the" accounts for about 7% of all
 words in the Brown Corpus, and "to" and "of" are more than 3% each
 [@malmkjar-02]. We may choose to remove stopwords if we think that they won't be useful in our analysis. For example, words such as "the", "is", "or" may not be useful if the task is to classify news articles into the topic of the article. On the other hand, they may provide information information if the task is to classify a document into the genre it belongs to or in identifying the author of the document.
 
@@ -389,8 +387,8 @@ where
 $\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}}$,
 and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
 
-A Python-based `scikit-learn` library provides an implementation of these measures as
-well as other machine learning models and approaches.
+A Python-based `scikit-learn` library provides an implementation of 
+these measures as well as other machine learning models and approaches.
 
 **Augmenting Similarity Calculations with External Knowledge repositories**
 
@@ -520,7 +518,6 @@ Table: (\#tab:table7-1) Wikipedia articles as potential labels generated by $n$-
 | **Poetry ’n acts: The cultural politics of twentieth century American poets’ theater.**  This study focuses on the disciplinary blind spot that obscures the productive overlap between poetry and dramatic theater and prevents us from seeing the cultural work that this combination can perform...                                                               | Literature, American; Theater                                  | Audience         | Counterculture of the 1960s, Novel, Modernism     |
 
 
-
 **Use Case: Clustering**
 
 Another task social scientists often perform is finding themes,
@@ -570,17 +567,16 @@ detailed discussion of the history of topic models.
 LDA, like all topic models, assumes that there are topics that form the
 building blocks of a corpus. Topics are distributions over words and are
 often shown as a ranked list of words, with the highest probability
-words at the top of the list
-(see Figure \@ref(fig:nyt-topics-3)). However, we do not know what the topics are a priori; the goal is to discover what they are (more on
-this shortly).
+words at the top of the list (see Figure \@ref(fig:nyt-topics-3)). 
+However, we do not know what the topics are a priori; the goal is to 
+discover what they are (more on this shortly).
 
-<!-- Comment: This first figure is way bigger (in terms of fonts) than the others. It also doesn't fit on one page! -->
-<img src="ChapterText/figures/nyt_topics-1.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterText/figures/nyt_topics-1.png" width="50%" style="display: block; margin: auto;" />
 
-<img src="ChapterText/figures/nyt_topics-2.png" width="70%" style="display: block; margin: auto;" />
+<img src="ChapterText/figures/nyt_topics-2.png" width="50%" style="display: block; margin: auto;" />
 
 <div class="figure" style="text-align: center">
-<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts" width="70%" />
+<img src="ChapterText/figures/nyt_topics-3.png" alt="Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts" width="50%" />
 <p class="caption">(\#fig:nyt-topics-3)Topics are distributions over words. Here are three example topics learned by latent Dirichlet allocation from a model with 50 topics discovered from the *New York Times* [@sandhaus-08]. Topic 1 appears to be about technology, Topic 2 about business, and Topic 3 about the arts</p>
 </div>
 
@@ -903,7 +899,6 @@ general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigram
 
 @bird-09 provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
-<!--Comment: NLTKweb: This reference is broken. -->
 
 
 
@@ -930,7 +925,6 @@ def bigram_finder(texts):
 
 **Stanford CoreNLP**
 
-<!--Comment: @corenlp: This reference is broken. -->
 While NLTK's emphasis is on simple reference implementations, Stanford's
 CoreNLP [@corenlp; @manning2014stanford] is focused on fast
 implementations of cutting-edge algorithms, particularly for syntactic
@@ -964,11 +958,13 @@ to go from word vectors to complete deep representations of sentences.
 Summary
 -------
 
-Many of the new sources of data that are of interest to social scientists is text: tweets,
-Facebook posts, corporate emails, and the news of the day. However, the
-meaning of these documents is buried beneath the ambiguities and
+Many of the new sources of data that are of interest to social 
+scientists is text: tweets,
+Facebook posts, corporate emails, and the news of the day. However, 
+the meaning of these documents is buried beneath the ambiguities and
 noisiness of the informal, inconsistent ways by which humans communicate
-with each other and traditional data analysis methods do not work with text data directly. Despite attempts to formalize the meaning of text data
+with each other and traditional data analysis methods do not work with 
+text data directly. Despite attempts to formalize the meaning of text data
 through asking users to tag people, apply metadata, or to create
 structured representations, these attempts to manually curate meaning
 are often incomplete, inconsistent, or both.
@@ -994,27 +990,26 @@ significant processing and cleaning before we can engage in interesting
 analysis and learning. In this chapter we have referenced several
 resources that can be helpful in mastering text mining techniques:
 
--   The Natural Language Toolkit is one of the most popular Python-based
-    tools for natural language processing. It has a variety of methods
-    and examples that are easily accessible online [@NLTKweb]. The
-    book by @bird-09, available online, contains
-    multiple examples and tips on how to use NLTK.  This is a great
-    package to use if you want to *understand* these models.
+- The Natural Language Toolkit is one of the most popular Python-based
+  tools for natural language processing. It has a variety of methods
+  and examples that are easily accessible online [@NLTKweb]. The
+  book by @bird-09, available online, contains
+  multiple examples and tips on how to use NLTK.  This is a great
+  package to use if you want to *understand* these models.
 
--   A paper by Anna Huang [@huang-08] provides a brief overview of the
-    key similarity measures for text document clustering discussed in
-    this chapter, including their strengths and weaknesses in different
-    contexts.
+- A paper by Anna Huang [@huang-08] provides a brief overview of the
+  key similarity measures for text document clustering discussed in
+  this chapter, including their strengths and weaknesses in different
+  contexts.
 
--   Materials at the MALLET website [@mallet] can be specialized for the
-    unprepared reader but are helpful when looking for specific
-    solutions with topic modeling and machine classification using this
-    toolkit.
+- Materials at the MALLET website [@mallet] can be specialized for the
+  unprepared reader but are helpful when looking for specific
+  solutions with topic modeling and machine classification using this
+  toolkit.
 
--   We provide an example of how to run topic modeling using MALLET on
-    textual data from the National Science Foundation and Norwegian
-    Research Council award abstracts [@NSFsearch].
-    <!-- Comment: This reference @NSFsearch is broken. -->
+- We provide an example of how to run topic modeling using MALLET on
+  textual data from the National Science Foundation and Norwegian
+  Research Council award abstracts [@NSFsearch].
 
 - If you do not care about understanding and just want models that are
   easy to use and fast, spaCy [https://spacy.io/] has a useful minimal
@@ -1022,21 +1017,20 @@ resources that can be helpful in mastering text mining techniques:
   toolkit for the preprocessing steps of dataset preparation.
 
 - For more advanced models (classification, tagging, etc.), the
-    AllenNLP toolkit [https://allennlp.org/] is useful if you want to
-    run state of the art models and tweak them just slightly.
+  AllenNLP toolkit [https://allennlp.org/] is useful if you want to
+  run state of the art models and tweak them just slightly.
 
--   Text corpora: A set of multiple similar documents is called a *corpus*. For example,
-the Brown University Standard Corpus of Present-Day American English, or
-just the Brown Corpus [@browncorpus], is a collection of processed
-documents from works published in the United States in 1961. The Brown
-Corpus was a historical milestone: it was a machine-readable collection
-of a million words across 15 balanced genres with each word tagged with
-its part of speech (e.g., noun, verb, preposition). The British National
-Corpus [@bnc] repeated the same process for British English at a larger
-scale. The Penn Treebank [@marcus-93] provides additional information:
-in addition to part-of-speech annotation, it provides *syntactic*
-annotation. For example, what is the object of the sentence "The man
-bought the hat"? These standard corpora serve as training data to train
-the classifiers and machine learning techniques to automatically analyze
-text [@halevy-09].
-
+- Text corpora: A set of multiple similar documents is called a *corpus*. For   
+  example, the Brown University Standard Corpus of Present-Day American English, 
+  or just the Brown Corpus [@browncorpus], is a collection of processed
+  documents from works published in the United States in 1961. The Brown
+  Corpus was a historical milestone: it was a machine-readable collection
+  of a million words across 15 balanced genres with each word tagged with
+  its part of speech (e.g., noun, verb, preposition). The British National
+  Corpus [@bnc] repeated the same process for British English at a larger
+  scale. The Penn Treebank [@marcus-93] provides additional information:
+  in addition to part-of-speech annotation, it provides *syntactic*
+  annotation. For example, what is the object of the sentence "The man
+  bought the hat"? These standard corpora serve as training data to train
+  the classifiers and machine learning techniques to automatically analyze
+  text [@halevy-09].
