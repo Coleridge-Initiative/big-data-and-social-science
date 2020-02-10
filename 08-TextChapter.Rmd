@@ -1,5 +1,5 @@
 <!--
-% todo: add examples to table
+% todo: add example to table, work on comments
 --> 
 
 Text Analysis {#chap:text}

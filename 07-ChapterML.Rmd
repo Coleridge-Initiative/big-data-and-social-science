@@ -1,8 +1,6 @@
 <!--
-% TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
-% TODO: add coleridge ML cheat sheat as box or reference / resources at the end
 % TODO: add ML process image  [Coleridge slides] 
-
+% TODO: trees as simple baselines at line 972
 --> 
 
 Machine Learning {#chap:ml}
@@ -1752,5 +1750,4 @@ Major conferences in this area include the International Conference on
 Machine Learning, the Annual Conference on Neural Information
 Processing Systems (NeurIPS), and the ACM International Conference
 on Knowledge Discovery and Data Mining (KDD).
-
 
