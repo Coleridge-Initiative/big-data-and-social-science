@@ -29,10 +29,10 @@ explore the code for each technology as you read about it.
 
 The workbooks are centered around two main substantive examples. 
 The first example is used in the *Databases*, 
-*Dataset Exploration and Visualization*, *Machine Learning* and 
-*Bias and Fairness* workbooks and focuses on corrections data. 
-The second example includes the *APIs*, *Record Linkage* and 
-*Text Analysis* workbooks, which use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
+*Dataset Exploration and Visualization*, *Machine Learning*, 
+*Bias and Fairness*, and **Errors and Inference** workbooks, which focus on corrections data. 
+The second example includes the *APIs*, *Record Linkage*, 
+*Text Analysis*, and **Network Analysis** workbooks, which primarily use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
 
 The Jupyter notebooks are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
@@ -42,9 +42,7 @@ available at (<https://workbooks.coleridgeinitiative.org>). Additional workbooks
 may be added over time and made available in this repository. 
 
 The workbooks can also be run locally. In that case, you will need to install 
-Python on your system, then install `ipython`, which includes a local Jupyter 
-server you can use to run the workbooks. You will also need to install additional 
-Python packages needed by the workbooks, and a few additional programs.
+Python on your system, along with some additional Python packages needed by the workbooks.
 The easiest way to get this all working is to install the free Anaconda
 Python distribution 
 (<https://www.anaconda.com/distribution/>). Anaconda includes a Jupyter
@@ -65,7 +63,7 @@ The *Databases* notebook builds the foundation of using SQL to query data.
 Much of the later notebooks will involve using these tools. This workbook 
 also introduces you to the main data source that is used in the online workbooks, 
 the North Carolina Department of Corrections Data 
-(<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this notebook, you will
+(<https://webapps.doc.state.nc.us/opi/downloads.do?method=view>). In this notebook, you will:
 
 - Build basic queries using SQL,
 
@@ -152,7 +150,7 @@ In this workbook, you will learn how to:
 
 ### Machine Learning -- Creating Labels
 
-The *Machine Learning Creating Labels* workbook exemplifies how to create an 
+The *Machine Learning Creating Labels* workbook is the first of a three-part Machine Learning workbook sequence, starting with how to create an 
 outcome variable (label) for a machine learning task by using SQL in Python. 
 It uses the North Carolina Department of Corrections Data to build an 
 outcome that measures recidivism, i.e. whether a former inmate returns to 
@@ -168,7 +166,7 @@ how to:
 
 The *Machine Learning Creating Features* workbook prepares predictors 
 (features) for the machine learning task that has been introduced in the 
-*Machine Learning Creating Labels* workbook. It is shown how to use SQL 
+*Machine Learning Creating Labels* workbook. It shows how to use SQL 
 in Python for generating features that are expected to predict recidivism,
 such as the number of times someone has been admitted to prison prior to 
 a given date. In this workbook, you will learn how to:
@@ -181,11 +179,10 @@ a given date. In this workbook, you will learn how to:
 
 The *Machine Learning Model Training and Evaluation* workbook uses the 
 label and features that were created in the previous workbooks to construct 
-a training and test set for model building and evaluation. It exemplifies 
+a training and test set for model building and evaluation. It walks through examples on 
 how to train machine learning models using `scikit-learn` in Python and how 
 to evaluate prediction performance for classification tasks. In addition, 
-it is shown how to construct and compare multiple machine learning models 
-in a for-loop in Python. In this workbook, you will learn how to:
+it demonstrates how to construct and compare many different machine learning models in Python. In this workbook, you will learn how to:
 
 -   Pre-process data to provide valid inputs for machine learning models,  
 
@@ -200,7 +197,7 @@ fairness audit toolkit Aequitas in Python. This workbook is centered
 around the COMPAS (Correctional Offender Management Profiling for 
 Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) 
 and demonstrates how Aequitas can be used to detect and evaluate biases 
-of a machine learning system. Specifically, you will learn how to: 
+of a machine learning system. You will learn how to: 
 
 - Calculate confusion matrices for subgroups and visualize performance metrics by groups,
 

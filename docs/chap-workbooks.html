@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 13 Workbooks | Big Data and Social Science</title>
   <meta name="description" content="Chapter 13 Workbooks | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.16 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 13 Workbooks | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -58,41 +61,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -393,20 +421,59 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="chap:workbooks" class="section level1">
 <h1><span class="header-section-number">Chapter 13</span> Workbooks</h1>
 <p><strong>Brian Kim, Christoph Kern, Jonathan Scott Morgan, Clayton Hunter, Avishek Kumar</strong></p>
-<p>This final chapter provides an overview of the Python workbooks that accompany this book. The workbooks combine text explanation and code you can run, implemented in <em>Jupyter notebooks</em> (<a href="https://jupyter.org/" class="uri">https://jupyter.org/</a>), to explain techniques and approaches selected from each chapter and to provide thorough implementation details, enabling students and interested practitioners to quickly get up to speed on and start using the technologies covered in the book. We hope you have a lot of fun with them.</p>
+<p>This final chapter provides an overview of the Python workbooks that
+accompany this book. The workbooks combine text explanation and
+code you can run, implemented in <em>Jupyter notebooks</em>
+(<a href="https://jupyter.org/" class="uri">https://jupyter.org/</a>), to explain techniques and approaches
+selected from each chapter and to provide thorough implementation
+details, enabling students and interested practitioners to quickly get
+up to speed on and start using the technologies covered in the book. We
+hope you have a lot of fun with them.</p>
 <div id="introduction-6" class="section level2">
 <h2><span class="header-section-number">13.1</span> Introduction</h2>
-<p>We provide accompanying Juptyer workbooks for most chapters in this book. The workbooks provide a thorough overview of the work needed to implement the selected technologies. They combine explanation, basic exercises, and substantial additional Python and SQL code to provide a conceptual understanding of each technology, give insight into how key parts of the process are implemented through exercises, and then lay out an end-to-end pattern for implementing each in your own work. The workbooks are implemented using Jupyter notebooks, interactive documents that mix formatted text and Python code samples that can be edited and run in real time in a Jupyter notebook server, allowing you to run and explore the code for each technology as you read about it.</p>
-<p>The workbooks are centered around two main substantive examples. The first example is used in the <em>Databases</em>, <em>Dataset Exploration and Visualization</em>, <em>Machine Learning</em> and <em>Bias and Fairness</em> workbooks and focuses on corrections data. The second example includes the <em>APIs</em>, <em>Record Linkage</em> and <em>Text Analysis</em> workbooks, which use patent data from PatentsView<a href="#fn62" class="footnoteRef" id="fnref62"><sup>62</sup></a> and grant data from Federal RePORTER<a href="#fn63" class="footnoteRef" id="fnref63"><sup>63</sup></a> to investigate innovation and funding.</p>
-<p>The Jupyter notebooks are designed to be run online using Binder (<a href="https://mybinder.org/" class="uri">https://mybinder.org/</a>) and don’t need additional software installed locally. Individual workbooks can be opened by following the corresponding Binder link. The full set of workbooks is available at (<a href="https://workbooks.coleridgeinitiative.org" class="uri">https://workbooks.coleridgeinitiative.org</a>). Additional workbooks may be added over time and made available in this repository.</p>
-<p>The workbooks can also be run locally. In that case, you will need to install Python on your system, then install <code>ipython</code>, which includes a local Jupyter server you can use to run the workbooks. You will also need to install additional Python packages needed by the workbooks, and a few additional programs. The easiest way to get this all working is to install the free Anaconda Python distribution (<a href="https://www.anaconda.com/distribution/" class="uri">https://www.anaconda.com/distribution/</a>). Anaconda includes a Jupyter server and precompiled versions of many packages used in the workbooks. It includes multiple tools for installing and updating both Python and installed packages. It is separate from any OS-level version of Python, and is easy to completely uninstall.</p>
+<p>We provide accompanying Juptyer workbooks for most chapters in
+this book. The workbooks provide a thorough overview of the work needed to
+implement the selected technologies. They combine explanation, basic
+exercises, and substantial additional Python and SQL code to provide a
+conceptual understanding of each technology, give insight into how key
+parts of the process are implemented through exercises, and then lay out
+an end-to-end pattern for implementing each in your own work. The
+workbooks are implemented using Jupyter notebooks, interactive documents
+that mix formatted text and Python code samples that can be edited and
+run in real time in a Jupyter notebook server, allowing you to run and
+explore the code for each technology as you read about it.</p>
+<p>The workbooks are centered around two main substantive examples.
+The first example is used in the <em>Databases</em>,
+<em>Dataset Exploration and Visualization</em>, <em>Machine Learning</em>,
+<em>Bias and Fairness</em>, and <strong>Errors and Inference</strong> workbooks, which focus on corrections data.
+The second example includes the <em>APIs</em>, <em>Record Linkage</em>,
+<em>Text Analysis</em>, and <strong>Network Analysis</strong> workbooks, which primarily use patent data from PatentsView<a href="#fn62" class="footnote-ref" id="fnref62"><sup>62</sup></a> and grant data from Federal RePORTER<a href="#fn63" class="footnote-ref" id="fnref63"><sup>63</sup></a> to investigate innovation and funding.</p>
+<p>The Jupyter notebooks are designed to be run online using Binder
+(<a href="https://mybinder.org/" class="uri">https://mybinder.org/</a>) and don’t need additional software installed
+locally. Individual workbooks can be opened by following the
+corresponding Binder link. The full set of workbooks is
+available at (<a href="https://workbooks.coleridgeinitiative.org" class="uri">https://workbooks.coleridgeinitiative.org</a>). Additional workbooks
+may be added over time and made available in this repository.</p>
+<p>The workbooks can also be run locally. In that case, you will need to install
+Python on your system, along with some additional Python packages needed by the workbooks.
+The easiest way to get this all working is to install the free Anaconda
+Python distribution
+(<a href="https://www.anaconda.com/distribution/" class="uri">https://www.anaconda.com/distribution/</a>). Anaconda includes a Jupyter
+server and precompiled versions of many packages used in the workbooks.
+It includes multiple tools for installing and updating both Python and
+installed packages. It is separate from any OS-level version of Python,
+and is easy to completely uninstall.</p>
 </div>
 <div id="notebooks" class="section level2">
 <h2><span class="header-section-number">13.2</span> Notebooks</h2>
 <p>Below is a list of the workbooks, along with a short summary of the content that each covers.</p>
 <div id="databases" class="section level3">
 <h3><span class="header-section-number">13.2.1</span> Databases</h3>
-<p>The <em>Databases</em> notebook builds the foundation of using SQL to query data. Much of the later notebooks will involve using these tools. This workbook also introduces you to the main data source that is used in the online workbooks, the North Carolina Department of Corrections Data (<a href="https://webapps.doc.state.nc.us/opi/downloads.do?method=view" class="uri">https://webapps.doc.state.nc.us/opi/downloads.do?method=view</a>). In this notebook, you will</p>
+<p>The <em>Databases</em> notebook builds the foundation of using SQL to query data.
+Much of the later notebooks will involve using these tools. This workbook
+also introduces you to the main data source that is used in the online workbooks,
+the North Carolina Department of Corrections Data
+(<a href="https://webapps.doc.state.nc.us/opi/downloads.do?method=view" class="uri">https://webapps.doc.state.nc.us/opi/downloads.do?method=view</a>). In this notebook, you will:</p>
 <ul>
 <li><p>Build basic queries using SQL,</p></li>
 <li><p>Understand and perform various joins.</p></li>
@@ -414,7 +481,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="dataset-exploration-and-visualization" class="section level3">
 <h3><span class="header-section-number">13.2.2</span> Dataset Exploration and Visualization</h3>
-<p>The <em>Dataset Exploration and Visualization</em> notebook further explores the North Carolina Department of Correction data, demonstrating how to work with missing values and date variables and join tables by using SQL in Python. Though some of the SQL from the Databases notebook is revisited here, the focus is on practicing Python code and using Python for data analysis. The workbook also explains how to pull data from a database into a dataframe in Python and continues by exploring the imported data using the <code>numpy</code> and <code>pandas</code> packages, as well as <code>matplotlib</code> and <code>seaborn</code> for visualizations. In this workbook, you will learn how to:</p>
+<p>The <em>Dataset Exploration and Visualization</em> notebook further explores the
+North Carolina Department of Correction data, demonstrating how to work with
+missing values and date variables and join tables by using SQL in Python.
+Though some of the SQL from the Databases notebook is revisited here, the
+focus is on practicing Python code and using Python for data analysis. The
+workbook also explains how to pull data from a database into a dataframe
+in Python and continues by exploring the imported data using the <code>numpy</code>
+and <code>pandas</code> packages, as well as <code>matplotlib</code> and <code>seaborn</code> for
+visualizations. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Connect to and query a database through Python,</p></li>
 <li><p>Explore aggregate statistics in Python,</p></li>
@@ -423,7 +498,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="apis" class="section level3">
 <h3><span class="header-section-number">13.2.3</span> APIs</h3>
-<p>The <em>APIs</em> notebook introduces you to the use of Internet-based web service APIs for retrieving data from online data stores. This notebook walks through the process of retrieving data about patents from the PatentsView API from the United States Patent and Trademark Office. The data consist of information about patents, inventors, companies, and geographic locations since 1976. In this workbook, you will learn how to:</p>
+<p>The <em>APIs</em> notebook introduces you to the use of Internet-based web service
+APIs for retrieving data from online data stores. This notebook walks through
+the process of retrieving data about patents from the PatentsView API from
+the United States Patent and Trademark Office. The data consist of information
+about patents, inventors, companies, and geographic locations since 1976.
+In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Construct a URL query,</p></li>
 <li><p>Get a response from the URL,</p></li>
@@ -432,16 +512,29 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="record-linkage" class="section level3">
 <h3><span class="header-section-number">13.2.4</span> Record Linkage</h3>
-<p>In the <em>Record Linkage</em> workbook you will use Python to implement the basic concepts behind record linkage using data from PatentsView and Federal RePORTER. This workbook will cover using probabalistic record linkage, in which different types of string comparators are used to compare multiple pieces of information between two records to produce a score that indicates how likely it is that the records are data about the same underlying entity. In this workbook, you will learn how to:</p>
+<p>In the <em>Record Linkage</em> workbook you will use Python to implement the basic
+concepts behind record linkage using data from PatentsView and Federal
+RePORTER. This workbook will cover using probabalistic record linkage,
+in which different types of string comparators are used to compare multiple
+pieces of information between two records to produce a score that indicates
+how likely it is that the records are data about the same underlying entity.
+In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Prepare data for record linkage,</p></li>
-<li><p>Use and evaluate the results of common computational string comparison algorithms including Levenshtein distance, Levenshtein–Damerau distance, and Jaro–Winkler distance,</p></li>
-<li><p>Understand the Fellegi–Sunter probabilistic record linkage method, with step-by-step implementation guide.</p></li>
+<li><p>Use and evaluate the results of common computational string
+comparison algorithms including Levenshtein
+distance, Levenshtein–Damerau distance, and Jaro–Winkler distance,</p></li>
+<li><p>Understand the Fellegi–Sunter probabilistic record linkage method,
+with step-by-step implementation guide.</p></li>
 </ul>
 </div>
 <div id="text-analysis" class="section level3">
 <h3><span class="header-section-number">13.2.5</span> Text Analysis</h3>
-<p>In the Text Analysis notebook, you will use the data that you pulled from the PatentsView API in the API notebook to find topics from patent abstracts. This will involve going through every step of the process, from extracting the data to cleaning and preparing to using topic modeling algorithms. In this workbook, you will learn how to:</p>
+<p>In the Text Analysis notebook, you will use the data that you pulled from
+the PatentsView API in the API notebook to find topics from patent abstracts.
+This will involve going through every step of the process, from extracting
+the data to cleaning and preparing to using topic modeling algorithms.
+In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Clean and prepare text data,</p></li>
 <li><p>Apply Latent Dirichlet Allocation for topic modeling,</p></li>
@@ -450,7 +543,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="networks" class="section level3">
 <h3><span class="header-section-number">13.2.6</span> Networks</h3>
-<p>In the Networks workbook you will create network data where the nodes are researchers who have been awarded grants, and ties are created between each researcher on a given grant. You will use Python to read the grant data and translate them into network data, calculate node- and graph-level network statistics and create network visualizations. In this workbook, you will learn how to:</p>
+<p>In the Networks workbook you will create network data where the nodes
+are researchers who have been awarded grants, and ties are created
+between each researcher on a given grant. You will use Python to read
+the grant data and translate them into network data, calculate node-
+and graph-level network statistics and create network visualizations.
+In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Calculate node- and graph-level network statistics,</p></li>
 <li><p>Create graph visualizations.</p></li>
@@ -458,7 +556,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="machine-learning-creating-labels" class="section level3">
 <h3><span class="header-section-number">13.2.7</span> Machine Learning – Creating Labels</h3>
-<p>The <em>Machine Learning Creating Labels</em> workbook exemplifies how to create an outcome variable (label) for a machine learning task by using SQL in Python. It uses the North Carolina Department of Corrections Data to build an outcome that measures recidivism, i.e. whether a former inmate returns to jail in a given period of time. It also shows how to define a Python function to automate programming tasks. In this workbook, you will learn how to:</p>
+<p>The <em>Machine Learning Creating Labels</em> workbook is the first of a three-part Machine Learning workbook sequence, starting with how to create an
+outcome variable (label) for a machine learning task by using SQL in Python.
+It uses the North Carolina Department of Corrections Data to build an
+outcome that measures recidivism, i.e. whether a former inmate returns to
+jail in a given period of time. It also shows how to define a Python
+function to automate programming tasks. In this workbook, you will learn
+how to:</p>
 <ul>
 <li><p>Define and compute a prediction target in the machine learning framework,</p></li>
 <li><p>Use SQL with data that has a temporal structure (multiple records per observation).</p></li>
@@ -466,7 +570,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="machine-learning-creating-features" class="section level3">
 <h3><span class="header-section-number">13.2.8</span> Machine Learning – Creating Features</h3>
-<p>The <em>Machine Learning Creating Features</em> workbook prepares predictors (features) for the machine learning task that has been introduced in the <em>Machine Learning Creating Labels</em> workbook. It is shown how to use SQL in Python for generating features that are expected to predict recidivism, such as the number of times someone has been admitted to prison prior to a given date. In this workbook, you will learn how to:</p>
+<p>The <em>Machine Learning Creating Features</em> workbook prepares predictors
+(features) for the machine learning task that has been introduced in the
+<em>Machine Learning Creating Labels</em> workbook. It shows how to use SQL
+in Python for generating features that are expected to predict recidivism,
+such as the number of times someone has been admitted to prison prior to
+a given date. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Generate features with SQL for a given prediction problem,</p></li>
 <li><p>Automate SQL tasks by defining Python functions.</p></li>
@@ -474,7 +583,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="machine-learning-model-training-and-evaluation" class="section level3">
 <h3><span class="header-section-number">13.2.9</span> Machine Learning – Model Training and Evaluation</h3>
-<p>The <em>Machine Learning Model Training and Evaluation</em> workbook uses the label and features that were created in the previous workbooks to construct a training and test set for model building and evaluation. It exemplifies how to train machine learning models using <code>scikit-learn</code> in Python and how to evaluate prediction performance for classification tasks. In addition, it is shown how to construct and compare multiple machine learning models in a for-loop in Python. In this workbook, you will learn how to:</p>
+<p>The <em>Machine Learning Model Training and Evaluation</em> workbook uses the
+label and features that were created in the previous workbooks to construct
+a training and test set for model building and evaluation. It walks through examples on
+how to train machine learning models using <code>scikit-learn</code> in Python and how
+to evaluate prediction performance for classification tasks. In addition,
+it demonstrates how to construct and compare many different machine learning models in Python. In this workbook, you will learn how to:</p>
 <ul>
 <li><p>Pre-process data to provide valid inputs for machine learning models,</p></li>
 <li><p>Properly divide data with a temporal structure into training and test sets,</p></li>
@@ -483,7 +597,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="bias-and-fairness" class="section level3">
 <h3><span class="header-section-number">13.2.10</span> Bias and Fairness</h3>
-<p>The <em>Bias and Fairness</em> workbook exemplifies the usage of the bias and fairness audit toolkit Aequitas in Python. This workbook is centered around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study of chapter <a href="chap-bias.html#chap:bias">Bias and Fairness</a> and demonstrates how Aequitas can be used to detect and evaluate biases of a machine learning system. Specifically, you will learn how to:</p>
+<p>The <em>Bias and Fairness</em> workbook exemplifies the usage of the bias and
+fairness audit toolkit Aequitas in Python. This workbook is centered
+around the COMPAS (Correctional Offender Management Profiling for
+Alternative Sanctions) case study of chapter <a href="chap-bias.html#chap:bias">Bias and Fairness</a>
+and demonstrates how Aequitas can be used to detect and evaluate biases
+of a machine learning system. You will learn how to:</p>
 <ul>
 <li><p>Calculate confusion matrices for subgroups and visualize performance metrics by groups,</p></li>
 <li><p>Measure disparities by comparing, e.g., false positive rates between groups,</p></li>
@@ -500,7 +619,15 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="additional-workbooks" class="section level3">
 <h3><span class="header-section-number">13.2.12</span> Additional Workbooks</h3>
-<p>An additional set of workbooks that accompanied the first edition of this book is available at (<a href="https://github.com/BigDataSocialScience/Big-Data-Workbooks" class="uri">https://github.com/BigDataSocialScience/Big-Data-Workbooks</a>). This repository provides two different types of workbooks, each needing a different Python setup to run. The first type of workbooks is intended to be downloaded and run locally by individual users. The second type is designed to be hosted, assigned, worked on, and graded on a single server, using <code>jupyterhub</code> (<a href="https://github.com/jupyter/jupyterhub" class="uri">https://github.com/jupyter/jupyterhub</a>) to host and run the notebooks and <code>nbgrader</code> (<a href="https://github.com/jupyter/nbgrader" class="uri">https://github.com/jupyter/nbgrader</a>) to assign, collect, and grade.</p>
+<p>An additional set of workbooks that accompanied the first edition of this
+book is available at (<a href="https://github.com/BigDataSocialScience/Big-Data-Workbooks" class="uri">https://github.com/BigDataSocialScience/Big-Data-Workbooks</a>).
+This repository provides two different types of workbooks, each needing a
+different Python setup to run. The first type of workbooks is intended to
+be downloaded and run locally by individual users. The second type is designed
+to be hosted, assigned, worked on, and graded on a single server, using
+<code>jupyterhub</code> (<a href="https://github.com/jupyter/jupyterhub" class="uri">https://github.com/jupyter/jupyterhub</a>) to host and run
+the notebooks and <code>nbgrader</code> (<a href="https://github.com/jupyter/nbgrader" class="uri">https://github.com/jupyter/nbgrader</a>)
+to assign, collect, and grade.</p>
 <!-- Workbooks of the First Edition -->
 <!-- ----------- -->
 <!-- The workbooks of set 2 and related files are stored in the *Big-Data-Workbooks GitHub repository* (<https://github.com/BigDataSocialScience/Big-Data-Workbooks>), and so are freely available to be downloaded by anyone at any time and run on any appropriately configured computer. -->
@@ -666,18 +793,67 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="resources-7" class="section level2">
 <h2><span class="header-section-number">13.3</span> Resources</h2>
-<p>We noted in Section <a href="chap-intro.html#chap:intro">Introduction: Resources</a> the importance of Python, SQL, and Git/GitHub for the social scientist who intends to work with large data. See that section for pointers to useful online resources, and also see <a href="https://github.com/BigDataSocialScience" class="uri">https://github.com/BigDataSocialScience</a>, where we have collected many useful web links, including the following.</p>
-<p>For more on getting started with Anaconda, see the Anaconda documentation <span class="citation">(Analytics, n.d.)</span>, Anaconda FAQ <span class="citation">(Analytics, n.d.)</span>, and Anaconda quick start guide <span class="citation">(Analytics, n.d.)</span>.</p>
-<p>For more information on IPython and the Jupyter notebook server, see the IPython site <span class="citation">(IPython development team, n.d.)</span>, IPython documentation <span class="citation">(IPython development team, n.d.)</span>, Jupyter Project site <span class="citation">(Jupyter, n.d.)</span>, and Jupyter Project documentation <span class="citation">(Jupyter, n.d.)</span>.</p>
-<p>For more information on using <code>jupyterhub</code> and <code>nbgrader</code> to host, distribute, and grade workbooks using a central server, see the <code>jupyterhub</code> GitHub repository <span class="citation">(Jupyter, n.d.)</span>, <code>jupyterhub</code> documentation <span class="citation">(Jupyter, n.d.)</span>, <code>nbgrader</code> GitHub repository <span class="citation">(Jupyter, n.d.)</span>, <code>nbgrader</code> and documentation <span class="citation">(Jupyter, n.d.)</span>.</p>
+<p>We noted in Section <a href="chap-intro.html#chap:intro">Introduction: Resources</a> the importance
+of Python, SQL, and Git/GitHub for the social scientist who intends to
+work with large data. See that section for pointers to useful online
+resources, and also see <a href="https://github.com/BigDataSocialScience" class="uri">https://github.com/BigDataSocialScience</a>, where we
+have collected many useful web links, including the following.</p>
+<p>For more on getting started with Anaconda, see the Anaconda
+documentation <span class="citation">(Analytics, <a href="#ref-Anaconda">n.d.</a><a href="#ref-Anaconda">a</a>)</span>, Anaconda FAQ <span class="citation">(Analytics, <a href="#ref-AnacondaFAQ">n.d.</a><a href="#ref-AnacondaFAQ">b</a>)</span>, and Anaconda
+quick start guide <span class="citation">(Analytics, <a href="#ref-AnacondaQSG">n.d.</a><a href="#ref-AnacondaQSG">c</a>)</span>.</p>
+<p>For more information on IPython and the Jupyter notebook server, see the
+IPython site <span class="citation">(IPython development team, <a href="#ref-ipython">n.d.</a><a href="#ref-ipython">b</a>)</span>, IPython documentation <span class="citation">(IPython development team, <a href="#ref-ipythondoc">n.d.</a><a href="#ref-ipythondoc">a</a>)</span>, Jupyter
+Project site <span class="citation">(Jupyter, <a href="#ref-juypter">n.d.</a><a href="#ref-juypter">d</a>)</span>, and Jupyter Project documentation
+<span class="citation">(Jupyter, <a href="#ref-juypterdoc">n.d.</a><a href="#ref-juypterdoc">c</a>)</span>.</p>
+<p>For more information on using <code>jupyterhub</code> and <code>nbgrader</code> to host,
+distribute, and grade workbooks using a central server, see the <code>jupyterhub</code>
+GitHub repository <span class="citation">(Jupyter, <a href="#ref-juypterhub">n.d.</a><a href="#ref-juypterhub">a</a>)</span>, <code>jupyterhub</code> documentation
+<span class="citation">(Jupyter, <a href="#ref-juypterhubdoc">n.d.</a><a href="#ref-juypterhubdoc">b</a>)</span>, <code>nbgrader</code> GitHub repository <span class="citation">(Jupyter, <a href="#ref-nbgrader">n.d.</a><a href="#ref-nbgrader">f</a>)</span>, <code>nbgrader</code>
+and documentation <span class="citation">(Jupyter, <a href="#ref-nbgraderdoc">n.d.</a><a href="#ref-nbgraderdoc">e</a>)</span>.</p>
 
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-Anaconda">
+<p>Analytics, Continuum. n.d.a. “Anaconda.” <a href="http://docs.continuum.io/anaconda">http://docs.continuum.io/anaconda</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-AnacondaFAQ">
+<p>Analytics, Continuum. n.d.b. “Anaconda FAQ.” <a href="http://docs.continuum.io/anaconda/faq">http://docs.continuum.io/anaconda/faq</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-AnacondaQSG">
+<p>Analytics, Continuum. n.d.c. “Anaconda Quick Start Guide.” <a href="https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf">https://www.continuum.io/sites/default/files/Anaconda-Quickstart.pdf</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-ipythondoc">
+<p>IPython development team. n.d.a. “IPython Documentation.” <a href="http://ipython.readthedocs.org/">http://ipython.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-ipython">
+<p>IPython development team. n.d.b. “IPython Website.” <a href="http://ipython.org/">http://ipython.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-juypterhub">
+<p>Jupyter. n.d.a. “Jupyterhub GitHub Repository.” <a href="https://github.com/jupyter/jupyterhub/">https://github.com/jupyter/jupyterhub/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-juypterhubdoc">
+<p>Jupyter. n.d.b. “Jupyterhyb Documentation.” <a href="http://jupyterhub.readthedocs.org/">http://jupyterhub.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-juypterdoc">
+<p>Jupyter. n.d.c. “Jupyter Project Documentation.” <a href="http://jupyter.readthedocs.org/">http://jupyter.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-juypter">
+<p>Jupyter. n.d.d. “Jupyter Project Website.” <a href="http://jupyter.org/">http://jupyter.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-nbgraderdoc">
+<p>Jupyter. n.d.e. “Nbgrader Documentation.” <a href="http://nbgrader.readthedocs.org/">http://nbgrader.readthedocs.org/</a>. Accessed February 1, 2016.</p>
+</div>
+<div id="ref-nbgrader">
+<p>Jupyter. n.d.f. “Nbgrader GitHub Repository.” <a href="https://github.com/jupyter/nbgrader/">https://github.com/jupyter/nbgrader/</a>. Accessed February 1, 2016.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="62">
-<li id="fn62"><p><a href="https://www.patentsview.org/" class="uri">https://www.patentsview.org/</a><a href="chap-workbooks.html#fnref62">↩</a></p></li>
-<li id="fn63"><p><a href="https://federalreporter.nih.gov/" class="uri">https://federalreporter.nih.gov/</a><a href="chap-workbooks.html#fnref63">↩</a></p></li>
+<li id="fn62"><p><a href="https://www.patentsview.org/" class="uri">https://www.patentsview.org/</a><a href="chap-workbooks.html#fnref62" class="footnote-back">↩</a></p></li>
+<li id="fn63"><p><a href="https://federalreporter.nih.gov/" class="uri">https://federalreporter.nih.gov/</a><a href="chap-workbooks.html#fnref63" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -703,11 +879,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -715,12 +893,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -732,6 +909,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -748,7 +929,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
