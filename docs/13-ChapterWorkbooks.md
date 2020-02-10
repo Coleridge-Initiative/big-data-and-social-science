@@ -30,9 +30,9 @@ explore the code for each technology as you read about it.
 The workbooks are centered around two main substantive examples. 
 The first example is used in the *Databases*, 
 *Dataset Exploration and Visualization*, *Machine Learning*, 
-*Bias and Fairness*, and **Errors and Inference** workbooks, which focus on corrections data. 
+*Bias and Fairness*, and *Errors and Inference* workbooks, which focus on corrections data. 
 The second example includes the *APIs*, *Record Linkage*, 
-*Text Analysis*, and **Network Analysis** workbooks, which primarily use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
+*Text Analysis*, and *Network Analysis* workbooks, which primarily use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
 
 The Jupyter notebooks are designed to be run online using Binder
 (<https://mybinder.org/>) and don't need additional software installed 
