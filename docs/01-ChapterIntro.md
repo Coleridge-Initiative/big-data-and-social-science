@@ -1,4 +1,5 @@
-%ToDo: We need new flow chart graphs, they point to the wrong chapters right now.
+<!-- %ToDo: We need new flow chart graphs, they point to the wrong chapters right now. Add reference for "Data Science Project Scoping" (line 504).
+--> 
 
 Introduction {#chap:intro}
 ============
@@ -9,101 +10,29 @@ book.
 Why this book? {#sec:1-1}
 --------------
 
-The world has changed for empirical social scientists. The new types of
-data, methods, and tools have generated an entire new research field---that of data
-science. That world has traditionally been dominated by computer scientists who have
-generated new ways of creating and collecting data, developed (or rebranded) new
-analytical and statistical techniques, and provided new ways of
-visualizing and presenting information. These new sources of data and
-techniques have the potential to transform the way applied social
-science is done.
+The world has changed for empirical social scientists. The new types of "big data" have generated an entire new research field---that of data science. That world is dominated by computer scientists who have generated new ways of creating and collecting data, developed new analytical techniques and provided new ways of visualizing and presenting information. The results have been to change the nature of the work that social scientists do. 
 
-Research has certainly changed. Researchers draw on data that are
-"found" rather than "made" by federal agencies; those publishing in
-leading academic journals are much less likely today to draw on
-preprocessed survey data (Figure \@ref(fig:fig1)).
+Social scientists have been enthusiastic in responding to the new opportunity. Python and R are becoming as well-known as SAS and Stata---indeed, the 2018 Nobel Laureate in Economics, Paul Romer, is a Python convert [@Kopf]. Research has also changed. Researchers draw on data that are "found" rather than "made" by federal agencies; those publishing in leading academic journals are much less likely today to draw on preprocessed survey data (Figure \@ref(fig:fig1)). Social science workflows can become more automated, replicable and reproducible [@Yarkoni2019].
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]" width="70%" />
 <p class="caption">(\#fig:fig1)Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]</p>
 </div>
 
-The way in which data are used has also changed for both government
-agencies and businesses. Chief data officers are becoming as common in
-federal and state governments as chief economists were decades ago, and
-in cities like New York and Chicago, mayoral offices of data analytics
-have the ability to provide rapid answers to important policy questions
-[@lee2012rise]. But since federal, state, and local agencies often lack the
-capacity to do such analysis themselves [@alawadhi2012building], they
-must make these data available either to consultants or to the research
-community. Businesses are also learning that making effective use of
-their data assets can have an impact on their bottom line
-[@brynjolfsson2011strength].
+Policy has also changed. The Foundations of Evidence-based Policy Act, which was signed into law in 2019, requires agencies to make use of evidence and data in making policy decisions [@Hart]. The Act, together with the Federal Data Strategy [@OfficeofManagementandBudget] establishes both Chief Data Officers to oversee the collection, use of and access to many new types of data and a learning agenda to build the data science capacity of agency staff.     
 
-And the jobs have changed. The new job title of "data scientist" is
-highlighted in job advertisements on CareerBuilder.com and
-Burning-glass.com---in the same category as statisticians, economists,
-and other quantitative social scientists if starting salaries are useful
-indicators.
+And the jobs have changed. The new job title of "data scientist" is highlighted in job advertisements on CareerBuilder.com and Burningglass--- supplanting the demand for statisticians, economists, and other quantitative social scientists if starting salaries are useful indicators. At the federal level, the Office of Personnel Management created a new data scientist job title.
 
-The goal of this book is to provide social scientists with an
-understanding of the key elements of this new science, its value, and
-the opportunities for using it to improve their work. The goal is also to 
-identify the many ways in which the analytical toolkits possessed by social
-scientists can inform data science research and result in new methods needed 
-for social science research.
+The goal of this book is to provide social scientists with an understanding of the key elements of this new  science, value of the tools and the opportunities for doing better work. The goal is also to identify the many ways in which the analytical toolkits possessed by social scientists can be brought to bear to enhance the generalizability and usefulness of the work done by computer scientists. 
 
-We take a pragmatic approach, drawing on our experience of working with
-data in a variety of real-world contexts. Most social scientists set out 
-to solve a real-world social or
-economic problem: they frame the problem, identify the data, do the
-analysis, and then draw inferences. At all points, of course, the social
-scientist needs to consider the ethical ramifications of their work,
-particularly respecting privacy and confidentiality. The book follows
-the same structure. We chose a particular problem---the link between
-research investments and innovation---because that is a major social
-science policy issue, and one in which social scientists have been
-addressing using big data techniques. While the example is specific and
-intended to show how abstract concepts apply in practice, the approach
-is completely generalizable to other important areas such as criminal 
-justice, education, public health, sustainability, economic development, 
-and workforce development. The web scraping, linkage, classification, 
-and text analysis methods on display here are canonical in nature. The 
-inference and privacy and confidentiality issues are no different than
-in any other study involving human subjects, and the communication of
-results through visualization is similarly generalizable.
+We take a pragmatic approach, drawn on our experience of working with data.  Most social scientists set out to solve a real world social or economic problem: they frame the problem, identify the data, do the analysis, and then draw inferences.  At all points, of course, the social scientist needs to consider the ethical ramifications of her work, particularly respecting privacy and confidentiality. The book follows the same structure. We chose a particular problem---the link between research investments and innovation---because that is a major social science policy issue, and one in which social scientists have been addressing using big data techniques. 
 
 Defining big data and its value {#sec:1-2}
 -------------------------------
 
-There are almost as many definitions of big data as there are new types
-of data. One approach is to define big data as *anything too big to fit onto your computer*^[This topic is discussed in more detail in Chapter [Scaling up through Parallel and Distributed Computing](#chap:parallel)]. 
-Another approach is to define it as data with high 
-volume, high velocity, and great variety. Our aim is not to create yet another
-definition. Instead, we choose the pragmatic description adopted 
-by the American Association of Public Opinion Research: "The term 'Big Data' 
-is an imprecise description of a rich and complicated set of characteristics,
-practices, techniques, ethical issues, and outcomes all associated with data"
-[@japec2015big].
+There are almost as many definitions of big data as there are new types of data. One approach is to define big data as *anything too big to fit onto your computer*.^[This topic is discussed in more detail in Chapter [Scaling up through Parallel and Distributed Computing](#chap:parallel).] Another approach is to define it as data with high volume, high velocity and great variety. We choose the description adopted by the American Association of Public Opinion Research: "The term "Big Data" is an imprecise description of a rich and complicated set of characteristics, practices, techniques, ethical issues, and outcomes all associated with data" [@japec2015big]. 
 
-While the term "big data" may be a buzzword, what's real is the 
-significant value of new types of data and new methods for social 
-science. Personal data has been hailed as the "new oil" of the
-twenty-first century, and the benefits to policy, society, and public
-opinion research are undeniable [@greenwood2014]. Policymakers have
-found that detailed data on human beings can be used to reduce crime,
-improve health delivery, and manage cities better [@keller2012big]. The
-scope is broad indeed: one of this book's editors has used such data to
-not only help win political campaigns but also show its potential for
-social good and public policy. For public opinion research, social 
-scientists can increase the scope of their data collection efforts 
-while at the same time reducing costs and respondent burden, increasing 
-timeliness, and increasing precision[@murphy2014social]. Society can 
-gain as well---recent work shows data-driven businesses were 5% more 
-productive and 6% more profitable than their
-competitors[@brynjolfsson2011strength]. In short, the vision is that
-social science researchers can potentially, by using new types of data 
-and methods,increase the quality and impact of their work. 
+The value of the new types of data for social science is quite substantial. Personal data have been hailed as the "new oil" of the 21st century, and the benefits to policy, society and public opinion research are undeniable [@greenwood2014]. Policy-makers have found that detailed data on human beings can be used to reduce crime, improve health delivery and manage cities better [@keller2012big]. Society can gain as well---recent work shows data driven businesses were five percent more productive and six percent more profitable than their competitors [@brynjolfsson2011strength]. Henry Brady provides a succinct overview when he says "Burgeoning data and innovative methods facilitate answering previously hard-to-tackle questions about society by offering new ways to form concepts from data, to do descriptive inference, to make causal inferences, and to generate predictions. They also pose challenges as social scientists must grasp the meaning of concepts and predictions generated by convoluted algorithms, weigh the relative value of prediction versus causal inference, and cope with ethical challenges as their methods, such as algorithms for mobilizing voters or determining bail, are adopted by policy makers" [@brady2019challenge].
 
 ---
 
