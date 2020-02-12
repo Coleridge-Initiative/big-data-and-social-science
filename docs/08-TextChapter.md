@@ -11,7 +11,7 @@ This chapter provides an overview of how social scientists can make
 use of text data using computational data analysis methods. We cover
 the types of analysis that can be done with text data (search, topic
 detection, classification, etc.) and give an overview of how to do these
-analysis, social science tasks that they’re useful for, and how to
+analyses, social science tasks that they’re useful for, and how to
 evaluate the results produced. We also provide pointers to some tools
 that are commonly used for doing text analysis.
 
@@ -42,7 +42,7 @@ rows and columns. Text data, often also known as unstructured
 data,^[This is often the term used but is a fallacy. There is
 a lot of structure in text&mdash;the structure of chapters,
 paragraphs, sentences, and syntax [@marcus-93] within a sentence allows you, 
-the reader, to understand what we’re writing here. Unstructured often refers to
+the reader, to understand what we’re writing here. “Unstructured” often refers to
 not having defined rows and columns in our data.] 
 <!-- Comment: You appear to contradict yourself: on the one hand, you write that 'structured' -->
 <!-- is a fallacy, but on the other hand you yourself in your text refer to text data -->
@@ -65,9 +65,9 @@ being complex and nuanced which makes automatically analyzing it difficult. We
 often make simplifying assumptions: we assume our input is perfect text; 
 <!-- comment: "perfect text" is very vague  a newbie -->
 we ignore humor [@halevy-09] and deception [@niculae-15;
-@ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 
+@ott-11]; and we assume "standard" English [@kong-14].^[See Chapter 
 [Machine Learning](#chap:ml) for a discussion of speech recognition, 
-which can turn spoken language into text]. 
+which can turn spoken language into text.] 
 Text data also often reflects human observations that are
 exceptions to regular processes: e.g., the ubiquitous “other” or the
 “anything else you want to tell us” field in
@@ -87,15 +87,15 @@ Table: (\#tab:table7-0)
 
 Type of Analysis | Description           | Examples                                                                                   
 -----------------|-----------------------|--------------------------------------------------------------------------------------------
-Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? -->
+Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | We used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications, e.g. related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? -->
 Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data. | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
 Classification | Used to classify text content into one or more predefined categories. | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].<!-- Comment: content of news articles or tweets might be more practically relevant -->
-Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
-Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue).<!-- Comment: unclear: (such as IBM and Deep Blue) --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
-Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
-General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | **Need good example**
+Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
+Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases.<!-- Comment: I've taken out your  "(such as IBM and Deep Blue)" -> a) unclear what you mean - these are not synonyms/aliases! b) you already give a (much better) example in the examples column :) --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
+Named Entity Linking | Recognition, tagging, and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
+General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | Extract people and relationship status (person 1; person 2; married) or person-company relations (Jeff Bezos; Amazon.com, Inc.; CEO).  <!-- Comment: This general example was introduced by Patrick in his final edit. If you have a better example, use yours. Could also either be deleted or appended to the previous entry, "Named Entity Linking" as "Named Entity Linking (more generally: General Extraction)" **Need good example** -->
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
-Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
+Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | @wang-09 use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
 Translation | Automatic translation of text from one language to another. | Look at reaction to a political event in newspapers of different countries in different languages.
 
 For this chapter, we will focus on two types of use cases that social scientists deal with containing text data: 
@@ -113,7 +113,7 @@ generated from the text analysis.
 
 2. The second use case is less focused on "discovery" and
 "understanding new content" and instead focuses on efficiently
-classifying content into a pre-defined set of categories. The text
+classifying content into a predefined set of categories. The text
 data is similar to the previous use case but the task is different,
 and can often be a follow-up task to the previous use case. We might
 have news articles about politics that we need to automatically
