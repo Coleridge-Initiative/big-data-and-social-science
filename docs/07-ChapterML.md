@@ -1,6 +1,5 @@
 <!--
 % TODO: add ML process image  [Coleridge slides] 
-% TODO: section "Practical tips" seems to include comments
 --> 
 
 Machine Learning {#chap:ml}
@@ -83,8 +82,9 @@ $T$, as measured by $P$, improves with experience $E$"
 % Box 7.2 and section 7.7. overlap
 -->
 <div class="F00">
-<p><strong>Box 7.2: Social Science machine learning examples</strong> Potash et al (reference) worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.</p>
-<p>Carton et al (reference) used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.</p>
+<p><strong>Box 7.2: Social Science machine learning examples</strong></p>
+<p>Potash et al <span class="citation">[-@Potash2015]</span> worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.</p>
+<p>Carton et al <span class="citation">[-@Carton2016]</span> used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.</p>
 <p>Athey and Wager <span class="citation">[-@athey2019]</span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.</p>
 <p>Voigt et al <span class="citation">[-@Voigt2017]</span> uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.</p>
 </div>
@@ -1118,7 +1118,7 @@ There are a few different types of neural networks that are popular today:
 
 -  Convolutional Neural Networks (**CNN**s): These are often used in detecting objects in images and in doing image search, but their applicability goes beyond just image analysis and they can be used to find patterns in other types of data as well. CNNs treat input data (such as images) in a spatial manner (in two or three dimensions for example), and are able to capture spatial dependencies in the data. 
 
--  Recurrent Neural Networks (**RNN**s): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks (references). A popular variation of RNNs is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies.
+-  Recurrent Neural Networks (**RNN**s): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks. A popular variation of RNNs is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies.
 
 -  Generative Adversarial Network (**GAN**s): have been shown to be quite adept at generating new, realistic images based on other training images. GANs train two models in parallel. One network (called generator) is trained to generate data (based on historical examples of previously occurring data such as images or text or video). The other network (discriminator) tries to classify these generated images as real or synthetic. During training a GAN, the goal is to generate data that is realistic enough that the discriminator network is fooled to the point that it cannot distinguish the difference between the real and the synthetic input data.
 

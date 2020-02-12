@@ -438,10 +438,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 -->
 <div class="F00">
 <p>
-<strong>Box 7.2: Social Science machine learning examples</strong> Potash et al (reference) worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
+<strong>Box 7.2: Social Science machine learning examples</strong>
 </p>
 <p>
-Carton et al (reference) used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.
+Potash et al <span class="citation"><span class="citation">(<a href="#ref-Potash2015">2015</a>)</span></span> worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
+</p>
+<p>
+Carton et al <span class="citation"><span class="citation">(<a href="#ref-Carton2016">2016</a>)</span></span> used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.
 </p>
 <p>
 Athey and Wager <span class="citation"><span class="citation">(<a href="#ref-athey2019">2019</a>)</span></span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.
@@ -746,7 +749,7 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 <p>There are a few different types of neural networks that are popular today:</p>
 <ul>
 <li><p>Convolutional Neural Networks (<strong>CNN</strong>s): These are often used in detecting objects in images and in doing image search, but their applicability goes beyond just image analysis and they can be used to find patterns in other types of data as well. CNNs treat input data (such as images) in a spatial manner (in two or three dimensions for example), and are able to capture spatial dependencies in the data.</p></li>
-<li><p>Recurrent Neural Networks (<strong>RNN</strong>s): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks (references). A popular variation of RNNs is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies.</p></li>
+<li><p>Recurrent Neural Networks (<strong>RNN</strong>s): are suitable for modeling sequential data that has temporal dependencies. They are trained to generate the next steps in a sequence, such as the next letters in a word, or the next words in a sentence, voice recording, or video. They are typically used in translation, speech generation, and time series prediction tasks. A popular variation of RNNs is LSTM (Long Short Term Memory) that are used because of their ability and effectiveness in modeling long-range dependencies.</p></li>
 <li><p>Generative Adversarial Network (<strong>GAN</strong>s): have been shown to be quite adept at generating new, realistic images based on other training images. GANs train two models in parallel. One network (called generator) is trained to generate data (based on historical examples of previously occurring data such as images or text or video). The other network (discriminator) tries to classify these generated images as real or synthetic. During training a GAN, the goal is to generate data that is realistic enough that the discriminator network is fooled to the point that it cannot distinguish the difference between the real and the synthetic input data.</p></li>
 </ul>
 <p>Goodfellow et al. <span class="citation">(<a href="#ref-Goodfellow2016">2016</a>)</span> provide a (mathematical) introduction to deep learning.</p>
@@ -963,6 +966,9 @@ Figure 7.11: Precision or recall at different thresholds
 <div id="refs" class="references">
 <div id="ref-athey2019">
 <p>Athey, Susan, and Stefan Wager. 2019. “Estimating Treatment Effects with Causal Forests: An Application.” <a href="https://arxiv.org/abs/1902.07409" class="uri">https://arxiv.org/abs/1902.07409</a>.</p>
+</div>
+<div id="ref-Carton2016">
+<p>Carton, Samuel, Jennifer Helsby, Kenneth Joseph, Ayesha Mahmud, Youngsoo Park, Joe Walsh, Crystal Cody, CPT Estella Patterson, Lauren Haynes, and Rayid Ghani. 2016. “Identifying Police Officers at Risk of Adverse Events.” In <em>Proceedings of the 22nd Acm Sigkdd International Conference on Knowledge Discovery and Data Mining</em>, 67–76. KDD 16. New York, NY, USA: Association for Computing Machinery. doi:<a href="https://doi.org/10.1145/2939672.2939698">10.1145/2939672.2939698</a>.</p>
 </div>
 <div id="ref-Caruana2015">
 <p>Caruana, Rich, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and Noemie Elhadad. 2015. “Intelligible Models for Healthcare: Predicting Pneumonia Risk and Hospital 30-Day Readmission.” Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery; Data Mining (KDD 15). Association for Computing Machinery, New York, NY, USA, 1721–1730.</p>
