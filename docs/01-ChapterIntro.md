@@ -36,15 +36,12 @@ The value of the new types of data for social science is quite substantial. Pers
 
 ---
 
-**Example: New data enable new analyses**
 
-Spotshotter data, which have fairly detailed information for each
-gunfire incident, such as the precise timestamp and the nearest address,
-as well as the type of shot, can be used to improve crime data
-[@carr2015geography]; Twitter data can be used to improve understanding 
-and predictions around job loss, job gain, and job postings 
-[@antenucci2014using]; and eBay postings can be used to estimate demand 
-elasticities [@einav2013data]. Of course, these new sources come with 
+\exampbegin{New potential for social science}
+For example, the billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago \cite{cavallo2016billion}; other projects use text analysis of political speeches to study political polarization \cite{peterson2018classification}; and analysis of airbnb postings to get new insights into racial discrimination \cite{edelman2017racial}
+ \exampend{New potential for social science}
+
+Of course, these new sources come with 
 their own caveats and biases that need to be considered when drawing 
 inferences. We will cover this later in the book in more detail.
 

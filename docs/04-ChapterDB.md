@@ -1,4 +1,4 @@
-<!-- % done except image for schema --> 
+<!-- % done --> 
 
 Databases {#chap:db}
 =========

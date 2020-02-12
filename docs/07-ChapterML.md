@@ -1,8 +1,6 @@
 <!--
-% TODO: add links or lit references to ICML, nips, and kdd are not defined .. add links to conference websites
-% TODO: add coleridge ML cheat sheat as box or reference / resources at the end
 % TODO: add ML process image  [Coleridge slides] 
-
+% TODO: section "Practical tips" seems to include comments
 --> 
 
 Machine Learning {#chap:ml}
@@ -55,7 +53,8 @@ beyond learning to play checkers. Machine learning systems have learned
 to drive (and park) autonomous cars, are embedded inside robots, can
 recommend books, products, and movies we are (sometimes) interested in,
 identify drugs, proteins, and genes that should be investigated further
-to cure diseases, detect cancer and other pathologies in x-rays and other types of medical imaging, help us understand how the human brain learns language, help identify
+to cure diseases, detect cancer and other pathologies in x-rays and other types 
+of medical imaging, help us understand how the human brain learns language, help identify
 which voters are persuadable in elections, detect which students are
 likely to need extra support to graduate high school on time, and help
 solve many more problems. Over the past 20 years, machine learning has
@@ -150,11 +149,10 @@ researchers and practitioners to take the following steps:
     define the problem more concretely. What is the analytical
     formulation of the metric that you are trying to improve? The Data Science Project Scoping Guide (http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/) is a good place to start when doing problem scoping for social science or policy problems
 
-2.  **Formulate it as a machine learning problem**: Is it a classification problem or a regression problem? Is the goal to build a model that generates a ranked list prioritized by risk of an outcome, or is it to detect anomalies as new data come in? 
+2.  **Formulate it as a machine learning problem**: Is it a classification problem or a regression problem? Is the goal to build a model that generates a ranked list prioritized by risk of an outcome, or is it to detect anomalies as new data come in? Knowing what kinds of tasks machine learning can solve will allow you to map the  problem you are working on to one or more machine learning settings and give you access to a suite of methods appropriate for that task.
 
-Knowing what kinds of tasks machine learning can solve will allow you to map the  problem you are working on to one or more machine learning settings and give you access to a suite of methods appropriate for that task.
-
-3.  **Data exploration and preparation**: Next, you need to carefully explore the data you have. What additional data do you need or have access to? What variable will
+3.  **Data exploration and preparation**: Next, you need to carefully explore the data you have. 
+    What additional data do you need or have access to? What variable will
     you use to match records for integrating different data sources?
     What variables exist in the data set? Are they continuous or
     categorical? What about missing values? Can you use the variables in
@@ -170,26 +168,40 @@ Knowing what kinds of tasks machine learning can solve will allow you to map the
 5.  **Modeling**: Having formulated the problem and created your features, you now
     have a suite of methods to choose from. It would be great if there
     were a single method that always worked best for a specific type of
-    problem, but that would make things too easy. Each method makes a difference assumption about the structure and distribution of the data and with large amounts of high-dimensional data^[dimensionality of the data often refers to how many variables we have in the data], it is difficult to know apriori which assumption will best match the data we have. Typically, in machine
-    learning, you take a collection of methods and try them out to
-    empirically validate which one works the best for your problem. This process not only helps you select the best method for your problem but also helps you understand the structure of your data.  We will give an overview of leading methods that are being used today
-    in this chapter.
+    problem, but that would make things too easy. Each method makes a 
+    difference assumption about the structure and distribution of the data 
+    and with large amounts of high-dimensional data^[dimensionality of the 
+    data often refers to how many variables we have in the data], it is 
+    difficult to know apriori which assumption will best match the data 
+    we have. Typically, in machine learning, you take a collection of 
+    methods and try them out to empirically validate which one works the 
+    best for your problem. This process not only helps you select the best 
+    method for your problem but also helps you understand the structure of 
+    your data.  We will give an overview of leading methods that are being 
+    used today in this chapter.
 
 6. **Model Interpretation**: Once we have built the machine learning models, we also want to understand what they are, which predictors they found important, and how much, what types of entities they flagged as high risk (and why), where they made errors, etc. All of these fall under the model interpretation, interpretability, explainability umbrella which is an active area of research right now in machine learning.
 
-7.  **Model Selection**: As you build a large number of possible models, you need a way to
-    select the model that is the “best”. This part of the chapter will
-    cover methodology to first test the models on
-    historical data as well as discuss a variety of evaluation metrics. While this chapter will focus mostly on traditionally used metrics, Chapter 
-    [Bias and Fairness](#chap:bias) will expand on this using bias and fairness related metrics. It is important to note that sometimes the machine learning literature will call this step the “validation” step using historical data, but we want to distinguish it here from validation, which is the next step.
+7.  **Model Selection**: As you build a large number of possible models, 
+    you need a way to select the model that is the “best”. This part of 
+    the chapter will cover methodology to first test the models on
+    historical data as well as discuss a variety of evaluation metrics. 
+    While this chapter will focus mostly on traditionally used metrics, 
+    Chapter [Bias and Fairness](#chap:bias) will expand on this using bias 
+    and fairness related metrics. It is important to note that sometimes 
+    the machine learning literature will call this step the “validation” 
+    step using historical data, but we want to distinguish it here from 
+    validation, which is the next step.
 
 8. **Model Validation**: The next step, after model selection (using historical data) is validation. Validate on new data, as well as designing and running field trials or experiments.
 
 9.  **Deployment and Monitoring**: Once you have selected the best model and validated it using
     historical data as well as a field trial, you are ready to put the
     model into practice. You still have to keep in mind that new data
-    will be coming in, the world will be changing, and the model might also (need to) change over time. We will not cover too much of those aspects in this chapter, but they are
-    important to keep in mind when putting the machine learning work in to practice.
+    will be coming in, the world will be changing, and the model might also 
+    (need to) change over time. We will not cover too much of those aspects in this 
+    chapter, but they are important to keep in mind when putting the machine learning 
+    work in to practice.
 
 <!--Although each step in this process is critical, this chapter will not focus on step 3 (data exploration) because we assume you already have some experience doing that, and on step 7 (deployment) because, although critical, it is outside the scope of the book. MALTE: There are more steps than 3 and 7 that we mostly ignore. -->
 
@@ -232,7 +244,6 @@ into two major categories:
     goes down. Methods like the lasso [@tibshirani1996regression]
     penalize the model for having too many terms by performing what is
     known as *regularization*^[In statistical terms, regularization is an attempt to avoid overfitting the model]. 
-
 
 2.  **Unsupervised learning**: These are problems where there does not exist a target variable that
     we want to predict but we want to understand "natural" groupings or
@@ -299,8 +310,9 @@ a simple model, rather than using more complex models with simple
 features. Keeping the model simple makes it faster to train and easier
 to understand and explain.
 
-[ideally give a reference with list of features]
-
+<!--
+%  [ideally give a reference with list of features]
+--> 
 
 Methods
 -------
@@ -315,7 +327,7 @@ Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms w
 <div class="F00">
 <p><strong>Box 7.2: Machine learning vocabulary</strong></p>
 <ul>
-<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of &quot;learning&quot; a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
 <li><p><strong>Examples</strong>: These are data points, rows, observations, or instances.</p></li>
 <li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
 <li><p><strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.</p></li>
@@ -919,7 +931,6 @@ may take a different structure. The suboptimal predictive performance
 can be seen from the fact that trees partition the predictor space into
 a few rectangular regions, each one predicting only a single value (see
 the bottom part of Figure \@ref(fig:tree).
-Todo: trees as simple baselines
 
 **Ensemble methods**
 
@@ -942,8 +953,7 @@ averaging or voting (possibly weighted).
 **Bagging**
 
 Bagging stands for "bootstrap aggregation"^[Bootstrap is a general
-statistical procedure that
-draws random samples of
+statistical procedure that draws random samples of
 the original data with replacement.]: we first create bootstrap
 samples from the original data and then aggregate the predictions using
 models trained on each bootstrap sample. Given a data set of size $N$,
@@ -1028,9 +1038,10 @@ Given a data set of size $N$ and containing $M$ features, the random
 forest training algorithm works as follows:
 
 1.  Create $n$ bootstrap samples from the original data of size $N$.
-    Remember, this is similar to the first step in bagging. Increasing $n$ will lead to similar or better results, but also requires more computational resources. Typically
-    $n$ ranges from 100 to a few thousand but is best determined
-    empirically.
+    Remember, this is similar to the first step in bagging. Increasing 
+    $n$ will lead to similar or better results, but also requires more 
+    computational resources. Typically $n$ ranges from 100 to a few 
+    thousand but is best determined empirically.
 
 2.  For each bootstrap sample, train a decision tree using $m$ features
     (where $m$ is typically much smaller than $M$) at each node of the
@@ -1094,7 +1105,8 @@ learn. Neural networks were popular in the 1980s and early 1990s, but
 then fell out of fashion because they were slow and expensive to train,
 even with only one or two hidden layers. Since 2006, a set of techniques
 has been developed that enable learning in deeper neural networks. These
-techniques, with access to massive computational resources and large amounts of data, have enabled much deeper (and larger) networks to be
+techniques, with access to massive computational resources and large 
+amounts of data, have enabled much deeper (and larger) networks to be
 Trained and it turns out that these perform far better on many problems
 than shallow neural networks (with just a single hidden layer). The
 reason for the better performance is the ability of deep nets to build
@@ -1112,15 +1124,10 @@ There are a few different types of neural networks that are popular today:
 
 Goodfellow et al. [-@Goodfellow2016] provide a (mathematical) introduction to deep learning.
 
-Currently, deep neural networks are popular for a certain class of problems and a lot of research is being done on them. It is, however, important to keep in mind that they may often require a lot more data than are available in many problems. In many problems, such as natural language processing, image, and video analysis, there are techniques to start from a pre-trained neural network model, that reduces the need for additional training data.
- Training deep neural networks also
-requires a lot of computational power, but that is less likely to be an
-issue for most people today with increased access to computing resources. Typical cases where deep learning has been shown
-to be effective involve lots of images, video, and text data. We are
-in the early stages of development of this class of methods, and although there seems to be a lot of potential, we need a much better understanding of why they
-are effective and the problems for which they are well suited.
+Currently, deep neural networks are popular for a certain class of problems and a lot of research is being done on them. It is, however, important to keep in mind that they may often require a lot more data than are available in many problems. In many problems, such as natural language processing, image, and video analysis, there are techniques to start from a pre-trained neural network model, that reduces the need for additional training data. Training deep neural networks also requires a lot of computational power, but that is less likely to be an issue for most people today with increased access to computing resources. Typical cases where deep learning has been shown to be effective involve lots of images, video, and text data. We are in the early stages of development of this class of methods, and although there seems to be a lot of potential, we need a much better understanding of why they are effective and the problems for which they are well suited.
 
 ### Binary vs Multiclass classification problems
+
 In the discussion above, we framed classification problems as
 binary classification problems with a 0 or 1 output. There are many
 problems where we have multiple classes, such as classifying companies
@@ -1645,7 +1652,7 @@ they are, but will not describe them in detail. These include:
 
 -   Active learning, a set of machine learning algorithms that query the user or some other information source to get labels for data points that are most beneficial for the machine learning models. This is in contrast to the standard machine learning process where we often select data points to label/tag randomly. Active Learning approaches to selecting data points to label have been shown to reduce the effort needed to train machine learning models.
 
--   Reinforcement learning: The “supervised“ machine learning methods we’ve covered in this chapter are “one-shot” and take data points and labels as inputs. Reinforcement Learning is a different machine learning paradigm where the machine learning program takes a series of actions/decisions, and gets delayed feedback (reward or penalty) when performing a task. The goal of reinforcement learning is to determine the next best action to take in order to maximize long term performance. This has been applied to scenarios such as playing games (checkers, chess, backgammon, etc.) and in robotics (cite:)
+-   Reinforcement learning: The “supervised“ machine learning methods we’ve covered in this chapter are “one-shot” and take data points and labels as inputs. Reinforcement Learning is a different machine learning paradigm where the machine learning program takes a series of actions/decisions, and gets delayed feedback (reward or penalty) when performing a task. The goal of reinforcement learning is to determine the next best action to take in order to maximize long term performance. This has been applied to scenarios such as playing games (checkers, chess, backgammon, etc.) and in robotics [@Sutton2018].
 
 
 Summary
@@ -1705,5 +1712,4 @@ Major conferences in this area include the International Conference on
 Machine Learning, the Annual Conference on Neural Information
 Processing Systems (NeurIPS), and the ACM International Conference
 on Knowledge Discovery and Data Mining (KDD).
-
 
