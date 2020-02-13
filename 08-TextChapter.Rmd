@@ -11,7 +11,7 @@ This chapter provides an overview of how social scientists can make
 use of text data using computational data analysis methods. We cover
 the types of analysis that can be done with text data (search, topic
 detection, classification, etc.) and give an overview of how to do these
-analysis, social science tasks that they’re useful for, and how to
+analyses, social science tasks that they’re useful for, and how to
 evaluate the results produced. We also provide pointers to some tools
 that are commonly used for doing text analysis.
 
