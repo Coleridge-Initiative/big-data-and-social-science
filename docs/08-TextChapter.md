@@ -71,7 +71,7 @@ text, and use it for/in our analysis just like we use tabular data.
 
 There are a lot of types of analysis that we can do with text
 data. Table \@ref(tab:table7-0) gives a summary of these types of
-analysis.
+analysis.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
 
 Table: (\#tab:table7-0)
@@ -288,7 +288,7 @@ virtually all documents of a given corpus.
 
 <div class="F00">
 <p><strong>Box 7.1: TFIDF</strong></p>
-<p>For every token <span class="math inline">\(t\)</span> and every document <span class="math inline">\(d\)</span> in the corpus <span class="math inline">\(D\)</span> of size <span class="math inline">\(\mid D \mid = N\)</span>, TFIDF is calculated as <span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
+<p>For every token <span class="math inline">\(t\)</span> and every document <span class="math inline">\(d\)</span> in the corpus <span class="math inline">\(D\)</span> of size <span class="math inline">\(\mid D\mid = N\)</span>, TFIDF is calculated as <span class="math display">\[tfidf(t,d,D) = tf(t,d) \times
 idf(t,D),\]</span> where term frequency is either a simple count, <span class="math display">\[tf(t,d)=f(t,d),\]</span> or a more balanced quantity, <span class="math display">\[tf(t,d) = 0.5+\frac{0.5 \times
   f(t,d)}{\max\{f(t,d):t\in d\}},\]</span> and inverse document frequency is <span class="math display">\[\
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.\]</span></p>
@@ -299,7 +299,7 @@ and N is indeed the size/cardinality of D, i.e. N := |D|. I added the info to th
 ### Analysis
 
 Now that we have a matrix with documents as rows, words/phrases as
-columns and let's say the TFIDF score as the value of that word in
+columns, and let's say the TFIDF score as the value of that word in
 that document, we are now ready to run different machine learning
 methods on this data. We will not recap all of the methods and
 evaluation methodologies already covered in Chapter 
@@ -325,12 +325,15 @@ divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two
 documents $d_a$ and $d_b$, the common approach is to turn the documents into vectors
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity (angle between the two vectors) as a measure of their similarity. This is defined as:
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity 
+(the cosine of the angle between the two vectors) as a measure of their similarity.
+This is defined as:
 
 $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
      \overrightarrow{t_b}}{|\overrightarrow{t_a}|\times|\overrightarrow{t_b}|}.$$
      
 ---
+
 
 **Example: Measuring cosine similarity between documents**
 
@@ -360,8 +363,12 @@ from vector $\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
 $$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
 \sum\limits_{t=1}^m w_{t,a}\times
 \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
-$w_{t,b}$ are term weights in the two vectors, respectively.
-<!-- Comment: define m! Is it the length of the vectors, then introduce it as ... each of length m ... -->
+$w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
+<!-- Updated comment by Patrick: m was not defined.
+It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
+I added this piece of information.
+If you want to check: see the [@huang-08] paper,
+https://www.academia.edu/download/44422710/SMTP.pdf, pages 51 middle and 52 middle. -->
 
 An averaged KL divergence metric is then defined as
 $$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
@@ -399,8 +406,8 @@ these ontologies is to retrieve a predefined list of Wikipedia pages
 that would match a specific taxonomy. For example, scientific
 disciplines are an established way of tagging documents--- some are in
 physics, others in chemistry, engineering, or computer science. If a
-user retrieves four Wikipedia pages on "Physics," "Chemistry,"
-"Engineering," and "Computer Science," they can be further mapped to a
+user retrieves four Wikipedia pages on "Physics", "Chemistry",
+"Engineering", and "Computer Science", they can be further mapped to a
 given set of scientific documents to label and classify them, such as a
 corpus of award abstracts from the US National Science Foundation.
 
@@ -443,7 +450,7 @@ can be used to evaluate the two goals we have in finding relevant and
 similar documents.
 
 <div class="F00">
-<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors---<em>false positives</em>---and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em>---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
+<p><strong>Box 7.3: Precision and recall</strong> Precision computes the type I errors---<em>false positives</em> (retrieved documents that are not relevant)---and is formally defined as <span class="math display">\[\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.\]</span> Recall accounts for type II errors---<em>false negatives</em> (relevant documents that were not retrieved)---and is defined as <span class="math display">\[\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.\]</span></p>
 </div>
 
 We assume that a user has three sets of documents $D_a

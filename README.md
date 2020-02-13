@@ -9,8 +9,8 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 ## Current status of chapters for 2nd edition
 
 1. Intro: We need to update the introduction and graph
-2. APIs and Scraping: add website link for submitting examples. Need to update the notebooks and insert link/reference to it in section 2.6 (and possibly other places). Cameron is doing that right now.
-3. Record Linkage: add website link for submitting examples. Possibly update ML section
+2. APIs and Scraping: Need to update the notebooks and insert link/reference to it in section 2.6 (and possibly other places). Cameron is doing that right now.
+3. Record Linkage: Possibly update ML section
 4. Databases: 
 5. Parallel: 
 6. Vizualization:

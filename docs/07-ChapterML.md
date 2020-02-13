@@ -100,7 +100,7 @@ mentions several examples where machine learning is being used in
 commercial applications today. Social scientists are uniquely placed
 today to take advantage of the same advances in machine learning by
 having better methods to solve several key problems they are tackling.
-Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.
+Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
 This chapter is not an exhaustive introduction to machine learning.
 There are many books that have done an excellent job of that

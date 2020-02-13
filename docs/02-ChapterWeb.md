@@ -34,7 +34,7 @@ wider issues of data and public policy. While we use Python as the programming l
 **BOX**
 Examples 
 ----------
-In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter. Please submit a link to the paper (and/or code) here: todo: add website link]
+In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
 Kim et al. [-@Kim2016] use social media data about e-cigarettes from Twitter for public health research.
 
