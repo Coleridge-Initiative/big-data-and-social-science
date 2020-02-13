@@ -459,11 +459,10 @@ similar documents.
 
 ```{block, type='F00'}
 **Box 7.3: Precision and recall**
-Precision computes the type I errors---*false
-positives*---and is formally
+Precision computes the type I errors---*false positives* (retrieved documents that are not relevant)---and is formally
 defined as
 $$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.$$
-Recall accounts for type II errors---*false negatives*---and is defined
+Recall accounts for type II errors---*false negatives* (relevant documents that were not retrieved)---and is defined
 as
 $$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
 ```
