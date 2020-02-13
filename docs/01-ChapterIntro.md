@@ -36,10 +36,9 @@ The value of the new types of data for social science is quite substantial. Pers
 
 ---
 
+**Example: New potential for social science**
 
-\exampbegin{New potential for social science}
-For example, the billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago \cite{cavallo2016billion}; other projects use text analysis of political speeches to study political polarization \cite{peterson2018classification}; and analysis of airbnb postings to get new insights into racial discrimination \cite{edelman2017racial}
- \exampend{New potential for social science}
+For example, the billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago [@cavallo2016billion]; other projects use text analysis of political speeches to study political polarization [@peterson2018classification]; and analysis of airbnb postings to get new insights into racial discrimination [@edelman2017racial].
 
 Of course, these new sources come with 
 their own caveats and biases that need to be considered when drawing 

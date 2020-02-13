@@ -29,7 +29,6 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 ---
 
-<!-- todo: finish examples in this box -->
 <!-- - Survey paper: http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf -->
 
 **Box 9.1: Network Analysis Examples**
@@ -38,7 +37,7 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 - **Example 2: Large-Scale Social Networks**^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208] [@stopczynski2014]. Using data from a variety of sources to determine how people are connected, Stopczynski et al. are able to observe how communities form and social interactions change over time.
 
-- **Example 3: Facebook Social Graph .**^[http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf] [@cheng2016]. A study of the Facebook friendship network was able to characterize how connected people were on the social networking site. By studying clustering and friendship preferences, the researchers were able to see how communities form and explore the "six degrees of separation" phenomenon on Facebook.
+- **Example 3: Facebook Social Graph**^[http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf] [@cheng2016]. A study of the Facebook friendship network was able to characterize how connected people were on the social networking site. By studying clustering and friendship preferences, the researchers were able to see how communities form and explore the "six degrees of separation" phenomenon on Facebook.
 
 ---
 

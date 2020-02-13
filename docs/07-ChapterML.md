@@ -1,6 +1,4 @@
-<!--
-% TODO: add ML process image  [Coleridge slides] 
---> 
+
 
 Machine Learning {#chap:ml}
 ================

@@ -1,6 +1,5 @@
 <!--
-%check and/or fix chapter heading / paragraph heading typesetting
-%add proper citation for cran package 
+%done
 --> 
 
 Data Quality and Inference Errors {#chap:errors}
@@ -1115,7 +1114,7 @@ large multivariate data set in a single plot [@malik2010interactive]. In
 editing data, it can be used to detect outliers and unusual data
 patterns. Software for implementing this technique has been written in R
 and is available from the Comprehensive R Archive Network
-(<https://cran.r-project.org/>). Figure
+(<https://cran.r-project.org/>) [@cran2013]. Figure
 \@ref(fig:fig10-7) shows an example. The key idea is that micro-aggregates of two related
 variables should have similar data patterns. Inconsistent data patterns
 may signal errors in one of the aggregates that can be investigated and

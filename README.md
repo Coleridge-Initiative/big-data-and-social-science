@@ -14,10 +14,10 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 4. Databases: 
 5. Parallel: 
 6. Vizualization:
-7. Machine Learning: small todos at the top of the chapter
-8. Text: needs examples in the table
+7. Machine Learning:
+8. Text:
 9. Networks: 
-10. Errors: small todos at the top of the chapter
+10. Errors:
 11. Bias: add references
 12. Privacy: small todos at the top of the chapter
 13. Notebooks: update data set for bias
