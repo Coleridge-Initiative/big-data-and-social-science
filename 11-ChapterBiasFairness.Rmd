@@ -39,13 +39,13 @@ Sources of Bias {#sec:biassources}
 Bias may be introduced into a machine learning project at any step along
 the way and it is important to carefully think through each potential
 source and how it may affect your results. In many cases, some sources
-may be difficult to measure precisely (or even at all), but this doesn’t
+may be difficult to measure precisely (or even at all), but this doesn't
 mean these potential biases can be readily ignored when developing
 interventions or performing analyses.
 
 ### Sample Bias
 
-You’re likely familiar with sampling issues as a potential source of
+You're likely familiar with sampling issues as a potential source of
 bias in the contexts of causal inference and external validity in the
 social science literature. A biased sample can be just as problematic
 for machine learning as it can be for inference, and predictions made on
@@ -104,7 +104,7 @@ is defined. For instance, a study of recidivism might use a new arrest
 as an outcome variable when it really cares about committing a new
 crime. However, if some groups are policed more heavily than others,
 using arrests to define the outcome variable may introduce bias into the
-system’s decisions. Similarly, a label that relies on the number of days
+system's decisions. Similarly, a label that relies on the number of days
 an individual has been incarcerated would reflect known biases in
 sentence lengths between black and white defendants.
 
@@ -167,7 +167,7 @@ from its scores by performing worse on some groups relative to others
 (many examples have been highlighted in popular press recently, such as
 racial biases in facial recognition algorithms and gender biases in
 targeting algorithms for job advertisement on social media). Because of
-the complex correlation structure of the data, it generally isn’t
+the complex correlation structure of the data, it generally isn't
 sufficient to simply leave out the protected attributes and assume this
 will result in fair outcomes. Rather model performance across groups
 needs to be measured directly in order to understand and address any
@@ -206,7 +206,7 @@ While there may be relatively little you can do to detect or mitigate
 these types of bias at the modeling stage, performing a trial to compare
 current practice with a deployed model can be instructive where doing so
 is feasible. Keep in mind, of course, that the potential for machine
-learning systems to be applied in biased ways shouldn’t be construed as
+learning systems to be applied in biased ways shouldn't be construed as
 an argument against developing these systems at all any more than it
 would be reasonable to suggest that current practices are likely to be
 free of bias. Rather, it is an argument for thinking carefully about
@@ -290,7 +290,7 @@ here), these are generally derived from values in the *confusion matrix*
     label.
 
 Based on these four categories, we can calculate several ratios that are
-instructive for thinking about the equity of a model’s predictions in
+instructive for thinking about the equity of a model's predictions in
 different situations (Sections [punitive example](#sec:punitiveexample) and [assistive example](#sec:assistiveexample) provide some detailed examples here):
 
 %can we move the following definitions or the equations to the side margin?
@@ -336,16 +336,16 @@ when available resources mean a program can only serve a given number of
 individuals) or where calculating these metrics at different threshold
 levels might be used (along with model performance metrics) to choose a
 threshold for application. In some cases, it may also be of interest to
-think about equity across the full distribution of the modeled score.
+think about equity across the full distribution of the modeled score [@chouldechova2017; @kleinberg2017].
 Common practices in these situations are to look at how model
 performance metrics such as the area under the receiver-operator curve
 ($AUC-ROC$) or model calibration compared across subgroups (such as by
 race, gender, age). Or, in cases where the underlying causal
-relationships are well-known, counterfactual methods may also be used to
-assess a model’s bias (these methods may also be useful when you suspect
-label bias to be an issue in your data). We don’t explore these topics
+relationships are well-known, counterfactual methods [@kilbertus2017; @kusner2017] may also be used to
+assess a model's bias (these methods may also be useful when you suspect
+label bias to be an issue in your data). We don't explore these topics
 deeply here, but refer you out to the relevant references if you would
-like to learn more ****.
+like to learn more.
 
 ### Choosing Bias Metrics
 
@@ -356,7 +356,7 @@ one of the most important — and frequently most challenging — aspects of
 measuring bias in your machine learning pipeline is simply understanding
 how “fairness” should be defined for your particular case.
 
-In general, this requires consideration of the project’s goals and a
+In general, this requires consideration of the project's goals and a
 detailed discussion between the data scientists, decision makers, and
 those who will be affected by the application of the model. Each
 perspective may have a different concept of fairness and a different
@@ -366,7 +366,7 @@ critical role in this conversation, both as the experts in understanding
 how different concepts of fairness might translate into metrics and
 measurement and as individuals with experience deploying similar models.
 While there is no universally correct definition of fairness, nor one
-that can be learned from the data, this doesn’t excuse the data
+that can be learned from the data, this doesn't excuse the data
 scientists from responsibility for taking part in the conversation
 around fairness and equity in their models and helping decision makers
 understand the options and trade-offs involved.
@@ -445,7 +445,7 @@ composition of the groups. This brings us to our second metric:
 
 By accounting for differently sized groups, we ask the question, “just
 by virtue of the fact that an individual is a member of a given group,
-what are the chances they’ll be wrongly convicted?”
+what are the chances they'll be wrongly convicted?”
 
 \^(in terms of probability,
 $$P(\textrm{wrongly jailed $\mid$ group $i$}) = C~~~\forall~i$$ Where
@@ -460,7 +460,7 @@ there are other sources of disparities we might care about as well. For
 instance, suppose there are 10,000 individuals in Group A and 30,000 in
 Group B. Suppose further that 100 individuals from each group are jail,
 with 10 Group A people wrongly convicted and 30 Group B people wrongly
-convicted. We’ve balanced the number of false positives by group size
+convicted. We've balanced the number of false positives by group size
 (0.1% for both groups) so there are no disparities as far as this metric
 is concerned, but note that 10% of the jailed Group A individuals are
 innocent compared to 30% of the jailed Group B individuals. The next
@@ -489,7 +489,7 @@ The False Positive Rate ($FPR$) focuses on a different subset,
 specifically, the individuals who should **not** be subject to the
 intervention. Here, this would ask, “for an *innocent* person, what are
 the chances they will be wrongly convicted by virtue of the fact that
-they’re a member of a given group?”
+they're a member of a given group?”
 
 ^(\In probabilistic terms,
 $$P(\textrm{wrongly jailed $\mid$ innocent, group $i$}) = C~~~\forall~i$$
@@ -622,7 +622,7 @@ closer look at each of these cases below.
 #### False Omission Rate
 
 The False Omission Rate ($FOR$) focuses specifically on people on whom
-the program doesn’t intervene – in our example, the set of families not
+the program doesn't intervene – in our example, the set of families not
 receiving the food subsidy. Such families will either be true negatives
 (that is, those not in need of the assistance) or false negatives (that
 is, those who did need assistance but were missed by the program), and
@@ -650,7 +650,7 @@ for more details on this case.
 The False Negative Rate ($FNR$) focuses instead on the set of people
 with need for the intervention. In our example, this asks the question,
 “for a family that needs food assistance, what are the chances they will
-be missed by the subsidy by virtue of the fact they’re a member of a
+be missed by the subsidy by virtue of the fact they're a member of a
 given group?”
 
 \^(In probabilistic terms,
@@ -705,7 +705,7 @@ individuals, and $p_i$ is the prevalence (here, rate of need for food
 assistance) in group $i$.)
 
 Note that, unlike the metrics described above, using recall as an equity
-metric doesn’t explicitly focus on the mistakes being made by the
+metric doesn't explicitly focus on the mistakes being made by the
 program, but rather on how it is addressing need within each group.
 Nevertheless, balancing recall is equivalent to balancing the false
 negative rate across groups (note that $recall = 1-FNR$), but may be a
@@ -722,7 +722,7 @@ believed to be a result of social or historical inequities, a program
 may want to go further than balancing recall across groups, focusing
 even more heavily on historically under-served groups. One rule of thumb
 we have used in these cases is to balance recall relative to prevalence
-(however, there’s no theoretically “right” choice here and it’s
+(however, there's no theoretically “right” choice here and it's
 generally best to consider a range of options):
 
 \^($$\frac{recall_i}{recall_j} = \frac{p_i}{p_j}~~~\forall~i,j$$)
@@ -767,7 +767,7 @@ As described in Chapter [Machine Learning](#chap:ml), many different types of mo
 with many tune-able hyperparameters) can be brought to bear on a given
 machine learning problem, making the task of selecting a specific model
 to put into use an important step in the process of model development.
-Chapter [Machine Learning](#chap:ml) described how this might be done by considering a model’s
+Chapter [Machine Learning](#chap:ml) described how this might be done by considering a model's
 performance on various evaluation metrics, as well as how consistent
 that performance is across time or random splits of the data. This
 framework for model selection can naturally be extended to incorporate
@@ -818,7 +818,7 @@ model to deploy: some with better overall performance, some with better
 overall equity measures, and some with better performance for specific
 subgroups. Unlike model selection based on performance metrics alone,
 the final choice between these will generally involve a judgment call
-that reflects the project’s dual goals of balancing accuracy and equity.
+that reflects the project's dual goals of balancing accuracy and equity.
 As such, the final choice of model from this narrowed menu of options is
 best treated as a discussion between the data scientists and
 stakeholders in the same manner as choosing how to define fairness in
@@ -839,11 +839,12 @@ these disparities were mitigated by considering the top 1000 with
 relatively little cost in precision. This result suggested a strategy
 for deployment: use the model to select the 1000 highest risk
 individuals and randomly select 150 individuals from this set to stay
-within the program’s capacity while balancing equity and performance.
+within the program's capacity while balancing equity and performance.
 
 Another approach that can work well in some situations is to consider
 using different thresholds across groups to achieve more equitable
-results. This is perhaps most robust where the metric of interest in
+results, which we explored in detail through a recent case study [@Rodolfa2020]. 
+This is perhaps most robust where the metric of interest in
 monotonically increasing or decreasing with the number of individuals
 chosen for intervention (such as recall). This can be formulated in two
 ways:
@@ -853,12 +854,12 @@ ways:
     program would need to increase to achieve equitable results (or
     other fairness goals such as those described in
     [constrained assistive](#sec:constrainedassistive). 
-    In this case, interventions don’t
+    In this case, interventions don't
     need to be denied to any individuals in the interest of fairness,
     but the program would incur some additional cost in order to achieve
     a more equitable result.
 
--   If the program’s scale is a hard constraint, you may still be able
+-   If the program's scale is a hard constraint, you may still be able
     to use subgroup-specific thresholds to achieve more equitable
     results by selecting fewer of some groups and more of others
     relative to the single threshold. In this case, the program would
@@ -867,21 +868,18 @@ ways:
     need to be substituted for individuals with somewhat lower scores of
     under-represented subgroups.
 
-As you’re thinking about equity in the application of your machine
-learning models, it’s also particularly important to keep in mind that
-measuring fairness in a model’s predictions is only a proxy for what you
+As you're thinking about equity in the application of your machine
+learning models, it's also particularly important to keep in mind that
+measuring fairness in a model's predictions is only a proxy for what you
 fundamentally care about: fairness in outcomes in the presence of the
 model. As a model is put into practice, you may find that the program
 itself is more effective for some groups than others, motivating either
 additional changes in your model selection process or customizing
 interventions to the specific needs of different populations (or
 individuals). Incorporating fairness into decisions about who is chosen
-to receive an intervention is an important first step, but shouldn’t be
-mistaken for a comprehensive solution to disparities in a program’s
+to receive an intervention is an important first step, but shouldn't be
+mistaken for a comprehensive solution to disparities in a program's
 application and outcomes.
-
-%cite LA ACM FAT* paepr
-
 
 Some work is also being done investigating means for incorporating bias
 and fairness more directly in the process of model development itself.
@@ -889,11 +887,11 @@ For instance, in may cases different numbers of examples across groups
 or unmeasured variables may contribute to a model having higher error
 rates on some populations than others and additional data collection
 (either more examples or new features) may help mitigate these biases
-where doing so is feasible ****. Other work is being done to explore the
+where doing so is feasible [@chen2018]. Other work is being done to explore the
 results of incorporating equity metrics directly into the loss functions
 used to train some classes of machine learning models, making balancing
-accuracy and equity an aspect of model training itself ****. While we
-don’t explore these more advanced topics in depth here, we refer you to
+accuracy and equity an aspect of model training itself [@celis2019; @zafar2017]. While we
+don't explore these more advanced topics in depth here, we refer you to
 the cited articles for more detail.
 
 Further Considerations
@@ -905,9 +903,9 @@ While building machine learning models that are completely free of bias
 is an admirable goal, it may not always be an achievable one.
 Nevertheless, even an imperfect model may provide an improvement over
 current practices depending on the degree of bias involved in existing
-processes. It’s important to be cognizant of the existing context and
+processes. It's important to be cognizant of the existing context and
 make measurements of equity for current practices as well as new
-algorithms that might replace or augment them. The status quo shouldn’t
+algorithms that might replace or augment them. The status quo shouldn't
 be assumed to be free of bias because it is familiar any more than
 algorithms should be assumed capable of achieving perfection simply
 because they are complex. In practice, a more nuanced view is likely to
@@ -941,7 +939,7 @@ individual and social costs of these different types of errors is likely
 infeasible in most cases. Instead, a more practical approach generally
 involves exploring a number of different options through different
 choices of models and parameters and using these options to motivate a
-conversation about the program’s goals, philosophy, and constraints.
+conversation about the program's goals, philosophy, and constraints.
 
 ### What is the Relevant Population?
 
@@ -961,7 +959,7 @@ apply if they had knowledge of the program (regardless of whether or not
 they actually do), or perhaps even the population at large (for
 instance, as measured by the census). Each of those choices could
 potentially lead to different conclusions about the fairness of the
-program’s decisions (either in the presence or absence of a machine
+program's decisions (either in the presence or absence of a machine
 learning model), highlighting the importance of understanding the
 relevant population and who might potentially be left out of your data
 as an element of how fairness is defined in your context. Keep in mind
@@ -988,9 +986,12 @@ how do you choose between a model that makes very large errors on a
 small number of individuals vs one that makes relatively small errors on
 a large number of individuals?).
 
-If you would like to learn more about understanding bias and fairness in
-machine learning problems with continuous outcomes, we suggest
-consulting **** for a useful overview.
+Unfortunately, the literature on bias and fairness in machine learning 
+problems in other contexts (such as regression with continuous outcomes) 
+is less rich than the work focused on classification, but if you would 
+like to learn more about what has been done in this regard, we suggest 
+consulting [@chouldechova2018] for a good starting point (see, in 
+particular, Section 3.5 of their discussion).
 
 ### Considerations for Ongoing Measurement
 
@@ -1012,14 +1013,14 @@ false positives in the absence of knowledge of a counterfactual (that
 is, what would have happened in the absence of intervention) may be
 difficult or impossible. For instance, among families who have improved
 nutritional outcomes after receiving a food subsidy, you may not be able
-to ascertain which families’ outcomes were actually helped by the
+to ascertain which families' outcomes were actually helped by the
 program versus which would have improved on their own, obfuscating any
 measure of recall you might use to judge performance or equity.
 Likewise, for individuals denied bail, you cannot know if they actually
 would have fled or committed a crime had they been released, making
 metrics like false discovery rate impossible to calculate.
 
-During a model’s pilot phase, initially making predictions without
+During a model's pilot phase, initially making predictions without
 taking action or using the model in parallel with existing processes can
 help mitigate some of these measurement problems over the short term.
 Likewise, when resources are limited such that only a fraction of
@@ -1027,12 +1028,12 @@ individuals can receive an intervention, using some degree of randomness
 in the decision-making process can help establish the necessary
 counterfactual. However, in many contexts, this may not be practical or
 ethical, and you will need to consider other means for ongoing
-monitoring of the model’s performance. Even in these contexts, however,
+monitoring of the model's performance. Even in these contexts, however,
 it is important to continually review the performance of the models and
 seek to both improve its performance in terms of both equity and
 efficiency. In practice, this may include some combination of
 considering proxies for the counterfactual, quasi-experimental inference
-methods, and expert/stakeholder review of the model’s results (both in
+methods, and expert/stakeholder review of the model's results (both in
 aggregate and of selected individual cases).
 
 ### Equity in Practice
@@ -1112,8 +1113,8 @@ might see for several of these metrics in the literature:
     negative labels, respectively.
 
 -   Additional work is being done looking at the fairness through the
-    lens of similarity between individuals (...) and causal reasoning
-    (...).
+    lens of similarity between individuals [@dwork2012; @zemel2013] and causal reasoning
+    [@kilbertus2017; @kusner2017].
 
 As a field, we have yet to settle on a single widely-accepted
 terminology for thinking about bias and fairness, but rather than get
@@ -1121,8 +1122,6 @@ lost in competing naming conventions, we would encourage you to focus on
 what disparities in the different underlying metrics actually mean for
 how models you build might actually affect different populations in your
 particular context.
-
-****
 
 Case Studies
 -----------------------------------------
@@ -1141,8 +1140,8 @@ been put into use in many jurisdictions around the country. These models
 show a wide variation in methods (from heuristic rule-based scores to
 machine learning models) and have been developed by a variety of
 academic researchers, government employees, and private companies, many
-built with little or no evaluation of potential biases (Desmarais and
-Singh). Different jurisdictions put these models to use in a variety of
+built with little or no evaluation of potential biases [@desmarais2013]. 
+Different jurisdictions put these models to use in a variety of
 ways, including identifying individuals for diversion & treatment
 programs, making bail determinations, and even in the course of
 sentencing decisions.
@@ -1151,7 +1150,7 @@ In May 2016, journalists at ProPublica undertook an exploration of
 accuracy and racial bias in these algorithms, focusing on one the
 commercial solutions called Correctional Offender Management Profiling
 for Alternative Sanctions (COMPAS), built by a company called
-Northpointe. Their analysis focused on some of the errors made by the
+Northpointe [@angwin2016; @larson2016]. Their analysis focused on some of the errors made by the
 model, finding dramatic disparities between black and white defendants:
 among black defendants who would did not end up with another arrest in
 the subsequent two years, 45% were labeled by the system as high risk,
@@ -1160,9 +1159,9 @@ did recidivate within two years, 48% of white defendants were labeled
 low risk, compared with 28% of black defendants.
 
 Here, ProPublica was focusing on $FPR$ and $FNR$ metrics for their
-definition of fairness: e.g., if you’re a person who, in fact, will not
+definition of fairness: e.g., if you're a person who, in fact, will not
 recidivate, do your chances of being mislabeled as high risk by the
-model differ depending on your race? In their response, Northpointe
+model differ depending on your race? In their response [@northpointe2018], Northpointe
 argued that this was the wrong fairness metric in this context —
 instead, they claimed, $FDR$ should be the focus: If the model labels
 you as high risk, do the chances that it was wrong in doing so depend on
@@ -1179,7 +1178,7 @@ racial groups.
 
 Table: (\#tab:compastable) COMPAS Fairness Metrics
 
-In a follow-up article in December 2016, the ProPublica authors remarked
+In a follow-up article in December 2016 [@angwin2016b], the ProPublica authors remarked
 on the surprising result that a model could be “simultaneously fair and
 unfair.” The public debate around COMPAS also inspired a number of
 academic researchers to look closer at these definitions of fairness,
@@ -1187,7 +1186,7 @@ showing that in the presence of different base rates, it would be
 impossible for a model to satisfy both definitions of fairness at the
 same time. The case of COMPAS demonstrates the potentially dramatic
 impact of decisions about how equity is defined and measured in real
-applications with considerable implications for individual’s lives. It’s
+applications with considerable implications for individual's lives. It's
 incumbent upon the researchers developing such a model, the policymakers
 deciding to put it into practice, and the users making decisions based
 upon its scores to understand and explore the options for measuring
@@ -1203,16 +1202,16 @@ IBM, and Amazon. However, growth in the use of technologies has seen a
 number of embarrassing stumbles related to how well they work across
 race along the way: In 2015, Google released an automated image
 annotation app that mistakenly tagged several African American users as
-gorillas; and a number of early applications deployed on digital cameras
+gorillas [@dougherty2015]; and a number of early applications deployed on digital cameras
 would erroneously tell Asian users to open their eyes or fail to detect
-users with darker skin tones entirely.
+users with darker skin tones entirely [@rose2010].
 
 Despite the broad uses of these technologies, even in policing,
 relatively little work had been done to quantify their racial bias prior
-to 2018 when a researcher at MIT’s Media Lab undertook a study to assess
+to 2018 when a researcher at MIT's Media Lab undertook a study to assess
 racial bias in the ability to correctly detect gender of three
 commercial facial recognition applications (developed by Microsoft,
-Face++, and IBM). She developed a benchmark dataset reasonably
+Face++, and IBM) [@buolamwini2018]. She developed a benchmark dataset reasonably
 well-balanced across race and gender by collecting 1,270 photos of
 members of parliament in several African and European nations, scoring
 each photo for skin tone using the Fitzpatrick Skin Type classification
@@ -1258,7 +1257,7 @@ not available, many of the widely available public data sets for
 developing similar facial recognition algorithms have been heavily
 skewed, with as many as 80% of training images being of white
 individuals and 75% being of men. Improving the representativeness of
-these data sets may be helpful, but wouldn’t eliminate the need for
+these data sets may be helpful, but wouldn't eliminate the need for
 ongoing studies of disparate performance of facial recognition across
 populations that might arise from other characteristics of the
 underlying models as well.
@@ -1268,12 +1267,12 @@ might decide against putting a given model to use for certain
 applications entirely. In 2019, the city of San Francisco, CA, announced
 that it would become the first city in the country to ban the use of
 facial recognition technologies entirely from city services, including
-its police department. There, city officials reached the conclusion that
+its police department [@harwell2019]. There, city officials reached the conclusion that
 any potential benefits of these technologies were outweighed by the
 combination of potential biases and overall privacy concerns, with the
-city’s Board of Supervisors voting 8-1 to ban the technology. While the
+city's Board of Supervisors voting 8-1 to ban the technology. While the
 debate around appropriate uses for facial recognition is likely to
-continue for some time across jurisdictions, San Francisco’s decision
+continue for some time across jurisdictions, San Francisco's decision
 highlights the role of legal and policy constraints around how models
 are used in addition to ensuring that the models are fair when and where
 they are applied.
@@ -1291,28 +1290,28 @@ Rights laws that make it illegal for individuals to be excluded from job
 or housing opportunities on the basis of protected characteristics such
 as age, race, or sex.
 
-Public awareness that Facebook’s tools allowed advertisers to target
+Public awareness that Facebook's tools allowed advertisers to target
 content based on these protected characteristics began to form in 2016
-with news reports highlighting the feature. While the company initially
+with news reports highlighting the feature [@angwin2016c]. While the company initially
 responded that their policies forbid advertisers from targeting ads in
 discriminatory ways, there were legitimate use cases for these
 technologies as well, suggesting that the responsibility fell to the
 people placing the ads. By 2018, however, it was clear that the platform
 was allowing some advertisers to do just that and the American Civil
 Liberties Union filed a complaint of gender discrimination with the US
-Equal Employment Opportunity Commission. The complaint pointed to 10
+Equal Employment Opportunity Commission [@campbell2018]. The complaint pointed to 10
 employers that had posted job ads targeted exclusively to men, including
 positions such as truck drivers, tire salesmen, mechanics, and security
 engineers. Similar concerns were cited by the US Department of Housing
 and Urban Development in 2019 when it filed charges against the social
 media company alleging it had served ads that violate the Fair Housing
-Act. Responding to the growing criticism, Facebook began to the limit
+Act [@brandom2019]. Responding to the growing criticism, Facebook began to the limit
 the attributes advertisers could use to target their content.
 
 However, these limitations might not be sufficient in light of the
-platform’s machine learning algorithms that are determining who is shown
+platform's machine learning algorithms that are determining who is shown
 a given ad regardless of the specific targeting parameters. Research
-performed by Ali, et al. (2019), confirmed that the content of an
+performed by Ali and colleagues [@ali2019], confirmed that the content of an
 advertisement could have a dramatic impact on who it was served to
 despite broad targeting parameters. Users who were shown a job posting
 for a position as a lumberjack were more than 90% men and more than 70%
@@ -1321,7 +1320,7 @@ white, while those seeing a posting for a janitorial position were over
 advertisements, ranging from an audience nearly 65% black in some
 conditions to 85% white in others. A separate study of placement of STEM
 career ads with broad targeting found similar gender biases in actual
-impressions, with content shown to more men than women.
+impressions, with content shown to more men than women [@lambrecht2019].
 
 Unlike the other case studies described above, the concept of fairness
 for housing and job advertisements is provided by existing legislation,
@@ -1338,44 +1337,6 @@ subject to these requirements, which poses technical challenges in its
 own right. As of this writing, understanding how best to combat
 discrimination in ad targeting is an ongoing area of research as well as
 an active public conversation.
-
-%remove next example?
-
-### Tay: Microsoft’s AI Twitter Bot
-
-In March, 2016, Microsoft released a Twitter chatbot named Tay with the
-intention of showcasing their AI technology for understanding
-conversational language. The bot was targeted at younger Twitter users,
-hoping to carry on fun, colloquial conversations with them while
-learning to improve its conversational skills through these
-interactions. Resulting at least in part from an attack coordinated on
-4Chan, within 24 hours, Tay’s tweets had taken a decidedly dark turn,
-generating tweets with racist, misogynistic, and anti-Semitic messages
-(Figure \@ref(fig:taytweets). In the face of this hateful, offensive
-content, Microsoft had shut Tay down by the end of its first day.
-Issuing a public apology, the company indicated that although the had
-“stress-tested” the bot in several contexts, they had failed to
-anticipate the type of abuse of it encountered in the wild.
-
-```{r taytweets, out.width = '80%', fig.align = 'center', echo = FALSE, fig.cap = 'Example of Tays offensive output'}
-knitr::include_graphics("ChapterBias/figures/tay_tweets2.png")
-```
-
-Although the stakes are arguably relatively low for a chatbot built for
-entertainment, the story of Tay is a cautionary one for more
-consequential applications of these technologies. In practice, this
-experience can be seen through the lens of sample and application
-biases: not only was the corpus of data on which Microsoft initially
-trained Tay vastly different from the data on which in ultimately
-operated, but the way in which people ultimately used the system was out
-of step with its anticipated use. While these issues may be particularly
-dramatic for models like Tay that learn on the fly, they can certainly
-have an adverse effect on more static models as well. Tay’s nearly
-immediate transformation from a fun, playful chatbot to one spewing
-cruelty and hate showcases not only the need for data scientists to
-anticipate how their models and technologies might be abused as well as
-the critical need for continual monitoring for both performance metrics
-and biases in any deployed application.
 
 Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models
 ------------------------------------------------------------------------------
@@ -1490,7 +1451,7 @@ the individual entity level, and contain the following columns:
     predictive model (for a continuous case, you will need to provide a
     classification threshold for the analysis). For the example data
     included here, the COMPAS scores have been mapped to a binary score
-    based on ProPublica’s interpretation of Northpointe’s practioner
+    based on ProPublica's interpretation of Northpointe's practioner
     guide, with 0 representing a `low` COMPAS score and 1 representing a
     `medium` or `high` score.
 
@@ -1569,8 +1530,8 @@ small multiples using the `Plot.plot_group_metric_all()` method. Figure \@ref(fi
 notebook. In it, you can see that the largest `race` group,
 `African American`, is predicted positive more often than any other race
 group (predicted positive rate $PPR$ of 0.66), and are more likely to be
-incorrectly classified as ’high’ risk (false positive rate $FPR$ of
-0.45) than incorrectly classified as ’low’ or ’medium’ risk (false
+incorrectly classified as 'high' risk (false positive rate $FPR$ of
+0.45) than incorrectly classified as 'low' or 'medium' risk (false
 negative rate $FNR$ of 0.28).
 
 ```{r tutorial-plot-crosstabs, out.width = '100%', fig.align = 'center', echo = FALSE}
@@ -1610,7 +1571,7 @@ is:
 $$Disparity_{FNR} = \frac{FNR_{black}}{FNR_{white}}$$
 
 Aequitas provides a couple of options for determining the reference
-group for each attribute’s disparity calculations: using
+group for each attribute's disparity calculations: using
 `Bias.get_disparity_predefined_groups()` allows you to specify the
 reference groups directly, while `Bias.get_disparity_major_group()` will
 choose the largest group as the reference and
@@ -1747,7 +1708,7 @@ explore further in the tutorial notebook:
 In the tutorial notebook, you can calculate these metrics using the
 COMPAS data. There, the African-American false omission and false
 discovery are within the bounds of fairness (when assessed using
-Aequitas’s default thresholds), which should be expected because COMPAS
+Aequitas's default thresholds), which should be expected because COMPAS
 is calibrated. On the other hand, African-Americans are roughly twice as
 likely to have false positives and 40 percent less likely to false
 negatives. In real terms, 44.8% of African-Americans who did not
@@ -1769,7 +1730,7 @@ visualize the results of these various fairness calculations:
     values. Example usage is shown in Figure \@ref(fig:tutorial-plot-fairness1).
 
 -   `Plot.plot_fairness_group_all()` allows you to plot small multiples
-    of several fairness metrics’ absolute values at the group level
+    of several fairness metrics' absolute values at the group level
 
 -   With `Plot.plot_fairness_disparity()`, you can plot a treemap of the
     fairness results (similar to the disparity plot in Figure
