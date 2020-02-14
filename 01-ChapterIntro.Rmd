@@ -61,7 +61,7 @@ Usually descriptive statistics are created based on census data or sample survey
 
 **Example: Descriptive statistics**
 
-The Census Bureau's American Community Survey (ACS) "helps local officials, community leaders, and businesses understand the changes taking place in their communities. It is the premier source for detailed population and housing information about our nation" (https://www.census.gov/programs-surveys/acs). The summary statistics are used by planners to allocate resources - but it's important to pay attention to the standard errors, particularly for small samples.  For example, in one county (Autauga) in Alabama, with a total population of about fifty-five thousand, the ACS estimates that 139 children under age 5 live in poverty—plus or minus 178! So the plausible range is somewhere between 0 and 317 \cite{doi:10.1080/00045608.2015.1052335}
+The Census Bureau's American Community Survey (ACS) "helps local officials, community leaders, and businesses understand the changes taking place in their communities. It is the premier source for detailed population and housing information about our nation" (https://www.census.gov/programs-surveys/acs). The summary statistics are used by planners to allocate resources - but it's important to pay attention to the standard errors, particularly for small samples.  For example, in one county (Autauga) in Alabama, with a total population of about fifty-five thousand, the ACS estimates that 139 children under age 5 live in poverty---plus or minus 178! So the plausible range is somewhere between 0 and 317 [@Spielman2015].
 
 ---
 

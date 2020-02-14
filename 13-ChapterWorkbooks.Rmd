@@ -193,11 +193,10 @@ it demonstrates how to construct and compare many different machine learning mod
 ### Bias and Fairness
 
 The *Bias and Fairness* workbook exemplifies the usage of the bias and 
-fairness audit toolkit Aequitas in Python. This workbook is centered 
-around the COMPAS (Correctional Offender Management Profiling for 
-Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) 
-and demonstrates how Aequitas can be used to detect and evaluate biases 
-of a machine learning system. You will learn how to: 
+fairness audit toolkit Aequitas in Python. This workbook uses an example 
+from criminal justice and demonstrates how Aequitas can be used to 
+detect and evaluate biases of a machine learning system in relation to 
+multiple (protected) subgroups. You will learn how to: 
 
 - Calculate confusion matrices for subgroups and visualize performance metrics by groups,
 

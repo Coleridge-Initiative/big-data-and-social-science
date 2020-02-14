@@ -20,4 +20,4 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 10. Errors:
 11. Bias: add references
 12. Privacy: small todos at the top of the chapter
-13. Notebooks: update data set for bias
+13. Notebooks: 
