@@ -674,7 +674,7 @@ get a list of DOIs. For each DOI, get citations, citing articles, tweets (and tw
 
 The result is a list of related twitter handles that can be analyzed to look for communities and networks.
 
-You can see how this would be done in a worked-out example here todo: INSERT LINK/REFERENCE to notebook code
+<!--  You can see how this would be done in a worked-out example here todo: INSERT LINK/REFERENCE to notebook code -->
 
 The goal of this example is to use ORCID and Crossref to
 collect a set of identifiers and use a range of APIs to gather metadata and information the articles performance. The worked example is using the PLOS Lagotto API. Lagotto is the software that was built to support the Article Level Metrics program at PLOS, the open access publisher, and its API provides information on various metrics of PLOS articles. A
@@ -686,6 +686,6 @@ to collect information on articles from a range of sources.
 Summary {#sec:4-9}
 -------
 
-This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. There are many good introductions to web scraping using BeautifulSoup and other libraries as well as API usage in general. Given the pace at which APIs and Python libraries change, the best and most up to date source of information is likely to be a web search.
+This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. There are many good introductions to web scraping using BeautifulSoup and other libraries as well as API usage in general. In addition, the *APIs* notebook of Chapter [Workbooks](#chap:workbooks) provides a practical introduction to some of these techniques.^[See <https://workbooks.coleridgeinitiative.org>.] Given the pace at which APIs and Python libraries change, however, the best and most up to date source of information is likely to be a web search.
 
 As we collect data through scraping and APIs, we then have to understand how to effectively integrate it with our primary data since we may not have access to unique and reliable identifiers. The next chapter Chapter [Record Linkage](#chap:link) deals with issues of data cleaning, disambiguation, and linking different types of data sources to perform further analysis and research.

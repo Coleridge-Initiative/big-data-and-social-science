@@ -1536,7 +1536,8 @@ When working on machine learning projects, it is a good idea to
 structure your code as a modular pipeline so you can easily try
 different approaches and methods without major restructuring. The Python
 workbooks supporting this book will give you an example of a machine
-learning pipeline. A good pipeline will contain modules for importing
+learning pipeline.^[See <https://workbooks.coleridgeinitiative.org>.] 
+A good pipeline will contain modules for importing
 data, doing exploration, feature generation, classification, and
 evaluation. You can then instantiate a specific workflow by combining
 these modules.

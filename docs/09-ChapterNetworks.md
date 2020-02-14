@@ -983,3 +983,4 @@ data dating back to the origins of social science network research as
 well as more recent data from some of the best-known publications and
 authors in network science.
 
+The *Networks* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to network analysis and visualizations.^[See <https://workbooks.coleridgeinitiative.org>.]

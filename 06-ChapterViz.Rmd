@@ -658,3 +658,5 @@ environments such as R or libraries for languages such as Python (for
 example, the Python Plotly library) can be used.
 
 An extended list of visualization tools and books are available at https://gallery.keshif.me/VisTools and https://gallery.keshif.me/VisBooks.
+
+The *Dataset Exploration and Visualization* workbook of Chapter [Workbooks](#chap:workbooks) uses `matplotlib` and `seaborn` for creating basic visualizations with Python.^[See <https://workbooks.coleridgeinitiative.org>.]

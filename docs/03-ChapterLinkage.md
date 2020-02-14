@@ -956,3 +956,4 @@ Out of many excellent resources on the subject, we note the following:
 -   The German Record Linkage Center is a resource for research,
     software, and ongoing conference activities [@Schnell2016].
 
+-   The *Record Linkage* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to probabilistic record linkage with Python.^[See <https://workbooks.coleridgeinitiative.org>.]

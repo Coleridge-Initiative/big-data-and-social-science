@@ -352,8 +352,8 @@ cosine similarity of two documents represented by numeric vectors, as
 described above. The `gensim` module that is often used as a Python-based topic
 modeling implementation can be used to produce vector space
 representations of textual data.
-Notebook XXX provides an example of measuring cosine similarity
-using these modules.
+<!-- Notebook XXX provides an example of measuring cosine similarity
+using these modules. -->
 
 Kullback--Leibler (KL) divergence is a measure that allows us to
 compare probability distributions in general and is often used to
@@ -1020,3 +1020,5 @@ resources that can be helpful in mastering text mining techniques:
   bought the hat"? These standard corpora serve as training data to train
   the classifiers and machine learning techniques to automatically analyze
   text [@halevy-09].
+
+- The *Text Analysis* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to topic modeling with Python.^[See <https://workbooks.coleridgeinitiative.org>.]

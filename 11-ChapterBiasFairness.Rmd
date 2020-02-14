@@ -1414,7 +1414,9 @@ stages of decision-making in the modeling process: model selection,
 whether or not to deploy a model, when to retrain, the need to collect
 more and better data, and so on.
 
+<!-- 
 % move following to workbooks chapter
+-->
 
 ### Getting Started with Aequitas
 
@@ -1424,9 +1426,9 @@ utility, or served as a web interface. To help orient you to its
 interface and explore some of the concepts covered in this chapter in
 more detail, we have developed a tutorial notebook around the COMPAS
 (Correctional Offender Management Profiling for Alternative Sanctions)
-case study described in Section [COMPAS case](#sec:compascase) that you 
-can find in the book’s supplemental materials. Each of the tutorial’s 
-sections is described briefly below.
+case study described in Section [COMPAS case](#sec:compascase).^[See 
+https://dssg.github.io/aequitas/.] 
+Each of the tutorial’s  sections is described briefly below.
 
 ### Requirements
 

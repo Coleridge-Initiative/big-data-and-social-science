@@ -1223,3 +1223,4 @@ with many relevant articles. There is also an annual international
 conference on the total survey error framework, supported by major
 survey organizations [@TSEweb].
 
+The *Errors and Inference* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to sensitivity analysis and imputation.^[See <https://workbooks.coleridgeinitiative.org>.]
