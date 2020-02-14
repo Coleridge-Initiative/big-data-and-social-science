@@ -25,11 +25,10 @@ of sociologists and organizational theorists.
 Introduction
 ------------
 
-Social Scientists have studied networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [@moreno1934]. What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club [@zachary1977], we now have data about hundreds of millions of people communicating with each other through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.
+Social Scientists have studied networks for a long time. A lot of the theory behind network analysis in fact comes from the social sciences where we studied relationships between people, groups, and organizations [@moreno1934]. What’s different today is the scale of the data available to us to perform this analysis. Instead of studying a group of 25 participants in a karate club [@zachary1977], we now have data about hundreds of millions of people communicating with each other through social media channels, or hundreds of thousands of employees in a large multinational organizations collaborating on projects. This increased scale requires us to explore new methods of answering the same questions that we used to be interested in, as well as opens up avenues to answer new questions that could not be answered before.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
 ---
 
-<!-- todo: finish examples in this box -->
 <!-- - Survey paper: http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf -->
 
 **Box 9.1: Network Analysis Examples**
@@ -38,7 +37,7 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 - **Example 2: Large-Scale Social Networks**^[https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4000208] [@stopczynski2014]. Using data from a variety of sources to determine how people are connected, Stopczynski et al. are able to observe how communities form and social interactions change over time.
 
-- **Example 3: Facebook Social Graph .**^[http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf] [@cheng2016]. A study of the Facebook friendship network was able to characterize how connected people were on the social networking site. By studying clustering and friendship preferences, the researchers were able to see how communities form and explore the "six degrees of separation" phenomenon on Facebook.
+- **Example 3: Facebook Social Graph**^[http://snap.stanford.edu/class/cs224w-readings/backstrom12fb.pdf] [@cheng2016]. A study of the Facebook friendship network was able to characterize how connected people were on the social networking site. By studying clustering and friendship preferences, the researchers were able to see how communities form and explore the "six degrees of separation" phenomenon on Facebook.
 
 ---
 
@@ -973,3 +972,4 @@ data dating back to the origins of social science network research as
 well as more recent data from some of the best-known publications and
 authors in network science.
 
+The *Networks* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to network analysis and visualizations.^[See <https://workbooks.coleridgeinitiative.org>.]

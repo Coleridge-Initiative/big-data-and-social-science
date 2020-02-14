@@ -1,5 +1,5 @@
 <!--
-% todo: add example to table, work on comments
+% todo: resolve comments on topic modeling equations
 --> 
 
 Text Analysis {#chap:text}
@@ -11,7 +11,7 @@ This chapter provides an overview of how social scientists can make
 use of text data using computational data analysis methods. We cover
 the types of analysis that can be done with text data (search, topic
 detection, classification, etc.) and give an overview of how to do these
-analysis, social science tasks that they’re useful for, and how to
+analyses, social science tasks that they’re useful for, and how to
 evaluate the results produced. We also provide pointers to some tools
 that are commonly used for doing text analysis.
 
@@ -24,7 +24,7 @@ transcriptions, social media data, notes from electronic health
 records, news articles, and research publications. A challenge we face
 when dealing with these types of data is how to efficiently analyze them
 just like we analyze traditional tabular data. 
-<!-- Comment: While okay, I'm not 100% happy with "tabular" data. Tabular data is already the product of some analysis; what is meant here is more something like regular, plain old raw data that consists of numbers. However, I don't a better term. -->
+
 For example, when analyzing survey responses or electronic health records data, 
 both of which contain narrative text (from the respondents and medical
 practitioners, respectively), the text data often gets ignored or
@@ -37,19 +37,12 @@ large amounts of text data in your analysis.
 
 ## How is text data different than “structured” data?
 
-We’re often comfortable analyzing structured data that is organized as
+We’re often comfortable analyzing ''structured data'' that is organized as
 rows and columns. Text data, often also known as unstructured
-data,^[This is often the term used but is a fallacy. There is
+data^[This is often the term used but is a fallacy. There is
 a lot of structure in text&mdash;the structure of chapters,
 paragraphs, sentences, and syntax [@marcus-93] within a sentence allows you, 
-the reader, to understand what we’re writing here. Unstructured often refers to
-not having defined rows and columns in our data.] 
-<!-- Comment: You appear to contradict yourself: on the one hand, you write that 'structured' -->
-<!-- is a fallacy, but on the other hand you yourself in your text refer to text data -->
-<!-- as unstructured. Even more, you appear to equate the two, i.e. you imply that -->
-<!-- unstructured data is always text data and vice versa. At the least, to solve this, -->
-<!-- you could write in this footnote something like "For short, we will refer to text data -->
-<!-- as unstructured in this chapter." -->
+the reader, to understand what we’re writing here. Nevertheless you will see the term unstructured data often used to refer to text or in some cases to other forms of non tabular data such as images and videos], 
 is harder to analyze
 using traditional data analysis tools because it doesn’t come as a set of 
 rows and columns, but instead consists of characters, words,
@@ -58,12 +51,11 @@ has already decided what constitutes a row (a person, for example),
 what constitutes a column (their age, sex, address, for example),
 and the relationship between them. We covered that in the Database
 chapter where we created a data model for a given domain. When dealing
-with text data, we have to create that structure ourselves.
+with text data, we have to create the tabular ourselves.
 
-While creating that structure, we have to deal with human language
+While creating that tabular structure, we have to deal with human language
 being complex and nuanced which makes automatically analyzing it difficult. We
-often make simplifying assumptions: we assume our input is perfect text; 
-<!-- comment: "perfect text" is very vague  a newbie -->
+often make simplifying assumptions: we assume our input is clean text; 
 we ignore humor [@halevy-09] and deception [@niculae-15;
 @ott-11]; and we assume "standard" English [@kong-14]^[See Chapter 
 [Machine Learning](#chap:ml) for a discussion of speech recognition, 
@@ -79,9 +71,8 @@ text, and use it for/in our analysis just like we use tabular data.
 
 There are a lot of types of analysis that we can do with text
 data. Table \@ref(tab:table7-0) gives a summary of these types of
-analysis.
-<!-- TODO: finish table 
--->
+analysis.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
+
 
 Table: (\#tab:table7-0)
 
@@ -89,11 +80,11 @@ Type of Analysis | Description           | Examples
 -----------------|-----------------------|--------------------------------------------------------------------------------------------
 Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? -->
 Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data. | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
-Classification | Used to classify text content into one or more predefined categories. | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].<!-- Comment: content of news articles or tweets might be more practically relevant -->
+Classification | Used to classify text content into one or more predefined categories. | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].
 Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
-Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Deep Blue).<!-- Comment: unclear: (such as IBM and Deep Blue) --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
+Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Big Blue being synonyms in a specific context). --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
-General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | **Need good example**
+General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | Automatically detecting words as types of events (holiday, party, graduation  for example) and classifying them into types (related to sports, politics, and religion for example) from tweets [@Ritter2012].
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
 Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
 Translation | Automatic translation of text from one language to another. | Look at reaction to a political event in newspapers of different countries in different languages.
@@ -133,7 +124,7 @@ data through a series of steps:
 
 -   **Initial Processing**: We take raw text data (word documents, html content scraped from webpages, etc.) and run it through some initial processing where the goal is to clean the text (dealing with content that is redundant or dirty, such as cleaning up html if processing data from web pages), turning sentences or documents into words or phrases, or removing words that we don’t consider useful for a specific analysis. 
 
--   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can use a part of speech tagger <!-- Comment: totally unclear to me what you mean here. Do you mean the Microsoft program, but then why the "a" and no capitalization? --> to tag words with their corresponding part of speech (noun phrase for example) and use a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence. 
+-   **Adding Linguistic Features**: This step is only needed when the problem requires deeper linguistic analysis. For example, when trying to understand the structure of a sentence, we can augment the raw words with their part-of-speech tags using a part-of-speech tagger for deeper analysis. Or use  a statistical parser to generate what’s called a parse tree that shows relationships between different components of a sentence.
 
 -   **Converting the enriched text to a matrix**: Once we’ve cleaned up the text data and split them into sentences, phrases, words, and their corresponding linguistic attributes, the goal of this step is to make decisions that turn our “document” into a matrix. The key decisions in this step we have to make are 1) defining what a row is, 2) defining what a column is, and 3) what do we put as the value for a cell in a given row and column.
 
@@ -142,7 +133,6 @@ data through a series of steps:
 ```{r pipeline, out.width = '90%', fig.align = 'center', echo = FALSE}
 knitr::include_graphics("ChapterText/figures/textanalysispipeline.png")
 ```
-<!-- Comment: Try to be consistent in this graphic with capitalization, e.g. why should it be row but Column? Dito for Stopwords vs rare words; (Optional); Matrix. Choose one way of capitalization, please. -->
 
 ### Initial Processing
 
@@ -196,8 +186,7 @@ phrases such as "systems of innovation," "cease and desist," or
 statistical patterns to discover phrases that often appear together in
 fixed patterns [@Dunning-93]. These combinations of phrases are often
 called *collocations*, as their overall meaning is more than the sum of
-their parts.
-<!-- Comment: While what you write is correct, this is not a complete characterization of n-grams, as it does not have be n words. It can also be about, e.g. n letters. As n-grams involving letters are also important, I suggest you think about re-writing this chunk or re-naming it from n-grams. -->
+their parts. N-grams can be created over any unit of analysis, such as sequences of characters (called character n-grams) or sequences of phonemes that are used in speech recognition.
 
 **Stemming and lemmatization**
 
@@ -266,13 +255,10 @@ process can be helpful.
 
 ### Turning text data into a matrix: How much is a word worth?
 
-<!-- Comment: You appear to write the following sentences from the perspective of having multiple documents, -->
-<!-- and each document constituting a row in the matrix. If so, please make that clear what example you're implicitly using here. -->
-<!-- Comment: You mix the words column and cell; e.g. in "give each column a binary 0 or 1 value": you probably don't mean that the whole column should all 1s or 0s in it, rather you mean that a particular cell (of a column) could take on either 1 or 0 as value, i.e. that column consists of 1s and 0s. -->
+
 The processing stages described above provide us with the columns in
-our matrix. Now we have to decide what value we assign that
-word/phrase/column. In text analysis, we typically refer to them as
-tokens (where a token can be a word or a phrase).<!-- Comment: I would have preferred that you defined this term above, e.g. in "Tokenization" rather than here, off-hand. --> One simple approach
+our matrix. Now we have to decide how to assign values in that column for each word or phrase. In text analysis, we typically refer to them as
+tokens (where a token can be a word or a phrase). One simple approach
 would be to give each column a binary 0 or 1 value&mdash;if this token
 occurs in a document, we assign that cell a value of 1 and 0
 otherwise. Another approach would be to assign it the value of how
@@ -306,7 +292,7 @@ virtually all documents of a given corpus.
 **Box 7.1: TFIDF**
 
 For every token $t$
-and every document $d$ in the corpus $D$, TFIDF is calculated as
+and every document $d$ in the corpus $D$ of size $\mid D\mid = N$, TFIDF is calculated as
 $$tfidf(t,d,D) = tf(t,d) \times
 idf(t,D),$$ where term frequency is either a simple count,
 $$tf(t,d)=f(t,d),$$ or a more balanced quantity,
@@ -315,12 +301,13 @@ $$tf(t,d) = 0.5+\frac{0.5 \times
 $$\
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
 ```
-<!-- Comment: Please, define N! Is it the Cardinality of D, i.e. N := |D|? Then introduce it in the first sentence, à la "... in the corpus $D$ with size/cardinality N, ...". -->
+<!-- Updated Comment: N was not defined. I (Patrick) checked with a couple of sources
+and N is indeed the size/cardinality of D, i.e. N := |D|. I added the info to the first sentence. -->
 
 ### Analysis
 
 Now that we have a matrix with documents as rows, words/phrases as
-columns and let's say the TFIDF score as the value of that word in
+columns, and let's say the TFIDF score as the value of that word in
 that document, we are now ready to run different machine learning
 methods on this data. We will not recap all of the methods and
 evaluation methodologies already covered in Chapter 
@@ -345,18 +332,16 @@ this process include cosine similarity and Kullback--Leibler
 divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two
-documents $d_a$ and $d_b$ presented as term vectors
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the cosine
-similarity is
-
-<!-- Comment: what's a term vector? -->
-<!-- Comment: why do you * here instead of \times, as in the previous formula? -->
-<!-- Comment: Might also make sense to make clear the definition of the dot product for vectors, i.e. spell it out with its components? -->
+documents $d_a$ and $d_b$, the common approach is to turn the documents into vectors
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity 
+(the cosine of the angle between the two vectors) as a measure of their similarity.
+This is defined as:
 
 $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} \cdot
-     \overrightarrow{t_b}}{|\overrightarrow{t_a}|*|\overrightarrow{t_b}|}.$$
+     \overrightarrow{t_b}}{|\overrightarrow{t_a}|\times|\overrightarrow{t_b}|}.$$
      
 ---
+
 
 **Example: Measuring cosine similarity between documents**
 
@@ -375,8 +360,8 @@ cosine similarity of two documents represented by numeric vectors, as
 described above. The `gensim` module that is often used as a Python-based topic
 modeling implementation can be used to produce vector space
 representations of textual data.
-Notebook XXX provides an example of measuring cosine similarity
-using these modules.
+<!-- Notebook XXX provides an example of measuring cosine similarity
+using these modules. -->
 
 Kullback--Leibler (KL) divergence is a measure that allows us to
 compare probability distributions in general and is often used to
@@ -386,8 +371,12 @@ from vector $\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
 $$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
 \sum\limits_{t=1}^m w_{t,a}\times
 \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
-$w_{t,b}$ are term weights in the two vectors, respectively.
-<!-- Comment: define m! Is it the length of the vectors, then introduce it as ... each of length m ... -->
+$w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
+<!-- Updated comment by Patrick: m was not defined.
+It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
+I added this piece of information.
+If you want to check: see the [@huang-08] paper,
+https://www.academia.edu/download/44422710/SMTP.pdf, pages 51 middle and 52 middle. -->
 
 An averaged KL divergence metric is then defined as
 $$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
@@ -425,8 +414,8 @@ these ontologies is to retrieve a predefined list of Wikipedia pages
 that would match a specific taxonomy. For example, scientific
 disciplines are an established way of tagging documents--- some are in
 physics, others in chemistry, engineering, or computer science. If a
-user retrieves four Wikipedia pages on "Physics," "Chemistry,"
-"Engineering," and "Computer Science," they can be further mapped to a
+user retrieves four Wikipedia pages on "Physics", "Chemistry",
+"Engineering", and "Computer Science", they can be further mapped to a
 given set of scientific documents to label and classify them, such as a
 corpus of award abstracts from the US National Science Foundation.
 
@@ -442,8 +431,7 @@ overall $wiki$ vector is defined as:
 
 $$SMV_{wiki}(s) = \sum\nolimits_{w\in Synonyms(s)} \frac{tf_{wiki}(w)}{|Synsets(w)|}$$,
 
-<!-- Comment: (verbally) define what a synset is. -->
-where $w$ is a token within $wiki$, $s$ is a WordNet synset that is
+where $w$ is a token (word) within $wiki$, $s$ is a WordNet synset (a set of synonyms that share a common meaning) that is
 associated with every token $w$ in WordNet hierarchy, $Synonyms(s)$ is
 the set of words (i.e., synonyms) in the synset $s$, $tf_{wiki}(w)$ is
 the term frequency of the word $w$ in the Wikipedia article $wiki$, and
@@ -452,14 +440,14 @@ $Synsets(w)$ is the set of synsets for the word $w$.
 The overall probability of a candidate document $d$ (e.g., an NSF award
 abstract or a PhD dissertation abstract) matching the target query, or
 in our case a Wikipedia article $wiki$, is
-$$wiki_{BEST}=\sum\nolimits_{w_t\in doc} \max_{s\in Synsets(w_t)} SMV_{wiki}(s),$$
-<!-- Comment: doc should probably be d. -->
+$$wiki_{BEST}=\sum\nolimits_{w_t\in d} \max_{s\in Synsets(w_t)} SMV_{wiki}(s),$$
 where $Synsets(w_t)$ is the set of synsets for the word $w_t$ in the
 target document document (e.g., NSF award abstract) and $SMV_{wiki}(s)$
 is the semantic model vector of a Wikipedia page, as defined above.
 
-<!-- Comment: "Evaluating “Find Similar” Methods:" should probably some type of heading? -->
-Evaluating “Find Similar” Methods: When developing methods to find
+**Evaluating “Find Similar” Methods**
+
+When developing methods to find
 similar documents, we want to make sure that we find all relevant
 documents that are similar to the document under consideration, and we
 want to make sure we don’t find any non-relevant documents. Chapter
@@ -471,11 +459,10 @@ similar documents.
 
 ```{block, type='F00'}
 **Box 7.3: Precision and recall**
-Precision computes the type I errors---*false
-positives*---and is formally
+Precision computes the type I errors---*false positives* (retrieved documents that are not relevant)---and is formally
 defined as
 $$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.$$
-Recall accounts for type II errors---*false negatives*---and is defined
+Recall accounts for type II errors---*false negatives* (relevant documents that were not retrieved)---and is defined
 as
 $$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
 ```
@@ -616,12 +603,11 @@ knitr::include_graphics("ChapterText/figures/nyt_documents.png")
 
 #### Inferring “topics” from raw text
 
-Algorithmically, the problem can be viewed as a black box. Given a
-corpus and an integer $K$ as input, provide the topics that best
+Algorithmically, the problem can be viewed as: Given a
+corpus and an integer $k$ as input, provide the $k$ topics that best
 describe the document collection: a process called *posterior
 inference*. The most common algorithm for solving this problem is a
 technique called *Gibbs sampling* [@geman-90].
-<!-- Comment: It's totally unclear what $K$ is. Also, that's a very crude way to describe posterior inference.-->
 
 Gibbs sampling works at the word level to discover the topics that best
 describe a document collection. Each word is associated with a single
@@ -937,8 +923,7 @@ def bigram_finder(texts):
   for key in prefix_keys:
       prefix_keys[key].sort(key = lambda x: -x[1])
 ```
-<div style="text-align: center">Listing 7.4. Python code to find bigrams using NLTK</div>
-<!-- Comment: Why is called Listing 7.4? There are no Listings 7.1-7.3? Also, this chapter 8 not chapter 7. -->
+<div style="text-align: center">Listing 8.1: Python code to find bigrams using NLTK</div>
 
 **Stanford CoreNLP**
 
@@ -1051,3 +1036,5 @@ resources that can be helpful in mastering text mining techniques:
   bought the hat"? These standard corpora serve as training data to train
   the classifiers and machine learning techniques to automatically analyze
   text [@halevy-09].
+
+- The *Text Analysis* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to topic modeling with Python.^[See <https://workbooks.coleridgeinitiative.org>.]

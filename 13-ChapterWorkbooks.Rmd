@@ -106,7 +106,7 @@ In this workbook, you will learn how to:
 
 In the *Record Linkage* workbook you will use Python to implement the basic
 concepts behind record linkage using data from PatentsView and Federal 
-RePORTER. This workbook will cover using probabalistic record linkage, 
+RePORTER. This workbook will cover probabilistic record linkage, 
 in which different types of string comparators are used to compare multiple 
 pieces of information between two records to produce a score that indicates 
 how likely it is that the records are data about the same underlying entity. 
@@ -193,11 +193,10 @@ it demonstrates how to construct and compare many different machine learning mod
 ### Bias and Fairness
 
 The *Bias and Fairness* workbook exemplifies the usage of the bias and 
-fairness audit toolkit Aequitas in Python. This workbook is centered 
-around the COMPAS (Correctional Offender Management Profiling for 
-Alternative Sanctions) case study of chapter [Bias and Fairness](#chap:bias) 
-and demonstrates how Aequitas can be used to detect and evaluate biases 
-of a machine learning system. You will learn how to: 
+fairness audit toolkit Aequitas in Python. This workbook uses an example 
+from criminal justice and demonstrates how Aequitas can be used to 
+detect and evaluate biases of a machine learning system in relation to 
+multiple (protected) subgroups. You will learn how to: 
 
 - Calculate confusion matrices for subgroups and visualize performance metrics by groups,
 
