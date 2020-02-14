@@ -390,7 +390,7 @@ applications:
 -   If your intervention is assistive in nature (e.g., determining who
     should receive a food subsidy), individuals may be harmed by failing
     to intervene on them when they have need, so you may care more about
-    metrics that focus on false positives. Section 
+    metrics that focus on false negatives Section 
     [assistive example](#sec:assistiveexample) provides an example to guide you
     through metrics that may be applicable in this case.
 
