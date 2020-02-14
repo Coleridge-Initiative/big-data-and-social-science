@@ -325,7 +325,7 @@ Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms w
 <div class="F00">
 <p><strong>Box 7.2: Machine learning vocabulary</strong></p>
 <ul>
-<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of &quot;learning&quot; a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
 <li><p><strong>Examples</strong>: These are data points, rows, observations, or instances.</p></li>
 <li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
 <li><p><strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.</p></li>
@@ -1672,6 +1672,8 @@ and improved methods.
 Resources {#ml:res}
 ---------
 
+We provide a Machine Learning cheat sheet to reference at [https://textbook.coleridgeinitiative.org/mlcheatsheet]( https://textbook.coleridgeinitiative.org/mlcheatsheet).
+
 Literature for further reading that also explains most topics from this
 chapter in greater depth:
 
@@ -1707,8 +1709,8 @@ Software:
 Many excellent courses are available online [@MLcourses], including
 Hastie and Tibshirani's *Statistical Learning* [@SLcourse].
 
-Major conferences in this area include the International Conference on
-Machine Learning, the Annual Conference on Neural Information
-Processing Systems (NeurIPS), and the ACM International Conference
-on Knowledge Discovery and Data Mining (KDD).
+Major conferences in this area include the [International Conference on
+Machine Learning](https://icml.cc/), the [Annual Conference on Neural Information
+Processing Systems (NeurIPS)](https://nips.cc/), and the [ACM International Conference
+on Knowledge Discovery and Data Mining (KDD)](https://www.kdd.org/).
 

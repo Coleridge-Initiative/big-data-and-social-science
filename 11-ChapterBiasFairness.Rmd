@@ -1161,7 +1161,7 @@ low risk, compared with 28% of black defendants.
 Here, ProPublica was focusing on $FPR$ and $FNR$ metrics for their
 definition of fairness: e.g., if you're a person who, in fact, will not
 recidivate, do your chances of being mislabeled as high risk by the
-model differ depending on your race? In their response [@northpointe2018], Northpointe
+model differ depending on your race? In their response [@northpointe2016], Northpointe
 argued that this was the wrong fairness metric in this context —
 instead, they claimed, $FDR$ should be the focus: If the model labels
 you as high risk, do the chances that it was wrong in doing so depend on
@@ -1536,7 +1536,7 @@ incorrectly classified as 'high' risk (false positive rate $FPR$ of
 0.45) than incorrectly classified as 'low' or 'medium' risk (false
 negative rate $FNR$ of 0.28).
 
-```{r tutorial-plot-crosstabs, out.width = '100%', fig.align = 'center', echo = FALSE}
+```{r tutorial-plot-crosstabs, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap="Visualizing metrics at the same time using small multiples can help identify differences between groups."}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_crosstabs.png")
 ```
 
@@ -1630,7 +1630,7 @@ Statistically significant disparities (at the level specified with
 `significance_alpha`) will be labeled with two asterisks (\*\*), as seen
 for the `African-American` group in Figure \@ref(fig:tutorial-plot-disparity).
 
-```{r tutorial-plot-disparity, out.width = '100%', fig.align = 'center', echo = FALSE}
+```{r tutorial-plot-disparity, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'Plotting disparity can show any significant difference, with two asterisks denoting statistical significance.'}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_disparity.png")
 ```
 
@@ -1745,7 +1745,7 @@ visualize the results of these various fairness calculations:
     multiples of several disparity treemaps across different groups and
     metrics.
 
-```{r tutorial-plot-fairness1, out.width = '100%', fig.align = 'center', echo = FALSE}
+```{r tutorial-plot-fairness1, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'You can plot a single fairness metric across different groups, such as age category, sex, and race.'}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_fairness1.png")
 ```
 
@@ -1756,7 +1756,7 @@ each group with bars colored by the results of applying fairness
 criteria to these disparities with groups meeting the criteria shown in
 green and those not meeting the criteria shown in red.
 
-```{r tutorial-plot-fairness2, out.width = '100%', fig.align = 'center', echo = FALSE}
+```{r tutorial-plot-fairness2, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'You can plot a treemap of fairness results. Here, the disparity by race is shown.'}
 knitr::include_graphics("ChapterBias/figures/tutorial_plot_fairness2.png")
 ```
 

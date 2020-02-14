@@ -55,7 +55,7 @@ If we take a look across the social sciences, including economics, public policy
 
 The job of many social scientists is to provide descriptive statements about the population of interest. These could be univariate, bivariate or even multivariate statements. 
 
-Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities [@hansen1953sample, @valliant2013practical].
+Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities [@hansen1993sample, @valliant2013practical].
 
 ---
 
