@@ -5,7 +5,6 @@
 --> 
 
 
-
 Privacy and Confidentiality {#chap:privacy}
 ===========================
 
@@ -13,30 +12,34 @@ Privacy and Confidentiality {#chap:privacy}
 
 
 This chapter addresses the issue that sits at the core of any study of
-human beings---privacy and confidentiality. In a new field, like the one
-covered in this book, it is critical that many researchers have access
-to the data so that work can be replicated and built upon---that there
-be a scientific basis to data science. Yet the rules that social
-scientists have traditionally used for survey data, namely anonymity and
-informed consent, no longer apply when data are collected in the wild.
+human beings---ensuring that the privacy and confidentiality of the people and organizations who are being studied is protected to the extent possible. 
+
+The challenge that is faced for researchers is that the goal of their work, unlike the private sector, must be to create value the public good and not for private gain.  For that value to be realized, it is necessary that multiple researchers have access to the data so that results can be replicated, validated and extended. However, the more researchers access the data, the greater the risk that there is a breach of confidentiality.   Social
+scientists have historically used two ways of minimizing that risk: anonymizing the data so that an individual's information can't be reidentified, and asking human subjects for the consent to the use their data \cite{NationalAcademies2014}.   Those twin approaches have become obsolete, for reasons we will discuss in this chapter, and have not been replaced by an alternative framework.  
 This concluding chapter identifies the issues that must be addressed for
-responsible and ethical research to take place.
+responsible research.
 
 Introduction
 ------------
 
-Most applications in the social sciences involve data on units
-such as individuals, households, and different types of business,
-educational, and government organizations. Indeed, the example running
-throughout this book involves data on individuals (such as faculty and
-students) and organizations (such as universities and firms). In
+Much social science research uses data on individuals, households, different types of businesses, and organizations like educational, and government institutions. Indeed, the example running throughout this book involves data on individuals (such as faculty and students) and organizations (such as universities and firms). In
 circumstances such as these, researchers must ensure that such data are
-used responsibly and ethically---that the subjects under study suffer no
-harm from their data being accessed, analyzed, and reported. A clear
-distinction must be made between analysis done for the public good and
-that done for private gain. In practical terms, this requires that the
+used responsibly---that there is a clear understanding and attempt to mitigate the possible harm from such use.  In practical terms, the study of human subjects requires that the
 interests of individual privacy and data confidentiality be
 balanced against the social benefits of research access and use.
+
+We begin by defining terms.
+
+**Utility** Data utility is the value resulting from data use. That utility has soared in the private sector - the biggest companies in the United States are data companies Amazon, Google, Microsoft, Facebook and Apple \cite{galloway2017four}.  They make their money by producing utility to their customers. The goal of social science research, to hark back to the first chapter, to use new data and tools to answer questions like
+
+ - ‘What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
+
+' how does placement in different types of firms change the likelihood of recidivism of formerly incarcerated workers  ?,’
+
+and
+
+‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’ 
+
 
 **Privacy** "encompasses not only the famous 'right to be left alone,' or keeping
 one's personal matters and relationships secret, but also the ability to
@@ -54,17 +57,19 @@ infer an individual's value from such output, even if one knew that a
 certain individual or unit contributed to the formation of that mean or
 percentage. However, if those means and percentages are presented for
 subgroups or in multivariate tables with small cell sizes, the risk for
-disclosure increases [@doyle2001confidentiality]. As a result, the
-quality of data analysis is typically degraded with the production of
-public use data [@duncanstatistical].
+disclosure increases [@doyle2001confidentiality]. 
 
 <div class="figure" style="text-align: center">
 <img src="ChapterPrivacy/figures/fig11-1.png" alt="The privacy--utility tradeoff" width="70%" />
 <p class="caption">(\#fig:fig11-1)The privacy--utility tradeoff</p>
 </div>
 
-In general, the greater the access to data and their original values,
-the greater the risk of reidentification for individual units. We depict
+**Risk**
+Risk is generally thought of as the risk of an intruder reidentifying an individual or a business in a research dataset \cite{duncan2004disclosure}.  It is often argued that those risks increase every year as more and more data are available on individuals on the internet or in the databases of large corporations and as there are more and better tools available to make such linkages \cite{shlomo2014probabilistic,herzog2007data}. However it could also be argued that the proliferation of data and tools reduces risk because it is so much easier for an intruder to find out information on an individual through a Google search.\cite{Lane2020} Regardless, it is generally accepted that greater research access to data and their original values increases the risk of reidentification for individual units.   
+
+**Harm**  Although much of the discussion of privacy and confidentiality has been driven by the imperatives of the legislation governing statistical agencies, which imposes civil and criminal penalties for any reidentification, statistical agencies no longer have a monopoly on data access and use.   As a result, there is more attention being paid to the potential for harm based on the type of information being shared, rather than the fact that a piece of information is shared. \cite{nissenbaum2019contextual}.   Intuitively, if an intruder finds out that an individual in a dataset is a woman, or is married, that may cause less harm than if information about income, sexual history, or criminal records are recovered.
+
+There is an explicit tradeoff between data access and data utility.  THe greater the number of researchers and analysts that access the data, the greater the quality of the analysis and the greater the number of potential uses \cite{Lane2007a}.  We depict
 this tradeoff graphically in
 Figure \@ref(fig:fig11-1). The
 concave curves in this hypothetical example depict the technological
@@ -122,8 +127,7 @@ data indicate that more than 20% of all personal health care spending in
 
 ---
 
-It is important to understand where the risk of privacy breaches comes
-from. Let us assume for a moment that we conducted a traditional
+It is important to understand the source of the risk of privacy breaches. Let us assume for a moment that we conducted a traditional
 small-scale survey with 1,000 respondents. The survey contains
 information on political attitudes, spending and saving in a given year,
 and income, as well as background variables on income and education. If
@@ -133,7 +137,7 @@ gain access to information that is otherwise not public. If the personal
 identifiable information (name and address) are removed from this data
 file, the risk is much reduced. If someone has access to the survey data
 and sees all the individual values, it might be difficult to assess with
-certainty who among the 320 million inhabitants in the USA is associated
+certainty which of the more than 330 million inhabitants in the USA is associated
 with an individual data record. However, the risk is higher if one knows
 some of this information (say, income) for a person, and knows that this
 person is in the survey. With these two pieces of information, it is
@@ -166,14 +170,13 @@ within an agency that collects administrative data or within a
 university that collects data for research
 purposes---organization-specific procedures were (usually) in place and
 sufficient to regulate the usage of these data. Today,
-legal ownership is less clear.
-
-Who has the legal authority to make decisions about permission, access,
-and dissemination and under what circumstances? The answer is often not
-clear. The challenge today is that data sources are
+legal ownership is less clear \cite{lane2014privacy}.  There are many unresolved issues, such as Who has the legal authority to make decisions about permission, access,
+and dissemination and under what circumstances?. The challenge today is that data sources are
 often combined, collected for one purpose, and used for another. Data
 providers often have a poor understanding of whether or how their data
-will be used.
+will be used.  Think, for example, about cell phone calls.  The New York Times has produced a series of thought-provoking articles about the access to and use of cell-phone data, such as the one entitled Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret \cite{Valentino-DeVries}.  Who owns your cell phone calls?  Should it be you, as the initiator of the call, your friend as the recipient, your cell phone company, your friend's cell phone company, the cloud server on which the data are stored for billing purposes, or the satellite company that connects the two of you?  And what laws should regulate access and use? The state (or country) that you're in when you make the call? Or your friend's state (or country)?  The state (or country) of your cell phone provider?  And so on.   The legal framework is, at best, murky.
+
+
 
 ---
 
@@ -191,18 +194,12 @@ confront big data's challenges."
 
 ---
 
-It is critical to address privacy and confidentiality issues if the full
-public value of big data is to be realized. This chapter highlights why
-the challenges need to be met (i.e., why access to data is crucial),
-review the pre-big data past, point out challenges with this approach in
-the context of big data, briefly describe the current state of play from
-a legal, technical, and statistical perspective, and point to open
-questions that need to be addressed in the future.
+
 
 Why is access important?
 ------------------------
 
-This book gives detailed examples of the potential of data to
+This chapters in this book have provided detailed examples of the potential of data to
 provide insights into a variety of social science
 questions---particularly the relationship between investments in R&D and
 innovation. But that potential is only realized if researchers have
@@ -334,6 +331,8 @@ identifying and managing risky researcher behavior, and management costs
 
 Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
 
+Although the research agenda is an interesting and important one, there are a number of concerns about the practical implications.   The Census Bureau, for example, has spent many millions of dollars to implement differential privacy techniques for the 2020 Decennial Census, and researchers who have studied the potential impact on small towns worry that small towns will "disappear" from official statistics - a major issue when data are used for decision-making. \cite{Wezerek}
+
 Another approach that has had some resurgence is the use  of *synthetic data* where certain properties of the original data are preserved but the original data are replaced by “synthetic data” so that no individual or  business entity can be found in the released data [@drechsler2011synthetic]. One of the earlier examples of such work was the IBM Quest system [@Agrawal1994] that generated synthetic transaction data. Two more recent examples of synthetic data sets are the SIPP Synthetic-Beta [@abowd2006final] of linked Survey of Income and Program Participation (SIPP) and Social Security Administration earnings data, and the Synthetic Longitudinal Business Database (SynLBD) [@kinney2011towards]. Jarmin et al. [@jarmin2014expanding] discuss how synthetic data sets lack utility in many research settings but are useful for generating flexible data sets underlying data tools and apps such as the Census Bureau's OnTheMap. 
 It  is important to keep in mind that the utility of synthetic data sets as a general purpose “anonymization” tool is fairly limited. Synthetic data generation typically requires explicitly defining which properties of the original data need to be preserved (such as univariate or bivariate distributions of certain variables), and as such can be of limited use in most social science research.
 
@@ -342,11 +341,15 @@ It  is important to keep in mind that the utility of synthetic data sets as a ge
 The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the "Five Safes" which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 [@desaietal2016]. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations
 [@hayden2012broken]. 
 
+**BOX**
+It is not easy to use the FSRDCs. Every stage of the research process is significantly more time-consuming than using public use data, and only the most persistent researchers are successful. In addition, most of the branches charge high fees for anyone unaffiliated with an institution sponsoring an FSRDC. Projects are approved only if they benefit the Census Bureau, which by itself makes most research topics ineligible. Prospective users must prepare detailed proposals, including the precise models they intend to run and the research outputs they hope to remove from the center, which are generally restricted to model coefficients and supporting statistics. Most descriptive statistics are prohibited. Researchers are not allowed to “browse” the data or change the outputs based on their results. Under census law, researchers must become (unpaid) Census Bureau employees to gain access to non-public data. To meet this requirement, once a project is approved researchers must obtain Special Sworn Status, which involves a level 2 security clearance and fingerprint search. Applicants must be U.S. citizens or U.S. residents for three years, so most international scholars are excluded. Researchers then undergo data stewardship training. If researchers wish to modify their original model specifications or outputs, they must submit a written request and wait for approval. When the research is complete, theresults must be cleared before publication by the Center for Disclosure Avoidance Research at the Census Bureau. Any deviations from the original proposal must be documented, justified, and approved. The FSRDCs were never intended as a substitute for public use microdata, and they cannot fulfill that role. Even if the number of seats in the centers could be multiplied several hundred-fold to accommodate the current number of users of public use data, substantial hurdles remain. Applying for access and gaining approval to use the FSRDC takes at least six months and usually more. Eligibility for using FSRDCs is limited to investigators (a) affiliated with an FSRDC (or with significant financial resources), (b) with sufficient time to wait for review and approvals, and (c) doing work deemed valuable by the Bureau. \cite{UnivTaskForceonDifferentialPrivacyforCensusData2019}
+**Box**
 
+There are other approaches that are becoming available.   The Commission on Evidencebased Policy identified new technologies, such as remote access, cloud-based, virtual data facilities, as a promising approach to provide scalable secure access to microdata without the disadvantages of the bricks and mortar approached used by the FSRDC system.   One such approach, the Administrative Data Research Facility has incorporated the "five safes" principles -  safe projects, safe people, safe settings, safe data, and safe outputs (https://en.wikipedia.org/wiki/Five_safes) - into its design. In addition to winning a Government Innovation Award \cite{GovernmentComputerNewsStaff2018}, it has been used to provide secure access to confidential data to over 450 government analysts and researchers in the past 3 years.\cite{kreuter2019}
 Non-Tabular data
 -------------------
 
-In addition to tabular data, a lot of new sources of data consist of text, audio, image, and video content. The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:
+In addition to tabular data, many new sources of data consist of text, audio, image, and video content. The above approaches primarily deal with maintaining the privacy and confidentiality of entities in tabular data but it is equally important to do the same in non-tabular data. Medical records, sensitive crime records, notes and comments in administrative records, camera footage (from police body-cams or security cameras for example) are all examples of data that is being used for analysis and requires robust techniques to maintain the privacy and confidentiality of individuals.Although the techniques there are not as mature, there is some work in these areas:
 
 Text Anonymization: Typical approaches here range from simply removing Personally identifiable information (PII) through regular expressions and dictionaries [@Neamatullah2008] to machine learning based approaches that balance the confidentiality of the entities in the data and the utility of the text [@Cumby2011].
 
@@ -450,19 +453,7 @@ The Fourth Amendment to the US Constitution, which constrains the
 government's power to "search" the citizenry's "persons, houses, papers,
 and effects" is usually cited as the legal framework for privacy and
 confidentiality issues. In the US a "sectoral" approach to privacy
-regulation, for example, the Family Education Rights and Privacy Act and
-the Health Insurance Portability and Accountability Act, is also used in
-situations where different economic areas have separate privacy laws
-[@Ohm2014]. In addition, current legal restrictions and guidance on data
-collection in the industrial setting include the Fair Information
-Practice Principles dating from 1973 and underlying the Fair Credit
-Reporting Act from 1970 and the Privacy Act from 1974 [@Strandburg2014].
-Federal agencies often have statutory oversight, such as Title 13 of the
-US Code for the Census Bureau, the Confidential Information Protection
-and Statistical Efficiency Act for federal statistical agencies, and
-Title 26 of the US Code for the Internal Revenue Service.
-
-Yet the generation of big data often takes place in the open, or through
+regulation, for example, the Family Education Rights and Privacy Act through
 commercial transactions with a business, and hence is not covered by
 these frameworks. There are major questions as to what is reasonably
 private and what constitutes unwarranted intrusion [@Strandburg2014].
@@ -589,4 +580,3 @@ conferences and produces occasional reports
 [@UnitedNationsEconomicCommissionforEurope].
 
 Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing https://simons.berkeley.edu/programs/privacy2019 (available on youtube https://www.youtube.com/user/SimonsInstitute/
-

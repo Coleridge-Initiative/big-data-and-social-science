@@ -280,13 +280,13 @@ document collection. Term frequency--inverse document frequency
 (TFIDF) [@salton-68] is a weighting scheme to explicitly balance these
 factors and prioritize the most meaningful words. The TFIDF model
 takes into account both the term frequency of a given token and its
-document frequency (Box [TFIDF](#box1)) so that if a highly frequent word also
-appears in almost all documents, its meaning for the specific context
-of the corpus is negligible. Stop words are a good example when highly
-frequent words also bear limited meaning since they appear in
+document frequency (Box [TFIDF](#box:text1)) so that if a highly frequent 
+word also appears in almost all documents, its meaning for the specific 
+context of the corpus is negligible. Stop words are a good example when 
+highly frequent words also bear limited meaning since they appear in
 virtually all documents of a given corpus.
 
-**Box: TFIDF** <a id="box1"></a>
+**Box: TFIDF** <a id="box:text1"></a>
 
 For every token $t$
 and every document $d$ in the corpus $D$ of size $\mid D\mid = N$, TFIDF is calculated as
@@ -450,11 +450,11 @@ documents that are similar to the document under consideration, and we
 want to make sure we don’t find any non-relevant documents. Chapter
 [Machine Learning](#chap:ml) already touched on the importance of
 precision and recall for evaluating the results of machine learning
-models (Box [Precision and recall](#box2) provides a reminder of 
+models (Box [Precision and recall](#box:text2) provides a reminder of 
 the formulae). The same metrics can be used to evaluate the two 
 goals we have in finding relevant and similar documents.
 
-**Box: Precision and recall** <a id="box2"></a>
+**Box: Precision and recall** <a id="box:text2"></a>
 
 Precision computes the type I errors---*false positives* (retrieved documents that are not relevant)---and is formally
 defined as
@@ -895,7 +895,7 @@ algorithm that takes into account the probability of any given two,
 three, or more words appearing together in the entire corpus. In
 general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed 
 to discover statistically significant word collocations, as we show 
-in Listing [Bigrams](#list1).
+in Listing [Bigrams](#list:text1).
 
 @bird-09 provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
@@ -917,7 +917,7 @@ def bigram_finder(texts):
   for key in prefix_keys:
       prefix_keys[key].sort(key = lambda x: -x[1])
 ```
-<div style="text-align: center">Listing: Python code to find bigrams using NLTK</div> <a id="list1"></a>
+<div style="text-align: center">Listing: Python code to find bigrams using NLTK</div> <a id="list:text1"></a>
 
 **Stanford CoreNLP**
 

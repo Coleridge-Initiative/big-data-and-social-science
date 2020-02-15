@@ -209,12 +209,12 @@ queried for analysis. A *database management system* is a software suite
 designed to safely store and efficiently manage databases, and to assist
 with the maintenance and discovery of the relationships that database
 represents. In general, a DBMS encompasses three key components: its 
-*data model* (which defines how data are
-represented: see Box 4.1, its *query language* (which defines how the user
+*data model* (which defines how data are represented: see Box 
+[Data model](#box:db1), its *query language* (which defines how the user
 interacts with the data), and support for *transactions and crash
 recovery* (to ensure reliable execution despite system failures).^[Some key DBMS features are often lacking in standard statistical packages: a standard query language (with commands that allow analyses or data manipulation on a subgroup of cases defined during the analysis, for example “group by ...,” “order by ...”), keys (for speed improvement), and an explicit model of a relational data structure.]
 
-**Box 4.1: Data model**
+**Box: Data model** <a id="box:db1"></a>
 
 A *data model*
 specifies the data elements associated with the domain we are analyzing, the
@@ -240,9 +240,8 @@ Relational DBMSs are the most widely used systems, and will
 be the optimal solution for many social science data analysis purposes.
 We describe relational DBMSs in detail below, but in brief, they allow
 for the efficient storage, organization, and analysis of large
-quantities of *tabular* data^[Sometimes, as discussed
-in Chapter [Record Linkage](#chap:link), the links are
-one to one and sometimes
+quantities of *tabular* data^[Sometimes, as discussed in Chapter 
+[Record Linkage](#chap:link), the links are one to one and sometimes 
 one to many.]: data organized as tables, in which rows
 represent entities (e.g., research grants) and columns represent
 attributes of those entities (e.g., principal investigator, institution,
@@ -584,20 +583,24 @@ that each value of the grant identifier column must be unique (i.e.,
 there cannot be two grants with the same number); and that total funding can
 never be negative. Such restrictions can be achieved by specifying
 appropriate constraints at the time of schema creation, as we show in
-Listing 4.1, which contains the code used to create the
+Listing [Grantdata](#list:db1), which contains the code used to create the
 two tables that make up our schema.
 
-Listing 4.1 contains four SQL statements. The first two
-statements, lines 1 and 2, simply set up our new database. The `create table` statement
-in lines 1 and 2 creates our first table. It specifies the table
-name (`Investigators`) and, for each of the four columns, the column name and its type.^[These storage types will be familiar to many of you from statistical software packages.]
-Relational DBMSs offer a rich set of types to choose from when designing
-a table: for example, `int` or `integer` (synonyms); `real` or `float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and `varchar(n)`, a variable-length string of up to `n` characters. Types are important for several reasons. First, they allow
+Listing [Grantdata](#list:db1) contains four SQL statements. The first two
+statements, lines 1 and 2, simply set up our new database. The `create table`
+statement in lines 1 and 2 creates our first table. It specifies the table
+name (`Investigators`) and, for each of the four columns, the column name and 
+its type.^[These storage types will be familiar to many of you from statistical
+software packages.] Relational DBMSs offer a rich set of types to choose from 
+when designing a table: for example, `int` or `integer` (synonyms); `real` or
+`float`(synonyms); `char(n)`, a fixed-length string of `n` characters; and
+`varchar(n)`, a variable-length string of up to `n` characters. Types are
+important for several reasons. First, they allow
 for more efficient encoding of data. For example, the `Funding` field in the
-grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string in the `Grants` table, `char(15)`,
-say, to allow for large grants. By representing it as a floating point
-number instead (line 15 in
-Listing 4.1), we reduce the space requirement per grant
+grants.csv file of Figure \@ref(fig:figdb-1) could be represented as a string 
+in the `Grants` table, `char(15)`, say, to allow for large grants. By 
+representing it as a floating point number instead (line 15 in
+Listing [Grantdata](#list:db1)), we reduce the space requirement per grant
 to just four bytes. Second, types allow for integrity checks on data as
 they are added to the database: for example, that same type declaration
 for `Funding` ensures that only valid numbers will be entered into the database.
@@ -611,8 +614,7 @@ example, the `not null` constraints for `Name` and `Institution`
 and an institution, respectively. (The lack of such a constraint on the
 `Email` column shows that an investigator need not have an email address.)
 
-``` {#fig:db:create style="SQLstyle" caption="Code to create the \cfs{grantdata} database and its \cfs{Investigators} and \cfs{Grants}
-tables" label="fig:db:create"}
+```{sql, eval = FALSE}
 create database grantdata;
 use grantdata;
 
@@ -632,22 +634,24 @@ create table Grants (
     primary key(Number)
 );
 ```
-<div style="text-align: center">Listing 4.1. Code to create the grantdata database and its Investigators and Grants tables</div>
+<div style="text-align: center">Listing: Code to create the grantdata database and its Investigators and Grants tables</div> <a id="list:db1"></a>
 
 ### Loading data
 
-So far we have created a database and two empty tables. The next step is to add data to the tables. 
-We can of course do that manually, row by row, but in most cases we will import data from another source, such as a CSV file. Listing 4.2 shows the two statements that load the data of
+So far we have created a database and two empty tables. The next step is to add
+data to the tables. We can of course do that manually, row by row, but in most
+cases we will import data from another source, such as a CSV file. 
+Listing [Load data](#list:db2) shows the two statements that load the data of
 Figure \@ref(fig:figdb-1) into our two tables. (Here and elsewhere in this
 chapter, we use the MySQL DBMS. The SQL syntax used by different DBMSs
 differs in various, mostly minor ways.) Each statement specifies the
 name of the file from which data is to be read and the table into which
-it is to be loaded. 
-The `fields terminated by ","` statement tells SQL that values are separated by columns, and `ignore 1 lines` tells SQL to skip the header. 
-The list of column names is used to specify how values from the file are to be assigned to columns
-in the table.
+it is to be loaded. The `fields terminated by ","` statement tells SQL that 
+values are separated by columns, and `ignore 1 lines` tells SQL to skip the
+header. The list of column names is used to specify how values from the file 
+are to be assigned to columns in the table.
 
-For the `Investigators` table, the three values in each row of the investigators.csv file are assigned to the `Name`, `Institution`, and `Email` columns of the corresponding database row. Importantly, the `auto_increment`declaration on the `ID` column (line 5 in Listing 4.1) causes values for this column to be assigned automatically by the DBMS, as rows are created, starting at `1`. This feature allows us to assign a unique integer identifier to each investigator as its data are loaded.
+For the `Investigators` table, the three values in each row of the investigators.csv file are assigned to the `Name`, `Institution`, and `Email` columns of the corresponding database row. Importantly, the `auto_increment` declaration on the `ID` column (line 5 in Listing [Grantdata](#list:db1)) causes values for this column to be assigned automatically by the DBMS, as rows are created, starting at `1`. This feature allows us to assign a unique integer identifier to each investigator as its data are loaded.
 
 ```{sql, eval = FALSE}
 load data local infile "investigators.csv"
@@ -663,8 +667,7 @@ load data local infile "grants.csv" into table Grants
 set Person = (select ID from Investigators
               where Investigators.Name=@var);
 ```
-<div style="text-align: center">Listing 4.2. Code to load data into the Investigators and Grants tables</div>
-<br>
+<div style="text-align: center">Listing: Code to load data into the Investigators and Grants tables</div> <a id="list:db2"></a>
 
 For the `Grants` table, the `load data` call
 (lines 7–12) is somewhat more complex. Rather than loading
@@ -925,7 +928,7 @@ now support different programming languages, providing significant in-database s
 and analytical capabilities and alleviating the need for external
 processing.
 
-``` {r, eval = FALSE}
+```{sql, eval = FALSE}
 from mysql.connector import MySQLConnection, Error
 from python_mysql_dbconfig import read_db_config
 
@@ -949,21 +952,19 @@ def retrieve_and_analyze_data():
 if __name__ == '__main__':
     retrieve_and_analyze_data()
 ```
-<div style="text-align: center">Listing 4.3. Embedding SQL in Python</div>
+<div style="text-align: center">Listing: Embedding SQL in Python</div> <a id="list:db3"></a>
 
 ---
 
 **Example: Embedding database queries in Python**
 
-The Python script in
-Listing 4.3 shows how this embedding of database queries in
-Python is done. This script establishes a connection to the database,
-transmits the desired SQL query to the database
-(line 7–9), retrieves the query results into a Python array
-(line 11), and calls a Python procedure (not given) to
-perform the desired computation
-(line 14). A similar program could be used to load the
-results of a Python (or R, SAS, Stata, etc.) computation into a
+The Python script in Listing [Embedding](#list:db3) shows how this 
+embedding of database queries in Python is done. This script establishes 
+a connection to the database, transmits the desired SQL query to the 
+database (line 7–9), retrieves the query results into a Python array
+(line 11), and calls a Python procedure (not given) to perform the 
+desired computation (line 14). A similar program could be used to load 
+the results of a Python (or R, SAS, Stata, etc.) computation into a
 database.
 
 ---
@@ -972,10 +973,10 @@ database.
 
 **Example: Loading other structured data**
 
-We saw in Listing 4.2 how to load data from CSV files into SQL
-tables. Data in other formats, such as the commonly used JSON, can also
-be loaded into a relational DBMS. Consider, for example, the following
-JSON format data, a simplified version of data shown in
+We saw in Listing [Load data](#list:db2) how to load data from CSV files 
+into SQL tables. Data in other formats, such as the commonly used JSON, 
+can also be loaded into a relational DBMS. Consider, for example, the 
+following JSON format data, a simplified version of data shown in
 Chapter [Working with Web Data and APIs](#chap:web).
 
 ```{r, eval = FALSE}
