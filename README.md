@@ -18,6 +18,6 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 8. Text:
 9. Networks: 
 10. Errors:
-11. Bias: add references
+11. Bias:
 12. Privacy: small todos at the top of the chapter
 13. Notebooks: 

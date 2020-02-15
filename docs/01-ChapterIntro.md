@@ -1,4 +1,4 @@
-<!-- %ToDo: We need new flow chart graphs, they point to the wrong chapters right now. Add reference for "Data Science Project Scoping" (line 504).
+<!-- %ToDo: We need new flow chart graphs, they point to the wrong chapters right now. Missing references (\ian)
 --> 
 
 Introduction {#chap:intro}
@@ -118,104 +118,29 @@ correlation rather than causation" [@harford2014big].
 
 ---
 
-Social science, data quality, and big data {#sec:1-5}
+The importance of understanding how data are generated {#sec:1-4}
 ------------------------------------------
 
-Most data in the real world are noisy, inconsistent, and suffers from
-missing values, regardless of its source. Even if data collection is
-cheap, the costs of creating high-quality data from the source -- *cleaning, curating, standardizing, and integrating*^[This topic is discussed in more detail in Chapter [Record Linkage](#chap:link).] -- are substantial.
+The costs of realizing the benefits of the new types of data are non trivial. Even if data collection is cheap, the costs of cleaning, curating, standardizing, integrating and using the new types of data are substantial. In essence, just as with data from surveys, data still need to be processed---cleaned, normalized, and variables coded---but this needs to be done at scale.^[This topic is discussed in more detail in Section [New tools for new data](#sec:1-5).] But even once all of these tasks are completed, social scientists have a key role in describing the quality of the data. This role is important, because most data in the real world are noisy, inconsistent, and exhibit missing values. Data quality can be characterized in multiple ways (see @christen2012data, @national2018federal), such as:
 
-Data quality can be characterized in multiple ways [@christen2012data]:
+* Accuracy: How accurate are the attribute values in the data?
+* Completeness: Are the data complete?
+* Consistency: How consistent are the values in and between different database(s)?
+* Timeliness: How timely are the data?
+* Accessibility: Are all variables available for analysis?
 
-- **Accuracy**: How accurate are the attribute values in the data?
+In the social science world, the assessment of data quality is integral to the production of the resultant statistics. That is not necessarily easy when it comes to assessing new types of data. A good example of the importance of understanding how data are generated came up in one of our classes a couple of years ago, where class participants were asked to develop employment measures for ex-offenders in the period after they were released from prison [@Kreuter2019Change]. 
+ 
+For people working with surveys, the definition is already preconstructed: in the Current Population Survey (CPS), respondents asked about their work activity in the week covering the 12th of the month. You're counted as employed if you have at least one hour of paid work in that week (with some exceptions for family and farm work). But the class participants were working with administrative records from the Illinois Department of Employment Security and the Illinois Department of Corrections [@Kreuter2019Change]. Those records provide a report of all jobs in every quarter that each individual holds in the state; when matched to data about formerly incarcerated individuals, it can provide rich information about their employment patterns. A group of class participants produced Figure \@ref(fig:patternfig) - the white boxes represent quarters in which an individual doesn't have a job and the blue boxes represent quarters in which an individual does have a job. 
+ 
+A quick look at the results is really interesting. First, the participants present an entirely new, dynamic, way of looking at employment - not just the relatively static CPS measure. Second, the results are a bit shocking. Over 61 per cent of Illinois exoffenders did not have a job in any of the 8 quarters after their release. Only 3.5 percent had a job in all of the quarters. This is where social scientists and government analysts can contribute - because they know how the data are generated. The matches between the two agencies are done on (deidentified) Social Security numbers (SSNs). It's likely that there are several gaps in that match. First, agency staff know that the quality of SSNs in prisons is quite low, so that might be a reason for the low match rate. Second, the match is only to Illinois jobs, and many formerly incarcerated individuals could be working across state lines (if allowed). Third, they may have gone to community college, or on welfare, or back to prison. More data can be used to examine these different possibilities - but we think it illustrates the value that social scientists and subject matter experts provide to measuring the quality issues we highlighted at the beginning of this section. 
 
-- **Completeness**: Is the data complete?
+<div class="figure" style="text-align: center">
+<img src="ChapterIntro/figures/patterns.png" alt="Most common employment patters, formerly incarcerated individuals in Illinois, 2005--2017" width="90%" />
+<p class="caption">(\#fig:patternfig)Most common employment patters, formerly incarcerated individuals in Illinois, 2005--2017</p>
+</div>
 
-- **Consistency**: How consistent are the values in and between the database(s)?
-
-- **Timeliness**: How timely is the data?
-
-- **Accessibility**: Are all variables available for analysis?
-
-Social scientists have decades of experience in transforming messy,
-noisy, and unstructured data into a well-defined, clearly structured,
-and quality-tested data set. Preprocessing is a complex and
-time-consuming process because it is "hands-on"---it requires judgment
-and cannot be completely automated. It is difficult to overstate the 
-value of preprocessing for any data analysis, but this is particularly 
-true in new types of data that are becoming available. Data need to be 
-parsed, standardized, deduplicated, and normalized.
-
-**Parsing** is a fundamental step taken regardless of the data source, and refers to
-the decomposition of a complex variable into components. For example, a
-freeform address field like "1234 E 56th St" might be broken down into a
-street number "1234" and a street name "E 56th St." The street name
-could be broken down further to extract the cardinal direction "E" and
-the designation "St." Another example would be a combined full name
-field that takes the form of a comma-separated last name, first name,
-and middle initial as in "Miller, David A." Splitting these identifiers
-into components permits the creation of more refined variables that can
-be used in the matching step.
-
-In the simplest case, the distinct parts of a character field are
-delimited. In the name field example, it would be easy to create the
-separate fields "Miller" and "David A" by splitting the original field
-at the comma. In more complex cases, special code will have to be
-written to parse the field. Typical steps in a parsing procedure
-include:
-
-1.  Splitting fields into tokens (words) on the basis of delimiters,
-
-2.  Standardizing tokens by lookup tables and substitution by a standard
-    form,
-
-3.  Categorizing tokens,
-
-4.  Identifying a pattern of anchors, tokens, and delimiters,
-
-5.  Calling subroutines according to the identified pattern, therein
-    mapping of tokens to the predefined components.
-
-**Standardization** refers to the process of simplifying data by replacing variant
-representations of the same underlying observation by a default value in
-order to improve the accuracy of field comparisons. For example, "First
-Street" and "1st St" are two ways of writing the same street name, but a
-simple string comparison of these values will return a poor result. By
-standardizing fields---and using the same standardization rules across
-files!---the number of true matches that are wrongly classified as
-nonmatches (i.e., the number of false nonmatches) can be reduced.
-
-Some common examples of standardization are:
-
--   Standardization of different spellings of frequently occurring
-    words: for example, replacing common abbreviations in street names
-    (Ave, St, etc.) or titles (Ms, Dr, etc.) with a common form. These
-    kinds of rules are highly country- and language-specific.
-
--   General standardization, including converting character fields to
-    all uppercase and removing punctuation and digits.
-
-**Deduplication** consists of removing redundant records from a single list, that is,
-multiple records from the same list that refer to the same underlying
-entity. After deduplication, each record in the first list will have at
-most one true match in the second list and vice versa. This simplifies
-the record linkage process and is necessary if the goal of record
-linkage is to find the best set of one-to-one links (as opposed to a
-list of all possible links). One can deduplicate a list by applying
-record linkage techniques described in this chapter to link a file to
-itself.
-
-**Normalization** is the process of ensuring that the fields that are being compared
-across files are as similar as possible in the sense that they could
-have been generated by the same process. At minimum, the same
-standardization rules should be applied to both files. For additional
-examples, consider a salary field in a survey. There are number
-different ways that salary could be recorded: it might be truncated as a
-privacy-preserving measure or rounded to the nearest thousand, and
-missing values could be imputed with the mean or with zero. During
-normalization we take note of exactly how fields are recorded.
-
-New tools for new data
+New tools for new data {#sec:1-5}
 ----------------------
 
 The new data sources that we have discussed frequently require working
@@ -302,19 +227,13 @@ of science advocacy too."
 
 ---
 
-Responding to this policy imperative is a tall order, because it
-involves using all the social science and computer science tools
-available to researchers. The new digital technologies can be used to
-capture the links between the inputs into research, the way in which
-those inputs are organized, and the subsequent outputs
-[@weinberg2014science; @zolas2015wrapping]. The social science questions
-that are addressable with this data infrastructure include the effect of
-research training on the placement and earnings of doctoral recipients,
-how university trained scientists and engineers affect the productivity
-of the firms they work for, and the return on investments in research. Figure
-\@ref(fig:fig2) provides an abstract representation of the empirical approach 
-that is needed: data about grants, the people who are funded on grants, and 
-the subsequent scientific and economic activities.
+Any attempt to create a data infrastructure must confront the fact that relevant data (e.g., funding agency R and D awards, educational institution outcome data, research publications) are currently drawn from disparate sources, using widely differing methodologies and approaches. Thus, building a coherent data infrastructure is particularly challenging. Inputs, outputs and outcomes are not currently generated or combined in a systematic fashion. The development of consistent and reliable answers to stakeholder requests requires the use of common data sources and standardized methodologies for data cleaning and analysis.
+
+The approach used in this book is to use new digital technologies to capture the data needed to understand and demonstrate the broad scientific, social, economic, and workforce results of Federal Science and Technology investments. Research institutions are developing structured information architectures to capture current and more accurate information about the interests, activities, and accomplishments of their scholars. An increasing volume and variety of research outputs, such as publications, patents, and datasets, are accessible in digital form, and are harvested via services such as Citeseer, Google Scholar, and Microsoft Academic Search. Increasingly accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names [@han2004two, @smalheiser2009author, @li2014disambiguation, @kim2016inventor].
+
+Once relevant data are available digitally, there are many ways in which modern technologies can be used to analyze them; in the book we use three main examples. The first is to use natural language processing to describe **what** research is being done, using proposal and award text to identify the research topics in a portfolio. The second is to use administrative records to describe **who** is doing the research (and **with whom**). The third is to use CVs and other sources of data to describe **what results** the funding has generated.
+
+Responding to this policy imperative is a tall order, because it involves using all the social science and computer science tools available to researchers. The new digital technologies can be used to capture the links between the inputs into research, the way in which those inputs are organized, and the subsequent outputs [@weinberg2014science, @Lane2018]. The social science questions that are addressable with this data infrastructure include the effect of research training on the placement and earnings of doctoral recipients, how university trained scientists and engineers affect the productivity of the firms they work for, and the return on investments in research. Figure \@ref(fig:fig2) provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities.
 
 First, data must be captured on what is funded, and since the data are
 in text format, computational linguistics tools must be applied
@@ -366,14 +285,24 @@ voluminous), and with a variety of different timestamps (or velocity),
 we discuss how to store the data in different types of data formats.
 
 **BOX**
+
+** The Institute for Research on Innovation and Science (IRIS, https://iris.isr.umich.edu/) at the University of Michigan has extended the data infrastructure even more. By working with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors - and show the direct effects on that funding on their subsequent scientific and economic activity [@InstituteForResearchOnInnovationAndScienceIRISResearch2019].
+
 ** Additional Examples**
 
-The methods covered in this book are broadly applicable across a variety of policy areas including health, education, criminal justice, sustainability, workforce development, social services, public safety, and urban infrastructure. These methods have been used to build systems to improve the understanding  of critical questions such as: 
- - ‘Which individuals graduating from four year colleges are at risk of being long-term unemployed and which education and training programs improve their earnings and employment outcomes?,’
- 
- -  ‘Which ex-offenders are likely to go back to prison and can proactive outreach to connect them with health and social services reduce their risk of recidivism and improve their outcomes?,’ and
- 
-  - ‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’
+Although we focus on one particular use case, the methods covered in this book are broadly applicable across a variety of policy areas - indeed, we have used this book to teach classes in such fields as education, criminal justice, workforce and economic development and social services (https://coleridgeinitiative.org/training). 
+
+The methods have been used to answer questions such as: - ‘What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
+
+'Placement in What types of firms reduces the likelihood of recidivism of formerly incarcerated workers  ?,’
+
+and
+
+‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’ 
+
+**BOX**
+
+\ian{TBD}
   
 **BOX**
 
@@ -385,7 +314,7 @@ scientists approach doing research. The first set of chapters addresses
 the new ways to capture, curate, and store data. The second set of
 chapters describes what tools are available to process and analyze
 data. The last set deals with the appropriate handling of
-data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don't cover that in this book but refer readers to resources such as "Data Science Project Scoping" (cite:) for more information.
+data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don't cover that in this book but refer readers to resources such as "Data Science Project Scoping"^[http://www.dssgfellowship.org/2016/10/27/scoping-data-science-for-social-good-projects/] for more information.
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />

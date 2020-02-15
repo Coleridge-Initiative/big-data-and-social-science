@@ -1,4 +1,4 @@
-<!-- % add reference **** --> 
+<!-- % fix cross-references, side margins, footnotes ^(...)? **** --> 
 
 Bias and Fairness {#chap:bias}
 ================
@@ -272,8 +272,9 @@ types of errors a model might make or how predictive the model is across
 different groups. For binary classification models (which we focus on
 here), these are generally derived from values in the *confusion matrix*
 (see Figure 7.9 and Section 7.7.2 for more details):
-
+<!-- % 
 % TODO: fix these figure and section references
+-->
 
 -   **True Positives ($TP$)** are individuals for whom both the model
     prediction and actual outcome are positive labels.
@@ -292,9 +293,9 @@ here), these are generally derived from values in the *confusion matrix*
 Based on these four categories, we can calculate several ratios that are
 instructive for thinking about the equity of a model's predictions in
 different situations (Sections [punitive example](#sec:punitiveexample) and [assistive example](#sec:assistiveexample) provide some detailed examples here):
-
+<!-- % 
 %can we move the following definitions or the equations to the side margin?
-
+-->
 -   **False Positive Rate ($FPR$)** is the fraction of individuals with
     negative actual labels who the model misclassifies with a positive
     predicted label: $FPR = FP / (FP+TN)$
@@ -1344,8 +1345,10 @@ Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models
 
 To help data scientists and policymakers make informed decisions about
 bias and fairness in their applications, we developed Aequitas, an open
-source[^1] bias and fairness audit toolkit that was released in May 2018
-[^2]. It is an intuitive and easy to use addition to the machine
+source^[<https://github.com/dssg/aequitas>] bias and fairness audit 
+toolkit that was released in May
+2018^[<https://twitter.com/datascifellows/status/994204100542783488>]. 
+It is an intuitive and easy to use addition to the machine
 learning workflow, enabling users to seamlessly audit models for several
 bias and fairness metrics in relation to multiple population sub-groups.
 Aequitas can be used directly as a Python library, via command line
@@ -1785,7 +1788,3 @@ tutorial notebook will walk you through several examples of using each
 of these methods, and you should feel free to explore their usage
 further, including how fairness results change with the application of
 different thresholds.
-
-[^1]: <https://github.com/dssg/aequitas>
-
-[^2]: <https://twitter.com/datascifellows/status/994204100542783488>
