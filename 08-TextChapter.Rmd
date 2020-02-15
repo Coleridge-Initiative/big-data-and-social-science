@@ -40,7 +40,7 @@ large amounts of text data in your analysis.
 We’re often comfortable analyzing ''structured data'' that is organized as
 rows and columns. Text data, often also known as unstructured
 data^[This is often the term used but is a fallacy. There is
-a lot of structure in text&mdash;the structure of chapters,
+a lot of structure in text---the structure of chapters,
 paragraphs, sentences, and syntax [@marcus-93] within a sentence allows you, 
 the reader, to understand what we’re writing here. Nevertheless you will see the term unstructured data often used to refer to text or in some cases to other forms of non tabular data such as images and videos], 
 is harder to analyze
@@ -73,16 +73,15 @@ There are a lot of types of analysis that we can do with text
 data. Table \@ref(tab:table7-0) gives a summary of these types of
 analysis.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
-
-Table: (\#tab:table7-0)
+Table: (\#tab:table7-0) Examples
 
 Type of Analysis | Description           | Examples                                                                                   
 -----------------|-----------------------|--------------------------------------------------------------------------------------------
 Search | Finding relevant content based on some information need, often specified as a set of keywords/phrases but can be more structured. | For example, we used these techniques in systematic literature reviews to facilitate the discovery and retrieval of relevant publications related to early grade reading in Latin America and the Caribbean. <!-- Comment: provide reference? -->
 Topic Detection / Clustering | Used to explore and understand what types of words, phrases, and topics exist in text data. | Given thousands of e-mails from a corporation, characterize the broad themes that are prominent in the firm's communication.
 Classification | Used to classify text content into one or more predefined categories. | Given SMS messages from a disaster region, decide whether the sender needs medical assistance, food, or shelter [@yates-10].
-Sentiment analysis | Detection of sentiment or opinions at different levels of granularity&mdash;document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
-Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Big Blue being synonyms in a specific context). --> | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
+Sentiment analysis | Detection of sentiment or opinions at different levels of granularity---document, paragraph/sentence or entity (person, organization, etc.) level. | Examples using machine learning to analyze the flow and topic segmentation of political debates and behaviors [@nguyen-12; @Nguyen:Boyd-Graber:Resnik:Miler-2015] and to assign automated tags to documents [@tuarob-13].
+Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Big Blue being synonyms in a specific context). | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
 General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | Automatically detecting words as types of events (holiday, party, graduation  for example) and classifying them into types (related to sports, politics, and religion for example) from tweets [@Ritter2012].
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
@@ -93,7 +92,7 @@ For this chapter, we will focus on two types of use cases that social scientists
 
 1. We have some text “corpus”, for example open-ended survey responses
 or news articles or research publications, and our goal is to
-understand the content&mdash;patterns, themes, trends&mdash;of that
+understand the content---patterns, themes, trends---of that
 data. This often involves methods from unsupervised machine learning
 (that we covered in the previous chapter). The analysis can then be
 combined with tabular data that might accompany the text. For
@@ -195,7 +194,7 @@ data. Given the complexity of natural language, words can take multiple
 forms dependent on the syntactic structure with limited change of their
 original meaning. For example, the word "system" morphologically has a
 plural "systems" or an adjective "systematic." All these words are
-semantically similar and&mdash;for many tasks&mdash;should be treated the same.
+semantically similar and---for many tasks---should be treated the same.
 For example, if a document has the word "system" occurring three times,
 "systems" once, and "systematic" twice, one can assume that the word
 "system" with similar meaning and morphological structure can cover all
@@ -255,11 +254,10 @@ process can be helpful.
 
 ### Turning text data into a matrix: How much is a word worth?
 
-
 The processing stages described above provide us with the columns in
 our matrix. Now we have to decide how to assign values in that column for each word or phrase. In text analysis, we typically refer to them as
 tokens (where a token can be a word or a phrase). One simple approach
-would be to give each column a binary 0 or 1 value&mdash;if this token
+would be to give each column a binary 0 or 1 value---if this token
 occurs in a document, we assign that cell a value of 1 and 0
 otherwise. Another approach would be to assign it the value of how
 many times this token occurs in that document (often known as
@@ -282,14 +280,13 @@ document collection. Term frequency--inverse document frequency
 (TFIDF) [@salton-68] is a weighting scheme to explicitly balance these
 factors and prioritize the most meaningful words. The TFIDF model
 takes into account both the term frequency of a given token and its
-document frequency (Box 7.1) so that if a highly frequent word also
+document frequency (Box [TFIDF](#box1)) so that if a highly frequent word also
 appears in almost all documents, its meaning for the specific context
 of the corpus is negligible. Stop words are a good example when highly
 frequent words also bear limited meaning since they appear in
 virtually all documents of a given corpus.
 
-```{block, type='F00'}
-**Box 7.1: TFIDF**
+**Box: TFIDF** <a id="box1"></a>
 
 For every token $t$
 and every document $d$ in the corpus $D$ of size $\mid D\mid = N$, TFIDF is calculated as
@@ -300,7 +297,7 @@ $$tf(t,d) = 0.5+\frac{0.5 \times
   f(t,d)}{\max\{f(t,d):t\in d\}},$$ and inverse document frequency is
 $$\
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
-```
+
 <!-- Updated Comment: N was not defined. I (Patrick) checked with a couple of sources
 and N is indeed the size/cardinality of D, i.e. N := |D|. I added the info to the first sentence. -->
 
@@ -453,19 +450,18 @@ documents that are similar to the document under consideration, and we
 want to make sure we don’t find any non-relevant documents. Chapter
 [Machine Learning](#chap:ml) already touched on the importance of
 precision and recall for evaluating the results of machine learning
-models (Box 7.3 provides a reminder of the formulae). The same metrics
-can be used to evaluate the two goals we have in finding relevant and
-similar documents.
+models (Box [Precision and recall](#box2) provides a reminder of 
+the formulae). The same metrics can be used to evaluate the two 
+goals we have in finding relevant and similar documents.
 
-```{block, type='F00'}
-**Box 7.3: Precision and recall**
+**Box: Precision and recall** <a id="box2"></a>
+
 Precision computes the type I errors---*false positives* (retrieved documents that are not relevant)---and is formally
 defined as
 $$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{retrieved\ documents}\}|}.$$
 Recall accounts for type II errors---*false negatives* (relevant documents that were not retrieved)---and is defined
 as
 $$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
-```
 
 We assume that a user has three sets of documents $D_a
 =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots,
@@ -729,7 +725,7 @@ engineering approach described in the last chapter.
 
 The section above focused on the task of finding topics and themes in
 a new text data set. In many cases, we already know a set of
-topics&mdash;this could be the set of topics or research fields as
+topics---this could be the set of topics or research fields as
 described by the Social Science Research Network or the set of
 sections (local news, international, sports, finance, etc.) in a news
 publication. The task we often face is to automatically categorize new
@@ -859,7 +855,7 @@ given a word's *context*.  These are also useful features to use in
 supervised machine learning contexts if higher accuracy is your goal.
 
 However, these techniques are not always the best tools for social
-scientists.  They are not always interpretable&mdash;it is often hard
+scientists.  They are not always interpretable---it is often hard
 to tell why you got the answer you did [@ribeiro-16], and slightly
 changing the input the models can dramatically change the results
 [@feng-18].  Given that our goal is often understanding our data, it
@@ -897,14 +893,12 @@ command in Python: `fdist = nltk.FreqDist(text)`. This command returns a diction
 $N$-gram indexing is implemented as a chain-linked collocations
 algorithm that takes into account the probability of any given two,
 three, or more words appearing together in the entire corpus. In
-general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed to discover statistically significant word collocations, as we show in Listing 7.4.
+general, $n$-grams can be discovered as easily as running `bigrams = nltk.bigrams(text)`. However, a more sophisticated approach is needed 
+to discover statistically significant word collocations, as we show 
+in Listing [Bigrams](#list1).
 
 @bird-09 provide a detailed description of NLTK tools and
 techniques. See also the official NLTK website [@NLTKweb].
-
-```{r, eval = FALSE, include=FALSE}
-#{#list:7.4 style="PythonStyle" numbers="none" label="list:7.4" caption="Python code to find bigrams using NLTK"}
-```
 
 ``` {r, eval = FALSE}
 def bigram_finder(texts):
@@ -923,7 +917,7 @@ def bigram_finder(texts):
   for key in prefix_keys:
       prefix_keys[key].sort(key = lambda x: -x[1])
 ```
-<div style="text-align: center">Listing 8.1: Python code to find bigrams using NLTK</div>
+<div style="text-align: center">Listing: Python code to find bigrams using NLTK</div> <a id="list1"></a>
 
 **Stanford CoreNLP**
 
