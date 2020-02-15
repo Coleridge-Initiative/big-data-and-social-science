@@ -179,7 +179,7 @@ researchers and practitioners to take the following steps:
     $X$ on an outcome $Y$, etc. It is really important to work with
     people who understand the domain being studied to discuss and
     define the problem more concretely. What is the analytical
-    formulation of the metric that you are trying to improve? The Data Science Project Scoping Guide (http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/) is a good place to start when doing problem scoping for social science or policy problems
+    formulation of the metric that you are trying to improve? The Data Science Project Scoping Guide^[http://www.datasciencepublicpolicy.org/home/resources/data-science-project-scoping-guide/] is a good place to start when doing problem scoping for social science or policy problems
 
 2.  **Formulate it as a machine learning problem**: Is it a classification problem or a regression problem? Is the goal to build a model that generates a ranked list prioritized by risk of an outcome, or is it to detect anomalies as new data come in? Knowing what kinds of tasks machine learning can solve will allow you to map the  problem you are working on to one or more machine learning settings and give you access to a suite of methods appropriate for that task.
 
@@ -302,11 +302,15 @@ knitr::include_graphics("ChapterML/figures/spectrum.png")
 
 ### Features
 
-Before we get to models and methods, we need to turn our raw data into “features”. In social science, they are not called features but instead are known as variables or
-predictors (or covariates if you’re doing regression). [Good features are what makes machine learning systems
-effective]{.roman}. Feature generation (or engineering, as it is often
+Before we get to models and methods, we need to turn our raw data into 
+“features”. In social science, they are not called features but instead 
+are known as variables or predictors (or covariates if you’re doing
+regression).^[Good features are what makes machine learning systems
+effective.] Feature generation (or engineering, as it is often
 called) is where a large chunk of the time is spent in the machine learning
-process. This is also the phase where previous research and learnings from the domain being tackled can be incorporated into the machine learning process. As social science researchers or practitioners, you have spent
+process. This is also the phase where previous research and learnings from 
+the domain being tackled can be incorporated into the machine learning 
+process. As social science researchers or practitioners, you have spent
 a lot of time constructing features, using transformations, dummy
 variables, and interaction terms. All of that is still required and
 critical in the machine learning framework. One difference you will need
@@ -314,7 +318,9 @@ to get comfortable with is that instead of carefully selecting a few
 predictors, machine learning systems tend to encourage the creation of
 *lots* of features and then empirically use holdout data to perform
 regularization and model selection. It is common to have models that are
-trained on thousands of features. Of course, it is important to keep in mind that increasing the number of features requires you to have enough data so that you’re not overfitting. Commonly used approaches to create
+trained on thousands of features. Of course, it is important to keep in 
+mind that increasing the number of features requires you to have enough 
+data so that you’re not overfitting. Commonly used approaches to create
 features include:
 
 -   **Transformations**, such as log, square, and square root.
@@ -352,11 +358,11 @@ We will start by describing unsupervised learning methods and then go on
 to supervised learning methods. We focus here on the intuition behind
 the methods and the algorithm, as well as some practical tips, rather than on
 the statistical theory that underlies the methods. We encourage readers
-to refer to machine learning books listed in
-Section [Resources](#ml:res). Box 7.2 gives brief definitions of several terms we will use in this section.
+to refer to machine learning books listed in Section [Resources](#ml:res). 
+Box 7.3 gives brief definitions of several terms we will use in this section.
 
 ```{block, type='F00'}
-**Box 7.2: Machine learning vocabulary**
+**Box 7.3: Machine learning vocabulary**
 
 -  **Learning**: In machine learning, you will notice the term *learning* that will
     be used in the context of "learning" a model. This is what you
@@ -1469,8 +1475,8 @@ negatives that are correctly identified.
 Another metric that is used is the $F_1$ score, which is the harmonic
 mean of precision and recall:
 $$F_1 =  \frac{2* {\rm Precision} * {\rm Recall}}{{\rm Precision} + {\rm Recall}}$$
-(see also equation 7.1). This is often used when you want to balance
-both precision and recall.
+
+This is often used when you want to balance both precision and recall.
 
 There is often a tradeoff between precision and recall. By selecting
 different classification thresholds, we can vary and tune the precision
