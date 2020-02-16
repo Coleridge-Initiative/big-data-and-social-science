@@ -291,7 +291,7 @@ Although we focus on one particular use case, the methods covered in this book a
 
 The methods have been used to answer questions such as: - ‘What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
 
-'Placement in What types of firms reduces the likelihood of recidivism of formerly incarcerated workers  ?,’
+'How does placement in different types of firms change the likelihood that the formerly incarcerated will recidivate?’
 
 and
 
@@ -457,7 +457,7 @@ knitr::include_graphics("ChapterIntro/figures/Figure4.png")
 Resources {#sec:intro:resources}
 ---------
 
-For more information on the **science of science policy**, see Husbands et al.'s book for a full discussion of many issues [@husband2011science] and the online resources at the eponymous website [@SOSP].
+For more information on the **science of science policy**, see Husbands et al.'s book for a full discussion of many issues [@husband2011science] and peruse the awards made by the National Science Foundation's Science of Science: Discovery, Communication, and Impact program.
 
 This book is above all a *practical* introduction to the methods and
 tools that the social scientist can use to make sense of big data, and
