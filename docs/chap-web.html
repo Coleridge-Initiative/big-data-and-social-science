@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="" xml:lang="">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 2 Working with Web Data and APIs | Big Data and Social Science</title>
   <meta name="description" content="Chapter 2 Working with Web Data and APIs | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 2 Working with Web Data and APIs | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,9 +39,6 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
-<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
-
-
 
 
 
@@ -61,66 +58,41 @@
 
 
 <style type="text/css">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -373,10 +345,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="12.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
 <li class="chapter" data-level="12.2" data-path="chap-privacy.html"><a href="chap-privacy.html#why-is-access-important"><i class="fa fa-check"></i><b>12.2</b> Why is access important?</a></li>
 <li class="chapter" data-level="12.3" data-path="chap-privacy.html"><a href="chap-privacy.html#providing-access"><i class="fa fa-check"></i><b>12.3</b> Providing access</a></li>
-<li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.4</b> The new challenges</a></li>
-<li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.5</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-7"><i class="fa fa-check"></i><b>12.6</b> Summary</a></li>
-<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.7</b> Resources</a></li>
+<li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#non-tabular-data"><i class="fa fa-check"></i><b>12.4</b> Non-Tabular data</a></li>
+<li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.5</b> The new challenges</a></li>
+<li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.6</b> Legal and ethical framework</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-7"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
+<li class="chapter" data-level="12.8" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>13</b> Workbooks</a><ul>
 <li class="chapter" data-level="13.1" data-path="chap-workbooks.html"><a href="chap-workbooks.html#introduction-6"><i class="fa fa-check"></i><b>13.1</b> Introduction</a></li>
@@ -420,325 +393,192 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>In many social science problems we have to augment our primary data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools (specifically using Python) that can be used by social science researchers to programmatically gather this type of external data from web pages and APIs.</p>
 <div id="introduction" class="section level2">
 <h2><span class="header-section-number">2.1</span> Introduction</h2>
-<p>The Internet is an excllent resource for vast amounts of
-data on businesses, people, and their activity on social media. But how
-can we capture the information and make use of it as we might make use
-of more traditional data sources?</p>
-<p>In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely unstructured, existing in web pages spread across a site, and sometimes they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.<a href="#fn8" class="footnote-ref" id="fnref8"><sup>8</sup></a></p>
-<p>Using the example of data on researchers and research outputs, we will
-focus this chapter on obtaining information directly from web pages
-(<em>web scraping</em>) as well as explore the uses of APIs— web services that
-allow programmatic retrieval of data. Both in this chapter and the next,
-you will see how the crucial pieces of integration often lie in making
-connections between disparate data sets and how in turn making those connections
-requires careful quality control. The emphasis throughout this chapter
-is on the importance of focusing on the purpose for which the data will
-be used as a guide for data collection. While much of this is specific
-to data about research and researchers, the ideas are generalizable to
-wider issues of data and public policy. While we use Python as the programming
-language in this chapter, data collection through web scraping and APIs can
-be done in most modern programming languages as well as using software that’s
-designed specifically for this purpose.</p>
+<p>The Internet is an excllent resource for vast amounts of data on businesses, people, and their activity on social media. But how can we capture the information and make use of it as we might make use of more traditional data sources?</p>
+<p>In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely unstructured, existing in web pages spread across a site, and sometimes they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a></p>
+<p>Using the example of data on researchers and research outputs, we will focus this chapter on obtaining information directly from web pages (<em>web scraping</em>) as well as explore the uses of APIs— web services that allow programmatic retrieval of data. Both in this chapter and the next, you will see how the crucial pieces of integration often lie in making connections between disparate data sets and how in turn making those connections requires careful quality control. The emphasis throughout this chapter is on the importance of focusing on the purpose for which the data will be used as a guide for data collection. While much of this is specific to data about research and researchers, the ideas are generalizable to wider issues of data and public policy. While we use Python as the programming language in this chapter, data collection through web scraping and APIs can be done in most modern programming languages as well as using software that’s designed specifically for this purpose.</p>
 <hr />
 <p><strong>Box: Examples</strong> <a id="box:web1"></a></p>
-<p>In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.<a href="#fn9" class="footnote-ref" id="fnref9"><sup>9</sup></a></p>
-<p>Kim et al. <span class="citation">(<a href="#ref-Kim2016">2016</a>)</span> use social media data about e-cigarettes from Twitter for public health research.</p>
+<p>In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.<a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a></p>
+<p>Kim et al. <span class="citation">(<a href="#ref-Kim2016">2016</a>)</span> use social media data about e-cigarettes from Twitter for public health research.</p>
 <p>Goebel and Munzert <span class="citation">(<a href="#ref-Goebel2018">2018</a>)</span> used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project (<a href="https://github.com/simonmunzert/political-wikipedia-workshop" class="uri">https://github.com/simonmunzert/political-wikipedia-workshop</a>).</p>
-<p>King et al. <span class="citation">(<a href="#ref-King2013">2013</a>)</span> investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable.</p>
+<p>King et al. <span class="citation">(<a href="#ref-King2013">2013</a>)</span> investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable.</p>
 <hr />
 </div>
 <div id="scraping-information-from-the-web" class="section level2">
 <h2><span class="header-section-number">2.2</span> Scraping information from the web</h2>
-<p>With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website <span class="citation">(National Science Foundation, <a href="#ref-nsfweb">n.d.</a>)</span> it is possible to obtain data downloads of all grant information. Sometimes data are available through web pages or we only want a subset of this information. In this case web scraping is often a viable approach.</p>
+<p>With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website <span class="citation">(National Science Foundation, n.d.)</span> it is possible to obtain data downloads of all grant information. Sometimes data are available through web pages or we only want a subset of this information. In this case web scraping is often a viable approach.</p>
 <p>Web scraping involves writing code to download and process web pages programmatically. We need to look at the website, identify how to get the information we want from it, and then write code to do it. Many websites deliberately make this difficult to prevent easy access to their underlying data while some websites explicitly prohibit this type of activity in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of this writing, it may not be valid in the future as the structure and content of the website changes.</p>
 <div id="obtaining-data-from-websites" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Obtaining data from websites</h3>
-<p>Let us suppose we are interested in obtaining information on those
-investigators that are funded by the Howard Hughes Medical Institute
-(HHMI). HHMI has a website that includes a search function for funded
-researchers, including the ability to filter by field, state, and role.
-But there does not appear to be a downloadable data set of this
-information. However, we can automate the process with code to create a
-data set that you might compare with other data.</p>
+<p>Let us suppose we are interested in obtaining information on those investigators that are funded by the Howard Hughes Medical Institute (HHMI). HHMI has a website that includes a search function for funded researchers, including the ability to filter by field, state, and role. But there does not appear to be a downloadable data set of this information. However, we can automate the process with code to create a data set that you might compare with other data.</p>
 <p><a href="https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=24" class="uri">https://www.hhmi.org/scientists/browse?sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=24</a></p>
-<p>Getting information from this web page programmatically requires us to follow the following steps:
-1. Constructing a URL that will give us the results we want
-2. Getting the contents of the page using that URL
-3. Processing the html response to extract the pieces of information we are looking for (such as names and specialties of the scientists)</p>
+<p>Getting information from this web page programmatically requires us to follow the following steps: 1. Constructing a URL that will give us the results we want 2. Getting the contents of the page using that URL 3. Processing the html response to extract the pieces of information we are looking for (such as names and specialties of the scientists)</p>
 <p>** Constructing the URL **</p>
-<p>This process involves first understanding how to construct a URL that
-will do the search we want. This is most easily done by playing with
-search functionality and investigating the URL structures that are
-returned.</p>
-<p>With HHMI, if we do a general search and play with the structure
-of the URL, we can see some of the elements of the URL that we can think
-of as a query. As we want to see <em>all</em> investigators, we do not need to
-limit the search, and so with some fiddling we come up with a URL like
-the following. (We have broken the one-line URL into three lines for
-ease of presentation.)</p>
-<p><a href="http://www.hhmi.org/scientists/browse?kw=&amp;sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=24&amp;page=0" class="uri">http://www.hhmi.org/scientists/browse?kw=&amp;sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=24&amp;page=0</a></p>
+<p>This process involves first understanding how to construct a URL that will do the search we want. This is most easily done by playing with search functionality and investigating the URL structures that are returned.</p>
+<p>With HHMI, if we do a general search and play with the structure of the URL, we can see some of the elements of the URL that we can think of as a query. As we want to see <em>all</em> investigators, we do not need to limit the search, and so with some fiddling we come up with a URL like the following. (We have broken the one-line URL into three lines for ease of presentation.)</p>
+<p><a href="http://www.hhmi.org/scientists/browse?kw" class="uri">http://www.hhmi.org/scientists/browse?kw</a>=&amp;sort_by=field_scientist_last_name&amp;sort_order=ASC&amp;items_per_page=24&amp;page=0</p>
 <p>We can click on different links on the page modify part of this URL to see how the search results change. For example, if we click on Sort by Institution, the URL changes to</p>
 <p><a href="https://www.hhmi.org/scientists/browse?sort_by=field_scientist_academic_institu&amp;sort_order=ASC&amp;items_per_page=24&amp;page=0" class="uri">https://www.hhmi.org/scientists/browse?sort_by=field_scientist_academic_institu&amp;sort_order=ASC&amp;items_per_page=24&amp;page=0</a></p>
 <p>If we click on next at the bottom, the url changes to <a href="https://www.hhmi.org/scientists/browse?sort_by=field_scientist_academic_institu&amp;sort_order=ASC&amp;items_per_page=24&amp;page=1" class="uri">https://www.hhmi.org/scientists/browse?sort_by=field_scientist_academic_institu&amp;sort_order=ASC&amp;items_per_page=24&amp;page=1</a></p>
 <p>This allows us to see that the URL is constructed using a few parameters, such as sort_by, sort_order, items_per_page, and page that can be programmatically modified to give us the search results that we want.</p>
 <p><strong>Getting the contents of the page from the URL</strong></p>
-<p>The <code>requests</code> module, available natively in Jupyter Python notebooks, is
-a useful set of tools for handling interactions with websites. It lets us
-construct the request that we just presented in terms of a base URL and
-query terms, as follows:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>BASE_URL =<span class="st"> &quot;http://www.hhmi.org/scientists/browse&quot;</span></a>
-<a class="sourceLine" id="cb1-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>query =<span class="st"> </span>{</a>
-<a class="sourceLine" id="cb1-3" title="3">            <span class="st">&quot;kw&quot;</span> <span class="op">:</span><span class="st"> &quot;&quot;</span>,</a>
-<a class="sourceLine" id="cb1-4" title="4">            <span class="st">&quot;sort_by&quot;</span> <span class="op">:</span><span class="st"> &quot;field_scientist_last_name&quot;</span>,</a>
-<a class="sourceLine" id="cb1-5" title="5">            <span class="st">&quot;sort_order&quot;</span> <span class="op">:</span><span class="st"> &quot;ASC&quot;</span>,</a>
-<a class="sourceLine" id="cb1-6" title="6">            <span class="st">&quot;items_per_page&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">24</span>,</a>
-<a class="sourceLine" id="cb1-7" title="7">            <span class="st">&quot;page&quot;</span> <span class="op">:</span><span class="st"> </span>None</a>
-<a class="sourceLine" id="cb1-8" title="8">           }</a></code></pre></div>
-<p>With our request constructed we can then make the call to the web page
-to get a response.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import requests</a>
-<a class="sourceLine" id="cb2-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response =<span class="st"> </span><span class="kw">requests.get</span>(BASE_URL, <span class="dt">params=</span>query)</a></code></pre></div>
-<p>The first thing to do when building a script that hits a web page is to
-make sure that your call was successful. This can be checked by looking
-at the response code that the web server sent—and, obviously, by
-checking the actual HTML that was returned. A <code>200</code> code means success and
-that everything should be OK. Other codes may mean that the URL was
-constructed wrongly or that there was a server error.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code</a>
-<a class="sourceLine" id="cb3-2" title="2"><span class="dv">200</span></a></code></pre></div>
+<p>The <code>requests</code> module, available natively in Jupyter Python notebooks, is a useful set of tools for handling interactions with websites. It lets us construct the request that we just presented in terms of a base URL and query terms, as follows:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>BASE_URL =<span class="st"> &quot;http://www.hhmi.org/scientists/browse&quot;</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>query =<span class="st"> </span>{
+            <span class="st">&quot;kw&quot;</span> <span class="op">:</span><span class="st"> &quot;&quot;</span>,
+            <span class="st">&quot;sort_by&quot;</span> <span class="op">:</span><span class="st"> &quot;field_scientist_last_name&quot;</span>,
+            <span class="st">&quot;sort_order&quot;</span> <span class="op">:</span><span class="st"> &quot;ASC&quot;</span>,
+            <span class="st">&quot;items_per_page&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">24</span>,
+            <span class="st">&quot;page&quot;</span> <span class="op">:</span><span class="st"> </span>None
+           }</code></pre></div>
+<p>With our request constructed we can then make the call to the web page to get a response.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import requests
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response =<span class="st"> </span><span class="kw">requests.get</span>(BASE_URL, <span class="dt">params=</span>query)</code></pre></div>
+<p>The first thing to do when building a script that hits a web page is to make sure that your call was successful. This can be checked by looking at the response code that the web server sent—and, obviously, by checking the actual HTML that was returned. A <code>200</code> code means success and that everything should be OK. Other codes may mean that the URL was constructed wrongly or that there was a server error.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code
+<span class="dv">200</span></code></pre></div>
 <p><strong>Processing the html response</strong></p>
-<p>With the page successfully returned, we now need to process the text it contains into the data we want. This is not a trivial exercise. Web pages are typically written in a “markup” language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, running the code gives us the HTML text. We then have to process this text to extract the content that we care about. There are a range of tools in Python that can help with processing HTML data. One of the most popular is a module BeautifulSoup <span class="citation">(Richardson, <a href="#ref-bsoup">n.d.</a>)</span>, which provides a number of useful functions for this kind of processing. The module documentation provides more details.</p>
-<p>We need to check the details of the page source to find where the
-information we are looking for is kept (see, for example, Figure
-<a href="chap-web.html#fig:fig2-1">2.1</a>). Here, all the details on HHMI investigators can
-be found in a <code>&lt;div&gt;</code> element with the class attribute <code>view-content</code>.
-This structure is not
-something that can be determined in advance. It requires knowledge of
-the structure of the page itself. Nested inside this <code>&lt;div&gt;</code> element are another
-series of <code>div</code>s, each of which corresponds to one investigator. These have
-the class attribute <code>view-rows</code>. Again, there is nothing obvious about finding
-these, it requires a close examination of the page HTML itself for any
-specific case you happen to be looking at.</p>
+<p>With the page successfully returned, we now need to process the text it contains into the data we want. This is not a trivial exercise. Web pages are typically written in a “markup” language called Hyptertext Markup Language (HTML). This language tells the web browser how to display the content on that web page such as making a piece of text bold or in italics, creating numbered lists, or showing images. When we use Python to retrieve a webpage, running the code gives us the HTML text. We then have to process this text to extract the content that we care about. There are a range of tools in Python that can help with processing HTML data. One of the most popular is a module BeautifulSoup <span class="citation">(Richardson, n.d.)</span>, which provides a number of useful functions for this kind of processing. The module documentation provides more details.</p>
+<p>We need to check the details of the page source to find where the information we are looking for is kept (see, for example, Figure <a href="chap-web.html#fig:fig2-1">2.1</a>). Here, all the details on HHMI investigators can be found in a <code>&lt;div&gt;</code> element with the class attribute <code>view-content</code>. This structure is not something that can be determined in advance. It requires knowledge of the structure of the page itself. Nested inside this <code>&lt;div&gt;</code> element are another series of <code>div</code>s, each of which corresponds to one investigator. These have the class attribute <code>view-rows</code>. Again, there is nothing obvious about finding these, it requires a close examination of the page HTML itself for any specific case you happen to be looking at.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig2-1"></span>
 <img src="ChapterWeb/figures/fig2-1.png" alt="Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read." width="90%" />
 <p class="caption">
 Figure 2.1: Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.
 </p>
 </div>
-<p>We first process the page using the BeautifulSoup module (into the
-variable <code>soup</code>) and then find the <code>div</code> element that holds the information on
-investigators (<code>investigator_list</code>). As this element is unique on the page
-(I checked using my web browser), we can use the find method.
-We then process that <code>div</code> (using <code>find_all</code>) to create an iterator object
-that contains each of the page segments detailing a single investigator
-(<code>investigators</code>).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>from bs4 import BeautifulSoup</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>soup =<span class="st"> </span><span class="kw">BeautifulSoup</span>(response.text, <span class="st">&quot;html5lib&quot;</span>)</a>
-<a class="sourceLine" id="cb4-3" title="3"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigator_list =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&#39;div&#39;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-content&quot;</span>)</a>
-<a class="sourceLine" id="cb4-4" title="4"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigators =<span class="st"> </span><span class="kw">investigator_list.find_all</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;views-row&quot;</span>)</a></code></pre></div>
-<p>As we specified in our query parameters that we wanted 24 results per
-page, we should check whether our list of page sections has the right
-length.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(investigators)</a>
-<a class="sourceLine" id="cb5-2" title="2"><span class="dv">20</span></a></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" title="1"><span class="co"># Given a request response object, parse for HHMI investigators</span></a>
-<a class="sourceLine" id="cb6-2" title="2">def <span class="kw">scrape</span>(page_response)<span class="op">:</span></a>
-<a class="sourceLine" id="cb6-3" title="3"><span class="st">   </span><span class="co"># Obtain response HTML and the correct &lt;div&gt; from the page</span></a>
-<a class="sourceLine" id="cb6-4" title="4"><span class="st">   </span>soup =<span class="st"> </span><span class="kw">BeautifulSoup</span>(response.text, <span class="st">&quot;html5lib&quot;</span>)</a>
-<a class="sourceLine" id="cb6-5" title="5">   inv_list =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&#39;div&#39;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-content&quot;</span>)</a>
-<a class="sourceLine" id="cb6-6" title="6"></a>
-<a class="sourceLine" id="cb6-7" title="7">   <span class="co"># Create a list of all the investigators on the page</span></a>
-<a class="sourceLine" id="cb6-8" title="8">   investigators =<span class="st"> </span><span class="kw">inv_list.find_all</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;views-row&quot;</span>)</a>
-<a class="sourceLine" id="cb6-9" title="9"></a>
-<a class="sourceLine" id="cb6-10" title="10">   data =<span class="st"> </span>[] <span class="co"># Make the data object to store scraping results</span></a>
-<a class="sourceLine" id="cb6-11" title="11"></a>
-<a class="sourceLine" id="cb6-12" title="12">   <span class="co"># Scrape needed elements from investigator list</span></a>
-<a class="sourceLine" id="cb6-13" title="13">   <span class="cf">for</span> investigator <span class="cf">in</span> investigators<span class="op">:</span></a>
-<a class="sourceLine" id="cb6-14" title="14"><span class="st">       </span>inv =<span class="st"> </span>{} <span class="co"># Create a dictionary to store results</span></a>
-<a class="sourceLine" id="cb6-15" title="15"></a>
-<a class="sourceLine" id="cb6-16" title="16">       <span class="co"># Name and role are in same HTML element; this code</span></a>
-<a class="sourceLine" id="cb6-17" title="17">       <span class="co"># separates them into two data elements</span></a>
-<a class="sourceLine" id="cb6-18" title="18">       name_role_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,</a>
-<a class="sourceLine" id="cb6-19" title="19">           <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-classification&quot;</span>)</a>
-<a class="sourceLine" id="cb6-20" title="20">       strings =<span class="st"> </span>name_role_tag.stripped_strings</a>
-<a class="sourceLine" id="cb6-21" title="21">       <span class="cf">for</span> string,a <span class="cf">in</span> <span class="kw">zip</span>(strings, [<span class="st">&quot;name&quot;</span>, <span class="st">&quot;role&quot;</span>])<span class="op">:</span></a>
-<a class="sourceLine" id="cb6-22" title="22"><span class="st">           </span>inv[a] =<span class="st"> </span>string</a>
-<a class="sourceLine" id="cb6-23" title="23"></a>
-<a class="sourceLine" id="cb6-24" title="24">       <span class="co"># Extract other elements from text of specific divs or from</span></a>
-<a class="sourceLine" id="cb6-25" title="25">       <span class="co"># class attributes of tags in the page (e.g., URLs)</span></a>
-<a class="sourceLine" id="cb6-26" title="26">       research_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,</a>
-<a class="sourceLine" id="cb6-27" title="27">          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-research-abs-nod&quot;</span>)</a>
-<a class="sourceLine" id="cb6-28" title="28">       inv[<span class="st">&quot;research&quot;</span>] =<span class="st"> </span><span class="kw">research_tag.text.lstrip</span>()</a>
-<a class="sourceLine" id="cb6-29" title="29">       inv[<span class="st">&quot;research_url&quot;</span>] =<span class="st"> &quot;http://hhmi.org&quot;</span></a>
-<a class="sourceLine" id="cb6-30" title="30">          <span class="op">+</span><span class="st"> </span><span class="kw">research_tag.find</span>(<span class="st">&quot;a&quot;</span>)<span class="kw">.get</span>(<span class="st">&quot;href&quot;</span>)</a>
-<a class="sourceLine" id="cb6-31" title="31">       institution_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,</a>
-<a class="sourceLine" id="cb6-32" title="32">          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-academic-institu&quot;</span>)</a>
-<a class="sourceLine" id="cb6-33" title="33">       inv[<span class="st">&quot;institute&quot;</span>] =<span class="st"> </span><span class="kw">institution_tag.text.lstrip</span>()</a>
-<a class="sourceLine" id="cb6-34" title="34">       town_state_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,</a>
-<a class="sourceLine" id="cb6-35" title="35">           <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-institutionstate&quot;</span>)</a>
-<a class="sourceLine" id="cb6-36" title="36">       inv[<span class="st">&quot;town&quot;</span>], inv[<span class="st">&quot;state&quot;</span>] =<span class="st"> </span><span class="kw">town_state_tag.text.split</span>(<span class="st">&quot;,&quot;</span>)</a>
-<a class="sourceLine" id="cb6-37" title="37">       inv[<span class="st">&quot;town&quot;</span>] =<span class="st"> </span><span class="kw">inv.get</span>(<span class="st">&quot;town&quot;</span>)<span class="kw">.lstrip</span>()</a>
-<a class="sourceLine" id="cb6-38" title="38">       inv[<span class="st">&quot;state&quot;</span>] =<span class="st"> </span><span class="kw">inv.get</span>(<span class="st">&quot;state&quot;</span>)<span class="kw">.lstrip</span>()</a>
-<a class="sourceLine" id="cb6-39" title="39"></a>
-<a class="sourceLine" id="cb6-40" title="40">       thumbnail_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,</a>
-<a class="sourceLine" id="cb6-41" title="41">          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-image-thumbnail&quot;</span>)</a>
-<a class="sourceLine" id="cb6-42" title="42">       inv[<span class="st">&quot;thumbnail_url&quot;</span>] =<span class="st"> </span><span class="kw">thumbnail_tag.find</span>(<span class="st">&quot;img&quot;</span>)[<span class="st">&quot;src&quot;</span>]</a>
-<a class="sourceLine" id="cb6-43" title="43">       inv[<span class="st">&quot;url&quot;</span>] =<span class="st"> &quot;http://hhmi.org&quot;</span></a>
-<a class="sourceLine" id="cb6-44" title="44">          <span class="op">+</span><span class="st"> </span><span class="kw">thumbnail_tag.find</span>(<span class="st">&quot;a&quot;</span>)<span class="kw">.get</span>(<span class="st">&quot;href&quot;</span>)</a>
-<a class="sourceLine" id="cb6-45" title="45"></a>
-<a class="sourceLine" id="cb6-46" title="46">       <span class="co"># Add the new data to the list</span></a>
-<a class="sourceLine" id="cb6-47" title="47">       <span class="kw">data.append</span>(inv)</a>
-<a class="sourceLine" id="cb6-48" title="48">   return data</a></code></pre></div>
+<p>We first process the page using the BeautifulSoup module (into the variable <code>soup</code>) and then find the <code>div</code> element that holds the information on investigators (<code>investigator_list</code>). As this element is unique on the page (I checked using my web browser), we can use the find method. We then process that <code>div</code> (using <code>find_all</code>) to create an iterator object that contains each of the page segments detailing a single investigator (<code>investigators</code>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>from bs4 import BeautifulSoup
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>soup =<span class="st"> </span><span class="kw">BeautifulSoup</span>(response.text, <span class="st">&quot;html5lib&quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigator_list =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&#39;div&#39;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-content&quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>investigators =<span class="st"> </span><span class="kw">investigator_list.find_all</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;views-row&quot;</span>)</code></pre></div>
+<p>As we specified in our query parameters that we wanted 24 results per page, we should check whether our list of page sections has the right length.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(investigators)
+<span class="dv">20</span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Given a request response object, parse for HHMI investigators</span>
+def <span class="kw">scrape</span>(page_response)<span class="op">:</span>
+<span class="st">   </span><span class="co"># Obtain response HTML and the correct &lt;div&gt; from the page</span>
+<span class="st">   </span>soup =<span class="st"> </span><span class="kw">BeautifulSoup</span>(response.text, <span class="st">&quot;html5lib&quot;</span>)
+   inv_list =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&#39;div&#39;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-content&quot;</span>)
+
+   <span class="co"># Create a list of all the investigators on the page</span>
+   investigators =<span class="st"> </span><span class="kw">inv_list.find_all</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;views-row&quot;</span>)
+
+   data =<span class="st"> </span>[] <span class="co"># Make the data object to store scraping results</span>
+
+   <span class="co"># Scrape needed elements from investigator list</span>
+   <span class="cf">for</span> investigator <span class="cf">in</span> investigators<span class="op">:</span>
+<span class="st">       </span>inv =<span class="st"> </span>{} <span class="co"># Create a dictionary to store results</span>
+
+       <span class="co"># Name and role are in same HTML element; this code</span>
+       <span class="co"># separates them into two data elements</span>
+       name_role_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,
+           <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-classification&quot;</span>)
+       strings =<span class="st"> </span>name_role_tag.stripped_strings
+       <span class="cf">for</span> string,a <span class="cf">in</span> <span class="kw">zip</span>(strings, [<span class="st">&quot;name&quot;</span>, <span class="st">&quot;role&quot;</span>])<span class="op">:</span>
+<span class="st">           </span>inv[a] =<span class="st"> </span>string
+
+       <span class="co"># Extract other elements from text of specific divs or from</span>
+       <span class="co"># class attributes of tags in the page (e.g., URLs)</span>
+       research_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,
+          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-research-abs-nod&quot;</span>)
+       inv[<span class="st">&quot;research&quot;</span>] =<span class="st"> </span><span class="kw">research_tag.text.lstrip</span>()
+       inv[<span class="st">&quot;research_url&quot;</span>] =<span class="st"> &quot;http://hhmi.org&quot;</span>
+          <span class="op">+</span><span class="st"> </span><span class="kw">research_tag.find</span>(<span class="st">&quot;a&quot;</span>)<span class="kw">.get</span>(<span class="st">&quot;href&quot;</span>)
+       institution_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,
+          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-academic-institu&quot;</span>)
+       inv[<span class="st">&quot;institute&quot;</span>] =<span class="st"> </span><span class="kw">institution_tag.text.lstrip</span>()
+       town_state_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,
+           <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-institutionstate&quot;</span>)
+       inv[<span class="st">&quot;town&quot;</span>], inv[<span class="st">&quot;state&quot;</span>] =<span class="st"> </span><span class="kw">town_state_tag.text.split</span>(<span class="st">&quot;,&quot;</span>)
+       inv[<span class="st">&quot;town&quot;</span>] =<span class="st"> </span><span class="kw">inv.get</span>(<span class="st">&quot;town&quot;</span>)<span class="kw">.lstrip</span>()
+       inv[<span class="st">&quot;state&quot;</span>] =<span class="st"> </span><span class="kw">inv.get</span>(<span class="st">&quot;state&quot;</span>)<span class="kw">.lstrip</span>()
+
+       thumbnail_tag =<span class="st"> </span><span class="kw">investigator.find</span>(<span class="st">&quot;div&quot;</span>,
+          <span class="dt">class_ =</span> <span class="st">&quot;views-field-field-scientist-image-thumbnail&quot;</span>)
+       inv[<span class="st">&quot;thumbnail_url&quot;</span>] =<span class="st"> </span><span class="kw">thumbnail_tag.find</span>(<span class="st">&quot;img&quot;</span>)[<span class="st">&quot;src&quot;</span>]
+       inv[<span class="st">&quot;url&quot;</span>] =<span class="st"> &quot;http://hhmi.org&quot;</span>
+          <span class="op">+</span><span class="st"> </span><span class="kw">thumbnail_tag.find</span>(<span class="st">&quot;a&quot;</span>)<span class="kw">.get</span>(<span class="st">&quot;href&quot;</span>)
+
+       <span class="co"># Add the new data to the list</span>
+       <span class="kw">data.append</span>(inv)
+   return data</code></pre></div>
 <div style="text-align: center">
 Listing 2.1. Python code to parse for HHMI investigators
 </div>
 <p><a id="list:web1"></a></p>
-<p>Finally, we need to process each of these segments to obtain the data we
-are looking for. This is the actual “scraping” of the page to get the
-information we want. Again, this involves looking closely at the HTML
-itself, identifying where the information is held, what tags can be used
-to find it, and often doing some post-processing to clean it up (removing
-spaces, splitting different elements up, etc.).</p>
-<p>Listing <a href="chap-web.html#list:web1">Investigators</a> provides a function to handle all
-of this. The function accepts the response object from the requests
-module as its input, processes the page text to soup, and then finds
-the <code>investigator_list</code> as above and
-processes it into an actual list of the investigators. For each
-investigator it then processes the HTML to find and clean up the
-information required, converting it to a dictionary and adding it to our
-growing list of data.</p>
-<p>Let us check what the first two elements of our data set now look like.
-You can see two dictionaries, one relating to Laurence Abbott, who is a
-senior fellow at the HHMI Janelia Farm Campus, and one for Susan
-Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar
-Harbor, Maine. Note that we have also obtained URLs that give more
-details on the researcher and their research program (<code>research_url</code> and
-<code>url</code> keys in the dictionary) that could provide a useful input to textual
-analysis or topic modeling (see Chapter <a href="chap-text.html#chap:text">Text Analysis</a>).</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data =<span class="st"> </span><span class="kw">scrape</span>(response)</a>
-<a class="sourceLine" id="cb7-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data[<span class="dv">0</span><span class="op">:</span><span class="dv">2</span>]</a>
-<a class="sourceLine" id="cb7-3" title="3">[{<span class="st">&#39;institute&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Janelia Research Campus &#39;</span>,</a>
-<a class="sourceLine" id="cb7-4" title="4">  <span class="st">&#39;name&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Laurence Abbott, PhD&#39;</span>,</a>
-<a class="sourceLine" id="cb7-5" title="5">  <span class="st">&#39;research&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Computational and Mathematical Modeling of Neurons and Neural... &#39;</span>,</a>
-<a class="sourceLine" id="cb7-6" title="6">  <span class="st">&#39;research_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/research/computational-and-mathematical-modeling-neurons-and-neural-networks&#39;</span>,</a>
-<a class="sourceLine" id="cb7-7" title="7">  <span class="st">&#39;role&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Janelia Senior Fellow&#39;</span>,</a>
-<a class="sourceLine" id="cb7-8" title="8">  <span class="st">&#39;state&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;VA &#39;</span>,</a>
-<a class="sourceLine" id="cb7-9" title="9">  <span class="st">&#39;thumbnail_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://www.hhmi.org/sites/default/files/Our%20Scientists/Janelia/Abbott-112x112.jpg&#39;</span>,</a>
-<a class="sourceLine" id="cb7-10" title="10">  <span class="st">&#39;town&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Ashburn&#39;</span>,</a>
-<a class="sourceLine" id="cb7-11" title="11">  <span class="st">&#39;url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/scientists/laurence-f-abbott&#39;</span>},</a>
-<a class="sourceLine" id="cb7-12" title="12"> {<span class="st">&#39;institute&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;The Jackson Laboratory &#39;</span>,</a>
-<a class="sourceLine" id="cb7-13" title="13">  <span class="st">&#39;name&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Susan Ackerman, PhD&#39;</span>,</a>
-<a class="sourceLine" id="cb7-14" title="14">  <span class="st">&#39;research&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Identification of the Molecular Mechanisms Underlying... &#39;</span>,</a>
-<a class="sourceLine" id="cb7-15" title="15">  <span class="st">&#39;research_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/research/identification-molecular-mechanisms-underlying-neurodegeneration&#39;</span>,</a>
-<a class="sourceLine" id="cb7-16" title="16">  <span class="st">&#39;role&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Investigator&#39;</span>,</a>
-<a class="sourceLine" id="cb7-17" title="17">  <span class="st">&#39;state&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;ME &#39;</span>,</a>
-<a class="sourceLine" id="cb7-18" title="18">  <span class="st">&#39;thumbnail_url&#39;</span><span class="op">:</span></a>
-<a class="sourceLine" id="cb7-19" title="19">u<span class="st">&#39;http://www.hhmi.org/sites/default/files/Our%20Scientists/Investigators/Ackerman-112x112.jpg&#39;</span>,</a>
-<a class="sourceLine" id="cb7-20" title="20">  <span class="st">&#39;town&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Bar Harbor&#39;</span>,</a>
-<a class="sourceLine" id="cb7-21" title="21">  <span class="st">&#39;url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/scientists/susan-l-ackerman&#39;</span>}]</a></code></pre></div>
+<p>Finally, we need to process each of these segments to obtain the data we are looking for. This is the actual “scraping” of the page to get the information we want. Again, this involves looking closely at the HTML itself, identifying where the information is held, what tags can be used to find it, and often doing some post-processing to clean it up (removing spaces, splitting different elements up, etc.).</p>
+<p>Listing <a href="chap-web.html#list:web1">Investigators</a> provides a function to handle all of this. The function accepts the response object from the requests module as its input, processes the page text to soup, and then finds the <code>investigator_list</code> as above and processes it into an actual list of the investigators. For each investigator it then processes the HTML to find and clean up the information required, converting it to a dictionary and adding it to our growing list of data.</p>
+<p>Let us check what the first two elements of our data set now look like. You can see two dictionaries, one relating to Laurence Abbott, who is a senior fellow at the HHMI Janelia Farm Campus, and one for Susan Ackerman, an HHMI investigator based at the Jackson Laboratory in Bar Harbor, Maine. Note that we have also obtained URLs that give more details on the researcher and their research program (<code>research_url</code> and <code>url</code> keys in the dictionary) that could provide a useful input to textual analysis or topic modeling (see Chapter <a href="chap-text.html#chap:text">Text Analysis</a>).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data =<span class="st"> </span><span class="kw">scrape</span>(response)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>data[<span class="dv">0</span><span class="op">:</span><span class="dv">2</span>]
+[{<span class="st">&#39;institute&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Janelia Research Campus &#39;</span>,
+  <span class="st">&#39;name&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Laurence Abbott, PhD&#39;</span>,
+  <span class="st">&#39;research&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Computational and Mathematical Modeling of Neurons and Neural... &#39;</span>,
+  <span class="st">&#39;research_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/research/computational-and-mathematical-modeling-neurons-and-neural-networks&#39;</span>,
+  <span class="st">&#39;role&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Janelia Senior Fellow&#39;</span>,
+  <span class="st">&#39;state&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;VA &#39;</span>,
+  <span class="st">&#39;thumbnail_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://www.hhmi.org/sites/default/files/Our%20Scientists/Janelia/Abbott-112x112.jpg&#39;</span>,
+  <span class="st">&#39;town&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Ashburn&#39;</span>,
+  <span class="st">&#39;url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/scientists/laurence-f-abbott&#39;</span>},
+ {<span class="st">&#39;institute&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;The Jackson Laboratory &#39;</span>,
+  <span class="st">&#39;name&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Susan Ackerman, PhD&#39;</span>,
+  <span class="st">&#39;research&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Identification of the Molecular Mechanisms Underlying... &#39;</span>,
+  <span class="st">&#39;research_url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/research/identification-molecular-mechanisms-underlying-neurodegeneration&#39;</span>,
+  <span class="st">&#39;role&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Investigator&#39;</span>,
+  <span class="st">&#39;state&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;ME &#39;</span>,
+  <span class="st">&#39;thumbnail_url&#39;</span><span class="op">:</span>
+u<span class="st">&#39;http://www.hhmi.org/sites/default/files/Our%20Scientists/Investigators/Ackerman-112x112.jpg&#39;</span>,
+  <span class="st">&#39;town&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Bar Harbor&#39;</span>,
+  <span class="st">&#39;url&#39;</span><span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://hhmi.org/scientists/susan-l-ackerman&#39;</span>}]</code></pre></div>
 <p>** Programmatically Iterating over the Search Results **</p>
-<p>Now we know we can process a page from a website to generate useful
-structured data. However, this was only the first page of results. We
-need to do this for each page of results if we want to capture all the
-HHMI investigators. We could just look at the number of pages that our
-search returned manually, but to make this more general we can actually
-scrape the page to find that piece of information and use that to
-calculate how many pages we need to iterate through.</p>
-<p>The number of results is found in a <code>div</code> with the class “view-headers” as a
-piece of free text (“Showing 1–20 of 493 results”). We need to grab the
-text, split it up (we do so based on spaces), find the right number (the
-one that is before the word “results”) and convert that to an integer.
-Then we can divide by the number of items we requested per page (20 in
-our case) to find how many pages we need to work through. A quick mental
-calculation confirms that if page 0 had results 1–20, page 24 would
-give results 481–493.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># Check total number of investigators returned</span></a>
-<a class="sourceLine" id="cb8-2" title="2"><span class="er">&gt;&gt;</span><span class="st"> </span>view_header =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-header&quot;</span>)</a>
-<a class="sourceLine" id="cb8-3" title="3"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>words =<span class="st"> </span><span class="kw">view_header.text.split</span>(<span class="st">&quot; &quot;</span>)</a>
-<a class="sourceLine" id="cb8-4" title="4"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>count_index =<span class="st"> </span><span class="kw">words.index</span>(<span class="st">&quot;results.&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb8-5" title="5"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>count =<span class="st"> </span><span class="kw">int</span>(words[count_index])</a>
-<a class="sourceLine" id="cb8-6" title="6"></a>
-<a class="sourceLine" id="cb8-7" title="7"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># Calculate number of pages, given count &amp; items_per_page</span></a>
-<a class="sourceLine" id="cb8-8" title="8"><span class="er">&gt;&gt;</span><span class="st"> </span>num_pages =<span class="st"> </span>count<span class="op">/</span><span class="kw">query.get</span>(<span class="st">&quot;items_per_page&quot;</span>)</a>
-<a class="sourceLine" id="cb8-9" title="9"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>num_pages</a>
-<a class="sourceLine" id="cb8-10" title="10"><span class="dv">24</span></a></code></pre></div>
-<p>Then it is a matter of putting the function we constructed
-earlier into a loop to work through the correct number of pages. As we
-start to hit the website repeatedly, we need to consider whether we are
-being polite. Most websites have a file in the root directory called
-robots.txt that contains guidance on using programs to interact with the
-website. In the case of <a href="http://hhmi.org" class="uri">http://hhmi.org</a> the file states first that we
-are allowed (or, more properly, not forbidden) to query
-<a href="http://www.hhmi.org/scientists/" class="uri">http://www.hhmi.org/scientists/</a> programmatically. Thus, you can pull
-down all of the more detailed biographical or research information, if
-you so desire. The file also states that there is a requested
-“Crawl-delay” of 10. This means that if you are making repeated queries
-(as we will be in getting the 24 pages), you should wait for 10 seconds
-between each query. This request is easily accommodated by adding a
-timed delay between each page request.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> page_num <span class="cf">in</span> <span class="kw">range</span>(num_pages)<span class="op">:</span></a>
-<a class="sourceLine" id="cb9-2" title="2"><span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># We already have page zero and we need to go to 24:</span></a>
-<a class="sourceLine" id="cb9-3" title="3"><span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># range(24) is [0,1,...,23]</span></a>
-<a class="sourceLine" id="cb9-4" title="4"><span class="er">&gt;&gt;</span><span class="st">    </span>query[<span class="st">&quot;items_per_page&quot;</span>] =<span class="st"> </span>page_num <span class="op">+</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb9-5" title="5"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st">    </span>page =<span class="st"> </span><span class="kw">requests.get</span>(BASE_URL, <span class="dt">params=</span>query)</a>
-<a class="sourceLine" id="cb9-6" title="6"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># We use extend to add list for each page to existing list</span></a>
-<a class="sourceLine" id="cb9-7" title="7"><span class="er">&gt;&gt;</span><span class="st">    </span><span class="kw">data.extend</span>(<span class="kw">scrape</span>(page))</a>
-<a class="sourceLine" id="cb9-8" title="8"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">print</span>(<span class="st">&quot;Retrieved and scraped page number:&quot;</span>, <span class="kw">query.get</span>(<span class="st">&quot;items_per_page&quot;</span>))</a>
-<a class="sourceLine" id="cb9-9" title="9"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">time.sleep</span>(<span class="dv">10</span>) <span class="co"># robots.txt at hhmi.org specifies a crawl delay of 10 seconds</span></a>
-<a class="sourceLine" id="cb9-10" title="10">Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">1</span></a>
-<a class="sourceLine" id="cb9-11" title="11">Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">2</span></a>
-<a class="sourceLine" id="cb9-12" title="12">...</a>
-<a class="sourceLine" id="cb9-13" title="13">Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">24</span></a></code></pre></div>
-<p>Finally we can check that we have the right number of results after our
-scraping. This should correspond to the 493 records that the website
-reports.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(data)</a>
-<a class="sourceLine" id="cb10-2" title="2"><span class="dv">493</span></a></code></pre></div>
+<p>Now we know we can process a page from a website to generate useful structured data. However, this was only the first page of results. We need to do this for each page of results if we want to capture all the HHMI investigators. We could just look at the number of pages that our search returned manually, but to make this more general we can actually scrape the page to find that piece of information and use that to calculate how many pages we need to iterate through.</p>
+<p>The number of results is found in a <code>div</code> with the class “view-headers” as a piece of free text (“Showing 1–20 of 493 results”). We need to grab the text, split it up (we do so based on spaces), find the right number (the one that is before the word “results”) and convert that to an integer. Then we can divide by the number of items we requested per page (20 in our case) to find how many pages we need to work through. A quick mental calculation confirms that if page 0 had results 1–20, page 24 would give results 481–493.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># Check total number of investigators returned</span>
+<span class="er">&gt;&gt;</span><span class="st"> </span>view_header =<span class="st"> </span><span class="kw">soup.find</span>(<span class="st">&quot;div&quot;</span>, <span class="dt">class_ =</span> <span class="st">&quot;view-header&quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>words =<span class="st"> </span><span class="kw">view_header.text.split</span>(<span class="st">&quot; &quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>count_index =<span class="st"> </span><span class="kw">words.index</span>(<span class="st">&quot;results.&quot;</span>) <span class="op">-</span><span class="st"> </span><span class="dv">1</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>count =<span class="st"> </span><span class="kw">int</span>(words[count_index])
+
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># Calculate number of pages, given count &amp; items_per_page</span>
+<span class="er">&gt;&gt;</span><span class="st"> </span>num_pages =<span class="st"> </span>count<span class="op">/</span><span class="kw">query.get</span>(<span class="st">&quot;items_per_page&quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>num_pages
+<span class="dv">24</span></code></pre></div>
+<p>Then it is a matter of putting the function we constructed earlier into a loop to work through the correct number of pages. As we start to hit the website repeatedly, we need to consider whether we are being polite. Most websites have a file in the root directory called robots.txt that contains guidance on using programs to interact with the website. In the case of <a href="http://hhmi.org" class="uri">http://hhmi.org</a> the file states first that we are allowed (or, more properly, not forbidden) to query <a href="http://www.hhmi.org/scientists/" class="uri">http://www.hhmi.org/scientists/</a> programmatically. Thus, you can pull down all of the more detailed biographical or research information, if you so desire. The file also states that there is a requested “Crawl-delay” of 10. This means that if you are making repeated queries (as we will be in getting the 24 pages), you should wait for 10 seconds between each query. This request is easily accommodated by adding a timed delay between each page request.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> page_num <span class="cf">in</span> <span class="kw">range</span>(num_pages)<span class="op">:</span>
+<span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># We already have page zero and we need to go to 24:</span>
+<span class="er">&gt;&gt;</span><span class="st"> </span><span class="co"># range(24) is [0,1,...,23]</span>
+<span class="er">&gt;&gt;</span><span class="st">    </span>query[<span class="st">&quot;items_per_page&quot;</span>] =<span class="st"> </span>page_num <span class="op">+</span><span class="st"> </span><span class="dv">1</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st">    </span>page =<span class="st"> </span><span class="kw">requests.get</span>(BASE_URL, <span class="dt">params=</span>query)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="co"># We use extend to add list for each page to existing list</span>
+<span class="er">&gt;&gt;</span><span class="st">    </span><span class="kw">data.extend</span>(<span class="kw">scrape</span>(page))
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">print</span>(<span class="st">&quot;Retrieved and scraped page number:&quot;</span>, <span class="kw">query.get</span>(<span class="st">&quot;items_per_page&quot;</span>))
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">time.sleep</span>(<span class="dv">10</span>) <span class="co"># robots.txt at hhmi.org specifies a crawl delay of 10 seconds</span>
+Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">1</span>
+Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">2</span>
+...
+Retrieved and scraped page number<span class="op">:</span><span class="st"> </span><span class="dv">24</span></code></pre></div>
+<p>Finally we can check that we have the right number of results after our scraping. This should correspond to the 493 records that the website reports.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(data)
+<span class="dv">493</span></code></pre></div>
 </div>
 <div id="limits-of-scraping" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Limits of scraping</h3>
-<p>While scraping websites is often necessary, is can be a fragile and
-messy way of working. It is problematic for a number of reasons: for
-example, many websites are designed in ways that make scraping difficult
-or impossible, and other sites explicitly prohibit this kind of scripted
-analysis. (Both reasons apply in the case of the NSF and Grants.gov
-websites, which is why we use the HHMI website in our example.) The structure
-of websites also changes frequently, forcing you to continuously modify your
-code to keep up with the structure.</p>
-<p>In many cases a better choice is to process a data download from an
-organization. For example, the NSF and Wellcome Trust both provide data
-sets for each year that include structured data on all their awarded
-grants. In practice, integrating data is a continual challenge of
-figuring out what is the easiest way to proceed, what is allowed, and
-what is practical and useful. The selection of data will often be driven
-by pragmatic rather than theoretical concerns.</p>
-<p>Increasingly, organizations are providing APIs to enable scripted and
-programmatic access to the data they hold. These tools are much easier and
-generally more effective to work with. They are the focus of much of the
-rest of this chapter.</p>
+<p>While scraping websites is often necessary, is can be a fragile and messy way of working. It is problematic for a number of reasons: for example, many websites are designed in ways that make scraping difficult or impossible, and other sites explicitly prohibit this kind of scripted analysis. (Both reasons apply in the case of the NSF and Grants.gov websites, which is why we use the HHMI website in our example.) The structure of websites also changes frequently, forcing you to continuously modify your code to keep up with the structure.</p>
+<p>In many cases a better choice is to process a data download from an organization. For example, the NSF and Wellcome Trust both provide data sets for each year that include structured data on all their awarded grants. In practice, integrating data is a continual challenge of figuring out what is the easiest way to proceed, what is allowed, and what is practical and useful. The selection of data will often be driven by pragmatic rather than theoretical concerns.</p>
+<p>Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. These tools are much easier and generally more effective to work with. They are the focus of much of the rest of this chapter.</p>
 </div>
 </div>
 <div id="application-programming-interfaces-apis" class="section level2">
 <h2><span class="header-section-number">2.3</span> Application Programming Interfaces (APIs)</h2>
-<p>An API is simply a tool that allows a program to interface with a
-service. APIs can take many different forms and be of varying quality
-and usefulness. In this section we will focus on one common type of API
-and examples of important publicly available APIs relevant to research
-communications. We will also cover combining APIs and the benefits and
-challenges of bringing multiple data sources together.</p>
+<p>An API is simply a tool that allows a program to interface with a service. APIs can take many different forms and be of varying quality and usefulness. In this section we will focus on one common type of API and examples of important publicly available APIs relevant to research communications. We will also cover combining APIs and the benefits and challenges of bringing multiple data sources together.</p>
 <div id="relevant-apis-and-resources" class="section level3">
 <h3><span class="header-section-number">2.3.1</span> Relevant APIs and resources</h3>
-<p>There is a wide range of other sources of information that can be used
-in combination with the APIs featured above to develop an overview of
-research outputs and of where and how they are being used. There are
-also other tools that can allow deeper analysis of the outputs
-themselves. Table <a href="chap-web.html#tab:table2-1">2.1</a> gives a partial list of key data
-sources and APIs that are relevant to the analysis of research outputs.</p>
-<table>
+<p>There is a wide range of other sources of information that can be used in combination with the APIs featured above to develop an overview of research outputs and of where and how they are being used. There are also other tools that can allow deeper analysis of the outputs themselves. Table <a href="chap-web.html#tab:table2-1">2.1</a> gives a partial list of key data sources and APIs that are relevant to the analysis of research outputs.</p>
+<table style="width:100%;">
 <caption><span id="tab:table2-1">Table 2.1: </span> Popular sources of data relevant to the analysis of research outputs</caption>
 <colgroup>
 <col width="11%" />
-<col width="84%" />
+<col width="83%" />
 <col width="2%" />
 <col width="2%" />
 </colgroup>
@@ -865,219 +705,132 @@ sources and APIs that are relevant to the analysis of research outputs.</p>
 </div>
 <div id="restful-apis-returned-data-and-python-wrappers" class="section level3">
 <h3><span class="header-section-number">2.3.2</span> RESTful APIs, returned data, and Python wrappers</h3>
-<p>The APIs we will focus on here are all examples of RESTful services.
-REST stands for Representational State Transfer
-<span class="citation">(Wikipedia, <a href="#ref-RESTwiki">n.d.</a>; Fielding and Taylor <a href="#ref-fielding2002principled">2002</a>)</span>, but for our purposes it is most
-easily understood as a means of transferring data using web protocols.
-Other forms of API require additional tools or systems to work with, but
-RESTful APIs work directly over the web. This has the advantage that a
-human user can also with relative ease play with the API to understand
-how it works. Indeed, some websites work simply by formatting the
-results ofAPI calls.</p>
-<p>As an example let us look at the Crossref API. This provides a range of
-information associated with Digital Object Identifiers (DOIs) registered
-with Crossref. DOIs uniquely identify an object, and Crossref DOIs refer
-to research objects, primarily (but not entirely) research articles. If
-you use a web browser to navigate to
-<a href="http://api.crossref.org/works/10.1093/nar/gni170" class="uri">http://api.crossref.org/works/10.1093/nar/gni170</a>, you should receive
-back a webpage that looks something like the following. (We have laid it
-out nicely to make it more readable.)</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" title="1">{ <span class="st">&quot;status&quot;</span> <span class="op">:</span><span class="st"> &quot;ok&quot;</span>,</a>
-<a class="sourceLine" id="cb11-2" title="2">  <span class="st">&quot;message-type&quot;</span> <span class="op">:</span><span class="st"> &quot;work&quot;</span>,</a>
-<a class="sourceLine" id="cb11-3" title="3">  <span class="st">&quot;message-version&quot;</span> <span class="op">:</span><span class="st"> &quot;1.0.0&quot;</span>,</a>
-<a class="sourceLine" id="cb11-4" title="4">  <span class="st">&quot;message&quot;</span> <span class="op">:</span></a>
-<a class="sourceLine" id="cb11-5" title="5"><span class="st">   </span>{ <span class="st">&quot;subtitle&quot;</span><span class="op">:</span><span class="st"> </span>[],</a>
-<a class="sourceLine" id="cb11-6" title="6">     <span class="st">&quot;subject&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;Genetics&quot;</span>],</a>
-<a class="sourceLine" id="cb11-7" title="7">     <span class="st">&quot;issued&quot;</span> <span class="op">:</span><span class="st"> </span>{ <span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2005</span>,<span class="dv">10</span>,<span class="dv">24</span>]] },</a>
-<a class="sourceLine" id="cb11-8" title="8">     <span class="st">&quot;score&quot;</span> <span class="op">:</span><span class="st"> </span><span class="fl">1.0</span>,</a>
-<a class="sourceLine" id="cb11-9" title="9">     <span class="st">&quot;prefix&quot;</span> <span class="op">:</span><span class="st"> &quot;http://id.crossref.org/prefix/10.1093&quot;</span>,</a>
-<a class="sourceLine" id="cb11-10" title="10">     <span class="st">&quot;author&quot;</span> <span class="op">:</span><span class="st"> </span>[ <span class="st">&quot;affiliation&quot;</span> <span class="op">:</span><span class="st"> </span>[],</a>
-<a class="sourceLine" id="cb11-11" title="11">                   <span class="st">&quot;family&quot;</span> <span class="op">:</span><span class="st"> &quot;Whiteford&quot;</span>,</a>
-<a class="sourceLine" id="cb11-12" title="12">                   <span class="st">&quot;given&quot;</span> <span class="op">:</span><span class="st"> &quot;N.&quot;</span>}],</a>
-<a class="sourceLine" id="cb11-13" title="13">     <span class="st">&quot;container-title&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;Nucleic Acids Research&quot;</span>],</a>
-<a class="sourceLine" id="cb11-14" title="14">     <span class="st">&quot;reference-count&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb11-15" title="15">     <span class="st">&quot;page&quot;</span> <span class="op">:</span><span class="st"> &quot;e171-e171&quot;</span>,</a>
-<a class="sourceLine" id="cb11-16" title="16">     <span class="st">&quot;deposited&quot;</span> <span class="op">:</span><span class="st"> </span>{<span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2013</span>,<span class="dv">8</span>,<span class="dv">8</span>]],</a>
-<a class="sourceLine" id="cb11-17" title="17">                    <span class="st">&quot;timestamp&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1375920000000</span>},</a>
-<a class="sourceLine" id="cb11-18" title="18">     <span class="st">&quot;issue&quot;</span> <span class="op">:</span><span class="st"> &quot;19&quot;</span>,</a>
-<a class="sourceLine" id="cb11-19" title="19">     <span class="st">&quot;title&quot;</span> <span class="op">:</span></a>
-<a class="sourceLine" id="cb11-20" title="20"><span class="st">       </span>[<span class="st">&quot;An analysis of the feasibility of short read sequencing&quot;</span>],</a>
-<a class="sourceLine" id="cb11-21" title="21">     <span class="st">&quot;type&quot;</span> <span class="op">:</span><span class="st"> &quot;journal-article&quot;</span>,</a>
-<a class="sourceLine" id="cb11-22" title="22">     <span class="st">&quot;DOI&quot;</span> <span class="op">:</span><span class="st"> &quot;10.1093/nar/gni170&quot;</span>,</a>
-<a class="sourceLine" id="cb11-23" title="23">     <span class="st">&quot;ISSN&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;0305-1048&quot;</span>,<span class="st">&quot;1362-4962&quot;</span>],</a>
-<a class="sourceLine" id="cb11-24" title="24">     <span class="st">&quot;URL&quot;</span> <span class="op">:</span><span class="st"> &quot;http://dx.doi.org/10.1093/nar/gni170&quot;</span>,</a>
-<a class="sourceLine" id="cb11-25" title="25">     <span class="st">&quot;source&quot;</span> <span class="op">:</span><span class="st"> &quot;Crossref&quot;</span>,</a>
-<a class="sourceLine" id="cb11-26" title="26">     <span class="st">&quot;publisher&quot;</span> <span class="op">:</span><span class="st"> &quot;Oxford University Press (OUP)&quot;</span>,</a>
-<a class="sourceLine" id="cb11-27" title="27">     <span class="st">&quot;indexed&quot;</span> <span class="op">:</span><span class="st"> </span>{<span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2015</span>,<span class="dv">6</span>,<span class="dv">8</span>]],</a>
-<a class="sourceLine" id="cb11-28" title="28">                  <span class="st">&quot;timestamp&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1433777291246</span>},</a>
-<a class="sourceLine" id="cb11-29" title="29">     <span class="st">&quot;volume&quot;</span> <span class="op">:</span><span class="st"> &quot;33&quot;</span>,</a>
-<a class="sourceLine" id="cb11-30" title="30">     <span class="st">&quot;member&quot;</span> <span class="op">:</span><span class="st"> &quot;http://id.crossref.org/member/286&quot;</span></a>
-<a class="sourceLine" id="cb11-31" title="31">   }</a>
-<a class="sourceLine" id="cb11-32" title="32"><span class="er">}</span></a></code></pre></div>
-<p>This is a package of JavaScript Object Notation (JSON)<a href="#fn10" class="footnote-ref" id="fnref10"><sup>10</sup></a> data returned in
-response to a query. The query is contained entirely in the URL, which
-can be broken up into pieces: the root URL (<a href="http://api.crossref.org" class="uri">http://api.crossref.org</a>)
-and a data “query,” in this case made up of a “field” (<code>works</code>) and an
-identifier (the DOI <code>10.1093/nar/gni170</code>). The Crossref API provides
-information about the article identified with this specific DOI.</p>
+<p>The APIs we will focus on here are all examples of RESTful services. REST stands for Representational State Transfer <span class="citation">(Wikipedia, n.d.; Fielding and Taylor <a href="#ref-fielding2002principled">2002</a>)</span>, but for our purposes it is most easily understood as a means of transferring data using web protocols. Other forms of API require additional tools or systems to work with, but RESTful APIs work directly over the web. This has the advantage that a human user can also with relative ease play with the API to understand how it works. Indeed, some websites work simply by formatting the results ofAPI calls.</p>
+<p>As an example let us look at the Crossref API. This provides a range of information associated with Digital Object Identifiers (DOIs) registered with Crossref. DOIs uniquely identify an object, and Crossref DOIs refer to research objects, primarily (but not entirely) research articles. If you use a web browser to navigate to <a href="http://api.crossref.org/works/10.1093/nar/gni170" class="uri">http://api.crossref.org/works/10.1093/nar/gni170</a>, you should receive back a webpage that looks something like the following. (We have laid it out nicely to make it more readable.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">{ <span class="st">&quot;status&quot;</span> <span class="op">:</span><span class="st"> &quot;ok&quot;</span>,
+  <span class="st">&quot;message-type&quot;</span> <span class="op">:</span><span class="st"> &quot;work&quot;</span>,
+  <span class="st">&quot;message-version&quot;</span> <span class="op">:</span><span class="st"> &quot;1.0.0&quot;</span>,
+  <span class="st">&quot;message&quot;</span> <span class="op">:</span>
+<span class="st">   </span>{ <span class="st">&quot;subtitle&quot;</span><span class="op">:</span><span class="st"> </span>[],
+     <span class="st">&quot;subject&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;Genetics&quot;</span>],
+     <span class="st">&quot;issued&quot;</span> <span class="op">:</span><span class="st"> </span>{ <span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2005</span>,<span class="dv">10</span>,<span class="dv">24</span>]] },
+     <span class="st">&quot;score&quot;</span> <span class="op">:</span><span class="st"> </span><span class="fl">1.0</span>,
+     <span class="st">&quot;prefix&quot;</span> <span class="op">:</span><span class="st"> &quot;http://id.crossref.org/prefix/10.1093&quot;</span>,
+     <span class="st">&quot;author&quot;</span> <span class="op">:</span><span class="st"> </span>[ <span class="st">&quot;affiliation&quot;</span> <span class="op">:</span><span class="st"> </span>[],
+                   <span class="st">&quot;family&quot;</span> <span class="op">:</span><span class="st"> &quot;Whiteford&quot;</span>,
+                   <span class="st">&quot;given&quot;</span> <span class="op">:</span><span class="st"> &quot;N.&quot;</span>}],
+     <span class="st">&quot;container-title&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;Nucleic Acids Research&quot;</span>],
+     <span class="st">&quot;reference-count&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">0</span>,
+     <span class="st">&quot;page&quot;</span> <span class="op">:</span><span class="st"> &quot;e171-e171&quot;</span>,
+     <span class="st">&quot;deposited&quot;</span> <span class="op">:</span><span class="st"> </span>{<span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2013</span>,<span class="dv">8</span>,<span class="dv">8</span>]],
+                    <span class="st">&quot;timestamp&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1375920000000</span>},
+     <span class="st">&quot;issue&quot;</span> <span class="op">:</span><span class="st"> &quot;19&quot;</span>,
+     <span class="st">&quot;title&quot;</span> <span class="op">:</span>
+<span class="st">       </span>[<span class="st">&quot;An analysis of the feasibility of short read sequencing&quot;</span>],
+     <span class="st">&quot;type&quot;</span> <span class="op">:</span><span class="st"> &quot;journal-article&quot;</span>,
+     <span class="st">&quot;DOI&quot;</span> <span class="op">:</span><span class="st"> &quot;10.1093/nar/gni170&quot;</span>,
+     <span class="st">&quot;ISSN&quot;</span> <span class="op">:</span><span class="st"> </span>[<span class="st">&quot;0305-1048&quot;</span>,<span class="st">&quot;1362-4962&quot;</span>],
+     <span class="st">&quot;URL&quot;</span> <span class="op">:</span><span class="st"> &quot;http://dx.doi.org/10.1093/nar/gni170&quot;</span>,
+     <span class="st">&quot;source&quot;</span> <span class="op">:</span><span class="st"> &quot;Crossref&quot;</span>,
+     <span class="st">&quot;publisher&quot;</span> <span class="op">:</span><span class="st"> &quot;Oxford University Press (OUP)&quot;</span>,
+     <span class="st">&quot;indexed&quot;</span> <span class="op">:</span><span class="st"> </span>{<span class="st">&quot;date-parts&quot;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2015</span>,<span class="dv">6</span>,<span class="dv">8</span>]],
+                  <span class="st">&quot;timestamp&quot;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1433777291246</span>},
+     <span class="st">&quot;volume&quot;</span> <span class="op">:</span><span class="st"> &quot;33&quot;</span>,
+     <span class="st">&quot;member&quot;</span> <span class="op">:</span><span class="st"> &quot;http://id.crossref.org/member/286&quot;</span>
+   }
+<span class="er">}</span></code></pre></div>
+<p>This is a package of JavaScript Object Notation (JSON)<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a> data returned in response to a query. The query is contained entirely in the URL, which can be broken up into pieces: the root URL (<a href="http://api.crossref.org" class="uri">http://api.crossref.org</a>) and a data “query,” in this case made up of a “field” (<code>works</code>) and an identifier (the DOI <code>10.1093/nar/gni170</code>). The Crossref API provides information about the article identified with this specific DOI.</p>
 </div>
 </div>
 <div id="using-an-api" class="section level2">
 <h2><span class="header-section-number">2.4</span> Using an API</h2>
-<p>Similar to what we did with web scraping, using an API involves 1)
-constructing HTTP requests and 2) Processing the data that are
-returned. Here we use the Crossref API to illustrate how this is done.
-Crossref is the provider of DOIs used by
-many publishers to uniquely identify scholarly works. Crossref is not
-the only organization to provide DOIs. The scholarly communication space
-DataCite is another important provider. The documentation is available
-at the Crossref website <span class="citation">(Ward, <a href="#ref-crossref">n.d.</a>)</span>.</p>
-<p>Once again the <code>requests</code> Python library provides a series of convenience
-functions that make it easier to make HTTP calls and to process returned JSON.
-Our first step is to import the module and set a base URL variable.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import requests</a>
-<a class="sourceLine" id="cb12-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>BASE_URL =<span class="st"> &quot;http://api.crossref.org/&quot;</span></a></code></pre></div>
-<p>A simple example is to obtain metadata for an article associated with a
-specific DOI. This is a straightforward call to the Crossref API,
-similar to what we saw earlier.</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>doi =<span class="st"> &quot;10.1093/nar/gni170&quot;</span></a>
-<a class="sourceLine" id="cb13-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>query =<span class="st"> &quot;works/&quot;</span></a>
-<a class="sourceLine" id="cb13-3" title="3"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>url =<span class="st"> </span>BASE_URL <span class="op">+</span><span class="st"> </span>query <span class="op">+</span><span class="st"> </span>doi</a>
-<a class="sourceLine" id="cb13-4" title="4"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response =<span class="st"> </span><span class="kw">requests.get</span>(url)</a>
-<a class="sourceLine" id="cb13-5" title="5"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>url</a>
-<a class="sourceLine" id="cb13-6" title="6">http<span class="op">:</span><span class="er">//</span>api.crossref.org<span class="op">/</span>works<span class="op">/</span><span class="fl">10.1093</span><span class="op">/</span>nar<span class="op">/</span>gni170</a>
-<a class="sourceLine" id="cb13-7" title="7"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code</a>
-<a class="sourceLine" id="cb13-8" title="8"><span class="dv">200</span></a></code></pre></div>
-<p>The <code>response</code> object that the <code>requests</code> library has created has a
-range of useful
-information, including the URL called and the response code from the web
-server (in this case 200, which means everything is OK). We need the
-JSON body from the response object (which is currently text from the
-perspective of our script) converted to a Python dictionary. The
-<code>requests</code> module
-provides a convenient function for performing this conversion, as the
-following code shows. (All strings in the output are in Unicode, hence
-the <code>u´</code> notation.)</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict =<span class="st"> </span><span class="kw">response.json</span>()</a>
-<a class="sourceLine" id="cb14-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict</a>
-<a class="sourceLine" id="cb14-3" title="3">{ u<span class="st">&#39;message&#39;</span> <span class="op">:</span></a>
-<a class="sourceLine" id="cb14-4" title="4"><span class="st">  </span>{ u<span class="st">&#39;DOI&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;10.1093/nar/gni170&#39;</span>,</a>
-<a class="sourceLine" id="cb14-5" title="5">    u<span class="st">&#39;ISSN&#39;</span> <span class="op">:</span><span class="st"> </span>[ u<span class="st">&#39;0305-1048&#39;</span>, u<span class="st">&#39;1362-4962&#39;</span> ],</a>
-<a class="sourceLine" id="cb14-6" title="6">    u<span class="st">&#39;URL&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://dx.doi.org/10.1093/nar/gni170&#39;</span>,</a>
-<a class="sourceLine" id="cb14-7" title="7">    u<span class="st">&#39;author&#39;</span> <span class="op">:</span><span class="st"> </span>[ {u<span class="st">&#39;affiliation&#39;</span> <span class="op">:</span><span class="st"> </span>[],</a>
-<a class="sourceLine" id="cb14-8" title="8">                   u<span class="st">&#39;family&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Whiteford&#39;</span>,</a>
-<a class="sourceLine" id="cb14-9" title="9">                   u<span class="st">&#39;given&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;N.&#39;</span>} ],</a>
-<a class="sourceLine" id="cb14-10" title="10">    u<span class="st">&#39;container-title&#39;</span> <span class="op">:</span><span class="st"> </span>[ u<span class="st">&#39;Nucleic Acids Research&#39;</span> ],</a>
-<a class="sourceLine" id="cb14-11" title="11">    u<span class="st">&#39;deposited&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2013</span>, <span class="dv">8</span>, <span class="dv">8</span>]],</a>
-<a class="sourceLine" id="cb14-12" title="12">                     u<span class="st">&#39;timestamp&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1375920000000</span> },</a>
-<a class="sourceLine" id="cb14-13" title="13">    u<span class="st">&#39;indexed&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2015</span>, <span class="dv">6</span>, <span class="dv">8</span>]],</a>
-<a class="sourceLine" id="cb14-14" title="14">                   u<span class="st">&#39;timestamp&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1433777291246</span> },</a>
-<a class="sourceLine" id="cb14-15" title="15">    u<span class="st">&#39;issue&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;19&#39;</span>,</a>
-<a class="sourceLine" id="cb14-16" title="16">    u<span class="st">&#39;issued&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2005</span>, <span class="dv">10</span>, <span class="dv">24</span>]] },</a>
-<a class="sourceLine" id="cb14-17" title="17">    u<span class="st">&#39;member&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://id.crossref.org/member/286&#39;</span>,</a>
-<a class="sourceLine" id="cb14-18" title="18">    u<span class="st">&#39;page&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;e171-e171&#39;</span>,</a>
-<a class="sourceLine" id="cb14-19" title="19">    u<span class="st">&#39;prefix&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://id.crossref.org/prefix/10.1093&#39;</span>,</a>
-<a class="sourceLine" id="cb14-20" title="20">    u<span class="st">&#39;publisher&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Oxford University Press (OUP)&#39;</span>,</a>
-<a class="sourceLine" id="cb14-21" title="21">    u<span class="st">&#39;reference-count&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">0</span>,</a>
-<a class="sourceLine" id="cb14-22" title="22">    u<span class="st">&#39;score&#39;</span> <span class="op">:</span><span class="st"> </span><span class="fl">1.0</span>,</a>
-<a class="sourceLine" id="cb14-23" title="23">    u<span class="st">&#39;source&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Crossref&#39;</span>,</a>
-<a class="sourceLine" id="cb14-24" title="24">    u<span class="st">&#39;subject&#39;</span> <span class="op">:</span><span class="st"> </span>[u<span class="st">&#39;Genetics&#39;</span>],</a>
-<a class="sourceLine" id="cb14-25" title="25">    u<span class="st">&#39;subtitle&#39;</span> <span class="op">:</span><span class="st"> </span>[],</a>
-<a class="sourceLine" id="cb14-26" title="26">    u<span class="st">&#39;title&#39;</span> <span class="op">:</span><span class="st"> </span>[u<span class="st">&#39;An analysis of the feasibility of short read sequencing&#39;</span>],</a>
-<a class="sourceLine" id="cb14-27" title="27">    u<span class="st">&#39;type&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;journal-article&#39;</span>,</a>
-<a class="sourceLine" id="cb14-28" title="28">    u<span class="st">&#39;volume&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;33&#39;</span></a>
-<a class="sourceLine" id="cb14-29" title="29">  },</a>
-<a class="sourceLine" id="cb14-30" title="30">  u<span class="st">&#39;message-type&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;work&#39;</span>,</a>
-<a class="sourceLine" id="cb14-31" title="31">  u<span class="st">&#39;message-version&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;1.0.0&#39;</span>,</a>
-<a class="sourceLine" id="cb14-32" title="32">  u<span class="st">&#39;status&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;ok&#39;</span></a>
-<a class="sourceLine" id="cb14-33" title="33">}</a></code></pre></div>
-<p>This data object can now be processed in whatever way the user wishes,
-using standard manipulation techniques.</p>
-<p>The Crossref API can, of course, do much more than simply look up
-article metadata. It is also valuable as a search resource and for
-cross-referencing information by journal, funder, publisher, and other
-criteria. More details can be found at the Crossref website.</p>
+<p>Similar to what we did with web scraping, using an API involves 1) constructing HTTP requests and 2) Processing the data that are returned. Here we use the Crossref API to illustrate how this is done. Crossref is the provider of DOIs used by many publishers to uniquely identify scholarly works. Crossref is not the only organization to provide DOIs. The scholarly communication space DataCite is another important provider. The documentation is available at the Crossref website <span class="citation">(Ward, n.d.)</span>.</p>
+<p>Once again the <code>requests</code> Python library provides a series of convenience functions that make it easier to make HTTP calls and to process returned JSON. Our first step is to import the module and set a base URL variable.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import requests
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>BASE_URL =<span class="st"> &quot;http://api.crossref.org/&quot;</span></code></pre></div>
+<p>A simple example is to obtain metadata for an article associated with a specific DOI. This is a straightforward call to the Crossref API, similar to what we saw earlier.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>doi =<span class="st"> &quot;10.1093/nar/gni170&quot;</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>query =<span class="st"> &quot;works/&quot;</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>url =<span class="st"> </span>BASE_URL <span class="op">+</span><span class="st"> </span>query <span class="op">+</span><span class="st"> </span>doi
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response =<span class="st"> </span><span class="kw">requests.get</span>(url)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>url
+http<span class="op">:</span><span class="er">//</span>api.crossref.org<span class="op">/</span>works<span class="op">/</span><span class="fl">10.1093</span><span class="op">/</span>nar<span class="op">/</span>gni170
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response.status_code
+<span class="dv">200</span></code></pre></div>
+<p>The <code>response</code> object that the <code>requests</code> library has created has a range of useful information, including the URL called and the response code from the web server (in this case 200, which means everything is OK). We need the JSON body from the response object (which is currently text from the perspective of our script) converted to a Python dictionary. The <code>requests</code> module provides a convenient function for performing this conversion, as the following code shows. (All strings in the output are in Unicode, hence the <code>u´</code> notation.)</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict =<span class="st"> </span><span class="kw">response.json</span>()
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>response_dict
+{ u<span class="st">&#39;message&#39;</span> <span class="op">:</span>
+<span class="st">  </span>{ u<span class="st">&#39;DOI&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;10.1093/nar/gni170&#39;</span>,
+    u<span class="st">&#39;ISSN&#39;</span> <span class="op">:</span><span class="st"> </span>[ u<span class="st">&#39;0305-1048&#39;</span>, u<span class="st">&#39;1362-4962&#39;</span> ],
+    u<span class="st">&#39;URL&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://dx.doi.org/10.1093/nar/gni170&#39;</span>,
+    u<span class="st">&#39;author&#39;</span> <span class="op">:</span><span class="st"> </span>[ {u<span class="st">&#39;affiliation&#39;</span> <span class="op">:</span><span class="st"> </span>[],
+                   u<span class="st">&#39;family&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Whiteford&#39;</span>,
+                   u<span class="st">&#39;given&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;N.&#39;</span>} ],
+    u<span class="st">&#39;container-title&#39;</span> <span class="op">:</span><span class="st"> </span>[ u<span class="st">&#39;Nucleic Acids Research&#39;</span> ],
+    u<span class="st">&#39;deposited&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2013</span>, <span class="dv">8</span>, <span class="dv">8</span>]],
+                     u<span class="st">&#39;timestamp&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1375920000000</span> },
+    u<span class="st">&#39;indexed&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2015</span>, <span class="dv">6</span>, <span class="dv">8</span>]],
+                   u<span class="st">&#39;timestamp&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">1433777291246</span> },
+    u<span class="st">&#39;issue&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;19&#39;</span>,
+    u<span class="st">&#39;issued&#39;</span> <span class="op">:</span><span class="st"> </span>{ u<span class="st">&#39;date-parts&#39;</span> <span class="op">:</span><span class="st"> </span>[[<span class="dv">2005</span>, <span class="dv">10</span>, <span class="dv">24</span>]] },
+    u<span class="st">&#39;member&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://id.crossref.org/member/286&#39;</span>,
+    u<span class="st">&#39;page&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;e171-e171&#39;</span>,
+    u<span class="st">&#39;prefix&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;http://id.crossref.org/prefix/10.1093&#39;</span>,
+    u<span class="st">&#39;publisher&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Oxford University Press (OUP)&#39;</span>,
+    u<span class="st">&#39;reference-count&#39;</span> <span class="op">:</span><span class="st"> </span><span class="dv">0</span>,
+    u<span class="st">&#39;score&#39;</span> <span class="op">:</span><span class="st"> </span><span class="fl">1.0</span>,
+    u<span class="st">&#39;source&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;Crossref&#39;</span>,
+    u<span class="st">&#39;subject&#39;</span> <span class="op">:</span><span class="st"> </span>[u<span class="st">&#39;Genetics&#39;</span>],
+    u<span class="st">&#39;subtitle&#39;</span> <span class="op">:</span><span class="st"> </span>[],
+    u<span class="st">&#39;title&#39;</span> <span class="op">:</span><span class="st"> </span>[u<span class="st">&#39;An analysis of the feasibility of short read sequencing&#39;</span>],
+    u<span class="st">&#39;type&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;journal-article&#39;</span>,
+    u<span class="st">&#39;volume&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;33&#39;</span>
+  },
+  u<span class="st">&#39;message-type&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;work&#39;</span>,
+  u<span class="st">&#39;message-version&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;1.0.0&#39;</span>,
+  u<span class="st">&#39;status&#39;</span> <span class="op">:</span><span class="st"> </span>u<span class="st">&#39;ok&#39;</span>
+}</code></pre></div>
+<p>This data object can now be processed in whatever way the user wishes, using standard manipulation techniques.</p>
+<p>The Crossref API can, of course, do much more than simply look up article metadata. It is also valuable as a search resource and for cross-referencing information by journal, funder, publisher, and other criteria. More details can be found at the Crossref website.</p>
 </div>
 <div id="another-example-using-the-orcid-api-via-a-wrapper" class="section level2">
 <h2><span class="header-section-number">2.5</span> Another example: Using the ORCID API via a wrapper</h2>
-<p>ORCID, which stands for “Open Research and Contributor Identifier” (see
-<a href="orcid.org">orcid.org</a>; see also <span class="citation">(Haak et al. <a href="#ref-haak2012orcid">2012</a>)</span>), is a service that
-provides unique identifiers for researchers. Researchers can claim an
-ORCID profile and populate it with references to their research works,
-funding and affiliations. ORCID provides an API for interacting with
-this information. For many APIs there is a convenient Python wrapper
-that can be used. The ORCID–Python wrapper works with the ORCID v1.2
-API to make various API calls straightforward. This wrapper only works
-with the public ORCID API and can therefore only access publicly
-available data.</p>
-<p>Using the API and wrapper together provides a convenient means of
-getting this information. For instance, given an ORCID, it is
-straightforward to get profile information. Here we get a list of
-publications associated with my ORCID and look at the the first item on
-the list.</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb15-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import orcid</a>
-<a class="sourceLine" id="cb15-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn =<span class="st"> </span><span class="kw">orcid.get</span>(<span class="st">&quot;0000-0002-0068-716X&quot;</span>)</a>
-<a class="sourceLine" id="cb15-3" title="3"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn</a>
-<a class="sourceLine" id="cb15-4" title="4"><span class="op">&lt;</span>Author Cameron Neylon, ORCID <span class="dv">0000-0002-0068</span><span class="op">-</span>716X<span class="op">&gt;</span></a>
-<a class="sourceLine" id="cb15-5" title="5"><span class="er">&gt;&gt;</span><span class="st"> </span>cn.publications[<span class="dv">0</span>]</a>
-<a class="sourceLine" id="cb15-6" title="6"><span class="op">&lt;</span>Publication <span class="st">&quot;Principles for Open Scholarly Infrastructures-v1&quot;</span><span class="op">&gt;</span></a></code></pre></div>
-<p>The wrapper has created Python objects that make it easier to work with
-and manipulate the data. It is common to take the return from an API and
-create objects that behave as would be expected in Python. For instance,
-the <code>publications</code> object is a list populated with publications (which are also
-Python-like objects). Each publication in the list has its own
-attributes, which can then be examined individually. In this case the
-external IDs attribute is a list of further objects that include a DOI
-for the article and the ISSN of the journal the article was published
-in.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb16-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(cn.publications)</a>
-<a class="sourceLine" id="cb16-2" title="2"><span class="dv">70</span></a>
-<a class="sourceLine" id="cb16-3" title="3"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn.publications[<span class="dv">12</span>].external_ids</a>
-<a class="sourceLine" id="cb16-4" title="4">[<span class="op">&lt;</span>ExternalID DOI<span class="op">:</span><span class="fl">10.1371</span><span class="op">/</span>journal.pbio<span class="fl">.1001677</span><span class="op">&gt;</span>, <span class="op">&lt;</span>ExternalID ISSN<span class="op">:</span><span class="dv">1545-7885</span><span class="op">&gt;</span>]</a></code></pre></div>
-<p>As a simple example of data processing, we can iterate over the list of
-publications to identify those for which a DOI has been provided. In
-this case we can see that of the 70 publications listed in this ORCID
-profile (at the time of testing), 66 have DOIs.</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb17-1" title="1"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>exids =<span class="st"> </span>[]</a>
-<a class="sourceLine" id="cb17-2" title="2"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> pub <span class="cf">in</span> cn.publications<span class="op">:</span></a>
-<a class="sourceLine" id="cb17-3" title="3"><span class="st">        </span><span class="cf">if</span> pub.external_ids<span class="op">:</span></a>
-<a class="sourceLine" id="cb17-4" title="4"><span class="st">        </span>exids =<span class="st"> </span>exids <span class="op">+</span><span class="st"> </span>pub.external_ids</a>
-<a class="sourceLine" id="cb17-5" title="5"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>DOIs =<span class="st"> </span>[exid.id <span class="cf">for</span> exid <span class="cf">in</span> exids <span class="cf">if</span> exid.type <span class="op">==</span><span class="st"> &quot;DOI&quot;</span>]</a>
-<a class="sourceLine" id="cb17-6" title="6"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(DOIs)</a>
-<a class="sourceLine" id="cb17-7" title="7"><span class="dv">66</span></a></code></pre></div>
-<p>Wrappers generally make operating with an API simpler and cleaner by
-abstracting away the details of making HTTP requests. Achieving the same
-by directly interacting with the ORCID API would require constructing
-the appropriate URLs and parsing the returned data into a usable form.
-Where a wrapper is available it is generally much easier to use.
-However, wrappers may not be actively developed and may lag the
-development of the API. Where possible, use a wrapper that is directly
-supported or recommended by the API provider.</p>
+<p>ORCID, which stands for “Open Research and Contributor Identifier” (see <a href="orcid.org" class="uri">orcid.org</a>; see also <span class="citation">(Haak et al. <a href="#ref-haak2012orcid">2012</a>)</span>), is a service that provides unique identifiers for researchers. Researchers can claim an ORCID profile and populate it with references to their research works, funding and affiliations. ORCID provides an API for interacting with this information. For many APIs there is a convenient Python wrapper that can be used. The ORCID–Python wrapper works with the ORCID v1.2 API to make various API calls straightforward. This wrapper only works with the public ORCID API and can therefore only access publicly available data.</p>
+<p>Using the API and wrapper together provides a convenient means of getting this information. For instance, given an ORCID, it is straightforward to get profile information. Here we get a list of publications associated with my ORCID and look at the the first item on the list.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>import orcid
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn =<span class="st"> </span><span class="kw">orcid.get</span>(<span class="st">&quot;0000-0002-0068-716X&quot;</span>)
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn
+<span class="op">&lt;</span>Author Cameron Neylon, ORCID <span class="dv">0000</span><span class="op">-</span><span class="dv">0002</span><span class="op">-</span><span class="dv">0068</span><span class="op">-</span>716X<span class="op">&gt;</span>
+<span class="er">&gt;&gt;</span><span class="st"> </span>cn.publications[<span class="dv">0</span>]
+<span class="op">&lt;</span>Publication <span class="st">&quot;Principles for Open Scholarly Infrastructures-v1&quot;</span><span class="op">&gt;</span></code></pre></div>
+<p>The wrapper has created Python objects that make it easier to work with and manipulate the data. It is common to take the return from an API and create objects that behave as would be expected in Python. For instance, the <code>publications</code> object is a list populated with publications (which are also Python-like objects). Each publication in the list has its own attributes, which can then be examined individually. In this case the external IDs attribute is a list of further objects that include a DOI for the article and the ISSN of the journal the article was published in.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(cn.publications)
+<span class="dv">70</span>
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>cn.publications[<span class="dv">12</span>].external_ids
+[<span class="op">&lt;</span>ExternalID DOI<span class="op">:</span><span class="fl">10.1371</span><span class="op">/</span>journal.pbio.<span class="dv">1001677</span><span class="op">&gt;</span>, <span class="op">&lt;</span>ExternalID ISSN<span class="op">:</span><span class="dv">1545</span><span class="op">-</span><span class="dv">7885</span><span class="op">&gt;</span>]</code></pre></div>
+<p>As a simple example of data processing, we can iterate over the list of publications to identify those for which a DOI has been provided. In this case we can see that of the 70 publications listed in this ORCID profile (at the time of testing), 66 have DOIs.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>exids =<span class="st"> </span>[]
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="cf">for</span> pub <span class="cf">in</span> cn.publications<span class="op">:</span>
+<span class="st">        </span><span class="cf">if</span> pub.external_ids<span class="op">:</span>
+<span class="st">        </span>exids =<span class="st"> </span>exids <span class="op">+</span><span class="st"> </span>pub.external_ids
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span>DOIs =<span class="st"> </span>[exid.id <span class="cf">for</span> exid <span class="cf">in</span> exids <span class="cf">if</span> exid.type <span class="op">==</span><span class="st"> &quot;DOI&quot;</span>]
+<span class="op">&gt;</span><span class="er">&gt;</span><span class="st"> </span><span class="kw">len</span>(DOIs)
+<span class="dv">66</span></code></pre></div>
+<p>Wrappers generally make operating with an API simpler and cleaner by abstracting away the details of making HTTP requests. Achieving the same by directly interacting with the ORCID API would require constructing the appropriate URLs and parsing the returned data into a usable form. Where a wrapper is available it is generally much easier to use. However, wrappers may not be actively developed and may lag the development of the API. Where possible, use a wrapper that is directly supported or recommended by the API provider.</p>
 </div>
 <div id="integrating-data-from-multiple-sources" class="section level2">
 <h2><span class="header-section-number">2.6</span> Integrating data from multiple sources</h2>
-<p>We often must work across multiple data sources to gather the
-information needed to answer a research question. A common pattern is to
-search in one location to create a list of identifiers and then use
-those identifiers to query another API. In the ORCID example above, we
-created a list of DOIs from a single ORCID profile. We could use those
-DOIs to obtain further information from the Crossref API and other
-sources. This models a common path for analysis of research outputs:
-identifying a corpus and then seeking information on its performance.</p>
+<p>We often must work across multiple data sources to gather the information needed to answer a research question. A common pattern is to search in one location to create a list of identifiers and then use those identifiers to query another API. In the ORCID example above, we created a list of DOIs from a single ORCID profile. We could use those DOIs to obtain further information from the Crossref API and other sources. This models a common path for analysis of research outputs: identifying a corpus and then seeking information on its performance.</p>
 <p>One task we often want to do is to analyze relationships between people. As an exercise, we suggest writing code that is able to generate data about relationships between researchers working in similar areas. This could involve using data sources related to researchers, publications, citations and tweets about those publications, and researchers who are citing or tweeting about them. One way of generating this data for further analysis is to use APIs that give you different pieces of this information and connect them programmatically. We could take the following steps to do that:</p>
-<p>Given a twitter handle, get the ORCID for that twitter handle. From the ORCID,
-get a list of DOIs. For each DOI, get citations, citing articles, tweets (and twitter handles) associated.</p>
+<p>Given a twitter handle, get the ORCID for that twitter handle. From the ORCID, get a list of DOIs. For each DOI, get citations, citing articles, tweets (and twitter handles) associated.</p>
 <p>The result is a list of related twitter handles that can be analyzed to look for communities and networks.</p>
 <!--  You can see how this would be done in a worked-out example here todo: INSERT LINK/REFERENCE to notebook code -->
-<p>The goal of this example is to use ORCID and Crossref to
-collect a set of identifiers and use a range of APIs to gather metadata and information the articles performance. The worked example is using the PLOS Lagotto API. Lagotto is the software that was built to support the Article Level Metrics program at PLOS, the open access publisher, and its API provides information on various metrics of PLOS articles. A
-range of other publishers and service providers, including Crossref,
-also provide an instance of this API, meaning the same tools can be used
-to collect information on articles from a range of sources.</p>
+<p>The goal of this example is to use ORCID and Crossref to collect a set of identifiers and use a range of APIs to gather metadata and information the articles performance. The worked example is using the PLOS Lagotto API. Lagotto is the software that was built to support the Article Level Metrics program at PLOS, the open access publisher, and its API provides information on various metrics of PLOS articles. A range of other publishers and service providers, including Crossref, also provide an instance of this API, meaning the same tools can be used to collect information on articles from a range of sources.</p>
 </div>
 <div id="summary" class="section level2">
 <h2><span class="header-section-number">2.7</span> Summary</h2>
-<p>This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. There are many good introductions to web scraping using BeautifulSoup and other libraries as well as API usage in general. In addition, the <em>APIs</em> notebook of Chapter <a href="chap-workbooks.html#chap:workbooks">Workbooks</a> provides a practical introduction to some of these techniques.<a href="#fn11" class="footnote-ref" id="fnref11"><sup>11</sup></a> Given the pace at which APIs and Python libraries change, however, the best and most up to date source of information is likely to be a web search.</p>
+<p>This chapter focused on approaches to augment our data with external data sources on the Web. We provided steps and code to gather data web pages directly or through Application Programming Interfaces (APIs). While scraping websites is often necessary, it can be fragile because 1) many websites are designed in ways that make scraping difficult or impossible (or explicitly prohibit it), and 2) the structure of websites also changes frequently, forcing you to continuously modify your code to match their structure. Increasingly, organizations are providing APIs to enable scripted and programmatic access to the data they hold. There are many good introductions to web scraping using BeautifulSoup and other libraries as well as API usage in general. In addition, the <em>APIs</em> notebook of Chapter <a href="chap-workbooks.html#chap:workbooks">Workbooks</a> provides a practical introduction to some of these techniques.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a> Given the pace at which APIs and Python libraries change, however, the best and most up to date source of information is likely to be a web search.</p>
 <p>As we collect data through scraping and APIs, we then have to understand how to effectively integrate it with our primary data since we may not have access to unique and reliable identifiers. The next chapter Chapter <a href="chap-link.html#chap:link">Record Linkage</a> deals with issues of data cleaning, disambiguation, and linking different types of data sources to perform further analysis and research.</p>
 
 <!-- % done -->
@@ -1086,13 +839,13 @@ to collect information on articles from a range of sources.</p>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-fielding2002principled">
-<p>Fielding, Roy T., and Richard N. Taylor. 2002. “Principled Design of the Modern Web Architecture.” <em>ACM Transactions on Internet Technology</em> 2 (2): 115–50.</p>
+<p>Fielding, Roy T., and Richard N. Taylor. 2002. “Principled Design of the Modern Web Architecture.” <em>ACM Transactions on Internet Technology</em> 2 (2). ACM: 115–50.</p>
 </div>
 <div id="ref-Goebel2018">
 <p>Göbel, Sascha, and Simon Munzert. 2018. “Political Advertising on the Wikipedia Marketplace of Information.” <em>Social Science Computer Review</em> 36 (2): 157–75.</p>
 </div>
 <div id="ref-haak2012orcid">
-<p>Haak, Laurel L., Martin Fenner, Laura Paglione, Ed Pentz, and Howard Ratner. 2012. “ORCID: A System to Uniquely Identify Researchers.” <em>Learned Publishing</em> 25 (4): 259–64.</p>
+<p>Haak, Laurel L., Martin Fenner, Laura Paglione, Ed Pentz, and Howard Ratner. 2012. “ORCID: A System to Uniquely Identify Researchers.” <em>Learned Publishing</em> 25 (4). Association of Learned; Professional Society Publishers: 259–64.</p>
 </div>
 <div id="ref-Kim2016">
 <p>Kim, Y., J. Huang, and S. Emery. 2016. “Garbage in, Garbage Out: Data Collection, Quality Assessment and Reporting Standards for Social Media Data Use in Health Research, Infodemiology and Digital Disease Detection.” <em>Journal of Medical Internet Research</em> 18 (2).</p>
@@ -1100,26 +853,14 @@ to collect information on articles from a range of sources.</p>
 <div id="ref-King2013">
 <p>King, Gary, Jennifer Pan, and Margaret E. Roberts. 2013. “How Censorship in China Allows Government Criticism but Silences Collective Expression.” <em>American Political Science Review</em> 107 (2): 1–18.</p>
 </div>
-<div id="ref-nsfweb">
-<p>National Science Foundation. n.d. “Download Awards by Year.” <a href="http://nsf.gov/awardsearch/download.jsp">http://nsf.gov/awardsearch/download.jsp</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-bsoup">
-<p>Richardson, Leonard. n.d. “Beautiful Soup.” <a href="http://www.crummy.com/software/BeautifulSoup/">http://www.crummy.com/software/BeautifulSoup/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-crossref">
-<p>Ward, Karl J. n.d. “Crossref REST API.” <a href="http://api.crossref.org">http://api.crossref.org</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-RESTwiki">
-<p>Wikipedia. n.d. “Representational State Transfer.” <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">https://en.wikipedia.org/wiki/Representational_state_transfer</a>. Accessed January 10, 2016.</p>
-</div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="8">
-<li id="fn8"><p>The chapter <a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a> will discuss ethical issues when dealing with and using “publically” available data for research and policy purposes.<a href="chap-web.html#fnref8" class="footnote-back">↩</a></p></li>
-<li id="fn9"><p>If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: <a href="https://textbook.coleridgeinitiative.org/submitexamples" class="uri">https://textbook.coleridgeinitiative.org/submitexamples</a><a href="chap-web.html#fnref9" class="footnote-back">↩</a></p></li>
-<li id="fn10"><p>JSON is an open standard way of storing and exchanging data.<a href="chap-web.html#fnref10" class="footnote-back">↩</a></p></li>
-<li id="fn11"><p>See <a href="https://workbooks.coleridgeinitiative.org" class="uri">https://workbooks.coleridgeinitiative.org</a>.<a href="chap-web.html#fnref11" class="footnote-back">↩</a></p></li>
+<li id="fn8"><p>The chapter <a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a> will discuss ethical issues when dealing with and using “publically” available data for research and policy purposes.<a href="chap-web.html#fnref8">↩</a></p></li>
+<li id="fn9"><p>If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: <a href="https://textbook.coleridgeinitiative.org/submitexamples" class="uri">https://textbook.coleridgeinitiative.org/submitexamples</a><a href="chap-web.html#fnref9">↩</a></p></li>
+<li id="fn10"><p>JSON is an open standard way of storing and exchanging data.<a href="chap-web.html#fnref10">↩</a></p></li>
+<li id="fn11"><p>See <a href="https://workbooks.coleridgeinitiative.org" class="uri">https://workbooks.coleridgeinitiative.org</a>.<a href="chap-web.html#fnref11">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -1145,13 +886,11 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
-<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
-<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -1159,11 +898,12 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
+"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -1175,10 +915,6 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
-"link": null,
-"text": null
-},
-"view": {
 "link": null,
 "text": null
 },
@@ -1195,7 +931,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "true";
+    var src = "";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
