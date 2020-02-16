@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -469,12 +469,12 @@ Figure 10.1: A typical rectangular data file format
 <div id="sec:10-4" class="section level2">
 <h2><span class="header-section-number">10.4</span> Errors in data analysis</h2>
 <p>The total error framework described above focuses on different types of errors in the data that can lead to incorrect inference. In addition to direct inference errors because of errors in the data, our analysis can also be incorrect because of these data errors. This section goes deeper into these common types of analysis errors when analyzing a diverse set of data sources. We begin by exploring errors that can happen under the assumption of accurate data and then go on to consider errors in three common types of analysis when data is not accurate: classification, correlation, and regression.</p>
-<p>Analysis errors despite accurate data</p>
+<p><strong>Analysis errors despite accurate data</strong></p>
 <p>Data deficiencies represent only one set of challenges for the big data analyst. Even if data is correct, other challenges can arise solely as a result of the massive size, rapid generation, and vast dimensionality of the data <span class="citation">(Meng <a href="#ref-meng2018">2018</a>)</span>. Fan et al. <span class="citation">(Fan, Han, and Liu <a href="#ref-fan2014challenges">2014</a>)</span> identify three issues— noise accumulation, spurious correlations, and incidental endogeneity—which will be discussed in this section. These issues should concern social scientists even if the data could be regarded as infallible. Content errors, missing data, and other data deficiencies will only exacerbate these problems.</p>
-<p>Noise accumulation**</p>
+<p><strong>Noise accumulation</strong></p>
 <p>To illustrate noise accumulation, Fan et al. <span class="citation">(Fan, Han, and Liu <a href="#ref-fan2014challenges">2014</a>)</span> consider the following scenario. Suppose an analyst is interested in classifying individuals into two categories, <span class="math inline">\(C_{1}\)</span> and <span class="math inline">\(C_{2}\)</span>, based upon the values of 1,000 variables in a big data set. Suppose further that, unknown to the researcher, the mean value for persons in <span class="math inline">\(C_{1}\)</span> is 0 on all 1,000 variables while persons in <span class="math inline">\(C_{2}\)</span> have a mean of 3 on the first 10 variables and 0 on all other variables. Since we are assuming the data are error-free, a classification rule based upon the first <span class="math inline">\(m \le 10\)</span> variables performs quite well, with little classification error. However, as more and more variables are included in the rule, classification error increases because the uninformative variables (i.e., the 990 variables having no discriminating power) eventually overwhelm the informative signals (i.e., the first 10 variables). In the Fan et al. <span class="citation">(Fan, Han, and Liu <a href="#ref-fan2014challenges">2014</a>)</span> example, when <span class="math inline">\(m &gt; 200\)</span>, the accumulated noise exceeds the signal embedded in the first 10 variables and the classification rule becomes equivalent to a coin-flip classification rule.</p>
 <hr />
-<p>Spurious correlations**</p>
+<p><strong>Spurious correlations</strong></p>
 <p>High dimensionality can also introduce coincidental (or <em>spurious</em>) correlations in that many unrelated variables may be highly correlated simply by chance, resulting in false discoveries and erroneous inferences. The phenomenon depicted in Figure <a href="chap-errors.html#fig:fig10-3">10.2</a>, is an illustration of this. Many more examples can be found on a website and in a book devoted to the topic <span class="citation">(Vigen, n.d.; Vigen <a href="#ref-spurious2">2015</a>)</span>. Fan et al. <span class="citation">(Fan, Han, and Liu <a href="#ref-fan2014challenges">2014</a>)</span> explain this phenomenon using simulated populations and relatively small sample sizes. They illustrate how, with 800 independent (i.e., uncorrelated) variables, the analyst has a 50% chance of observing an absolute correlation that exceeds 0.4. Their results suggest that there are considerable risks of false inference associated with a purely empirical approach to predictive analytics using high-dimensional data.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig10-3"></span>
 <img src="ChapterError/figures/fig10-3.png" alt="An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]" width="70%" />
@@ -482,7 +482,7 @@ Figure 10.1: A typical rectangular data file format
 Figure 10.2: An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline <span class="citation">(Sies <a href="#ref-sies1988new">1988</a>)</span>
 </p>
 </div>
-<p>Incidental Endogeneity**</p>
+<p><strong>Incidental Endogeneity</strong></p>
 <p>Finally, turning to incidental endogeneity, a key assumption in regression analysis is that the model covariates are uncorrelated with the residual error; endogeneity refers to a violation of this assumption. For high-dimensional models, this can occur purely by chance—a phenomenon Fan and Liao <span class="citation">(Fan and Liao <a href="#ref-fan2014endogeneity">2014</a>)</span> call <em>incidental endogeneity</em>. Incidental endogeneity leads to the modeling of spurious variation in the outcome variables resulting in errors in the model selection process and biases in the model predictions. The risks of incidental endogeneity increase as the number of variables in the model selection process grows large. Thus it is a particularly important concern for big data analytics.</p>
 <p>Fan et al. <span class="citation">(Fan, Han, and Liu <a href="#ref-fan2014challenges">2014</a>)</span> as well as a number of other authors <span class="citation">(Stock and Watson <a href="#ref-stock2002forecasting">2002</a>; Fan, Samworth, and Wu <a href="#ref-fan2009ultrahigh">2009</a>)</span> (see, for example, Hall and Miller <span class="citation">(Hall and Miller <a href="#ref-HallMiller2009">2009</a>)</span>; Fan and Liao, <span class="citation">(Fan and Liao <a href="#ref-FanLiao2012">2012</a>)</span>) suggest robust statistical methods aimed at mitigating the risks of noise accumulation, spurious correlations, and incidental endogeneity. However, as previously noted, these issues and others are further compounded when data errors are present in a data set. Biemer and Trewin <span class="citation">(Biemer and Trewin <a href="#ref-biemer1997review">1997</a>)</span> show that data errors will bias the results of traditional data analysis and inflate the variance of estimates in ways that are difficult to evaluate or mitigate in the analysis process.</p>
 <div id="sec:10-4.2" class="section level3">
@@ -696,7 +696,7 @@ Figure 10.6: Comparison of tableplots for the Dutch Structural Business Statisti
 <p>The <em>Journal of Official Statistics</em> <span class="citation">(JOS, n.d.)</span> is a standard resource with many relevant articles. There is also an annual international conference on the total survey error framework, supported by major survey organizations <span class="citation">(TSE15, n.d.)</span>.</p>
 <p>The <em>Errors and Inference</em> workbook of Chapter <a href="chap-workbooks.html#chap:workbooks">Workbooks</a> provides an introduction to sensitivity analysis and imputation.<a href="#fn72" class="footnoteRef" id="fnref72"><sup>72</sup></a></p>
 
-<!-- % fix cross-references, side margins, footnotes ^(...)? **** -->
+<!-- % footnotes ^(...)? **** -->
 </div>
 </div>
 <h3>References</h3>

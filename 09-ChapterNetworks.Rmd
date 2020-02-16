@@ -5,7 +5,6 @@ Networks: The Basics {#chap:networks}
 
 **Jason Owen-Smith**
 
-
 Social scientists are typically interested in describing the activities
 of individuals and organizations (such as households and firms) in a
 variety of economic and social contexts. The frame within which data has
@@ -31,7 +30,7 @@ Social Scientists have studied networks for a long time. A lot of the theory beh
 
 <!-- - Survey paper: http://keg.cs.tsinghua.edu.cn/jietang/publications/WWW17-Tang-Comp-Social-Science-Survey.pdf -->
 
-**Box 9.1: Network Analysis Examples**
+**Box: Network Analysis Examples** <a id="box:net1"></a>
 
 - **Example 1: Cascading Information**^[https://cs.stanford.edu/people/jure/pubs/recurrence-www16.pdf] [@ugander2011]. By using network analysis, researchers were able to characterize how information travels and recurs in patterns, exhibiting multiple bursts of popularity.
 
@@ -253,8 +252,7 @@ people. Transforming two-mode data into one-mode projections is a fairly
 simple matter. If $\mathbf{X}$ is a rectangular matrix, $p \times g$,
 then a one-mode projection, $p \times p$, can be obtained by multiplying
 $\mathbf{X}$ by its transpose $\mathbf{X}'$.
-Figure \@ref(fig:fig8-3)
-summarizes this transformation.
+Figure \@ref(fig:fig8-3) summarizes this transformation.
 
 ```{r fig8-3, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Two-mode affiliation data'}
 knitr::include_graphics("ChapterNetworks/figures/fig8-3.png")
@@ -318,9 +316,8 @@ I assume that a tie exists between two university research employees
 when they are paid any wages from the same grant during the same year.
 Other time frames or thresholds might be used to define ties if
 appropriate for particular analyses^[Key insight: Care must
-be taken when inducing
-one-mode network projections from two-mode network data because not all
-affiliations provide equally
+be taken when inducing one-mode network projections from two-mode 
+network data because not all affiliations provide equally
 compelling evidence of actual social relationships.].
 
 Network measures
@@ -335,10 +332,9 @@ individual or group are a function of the complete pattern of
 connections among them. In other words, the explanatory power of
 networks is driven as much by the pathways that *indirectly* connect
 nodes as by the particular relationships that *directly* link members of
-a given dyad. Indirect ties create reachability in a network^[Key insight: Structural analysis of outcomes for
-any individual or group are
-a function of the complete pattern of connections
-among them.].
+a given dyad. Indirect ties create reachability in a network^[Key insight:
+Structural analysis of outcomes for any individual or group are
+a function of the complete pattern of connections among them.].
 
 ### Reachability
 
@@ -360,12 +356,10 @@ the extent to which the other nodes in the network are connected to each
 other. The orange node (ego) in each network has four partners, but
 their positions are far from equivalent. Centrality measures on full
 network data can tease out the differences. The networks also vary in
-their gross characteristics. Those differences, too, are measurable^[ Key insight: Much of
-the power of networks (and
-their systemic features) is
-due to indirect ties that create reachability. Two nodes
-can reach each other if they
-are connected by an unbroken chain of relationships.
+their gross characteristics. Those differences, too, are measurable^[Key 
+insight: Much of the power of networks (and their systemic features) is
+due to indirect ties that create reachability. Two nodes can reach each 
+other if they are connected by an unbroken chain of relationships.
 These are often called indirect ties.].
 
 ```{r fig8-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Reachability and indirect ties'}
@@ -673,8 +667,8 @@ centrality measures that take more of the structural information from a
 complete network into account by using a variety of methods to account
 not just for the number of partners a particular ego might have but also
 for the prominence of those partners. Two well-known examples are
-eigenvector centrality and page rank (see [@newman2010networks Ch. 7.2
-and 8.4]).
+eigenvector centrality and page rank (see @newman2010networks Ch. 7.2
+and 8.4).
 
 Consider two additional measures that capture aspects of centrality that
 have more to do with the indirect ties that increase reachability. Both

@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -460,24 +460,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 <div id="definitions" class="section level3">
 <h3><span class="header-section-number">11.3.2</span> Definitions</h3>
-<p>Most of the metrics used to assess model fairness relate either to the types of errors a model might make or how predictive the model is across different groups. For binary classification models (which we focus on here), these are generally derived from values in the <em>confusion matrix</em> (see Figure 7.9 and Section 7.7.2 for more details): <!-- % 
-% TODO: fix these figure and section references
---></p>
+<p>Most of the metrics used to assess model fairness relate either to the types of errors a model might make or how predictive the model is across different groups. For binary classification models (which we focus on here), these are generally derived from values in the <em>confusion matrix</em> (see Figure <a href="chap-ml.html#fig:cm">7.9</a> and Chapter <a href="chap-ml.html#chap:ml">Machine Learning</a> for more details):</p>
 <ul>
 <li><p><strong>True Positives (<span class="math inline">\(TP\)</span>)</strong> are individuals for whom both the model prediction and actual outcome are positive labels.</p></li>
 <li><p><strong>False Positives (<span class="math inline">\(FP\)</span>)</strong> are individuals for whom both the model predicts a positive label, but the actual outcome is a negative label.</p></li>
 <li><p><strong>True Negatives (<span class="math inline">\(TN\)</span>)</strong> are individuals for whom both the model prediction and actual outcome are negative labels.</p></li>
 <li><p><strong>False Negatives (<span class="math inline">\(FN\)</span>)</strong> are individuals for whom both the model predicts a negative label, but the actual outcome is a positive label.</p></li>
 </ul>
-<p>Based on these four categories, we can calculate several ratios that are instructive for thinking about the equity of a model’s predictions in different situations (Sections <a href="chap-bias.html#sec:punitiveexample">punitive example</a> and <a href="chap-bias.html#sec:assistiveexample">assistive example</a> provide some detailed examples here): <!-- % 
-%can we move the following definitions or the equations to the side margin?
---> - <strong>False Positive Rate (<span class="math inline">\(FPR\)</span>)</strong> is the fraction of individuals with negative actual labels who the model misclassifies with a positive predicted label: <span class="math inline">\(FPR = FP / (FP+TN)\)</span></p>
+<p>Based on these four categories, we can calculate several ratios that are instructive for thinking about the equity of a model’s predictions in different situations (Sections <a href="chap-bias.html#sec:punitiveexample">punitive example</a> and <a href="chap-bias.html#sec:assistiveexample">assistive example</a> provide some detailed examples here):</p>
 <ul>
-<li><p><strong>False Negative Rate (<span class="math inline">\(FNR\)</span>)</strong> is the fraction of individuals with positive actual labels who the model misclassifies with a negative predicted label: <span class="math inline">\(FNR = FN / (FN+TP)\)</span></p></li>
-<li><p><strong>False Discovery Rate (<span class="math inline">\(FDR\)</span>)</strong> is the fraction of individuals who the model predicts to have a positive label but for whom the actual label is negative: <span class="math inline">\(FDR = FP / (FP+TP)\)</span></p></li>
-<li><p><strong>False Omission Rate (<span class="math inline">\(FOR\)</span>)</strong> is the fraction of individuals who the model predicts to have a negative label but for whom the actual label is positive: <span class="math inline">\(FOR = FN / (FN+TN)\)</span></p></li>
-<li><p><strong>Precision</strong> is the fraction of individuals who the model predicts to have a positive label about whom this prediction is correct: <span class="math inline">\(\textrm{precision} = TP / (FP+TP)\)</span></p></li>
-<li><p><strong>Recall</strong> is the fraction of individuals with positive actual labels who the model has correctly classified as such: <span class="math inline">\(\textrm{recall} = TP / (FN+TP)\)</span></p></li>
+<li><p><strong>False Positive Rate (<span class="math inline">\(FPR\)</span>)</strong> is the fraction of individuals with negative actual labels who the model misclassifies with a positive predicted label.<a href="#fn73" class="footnoteRef" id="fnref73"><sup>73</sup></a></p></li>
+<li><p><strong>False Negative Rate (<span class="math inline">\(FNR\)</span>)</strong> is the fraction of individuals with positive actual labels who the model misclassifies with a negative predicted label.<a href="#fn74" class="footnoteRef" id="fnref74"><sup>74</sup></a></p></li>
+<li><p><strong>False Discovery Rate (<span class="math inline">\(FDR\)</span>)</strong> is the fraction of individuals who the model predicts to have a positive label but for whom the actual label is negative.<a href="#fn75" class="footnoteRef" id="fnref75"><sup>75</sup></a></p></li>
+<li><p><strong>False Omission Rate (<span class="math inline">\(FOR\)</span>)</strong> is the fraction of individuals who the model predicts to have a negative label but for whom the actual label is positive.<a href="#fn76" class="footnoteRef" id="fnref76"><sup>76</sup></a></p></li>
+<li><p><strong>Precision</strong> is the fraction of individuals who the model predicts to have a positive label about whom this prediction is correct.<a href="#fn77" class="footnoteRef" id="fnref77"><sup>77</sup></a></p></li>
+<li><p><strong>Recall</strong> is the fraction of individuals with positive actual labels who the model has correctly classified as such.<a href="#fn78" class="footnoteRef" id="fnref78"><sup>78</sup></a></p></li>
 </ul>
 <p>For the first two metrics (<span class="math inline">\(FPR\)</span> and <span class="math inline">\(FNR\)</span>), notice that the denominator is based on actual outcomes (rather than model predictions), while in the next two (<span class="math inline">\(FDR\)</span> and <span class="math inline">\(FOR\)</span>) the denominator is based on model predictions (whether an individual falls above or below the threshold used to turn model scores into 0/1 predicted classes). The final two metrics relate to correct predictions rather than errors, but are directly related to error measurements (that is, <span class="math inline">\(\textrm{recall} = 1-FNR\)</span> and <span class="math inline">\(\textrm{precision} = 1-FDR\)</span>) and may sometimes have better properties for calculating model bias.</p>
 <p>Notice that the metrics defined here require the use of a threshold to turn modeled scores into 0/1 predicted classes and are therefore most useful when either a threshold is well-defined for the problem (e.g., when available resources mean a program can only serve a given number of individuals) or where calculating these metrics at different threshold levels might be used (along with model performance metrics) to choose a threshold for application. In some cases, it may also be of interest to think about equity across the full distribution of the modeled score <span class="citation">(Chouldechova <a href="#ref-chouldechova2017">2017</a>; Kleinberg, Mullainathan, and Raghavan <a href="#ref-kleinberg2017">2017</a>)</span>. Common practices in these situations are to look at how model performance metrics such as the area under the receiver-operator curve (<span class="math inline">\(AUC-ROC\)</span>) or model calibration compared across subgroups (such as by race, gender, age). Or, in cases where the underlying causal relationships are well-known, counterfactual methods <span class="citation">(Kilbertus et al. <a href="#ref-kilbertus2017">2017</a>; Kusner et al. <a href="#ref-kusner2017">2017</a>)</span> may also be used to assess a model’s bias (these methods may also be useful when you suspect label bias to be an issue in your data). We don’t explore these topics deeply here, but refer you out to the relevant references if you would like to learn more.</p>
@@ -782,7 +779,7 @@ Figure 11.1: Fairness Tree
 </div>
 <div id="aequitas---a-toolkit-for-auditing-bias-and-fairness-in-machine-learning-models" class="section level2">
 <h2><span class="header-section-number">11.7</span> Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models</h2>
-<p>To help data scientists and policymakers make informed decisions about bias and fairness in their applications, we developed Aequitas, an open source<a href="#fn73" class="footnoteRef" id="fnref73"><sup>73</sup></a> bias and fairness audit toolkit that was released in May 2018<a href="#fn74" class="footnoteRef" id="fnref74"><sup>74</sup></a>. It is an intuitive and easy to use addition to the machine learning workflow, enabling users to seamlessly audit models for several bias and fairness metrics in relation to multiple population sub-groups. Aequitas can be used directly as a Python library, via command line interface or a web application, making it accessible and friendly to a wide range of users (from data scientists to policymakers).</p>
+<p>To help data scientists and policymakers make informed decisions about bias and fairness in their applications, we developed Aequitas, an open source<a href="#fn79" class="footnoteRef" id="fnref79"><sup>79</sup></a> bias and fairness audit toolkit that was released in May 2018<a href="#fn80" class="footnoteRef" id="fnref80"><sup>80</sup></a>. It is an intuitive and easy to use addition to the machine learning workflow, enabling users to seamlessly audit models for several bias and fairness metrics in relation to multiple population sub-groups. Aequitas can be used directly as a Python library, via command line interface or a web application, making it accessible and friendly to a wide range of users (from data scientists to policymakers).</p>
 <p>Because the concept of fairness is highly dependent on the particular context and application, Aequitas provides comprehensive information on how its results should be used in a public policy context, taking the resulting interventions and its implications into consideration. It is intended to be used not just by data scientists but also policymakers, through both seamless integration in the machine learning workflow as well as a web app tailored for non-technical users auditing these models’ outputs.</p>
 <p>In Aequitas, bias assessments can be made prior to model selection, evaluating the disparities of the various models developed based on whatever training data was used to tune it for its task. The audits can be performed prior to a model being operationalized, based on operational data of how biased the model proved to be in holdout data. Or they can involve a bit of both, auditing bias in an A/B testing environment in which limited trials of revised algorithms are evaluated whatever biases were observed in those same systems in prior production deployments.</p>
 <p>Aequitas was designed to be used by two types of users:</p>
@@ -803,7 +800,7 @@ Figure 11.2: ML pipeline
 -->
 <div id="getting-started-with-aequitas" class="section level3">
 <h3><span class="header-section-number">11.7.1</span> Getting Started with Aequitas</h3>
-<p>Aequitas is a python package that can be used in several ways: as an imported module in your code or jupyter notebooks, as a command-line utility, or served as a web interface. To help orient you to its interface and explore some of the concepts covered in this chapter in more detail, we have developed a tutorial notebook around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study described in Section <a href="chap-bias.html#sec:compascase">COMPAS case</a>.<a href="#fn75" class="footnoteRef" id="fnref75"><sup>75</sup></a> Each of the tutorial’s sections is described briefly below.</p>
+<p>Aequitas is a python package that can be used in several ways: as an imported module in your code or jupyter notebooks, as a command-line utility, or served as a web interface. To help orient you to its interface and explore some of the concepts covered in this chapter in more detail, we have developed a tutorial notebook around the COMPAS (Correctional Offender Management Profiling for Alternative Sanctions) case study described in Section <a href="chap-bias.html#sec:compascase">COMPAS case</a>.<a href="#fn81" class="footnoteRef" id="fnref81"><sup>81</sup></a> Each of the tutorial’s sections is described briefly below.</p>
 </div>
 <div id="requirements" class="section level3">
 <h3><span class="header-section-number">11.7.2</span> Requirements</h3>
@@ -1040,9 +1037,15 @@ Figure 11.7: You can plot a treemap of fairness results. Here, the disparity by 
 <div class="footnotes">
 <hr />
 <ol start="73">
-<li id="fn73"><p><a href="https://github.com/dssg/aequitas" class="uri">https://github.com/dssg/aequitas</a><a href="chap-bias.html#fnref73">↩</a></p></li>
-<li id="fn74"><p><a href="https://twitter.com/datascifellows/status/994204100542783488" class="uri">https://twitter.com/datascifellows/status/994204100542783488</a><a href="chap-bias.html#fnref74">↩</a></p></li>
-<li id="fn75"><p>See <a href="https://dssg.github.io/aequitas/" class="uri">https://dssg.github.io/aequitas/</a>.<a href="chap-bias.html#fnref75">↩</a></p></li>
+<li id="fn73"><p><span class="math inline">\(FPR = FP / (FP+TN)\)</span><a href="chap-bias.html#fnref73">↩</a></p></li>
+<li id="fn74"><p><span class="math inline">\(FNR = FN / (FN+TP)\)</span><a href="chap-bias.html#fnref74">↩</a></p></li>
+<li id="fn75"><p><span class="math inline">\(FDR = FP / (FP+TP)\)</span><a href="chap-bias.html#fnref75">↩</a></p></li>
+<li id="fn76"><p><span class="math inline">\(FOR = FN / (FN+TN)\)</span><a href="chap-bias.html#fnref76">↩</a></p></li>
+<li id="fn77"><p><span class="math inline">\(\textrm{precision} = TP / (FP+TP)\)</span><a href="chap-bias.html#fnref77">↩</a></p></li>
+<li id="fn78"><p><span class="math inline">\(\textrm{recall} = TP / (FN+TP)\)</span><a href="chap-bias.html#fnref78">↩</a></p></li>
+<li id="fn79"><p><a href="https://github.com/dssg/aequitas" class="uri">https://github.com/dssg/aequitas</a><a href="chap-bias.html#fnref79">↩</a></p></li>
+<li id="fn80"><p><a href="https://twitter.com/datascifellows/status/994204100542783488" class="uri">https://twitter.com/datascifellows/status/994204100542783488</a><a href="chap-bias.html#fnref80">↩</a></p></li>
+<li id="fn81"><p>See <a href="https://dssg.github.io/aequitas/" class="uri">https://dssg.github.io/aequitas/</a>.<a href="chap-bias.html#fnref81">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>

@@ -452,7 +452,7 @@ Errors in data analysis {#sec:10-4}
 
 The total error framework described above focuses on different types of errors in the data that can lead to incorrect inference. In addition to direct inference errors because of errors in the data, our analysis can also be incorrect because of  these data errors.  This section goes deeper into these common types of analysis errors when analyzing a diverse set of data sources. We begin by exploring errors that can happen under the assumption of accurate data and then go on to consider errors in three common types of analysis when data is not accurate: classification, correlation, and regression. 
 
-Analysis errors despite accurate data
+**Analysis errors despite accurate data**
 
 Data deficiencies represent only one set of challenges for the big data
 analyst. Even if data is correct, other challenges can arise solely as 
@@ -465,7 +465,7 @@ section. These issues should concern social scientists even if the data
 could be regarded as infallible. Content errors, missing data, and other
 data deficiencies will only exacerbate these problems.
 
-Noise accumulation**
+**Noise accumulation**
 
 To illustrate noise accumulation, Fan et al. [@fan2014challenges]
 consider the following scenario. Suppose an analyst is interested in
@@ -487,7 +487,7 @@ coin-flip classification rule.
 
 ---
 
-Spurious correlations**
+**Spurious correlations**
 
 High dimensionality can also introduce coincidental (or *spurious*)
 correlations in that many unrelated variables may be highly correlated
@@ -509,7 +509,7 @@ using high-dimensional data.
 <p class="caption">(\#fig:fig10-3)An illustration of coincidental correlation between two variables: stork die-off linked to human birth decline [@sies1988new]</p>
 </div>
 
-Incidental Endogeneity**
+**Incidental Endogeneity**
 
 Finally, turning to incidental endogeneity, a key assumption in
 regression analysis is that the model covariates are uncorrelated with

@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -406,49 +406,20 @@ Figure 6.1: Adapted from Anscombe`s quartet <span class="citation">(Anscombe <a 
 </div>
 <div id="sec:viz-2" class="section level2">
 <h2><span class="header-section-number">6.2</span> Developing effective visualizations</h2>
-<p>The effectiveness of a visualization depends on both analysis needs and design goals. Sometimes, questions about the data are known in advance; in other cases, the goal may be to explore new data sets, generate insights, and answer questions that are unknown before starting the analysis. The design, development, and evaluation of a visualization is guided by understanding the background and goals of the target audience (see Box 9.1<a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a>).</p>
-<div class="F00">
-<p>
-<strong>Box 9.1:</strong> The development of an effective visualization is a continous process that generally includes the following activities:
-</p>
+<p>The effectiveness of a visualization depends on both analysis needs and design goals. Sometimes, questions about the data are known in advance; in other cases, the goal may be to explore new data sets, generate insights, and answer questions that are unknown before starting the analysis. The design, development, and evaluation of a visualization is guided by understanding the background and goals of the target audience (see Box <a href="chap-viz.html#box:viz1">Effective visualizations</a><a href="#fn37" class="footnoteRef" id="fnref37"><sup>37</sup></a>).</p>
+<hr />
+<p><strong>Box: Effective visualizations</strong> <a id="box:viz1"></a></p>
+<p>The development of an effective visualization is a continous process that generally includes the following activities:</p>
 <ul>
-<li>
-<p>
-Specify user needs, tasks, accessibility requirements and criteria for success.
-</p>
-</li>
-<li>
-<p>
-Prepare data (clean, transform).
-</p>
-</li>
-<li>
-<p>
-Design visual representations.
-</p>
-</li>
-<li>
-<p>
-Design interaction.
-</p>
-</li>
-<li>
-<p>
-Plan sharing of insights, provenance.
-</p>
-</li>
-<li>
-<p>
-Prototype/evaluate, including usability testing.
-</p>
-</li>
-<li>
-<p>
-Deploy (monitor usage, provide user support, manage revision process).
-</p>
-</li>
+<li><p>Specify user needs, tasks, accessibility requirements and criteria for success.</p></li>
+<li><p>Prepare data (clean, transform).</p></li>
+<li><p>Design visual representations.</p></li>
+<li><p>Design interaction.</p></li>
+<li><p>Plan sharing of insights, provenance.</p></li>
+<li><p>Prototype/evaluate, including usability testing.</p></li>
+<li><p>Deploy (monitor usage, provide user support, manage revision process).</p></li>
 </ul>
-</div>
+<hr />
 <p>If the goal is to present results, there is a wide spectrum of users and a wide range of options. If the audience is broad, then <em>infographics</em> can be developed by graphic designers, as described in classic texts (see <span class="citation">(Few <a href="#ref-few2009now">2009</a>; Tufte <a href="#ref-edward2001visual">2001</a>; Tufte <a href="#ref-edward2006beauty">2006</a>)</span> or the examples compiled by Harrison et al. <span class="citation">(Harrison, Reinecke, and Chang <a href="#ref-harrison2015infographic">2015</a>; Keshif, n.d.)</span>). If, on the other hand, the audience comprises domain experts interested in monitoring the overview status of dynamic processes on a continuous basis, monitoring <em>dashboards</em> with no or little interactivity can be used. Examples include the monitoring of sales, or the number of tweets about people, or symptoms of the flu and how they compare to a baseline <span class="citation">(Few <a href="#ref-few2013information">2013</a>)</span>. Such dashboards, composed of multiple charts of different operational data, can increase situational awareness so that problems can be noticed and solved early and better decisions can be made with up-to-date information.</p>
 <p>Another goal of visualization is to enable <em>interactive exploratory analysis</em>. This approach goes beyond a visual snapshot of data for presentation, and provides many windows into different parts and relationships within data on demand. Tailor-made solutions can focus on specific querying and navigation tasks given a specific data. For example, the BabyNameVoyager (<a href="http://www.babynamewizard.com/voyager/" class="uri">http://www.babynamewizard.com/voyager/</a>) lets users type in a name and see a graph of its popularity over the past century. With each letter typed, the page filters baby names starting with the input (such as Joan, Joyce and John for input “Jo”).”</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-2a"></span>
@@ -485,132 +456,46 @@ Figure 6.5: Visual elements described by MacKinlay <span class="citation">(MacKi
 <div id="sec:viz-3" class="section level2">
 <h2><span class="header-section-number">6.3</span> A data-by-tasks taxonomy</h2>
 <p>We give an overview of visualization approaches for six common data types: multivariate, spatial, temporal, hierarchical, network, and text <span class="citation">(Shneiderman and Plaisant <a href="#ref-shneiderman2015sharpening">2015</a>)</span>. For each data type listed in this section, we discuss its distinctive properties, the common analytical questions, and examples. Real-life data sets often include multiple data types coming from multiple sources. Even a single data source can include a variety of data types. For example, a single data table of countries (as rows) can have a list of attributes with varying types: the growth rate in the last 10 years (one observation per year, time series data), their current population (single numerical data), the amount of trade with other countries (networked/linked data), and the top 10 exported products (if grouped by industry, hierarchical data).</p>
-<p>In addition to common data types, Box 9.2 provides an overview of common tasks for visual data analysis, which can be applied across different data types based on goals and types of visualizations.</p>
-<div class="F00">
-<p>
-<strong>Box 9.2: A task categorization for visual data analysis</strong>
-</p>
-<p>
-Select/Query
-</p>
+<p>In addition to common data types, Box <a href="chap-viz.html#box:viz2">Tasks</a> provides an overview of common tasks for visual data analysis, which can be applied across different data types based on goals and types of visualizations.</p>
+<hr />
+<p><strong>Box: A task categorization for visual data analysis</strong> <a id="box:viz2"></a></p>
+<p>Select/Query</p>
 <ul>
-<li>
-<p>
-Filter to focus on a subset of the data
-</p>
-</li>
-<li>
-<p>
-Retrieve details of item
-</p>
-</li>
-<li>
-<p>
-Brush linked selections across multiple charts
-</p>
-</li>
-<li>
-<p>
-Compare across multiple selections
-</p>
-</li>
+<li>Filter to focus on a subset of the data</li>
+<li>Retrieve details of item</li>
+<li>Brush linked selections across multiple charts</li>
+<li>Compare across multiple selections</li>
 </ul>
-<p>
-Navigate
-</p>
+<p>Navigate</p>
 <ul>
-<li>
-<p>
-Scroll along a dimension (1D)
-</p>
-</li>
-<li>
-<p>
-Pan along two dimensions (2D)
-</p>
-</li>
-<li>
-<p>
-Zoom along the third dimension (3D)
-</p>
-</li>
+<li>Scroll along a dimension (1D)</li>
+<li>Pan along two dimensions (2D)</li>
+<li>Zoom along the third dimension (3D)</li>
 </ul>
-<p>
-Derive
-</p>
+<p>Derive</p>
 <ul>
-<li>
-<p>
-Aggregate item groups and generate characteristics
-</p>
-</li>
-<li>
-<p>
-Cluster item groups by algorithmic techniques
-</p>
-</li>
-<li>
-<p>
-Rank items to define ordering
-</p>
-</li>
+<li>Aggregate item groups and generate characteristics</li>
+<li>Cluster item groups by algorithmic techniques</li>
+<li>Rank items to define ordering</li>
 </ul>
-<p>
-Organize
-</p>
+<p>Organize</p>
 <ul>
-<li>
-<p>
-Select chart type and data encodings to organize data
-</p>
-</li>
-<li>
-<p>
-Layout multiple components or panels in the interface
-</p>
-</li>
+<li>Select chart type and data encodings to organize data</li>
+<li>Layout multiple components or panels in the interface</li>
 </ul>
-<p>
-Understand
-</p>
+<p>Understand</p>
 <ul>
-<li>
-<p>
-Observe distributions
-</p>
-</li>
-<li>
-<p>
-Compare items and distributions
-</p>
-</li>
-<li>
-<p>
-Relate items and patterns
-</p>
-</li>
+<li>Observe distributions</li>
+<li>Compare items and distributions</li>
+<li>Relate items and patterns</li>
 </ul>
-<p>
-Communicate
-</p>
+<p>Communicate</p>
 <ul>
-<li>
-<p>
-Annotate findings
-</p>
-</li>
-<li>
-<p>
-Share results
-</p>
-</li>
-<li>
-<p>
-Trace action histories
-</p>
-</li>
+<li>Annotate findings</li>
+<li>Share results</li>
+<li>Trace action histories</li>
 </ul>
-</div>
+<hr />
 <p>Interactive visualization design should also consider the devices where data will be viewed and interacted. Conventionally, visualizations have been designed for mouse and keyboard interaction on desktop computers. However, a wider range of device forms, such as mobile devices with small displays and touch interaction, is becoming common. Creating visualizations for new forms requires special care, though basic design principles such as “less is more” still apply.</p>
 <div id="sec:viz-2.1" class="section level3">
 <h3><span class="header-section-number">6.3.1</span> Multivariate data</h3>
@@ -621,7 +506,7 @@ Trace action histories
 </div>
 <div id="sec:viz-2.2" class="section level3">
 <h3><span class="header-section-number">6.3.2</span> Spatial data</h3>
-<p>Spatial data convey a physical context, commonly in a 2D space, such as geographical maps or floor plans. Several of the most examples of information visualization include maps, from the 1861 representation of Napoleon’s ill-fated Russian campaign by Minard (popularized by Tufte <span class="citation">(Tufte <a href="#ref-edward2001visual">2001</a>)</span> and Kraak <span class="citation">(Kraak <a href="#ref-Kraak2014">2014</a>)</span>) to the interactive HomeFinder application that introduced the concept of dynamic queries <span class="citation">(Ahlberg, Williamson, and Shneiderman <a href="#ref-ahlberg1992dynamic">1992</a>)</span>. The tasks include finding adjacent items, regions containing certain items or with specific characteristics, and paths between items—and performing the basic tasks listed in Box 9.1.</p>
+<p>Spatial data convey a physical context, commonly in a 2D space, such as geographical maps or floor plans. Several of the most examples of information visualization include maps, from the 1861 representation of Napoleon’s ill-fated Russian campaign by Minard (popularized by Tufte <span class="citation">(Tufte <a href="#ref-edward2001visual">2001</a>)</span> and Kraak <span class="citation">(Kraak <a href="#ref-Kraak2014">2014</a>)</span>) to the interactive HomeFinder application that introduced the concept of dynamic queries <span class="citation">(Ahlberg, Williamson, and Shneiderman <a href="#ref-ahlberg1992dynamic">1992</a>)</span>. The tasks include finding adjacent items, regions containing certain items or with specific characteristics, and paths between items—and performing the basic tasks listed in Box <a href="chap-viz.html#box:viz1">Effective visualizations</a>.</p>
 <p>The primary form of visualizing spatial data is <em>maps</em>. In <em>choropleth maps</em>, color encoding is used to add represent one data attribute. <em>Cartograms</em> aim to encode the attribute value with the size of regions by distorting the underlying physical space. <em>Tile grid maps</em> reduce each spatial area to a uniform size and shape (e.g., a square) so that the color-coded data are easier to observe and compare, tile grid maps convert each spatial region to a fixed shape, such as a square tile and arrange these tiles to approximate and maintain relative physical positions of the regions <span class="citation">(DeBelius <a href="#ref-DeBelius2015">2015</a>; Stanford Visualization Group, n.d.)</span>. Grid maps also make selection of smaller areas (such as small cities or states) easier. <em>Contour (isopleth) maps</em> connect areas with similar measurements and color each one separately. <em>Network maps</em> aim to show network connectivity between locations, such as flights to/from many regions of the world. Spatial data can be also presented with a nonspatial emphasis (e.g., as a hierarchy of continents, countries, and cities, such as by using a treemap chart.).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig9-5"></span>
 <img src="ChapterViz/figures/fig9-5.png" alt="The US Cancer Atlas [@usca]. Interface based on [@maceachren2008design]" width="90%" />

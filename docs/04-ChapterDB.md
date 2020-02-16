@@ -5,11 +5,9 @@ Databases {#chap:db}
 
 **Ian Foster and Pascal Heus**
 
-
 Once data have been collected and linked, it is
 necessary to store and organize them. Many social scientists are used to
-working with one analytical file, often in SAS, Stata, SPSS, or R. But most organizations store (or should store) their data in databases, which makes it critical for social scientists to learn how to create, manage, and use databases for data storage and analysis. This
-chapter describes the concept of databases and introduces different types of databases and analysis languages (in particular, relational databases and SQL, respectively) that allow storing and organizing of data for rapid and efficient data exploration and analysis.
+working with one analytical file, often in SAS, Stata, SPSS, or R. But most organizations store (or should store) their data in databases, which makes it critical for social scientists to learn how to create, manage, and use databases for data storage and analysis. This chapter describes the concept of databases and introduces different types of databases and analysis languages (in particular, relational databases and SQL, respectively) that allow storing and organizing of data for rapid and efficient data exploration and analysis.
 
 Introduction {#sec:db:intro}
 ------------
@@ -214,6 +212,8 @@ represents. In general, a DBMS encompasses three key components: its
 interacts with the data), and support for *transactions and crash
 recovery* (to ensure reliable execution despite system failures).^[Some key DBMS features are often lacking in standard statistical packages: a standard query language (with commands that allow analyses or data manipulation on a subgroup of cases defined during the analysis, for example “group by ...,” “order by ...”), keys (for speed improvement), and an explicit model of a relational data structure.]
 
+---
+
 **Box: Data model** <a id="box:db1"></a>
 
 A *data model*
@@ -228,6 +228,8 @@ for a person, their name, address, employer); relationships include "is
 employed by" and "is funded by." This conceptual data model can then be
 translated into relational tables or some other database representation,
 as we describe next.
+
+---
 
 Hundreds of different open source, commercial, and cloud-hosted versions 
 DBMSs are available and new ones pop up every day. However, you only need to

@@ -7,7 +7,6 @@ Working with Web Data and APIs {#chap:web}
 
 In many social science problems we have to augment our primary data with external data sources. Often the external data are available on the web, either on web pages directly or accessible through Application Programming Interfaces (APIs). Gathering this data requires understanding how to scrape web pages or calling the APIs with parameters about the information we need. One common example of this is augmenting our primary data with data from the American Community Survey (ACS) or from Open Data Portals maintained by local, state, and federal agencies. These data sources can either be downloaded in bulk or used dynamically through APIs. Same is true for data from social media sources, such as Twitter, Instagram, and Facebook. In this chapter we will cover tools (specifically using Python) that can be used by social science researchers to programmatically gather this type of external data from web pages and APIs.
 
-
 ```{r, include = FALSE}
 library(knitr)
 hook_output = knit_hooks$get('output')
@@ -48,6 +47,8 @@ language in this chapter, data collection through web scraping and APIs can
 be done in most modern programming languages as well as using software that's
 designed specifically for this purpose.
 
+---
+
 **Box: Examples** <a id="box:web1"></a>
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
@@ -58,6 +59,7 @@ Goebel and Munzert [-@Goebel2018] used the online encyclopedia Wikipedia, to stu
 
 King et al. [-@King2013] investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
 
+---
 
 Scraping information from the web
 ---------------------------------

@@ -9,7 +9,6 @@ In many social science problems we have to augment our primary data with externa
 
 
 
-
 Introduction
 ------------
 
@@ -35,6 +34,8 @@ language in this chapter, data collection through web scraping and APIs can
 be done in most modern programming languages as well as using software that's
 designed specifically for this purpose.
 
+---
+
 **Box: Examples** <a id="box:web1"></a>
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
@@ -45,6 +46,7 @@ Goebel and Munzert [-@Goebel2018] used the online encyclopedia Wikipedia, to stu
 
 King et al. [-@King2013] investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable. 
 
+---
 
 Scraping information from the web
 ---------------------------------

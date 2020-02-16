@@ -5,7 +5,6 @@ Information Visualization {#chap:viz}
 
 **M. Adil Yalcin and Catherine Plaisant**
 
-
 This chapter will show you how to use visualization to explore data as well as to communicate results so that data can be turned into interpretable, actionable information.
 There are many ways of presenting statistical information that convey
 content in a rigorous manner. The goal of this chapter is to present an
@@ -68,21 +67,33 @@ in other cases, the goal may be to explore new data sets, generate
 insights, and answer questions that are unknown before starting the
 analysis. The design, development, and evaluation of a visualization is
 guided by understanding the background and goals of the target audience
-(see Box 9.1^[See Chapters [Working with Web Data and APIs](#chap:web), 
-[Record Linkage](#chap:link), [Databases](#chap:db), and [Scaling up through Parallel and Distributed Computing](#chap:parallel) for an overview of collecting, merging, storing, and processing data sets.]).
+(see Box [Effective visualizations](#box:viz1)^[See Chapters 
+[Working with Web Data and APIs](#chap:web), [Record Linkage](#chap:link),
+[Databases](#chap:db), and [Scaling up through Parallel and Distributed Computing](#chap:parallel) for an overview of collecting, merging, storing, and processing data sets.]).
 
-<div class="F00">
-<p><strong>Box 9.1:</strong> The development of an effective visualization is a continous process that generally includes the following activities:</p>
-<ul>
-<li><p>Specify user needs, tasks, accessibility requirements and criteria for success.</p></li>
-<li><p>Prepare data (clean, transform).</p></li>
-<li><p>Design visual representations.</p></li>
-<li><p>Design interaction.</p></li>
-<li><p>Plan sharing of insights, provenance.</p></li>
-<li><p>Prototype/evaluate, including usability testing.</p></li>
-<li><p>Deploy (monitor usage, provide user support, manage revision process).</p></li>
-</ul>
-</div>
+---
+
+**Box: Effective visualizations** <a id="box:viz1"></a>
+
+The development of an effective visualization is a continous process that generally includes the following activities:
+
+-   Specify user needs, tasks, accessibility requirements and criteria
+    for success.
+
+-   Prepare data (clean, transform).
+
+-   Design visual representations.
+
+-   Design interaction.
+
+-   Plan sharing of insights, provenance.
+
+-   Prototype/evaluate, including usability testing.
+
+-   Deploy (monitor usage, provide user support, manage revision
+    process).
+
+---
 
 If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
@@ -192,48 +203,51 @@ current population (single numerical data), the amount of trade with
 other countries (networked/linked data), and the top 10 exported
 products (if grouped by industry, hierarchical data). 
 
-In addition to common data types, Box 9.2 provides an overview of common tasks for visual data analysis, which can be applied across different data types
-based on goals and types of visualizations.
+In addition to common data types, Box [Tasks](#box:viz2) provides an
+overview of common tasks for visual data analysis, which can be applied 
+across different data types based on goals and types of visualizations.
 
-<div class="F00">
-<p><strong>Box 9.2: A task categorization for visual data analysis</strong></p>
-<p>Select/Query</p>
-<ul>
-<li><p>Filter to focus on a subset of the data</p></li>
-<li><p>Retrieve details of item</p></li>
-<li><p>Brush linked selections across multiple charts</p></li>
-<li><p>Compare across multiple selections</p></li>
-</ul>
-<p>Navigate</p>
-<ul>
-<li><p>Scroll along a dimension (1D)</p></li>
-<li><p>Pan along two dimensions (2D)</p></li>
-<li><p>Zoom along the third dimension (3D)</p></li>
-</ul>
-<p>Derive</p>
-<ul>
-<li><p>Aggregate item groups and generate characteristics</p></li>
-<li><p>Cluster item groups by algorithmic techniques</p></li>
-<li><p>Rank items to define ordering</p></li>
-</ul>
-<p>Organize</p>
-<ul>
-<li><p>Select chart type and data encodings to organize data</p></li>
-<li><p>Layout multiple components or panels in the interface</p></li>
-</ul>
-<p>Understand</p>
-<ul>
-<li><p>Observe distributions</p></li>
-<li><p>Compare items and distributions</p></li>
-<li><p>Relate items and patterns</p></li>
-</ul>
-<p>Communicate</p>
-<ul>
-<li><p>Annotate findings</p></li>
-<li><p>Share results</p></li>
-<li><p>Trace action histories</p></li>
-</ul>
-</div>
+---
+
+**Box: A task categorization for visual data analysis** <a id="box:viz2"></a>
+
+Select/Query
+
+-   Filter to focus on a subset of the data
+-   Retrieve details of item
+-   Brush linked selections across multiple charts
+-   Compare across multiple selections
+
+Navigate
+
+-   Scroll along a dimension (1D)
+-   Pan along two dimensions (2D)
+-   Zoom along the third dimension (3D)
+
+Derive
+
+-   Aggregate item groups and generate characteristics
+-   Cluster item groups by algorithmic techniques
+-   Rank items to define ordering
+
+Organize
+
+-   Select chart type and data encodings to organize data
+-   Layout multiple components or panels in the interface
+
+Understand
+
+-   Observe distributions
+-   Compare items and distributions
+-   Relate items and patterns
+
+Communicate
+
+-   Annotate findings
+-   Share results
+-   Trace action histories
+
+---
 
 Interactive visualization design should also consider the devices where data will be viewed and interacted. Conventionally, visualizations have been designed for
 mouse and keyboard interaction on desktop computers. However, a wider
@@ -299,7 +313,7 @@ HomeFinder application that introduced the concept of dynamic queries
 [@ahlberg1992dynamic]. The tasks include finding adjacent items, regions
 containing certain items or with specific characteristics, and paths
 between items---and performing the basic tasks listed in
-Box 9.1.
+Box [Effective visualizations](#box:viz1).
 
 The primary form of visualizing spatial data is *maps*. In *choropleth
 maps*, color encoding is used to add represent one data attribute.

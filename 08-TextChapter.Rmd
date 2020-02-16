@@ -286,6 +286,8 @@ context of the corpus is negligible. Stop words are a good example when
 highly frequent words also bear limited meaning since they appear in
 virtually all documents of a given corpus.
 
+---
+
 **Box: TFIDF** <a id="box:text1"></a>
 
 For every token $t$
@@ -297,6 +299,8 @@ $$tf(t,d) = 0.5+\frac{0.5 \times
   f(t,d)}{\max\{f(t,d):t\in d\}},$$ and inverse document frequency is
 $$\
 idf(t,D) = \log\frac{N}{|\{d\in D:t\in d\}|}.$$
+
+---
 
 <!-- Updated Comment: N was not defined. I (Patrick) checked with a couple of sources
 and N is indeed the size/cardinality of D, i.e. N := |D|. I added the info to the first sentence. -->
@@ -454,6 +458,8 @@ models (Box [Precision and recall](#box:text2) provides a reminder of
 the formulae). The same metrics can be used to evaluate the two 
 goals we have in finding relevant and similar documents.
 
+---
+
 **Box: Precision and recall** <a id="box:text2"></a>
 
 Precision computes the type I errors---*false positives* (retrieved documents that are not relevant)---and is formally
@@ -462,6 +468,8 @@ $$\mathrm{Precision} = \frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{ret
 Recall accounts for type II errors---*false negatives* (relevant documents that were not retrieved)---and is defined
 as
 $$\mathrm{Recall}=\frac{|\{\mathrm{relevant\ documents}\}\cap \{\mathrm{retrieved\ documents}\}|}{|\{\mathrm{relevant\ documents}\}|}.$$
+
+---
 
 We assume that a user has three sets of documents $D_a
 =\{d_{a1},d_{a2},\ldots, d_n\}$, $D_b=\{d_{b1}, d_{b2}, \ldots,

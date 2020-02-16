@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -396,11 +396,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>The Internet is an excllent resource for vast amounts of data on businesses, people, and their activity on social media. But how can we capture the information and make use of it as we might make use of more traditional data sources?</p>
 <p>In social science, we often explore information on people, organizations, or locations. The web can be a rich source of additional information when doing this type of analysis, pointing to new sources of information, allowing a pivot from one perspective to another, or from one kind of query to another. Sometimes this data from the web is completely unstructured, existing in web pages spread across a site, and sometimes they are provided in a machine-readable form. In order to deal with this variety, we need a sufficiently diverse toolkit to bring all of this information together.<a href="#fn10" class="footnoteRef" id="fnref10"><sup>10</sup></a></p>
 <p>Using the example of data on researchers and research outputs, we will focus this chapter on obtaining information directly from web pages (<em>web scraping</em>) as well as explore the uses of APIs— web services that allow programmatic retrieval of data. Both in this chapter and the next, you will see how the crucial pieces of integration often lie in making connections between disparate data sets and how in turn making those connections requires careful quality control. The emphasis throughout this chapter is on the importance of focusing on the purpose for which the data will be used as a guide for data collection. While much of this is specific to data about research and researchers, the ideas are generalizable to wider issues of data and public policy. While we use Python as the programming language in this chapter, data collection through web scraping and APIs can be done in most modern programming languages as well as using software that’s designed specifically for this purpose.</p>
+<hr />
 <p><strong>Box: Examples</strong> <a id="box:web1"></a></p>
 <p>In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using data from web pages or APIs.<a href="#fn11" class="footnoteRef" id="fnref11"><sup>11</sup></a></p>
 <p>Kim et al. <span class="citation">(<a href="#ref-Kim2016">2016</a>)</span> use social media data about e-cigarettes from Twitter for public health research.</p>
 <p>Goebel and Munzert <span class="citation">(<a href="#ref-Goebel2018">2018</a>)</span> used the online encyclopedia Wikipedia, to study how politicians enhance and change their appearance overtime. They trace changes to biographies coming from the parliament using data that cover the entire edit histories for biographies on all German members of parliament for the three last legislative periods. The authors have workshop material and code on GitHub how they performed the webscraping and API use for this project (<a href="https://github.com/simonmunzert/political-wikipedia-workshop" class="uri">https://github.com/simonmunzert/political-wikipedia-workshop</a>).</p>
 <p>King et al. <span class="citation">(<a href="#ref-King2013">2013</a>)</span> investigate how censorship in China allows government criticism but silences collective expression using a system to locate, download, and analyze the content of millions of social media posts originating from nearly 1,400 different social media services all over China before the Chinese government is able to find, evaluate, and censor (i.e., remove from the Internet) the subset they deem objectionable.</p>
+<hr />
 </div>
 <div id="scraping-information-from-the-web" class="section level2">
 <h2><span class="header-section-number">2.2</span> Scraping information from the web</h2>

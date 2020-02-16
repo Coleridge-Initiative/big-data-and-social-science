@@ -5,12 +5,9 @@ Record Linkage {#chap:link}
 
 **Joshua Tokle and Stefan Bender**
 
-
 As we mentioned in the last chapter, it is often necessary to
 combine data from multiple sources to get a complete picture of the
-activities of interest. In addition to just linking data to get additional information, we are also concerned about issues of missing links, duplicative links, and erroneous links.
-This chapter provides an overview of traditional rule-based and
-probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
+activities of interest. In addition to just linking data to get additional information, we are also concerned about issues of missing links, duplicative links, and erroneous links. This chapter provides an overview of traditional rule-based and probabilistic approaches, as well as the modern approaches to record linkage using machine learning.
 
 Motivation
 ----------
@@ -67,6 +64,8 @@ ideas, we use examples from a recent paper examining the effects of
 different algorithms on studies of patent productivity
 [@ventura2015seeing].
 
+---
+
 **Box: Examples** <a id="box:link1"></a>
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
@@ -77,6 +76,7 @@ Rodolfa et al. [-@Rodolfa2020] use machine learning based record linkage to link
 
 The National Center for Health Statistics (NCHS) [-@NCHS2019] links the data from the National Health Interview Survey (NHIS) to records from the Social Security Administration, the Centers for Medicare & Medicaid Services, and the National Death Index to investigate the relationship between health and sociodemographic information reported in the surveys and medical care costs, future use of medical services and mortality.
 
+---
 
 Introduction to record linkage {#sec:recordlinkage}
 ------------------------------

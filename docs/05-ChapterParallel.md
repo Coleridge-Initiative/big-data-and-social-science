@@ -2,12 +2,10 @@
 % 
 --> 
 
-
 Scaling up through Parallel and Distributed Computing {#chap:parallel}
 =========================
 
 **Huy Vo and Claudio Silva**
-
 
 This chapter provides an overview of techniques that allow us to analyze large amounts of data using distributed computing (multiple computers concurrently). While the focus is on a widely used framework called MapReduce and popular implementations such as Apache Hadoop and Spark, the goal of the chapter is to provide a conceptual and practical framework to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer. It is important to note that these frameworks do not result in analysis that is better - they are useful because they allow us to process large amounts of data faster and/or without getting access to a single massive computer with lots of memory (RAM) and processing power (CPU).
 
@@ -26,9 +24,9 @@ There are many ways to do distributed and parallel computing, ranging from compl
 
 This chapter focuses on one such framework, called MapReduce, to do large-scale data analysis distributed across multiple computers. We describe the MapReduce framework, work through an example of using it, and highlight one implementation of the framework called Hadoop in detail.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
-**BOX**
+---
 
-**Parallel Computing Examples**
+**Box: Parallel Computing Examples** <a id="box:parallel1"></a>
 
 Al Aghbari et al. [-@aghbari2019] introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results. 
 
@@ -36,10 +34,11 @@ Kolb et al. [-@kolb2012] developed a tool DeDoop that uses Hadoop to do efficien
 
 Ching et al. [-@ching2012] describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine.  Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.
 
-**BOX**
+---
 
-MapReduce{#sec:intro}
--------------------------------
+MapReduce
+------------
+
 The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat
 at Google in 2004 [@MapReduce]. Its origins date back to conceptually
 similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. The "map" operation takes the input and splits up the task into multiple (parallel) components, and the "reduce" operation consolidates the results of the parallel "mapped" tasks and produces the final output. In order to use the MapReduce framework, we need to break up our tasks in to map and reduce operations and implement these two operations. 
@@ -68,11 +67,10 @@ within each group. In order to do this, we first set the function to
 scan input lines and extract institution information and award IDs.
 Then, in the function, we simply count unique IDs on the data, since
 everything is already grouped by institution. Python pseudo-code is
-provided in
-Listing 5.1.
+provided in Listing [MapReduce](#list:parallel1).
 
 
-```r
+```python
 # Input  : a list of text lines
 # Output : a list of domain name and award ids
 def MAP(lines):
@@ -89,8 +87,7 @@ def REDUCE(pairs):
         count = len(set(awardIds))
         yield (domainName, count)
 ```
-<div style="text-align: center">Listing 5.1. Python pseudo-code for the `map` and `reduce` functions to count the number of awards per institution</div>
-<br>
+<div style="text-align: center">Listing: Python pseudo-code for the `map` and `reduce` functions to count the number of awards per institution</div> <a id="list:parallel1"></a>
 
 In the map phase, the input will be transformed into tuples of
 institutions and award ids:
@@ -113,9 +110,11 @@ fact, it has been said to be *too* simple and criticized as "a major
 step backwards" [@MapReduceBad] for large-scale, data-intensive
 applications. It is hard to argue that MapReduce is offering something
 truly innovative when MPI has been offering similar scatter and reduce
-operations since 1995, and Python has had high-order functions (`map`, `reduce`, `filter`, and `lambda`) since its 2.2 release in 1994. However, the biggest strength of
-MapReduce is its simplicity. Its simple programming model has brought
-many non-expert users to analyzing large amounts of data. Its simple architecture has
+operations since 1995, and Python has had high-order functions 
+(`map`, `reduce`, `filter`, and `lambda`) since its 2.2 release in 
+1994. However, the biggest strength of MapReduce is its simplicity. 
+Its simple programming model has brought many non-expert users to 
+analyzing large amounts of data. Its simple architecture has
 also inspired many developers to develop advanced capabilities, such as
 support for distributed computing, data partitioning, and streaming
 processing. A downside of this diversity of interest is that available
@@ -139,8 +138,7 @@ computation to be moved to the data during execution.
 
 ### The Hadoop Distributed File System
 
-The Hadoop Distributed File System [@Hadoop][@HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into
-smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
+The Hadoop Distributed File System [@Hadoop][@HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
 block is also replicated across several nodes as an attempt to ensure
 that a full copy of the data is still available even in the case of
 computing node failures. The block size as well as the number of
@@ -159,13 +157,16 @@ Note that data blocks are replicated and distributed across several
 machines. This could create a problem for users, because if they had to
 manage the data manually, they might, for example, have to access more
 than one machine to fetch a large data file. Fortunately, Hadoop
-provides infrastructure for managing this complexity seamlessly, including command
-line programs as well as an API that users can employ to interact with
-HDFS as if it were a local file system. For example, one can run simple Linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file
-contents the same way as one would do in a Linux file system. The following code
+provides infrastructure for managing this complexity seamlessly, 
+including command line programs as well as an API that users can employ 
+to interact with HDFS as if it were a local file system. For example, 
+one can run simple Linux commands such as ls and mkdir to list and create
+a directory on HDFS, or even use to inspect file contents the same way 
+as one would do in a Linux file system. The following code
 shows some examples of interacting with HDFS.
 
-``` {#lst:hdfs style="PythonStyleInLine" label="lst:hdfs"}
+
+```python
 # Creating a folder
 hadoop dfs -mkdir /hadoopiseasy
 
@@ -275,9 +276,10 @@ we can go over the design of a Hadoop MapReduce job. A MapReduce job is
 still composed of three phases: map, shuffle, and reduce. However,
 Hadoop divides the map and reduce phases into smaller tasks.
 
-Each map phase in Hadoop is divided into five tasks: **input format**, **record reader**, **mapper**, **combiner**, and **partitioner**. An [input format]{.roman} task is in charge of talking to the input data
+Each map phase in Hadoop is divided into five tasks: **input format**, **record reader**, **mapper**, **combiner**, and **partitioner**. 
+An *input format* task is in charge of talking to the input data
 presumably sitting on HDFS, and splitting it into partitions (e.g., by
-breaking lines at line breaks). Then a [record reader]{.roman} task is
+breaking lines at line breaks). Then a *record reader* task is
 responsible for translating the split data into the key--value pair
 records so that they can be processed by the mapper. By default, Hadoop
 parses files into key--value pairs of line numbers and line contents.
@@ -342,12 +344,13 @@ framework through the use of UNIX pipes. This means that we can supply a
 mapper program written in Python or C++ to Hadoop as long as that
 program reads from the standard input and writes to the standard output.
 The same mechanism also applies for the combiner and reducer. For
-example, we can develop from the Python pseudo-code in
-Listing 5.1 to a complete Hadoop streaming mapper
-(Listing 5.2) and reducer
-(Listing 5.3).
+example, we can develop from the Python pseudo-code in Listing
+[MapReduce](#list:parallel1) to a complete Hadoop streaming mapper
+(Listing [Mapper](#list:parallel2)) and reducer (Listing
+[Reducer](#list:parallel3)).
 
-``` {#lst:mapper style="PythonStyle" belowskip="-6pt" caption="A Hadoop streaming mapper in Python" label="lst:mapper" numbers="none"}
+
+```python
 #!/usr/bin/env python
 import sys
 
@@ -362,10 +365,11 @@ if __name__=='__main__':
         domainName = fields[3].split('@')[-1].split('.')[-2:]
         print('%s\t%s' % (domainName,awardId))
 ```
-<div style="text-align: center">Listing 5.2. A Hadoop streaming mapper in Python</div>
+<div style="text-align: center">Listing: A Hadoop streaming mapper in Python</div> <a id="list:parallel2"></a>
 <br>
 
-``` {#lst:reducer style="PythonStyle" float="b" caption="A Hadoop streaming reducer in Python" label="lst:reducer" numbers="none"}
+
+```python
 #!/usr/bin/env python
 import sys
 
@@ -379,8 +383,7 @@ if __name__=='__main__':
         count = len(set(awardIds))
         print('%s\t%s' % (domainName, count))
 ```
-<div style="text-align: center">Listing 5.3. A Hadoop streaming reducer in Python</div>
-<br>
+<div style="text-align: center">Listing: A Hadoop streaming reducer in Python</div> <a id="list:parallel3"></a>
 
 It should be noted that in Hadoop streaming, intermediate key--value
 pairs (the data flowing between mappers and reducers) must be in
@@ -392,9 +395,7 @@ They not only have to split their code into separate mapper and reducer
 programs, but also need to learn Java if they want to work with
 nontextual data.
 
-
 ### Benefits and Limitations of Hadoop
-
 
 -   **Fault Tolerance**: By default, HDFS uses checksums to enforce data integrity on its file
 system and data replication for recovery of potential data losses.
@@ -408,7 +409,6 @@ node. The time limit for the heartbeats and task running duration may
 also be customized for each job. Though the mechanism is simple, it
 works well on thousands of machines. It is indeed highly robust because
 of the simplicity of the model.
-
 
 -   **Performance**: Hadoop has proven to be a scalable implementation that can run on
     thousands of cores. However, it is also known for having a
@@ -505,14 +505,16 @@ possible to be built on top of current Hadoop applications.
 
 Another advantage of Spark is that it supports Python natively; thus,
 developers can run Spark in a fraction of the time required for Hadoop.
-Listing 5.4 provides the full code for the previous example
-written entirely in Spark. It should be noted that Spark's concept of
-the `reduceByKey` operator is not the same as Hadoop's, as it is designed to aggregate
-all elements of a data set into a single element. The closest simulation
-of Hadoop's MapReduce pattern is a combination of `mapPartitions`, `groupByKey` and `mapPartitions`, as shown in
-the next example.
+Listing [Spark](#list:parallel4) provides the full code for the previous 
+example written entirely in Spark. It should be noted that Spark's 
+concept of the `reduceByKey` operator is not the same as Hadoop's, as 
+it is designed to aggregate all elements of a data set into a single 
+element. The closest simulation of Hadoop's MapReduce pattern is a 
+combination of `mapPartitions`, `groupByKey` and `mapPartitions`, as 
+shown in the next example.
 
-``` {#lst:spark style="PythonStyle" caption="Python code for a Spark program that counts the number of awards per institution using MapReduce" label="lst:spark" numbers="none"}
+
+```python
 import sys
 from pyspark import SparkContext
 def mapper(lines):
@@ -538,8 +540,7 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
-<div style="text-align: center">Listing 5.4. Python code for a Spark program that counts the number of awards
-per institution using MapReduce</div>
+<div style="text-align: center">Listing: Python code for a Spark program that counts the number of awards per institution using MapReduce</div> <a id="list:parallel4"></a>
 
 ---
 
@@ -610,13 +611,14 @@ Observing the transactional nature of the data, where the aggregation
 process could be distributed and merged across multiple partitions of
 the data, we could complete this task in much less time by using Spark.
 Using a cluster consisting of 1,200 cores, the Spark program in
-Listing 5.5 took under a minute to complete. The substantial
-performance gain comes not so much from the large number of processors
-available, but mostly from the large I/O bandwidth available on the
-cluster thanks to the 200 distributed hard disks and fast network
-interconnects.
+Listing [Census](#list:parallel5) took under a minute to complete. 
+The substantial performance gain comes not so much from the large 
+number of processors available, but mostly from the large I/O bandwidth 
+available on the cluster thanks to the 200 distributed hard disks and 
+fast network interconnects.
 
-``` {#lst:hdma style="PythonStyle" caption="Python code for a Spark program to aggregate the debt--income ratio for loans originated in different census tracts" label="lst:hdma" numbers="none"}
+
+```python
 import ast
 import sys
 from pyspark import SparkContext
@@ -650,22 +652,21 @@ if __name__=='__main__':
 
     output.saveAsTextFile(hdfsInputPath)
 ```
-<div style="text-align: center">Listing 5.5. Python code for a Spark program to aggregate the debt–income ratio
-for loans originated in different census tracts</div>
+<div style="text-align: center">Listing: Python code for a Spark program to aggregate the debt–income ratio for loans originated in different census tracts</div> <a id="list:parallel5"></a>
 
 ---
-
 
 Summary
 -------
 
-Analyzing large amounts of data means that it is necessary to both store very large collections
-of data and perform aggregate computations on those data. This chapter
-describes an important data storage approach (the Hadoop Distributed
-File System) and a way of processing large-scale data sets (the
-MapReduce model, as implemented in both Hadoop and Spark). This
-model enables not only large-scale data analysis but also provides easy to use implementations for more flexibility for social scientists to work with
-large amounts of data. This increases the analytic throughput as
+Analyzing large amounts of data means that it is necessary to both 
+store very large collections of data and perform aggregate computations 
+on those data. This chapter describes an important data storage approach 
+(the Hadoop Distributed File System) and a way of processing large-scale 
+data sets (the MapReduce model, as implemented in both Hadoop and Spark). 
+This model enables not only large-scale data analysis but also provides 
+easy to use implementations for more flexibility for social scientists to 
+work with large amounts of data. This increases the analytic throughput as
 well as the time to insight, speeding up the decision-making process and
 thus increasing impact.
 

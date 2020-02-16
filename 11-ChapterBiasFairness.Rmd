@@ -1,4 +1,4 @@
-<!-- % fix cross-references, side margins, footnotes ^(...)? **** --> 
+<!-- % footnotes ^(...)? **** --> 
 
 Bias and Fairness {#chap:bias}
 ================
@@ -271,10 +271,8 @@ Most of the metrics used to assess model fairness relate either to the
 types of errors a model might make or how predictive the model is across
 different groups. For binary classification models (which we focus on
 here), these are generally derived from values in the *confusion matrix*
-(see Figure 7.9 and Section 7.7.2 for more details):
-<!-- % 
-% TODO: fix these figure and section references
--->
+(see Figure \@ref(fig:cm) and Chapter [Machine Learning](#chap:ml) for 
+more details):
 
 -   **True Positives ($TP$)** are individuals for whom both the model
     prediction and actual outcome are positive labels.
@@ -293,32 +291,30 @@ here), these are generally derived from values in the *confusion matrix*
 Based on these four categories, we can calculate several ratios that are
 instructive for thinking about the equity of a model's predictions in
 different situations (Sections [punitive example](#sec:punitiveexample) and [assistive example](#sec:assistiveexample) provide some detailed examples here):
-<!-- % 
-%can we move the following definitions or the equations to the side margin?
--->
+
 -   **False Positive Rate ($FPR$)** is the fraction of individuals with
     negative actual labels who the model misclassifies with a positive
-    predicted label: $FPR = FP / (FP+TN)$
+    predicted label.^[$FPR = FP / (FP+TN)$]
 
 -   **False Negative Rate ($FNR$)** is the fraction of individuals with
     positive actual labels who the model misclassifies with a negative
-    predicted label: $FNR = FN / (FN+TP)$
+    predicted label.^[$FNR = FN / (FN+TP)$]
 
 -   **False Discovery Rate ($FDR$)** is the fraction of individuals who
     the model predicts to have a positive label but for whom the actual
-    label is negative: $FDR = FP / (FP+TP)$
+    label is negative.^[$FDR = FP / (FP+TP)$]
 
 -   **False Omission Rate ($FOR$)** is the fraction of individuals who
     the model predicts to have a negative label but for whom the actual
-    label is positive: $FOR = FN / (FN+TN)$
+    label is positive.^[$FOR = FN / (FN+TN)$]
 
 -   **Precision** is the fraction of individuals who the model predicts
-    to have a positive label about whom this prediction is correct:
-    $\textrm{precision} = TP / (FP+TP)$
+    to have a positive label about whom this prediction is
+    correct.^[$\textrm{precision} = TP / (FP+TP)$]
 
 -   **Recall** is the fraction of individuals with positive actual
-    labels who the model has correctly classified as such:
-    $\textrm{recall} = TP / (FN+TP)$
+    labels who the model has correctly classified as 
+    such.^[$\textrm{recall} = TP / (FN+TP)$]
 
 For the first two metrics ($FPR$ and $FNR$), notice that the denominator
 is based on actual outcomes (rather than model predictions), while in

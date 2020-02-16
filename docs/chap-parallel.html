@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -396,14 +396,14 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>As the amount of data available for social science research increases, we have to determine how to perform our analysis quickly and efficiently. One way to deal with large amounts of data that may not fit in memory or take too long to analyze on a single computer is to subsample the data or to simplify the analysis. Another approach is to use all the data by making use of multiple computers concurrently to do the analysis. The use of parallel computing to deal with large amounts of data has been a common approach in physical sciences. Data analysts have routinely been working on data sets much larger than a single machine can handle for several decades, especially at the DOE National Laboratories <span class="citation">(Sethian et al. <a href="#ref-bigdata_old1">1991</a>; Crossno, Cline, and Jortner <a href="#ref-crossno1993heterogeneous">1993</a>)</span> where high-performance computing has been a major technology trend. This is also demonstrated by the history of research in distributed computing and data management going back to the 1980s.</p>
 <p>There are many ways to do distributed and parallel computing, ranging from completely flexible (but more complex to use) approaches such as Message Passing Interface (MPI) <span class="citation">(Gropp, Lusk, and Skjellum <a href="#ref-mpi">2014</a>)</span> to more restrictive (but much easier to use) approaches such as MapReduce. MPI allows you to do anything with as much efficiency as your MPI skills allow you to code while MapReduce allows a more restrictive set of analysis to be done (possibly less efficiently) but is much easier to learn and implement.</p>
 <p>This chapter focuses on one such framework, called MapReduce, to do large-scale data analysis distributed across multiple computers. We describe the MapReduce framework, work through an example of using it, and highlight one implementation of the framework called Hadoop in detail.<a href="#fn34" class="footnoteRef" id="fnref34"><sup>34</sup></a></p>
-<p><strong>BOX</strong></p>
-<p><strong>Parallel Computing Examples</strong></p>
+<hr />
+<p><strong>Box: Parallel Computing Examples</strong> <a id="box:parallel1"></a></p>
 <p>Al Aghbari et al. <span class="citation">(<a href="#ref-aghbari2019">2019</a>)</span> introduce GeoSim, an algorithm used for clustering users in any social network site into communities based on the semantic meaning of the nodes interests as well as their relationships with each other. The parallelised version of GeoSim utilizes the MapReduce model to run on multiple machines simultaneously and get faster results.</p>
 <p>Kolb et al. <span class="citation">(<a href="#ref-kolb2012">2012</a>)</span> developed a tool DeDoop that uses Hadoop to do efficient record linkage (remember chapter <a href="chap-link.html#chap:link">Record Linkage</a>?) and scale to large data sets. Tasks such as record linkage where we can easily break down the larger task into smaller chunks (such as comparing two records to see if they belong to the same entity) that can be done in parallel are ideally suited for MapReduce frameworks.</p>
 <p>Ching et al. <span class="citation">(<a href="#ref-ching2012">2012</a>)</span> describe the data infrastructure at Facebook with MapReduce at the core of Facebook’s data analytics engine. Over half a petabyte of new data arrives in the warehouse every 24 hours, and ad-hoc queries, data pipelines, and custom MapReduce jobs process this raw data around the clock to generate more meaningful features and aggregations.</p>
-<p><strong>BOX</strong></p>
+<hr />
 </div>
-<div id="sec:intro" class="section level2">
+<div id="mapreduce" class="section level2">
 <h2><span class="header-section-number">5.2</span> MapReduce</h2>
 <p>The MapReduce framework was proposed by Jeffrey Dean and Sanjay Ghemawat at Google in 2004 <span class="citation">(Dean and Ghemawat <a href="#ref-MapReduce">2004</a>)</span>. Its origins date back to conceptually similar approaches first described in the early 1980s. Using the MapReduce framework requires turning the analysis problem we have into operations that the framework supports - these are map and reduce. The “map” operation takes the input and splits up the task into multiple (parallel) components, and the “reduce” operation consolidates the results of the parallel “mapped” tasks and produces the final output. In order to use the MapReduce framework, we need to break up our tasks in to map and reduce operations and implement these two operations.</p>
 <hr />
@@ -414,26 +414,26 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 0958915,Randall,Irmis,irmis@umnh.utah.edu
 1301647,Zaher,Hani,zh8@nyu.edu
 1316375,David,Shuster,dshuster@bgc.org</code></pre>
-<p>We observe that institutions can be distinguished by their email address domain name. Thus, we adopt a strategy of first grouping all award IDs by domain names, and then counting the number of distinct awards within each group. In order to do this, we first set the function to scan input lines and extract institution information and award IDs. Then, in the function, we simply count unique IDs on the data, since everything is already grouped by institution. Python pseudo-code is provided in Listing 5.1.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Input  : a list of text lines</span>
+<p>We observe that institutions can be distinguished by their email address domain name. Thus, we adopt a strategy of first grouping all award IDs by domain names, and then counting the number of distinct awards within each group. In order to do this, we first set the function to scan input lines and extract institution information and award IDs. Then, in the function, we simply count unique IDs on the data, since everything is already grouped by institution. Python pseudo-code is provided in Listing <a href="chap-parallel.html#list:parallel1">MapReduce</a>.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Input  : a list of text lines</span>
 <span class="co"># Output : a list of domain name and award ids</span>
-def <span class="kw">MAP</span>(lines)<span class="op">:</span>
-<span class="st">    </span><span class="cf">for</span> line <span class="cf">in</span> lines<span class="op">:</span>
-<span class="st">        </span>fields     =<span class="st"> </span><span class="kw">line.strip</span>(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>)<span class="kw">.split</span>(<span class="st">&#39;,&#39;</span>)
-        awardId    =<span class="st"> </span>fields[<span class="dv">0</span>]
-        domainName =<span class="st"> </span>fields[<span class="dv">3</span>]<span class="kw">.split</span>(<span class="st">&#39;@&#39;</span>)[<span class="op">-</span><span class="dv">1</span>]<span class="kw">.split</span>(<span class="st">&#39;.&#39;</span>)[<span class="op">-</span><span class="dv">2</span><span class="op">:</span>]
-        <span class="kw">yield</span> (domainName, awardId)
+<span class="kw">def</span> MAP(lines):
+    <span class="cf">for</span> line <span class="kw">in</span> lines:
+        fields     <span class="op">=</span> line.strip(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>).split(<span class="st">&#39;,&#39;</span>)
+        awardId    <span class="op">=</span> fields[<span class="dv">0</span>]
+        domainName <span class="op">=</span> fields[<span class="dv">3</span>].split(<span class="st">&#39;@&#39;</span>)[<span class="op">-</span><span class="dv">1</span>].split(<span class="st">&#39;.&#39;</span>)[<span class="op">-</span><span class="dv">2</span>:]
+        <span class="cf">yield</span> (domainName, awardId)
 
 <span class="co"># Input  : a list of domain name and award ids</span>
 <span class="co"># Output : a list of domain name and award count</span>
-def <span class="kw">REDUCE</span>(pairs)<span class="op">:</span>
-<span class="st">    </span><span class="cf">for</span> (domainName, awardIds) <span class="cf">in</span> pairs<span class="op">:</span>
-<span class="st">        </span>count =<span class="st"> </span><span class="kw">len</span>(<span class="kw">set</span>(awardIds))
-        <span class="kw">yield</span> (domainName, count)</code></pre></div>
+<span class="kw">def</span> REDUCE(pairs):
+    <span class="cf">for</span> (domainName, awardIds) <span class="kw">in</span> pairs:
+        count <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(awardIds))
+        <span class="cf">yield</span> (domainName, count)</code></pre></div>
 <div style="text-align: center">
-Listing 5.1. Python pseudo-code for the <code>map</code> and <code>reduce</code> functions to count the number of awards per institution
+Listing: Python pseudo-code for the <code>map</code> and <code>reduce</code> functions to count the number of awards per institution
 </div>
-<p><br></p>
+<p><a id="list:parallel1"></a></p>
 <p>In the map phase, the input will be transformed into tuples of institutions and award ids:</p>
 <p><code>&quot;0958723,Roland,Mundil,rmundil@bgc.org&quot;</code> → <code>(&quot;bgc.org&quot;, 0958723)</code> <code>&quot;0958915,Randall,Irmis,irmis@umnh.utah.edu&quot;</code> → <code>(&quot;utah.edu&quot;, 0958915)</code> <code>&quot;1301647,Zaher,Hani,zh8@nyu.edu&quot;</code> → <code>(&quot;nyu.edu&quot;, 1301647)</code> <code>&quot;1316375,David,Shuster,dshuster@bgc.org&quot;</code> → <code>(&quot;bgc.org&quot;, 1316375)</code></p>
 <p>Then the tuples will be grouped by institutions and be counted by the function.</p>
@@ -448,17 +448,17 @@ Listing 5.1. Python pseudo-code for the <code>map</code> and <code>reduce</code>
 <h3><span class="header-section-number">5.3.1</span> The Hadoop Distributed File System</h3>
 <p>The Hadoop Distributed File System <span class="citation">(Apache Software Foundation, n.d.)</span><span class="citation">(Apache Hadoop, n.d.)</span> is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each block is also replicated across several nodes as an attempt to ensure that a full copy of the data is still available even in the case of computing node failures. The block size as well as the number of replications per block are fully customized by users when they create files on HDFS. By default, the block size is set to 64 MB with a replication factor of 3, meaning that the system may encounter at least two concurrent node failures without losing any data. HDFS also actively monitors failures and re-replicates blocks on failed nodes to make sure that the number of replications for each block always stays at the user-defined settings. Thus, if a node fails, and only two copies of some data exist, the system will quickly copy those data to a working node, thus raising the number of copies to three again. This dynamic replication is the primary mechanism for fault tolerance in Hadoop.</p>
 <p>Note that data blocks are replicated and distributed across several machines. This could create a problem for users, because if they had to manage the data manually, they might, for example, have to access more than one machine to fetch a large data file. Fortunately, Hadoop provides infrastructure for managing this complexity seamlessly, including command line programs as well as an API that users can employ to interact with HDFS as if it were a local file system. For example, one can run simple Linux commands such as ls and mkdir to list and create a directory on HDFS, or even use to inspect file contents the same way as one would do in a Linux file system. The following code shows some examples of interacting with HDFS.</p>
-<pre id="lst:hdfs" style="PythonStyleInLine" label="lst:hdfs"><code># Creating a folder
-hadoop dfs -mkdir /hadoopiseasy
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co"># Creating a folder</span>
+hadoop dfs <span class="op">-</span>mkdir <span class="op">/</span>hadoopiseasy
 
-# Upload a CSV file from our local machine to HDFS
-hadoop dfs -put importantdata.csv /hadoopiseasy
+<span class="co"># Upload a CSV file from our local machine to HDFS</span>
+hadoop dfs <span class="op">-</span>put importantdata.csv <span class="op">/</span>hadoopiseasy
 
-# Listing all files under hadoopiseasy folder
-hadoop dfs -ls /hadoopiseasy
+<span class="co"># Listing all files under hadoopiseasy folder</span>
+hadoop dfs <span class="op">-</span>ls <span class="op">/</span>hadoopiseasy
 
-# Download a file to our local machine
-hadoop dfs -get /hadoopiseasy/importantdata.csv</code></pre>
+<span class="co"># Download a file to our local machine</span>
+hadoop dfs <span class="op">-</span>get <span class="op">/</span>hadoopiseasy<span class="op">/</span>importantdata.csv</code></pre></div>
 </div>
 <div id="hadoop-setup-bringing-compute-to-the-data" class="section level3">
 <h3><span class="header-section-number">5.3.2</span> Hadoop Setup: Bringing compute to the data</h3>
@@ -484,7 +484,7 @@ Figure 5.1: Top: The traditional parallel computing model where data are brought
 <div id="programming-in-hadoop" class="section level3">
 <h3><span class="header-section-number">5.3.4</span> Programming in Hadoop</h3>
 <p>Now that we are equipped with the knowledge that Hadoop is a MapReduce implementation that runs on HDFS and a bring-compute-to-the-data model, we can go over the design of a Hadoop MapReduce job. A MapReduce job is still composed of three phases: map, shuffle, and reduce. However, Hadoop divides the map and reduce phases into smaller tasks.</p>
-<p>Each map phase in Hadoop is divided into five tasks: <strong>input format</strong>, <strong>record reader</strong>, <strong>mapper</strong>, <strong>combiner</strong>, and <strong>partitioner</strong>. An <span class="roman">input format</span> task is in charge of talking to the input data presumably sitting on HDFS, and splitting it into partitions (e.g., by breaking lines at line breaks). Then a <span class="roman">record reader</span> task is responsible for translating the split data into the key–value pair records so that they can be processed by the mapper. By default, Hadoop parses files into key–value pairs of line numbers and line contents. However, both input formats and record readers are fully customizable and can be programmed to read custom data including binary files. It is important to note that input formats and record readers only provide data partitioning; they do not move data around computing nodes.</p>
+<p>Each map phase in Hadoop is divided into five tasks: <strong>input format</strong>, <strong>record reader</strong>, <strong>mapper</strong>, <strong>combiner</strong>, and <strong>partitioner</strong>. An <em>input format</em> task is in charge of talking to the input data presumably sitting on HDFS, and splitting it into partitions (e.g., by breaking lines at line breaks). Then a <em>record reader</em> task is responsible for translating the split data into the key–value pair records so that they can be processed by the mapper. By default, Hadoop parses files into key–value pairs of line numbers and line contents. However, both input formats and record readers are fully customizable and can be programmed to read custom data including binary files. It is important to note that input formats and record readers only provide data partitioning; they do not move data around computing nodes.</p>
 <p>After the records are generated, mappers are spawned—typically on nodes containing the blocks—to run through these records and output zero or more new key–value pairs. A mapper in Hadoop is equivalent to the <code>map</code> function of the MapReduce model that we discussed earlier. The selection of the key to be output from the mapper will heavily depend on the data processing pipeline and could greatly affect the performance of the framework. Mappers are executed concurrently in Hadoop as long as resources permit.</p>
 <p>A combiner task in Hadoop is similar to a function in the MapReduce framework, but it only works locally at each node: it takes output from mappers executed on the same node and produces aggregated values. Combiners are optional but can be used to greatly reduce the amount of data exchange in the shuffle phase; thus, users are encouraged to implement this whenever possible. A common practice is when a <code>reduce</code> function is both commutative and associative, and has the same input and output format, one can just use the <code>reduce</code> function as the combiner. Nevertheless, combiners are not guaranteed to be executed by Hadoop, so this should only be treated as a hint. Its execution must not affect the correctness of the program.</p>
 <p>A partitioner task is the last process taking place in the map phase on each mapper node, where it hashes the key of each key–value pair output from the mappers or the combiners into bins. By default, the partitioner uses object hash codes and modulus operations to direct a designated reducer to pull data from a map node. Though it is possible to customize the partitioner, it is only advisable to do so when one fully understands the intermediate data distribution as well as the specifications of the cluster. In general, it is better to leave this job to Hadoop.</p>
@@ -498,40 +498,40 @@ Figure 5.2: Data transfer and communication of a MapReduce job in Hadoop. Data b
 </div>
 <div id="programming-language-support" class="section level3">
 <h3><span class="header-section-number">5.3.5</span> Programming language support</h3>
-<p>Hadoop is written entirely in Java, thus it is best supporting applications written in Java. However, Hadoop also provides a <em>streaming API</em> that allows arbitrary code to be run inside the Hadoop MapReduce framework through the use of UNIX pipes. This means that we can supply a mapper program written in Python or C++ to Hadoop as long as that program reads from the standard input and writes to the standard output. The same mechanism also applies for the combiner and reducer. For example, we can develop from the Python pseudo-code in Listing 5.1 to a complete Hadoop streaming mapper (Listing 5.2) and reducer (Listing 5.3).</p>
-<pre id="lst:mapper" style="PythonStyle" belowskip="-6pt" caption="A Hadoop streaming mapper in Python" label="lst:mapper" numbers="none"><code>#!/usr/bin/env python
-import sys
+<p>Hadoop is written entirely in Java, thus it is best supporting applications written in Java. However, Hadoop also provides a <em>streaming API</em> that allows arbitrary code to be run inside the Hadoop MapReduce framework through the use of UNIX pipes. This means that we can supply a mapper program written in Python or C++ to Hadoop as long as that program reads from the standard input and writes to the standard output. The same mechanism also applies for the combiner and reducer. For example, we can develop from the Python pseudo-code in Listing <a href="chap-parallel.html#list:parallel1">MapReduce</a> to a complete Hadoop streaming mapper (Listing <a href="chap-parallel.html#list:parallel2">Mapper</a>) and reducer (Listing <a href="chap-parallel.html#list:parallel3">Reducer</a>).</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="im">import</span> sys
 
-def parseInput():
-    for line in sys.stdin:
-        yield line
+<span class="kw">def</span> parseInput():
+    <span class="cf">for</span> line <span class="kw">in</span> sys.stdin:
+        <span class="cf">yield</span> line
 
-if __name__==&#39;__main__&#39;:
-    for line in parseInput():
-        fields     = line.strip(&#39;\n&#39;).split(&#39;,&#39;)
-        awardId    = fields[0]
-        domainName = fields[3].split(&#39;@&#39;)[-1].split(&#39;.&#39;)[-2:]
-        print(&#39;%s\t%s&#39; % (domainName,awardId))</code></pre>
+<span class="cf">if</span> <span class="va">__name__</span><span class="op">==</span><span class="st">&#39;__main__&#39;</span>:
+    <span class="cf">for</span> line <span class="kw">in</span> parseInput():
+        fields     <span class="op">=</span> line.strip(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>).split(<span class="st">&#39;,&#39;</span>)
+        awardId    <span class="op">=</span> fields[<span class="dv">0</span>]
+        domainName <span class="op">=</span> fields[<span class="dv">3</span>].split(<span class="st">&#39;@&#39;</span>)[<span class="op">-</span><span class="dv">1</span>].split(<span class="st">&#39;.&#39;</span>)[<span class="op">-</span><span class="dv">2</span>:]
+        <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%s</span><span class="ch">\t</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (domainName,awardId))</code></pre></div>
 <div style="text-align: center">
-Listing 5.2. A Hadoop streaming mapper in Python
+Listing: A Hadoop streaming mapper in Python
 </div>
-<p><br></p>
-<pre id="lst:reducer" style="PythonStyle" float="b" caption="A Hadoop streaming reducer in Python" label="lst:reducer" numbers="none"><code>#!/usr/bin/env python
-import sys
+<p><a id="list:parallel2"></a> <br></p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="co">#!/usr/bin/env python</span>
+<span class="im">import</span> sys
 
-def parseInput():
-    for line in sys.stdin:
-        yield line
+<span class="kw">def</span> parseInput():
+    <span class="cf">for</span> line <span class="kw">in</span> sys.stdin:
+        <span class="cf">yield</span> line
 
-if __name__==&#39;__main__&#39;:
-    for line in parseInput():
-        (domainName, awardIds) = line.split(&#39;\t&#39;)
-        count = len(set(awardIds))
-        print(&#39;%s\t%s&#39; % (domainName, count))</code></pre>
+<span class="cf">if</span> <span class="va">__name__</span><span class="op">==</span><span class="st">&#39;__main__&#39;</span>:
+    <span class="cf">for</span> line <span class="kw">in</span> parseInput():
+        (domainName, awardIds) <span class="op">=</span> line.split(<span class="st">&#39;</span><span class="ch">\t</span><span class="st">&#39;</span>)
+        count <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(awardIds))
+        <span class="bu">print</span>(<span class="st">&#39;</span><span class="sc">%s</span><span class="ch">\t</span><span class="sc">%s</span><span class="st">&#39;</span> <span class="op">%</span> (domainName, count))</code></pre></div>
 <div style="text-align: center">
-Listing 5.3. A Hadoop streaming reducer in Python
+Listing: A Hadoop streaming reducer in Python
 </div>
-<p><br></p>
+<p><a id="list:parallel3"></a></p>
 <p>It should be noted that in Hadoop streaming, intermediate key–value pairs (the data flowing between mappers and reducers) must be in tab-delimited format, thus we replace the original <code>yield</code> command with a <code>print</code> formatted with tabs. Though the input format and record reader are still customizable in Hadoop streaming, they must be supplied as Java classes. This is one of the biggest limitations of Hadoop for Python developers. They not only have to split their code into separate mapper and reducer programs, but also need to learn Java if they want to work with nontextual data.</p>
 </div>
 <div id="benefits-and-limitations-of-hadoop" class="section level3">
@@ -554,34 +554,35 @@ Listing 5.3. A Hadoop streaming reducer in Python
 <h2><span class="header-section-number">5.5</span> Apache Spark</h2>
 <p>Apache Spark is another implementation that aims to support beyond MapReduce. The framework is centered around the concept of resilient distributed data sets and data transformations that can operate on these objects. An innovation in Spark is that the fault tolerance of resilient distributed data sets can be maintained without flushing data onto disks, thus significantly improving the system performance (with a claim of being 100 times faster than Hadoop). Instead, the fault-recovery process is done by replaying a log of data transformations on check-point data. Though this process could take longer than reading data straight from HDFS, it does not occur often and is a fair tradeoff between processing performance and recovery performance.</p>
 <p>Beyond map and reduce, Spark also supports various other transformations <span class="citation">(Hadoop, n.d.)</span>, including filter, data join, and aggregation. Streaming computation can also be done in Spark by asking Spark to reserve resources on a cluster to constantly stream data to/from the cluster. However, this streaming method might be resource intensive (still consuming resources when there is no data coming). Additionally, Spark plays well with the Hadoop ecosystem, particularly with the distributed file system (HDFS) and resource manager (YARN), making it possible to be built on top of current Hadoop applications.</p>
-<p>Another advantage of Spark is that it supports Python natively; thus, developers can run Spark in a fraction of the time required for Hadoop. Listing 5.4 provides the full code for the previous example written entirely in Spark. It should be noted that Spark’s concept of the <code>reduceByKey</code> operator is not the same as Hadoop’s, as it is designed to aggregate all elements of a data set into a single element. The closest simulation of Hadoop’s MapReduce pattern is a combination of <code>mapPartitions</code>, <code>groupByKey</code> and <code>mapPartitions</code>, as shown in the next example.</p>
-<pre id="lst:spark" style="PythonStyle" caption="Python code for a Spark program that counts the number of awards per institution using MapReduce" label="lst:spark" numbers="none"><code>import sys
-from pyspark import SparkContext
-def mapper(lines):
-    for line in lines:
-        fields     = line.strip(&#39;\n&#39;).split(&#39;,&#39;)
-        awardId    = fields[0]
-        domainName = fields[3].split(&#39;@&#39;)[-1].split(&#39;.&#39;)[-2:]
-        yield (domainName, awardId)
+<p>Another advantage of Spark is that it supports Python natively; thus, developers can run Spark in a fraction of the time required for Hadoop. Listing <a href="chap-parallel.html#list:parallel4">Spark</a> provides the full code for the previous example written entirely in Spark. It should be noted that Spark’s concept of the <code>reduceByKey</code> operator is not the same as Hadoop’s, as it is designed to aggregate all elements of a data set into a single element. The closest simulation of Hadoop’s MapReduce pattern is a combination of <code>mapPartitions</code>, <code>groupByKey</code> and <code>mapPartitions</code>, as shown in the next example.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> sys
+<span class="im">from</span> pyspark <span class="im">import</span> SparkContext
+<span class="kw">def</span> mapper(lines):
+    <span class="cf">for</span> line <span class="kw">in</span> lines:
+        fields     <span class="op">=</span> line.strip(<span class="st">&#39;</span><span class="ch">\n</span><span class="st">&#39;</span>).split(<span class="st">&#39;,&#39;</span>)
+        awardId    <span class="op">=</span> fields[<span class="dv">0</span>]
+        domainName <span class="op">=</span> fields[<span class="dv">3</span>].split(<span class="st">&#39;@&#39;</span>)[<span class="op">-</span><span class="dv">1</span>].split(<span class="st">&#39;.&#39;</span>)[<span class="op">-</span><span class="dv">2</span>:]
+        <span class="cf">yield</span> (domainName, awardId)
 
-def reducer(pairs):
-    for (domainName, awardIds) in pairs:
-        count = len(set(awardIds))
-        yield (domainName, count)
+<span class="kw">def</span> reducer(pairs):
+    <span class="cf">for</span> (domainName, awardIds) <span class="kw">in</span> pairs:
+        count <span class="op">=</span> <span class="bu">len</span>(<span class="bu">set</span>(awardIds))
+        <span class="cf">yield</span> (domainName, count)
 
-if __name__==&#39;__main__&#39;:
-    hdfsInputPath  = sys.argv[1]
-    hdfsOutputFile =  sys.argv[2]
-    sc = SparkContext(appName=&quot;Counting Awards&quot;)
-    output = sc.textFile(hdfsInputPath) \
-        .mapPartitions(mapper) \
-        .groupByKey() \
+<span class="cf">if</span> <span class="va">__name__</span><span class="op">==</span><span class="st">&#39;__main__&#39;</span>:
+    hdfsInputPath  <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    hdfsOutputFile <span class="op">=</span>  sys.argv[<span class="dv">2</span>]
+    sc <span class="op">=</span> SparkContext(appName<span class="op">=</span><span class="st">&quot;Counting Awards&quot;</span>)
+    output <span class="op">=</span> sc.textFile(hdfsInputPath) <span class="op">\</span>
+        .mapPartitions(mapper) <span class="op">\</span>
+        .groupByKey() <span class="op">\</span>
         .mapPartitions(reducer)
 
-    output.saveAsTextFile(hdfsInputPath)</code></pre>
+    output.saveAsTextFile(hdfsInputPath)</code></pre></div>
 <div style="text-align: center">
-Listing 5.4. Python code for a Spark program that counts the number of awards per institution using MapReduce
+Listing: Python code for a Spark program that counts the number of awards per institution using MapReduce
 </div>
+<p><a id="list:parallel4"></a></p>
 <hr />
 <p><strong>Example: Analyzing home mortgage disclosure application data</strong></p>
 <p>We use a financial services analysis problem to illustrate the use of Apache Spark.</p>
@@ -694,42 +695,43 @@ Listing 5.4. Python code for a Spark program that counts the number of awards pe
 </tbody>
 </table>
 <p><br></p>
-<p>Observing the transactional nature of the data, where the aggregation process could be distributed and merged across multiple partitions of the data, we could complete this task in much less time by using Spark. Using a cluster consisting of 1,200 cores, the Spark program in Listing 5.5 took under a minute to complete. The substantial performance gain comes not so much from the large number of processors available, but mostly from the large I/O bandwidth available on the cluster thanks to the 200 distributed hard disks and fast network interconnects.</p>
-<pre id="lst:hdma" style="PythonStyle" caption="Python code for a Spark program to aggregate the debt--income ratio for loans originated in different census tracts" label="lst:hdma" numbers="none"><code>import ast
-import sys
-from pyspark import SparkContext
+<p>Observing the transactional nature of the data, where the aggregation process could be distributed and merged across multiple partitions of the data, we could complete this task in much less time by using Spark. Using a cluster consisting of 1,200 cores, the Spark program in Listing <a href="chap-parallel.html#list:parallel5">Census</a> took under a minute to complete. The substantial performance gain comes not so much from the large number of processors available, but mostly from the large I/O bandwidth available on the cluster thanks to the 200 distributed hard disks and fast network interconnects.</p>
+<div class="sourceCode"><pre class="sourceCode python"><code class="sourceCode python"><span class="im">import</span> ast
+<span class="im">import</span> sys
+<span class="im">from</span> pyspark <span class="im">import</span> SparkContext
 
-def mapper(lines):
-    for line in lines:
-        fields = ast.literal_eval(&#39;(%s)&#39; % line)
-        (year, state, county, tract) = fields[:4]
-        (amount, income, originated) = fields[4:]
+<span class="kw">def</span> mapper(lines):
+    <span class="cf">for</span> line <span class="kw">in</span> lines:
+        fields <span class="op">=</span> ast.literal_eval(<span class="st">&#39;(</span><span class="sc">%s</span><span class="st">)&#39;</span> <span class="op">%</span> line)
+        (year, state, county, tract) <span class="op">=</span> fields[:<span class="dv">4</span>]
+        (amount, income, originated) <span class="op">=</span> fields[<span class="dv">4</span>:]
 
-        key = (year, state, county, tract)
-        value = (amount, income)
+        key <span class="op">=</span> (year, state, county, tract)
+        value <span class="op">=</span> (amount, income)
 
-        # Only count originated loans
-        if originated:
-            yield (key, value)
+        <span class="co"># Only count originated loans</span>
+        <span class="cf">if</span> originated:
+            <span class="cf">yield</span> (key, value)
 
-def sumDebtIncome(debtIncome1, debtIncome2):
-    return (debtIncome1[0] + debtIncome2[0], debtIncome1[1] + debtIncome2[1])
+<span class="kw">def</span> sumDebtIncome(debtIncome1, debtIncome2):
+    <span class="cf">return</span> (debtIncome1[<span class="dv">0</span>] <span class="op">+</span> debtIncome2[<span class="dv">0</span>], debtIncome1[<span class="dv">1</span>] <span class="op">+</span> debtIncome2[<span class="dv">1</span>])
 
-if __name__==&#39;__main__&#39;:
-    hdfsInputPath  = sys.argv[1]
-    hdfsOutputFile =  sys.argv[2]
-    sc = SparkContext(appName=&quot;Debt-Income Ratio&quot;)
-    sumValues = sc.textFile(hdfsInputPath) \
-        .mapPartitions(mapper) \
+<span class="cf">if</span> <span class="va">__name__</span><span class="op">==</span><span class="st">&#39;__main__&#39;</span>:
+    hdfsInputPath  <span class="op">=</span> sys.argv[<span class="dv">1</span>]
+    hdfsOutputFile <span class="op">=</span>  sys.argv[<span class="dv">2</span>]
+    sc <span class="op">=</span> SparkContext(appName<span class="op">=</span><span class="st">&quot;Debt-Income Ratio&quot;</span>)
+    sumValues <span class="op">=</span> sc.textFile(hdfsInputPath) <span class="op">\</span>
+        .mapPartitions(mapper) <span class="op">\</span>
         .reduceByKey(sumDebtIncome)
 
-    # Actually compute the aggregated debt income
-    output = sumValues.mapValues(lambda debtIncome: debtIncome[0]/debtIncome[1])
+    <span class="co"># Actually compute the aggregated debt income</span>
+    output <span class="op">=</span> sumValues.mapValues(<span class="kw">lambda</span> debtIncome: debtIncome[<span class="dv">0</span>]<span class="op">/</span>debtIncome[<span class="dv">1</span>])
 
-    output.saveAsTextFile(hdfsInputPath)</code></pre>
+    output.saveAsTextFile(hdfsInputPath)</code></pre></div>
 <div style="text-align: center">
-Listing 5.5. Python code for a Spark program to aggregate the debt–income ratio for loans originated in different census tracts
+Listing: Python code for a Spark program to aggregate the debt–income ratio for loans originated in different census tracts
 </div>
+<p><a id="list:parallel5"></a></p>
 <hr />
 </div>
 <div id="summary-3" class="section level2">

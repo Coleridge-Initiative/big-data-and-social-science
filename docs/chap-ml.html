@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -398,59 +398,27 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="what-is-machine-learning" class="section level2">
 <h2><span class="header-section-number">7.2</span> What is machine learning?</h2>
 <p>When humans improve their skills with experience, they are said to learn. Is it also possible to program computers to do the same? Arthur Samuel, who coined the term <em>machine learning</em> in 1959 <span class="citation">(Samuel <a href="#ref-samuel1959some">1959</a>)</span>, was a pioneer in this area, programming a computer to play checkers. The computer played against itself and human opponents, improving its performance with every game. Eventually, after sufficient <em>training</em> (and experience), the computer became a better player than the human programmer. Today, machine learning has grown significantly beyond learning to play checkers. Machine learning systems have learned to drive (and park) autonomous cars, are embedded inside robots, can recommend books, products, and movies we are (sometimes) interested in, identify drugs, proteins, and genes that should be investigated further to cure diseases, detect cancer and other pathologies in x-rays and other types of medical imaging, help us understand how the human brain learns language, help identify which voters are persuadable in elections, detect which students are likely to need extra support to graduate high school on time, and help solve many more problems. Over the past 20 years, machine learning has become an interdisciplinary field spanning computer science, artificial intelligence, databases, and statistics. At its core, machine learning seeks to design computer systems that improve over time with more experience. In one of the earlier books on machine learning, Tom Mitchell gives a more operational definition, stating that: “A computer program is said to learn from experience <span class="math inline">\(E\)</span> with respect to some class of tasks <span class="math inline">\(T\)</span> and performance measure <span class="math inline">\(P\)</span>, if its performance at tasks in <span class="math inline">\(T\)</span>, as measured by <span class="math inline">\(P\)</span>, improves with experience <span class="math inline">\(E\)</span>” <span class="citation">(Mitchell <a href="#ref-mitchell1997machine">1997</a>)</span>. We like this definition because it is task-focused and allows us to think of machine learning as a tool used inside a larger system to improve outcomes that we care about.</p>
-<div class="F00">
-<p>
-<strong>Box 7.1: Commercial machine learning examples</strong>
-</p>
+<hr />
+<p><strong>Box: Commercial machine learning examples</strong> <a id="box:ml1"></a></p>
 <ul>
-<li>
-<p>
-<strong>Speech recognition</strong>: Speech recognition software uses machine learning algorithms that are built on large amounts of initial training data. Machine learning allows these systems to be tuned and adapt to individual variations in speaking as well as across different domains.
-</p>
-</li>
-<li>
-<p>
-<strong>Autonomous cars</strong>: The ongoing development of self-driving cars applies techniques from machine learning. An onboard computer continuously analyzes the incoming video and sensor streams in order to monitor the surroundings. Incoming data are matched with annotated images to recognize objects like pedestrians, traffic lights, and potholes. In order to assess the different objects, huge training data sets are required where similar objects already have been identified. This allows the autonomous car to decide on which actions to take next.
-</p>
-</li>
-<li>
-<p>
-<strong>Fraud detection</strong>: Many public and private organizations face the problem of fraud and abuse. Machine learning systems are widely used to take historical cases of fraud and flag fraudulent transactions as they take place. These systems have the benefit of being adaptive, and improving with more data over time.
-</p>
-</li>
-<li>
-<p>
-<strong>Personalized ads</strong>: Many online stores have personalized recommendations promoting possible products of interest. Based on individual shopping history and what other similar users bought in the past, the website predicts products a user may like and tailors recommendations. Netflix and Amazon are two examples of companies whose recommendation software predicts how a customer would rate a certain movie or product and then suggests items with the highest predicted ratings. Of course there are some caveats here, since they then adjust the recommendations to maximize profits.
-</p>
-</li>
-<li>
-<p>
-<strong>Face recognition</strong>: Surveillance systems, social networking platforms, and imaging software all use face detection and face recognition to first detect faces in images (or video) and then tag them with individuals for various tasks. These systems are trained by giving examples of faces to a machine learning system which then learns to detect new faces, and tag known individuals. The bias and fairness chapter will highlight some concerns with these types of systems.
-</p>
-</li>
+<li><p><strong>Speech recognition</strong>: Speech recognition software uses machine learning algorithms that are built on large amounts of initial training data. Machine learning allows these systems to be tuned and adapt to individual variations in speaking as well as across different domains.</p></li>
+<li><p><strong>Autonomous cars</strong>: The ongoing development of self-driving cars applies techniques from machine learning. An onboard computer continuously analyzes the incoming video and sensor streams in order to monitor the surroundings. Incoming data are matched with annotated images to recognize objects like pedestrians, traffic lights, and potholes. In order to assess the different objects, huge training data sets are required where similar objects already have been identified. This allows the autonomous car to decide on which actions to take next.</p></li>
+<li><p><strong>Fraud detection</strong>: Many public and private organizations face the problem of fraud and abuse. Machine learning systems are widely used to take historical cases of fraud and flag fraudulent transactions as they take place. These systems have the benefit of being adaptive, and improving with more data over time.</p></li>
+<li><p><strong>Personalized ads</strong>: Many online stores have personalized recommendations promoting possible products of interest. Based on individual shopping history and what other similar users bought in the past, the website predicts products a user may like and tailors recommendations. Netflix and Amazon are two examples of companies whose recommendation software predicts how a customer would rate a certain movie or product and then suggests items with the highest predicted ratings. Of course there are some caveats here, since they then adjust the recommendations to maximize profits.</p></li>
+<li><p><strong>Face recognition</strong>: Surveillance systems, social networking platforms, and imaging software all use face detection and face recognition to first detect faces in images (or video) and then tag them with individuals for various tasks. These systems are trained by giving examples of faces to a machine learning system which then learns to detect new faces, and tag known individuals. The bias and fairness chapter will highlight some concerns with these types of systems.</p></li>
 </ul>
-</div>
+<hr />
 <!--
 % Box 7.2 and section 7.7. overlap
 -->
-<div class="F00">
-<p>
-<strong>Box 7.2: Social Science machine learning examples</strong>
-</p>
-<p>
-Potash et al <span class="citation"><span class="citation">(<a href="#ref-Potash2015">2015</a>)</span></span> worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
-</p>
-<p>
-Carton et al <span class="citation"><span class="citation">(<a href="#ref-Carton2016">2016</a>)</span></span> used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.
-</p>
-<p>
-Athey and Wager <span class="citation"><span class="citation">(<a href="#ref-athey2019">2019</a>)</span></span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.
-</p>
-<p>
-Voigt et al <span class="citation"><span class="citation">(<a href="#ref-Voigt2017">2017</a>)</span></span> uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.
-</p>
-</div>
-<p>Machine learning grew from the need for systems that were adaptive, scalable, and cost-effective to build and maintain. A lot of tasks now being done using machine learning used to be done by rule-based systems, where experts would spend considerable time and effort developing and maintaining the rules. The problem with those systems was that they were rigid, not adaptive, hard to scale, and expensive to maintain. Machine learning systems started becoming popular because they could improve the system along all of these dimensions<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. Box 7.1 mentions several examples where machine learning is being used in commercial applications today. Social scientists are uniquely placed today to take advantage of the same advances in machine learning by having better methods to solve several key problems they are tackling. Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a></p>
+<hr />
+<p><strong>Box: Social Science machine learning examples</strong> <a id="box:ml2"></a></p>
+<p>Potash et al <span class="citation">(<a href="#ref-Potash2015">2015</a>)</span> worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.</p>
+<p>Carton et al <span class="citation">(<a href="#ref-Carton2016">2016</a>)</span> used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.</p>
+<p>Athey and Wager <span class="citation">(<a href="#ref-athey2019">2019</a>)</span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.</p>
+<p>Voigt et al <span class="citation">(<a href="#ref-Voigt2017">2017</a>)</span> uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.</p>
+<hr />
+<p>Machine learning grew from the need for systems that were adaptive, scalable, and cost-effective to build and maintain. A lot of tasks now being done using machine learning used to be done by rule-based systems, where experts would spend considerable time and effort developing and maintaining the rules. The problem with those systems was that they were rigid, not adaptive, hard to scale, and expensive to maintain. Machine learning systems started becoming popular because they could improve the system along all of these dimensions<a href="#fn41" class="footnoteRef" id="fnref41"><sup>41</sup></a>. Box <a href="chap-ml.html#box:ml1">Applications</a> mentions several examples where machine learning is being used in commercial applications today. Social scientists are uniquely placed today to take advantage of the same advances in machine learning by having better methods to solve several key problems they are tackling. Box <a href="chap-ml.html#box:ml2">Social Science</a> describes a few social science and policy problems that are being tackled using machine learning today.<a href="#fn42" class="footnoteRef" id="fnref42"><sup>42</sup></a></p>
 <p>This chapter is not an exhaustive introduction to machine learning. There are many books that have done an excellent job of that <span class="citation">(Flach <a href="#ref-Flach">2012</a>; Hastie, Tibshirani, and Friedman <a href="#ref-HastieTibshirani">2001</a>; Mitchell <a href="#ref-mitchell1997machine">1997</a>)</span>. Instead, we present a short and accessible introduction to machine learning for social scientists, give an overview of the overall machine learning process, provide an intuitive introduction to machine learning methods, give some practical tips that will be helpful in using these methods, and leave a lot of the statistical theory to machine learning textbooks. As you read more about machine learning in the research literature or the media, you will encounter names of other fields that are related (and practically the same for most social science audiences), such as statistical learning, data mining, and pattern recognition.</p>
 </div>
 <div id="types-of-analysis" class="section level2">
@@ -514,49 +482,19 @@ Figure 7.1: Spectrum of machine learning methods from unsupervised to supervised
 </div>
 <div id="methods" class="section level2">
 <h2><span class="header-section-number">7.6</span> Methods</h2>
-<p>We will start by describing unsupervised learning methods and then go on to supervised learning methods. We focus here on the intuition behind the methods and the algorithm, as well as some practical tips, rather than on the statistical theory that underlies the methods. We encourage readers to refer to machine learning books listed in Section <a href="chap-ml.html#ml:res">Resources</a>. Box 7.3 gives brief definitions of several terms we will use in this section.</p>
-<div class="F00">
-<p>
-<strong>Box 7.3: Machine learning vocabulary</strong>
-</p>
+<p>We will start by describing unsupervised learning methods and then go on to supervised learning methods. We focus here on the intuition behind the methods and the algorithm, as well as some practical tips, rather than on the statistical theory that underlies the methods. We encourage readers to refer to machine learning books listed in Section <a href="chap-ml.html#ml:res">Resources</a>. Box <a href="chap-ml.html#box:ml3">Vocabulary</a> gives brief definitions of several terms we will use in this section.</p>
+<hr />
+<p><strong>Box 7.3: Machine learning vocabulary</strong> <a id="box:ml3"></a></p>
 <ul>
-<li>
-<p>
-<strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.
-</p>
-</li>
-<li>
-<p>
-<strong>Examples</strong>: These are data points, rows, observations, or instances.
-</p>
-</li>
-<li>
-<p>
-<strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.
-</p>
-</li>
-<li>
-<p>
-<strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.
-</p>
-</li>
-<li>
-<p>
-<strong>Underfitting</strong>: This happens when a model is too simple and does not capture the structure of the data well enough.
-</p>
-</li>
-<li>
-<p>
-<strong>Overfitting</strong>: This happens when a model is possibly too complex and models the noise in the data, which can result in poor generalization performance. Using in-sample measures to do model selection can result in that.
-</p>
-</li>
-<li>
-<p>
-<strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. For example, in building logistic regression models, a common approach is to make sure the model weights (coefficients) are, on average, small in magnitude. Two common regularizations are <span class="math inline"><span class="math inline">\(L_1\)</span></span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline"><span class="math inline">\(L_2\)</span></span> regularization, which encourages the sum of the squares of the parameters to be small.
-</p>
-</li>
+<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of “learning” a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
+<li><p><strong>Examples</strong>: These are data points, rows, observations, or instances.</p></li>
+<li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
+<li><p><strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.</p></li>
+<li><p><strong>Underfitting</strong>: This happens when a model is too simple and does not capture the structure of the data well enough.</p></li>
+<li><p><strong>Overfitting</strong>: This happens when a model is possibly too complex and models the noise in the data, which can result in poor generalization performance. Using in-sample measures to do model selection can result in that.</p></li>
+<li><p><strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. For example, in building logistic regression models, a common approach is to make sure the model weights (coefficients) are, on average, small in magnitude. Two common regularizations are <span class="math inline">\(L_1\)</span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline">\(L_2\)</span> regularization, which encourages the sum of the squares of the parameters to be small.</p></li>
 </ul>
-</div>
+<hr />
 <div id="unsupervised-learning-methods" class="section level3">
 <h3><span class="header-section-number">7.6.1</span> Unsupervised learning methods</h3>
 <p>As mentioned earlier, unsupervised learning methods are used when we do not have a target variable to estimate or predict but want to understand clusters, groups, or patterns in the data. These methods are often used for data exploration, as in the following examples:</p>
@@ -791,7 +729,7 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 <p>It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that these features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools useful for social scientists using machine learning to solve problems that require a better and deeper understanding of their predictions.</p>
 </div>
 </div>
-<div id="evaluation" class="section level2">
+<div id="sec:7-7" class="section level2">
 <h2><span class="header-section-number">7.7</span> Evaluation</h2>
 <p>The previous section introduced us to a variety of methods, all with certain pros and cons, and no single method guaranteed to outperform others for a given problem. This section focuses on evaluation methods, with three primary goals:</p>
 <ol style="list-style-type: decimal">
@@ -803,7 +741,7 @@ Figure 7.6: An exemplary decision tree. The top figure is the standard represent
 methodologies that use existing data and then move on to field trials.
 The methodologies we describe below apply both to regression and
 classification problems. MALTE: no field trials. it is clear enough that we describe both regression and classification probs --></p>
-<div id="methodology" class="section level3">
+<div id="sec:7-7.1" class="section level3">
 <h3><span class="header-section-number">7.7.1</span> Methodology</h3>
 <p><strong>In-sample evaluation</strong></p>
 <p>As social scientists, you already evaluate methods on how well they perform in-sample (on the set that the model was trained on). As we mentioned earlier in the chapter, the goal of machine learning methods is to generalize to new data, and validating models in-sample does not allow us to do that. We focus here on evaluation methodologies that allow us to optimize (as best as we can) for generalization performance. The methods are illustrated in Figure <a href="chap-ml.html#fig:holdout">7.7</a>.</p>
@@ -835,7 +773,7 @@ Figure 7.8: Temporal validation
 </ol>
 <p>Temporal validation is similar to how time series models are evaluated (also known as backtesting) and should be the validation approach used for most practical problems.</p>
 </div>
-<div id="metrics" class="section level3">
+<div id="sec:7-7.2" class="section level3">
 <h3><span class="header-section-number">7.7.2</span> Metrics</h3>
 <p>The previous subsection focused on validation methodologies assuming we have an evaluation metric in mind. This section will go over commonly used evaluation metrics. You are probably familiar with using <span class="math inline">\(R^2\)</span>, analysis of the residuals, and mean squared error (MSE) to evaluate the quality of regression models. For regression problems, the MSE calculates the average squared differences between predictions <span class="math inline">\(\hat{y}_i\)</span> and true values <span class="math inline">\(y_i\)</span>. When prediction models have smaller MSE, they are better. However, the MSE itself is hard to interpret because it measures quadratic differences. Instead, the root mean squared error (RMSE) is more intuitive as it as measure of mean differences on the original scale of the response variable. Yet another alternative is the mean absolute error (MAE), which measures average absolute distances between predictions and true values.</p>
 <p>We will now describe some additional evaluation metrics commonly used in machine learning for classification. Before we dive into metrics, it is important to highlight that machine learning models for classification typically do not predict 0/1 values directly. SVMs, random forests, and logistic regression all produce a score (which is sometimes a probability) that is then turned into 0 or 1 based on a user-specific threshold. You might find that certain tools (such as scikitlearn<a href="#fn51" class="footnoteRef" id="fnref51"><sup>51</sup></a>) use a default value for that threshold (often 0.5), but it is important to know that it is an arbitrary threshold and you should select the threshold based on the data, the model, and the problem you are solving. We will cover that a little later in this section.</p>
@@ -850,7 +788,8 @@ Figure 7.9: A <em>confusion matrix</em> created from real-valued predictions
 <p>Two additional metrics that are often used are precision and recall, which are defined as follows: <span class="math display">\[\begin{aligned}
 {\rm Precision} &amp;= \frac{TP}{TP + FP}=\frac{TP}{P},
 \\
-{\rm Recall} &amp;= \frac{TP}{TP + FN}=\frac{TP}{P&#39;}\end{aligned}\]</span> (see also Box 7.3). Precision measures the accuracy of the classifier when it predicts an example to be positive. It is the ratio of correctly predicted positive examples (<span class="math inline">\(TP\)</span>) to all examples predicted as positive (<span class="math inline">\(TP + FP\)</span>). This measure is also called <em>positive predictive value</em> in other fields. Recall measures the ability of the classifier to find positive examples. It is the ratio of all the correctly predicted positive examples (<span class="math inline">\(TP\)</span>) to all the positive examples in the data (<span class="math inline">\(TP + FN\)</span>). This is also called <em>sensitivity</em> in other fields.</p>
+{\rm Recall} &amp;= \frac{TP}{TP + FN}=\frac{TP}{P&#39;}
+\end{aligned}\]</span> (see also Box <a href="chap-ml.html#box:ml3">Vocabulary</a>). Precision measures the accuracy of the classifier when it predicts an example to be positive. It is the ratio of correctly predicted positive examples (<span class="math inline">\(TP\)</span>) to all examples predicted as positive (<span class="math inline">\(TP + FP\)</span>). This measure is also called <em>positive predictive value</em> in other fields. Recall measures the ability of the classifier to find positive examples. It is the ratio of all the correctly predicted positive examples (<span class="math inline">\(TP\)</span>) to all the positive examples in the data (<span class="math inline">\(TP + FN\)</span>). This is also called <em>sensitivity</em> in other fields.</p>
 <p>You might have encountered another metric called <em>specificity</em> in other fields. This measure is the true negative rate: the proportion of negatives that are correctly identified.</p>
 <p>Another metric that is used is the <span class="math inline">\(F_1\)</span> score, which is the harmonic mean of precision and recall: <span class="math display">\[F_1 =  \frac{2* {\rm Precision} * {\rm Recall}}{{\rm Precision} + {\rm Recall}}\]</span></p>
 <p>This is often used when you want to balance both precision and recall.</p>

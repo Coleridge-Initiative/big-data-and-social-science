@@ -5,11 +5,8 @@ Machine Learning {#chap:ml}
 
 **Rayid Ghani and Malte Schierholz**
 
-
 This chapter introduces you to the use of machine learning in tackling 
-social science and public policy problems. We cover the end-to-end machine learning
-process and focus on clustering and classification methods. After reading this chapter, you should have an overview of the components of a machine learning pipeline and methods, and know how to use those in solving social science problems. We have written this chapter to give an intuitive explanation for the methods and to provide a framework and practical
-tips on how to use them in practice.
+social science and public policy problems. We cover the end-to-end machine learning process and focus on clustering and classification methods. After reading this chapter, you should have an overview of the components of a machine learning pipeline and methods, and know how to use those in solving social science problems. We have written this chapter to give an intuitive explanation for the methods and to provide a framework and practical tips on how to use them in practice.
 
 Introduction
 ------------
@@ -65,27 +62,66 @@ of tasks $T$ and performance measure $P$, if its performance at tasks in
 $T$, as measured by $P$, improves with experience $E$"
 [@mitchell1997machine]. We like this definition because it is task-focused and allows us to think of machine learning as a tool used inside a larger system to improve outcomes that we care about.
 
-<div class="F00">
-<p><strong>Box 7.1: Commercial machine learning examples</strong></p>
-<ul>
-<li><p><strong>Speech recognition</strong>: Speech recognition software uses machine learning algorithms that are built on large amounts of initial training data. Machine learning allows these systems to be tuned and adapt to individual variations in speaking as well as across different domains.</p></li>
-<li><p><strong>Autonomous cars</strong>: The ongoing development of self-driving cars applies techniques from machine learning. An onboard computer continuously analyzes the incoming video and sensor streams in order to monitor the surroundings. Incoming data are matched with annotated images to recognize objects like pedestrians, traffic lights, and potholes. In order to assess the different objects, huge training data sets are required where similar objects already have been identified. This allows the autonomous car to decide on which actions to take next.</p></li>
-<li><p><strong>Fraud detection</strong>: Many public and private organizations face the problem of fraud and abuse. Machine learning systems are widely used to take historical cases of fraud and flag fraudulent transactions as they take place. These systems have the benefit of being adaptive, and improving with more data over time.</p></li>
-<li><p><strong>Personalized ads</strong>: Many online stores have personalized recommendations promoting possible products of interest. Based on individual shopping history and what other similar users bought in the past, the website predicts products a user may like and tailors recommendations. Netflix and Amazon are two examples of companies whose recommendation software predicts how a customer would rate a certain movie or product and then suggests items with the highest predicted ratings. Of course there are some caveats here, since they then adjust the recommendations to maximize profits.</p></li>
-<li><p><strong>Face recognition</strong>: Surveillance systems, social networking platforms, and imaging software all use face detection and face recognition to first detect faces in images (or video) and then tag them with individuals for various tasks. These systems are trained by giving examples of faces to a machine learning system which then learns to detect new faces, and tag known individuals. The bias and fairness chapter will highlight some concerns with these types of systems.</p></li>
-</ul>
-</div>
+---
+
+**Box: Commercial machine learning examples** <a id="box:ml1"></a>
+
+-   **Speech recognition**: Speech recognition software uses machine learning algorithms that
+    are built on large amounts of initial training data. Machine
+    learning allows these systems to be tuned and adapt to individual
+    variations in speaking as well as across different domains.
+
+-   **Autonomous cars**: The ongoing development of self-driving cars applies techniques from
+    machine learning. An onboard computer continuously analyzes the
+    incoming video and sensor streams in order to monitor the
+    surroundings. Incoming data are matched with annotated images to
+    recognize objects like pedestrians, traffic lights, and potholes. In
+    order to assess the different objects, huge training data sets are
+    required where similar objects already have been identified. This
+    allows the autonomous car to decide on which actions to take next.
+
+-   **Fraud detection**: Many public and private organizations face the problem of fraud and
+    abuse. Machine learning systems are widely used to take historical
+    cases of fraud and flag fraudulent transactions as they take place.
+    These systems have the benefit of being adaptive, and improving with
+    more data over time.
+
+-   **Personalized ads**: Many online stores have personalized recommendations promoting
+    possible products of interest. Based on individual shopping history
+    and what other similar users bought in the past, the website
+    predicts products a user may like and tailors recommendations.
+    Netflix and Amazon are two examples of companies whose
+    recommendation software predicts how a customer would rate a certain
+    movie or product and then suggests items with the highest predicted
+    ratings. Of course there are some caveats here, since they then
+    adjust the recommendations to maximize profits.
+	
+-   **Face recognition**: Surveillance systems, social networking platforms, and imaging
+    software all use face detection and face recognition to first detect
+    faces in images (or video) and then tag them with individuals for
+    various tasks. These systems are trained by giving examples of faces
+    to a machine learning system which then learns to detect new faces,
+    and tag known individuals. The bias and fairness chapter will highlight some concerns with these types of systems.
+
+---
 
 <!--
 % Box 7.2 and section 7.7. overlap
 -->
-<div class="F00">
-<p><strong>Box 7.2: Social Science machine learning examples</strong></p>
-<p>Potash et al <span class="citation">[-@Potash2015]</span> worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.</p>
-<p>Carton et al <span class="citation">[-@Carton2016]</span> used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.</p>
-<p>Athey and Wager <span class="citation">[-@athey2019]</span> use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.</p>
-<p>Voigt et al <span class="citation">[-@Voigt2017]</span> uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.</p>
-</div>
+
+---
+
+**Box: Social Science machine learning examples** <a id="box:ml2"></a>
+
+Potash et al [-@Potash2015] worked with the Chicago Department of Public Health and used random forests (a machine learning classification method) to predict which children are at risk of lead poisoning. This early warning system was then used to prioritize lead hazard inspections to detect and remediate lead hazards before they had an adverse effect on the child.
+
+Carton et al [-@Carton2016] used a collection of machine learning methods to identify police officers at risk of adverse behavior, such as unjustified use of force or unjustified shootings or sustained complaints, to prioritize preventive interventions such as training and counseling.
+
+Athey and  Wager [-@athey2019] use a modification of random forests to estimate heterogeneous treatment effects using a data set from The National Study of Learning Mindsets to evaluate the impact of interventions to improve student achievement.
+
+Voigt et al [-@Voigt2017] uses machine learning methods to analyze footage from body-worn cameras and understand the respectfulness of police officer language toward white and black community members during routine traffic stops.
+
+---
 
 Machine learning grew from the need for systems that were adaptive,
 scalable, and cost-effective to build and maintain. A lot of tasks now
@@ -95,12 +131,12 @@ maintaining the rules. The problem with those systems was that they were
 rigid, not adaptive, hard to scale, and expensive to maintain. Machine
 learning systems started becoming popular because they could improve the
 system along all of these dimensions^[See Chapter
-[Record Linkage](#chap:link).]. Box 7.1
+[Record Linkage](#chap:link).]. Box [Applications](#box:ml1)
 mentions several examples where machine learning is being used in
 commercial applications today. Social scientists are uniquely placed
 today to take advantage of the same advances in machine learning by
 having better methods to solve several key problems they are tackling.
-Box 7.2 describes a few social science and policy problems that are being tackled using machine learning today.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
+Box [Social Science](#box:ml2) describes a few social science and policy problems that are being tackled using machine learning today.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
 This chapter is not an exhaustive introduction to machine learning.
 There are many books that have done an excellent job of that
@@ -326,20 +362,45 @@ to supervised learning methods. We focus here on the intuition behind
 the methods and the algorithm, as well as some practical tips, rather than on
 the statistical theory that underlies the methods. We encourage readers
 to refer to machine learning books listed in Section [Resources](#ml:res). 
-Box 7.3 gives brief definitions of several terms we will use in this section.
+Box [Vocabulary](#box:ml3) gives brief definitions of several terms we 
+will use in this section.
 
-<div class="F00">
-<p><strong>Box 7.3: Machine learning vocabulary</strong></p>
-<ul>
-<li><p><strong>Learning</strong>: In machine learning, you will notice the term <em>learning</em> that will be used in the context of &quot;learning&quot; a model. This is what you probably know as <em>fitting</em> or <em>estimating</em> a function, or <em>training</em> or <em>building</em> a model. These terms are all synonyms and are used interchangeably in the machine learning literature.</p></li>
-<li><p><strong>Examples</strong>: These are data points, rows, observations, or instances.</p></li>
-<li><p><strong>Features</strong>: These are independent variables, attributes, predictor variables, and explanatory variables.</p></li>
-<li><p><strong>Labels</strong>: These include the response variable, dependent variable, target variable, or outcomes.</p></li>
-<li><p><strong>Underfitting</strong>: This happens when a model is too simple and does not capture the structure of the data well enough.</p></li>
-<li><p><strong>Overfitting</strong>: This happens when a model is possibly too complex and models the noise in the data, which can result in poor generalization performance. Using in-sample measures to do model selection can result in that.</p></li>
-<li><p><strong>Regularization</strong>: This is a general method to avoid overfitting by applying additional constraints to the model that is learned. For example, in building logistic regression models, a common approach is to make sure the model weights (coefficients) are, on average, small in magnitude. Two common regularizations are <span class="math inline">\(L_1\)</span> regularization (used by the lasso), which has a penalty term that encourages the sum of the absolute values of the parameters to be small; and <span class="math inline">\(L_2\)</span> regularization, which encourages the sum of the squares of the parameters to be small.</p></li>
-</ul>
-</div>
+---
+
+**Box 7.3: Machine learning vocabulary** <a id="box:ml3"></a>
+
+-  **Learning**: In machine learning, you will notice the term *learning* that will
+    be used in the context of "learning" a model. This is what you
+    probably know as *fitting* or *estimating* a function, or *training*
+    or *building* a model. These terms are all synonyms and are used
+    interchangeably in the machine learning literature.
+
+-   **Examples**: These are data points, rows, observations, or instances.
+
+-   **Features**: These are independent variables, attributes, predictor variables,
+    and explanatory variables.
+
+-   **Labels**: These include the response variable, dependent variable, target
+    variable, or outcomes.
+
+-   **Underfitting**: This happens when a model is too simple and does not capture the
+    structure of the data well enough.
+
+-   **Overfitting**: This happens when a model is possibly too complex and models the
+    noise in the data, which can result in poor generalization
+    performance. Using in-sample measures to do model selection can
+    result in that.
+
+-   **Regularization**: This is a general method to avoid overfitting by applying additional
+    constraints to the model that is learned. For example, in building logistic regression models, a common approach is to
+    make sure the model weights (coefficients) are, on average, small in magnitude. Two
+    common regularizations are $L_1$ regularization (used by the lasso),
+    which has a penalty term that encourages the sum of the absolute
+    values of the parameters to be small; and $L_2$ regularization,
+    which encourages the sum of the squares of the parameters to be
+    small.
+
+---
 
 ### Unsupervised learning methods
 
@@ -1228,7 +1289,7 @@ While it's important to understand the models we are building at a global level,
 It’s important to keep in mind though that these “explanations” are typically not causal, and are often restricted to be a ranked list of “features”. One way to think about them is that these features were most important in assigning this data point the score it was given by a particular model. This is currently an active area of machine learning research and will hopefully mature into a set of methods and tools useful for social scientists using machine learning to solve problems that require a better and deeper understanding of their predictions.
 
 
-Evaluation
+Evaluation {#sec:7-7}
 ----------
 
 The previous section introduced us to a variety of methods, all with
@@ -1251,7 +1312,7 @@ methodologies that use existing data and then move on to field trials.
 The methodologies we describe below apply both to regression and
 classification problems. MALTE: no field trials. it is clear enough that we describe both regression and classification probs -->
 
-### Methodology
+### Methodology {#sec:7-7.1}
 
 **In-sample evaluation**
 
@@ -1350,7 +1411,7 @@ reality:
 
 Temporal validation is similar to how time series models are evaluated (also known as backtesting) and should be the validation approach used for most practical problems.
 
-### Metrics
+### Metrics {#sec:7-7.2}
 
 The previous subsection focused on validation methodologies assuming we
 have an evaluation metric in mind. This section will go over commonly
@@ -1406,18 +1467,21 @@ than a dumb classifier that predicts positive all the time (and will
 have 95% accuracy).
 
 Two additional metrics that are often used are precision and recall,
-which are defined as follows: $$\begin{aligned}
+which are defined as follows: 
+$$\begin{aligned}
 {\rm Precision} &= \frac{TP}{TP + FP}=\frac{TP}{P},
 \\
-{\rm Recall} &= \frac{TP}{TP + FN}=\frac{TP}{P'}\end{aligned}$$ (see
-also Box 7.3). Precision measures the accuracy of the classifier when it
-predicts an example to be positive. It is the ratio of correctly
-predicted positive examples ($TP$) to all examples predicted as positive
-($TP + FP$). This measure is also called *positive predictive value* in
-other fields. Recall measures the ability of the classifier to find positive
-examples. It is the ratio of all the correctly predicted positive
-examples ($TP$) to all the positive examples in the data ($TP + FN$).
-This is also called *sensitivity* in other fields.
+{\rm Recall} &= \frac{TP}{TP + FN}=\frac{TP}{P'}
+\end{aligned}$$ 
+(see also Box [Vocabulary](#box:ml3)). Precision measures the accuracy 
+of the classifier when it predicts an example to be positive. It is the 
+ratio of correctly predicted positive examples ($TP$) to all examples 
+predicted as positive ($TP + FP$). This measure is also called 
+*positive predictive value* in other fields. Recall measures the 
+ability of the classifier to find positive examples. It is the ratio 
+of all the correctly predicted positive examples ($TP$) to all the 
+positive examples in the data ($TP + FN$). This is also called 
+*sensitivity* in other fields.
 
 You might have encountered another metric called *specificity* in other
 fields. This measure is the true negative rate: the proportion of

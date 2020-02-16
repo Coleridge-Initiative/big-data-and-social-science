@@ -188,7 +188,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </ul></li>
 <li class="chapter" data-level="5" data-path="chap-parallel.html"><a href="chap-parallel.html"><i class="fa fa-check"></i><b>5</b> Scaling up through Parallel and Distributed Computing</a><ul>
 <li class="chapter" data-level="5.1" data-path="chap-parallel.html"><a href="chap-parallel.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#sec:intro"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
+<li class="chapter" data-level="5.2" data-path="chap-parallel.html"><a href="chap-parallel.html#mapreduce"><i class="fa fa-check"></i><b>5.2</b> MapReduce</a></li>
 <li class="chapter" data-level="5.3" data-path="chap-parallel.html"><a href="chap-parallel.html#apache-hadoop-mapreduce"><i class="fa fa-check"></i><b>5.3</b> Apache Hadoop MapReduce</a><ul>
 <li class="chapter" data-level="5.3.1" data-path="chap-parallel.html"><a href="chap-parallel.html#the-hadoop-distributed-file-system"><i class="fa fa-check"></i><b>5.3.1</b> The Hadoop Distributed File System</a></li>
 <li class="chapter" data-level="5.3.2" data-path="chap-parallel.html"><a href="chap-parallel.html#hadoop-setup-bringing-compute-to-the-data"><i class="fa fa-check"></i><b>5.3.2</b> Hadoop Setup: Bringing compute to the data</a></li>
@@ -237,9 +237,9 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="7.6.4" data-path="chap-ml.html"><a href="chap-ml.html#skewed-or-imbalanced-classification-problems"><i class="fa fa-check"></i><b>7.6.4</b> Skewed or imbalanced classification problems</a></li>
 <li class="chapter" data-level="7.6.5" data-path="chap-ml.html"><a href="chap-ml.html#model-interpretability"><i class="fa fa-check"></i><b>7.6.5</b> Model interpretability</a></li>
 </ul></li>
-<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#evaluation"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
-<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#methodology"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
-<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#metrics"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
+<li class="chapter" data-level="7.7" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7"><i class="fa fa-check"></i><b>7.7</b> Evaluation</a><ul>
+<li class="chapter" data-level="7.7.1" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.1"><i class="fa fa-check"></i><b>7.7.1</b> Methodology</a></li>
+<li class="chapter" data-level="7.7.2" data-path="chap-ml.html"><a href="chap-ml.html#sec:7-7.2"><i class="fa fa-check"></i><b>7.7.2</b> Metrics</a></li>
 </ul></li>
 <li class="chapter" data-level="7.8" data-path="chap-ml.html"><a href="chap-ml.html#practical-tips"><i class="fa fa-check"></i><b>7.8</b> Practical tips</a><ul>
 <li class="chapter" data-level="7.8.1" data-path="chap-ml.html"><a href="chap-ml.html#avoiding-leakage"><i class="fa fa-check"></i><b>7.8.1</b> Avoiding Leakage</a></li>
@@ -920,7 +920,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Harrison, Lane, Katharina Reinecke, and Remco Chang. 2015. “Infographic Aesthetics: Designing for the First Impression.” In <em>Proceedings of the 33rd Annual Acm Conference on Human Factors in Computing Systems</em>, 1187–90. ACM.</p>
 </div>
 <div>
-<p>Hart, Nick. n.d. “Two Years of Progress on Evidence-Based Policymaking in the United States.” <em>Data Coalition Blog</em>. Washington DC: The Data Colaition. <a href="https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/" class="uri">https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/</a>.</p>
+<p>Hart, Nick. 2019. “Two Years of Progress on Evidence-Based Policymaking in the United States.” <em>Data Coalition Blog</em>. Washington DC: The Data Colaition. <a href="https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/" class="uri">https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/</a>.</p>
 </div>
 <div>
 <p>Hastie, Trevor, and Rob Tibshirani. n.d. “Statistical Learning Course.” <a href="https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about" class="uri">https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about</a>. Accessed February 1, 2016.</p>
@@ -1124,7 +1124,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>Kong, Lingpeng, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia, Chris Dyer, and Noah A. Smith. 2014. “A Dependency Parser for Tweets.” In <em>Proceedings of the 2014 Conference on Empirical Methods in Natural Language Processing (Emnlp)</em>, 1001–12. Association for Computational Linguistics. <a href="http://www.aclweb.org/anthology/D14-1108" class="uri">http://www.aclweb.org/anthology/D14-1108</a>.</p>
 </div>
 <div>
-<p>Kopf, Dan. n.d. “This year’s Nobel Prize in economics was awarded to a Python convert.” <em>Quartz</em>. <a href="https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/" class="uri">https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/</a>.</p>
+<p>Kopf, Dan. 2018. “This year’s Nobel Prize in economics was awarded to a Python convert.” <em>Quartz</em>. <a href="https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/" class="uri">https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/</a>.</p>
 </div>
 <div>
 <p>Köpcke, Hanna, Andreas Thor, and Erhard Rahm. 2010. “Evaluation of Entity Resolution Approaches on Real-World Match Problems.” <em>Proceedings of the VLDB Endowment</em> 3 (1–2). VLDB Endowment: 484–93.</p>
@@ -1791,6 +1791,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 </div>
 </div>
 </div>
+
+
+
+
+
+
 
 
 
