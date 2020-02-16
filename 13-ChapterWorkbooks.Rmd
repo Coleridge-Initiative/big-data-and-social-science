@@ -34,18 +34,16 @@ The first example is used in the *Databases*,
 The second example includes the *APIs*, *Record Linkage*, 
 *Text Analysis*, and *Network Analysis* workbooks, which primarily use patent data from PatentsView^[https://www.patentsview.org/] and grant data from Federal RePORTER^[https://federalreporter.nih.gov/] to investigate innovation and funding.
 
-The Jupyter notebooks are designed to be run online using Binder
-(<https://mybinder.org/>) and don't need additional software installed 
+The Jupyter notebooks are designed to be run online in a cloud environment using Binder^[https://mybinder.org/] and don't need additional software installed 
 locally. Individual workbooks can be opened by following the 
-corresponding Binder link. The full set of workbooks is
-available at (<https://workbooks.coleridgeinitiative.org>). Additional workbooks
+corresponding Binder link, and everything can be done in your browser. The full set of workbooks is
+available at (<https://workbooks.coleridgeinitiative.org>), and additional workbooks
 may be added over time and made available in this repository. 
 
 The workbooks can also be run locally. In that case, you will need to install 
 Python on your system, along with some additional Python packages needed by the workbooks.
 The easiest way to get this all working is to install the free Anaconda
-Python distribution 
-(<https://www.anaconda.com/distribution/>). Anaconda includes a Jupyter
+Python distribution^[https://www.anaconda.com/distribution/]. Anaconda includes a Jupyter
 server and precompiled versions of many packages used in the workbooks.
 It includes multiple tools for installing and updating both Python and
 installed packages. It is separate from any OS-level version of Python,
@@ -72,7 +70,7 @@ the North Carolina Department of Corrections Data
 ### Dataset Exploration and Visualization
 
 The *Dataset Exploration and Visualization* notebook further explores the 
-North Carolina Department of Correction data, demonstrating how to work with 
+North Carolina Department of Corrections data, demonstrating how to work with 
 missing values and date variables and join tables by using SQL in Python. 
 Though some of the SQL from the Databases notebook is revisited here, the 
 focus is on practicing Python code and using Python for data analysis. The 
@@ -104,9 +102,9 @@ In this workbook, you will learn how to:
 
 ### Record Linkage
 
-In the *Record Linkage* workbook you will use Python to implement the basic
+In the *Record Linkage* workbook, you will use Python to implement the basic
 concepts behind record linkage using data from PatentsView and Federal 
-RePORTER. This workbook will cover probabilistic record linkage, 
+RePORTER. This workbook will cover how to pre-process data for linkage before demonstrating multiple methods of record linkage, including probabilistic record linkage, 
 in which different types of string comparators are used to compare multiple 
 pieces of information between two records to produce a score that indicates 
 how likely it is that the records are data about the same underlying entity. 
@@ -192,7 +190,7 @@ it demonstrates how to construct and compare many different machine learning mod
 
 ### Bias and Fairness
 
-The *Bias and Fairness* workbook exemplifies the usage of the bias and 
+The *Bias and Fairness* workbook demonstrates an example of using the bias and 
 fairness audit toolkit Aequitas in Python. This workbook uses an example 
 from criminal justice and demonstrates how Aequitas can be used to 
 detect and evaluate biases of a machine learning system in relation to 

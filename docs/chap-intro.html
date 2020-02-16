@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
 <head>
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Chapter 1 Introduction | Big Data and Social Science</title>
   <meta name="description" content="Chapter 1 Introduction | Big Data and Social Science" />
-  <meta name="generator" content="bookdown 0.13 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.17 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Chapter 1 Introduction | Big Data and Social Science" />
   <meta property="og:type" content="book" />
@@ -39,6 +39,9 @@
 <link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
 
 
 
@@ -58,41 +61,66 @@
 
 
 <style type="text/css">
-div.sourceCode { overflow-x: auto; }
-table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
-  margin: 0; padding: 0; vertical-align: baseline; border: none; }
-table.sourceCode { width: 100%; line-height: 100%; }
-td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
-td.sourceCode { padding-left: 5px; }
-code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code > span.dt { color: #902000; } /* DataType */
-code > span.dv { color: #40a070; } /* DecVal */
-code > span.bn { color: #40a070; } /* BaseN */
-code > span.fl { color: #40a070; } /* Float */
-code > span.ch { color: #4070a0; } /* Char */
-code > span.st { color: #4070a0; } /* String */
-code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code > span.ot { color: #007020; } /* Other */
-code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code > span.fu { color: #06287e; } /* Function */
-code > span.er { color: #ff0000; font-weight: bold; } /* Error */
-code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-code > span.cn { color: #880000; } /* Constant */
-code > span.sc { color: #4070a0; } /* SpecialChar */
-code > span.vs { color: #4070a0; } /* VerbatimString */
-code > span.ss { color: #bb6688; } /* SpecialString */
-code > span.im { } /* Import */
-code > span.va { color: #19177c; } /* Variable */
-code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code > span.op { color: #666666; } /* Operator */
-code > span.bu { } /* BuiltIn */
-code > span.ex { } /* Extension */
-code > span.pp { color: #bc7a00; } /* Preprocessor */
-code > span.at { color: #7d9029; } /* Attribute */
-code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(title);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -118,13 +146,12 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="1.3" data-path="chap-intro.html"><a href="chap-intro.html#sec:1.3"><i class="fa fa-check"></i><b>1.3</b> The importance of inference</a></li>
 <li class="chapter" data-level="1.4" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-4"><i class="fa fa-check"></i><b>1.4</b> The importance of understanding how data are generated</a></li>
 <li class="chapter" data-level="1.5" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-5"><i class="fa fa-check"></i><b>1.5</b> New tools for new data</a></li>
-<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#sec:1-6"><i class="fa fa-check"></i><b>1.6</b> The book’s “use case”</a></li>
-<li class="chapter" data-level="1.7" data-path="chap-intro.html"><a href="chap-intro.html#the-structure-of-the-book"><i class="fa fa-check"></i><b>1.7</b> The structure of the book</a><ul>
-<li class="chapter" data-level="1.7.1" data-path="chap-intro.html"><a href="chap-intro.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>1.7.1</b> Part I: Capture and curation</a></li>
-<li class="chapter" data-level="1.7.2" data-path="chap-intro.html"><a href="chap-intro.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>1.7.2</b> Part II: Modeling and analysis</a></li>
-<li class="chapter" data-level="1.7.3" data-path="chap-intro.html"><a href="chap-intro.html#part-iii-inference-and-ethics"><i class="fa fa-check"></i><b>1.7.3</b> Part III: Inference and ethics</a></li>
+<li class="chapter" data-level="1.6" data-path="chap-intro.html"><a href="chap-intro.html#the-structure-of-the-book"><i class="fa fa-check"></i><b>1.6</b> The structure of the book</a><ul>
+<li class="chapter" data-level="1.6.1" data-path="chap-intro.html"><a href="chap-intro.html#part-i-capture-and-curation"><i class="fa fa-check"></i><b>1.6.1</b> Part I: Capture and curation</a></li>
+<li class="chapter" data-level="1.6.2" data-path="chap-intro.html"><a href="chap-intro.html#part-ii-modeling-and-analysis"><i class="fa fa-check"></i><b>1.6.2</b> Part II: Modeling and analysis</a></li>
+<li class="chapter" data-level="1.6.3" data-path="chap-intro.html"><a href="chap-intro.html#part-iii-inference-and-ethics"><i class="fa fa-check"></i><b>1.6.3</b> Part III: Inference and ethics</a></li>
 </ul></li>
-<li class="chapter" data-level="1.8" data-path="chap-intro.html"><a href="chap-intro.html#sec:intro:resources"><i class="fa fa-check"></i><b>1.8</b> Resources</a></li>
+<li class="chapter" data-level="1.7" data-path="chap-intro.html"><a href="chap-intro.html#sec:intro:resources"><i class="fa fa-check"></i><b>1.7</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="chap-web.html"><a href="chap-web.html"><i class="fa fa-check"></i><b>2</b> Working with Web Data and APIs</a><ul>
 <li class="chapter" data-level="2.1" data-path="chap-web.html"><a href="chap-web.html#introduction"><i class="fa fa-check"></i><b>2.1</b> Introduction</a></li>
@@ -399,21 +426,21 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 Figure 1.1: Use of pre-existing survey data in publications in leading journals, 1980–2010 <span class="citation">(Chetty <a href="#ref-Chetty2012">2012</a>)</span>
 </p>
 </div>
-<p>Policy has also changed. The Foundations of Evidence-based Policy Act, which was signed into law in 2019, requires agencies to make use of evidence and data in making policy decisions <span class="citation">(Hart <a href="#ref-Hart">2019</a>)</span>. The Act, together with the Federal Data Strategy <span class="citation">(Office of Management and Budget, n.d.)</span> establishes both Chief Data Officers to oversee the collection, use of and access to many new types of data and a learning agenda to build the data science capacity of agency staff.</p>
+<p>Policy has also changed. The Foundations of Evidence-based Policy Act, which was signed into law in 2019, requires agencies to make use of evidence and data in making policy decisions <span class="citation">(Hart <a href="#ref-Hart">2019</a>)</span>. The Act, together with the Federal Data Strategy <span class="citation">(Office of Management and Budget, <a href="#ref-OfficeofManagementandBudget">n.d.</a>)</span> establishes both Chief Data Officers to oversee the collection, use of and access to many new types of data and a learning agenda to build the data science capacity of agency staff.</p>
 <p>And the jobs have changed. The new job title of “data scientist” is highlighted in job advertisements on CareerBuilder.com and Burningglass— supplanting the demand for statisticians, economists, and other quantitative social scientists if starting salaries are useful indicators. At the federal level, the Office of Personnel Management created a new data scientist job title.</p>
 <p>The goal of this book is to provide social scientists with an understanding of the key elements of this new science, value of the tools and the opportunities for doing better work. The goal is also to identify the many ways in which the analytical toolkits possessed by social scientists can be brought to bear to enhance the generalizability and usefulness of the work done by computer scientists.</p>
 <p>We take a pragmatic approach, drawn on our experience of working with data. Most social scientists set out to solve a real world social or economic problem: they frame the problem, identify the data, do the analysis, and then draw inferences. At all points, of course, the social scientist needs to consider the ethical ramifications of her work, particularly respecting privacy and confidentiality. The book follows the same structure. We chose a particular problem—the link between research investments and innovation—because that is a major social science policy issue, and one in which social scientists have been addressing using big data techniques.</p>
 </div>
 <div id="sec:1-2" class="section level2">
 <h2><span class="header-section-number">1.2</span> Defining big data and its value</h2>
-<p>There are almost as many definitions of big data as there are new types of data. One approach is to define big data as anything too big to fit onto your computer.<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> Another approach is to define it as data with high volume, high velocity and great variety. We choose the description adopted by the American Association of Public Opinion Research: “The term”Big Data&quot; is an imprecise description of a rich and complicated set of characteristics, practices, techniques, ethical issues, and outcomes all associated with data&quot; <span class="citation">(Japec et al. <a href="#ref-japec2015big">2015</a>)</span>.</p>
+<p>There are almost as many definitions of big data as there are new types of data. One approach is to define big data as anything too big to fit onto your computer.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> Another approach is to define it as data with high volume, high velocity and great variety. We choose the description adopted by the American Association of Public Opinion Research: “The term”Big Data" is an imprecise description of a rich and complicated set of characteristics, practices, techniques, ethical issues, and outcomes all associated with data" <span class="citation">(Japec et al. <a href="#ref-japec2015big">2015</a>)</span>.</p>
 <p>The value of the new types of data for social science is quite substantial. Personal data have been hailed as the “new oil” of the 21st century <span class="citation">(Greenwood et al. <a href="#ref-greenwood2014">2014</a>)</span>. Policy-makers have found that detailed data on human beings can be used to reduce crime <span class="citation">(Lynch <a href="#ref-lynch2018">2018</a>)</span>, improve health delivery <span class="citation">(Pan et al. <a href="#ref-pan2017">2017</a>)</span> and manage cities better <span class="citation">(Glaeser <a href="#ref-glaeser2019urban">2019</a>)</span>. Society can gain as well—much cited work shows data driven businesses were five percent more productive and six percent more profitable than their competitors <span class="citation">(Brynjolfsson, Hitt, and Kim <a href="#ref-brynjolfsson2011strength">2011</a>)</span>. Henry Brady provides a succinct overview when he says “Burgeoning data and innovative methods facilitate answering previously hard-to-tackle questions about society by offering new ways to form concepts from data, to do descriptive inference, to make causal inferences, and to generate predictions. They also pose challenges as social scientists must grasp the meaning of concepts and predictions generated by convoluted algorithms, weigh the relative value of prediction versus causal inference, and cope with ethical challenges as their methods, such as algorithms for mobilizing voters or determining bail, are adopted by policy makers” <span class="citation">(Brady <a href="#ref-brady2019challenge">2019</a>)</span>.</p>
 <hr />
 <p><strong>Example: New potential for social science</strong></p>
-<p>For example, the billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago <span class="citation">(Cavallo and Rigobon <a href="#ref-cavallo2016billion">2016</a>)</span>; other great examples include the way in which researchers use text analysis of political speeches to study political polarization <span class="citation">(Peterson and Spirling <a href="#ref-peterson2018classification">2018</a>)</span> or of airbnb postings to get new insights into racial discrimination <span class="citation">(Edelman, Luca, and Svirsky <a href="#ref-edelman2017racial">2017</a>)</span>.</p>
+<p>The billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago <span class="citation">(Cavallo and Rigobon <a href="#ref-cavallo2016billion">2016</a>)</span>; other great examples include the way in which researchers use text analysis of political speeches to study political polarization <span class="citation">(Peterson and Spirling <a href="#ref-peterson2018classification">2018</a>)</span> or of airbnb postings to get new insights into racial discrimination <span class="citation">(Edelman, Luca, and Svirsky <a href="#ref-edelman2017racial">2017</a>)</span>.</p>
 <hr />
 <p>But most interestingly, the new data can change the way we think about behavior. For example, in a study of environmental effects on health, researchers combined information on public school cafeteria deliveries with children’s school health records to show that simply putting water jets in cafeterias reduced milk consumption and also reduced childhood obesity <span class="citation">(Schwartz et al. <a href="#ref-schwartz2016effect">2016</a>)</span>. Another study which shed new light into the role of peers on productivity found that the productivity of a cashier increased if they were within eyesight of a highly productive cashier but not otherwise <span class="citation">(Mas and Moretti <a href="#ref-mas2009peers">2009</a>)</span>. Studies like these show ways in which clever use of data can lead to greater understanding of the effects of complex environmental inputs on human behavior.</p>
-<p>New types of data can also enable us to study to examine small groups - the tails of a distribution - in a way that is not possible with small data. Much of interest in human behavior is driven by those tails—health care costs by small numbers of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, economic activity and employment by a small number of firms <span class="citation">(Evans <a href="#ref-evans1987tests">1987</a>, <span class="citation">Jovanovic (<a href="#ref-jovanovic1982selection">1982</a>)</span>)</span>.</p>
+<p>New types of data can also enable us to study to examine small groups - the tails of a distribution - in a way that is not possible with small data. Much of interest in human behavior is driven by those tails—health care costs by small numbers of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, economic activity and employment by a small number of firms <span class="citation">(Evans <a href="#ref-evans1987tests">1987</a>, @jovanovic1982selection)</span>.</p>
 <p>Our excitement about the value of new types of data must be accompanied by a recognition of the lessons learned by statisticians and social scientists from their past experience with surveys and small scale data collection. The next sections provide a brief overview.</p>
 </div>
 <div id="sec:1.3" class="section level2">
@@ -422,7 +449,7 @@ Figure 1.1: Use of pre-existing survey data in publications in leading journals,
 <p>If we take a look across the social sciences, including economics, public policy, sociology, management, (parts of) psychology and the like, their scientific activities can be grouped into three categories with three different inferential goals: Description, Causation and Prediction.</p>
 <p><strong>Description</strong></p>
 <p>The job of many social scientists is to provide descriptive statements about the population of interest. These could be univariate, bivariate or even multivariate statements.</p>
-<p>Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities <span class="citation">(Hansen, Hurwitz, and Madow <a href="#ref-hansen1993sample">1993</a>, <span class="citation">Valliant, Dever, and Kreuter (<a href="#ref-valliant2013practical">2013</a>)</span>)</span>.</p>
+<p>Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities <span class="citation">(Hansen, Hurwitz, and Madow <a href="#ref-hansen1993sample">1993</a>, @valliant2013practical)</span>.</p>
 <hr />
 <p><strong>Example: Descriptive statistics</strong></p>
 <p>The Census Bureau’s American Community Survey (ACS) “helps local officials, community leaders, and businesses understand the changes taking place in their communities. It is the premier source for detailed population and housing information about our nation” (<a href="https://www.census.gov/programs-surveys/acs" class="uri">https://www.census.gov/programs-surveys/acs</a>). The summary statistics are used by planners to allocate resources - but it’s important to pay attention to the standard errors, particularly for small samples. For example, in one county (Autauga) in Alabama, with a total population of about fifty-five thousand, the ACS estimates that 139 children under age 5 live in poverty—plus or minus 178! So the plausible range is somewhere between 0 and 317 <span class="citation">(Spielman and Singleton <a href="#ref-Spielman2015">2015</a>)</span>.</p>
@@ -434,19 +461,39 @@ Figure 1.1: Use of pre-existing survey data in publications in leading journals,
 <p><strong>Example: New data and causal inference</strong></p>
 <p>If the data generating process is not understood, resources can be badly misallocated. Overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, internet savvy people with cell-phones and away from elderly or impoverished neighborhoods <span class="citation">(Shelton et al. <a href="#ref-shelton2014mapping">2014</a>)</span>. Of course, all data collection approaches have had similar risks. Bad survey methodology led the Literary Digest to incorrectly call the 1936 election <span class="citation">(Squire <a href="#ref-squire19881936">1988</a>)</span>. Inadequate understanding of coverage, incentive and quality issues, together with the lack of a comparison group, has hampered the use of administrative records—famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction <span class="citation">(Donohue III and Wolfers <a href="#ref-donohue2006uses">2006</a>)</span>. </p>
 <hr />
-<p>In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations <span class="citation">(Athey and Imbens <a href="#ref-athey2017state">2017</a>)</span> 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest (cite: Stuart et al. 2010). New methods to address generalizability are under development <span class="citation">(DuGoff, Schuler, and Stuart <a href="#ref-dugoff2014generalizing">2014</a>)</span> . While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.</p>
+<p>In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations <span class="citation">(Athey and Imbens <a href="#ref-athey2017state">2017</a>)</span> 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest (cite: Stuart et al. 2010). New methods to address generalizability are under development <span class="citation">(DuGoff, Schuler, and Stuart <a href="#ref-dugoff2014generalizing">2014</a>)</span> . While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.</p>
 <p><strong>Prediction</strong></p>
 <p>Forecasting or prediction tasks. The potential for massive amounts of data to improve prediction is undeniable. However, just like the causal inference setting, it is of utmost importance that we know the process that generated the data, so that biases due to unknown or unobserved systematic selection can be minimized. Predictive policing is a good example of the challenges. The criminal justice system generates massive amounts of data that can be used to better allocate police resources - but if the data do not represent the population at large, the predictions will be biased.</p>
 <hr />
 <p><strong>Example: Learning from the flu</strong></p>
-<p>“Five years ago in 2009, a team of researchers from Google announced a remarkable achievement in one of the world’s top scientific journals, <em>Nature</em>. Without needing the results of a single medical check-up, they were nevertheless able to track the spread of influenza across the US. What’s more, they could do it more quickly than the Centers for Disease Control and Prevention (CDC). Google’s tracking had only a day’s delay, compared with the week or more it took for the CDC to assemble a picture based on reports from doctors’ surgeries. Google was faster because it was tracking the outbreak by finding a correlation between what people searched for online and whether they had flu symptoms. …</p>
-<p>“Four years after the original <em>Nature</em> paper was published, <em>Nature News</em> had sad tidings to convey: the latest flu outbreak had claimed an unexpected victim: Google Flu Trends. After reliably providing a swift and accurate account of flu outbreaks for several winters, the theory-free, data-rich model had lost its nose for where flu was going. Google’s model pointed to a severe outbreak but when the slow-and-steady data from the CDC arrived, they showed that Google’s estimates of the spread of flu-like illnesses were overstated by almost a factor of two.</p>
-<p>“The problem was that Google did not know—could not begin to know—what linked the search terms with the spread of flu. Google’s engineers weren’t trying to figure out what caused what. They were merely finding statistical patterns in the data. They cared about correlation rather than causation” <span class="citation">(Harford <a href="#ref-harford2014big">2014</a>)</span>.</p>
+<p>"Five years ago in 2009, a team of researchers from Google announced
+a remarkable achievement in one of the world’s top scientific journals,
+<em>Nature</em>. Without needing the results of a single medical check-up, they
+were nevertheless able to track the spread of influenza across the US.
+What’s more, they could do it more quickly than the Centers for Disease
+Control and Prevention (CDC). Google’s tracking had only a day’s delay,
+compared with the week or more it took for the CDC to assemble a picture
+based on reports from doctors’ surgeries. Google was faster because it
+was tracking the outbreak by finding a correlation between what people
+searched for online and whether they had flu symptoms. …</p>
+<p>"Four years after the original <em>Nature</em> paper was published, <em>Nature
+News</em> had sad tidings to convey: the latest flu outbreak had claimed an
+unexpected victim: Google Flu Trends. After reliably providing a swift
+and accurate account of flu outbreaks for several winters, the
+theory-free, data-rich model had lost its nose for where flu was going.
+Google’s model pointed to a severe outbreak but when the slow-and-steady
+data from the CDC arrived, they showed that Google’s estimates of the
+spread of flu-like illnesses were overstated by almost a factor of two.</p>
+<p>“The problem was that Google did not know—could not begin to
+know—what linked the search terms with the spread of flu. Google’s
+engineers weren’t trying to figure out what caused what. They were
+merely finding statistical patterns in the data. They cared about
+correlation rather than causation” <span class="citation">(Harford <a href="#ref-harford2014big">2014</a>)</span>.</p>
 <hr />
 </div>
 <div id="sec:1-4" class="section level2">
 <h2><span class="header-section-number">1.4</span> The importance of understanding how data are generated</h2>
-<p>The costs of realizing the benefits of the new types of data are non trivial. Even if data collection is cheap, the costs of cleaning, curating, standardizing, integrating and using the new types of data are substantial. In essence, just as with data from surveys, data still need to be processed—cleaned, normalized, and variables coded—but this needs to be done at scale.<a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a> But even once all of these tasks are completed, social scientists have a key role in describing the quality of the data. This role is important, because most data in the real world are noisy, inconsistent, and exhibit missing values. Data quality can be characterized in multiple ways (see <span class="citation">Christen (<a href="#ref-christen2012data">2012</a><a href="#ref-christen2012data">b</a>)</span>, <span class="citation">National Academies of Sciences, Medicine, and others (<a href="#ref-national2018federal">2018</a>)</span>), such as:</p>
+<p>The costs of realizing the benefits of the new types of data are non trivial. Even if data collection is cheap, the costs of cleaning, curating, standardizing, integrating and using the new types of data are substantial. In essence, just as with data from surveys, data still need to be processed—cleaned, normalized, and variables coded—but this needs to be done at scale.<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> But even once all of these tasks are completed, social scientists have a key role in describing the quality of the data. This role is important, because most data in the real world are noisy, inconsistent, and exhibit missing values. Data quality can be characterized in multiple ways (see <span class="citation">Christen (<a href="#ref-christen2012data">2012</a><a href="#ref-christen2012data">b</a>)</span>, <span class="citation">National Academies of Sciences, Medicine, and others (<a href="#ref-national2018federal">2018</a>)</span>), such as:</p>
 <ul>
 <li>Accuracy: How accurate are the attribute values in the data?</li>
 <li>Completeness: Are the data complete?</li>
@@ -466,26 +513,85 @@ Figure 1.2: Most common employment patters, formerly incarcerated individuals in
 </div>
 <div id="sec:1-5" class="section level2">
 <h2><span class="header-section-number">1.5</span> New tools for new data</h2>
-<p>The new data sources that we have discussed frequently require working at scales for which the social scientist’s familiar tools are not designed. Fortunately, the wider research and data analytics community has developed a wide variety of often more scalable and flexible tools—tools that we will introduce within this book.</p>
-<p>Relational database management systems (DBMSs)<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> are used throughout business as well as the sciences to organize, process, and search large collections of structured data. NoSQL DBMSs are used for data that is extremely large and/or unstructured, such as collections of web pages, social media data (e.g., Twitter messages), sensor data, and clinical notes. Extensions to these systems and also specialized single-purpose DBMSs provide support for data types that are not easily handled in statistical packages such as geospatial data, networks, and graphs.</p>
-<p>Open source programming languages such as Python (used extensively throughout this book) and R provide high-quality implementations of numerous data analysis and visualization methods, from regression to statistics, text analysis, network analysis, and much more. Finally, parallel computing platforms such as Hadoop and Spark can be used to harness parallel computer clusters for extremely large data sets and computationally intensive analyses.</p>
-<p>These various components may not always work together as smoothly as do integrated packages such as SAS, SPSS, and Stata, but they allow researchers to take on problems of greater scale and complexity. Furthermore, they are developing at a tremendous rate as the result of work by thousands of people worldwide. For these reasons, the modern social scientist needs to be familiar with their capabilities.</p>
-</div>
-<div id="sec:1-6" class="section level2">
-<h2><span class="header-section-number">1.6</span> The book’s “use case”</h2>
-<p>This book is about the uses of big data in social science. Our focus is on working through the use of data as a social scientist normally approaches research. That involves thinking through how to use such data to address a question from beginning to end, and thereby learning about the associated tools—rather than simply engaging in coding exercises and then thinking about how to apply them to a potpourri of social science examples.</p>
-<p>There are many examples of the use of big data in social science Research. The chapters in the book draw heavily on a use case based on one of the first large-scale big data social science data infrastructures. This infrastructure, based on UMETRICS<a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> data housed at the University of Michigan’s Institute for Research on Innovation and Science (IRIS)<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> and enhanced with data from the US Census Bureau, provides a new quantitative analysis and understanding of science policy based on large-scale computational analysis of new types of data.</p>
-<p>The infrastructure was developed in response to a call from the President’s Science Advisor (Jack Marburger) for a <em>science of science policy</em> <span class="citation">(Marburger <a href="#ref-marburger2005wanted">2005</a>)</span>. He wanted a scientific response to the questions that he was asked about the impact of investments in science.</p>
+<p>The new data sources that we have discussed frequently require working
+at scales for which the social scientist’s familiar tools are not
+designed. Fortunately, the wider research and data analytics community
+has developed a wide variety of often more scalable and flexible
+tools—tools that we will introduce within this book.</p>
+<p>Relational database management systems (DBMSs)<a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> are used throughout
+business as well as the sciences to organize, process, and search large
+collections of structured data. NoSQL DBMSs are used for data that is
+extremely large and/or unstructured, such as collections of web pages,
+social media data (e.g., Twitter messages), sensor data, and clinical notes.
+Extensions to these systems and also specialized single-purpose DBMSs
+provide support for data types that are not easily handled in
+statistical packages such as geospatial data, networks, and graphs.</p>
+<p>Open source programming languages such as Python (used extensively
+throughout this book) and R provide high-quality implementations of
+numerous data analysis and visualization methods, from regression to
+statistics, text analysis, network analysis, and much more. Finally,
+parallel computing platforms such as Hadoop and Spark can be used to
+harness parallel computer clusters for extremely large data sets and
+computationally intensive analyses.</p>
+<p>These various components may not always work together as smoothly as do
+integrated packages such as SAS, SPSS, and Stata, but they allow
+researchers to take on problems of greater scale and complexity.
+Furthermore, they are developing at a tremendous rate as the result of
+work by thousands of people worldwide. For these reasons, the modern
+social scientist needs to be familiar with their capabilities.</p>
+<p>The book’s “use case” {#sec:1-6}———————</p>
+<p>This book is about the uses of big data in social science. Our focus is
+on working through the use of data as a social scientist normally
+approaches research. That involves thinking through how to use such data
+to address a question from beginning to end, and thereby learning about
+the associated tools—rather than simply engaging in coding exercises
+and then thinking about how to apply them to a potpourri of social
+science examples.</p>
+<p>There are many examples of the use of big data in social science
+research. Our challenge in designing the book was to find a use case that was interesting,
+that didn’t require access to confidential micro-data, that made use of all the methods and tools that a typical
+researcher might want to learn about, and that could be applied to most of the many other use cases that
+might be of interest to other instructors (such as criminal justice, health care, welfare, education or economic development).
+We chose to make use of the great surge of interest in examining the impact of investments in research and development on economic and social outcomes, and which constitutes one of the first large-scale big data
+social science data infrastructures. Many of the data sources are public, and it is those that are used in this book.</p>
+<p>We think the question should also be of broad interest to many potential users, even if they’re not subject matter specialists.<br />
+The surge of interest was in response to a call from the
+President’s Science Advisor (Jack Marburger) for a <em>science of science
+policy</em> <span class="citation">(Marburger <a href="#ref-marburger2005wanted">2005</a>)</span>. He wanted a scientific response to the
+questions that he was asked about the impact of investments in science.</p>
 <hr />
 <p><strong>Example: The Science of Science Policy</strong></p>
-<p>Marburger wrote <span class="citation">(Marburger <a href="#ref-marburger2005wanted">2005</a>)</span>: “How much should a nation spend on science? What kind of science? How much from private versus public sectors? Does demand for funding by potential science performers imply a shortage of funding or a surfeit of performers? These and related science policy questions tend to be asked and answered today in a highly visible advocacy context that makes assumptions that are deserving of closer scrutiny. A new ‘science of science policy’ is emerging, and it may offer more compelling guidance for policy decisions and for more credible advocacy. …</p>
-<p>“Relating R&amp;D to innovation in any but a general way is a tall order, but not a hopeless one. We need econometric models that encompass enough variables in a sufficient number of countries to produce reasonable simulations of the effect of specific policy choices. This need won’t be satisfied by a few grants or workshops, but demands the attention of a specialist scholarly community. As more economists and social scientists turn to these issues, the effectiveness of science policy will grow, and of science advocacy too.”</p>
+<p>Marburger made some very insightful points during his tenure as Science Advisor. He was sceptical of the calls for more and
+more investment in science, particularly of the European push for 3% of GDP to be allocated to research and development.
+He wanted to both understand and be able to explain what would be the returns to that kind of expenditure. In a very famous
+editorial, he asked
+<span class="citation">(Marburger <a href="#ref-marburger2005wanted">2005</a>)</span>: "How much should a nation spend
+on science? What kind of science? How much from private versus public
+sectors? Does demand for funding by potential science performers imply a
+shortage of funding or a surfeit of performers? These and related
+science policy questions tend to be asked and answered today in a highly
+visible advocacy context that makes assumptions that are deserving of
+closer scrutiny. A new ‘science of science policy’ is emerging, and it
+may offer more compelling guidance for policy decisions and for more
+credible advocacy. …</p>
+<p>“Relating R&amp;D to innovation in any but a general way is a tall order,
+but not a hopeless one. We need econometric models that encompass enough
+variables in a sufficient number of countries to produce reasonable
+simulations of the effect of specific policy choices. This need won’t be
+satisfied by a few grants or workshops, but demands the attention of a
+specialist scholarly community. As more economists and social scientists
+turn to these issues, the effectiveness of science policy will grow, and
+of science advocacy too.”</p>
 <hr />
-<p>Any attempt to create a data infrastructure must confront the fact that relevant data (e.g., funding agency R and D awards, educational institution outcome data, research publications) are currently drawn from disparate sources, using widely differing methodologies and approaches. Thus, building a coherent data infrastructure is particularly challenging. Inputs, outputs and outcomes are not currently generated or combined in a systematic fashion. The development of consistent and reliable answers to stakeholder requests requires the use of common data sources and standardized methodologies for data cleaning and analysis.</p>
-<p>The approach used in this book is to use new digital technologies to capture the data needed to understand and demonstrate the broad scientific, social, economic, and workforce results of Federal Science and Technology investments. Research institutions are developing structured information architectures to capture current and more accurate information about the interests, activities, and accomplishments of their scholars. An increasing volume and variety of research outputs, such as publications, patents, and datasets, are accessible in digital form, and are harvested via services such as Citeseer, Google Scholar, and Microsoft Academic Search. Increasingly accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names <span class="citation">(Han et al. <a href="#ref-han2004two">2004</a>, <span class="citation">Smalheiser and Torvik (<a href="#ref-smalheiser2009author">2009</a>)</span>, <span class="citation">Li et al. (<a href="#ref-li2014disambiguation">2014</a>)</span>, <span class="citation">Kim, Khabsa, and Giles (<a href="#ref-kim2016inventor">2016</a>)</span>)</span>.</p>
-<p>Once relevant data are available digitally, there are many ways in which modern technologies can be used to analyze them; in the book we use three main examples. The first is to use natural language processing to describe <strong>what</strong> research is being done, using proposal and award text to identify the research topics in a portfolio. The second is to use administrative records to describe <strong>who</strong> is doing the research (and <strong>with whom</strong>). The third is to use CVs and other sources of data to describe <strong>what results</strong> the funding has generated.</p>
-<p>Responding to this policy imperative is a tall order, because it involves using all the social science and computer science tools available to researchers. The new digital technologies can be used to capture the links between the inputs into research, the way in which those inputs are organized, and the subsequent outputs <span class="citation">(Weinberg et al. <a href="#ref-weinberg2014science">2014</a>, <span class="citation">Lane et al. (<a href="#ref-Lane2018">2018</a>)</span>)</span>. The social science questions that are addressable with this data infrastructure include the effect of research training on the placement and earnings of doctoral recipients, how university trained scientists and engineers affect the productivity of the firms they work for, and the return on investments in research. Figure <a href="chap-intro.html#fig:fig2">1.3</a> provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities.</p>
-<p>First, data must be captured on what is funded, and since the data are in text format, computational linguistics tools must be applied (<a href="chap-text.html#chap:text">Text Analysis</a>). Second, data must be captured on who is funded, and how they interact in teams, so network tools and analysis must be used (<a href="chap-networks.html#chap:networks">Networks: The Basics</a>). Third, information about the type of results must be gleaned from the web and other sources (<a href="chap-web.html#chap:web">Working with Web Data and APIs</a>).</p>
+<p>In order to answer his question, an entire research field developed that pulled together relevant data from a wide variety of different sources using widely differing methodologies and approaches. They addressed challenges often faced by social science and computer science researchers trying to use new data to answer important questions - namely that inputs, outputs and outcomes are not generated or combined in a systematic fashion, even though producing consistent and reliable answers to stakeholder requests requires the use of common data sources and standardized methodologies. They were able to pull together new digital sources of data and apply modern technologies to analyze them. In the book we use three main examples to show how this was done. The first is to describe <strong>what</strong> research is being done, using data produced from multiple agencies on grand funding. The second is to use award and patent administrative records to describe <strong>who</strong> is doing the research (and <strong>with whom</strong>). The third is to use patent data to describe <strong>what results</strong> the funding has generated <span class="citation">(Weinberg et al. <a href="#ref-weinberg2014science">2014</a>, @Lane2018)</span></p>
+<p>Showing how those challenges can be addressed fits in with the goal of the book. The focus is to highlight how to use new digital technologies to capture the data needed to understand and address a set of questions, with an illustrative focus on the broad results of Federal Science and Technology investments. We are able to draw on the public availability of a wide variety of research inputs, such as federal grant information, and some outputs, particularly patent data. We are also able to draw on new and more accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names <span class="citation">(Han et al. <a href="#ref-han2004two">2004</a>, @smalheiser2009author, @li2014disambiguation, @kim2016inventor)</span>. Figure <a href="chap-intro.html#fig:fig2">1.3</a> provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities and shows .</p>
+<p>First, data must be captured on what is funded, and since the data are
+in text format, computational linguistics tools must be applied
+(<a href="chap-text.html#chap:text">Text Analysis</a>). Second, data must be captured on who is funded,
+and how they interact in teams, so network tools and analysis must be
+used (<a href="chap-networks.html#chap:networks">Networks: The Basics</a>). Third, information about the
+type of results must be gleaned from the web and other sources
+(<a href="chap-web.html#chap:web">Working with Web Data and APIs</a>).</p>
 <p>Finally, the disparate complex data sets need to be stored in databases (<a href="chap-db.html#chap:db">Databases</a>), integrated (<a href="chap-link.html#chap:link">Record Linkage</a>), analyzed (<a href="chap-ml.html#chap:ml">Machine Learning</a>), and used to make inferences (<a href="chap-errors.html#chap:errors">Data Quality and Inference Errors</a>).</p>
 <div class="figure" style="text-align: center"><span id="fig:fig2"></span>
 <img src="ChapterIntro/figures/figure_cameron.png" alt="A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong" width="70%" />
@@ -493,26 +599,56 @@ Figure 1.2: Most common employment patters, formerly incarcerated individuals in
 Figure 1.3: A visualization of the complex links between what and who is funded, and the results; tracing the direct link between funding and results is misleading and wrong
 </p>
 </div>
-<p>The use case serves as the thread that ties many of the ideas together. Rather than asking the reader to learn how to code “hello world,” we build on data that have been put together to answer a real-world question, and provide explicit examples based on that data. We then provide examples that show how the approach generalizes.</p>
-<p>For example, the text analysis chapter (<a href="chap-text.html#chap:text">Text Analysis</a>) shows how to use natural language processing to describe <em>what</em> research is being done, using proposal and award text to identify the research topics in a portfolio <span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>; Evans and Foster <a href="#ref-Evans2011">2011</a>)</span>. But then it also shows how the approach can be used to address a problem that is not just limited to science policy—the conversion of massive amounts of knowledge that is stored in text to usable information.</p>
-<p>Similarly, the network analysis chapter (<a href="chap-networks.html#chap:networks">Networks: The Basics</a>) gives specific examples using the UMETRICS data and shows how such data can be used to create new units of analysis—the networks of researchers who do science, and the networks of vendors who supply research inputs. It also shows how networks can be used to study a wide variety of other social science questions.</p>
-<p>In another example, we use APIs<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a> provided by publishers to describe the results generated by research funding in terms of publications and other measures of scientific impact, but also provide code that can be repurposed for many similar APIs.</p>
-<p>And, of course, since all these new types of data are provided in a variety of different formats, some of which are quite large (or voluminous), and with a variety of different timestamps (or velocity), we discuss how to store the data in different types of data formats.</p>
+<p>The use case serves as the thread that ties many of the ideas together.
+Rather than asking the reader to learn how to code “hello world,” we
+build on data that have been put together to answer a real-world
+question, and provide explicit examples based on that data. We then
+provide examples that show how the approach generalizes.</p>
+<p>For example, the text analysis chapter
+(<a href="chap-text.html#chap:text">Text Analysis</a>) shows how to use natural language
+processing to describe <em>what</em> research is being done, using
+proposal and award text to identify the research topics in a portfolio
+<span class="citation">(Talley et al. <a href="#ref-talley2011database">2011</a>; Evans and Foster <a href="#ref-Evans2011">2011</a>)</span>. But then it also shows how the
+approach can be used to address a problem that is not just limited to
+science policy—the conversion of massive amounts of knowledge that is
+stored in text to usable information.</p>
+<p>Similarly, the network analysis chapter
+(<a href="chap-networks.html#chap:networks">Networks: The Basics</a>)
+gives specific examples using the UMETRICS
+data and shows how such data can be used to create new units of
+analysis—the networks of researchers who do science, and the networks
+of vendors who supply research inputs. It also shows how networks can be
+used to study a wide variety of other social science questions.</p>
+<p>In another example, we use APIs<a href="#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a>
+provided by publishers to describe the results generated by
+research funding in terms of publications and other
+measures of scientific impact, but also provide code that can
+be repurposed for many similar APIs.</p>
+<p>And, of course, since all these new types of data are provided in a
+variety of different formats, some of which are quite large (or
+voluminous), and with a variety of different timestamps (or velocity),
+we discuss how to store the data in different types of data formats.</p>
 <p><strong>BOX</strong></p>
-<p>** The Institute for Research on Innovation and Science (IRIS, <a href="https://iris.isr.umich.edu/" class="uri">https://iris.isr.umich.edu/</a>) at the University of Michigan has extended the data infrastructure even more. By working with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors - and show the direct effects on that funding on their subsequent scientific and economic activity <span class="citation">(Institute For Research On Innovation And Science (IRIS) Research <a href="#ref-InstituteForResearchOnInnovationAndScienceIRISResearch2019">2019</a>)</span>.</p>
-<p>** Additional Examples**</p>
+<p>** Much more information is available at the Institute for Research on Innovation and Science (IRIS, <a href="https://iris.isr.umich.edu/" class="uri">https://iris.isr.umich.edu/</a>) at the University of Michigan. The Institute has extended the data infrastructure to bring together both confidential and public data in a secure environment. They have worked with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors - and show the direct effects on that funding on their subsequent scientific and economic activity <span class="citation">(Institute For Research On Innovation And Science (IRIS) Research <a href="#ref-InstituteForResearchOnInnovationAndScienceIRISResearch2019">2019</a>)</span>. To date, over 100 researchers from dozens of institutions have worked with the new data infrastructure to provide an empirical response to Marburger’s call.</p>
 <p>Although we focus on one particular use case, the methods covered in this book are broadly applicable across a variety of policy areas - indeed, we have used this book to teach classes in such fields as education, criminal justice, workforce and economic development and social services (<a href="https://coleridgeinitiative.org/training" class="uri">https://coleridgeinitiative.org/training</a>).</p>
 <p>The methods have been used to answer questions such as: - ‘What are the earnings and employment outcomes of individuals graduating from two and four year colleges?’</p>
-<p>‘Placement in What types of firms reduces the likelihood of recidivism of formerly incarcerated workers ?,’</p>
+<p>‘How does placement in different types of firms change the likelihood that the formerly incareratedwill recidivate?’</p>
+<p>‘What factors increase the likelihood that welfare recipients on TANF (Temporary Asistance to Needy Families) will leave welfare?’</p>
 <p>and</p>
 <p>‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’</p>
-<p><strong>BOX</strong></p>
-
+<p><strong>BOX</strong>
+Building data science skills to support state and local efforts to become more data driven in the provision of human services.</p>
+<p>The Offices of Family Assistance Office and of Planning, Research, and Evaluation in the Department of Health and Human Services’ Administration for Children and Families set up a TANF data collaborative (tanfdata.org) to help professionals at TANF and related human services agencies develop key data science skills. The focus is on teaching participants how to scope a problem, do record linkage, apply machine learning and visualization tools and learn about privacy issues when working with confidential data.</p>
 <p><strong>BOX</strong></p>
 </div>
 <div id="the-structure-of-the-book" class="section level2">
-<h2><span class="header-section-number">1.7</span> The structure of the book</h2>
-<p>We organize the book in three parts, based around the way social scientists approach doing research. The first set of chapters addresses the new ways to capture, curate, and store data. The second set of chapters describes what tools are available to process and analyze data. The last set deals with the appropriate handling of data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don’t cover that in this book but refer readers to resources such as “Data Science Project Scoping”<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a> for more information.</p>
+<h2><span class="header-section-number">1.6</span> The structure of the book</h2>
+<p>We organize the book in three parts, based around the way social
+scientists approach doing research. The first set of chapters addresses
+the new ways to capture, curate, and store data. The second set of
+chapters describes what tools are available to process and analyze
+data. The last set deals with the appropriate handling of
+data on individuals and organizations as well as what inferences can be drawn from the data and the analysis that was done. Of course, we assume that before starting with the data and analysis, we have spent time on formulating the problem or question that is being addressed. We don’t cover that in this book but refer readers to resources such as “Data Science Project Scoping”<a href="#fn5" class="footnote-ref" id="fnref5"><sup>5</sup></a> for more information.</p>
 <div class="figure" style="text-align: center"><span id="fig:projectfig"></span>
 <img src="ChapterIntro/figures/projectflow.png" alt="The data science project workflow. Blue represents each step in the project, orange represents the tools used in that step, and green represents the methods for analysis." width="100%" />
 <p class="caption">
@@ -520,12 +656,40 @@ Figure 1.4: The data science project workflow. Blue represents each step in the 
 </p>
 </div>
 <div id="part-i-capture-and-curation" class="section level3">
-<h3><span class="header-section-number">1.7.1</span> Part I: Capture and curation</h3>
-<p>The four chapters in Part I (see Figure <a href="chap-intro.html#fig:fig3">1.5</a>) tell you how to collect, store, link, and manage data.</p>
-<p><a href="chap-web.html#chap:web">Working with Web Data and APIs</a> describes how to extract information from data sources on the Web, including social media. The particular application will be to develop links to authors’ articles on Twitter using PLOS articles and to pull information about authors and articles from web sources by using an API. You will learn how to retrieve link data from bookmarking services, citations from Crossref, links from Facebook, and information from news coverage. In keeping with the social science grounding that is a core feature of the book, the chapter discusses what data can be captured from online sources, what is potentially reliable, and how to manage data quality issues.</p>
-<p>This data differs from survey data in that we must typically combine data from multiple sources to get a complete picture of the activities of interest. Although computer scientists may sometimes simply “mash” data sets together, social scientists are rightfully concerned about issues of missing links, duplicative links, and erroneous links. <a href="chap-link.html#chap:link">Record Linkage</a> provides an overview of traditional rule-based and probabilistic approaches to data linkage, as well as machine learning approaches that are more adaptive and tunable.</p>
-<p>Once data have been collected and linked, it is necessary to store and organize it. Social scientists are used to working with one analytical file, often in statistical software tools such as SAS or Stata. <a href="chap-db.html#chap:db">Databases</a> describes different approaches to storing data in ways that facilitate rapid, scalable, and reliable exploration and analysis.</p>
-<p>Big data is sometimes defined as data that are too big to fit onto the analyst’s computer. <a href="chap-parallel.html#chap:parallel">Scaling up through Parallel and Distributed Computing</a> provides an overview of programming techniques that facilitate the scalable use of data (often using parallel computing). While the focus is on one of the most widely used big data programming paradigms and its most popular implementation, Apache Hadoop, the goal of the chapter is to provide a conceptual framework to the key challenges that the approach is designed to address.</p>
+<h3><span class="header-section-number">1.6.1</span> Part I: Capture and curation</h3>
+<p>The four chapters in Part I (see Figure <a href="chap-intro.html#fig:fig3">1.5</a>) tell you how
+to collect, store, link, and manage data.</p>
+<p><a href="chap-web.html#chap:web">Working with Web Data and APIs</a> describes how to extract
+information from data sources on the Web, including social media.
+The particular application
+will be to develop links to authors’ articles on Twitter using PLOS
+articles and to pull information about authors and articles from web
+sources by using an API. You will learn how to retrieve link data from
+bookmarking services, citations from Crossref, links from Facebook, and
+information from news coverage. In keeping with the social science
+grounding that is a core feature of the book, the chapter discusses what
+data can be captured from online sources, what is potentially reliable,
+and how to manage data quality issues.</p>
+<p>This data differs from survey data in that we must typically combine data
+from multiple sources to get a complete picture of the activities of
+interest. Although computer scientists may sometimes simply “mash” data
+sets together, social scientists are rightfully concerned about issues
+of missing links, duplicative links, and erroneous links.
+<a href="chap-link.html#chap:link">Record Linkage</a> provides an overview of traditional rule-based
+and probabilistic approaches to data linkage, as well as machine learning
+approaches that are more adaptive and tunable.</p>
+<p>Once data have been collected and linked, it is necessary to store and
+organize it. Social scientists are used to working with one analytical
+file, often in statistical software tools such as SAS or Stata.
+<a href="chap-db.html#chap:db">Databases</a> describes different approaches to storing data in
+ways that facilitate rapid, scalable, and reliable exploration and analysis.</p>
+<p>Big data is sometimes defined as data that are too big to fit onto the
+analyst’s computer. <a href="chap-parallel.html#chap:parallel">Scaling up through Parallel and Distributed Computing</a> provides an overview of programming techniques
+that facilitate the scalable use of data (often using parallel
+computing). While the focus is on one of the most widely used big data
+programming paradigms and its most popular implementation, Apache
+Hadoop, the goal of the chapter is to provide a conceptual framework to
+the key challenges that the approach is designed to address.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig3"></span>
 <img src="ChapterIntro/figures/Figure2.png" alt="The four chapters of Part I focus on *data capture* and *curation*" width="70%" />
 <p class="caption">
@@ -534,12 +698,52 @@ Figure 1.5: The four chapters of Part I focus on <em>data capture</em> and <em>c
 </div>
 </div>
 <div id="part-ii-modeling-and-analysis" class="section level3">
-<h3><span class="header-section-number">1.7.2</span> Part II: Modeling and analysis</h3>
+<h3><span class="header-section-number">1.6.2</span> Part II: Modeling and analysis</h3>
 <p>The four chapters in Part II (see Figure <a href="chap-intro.html#fig:fig4">1.6</a>) introduce four of the most important tools that can be used by social scientists to do new and exciting research: information visualization, machine learning, text analysis, and social network analysis.</p>
-<p><a href="chap-viz.html#chap:viz">Information Visualization</a> introduces information visualization methods and describes how you can use those methods to explore data and communicate results so that data can be turned into interpretable, actionable information. There are many ways of presenting statistical information that convey content in a rigorous manner. The goal of this chapter is to explore different approaches and examine the information content and analytical validity of the different approaches. It provides an overview of effective visualizations. Using visualization already in early analysis stages is key to a good understanding of data quality and potential pitfalls.</p>
-<p><a href="chap-ml.html#chap:ml">Machine Learning</a> introduces machine learning methods. It shows the power of machine learning in a variety of different contexts, particularly focusing on clustering, classification, and prediction. You will get an overview of basic approaches and how those approaches are applied. The chapter builds from a conceptual framework on how to formulate social science problems as machine learning problems, how to perform machine learning analysis, and how to evaluate the analysis. These concepts are then translated into code to ensure that the analysis can be put into practical use by social science researchers and practitioners.</p>
-<p><a href="chap-text.html#chap:text">Text Analysis</a> describes how social scientists can make use of text data through text analysis and natural language processing methods. Dealing with text and analysing text is not new to social scientists. What is different these days is that the vast amounts of data that are stored in documents can now be analyzed and searched and analyzed at scale, so that different types of information can be retrieved. Documents (and the underlying activities of the entities that generated the documents) can be categorized into topics or fields as well as summarized. In addition, machine translation can be used to compare documents in different languages.</p>
-<p>Social scientists are typically interested in describing the activities of individuals and organizations (such as households and firms) in a variety of economic and social contexts. The frames within which data are collected have typically been generated from tax or other programmatic sources. The new types of data permit new units of analysis—particularly network analysis—largely enabled by advances in mathematical graph theory. Thus, <a href="chap-networks.html#chap:networks">Networks: The Basics</a> describes how social scientists can use network theory to generate measurable representations of patterns of relationships connecting entities. As the author points out, the value of the new framework is not only in constructing different right-hand-side variables but also in studying an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists.</p>
+<p><a href="chap-viz.html#chap:viz">Information Visualization</a> introduces information
+visualization methods and
+describes how you can use those methods to explore data and communicate
+results so that data can be turned into interpretable, actionable
+information. There are many ways of presenting statistical information
+that convey content in a rigorous manner. The goal of this chapter is to
+explore different approaches and examine the information content and
+analytical validity of the different approaches. It provides an overview
+of effective visualizations. Using visualization already in early analysis
+stages is key to a good understanding of data quality and potential pitfalls.</p>
+<p><a href="chap-ml.html#chap:ml">Machine Learning</a> introduces machine learning methods. It shows
+the power of machine learning in a variety of different contexts,
+particularly focusing on clustering, classification, and prediction.
+You will get an overview of basic approaches and how those approaches are
+applied. The chapter builds from a conceptual framework on how to formulate
+social science problems as machine learning problems, how to perform machine
+learning analysis, and how to evaluate the analysis. These concepts are then
+translated into code to ensure that the analysis can be put into practical use
+by social science researchers and practitioners.</p>
+<p><a href="chap-text.html#chap:text">Text Analysis</a> describes how social scientists can make use of
+text data through text analysis and natural language processing methods.
+Dealing with text and analysing text is not new to social scientists. What is
+different these days is that the vast amounts of data that are stored in
+documents can now be analyzed and searched and analyzed at scale, so that
+different types of information can be retrieved. Documents (and the underlying
+activities of the entities that generated the documents) can be categorized
+into topics or fields as well as summarized. In addition, machine translation
+can be used to compare documents in different languages.</p>
+<p>Social scientists are typically interested in describing the activities
+of individuals and organizations (such as households and firms) in a
+variety of economic and social contexts. The frames within which data
+are collected have typically been generated from tax or other
+programmatic sources. The new types of data permit new units of
+analysis—particularly network analysis—largely enabled by advances
+in mathematical graph theory. Thus, <a href="chap-networks.html#chap:networks">Networks: The Basics</a>
+describes how social scientists can use network theory to generate
+measurable representations of patterns of
+relationships connecting entities. As the author points out, the value
+of the new framework is not only in constructing different
+right-hand-side variables but also in studying an entirely new unit of
+analysis that lies somewhere between the largely atomistic actors that
+occupy the markets of neo-classical theory and the tightly managed
+hierarchies that are the traditional object of inquiry of sociologists
+and organizational theorists.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig4"></span>
 <img src="ChapterIntro/figures/Figure3.png" alt="The four chapters in Part II focus on data *modeling* and *analysis*" width="70%" />
 <p class="caption">
@@ -548,12 +752,33 @@ Figure 1.6: The four chapters in Part II focus on data <em>modeling</em> and <em
 </div>
 </div>
 <div id="part-iii-inference-and-ethics" class="section level3">
-<h3><span class="header-section-number">1.7.3</span> Part III: Inference and ethics</h3>
+<h3><span class="header-section-number">1.6.3</span> Part III: Inference and ethics</h3>
 <p>The three chapters in Part III (see Figure <a href="chap-intro.html#fig:fig5">1.7</a>) cover three advanced topics relating to data inference and ethics—errors and inference, bias, and privacy and confidentiality—and introduce the workbooks that provide access to the practical exercises associated with the text.</p>
-<p><a href="chap-errors.html#chap:errors">Data Quality and Inference Errors</a> deals with inference and the errors associated with big data. Social scientists know only too well the cost associated with bad data—we highlighted the classic <em>Literary Digest</em> example in the introduction to this chapter, as well as the more recent Google Flu Trends. Although the consequences are well understood, the new types of data are so large and complex that their properties often cannot be studied in traditional ways. In addition, the data generating function is such that the data are often selective, incomplete, and erroneous. Without proper data hygiene, errors can quickly compound. This chapter provides a systematic way to think about the error framework in a big data setting.</p>
+<p><a href="chap-errors.html#chap:errors">Data Quality and Inference Errors</a>
+deals with inference and the errors associated with big data.
+Social scientists know only too well the cost associated
+with bad data—we highlighted the classic <em>Literary Digest</em> example in
+the introduction to this chapter, as well as the more recent Google Flu
+Trends. Although the consequences are well understood, the new types of
+data are so large and complex that their properties often cannot be
+studied in traditional ways. In addition, the data generating function
+is such that the data are often selective, incomplete, and erroneous.
+Without proper data hygiene, errors can quickly compound. This chapter
+provides a systematic way to think about the error framework in a big
+data setting.</p>
 <p><a href="chap-bias.html#chap:bias">Bias and Fairness</a> Interest in algorithmic fairness and bias has been growing recently, but it’s easy to get lost in the large number of definitions and metrics. There are many different, often competing, ways to measure whether a given model and the resulting system is “fair”. In this chapter, we provide an overview of these metrics along with some concrete examples to help navigate these concepts and understand the trade-offs involved in choosing to optimize one metric over others.</p>
-<p><a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a> addresses the issue that sits at the core of any study of human beings—privacy and confidentiality. In a new field, like the one covered in this book, it is critical that many researchers have access to the data so that work can be replicated and built on—that there be a scientific basis to data science. Yet the rules that social scientists have traditionally used for survey data, namely anonymity and informed consent, no longer apply when the data are collected in the wild. This concluding chapter identifies the issues that must be addressed for responsible and ethical research to take place.</p>
-<p>Finally, <a href="chap-workbooks.html#chap:workbooks">Workbooks</a> provides an overview of the practical work that accompanies each chapter—the workbooks that are designed, using <em>Jupyter notebooks</em><a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a>, to enable students and interested practitioners to apply the new techniques and approaches in selected chapters. This last chapter gives a broad overview of the tools needed to work with these workbooks and some instructions on how to use the workbooks if you decide to teach a class using this content. The chapter also informs broadly about the data and problems these workbooks tackle, and about the general structure of the workbooks. We are constantly expanding and updating the set of available workbooks, so check GitHub regularly if you want to see the latest version. We hope you have a lot of fun with them.</p>
+<p><a href="chap-privacy.html#chap:privacy">Privacy and Confidentiality</a>
+addresses the issue that sits at the core of
+any study of human beings—privacy and confidentiality. In a new field,
+like the one covered in this book, it is critical that many researchers
+have access to the data so that work can be replicated and built
+on—that there be a scientific basis to data science. Yet the rules
+that social scientists have traditionally used for survey data, namely
+anonymity and informed consent, no longer apply when the data are
+collected in the wild. This concluding chapter identifies the issues
+that must be addressed for responsible and ethical research to take
+place.</p>
+<p>Finally, <a href="chap-workbooks.html#chap:workbooks">Workbooks</a> provides an overview of the practical work that accompanies each chapter—the workbooks that are designed, using <em>Jupyter notebooks</em><a href="#fn6" class="footnote-ref" id="fnref6"><sup>6</sup></a>, to enable students and interested practitioners to apply the new techniques and approaches in selected chapters. This last chapter gives a broad overview of the tools needed to work with these workbooks and some instructions on how to use the workbooks if you decide to teach a class using this content. The chapter also informs broadly about the data and problems these workbooks tackle, and about the general structure of the workbooks. We are constantly expanding and updating the set of available workbooks, so check GitHub regularly if you want to see the latest version. We hope you have a lot of fun with them.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig5"></span>
 <img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on *inference* and *ethics*" width="70%" />
 <p class="caption">
@@ -563,13 +788,57 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 </div>
 </div>
 <div id="sec:intro:resources" class="section level2">
-<h2><span class="header-section-number">1.8</span> Resources</h2>
-<p>For more information on the <strong>science of science policy</strong>, see Husbands et al.’s book for a full discussion of many issues <span class="citation">(Husband Fealing et al. <a href="#ref-husband2011science">2011</a>)</span> and the online resources at the eponymous website <span class="citation">(SOSP, n.d.)</span>.</p>
-<p>This book is above all a <em>practical</em> introduction to the methods and tools that the social scientist can use to make sense of big data, and thus <strong>programming</strong> resources are also important. We make extensive use of the Python programming language and databases in both the book and its supporting workbooks. We recommend that any social scientist who aspires to work with large data sets become proficient in the use of these two systems and GitHub. All three, fortunately, are quite accessible and are supported by excellent online resources. Time spent mastering them will be repaid many times over in more productive research.</p>
-<p>For <strong>Python</strong><a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a>, Alex Bell’s <em>Python for Economists</em> (available online <span class="citation">(Bell <a href="#ref-BellPython">2012</a>)</span>) provides a wonderful 30-page introduction to the use of Python in the social sciences, complete with XKCD cartoons. Economists Tom Sargent and John Stachurski provide a very useful set of lectures and examples at <a href="http://quant-econ.net/" class="uri">http://quant-econ.net/</a>. For more detail, we recommend Charles Severance’s <em>Python for Informatics: Exploring Information</em> <span class="citation">(Severance <a href="#ref-SeverancePython">2013</a>)</span>, which not only covers basic Python but also provides material relevant to web data (the subject of <a href="chap-web.html#chap:web">Working with Web Data and APIs</a>) and MySQL (the subject of <a href="chap-db.html#chap:db">Databases</a>). This book is also freely available online and is supported by excellent online lectures and exercises.</p>
-<p>For <strong>SQL</strong>, Chapter <a href="chap-db.html#chap:db">Databases</a> provides introductory material and pointers to additional resources, so we will not say more here.</p>
-<p>We also recommend that you master <strong>GitHub</strong>. A version control system is a tool for keeping track of changes that have been made to a document over time. GitHub is a hosting service for projects that use the Git version control system. As Strasser explains <span class="citation">(Strasser <a href="#ref-GitResearch">2014</a>)</span>, Git/GitHub makes it straightforward for researchers to create digital lab notebooks that record the data files, programs, papers, and other resources associated with a project, with automatic tracking of the changes that are made to those resources over time. GitHub also makes it easy for collaborators to work together on a project, whether a program or a paper: changes made by each contributor are recorded and can easily be reconciled. For example, we used GitHub to create this book, with authors and editors checking in changes and comments at different times and from many time zones. We also use GitHub to provide access to the supporting workbooks. Ram <span class="citation">(Ram <a href="#ref-ram2013git">2013</a>)</span> provides a nice description of how Git/GitHub can be used to promote reproducibility and transparency in research.</p>
-<p>One more resource that is outside the scope of this book but that you may well want to master is the <strong>cloud</strong> <span class="citation">(Armbrust et al. <a href="#ref-armbrust2010view">2010</a>; Lifka et al. <a href="#ref-Lifka">2013</a>)</span>. It used to be that when your data and computations became too large to analyze on your laptop, you were out of luck unless your employer (or a friend) had a larger computer. With the emergence of cloud storage and computing services from the likes of Amazon Web Services, Google, and Microsoft, powerful computers are available to anyone with a credit card. We and many others have had positive experiences using such systems for the analysis of urban <span class="citation">(Catlett et al. <a href="#ref-plenario">2014</a>)</span>, environmental <span class="citation">(Elliott et al. <a href="#ref-elliott2014parallel">2014</a>)</span>, and genomic <span class="citation">(Bhuvaneshwar et al. <a href="#ref-bhuvaneshwar2015case">2015</a>)</span> data analysis and modeling, for example.</p>
+<h2><span class="header-section-number">1.7</span> Resources</h2>
+<p>For more information on the <strong>science of science policy</strong>, see Husbands et al.’s book for a full discussion of many issues <span class="citation">(Husband Fealing et al. <a href="#ref-husband2011science">2011</a>)</span> and peruse the awards made by the National Science Foundation’s Science of Science: Discovery, Communication, and Impact program (<a href="https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=505730" class="uri">https://www.nsf.gov/funding/pgm_summ.jsp?pims_id=505730</a>).</p>
+<p>This book is above all a <em>practical</em> introduction to the methods and
+tools that the social scientist can use to make sense of big data, and
+thus <strong>programming</strong> resources are also important. We make extensive use of the Python
+programming language and databases in both
+the book and its supporting workbooks. We recommend that any social
+scientist who aspires to work with large data sets become proficient in
+the use of these two systems and GitHub. All three,
+fortunately, are quite accessible and are supported by excellent online
+resources. Time spent mastering them will be repaid many times over in
+more productive research.</p>
+<p>For <strong>Python</strong><a href="#fn7" class="footnote-ref" id="fnref7"><sup>7</sup></a>,
+Alex Bell’s <em>Python for Economists</em> (available online <span class="citation">(Bell <a href="#ref-BellPython">2012</a>)</span>)
+provides a wonderful 30-page introduction to the use of Python in the
+social sciences, complete with XKCD cartoons. Economists Tom Sargent
+and John Stachurski provide a very useful set of lectures and examples
+at <a href="http://quant-econ.net/" class="uri">http://quant-econ.net/</a>. For more detail, we recommend Charles
+Severance’s <em>Python for Informatics: Exploring Information</em>
+<span class="citation">(Severance <a href="#ref-SeverancePython">2013</a>)</span>, which not only covers basic Python but also
+provides material relevant to web data (the subject of
+<a href="chap-web.html#chap:web">Working with Web Data and APIs</a>) and MySQL (the subject of
+<a href="chap-db.html#chap:db">Databases</a>). This book is also freely available online and
+is supported by excellent online lectures and exercises.</p>
+<p>For <strong>SQL</strong>, Chapter <a href="chap-db.html#chap:db">Databases</a> provides introductory material
+and pointers to additional resources, so we will not say more here.</p>
+<p>We also recommend that you master <strong>GitHub</strong>. A version control system is a tool
+for keeping track of changes that have been made to a document over
+time. GitHub is a hosting service for projects that use the Git version
+control system. As Strasser explains <span class="citation">(Strasser, <a href="#ref-GitResearch">n.d.</a>)</span>, Git/GitHub makes it
+straightforward for researchers to create digital lab notebooks that
+record the data files, programs, papers, and other resources associated
+with a project, with automatic tracking of the changes that are made to
+those resources over time. GitHub also makes it easy for collaborators
+to work together on a project, whether a program or a paper: changes
+made by each contributor are recorded and can easily be reconciled. For
+example, we used GitHub to create this book, with authors and editors
+checking in changes and comments at different times and from many time
+zones. We also use GitHub to provide access to the supporting workbooks.
+Ram <span class="citation">(Ram <a href="#ref-ram2013git">2013</a>)</span> provides a nice description of how Git/GitHub can be
+used to promote reproducibility and transparency in research.</p>
+<p>One more resource that is outside the scope of this book but that you
+may well want to master is the <strong>cloud</strong> <span class="citation">(Armbrust et al. <a href="#ref-armbrust2010view">2010</a>; Lifka et al. <a href="#ref-Lifka">2013</a>)</span>. It used to
+be that when your data and computations became too large to analyze on
+your laptop, you were out of luck unless your employer (or a friend) had
+a larger computer. With the emergence of cloud storage and computing
+services from the likes of Amazon Web Services, Google, and Microsoft,
+powerful computers are available to anyone with a credit card. We and
+many others have had positive experiences using such systems for the
+analysis of urban <span class="citation">(Catlett et al. <a href="#ref-plenario">2014</a>)</span>, environmental <span class="citation">(Elliott et al. <a href="#ref-elliott2014parallel">2014</a>)</span>, and
+genomic <span class="citation">(Bhuvaneshwar et al. <a href="#ref-bhuvaneshwar2015case">2015</a>)</span> data analysis and modeling, for example.</p>
 
 <!-- % done -->
 </div>
@@ -577,19 +846,19 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-armbrust2010view">
-<p>Armbrust, Michael, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, et al. 2010. “A View of Cloud Computing.” <em>Communications of the ACM</em> 53 (4). ACM: 50–58.</p>
+<p>Armbrust, Michael, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy Katz, Andy Konwinski, Gunho Lee, et al. 2010. “A View of Cloud Computing.” <em>Communications of the ACM</em> 53 (4): 50–58.</p>
 </div>
 <div id="ref-athey2017state">
 <p>Athey, Susan, and Guido W Imbens. 2017. “The State of Applied Econometrics: Causality and Policy Evaluation.” <em>Journal of Economic Perspectives</em> 31 (2): 3–32.</p>
 </div>
 <div id="ref-BellPython">
-<p>Bell, Alex. 2012. “Python for Economists.” <a href="http://cs.brown.edu/~ambell/pyseminar/pyseminar.html" class="uri">http://cs.brown.edu/~ambell/pyseminar/pyseminar.html</a>.</p>
+<p>Bell, Alex. 2012. “Python for Economists.” <a href="http://cs.brown.edu/~ambell/pyseminar/pyseminar.html">http://cs.brown.edu/~ambell/pyseminar/pyseminar.html</a>.</p>
 </div>
 <div id="ref-bhuvaneshwar2015case">
-<p>Bhuvaneshwar, Krithika, Dinanath Sulakhe, Robinder Gauba, Alex Rodriguez, Ravi Madduri, Utpal Dave, Lukasz Lacinski, Ian Foster, Yuriy Gusev, and Subha Madhavan. 2015. “A Case Study for Cloud Based High Throughput Analysis of NGS Data Using the Globus Genomics System.” <em>Computational and Structural Biotechnology Journal</em> 13. Elsevier: 64–74.</p>
+<p>Bhuvaneshwar, Krithika, Dinanath Sulakhe, Robinder Gauba, Alex Rodriguez, Ravi Madduri, Utpal Dave, Lukasz Lacinski, Ian Foster, Yuriy Gusev, and Subha Madhavan. 2015. “A Case Study for Cloud Based High Throughput Analysis of NGS Data Using the Globus Genomics System.” <em>Computational and Structural Biotechnology Journal</em> 13: 64–74.</p>
 </div>
 <div id="ref-brady2019challenge">
-<p>Brady, Henry E. 2019. “The Challenge of Big Data and Data Science.” <em>Annual Review of Political Science</em> 22. Annual Reviews: 297–323.</p>
+<p>Brady, Henry E. 2019. “The Challenge of Big Data and Data Science.” <em>Annual Review of Political Science</em> 22: 297–323.</p>
 </div>
 <div id="ref-brynjolfsson2011strength">
 <p>Brynjolfsson, Erik, Lorin M. Hitt, and Heekyung Hellen Kim. 2011. “Strength in Numbers: How Does Data-Driven Decisionmaking Affect Firm Performance?” Available at SSRN 1819486.</p>
@@ -601,7 +870,7 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <p>Cavallo, Alberto, and Roberto Rigobon. 2016. “The Billion Prices Project: Using Online Prices for Measurement and Research.” <em>Journal of Economic Perspectives</em> 30 (2): 151–78.</p>
 </div>
 <div id="ref-Chetty2012">
-<p>Chetty, Raj. 2012. “The Transformative Potential of Administrative Data for Microeconometric Research.” <a href="http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf" class="uri">http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf</a>. Accessed February 1, 2016.</p>
+<p>Chetty, Raj. 2012. “The Transformative Potential of Administrative Data for Microeconometric Research.” <a href="http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf">http://conference.nber.org/confer/2012/SI2012/LS/ChettySlides.pdf</a>. Accessed February 1, 2016.</p>
 </div>
 <div id="ref-christen2012data">
 <p>Christen, Peter. 2012b. <em>Data Matching: Concepts and Techniques for Record Linkage, Entity Resolution, and Duplicate Detection</em>. Springer Science &amp; Business Media.</p>
@@ -610,22 +879,22 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <p>Donohue III, John J., and Justin Wolfers. 2006. “Uses and Abuses of Empirical Evidence in the Death Penalty Debate.” National Bureau of Economic Research.</p>
 </div>
 <div id="ref-dugoff2014generalizing">
-<p>DuGoff, Eva H., Megan Schuler, and Elizabeth A. Stuart. 2014. “Generalizing Observational Study Results: Applying Propensity Score Methods to Complex Surveys.” <em>Health Services Research</em> 49 (1). Wiley Online Library: 284–303.</p>
+<p>DuGoff, Eva H., Megan Schuler, and Elizabeth A. Stuart. 2014. “Generalizing Observational Study Results: Applying Propensity Score Methods to Complex Surveys.” <em>Health Services Research</em> 49 (1): 284–303.</p>
 </div>
 <div id="ref-edelman2017racial">
 <p>Edelman, Benjamin, Michael Luca, and Dan Svirsky. 2017. “Racial Discrimination in the Sharing Economy: Evidence from a Field Experiment.” <em>American Economic Journal: Applied Economics</em> 9 (2): 1–22.</p>
 </div>
 <div id="ref-elliott2014parallel">
-<p>Elliott, Joshua, David Kelly, James Chryssanthacopoulos, Michael Glotter, Kanika Jhunjhnuwala, Neil Best, Michael Wilde, and Ian Foster. 2014. “The Parallel System for Integrating Impact Models and Sectors (pSIMS).” <em>Environmental Modelling &amp; Software</em> 62. Elsevier: 509–16.</p>
+<p>Elliott, Joshua, David Kelly, James Chryssanthacopoulos, Michael Glotter, Kanika Jhunjhnuwala, Neil Best, Michael Wilde, and Ian Foster. 2014. “The Parallel System for Integrating Impact Models and Sectors (pSIMS).” <em>Environmental Modelling &amp; Software</em> 62: 509–16.</p>
 </div>
 <div id="ref-evans1987tests">
-<p>Evans, David S. 1987. “Tests of Alternative Theories of Firm Growth.” <em>Journal of Political Economy</em> 95. JSTOR: 657–74.</p>
+<p>Evans, David S. 1987. “Tests of Alternative Theories of Firm Growth.” <em>Journal of Political Economy</em> 95: 657–74.</p>
 </div>
 <div id="ref-Evans2011">
 <p>Evans, J. A., and J. G. Foster. 2011. “Metaknowledge.” <em>Science</em> 331 (6018): 721–25.</p>
 </div>
 <div id="ref-glaeser2019urban">
-<p>Glaeser, Edward. 2019. “Urban Management in the 21st Century: Ten Insights from Professor Ed Glaeser.” Centre for Development; Enterprise (CDE).</p>
+<p>Glaeser, Edward. 2019. “Urban Management in the 21st Century: Ten Insights from Professor Ed Glaeser.”</p>
 </div>
 <div id="ref-greenwood2014">
 <p>Greenwood, Daniel, Arkadiusz Stopczynski, Brian Sweatt, Thomas Hardjono, and Alex Pentland. 2014. “The New Deal on Data: A Framework for Institutional Controls.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 192. Cambridge University Press.</p>
@@ -637,10 +906,10 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <p>Hansen, Morris H., William N. Hurwitz, and William G. Madow. 1993. <em>Sample Survey Methods and Theory</em>. John Wiley &amp; Sons.</p>
 </div>
 <div id="ref-harford2014big">
-<p>Harford, Tim. 2014. “Big Data: A Big Mistake?” <em>Significance</em> 11 (5). Wiley Online Library: 14–19.</p>
+<p>Harford, Tim. 2014. “Big Data: A Big Mistake?” <em>Significance</em> 11 (5): 14–19.</p>
 </div>
 <div id="ref-Hart">
-<p>Hart, Nick. 2019. “Two Years of Progress on Evidence-Based Policymaking in the United States.” <em>Data Coalition Blog</em>. Washington DC: The Data Colaition. <a href="https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/" class="uri">https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/</a>.</p>
+<p>Hart, Nick. 2019. “Two Years of Progress on Evidence-Based Policymaking in the United States.” <em>Data Coalition Blog</em>. <a href="https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/">https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/</a>.</p>
 </div>
 <div id="ref-husband2011science">
 <p>Husband Fealing, Kaye, Julia Ingrid Lane, Jack Marburger, and Stephanie Shipp. 2011. <em>Science of Science Policy: The Handbook</em>. Stanford University Press.</p>
@@ -649,40 +918,28 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <p>Imbens, Guido W., and Donald B. Rubin. 2015. <em>Causal Inference for Statistics, Social, and Biomedical Sciences: An Introduction</em>. Cambridge University Press.</p>
 </div>
 <div id="ref-InstituteForResearchOnInnovationAndScienceIRISResearch2019">
-<p>Institute For Research On Innovation And Science (IRIS) Research. 2019. <em>Summary Documentation for the IRIS UMETRICS 2019 Data Release</em>. Institute for Research on Innovation; Science (IRIS). <a href="https://iris.isr.umich.edu/research-data/2019datarelease-summarydoc/" class="uri">https://iris.isr.umich.edu/research-data/2019datarelease-summarydoc/</a>.</p>
+<p>Institute For Research On Innovation And Science (IRIS) Research. 2019. <em>Summary Documentation for the IRIS UMETRICS 2019 Data Release</em>. Institute for Research on Innovation; Science (IRIS). <a href="https://iris.isr.umich.edu/research-data/2019datarelease-summarydoc/">https://iris.isr.umich.edu/research-data/2019datarelease-summarydoc/</a>.</p>
 </div>
 <div id="ref-japec2015big">
-<p>Japec, Lilli, Frauke Kreuter, Marcus Berg, Paul Biemer, Paul Decker, Cliff Lampe, Julia Lane, Cathy O’Neil, and Abe Usher. 2015. “Big Data in Survey Research: AAPOR Task Force Report.” <em>Public Opinion Quarterly</em> 79 (4). AAPOR: 839–80.</p>
-</div>
-<div id="ref-jovanovic1982selection">
-<p>Jovanovic, Boyan. 1982. “Selection and the Evolution of Industry.” <em>Econometrica: Journal of the Econometric Society</em> 50 (3). JSTOR: 649–70.</p>
-</div>
-<div id="ref-kim2016inventor">
-<p>Kim, Kunho, Madian Khabsa, and C Lee Giles. 2016. “Inventor Name Disambiguation for a Patent Database Using a Random Forest and Dbscan.” In <em>2016 Ieee/Acm Joint Conference on Digital Libraries (Jcdl)</em>, 269–70. IEEE.</p>
+<p>Japec, Lilli, Frauke Kreuter, Marcus Berg, Paul Biemer, Paul Decker, Cliff Lampe, Julia Lane, Cathy O’Neil, and Abe Usher. 2015. “Big Data in Survey Research: AAPOR Task Force Report.” <em>Public Opinion Quarterly</em> 79 (4): 839–80.</p>
 </div>
 <div id="ref-Kopf">
-<p>Kopf, Dan. 2018. “This year’s Nobel Prize in economics was awarded to a Python convert.” <em>Quartz</em>. <a href="https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/" class="uri">https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/</a>.</p>
+<p>Kopf, Dan. 2018. “This year’s Nobel Prize in economics was awarded to a Python convert.” <em>Quartz</em>. <a href="https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/">https://qz.com/1417145/economics-nobel-laureate-paul-romer-is-a-python-programming-convert/</a>.</p>
 </div>
 <div id="ref-Kreuter2019Change">
-<p>Kreuter, Frauke, Rayid Ghani, and Julia Lane. 2019. “Change Through Data: A Data Analytics Training Program for Government Employees.” <em>Harvard Data Science Review</em> 1 (2). doi:<a href="https://doi.org/10.1162/99608f92.ed353ae3">10.1162/99608f92.ed353ae3</a>.</p>
-</div>
-<div id="ref-Lane2018">
-<p>Lane, Julia, Jason Owen-Smith, Joseph Staudt, and Bruce A. Weinberg. 2018. “New Measurement of Innovation.” In <em>Center for Economic Studies and Research Data Centers Research Report: 2017</em>, edited by US Census Bureau. Washington DC.</p>
-</div>
-<div id="ref-li2014disambiguation">
-<p>Li, Guan-Cheng, Ronald Lai, Alexander D’Amour, David M Doolin, Ye Sun, Vetle I Torvik, Z Yu Amy, and Lee Fleming. 2014. “Disambiguation and Co-Authorship Networks of the Us Patent Inventor Database (1975–2010).” <em>Research Policy</em> 43 (6). Elsevier: 941–55.</p>
+<p>Kreuter, Frauke, Rayid Ghani, and Julia Lane. 2019. “Change Through Data: A Data Analytics Training Program for Government Employees.” <em>Harvard Data Science Review</em> 1 (2). <a href="https://doi.org/10.1162/99608f92.ed353ae3">https://doi.org/10.1162/99608f92.ed353ae3</a>.</p>
 </div>
 <div id="ref-Lifka">
-<p>Lifka, D., I. Foster, S. Mehringer, M. Parashar, P. Redfern, C. Stewart, and S. Tuecke. 2013. “XSEDE Cloud Survey Report.” Technical report, National Science Foundation, USA, <a href="http://hdl.handle.net/2142/45766" class="uri">http://hdl.handle.net/2142/45766</a>.</p>
+<p>Lifka, D., I. Foster, S. Mehringer, M. Parashar, P. Redfern, C. Stewart, and S. Tuecke. 2013. “XSEDE Cloud Survey Report.” Technical report, National Science Foundation, USA, <a href="http://hdl.handle.net/2142/45766">http://hdl.handle.net/2142/45766</a>.</p>
 </div>
 <div id="ref-lohr2009sampling">
 <p>Lohr, Sharon. 2009. <em>Sampling: Design and Analysis</em>. Cengage Learning.</p>
 </div>
 <div id="ref-lynch2018">
-<p>Lynch, James. 2018. “Not Even Our Own Facts: Criminology in the Era of Big Data.” <em>Criminology</em> 56 (3). Wiley Online Library: 437–54.</p>
+<p>Lynch, James. 2018. “Not Even Our Own Facts: Criminology in the Era of Big Data.” <em>Criminology</em> 56 (3): 437–54.</p>
 </div>
 <div id="ref-marburger2005wanted">
-<p>Marburger, John H. 2005. “Wanted: Better Benchmarks.” <em>Science</em> 308 (5725). American Association for the Advancement of Science: 1087.</p>
+<p>Marburger, John H. 2005. “Wanted: Better Benchmarks.” <em>Science</em> 308 (5725): 1087.</p>
 </div>
 <div id="ref-mas2009peers">
 <p>Mas, Alexandre, and Enrico Moretti. 2009. “Peers at Work.” <em>American Economic Review</em> 99 (1): 112–45.</p>
@@ -690,67 +947,61 @@ Figure 1.7: The four chapters in Part III focus on <em>inference</em> and <em>et
 <div id="ref-national2018federal">
 <p>National Academies of Sciences, Engineering, Medicine, and others. 2018. <em>Federal Statistics, Multiple Data Sources, and Privacy Protection: Next Steps</em>. National Academies Press.</p>
 </div>
+<div id="ref-OfficeofManagementandBudget">
+<p>Office of Management and Budget. n.d. “M-19-23: Phase 1 Implementation of the Foundations for Evidence-Based Policymaking Act of 2018: Learning Agendas, Personnel, and Planning Guidance.” <a href="https://www.whitehouse.gov/wp-content/uploads/2019/07/M-19-23.pdf">https://www.whitehouse.gov/wp-content/uploads/2019/07/M-19-23.pdf</a>.</p>
+</div>
 <div id="ref-pan2017">
-<p>Pan, Ian, Laura B Nolan, Rashida R Brown, Romana Khan, Paul van der Boor, Daniel G Harris, and Rayid Ghani. 2017. “Machine Learning for Social Services: A Study of Prenatal Case Management in Illinois.” <em>American Journal of Public Health</em> 107 (6). American Public Health Association: 938–44.</p>
+<p>Pan, Ian, Laura B Nolan, Rashida R Brown, Romana Khan, Paul van der Boor, Daniel G Harris, and Rayid Ghani. 2017. “Machine Learning for Social Services: A Study of Prenatal Case Management in Illinois.” <em>American Journal of Public Health</em> 107 (6): 938–44.</p>
 </div>
 <div id="ref-peterson2018classification">
-<p>Peterson, Andrew, and Arthur Spirling. 2018. “Classification Accuracy as a Substantive Quantity of Interest: Measuring Polarization in Westminster Systems.” <em>Political Analysis</em> 26 (1). Cambridge University Press: 120–28.</p>
+<p>Peterson, Andrew, and Arthur Spirling. 2018. “Classification Accuracy as a Substantive Quantity of Interest: Measuring Polarization in Westminster Systems.” <em>Political Analysis</em> 26 (1): 120–28.</p>
 </div>
 <div id="ref-ram2013git">
 <p>Ram, Karthik. 2013. “Git Can Facilitate Greater Reproducibility and Increased Transparency in Science.” <em>Source Code for Biology and Medicine</em> 8 (1): 7.</p>
 </div>
 <div id="ref-schwartz2016effect">
-<p>Schwartz, Amy Ellen, Michele Leardo, Siddhartha Aneja, and Brian Elbel. 2016. “Effect of a School-Based Water Intervention on Child Body Mass Index and Obesity.” <em>JAMA Pediatrics</em> 170 (3). American Medical Association: 220–26.</p>
+<p>Schwartz, Amy Ellen, Michele Leardo, Siddhartha Aneja, and Brian Elbel. 2016. “Effect of a School-Based Water Intervention on Child Body Mass Index and Obesity.” <em>JAMA Pediatrics</em> 170 (3): 220–26.</p>
 </div>
 <div id="ref-SeverancePython">
-<p>Severance, Charles. 2013. “Python for Informatics: Exploring Information.” <a href="http://www.pythonlearn.com/book.php" class="uri">http://www.pythonlearn.com/book.php</a>; CreateSpace.</p>
+<p>Severance, Charles. 2013. “Python for Informatics: Exploring Information.” <a href="http://www.pythonlearn.com/book.php">http://www.pythonlearn.com/book.php</a>; CreateSpace.</p>
 </div>
 <div id="ref-shelton2014mapping">
-<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52. Elsevier: 167–79.</p>
-</div>
-<div id="ref-smalheiser2009author">
-<p>Smalheiser, Neil R, and Vetle I Torvik. 2009. “Author Name Disambiguation.” <em>Annual Review of Information Science and Technology</em> 43 (1). Wiley Online Library: 1–43.</p>
+<p>Shelton, Taylor, Ate Poorthuis, Mark Graham, and Matthew Zook. 2014. “Mapping the Data Shadows of Hurricane Sandy: Uncovering the Sociospatial Dimensions of ‘Big Data’.” <em>Geoforum</em> 52: 167–79.</p>
 </div>
 <div id="ref-Spielman2015">
-<p>Spielman, Seth E., and Alex Singleton. 2015. “Studying Neighborhoods Using Uncertain Data from the American Community Survey: A Contextual Approach.” <em>Annals of the Association of American Geographers</em> 105 (5): 1003–25. doi:<a href="https://doi.org/10.1080/00045608.2015.1052335">10.1080/00045608.2015.1052335</a>.</p>
+<p>Spielman, Seth E., and Alex Singleton. 2015. “Studying Neighborhoods Using Uncertain Data from the American Community Survey: A Contextual Approach.” <em>Annals of the Association of American Geographers</em> 105 (5): 1003–25. <a href="https://doi.org/10.1080/00045608.2015.1052335">https://doi.org/10.1080/00045608.2015.1052335</a>.</p>
 </div>
 <div id="ref-squire19881936">
-<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1). AAPOR: 125–33.</p>
+<p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1): 125–33.</p>
 </div>
 <div id="ref-stanton2006high">
 <p>Stanton, Mark W, and MK Rutherford. 2006. <em>The High Concentration of Us Health Care Expenditures</em>. Agency for Healthcare Research; Quality.</p>
 </div>
 <div id="ref-GitResearch">
-<p>Strasser, Carly. 2014. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/" class="uri">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
+<p>Strasser, Carly. n.d. “Git/GitHub: A Primer for Researchers.” <a href="http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/">http://datapub.cdlib.org/2014/05/05/github-a-primer-for-researchers/</a>.</p>
 </div>
 <div id="ref-talley2011database">
-<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6). Nature Publishing Group: 443–44.</p>
-</div>
-<div id="ref-valliant2013practical">
-<p>Valliant, Richard, Jill A Dever, and Frauke Kreuter. 2013. <em>Practical Tools for Designing and Weighting Survey Samples</em>. Springer.</p>
+<p>Talley, Edmund M., David Newman, David Mimno, Bruce W. Herr II, Hanna M. Wallach, Gully A. P. C. Burns, A. G. Miriam Leenders, and Andrew McCallum. 2011. “Database of NIH Grants Using Machine-Learned Categories and Graphical Clustering.” <em>Nature Methods</em> 8 (6): 443–44.</p>
 </div>
 <div id="ref-varian2014big">
 <p>Varian, Hal R. 2014. “Big Data: New Tricks for Econometrics.” <em>Journal of Economic Perspectives</em> 28 (2): 3–28.</p>
 </div>
 <div id="ref-weinberg2014science">
-<p>Weinberg, Bruce A, Jason Owen-Smith, Rebecca F Rosen, Lou Schwarz, Barbara McFadden Allen, Roy E Weiss, and Julia Lane. 2014. “Science Funding and Short-Term Economic Activity.” <em>Science</em> 344 (6179). American Association for the Advancement of Science: 41–43.</p>
+<p>Weinberg, Bruce A, Jason Owen-Smith, Rebecca F Rosen, Lou Schwarz, Barbara McFadden Allen, Roy E Weiss, and Julia Lane. 2014. “Science Funding and Short-Term Economic Activity.” <em>Science</em> 344 (6179): 41–43.</p>
 </div>
 <div id="ref-Yarkoni2019">
-<p>Yarkoni, Tal, Dean Eckles, James Heathers, Maggie Levenstein, Paul Smaldino, and Julia I. Lane. 2019. “Enhancing and accelerating social science via automation: Challenges and Opportunities.” DARPA. doi:<a href="https://doi.org/10.31235/osf.io/vncwe">10.31235/osf.io/vncwe</a>.</p>
+<p>Yarkoni, Tal, Dean Eckles, James Heathers, Maggie Levenstein, Paul Smaldino, and Julia I. Lane. 2019. “Enhancing and accelerating social science via automation: Challenges and Opportunities.” <a href="https://doi.org/10.31235/osf.io/vncwe">https://doi.org/10.31235/osf.io/vncwe</a>.</p>
 </div>
 </div>
 <div class="footnotes">
 <hr />
 <ol start="1">
-<li id="fn1"><p>This topic is discussed in more detail in Chapter <a href="chap-parallel.html#chap:parallel">Scaling up through Parallel and Distributed Computing</a>.<a href="chap-intro.html#fnref1">↩</a></p></li>
-<li id="fn2"><p>This topic is discussed in more detail in Section <a href="chap-intro.html#sec:1-5">New tools for new data</a>.<a href="chap-intro.html#fnref2">↩</a></p></li>
-<li id="fn3"><p>This topic is discussed in more detail in Chapter <a href="chap-db.html#chap:db">Databases</a>.<a href="chap-intro.html#fnref3">↩</a></p></li>
-<li id="fn4"><p>UMETRICS: Universities Measuring the Impact of Research on Innovation and Science <span class="citation">(Lane et al. <a href="#ref-lane2015new">2015</a>)</span><a href="chap-intro.html#fnref4">↩</a></p></li>
-<li id="fn5"><p><a href="https://iris.isr.umich.edu/" class="uri">https://iris.isr.umich.edu/</a><a href="chap-intro.html#fnref5">↩</a></p></li>
-<li id="fn6"><p>Application Programming Interfaces<a href="chap-intro.html#fnref6">↩</a></p></li>
-<li id="fn7"><p><a href="http://www.dssgfellowship.org/2016/10/27/scoping-data-science-for-social-good-projects/" class="uri">http://www.dssgfellowship.org/2016/10/27/scoping-data-science-for-social-good-projects/</a><a href="chap-intro.html#fnref7">↩</a></p></li>
-<li id="fn8"><p>See jupyter.org.<a href="chap-intro.html#fnref8">↩</a></p></li>
-<li id="fn9"><p>Read this! <a href="http://alexbell.net/pyseminar/pyseminar.html" class="uri">http://alexbell.net/pyseminar/pyseminar.html</a><a href="chap-intro.html#fnref9">↩</a></p></li>
+<li id="fn1"><p>This topic is discussed in more detail in Chapter <a href="chap-parallel.html#chap:parallel">Scaling up through Parallel and Distributed Computing</a>.<a href="chap-intro.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>This topic is discussed in more detail in Section <a href="chap-intro.html#sec:1-5">New tools for new data</a>.<a href="chap-intro.html#fnref2" class="footnote-back">↩</a></p></li>
+<li id="fn4"><p>Application Programming Interfaces<a href="chap-intro.html#fnref4" class="footnote-back">↩</a></p></li>
+<li id="fn5"><p><a href="http://www.dssgfellowship.org/2016/10/27/scoping-data-science-for-social-good-projects/" class="uri">http://www.dssgfellowship.org/2016/10/27/scoping-data-science-for-social-good-projects/</a><a href="chap-intro.html#fnref5" class="footnote-back">↩</a></p></li>
+<li id="fn6"><p>See jupyter.org.<a href="chap-intro.html#fnref6" class="footnote-back">↩</a></p></li>
+<li id="fn7"><p>Read this! <a href="http://alexbell.net/pyseminar/pyseminar.html" class="uri">http://alexbell.net/pyseminar/pyseminar.html</a><a href="chap-intro.html#fnref7" class="footnote-back">↩</a></p></li>
 </ol>
 </div>
 <div id="disqus_thread"></div>
@@ -776,11 +1027,13 @@ s.setAttribute('data-timestamp', +new Date());
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
 <script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
 <script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
 <script>
 gitbook.require(["gitbook"], function(gitbook) {
 gitbook.start({
@@ -788,12 +1041,11 @@ gitbook.start({
 "github": false,
 "facebook": true,
 "twitter": true,
-"google": false,
 "linkedin": false,
 "weibo": false,
 "instapaper": false,
 "vk": false,
-"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
 },
 "fontsettings": {
 "theme": "white",
@@ -805,6 +1057,10 @@ gitbook.start({
 "text": "Edit"
 },
 "history": {
+"link": null,
+"text": null
+},
+"view": {
 "link": null,
 "text": null
 },
@@ -821,7 +1077,7 @@ gitbook.start({
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    var src = "";
+    var src = "true";
     if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
     if (location.protocol !== "file:")
       if (/^https?:/.test(src))
