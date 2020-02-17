@@ -163,7 +163,7 @@ likely to be collected and used within the same entity---for example,
 within an agency that collects administrative data or within a
 university that collects data for research purposes---organization-specific
 procedures were (usually) in place and sufficient to regulate the usage of
-these data. Today, legal ownership is less clear [@lane2014privacy].
+these data. Today, legal ownership is less clear [@lane2014].
 There are many unresolved issues, such as Who has the legal authority to 
 make decisions about permission, access, and dissemination and under what
 circumstances?. The challenge today is that data sources are
