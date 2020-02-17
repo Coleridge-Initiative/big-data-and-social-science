@@ -51,7 +51,7 @@ What are networks?
 Networks are measurable representations of relationships connecting entities. What this means is that there are two fundamental questions to ask of any network representation: First, what are the nodes, or entities that are connected? Second, what are the relationships (ties or edges) connecting the nodes? Once we have the representation, we can then analyze the underlying data and relationships through the measures and methods described in this chapter. This is of great interest because a great deal of research in social sciences demonstrates that networks are essential to understanding behaviors and outcomes at both the individual and the organizational level.
 
 Networks offer not just another convenient set of right-hand-side variables, but an entirely new unit of analysis that lies somewhere between the largely atomistic actors that occupy the
-markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell [@powell2003neither] puts it in a description of buyer supplier networks of small Italian firms: "when the entangling of obligation and reputation reaches a point where the
+markets of neo-classical theory and the tightly managed hierarchies that are the traditional object of inquiry of sociologists and organizational theorists. As Walter W. Powell [-@powell2003neither] puts it in a description of buyer supplier networks of small Italian firms: "when the entangling of obligation and reputation reaches a point where the
 actions of the parties are interdependent, but there is no common
 ownership or legal framework ... such a transaction is neither a market
 exchange nor a hierarchical governance structure, but a separate,
@@ -382,7 +382,7 @@ functioning of the networks as a whole. Structural differences between
 the positions of nodes, the presence and characteristics of cohesive
 "communities" within larger networks [@girvan2002community], and many
 important properties of entire structures can be quantified using
-different classes of network measures. Newman [@newman2010networks]
+different classes of network measures. Newman [-@newman2010networks]
 provides the most recent and most comprehensive look at measures and
 algorithms for network research.
 
@@ -706,7 +706,7 @@ the concept of geodesic paths to capture nuanced differences the
 positions of nodes in a connected network. Where closeness assumes that
 communication and the flow of information increase with proximity,
 betweenness captures the idea of brokerage that was made famous by Burt
-[@burt1993social]. Here too the idea is that flows of information and
+[-@burt1993social]. Here too the idea is that flows of information and
 resources pass between nodes that are not directly connected through
 indirect paths. The key to the idea of brokerage is that such paths pass
 through nodes that can interdict, or otherwise profit from their
@@ -722,7 +722,7 @@ are required [@freeman1979centrality]. First, one must assume that when
 people (or organizations) search for new information through their
 networks, they are capable of identifying the shortest path to what they
 seek. When multiple paths of equal length exist, we assume that each
-path is equally likely to be used. Newman [@newman2005measure] describes
+path is equally likely to be used. Newman [-@newman2005measure] describes
 an alternative betweenness measure based on random paths through a
 network, rather than shortest paths, that relaxes these assumptions. For
 now, let $g_{jk}$ equal the number of geodesic paths linking any two
@@ -782,8 +782,8 @@ in the absence of descriptive statistics such as those presented above
 is beyond the scope of this chapter, but consider the guidelines
 presented in Chapter [Information Visualization](#chap:viz) on 
 information visualization as well as useful
-discussions by Powell et al. [@powell2005network] and Healy and Moody
-[@healy2014data].
+discussions by Powell et al. [-@powell2005network] and Healy and Moody
+[-@healy2014data].
 
 Consider the two images. University A is a major public institution with
 a significant medical school. University B, likewise, is a public

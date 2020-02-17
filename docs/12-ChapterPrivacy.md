@@ -178,7 +178,7 @@ will be used. Think, for example, about cell phone calls. The New York Times has
 **Example: Knowledge is power**
 
 In a discussion of legal approaches to privacy in the context of big
-data, Strandburg [@Strandburg2014] says: "'Big data' has great potential
+data, Strandburg [-@Strandburg2014] says: "'Big data' has great potential
 to benefit society. At the same time, its availability creates
 significant potential for mistaken, misguided or malevolent uses of
 personal information. The conundrum for the law is to provide space for
@@ -323,7 +323,7 @@ to a number of operational challenges, including version control,
 identifying and managing risky researcher behavior, and management costs
 [@doyle2001confidentiality].
 
-Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
+Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith [-@Dworkroth2014]. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see [@ruggles2019; @abowed2018].
 
 Although the research agenda is an interesting and important one, there are a number of concerns about the practical implications.   The Census Bureau, for example, has spent many millions of dollars to implement differential privacy techniques for the 2020 Decennial Census, and researchers who have studied the potential impact on small towns worry that small towns will "disappear" from official statistics - a major issue when data are used for decision-making [@Wezerek].
 
@@ -374,7 +374,7 @@ sensors, social media, and many other sources, and the related analyses
 [@lane2013me].
 
 It is clear that informed consent as historically construed is no longer
-feasible. As Nissenbaum [@nissenbaum2011contextual] points out,
+feasible. As Nissenbaum [-@nissenbaum2011contextual] points out,
 notification is either comprehensive or comprehensible, but not both.
 While ideally human subjects are offered true freedom of choice based on
 a sound and sufficient understanding of what the choice entails, in

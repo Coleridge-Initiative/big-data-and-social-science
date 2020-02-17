@@ -97,8 +97,8 @@ The development of an effective visualization is a continous process that genera
 If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
 can be developed by graphic designers, as described in classic texts
-(see [@few2009now; @edward2001visual; @edward2006beauty] or the examples
-compiled by Harrison et al. [@harrison2015infographic; @harrisonweb]).
+(see @few2009now; @edward2001visual; @edward2006beauty or the examples
+compiled by Harrison et al. -@harrison2015infographic; -@harrisonweb).
 If, on the other hand, the audience comprises domain experts interested in
 monitoring the overview status of dynamic processes on a continuous basis,
 monitoring *dashboards* with no or little interactivity can be used. 
@@ -148,10 +148,10 @@ change across three years.
 Creating effective visualizations requires careful consideration of many
 components. Data values may be encoded using one or more visual
 elements, like position, length, color, angle, area, and texture
-(Figure \@ref(fig:fig9-4); see also
-[@cleveland1984graphical; @edward2001visual]). Each of these can be
+(Figure \@ref(fig:fig9-4); see also 
+@cleveland1984graphical; @edward2001visual). Each of these can be
 organized in a multitude of ways, discussed in more detail by Munzner
-[@munzner2014visualization]. In addition to visual data encoding, units
+[-@munzner2014visualization]. In addition to visual data encoding, units
 for axes, labels, and legends need to be provided as well as
 explanations of the mappings when the design is unconventional. A visually
 compelling example is “how to read this data” section of “A world of Terror”
@@ -302,8 +302,7 @@ effort to interpret.
 Spatial data convey a physical context, commonly in a 2D space, such as
 geographical maps or floor plans. Several of the most examples of
 information visualization include maps, from the 1861 representation of
-Napoleon's ill-fated Russian campaign by Minard (popularized by Tufte
-[@edward2001visual] and Kraak [@Kraak2014]) to the interactive
+Napoleon's ill-fated Russian campaign by Minard (popularized by Tufte -@edward2001visual and Kraak -@Kraak2014) to the interactive
 HomeFinder application that introduced the concept of dynamic queries
 [@ahlberg1992dynamic]. The tasks include finding adjacent items, regions
 containing certain items or with specific characteristics, and paths

@@ -419,7 +419,7 @@ theoretically appealing approach but it has the drawback that the
 similarity metric has to be computed for all pairs of records. Even so,
 computing the similarity measure for a pair of blocking keys is likely
 to be cheaper than computing the full record comparison, so there is
-still a gain in efficiency. Whang et al. [@whang2009entity] provide a
+still a gain in efficiency. Whang et al. [-@whang2009entity] provide a
 nice review of indexing approaches.
 
 In addition to reducing the computational burden of record linkage,
@@ -672,7 +672,7 @@ requirements are similar to standard blocking [@christen2012data].
 
 In recent years machine learning approaches^[This topic is discussed in
 more detail in Chapter [Machine Learning](#chap:ml).] have been applied to record
-Linkage. As Wick et al. [@wick2013joint] note:
+Linkage. As Wick et al. [-@wick2013joint] note:
 
 > Entity resolution, the task of automatically determining which
 > mentions refer to the same real-world entity, is a crucial aspect of
@@ -757,7 +757,7 @@ approaches to disambiguating a database of inventors in the USPTO
 database [@ventura2015seeing]. Another approach is to apply clustering
 algorithms from the computer science literature to identify groups of
 records that are likely to refer to the same entity. Huang et al. 
-[@HEG06] have developed a successful method based on an efficient
+[-@HEG06] have developed a successful method based on an efficient
 computation of distance between individuals in the network. These
 distances are then fed into the DBSCAN clustering algorithm to identify
 unique entities.

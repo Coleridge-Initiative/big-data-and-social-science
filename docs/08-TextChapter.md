@@ -85,7 +85,7 @@ Word Clustering/Synonyms | Finding groups of words that are similar to each othe
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
 General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | Automatically detecting words as types of events (holiday, party, graduation  for example) and classifying them into types (related to sports, politics, and religion for example) from tweets [@Ritter2012].
 Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
-Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
+Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [-@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
 Translation | Automatic translation of text from one language to another. | Look at reaction to a political event in newspapers of different countries in different languages.
 
 For this chapter, we will focus on two types of use cases that social scientists deal with containing text data: 
@@ -999,7 +999,7 @@ resources that can be helpful in mastering text mining techniques:
   multiple examples and tips on how to use NLTK.  This is a great
   package to use if you want to *understand* these models.
 
-- A paper by Anna Huang [@huang-08] provides a brief overview of the
+- A paper by Anna Huang [-@huang-08] provides a brief overview of the
   key similarity measures for text document clustering discussed in
   this chapter, including their strengths and weaknesses in different
   contexts.

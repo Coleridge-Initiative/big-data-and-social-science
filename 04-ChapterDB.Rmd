@@ -1085,8 +1085,7 @@ system that comprises of multiple computers:
 -   **Partition tolerance** indicates that the system continues to operate even if a network
     failure prevents computers from communicating.
 
-An important result in distributed systems (the so-called "CAP theorem"
-[@brewer2012cap]) observes that it is not possible to create a
+An important result in distributed systems (the so-called "CAP theorem", @brewer2012cap) observes that it is not possible to create a
 distributed system with all three properties. This situation creates a
 challenge with large transactional data sets. Partitioning and replication needed in
 order to achieve high performance, but as the number of computers grows,

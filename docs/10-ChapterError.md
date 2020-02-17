@@ -25,7 +25,7 @@ Introduction {#sec:10-1}
 
 The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro) -- and the decisions made along the way -- can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
 
-The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. [@japec2015big]): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
+The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. -@japec2015big): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
 
 These new sources of data are typically aggregated from disparate sources at various
 points in time and integrated to form data sets for further analysis. The processing 
@@ -311,7 +311,7 @@ accurate, were nevertheless inconsistent with the required definition.
 
 Missing data:
 Missing data, as the name implies, are just empty cells. As described in 
-Kreuter and Peng [@kreuter201412], data sets derived from big data are 
+Kreuter and Peng [-@kreuter201412], data sets derived from big data are 
 notoriously affected by all three types of cell error, particularly missing 
 or incomplete data, perhaps because that is the most obvious deficiency.
 
@@ -320,8 +320,8 @@ matrix (referred to as *item missingness*) or missing rows (referred to
 as *unit missingness*), with the former being readily observable whereas 
 the latter can be completely hidden from the analyst. Much is known from 
 the survey research literature about how both types of missingness affect 
-data analysis (see, for example, Little and Rubin
-[@little2014statistical; @rubin1976]). Rubin [@rubin1976] introduced the
+data analysis (see, for example, 
+@little2014statistical; @rubin1976). Rubin [-@rubin1976] introduced the
 term *missing completely at random (MCAR)* to describe data where the
 data that are available (say, the rows of a data set) can be considered
 as a simple random sample of the inferential population (i.e., the
@@ -337,7 +337,7 @@ they would score. Thus, the values are missing for reasons related to
 another variable, health, that may be available in the data set and
 completely observed. Students with poor health tend to be missing test
 scores, regardless of those student's performance on the test. Rubin
-[@rubin1976] uses the term *missing at random (MAR)* to describe data
+[-@rubin1976] uses the term *missing at random (MAR)* to describe data
 that are missing for reasons related to completely observed variables in
 the data set. It is possible to compensate for this type of missingness
 in statistical inferences by modeling the missing data mechanism.
@@ -351,7 +351,7 @@ who are poor academic performers. Rubin calls this form of missingness
 missing observations depend on the values that are missing. When we
 suspect a nonignorable missing data mechanism, we need to use procedures
 much more complex than will be described here. Little and Rubin
-[@little2014statistical] and Schafer [@schafer1997analysis] discuss
+[-@little2014statistical] and Schafer [-@schafer1997analysis] discuss
 methods that can be used for nonignorable missing data. Ruling out a
 nonignorable response mechanism can simplify the analysis considerably.
 
@@ -360,7 +360,7 @@ whether or not the data are MCAR or MAR. Understanding the data
 generation process is invaluable for specifying models that
 appropriately represent the missing data mechanism and that will then be
 successful in compensating for missing data in an analysis. (Schafer and
-Graham [@schafer2002missing] provide a more thorough discussion of this
+Graham -@schafer2002missing provide a more thorough discussion of this
 issue.)
 
 One strategy for ensuring that the missing data mechanism can be
@@ -383,8 +383,8 @@ analysis that are common in the big data literature. We will limit the
 focus on the effects of content errors on data analysis. However, there 
 are numerous resources available for studying and mitigating the effects 
 of missing data on analysis such as books by Little and Rubin 
-[@little2014statistical], Schafer [@schafer1997analysis], and Allison 
-[@allison2001missing].
+[-@little2014statistical], Schafer [-@schafer1997analysis], and Allison 
+[-@allison2001missing].
 
 Example: Google Flu Trends {#sec:10-3}
 -----------------------------------
@@ -397,13 +397,13 @@ the discussion in Section 1.3.]. Compared to
 CDC data, the Google Flu Trends provided remarkably accurate indicators
 of flu incidence in the USA between 2009 and 2011. However, for the
 2012--2013 flu seasons, the Google Flu Trends estimates were almost double 
-the CDC's [@butler2013google]. Lazer et al. [@lazer2014parable] cite 
+the CDC's [@butler2013google]. Lazer et al. [-@lazer2014parable] cite 
 two causes of this error: big data hubris and algorithm dynamics.
 
 Hubris occurs when the big data researcher believes that the volume of
 the data compensates for any of its deficiencies, thus obviating the
 need for traditional, scientific analytic approaches. As Lazer et
-al. [@lazer2014parable] note, big data hubris fails to recognize that
+al. [-@lazer2014parable] note, big data hubris fails to recognize that
 "quantity of data does not mean that one can ignore foundational issues
 of measurement and construct validity and reliability."
 
@@ -411,7 +411,7 @@ Algorithm dynamics refers to properties of algorithms that allow them to
 adapt and "learn" as the processes generating the data change over time.
 Although explanations vary, the fact remains that Google Flu Trends estimates 
 were too high and by considerable margins for 100 out of 108 weeks starting
-in July 2012. Lazer et al. [@lazer2014parable] also blame "blue team
+in July 2012. Lazer et al. [-@lazer2014parable] also blame "blue team
 dynamics," which arises when the data generating engine is modified in
 such a way that the formerly highly predictive search terms eventually
 failed to work. For example, when a Google user searched on "fever" or
@@ -458,7 +458,7 @@ Data deficiencies represent only one set of challenges for the big data
 analyst. Even if data is correct, other challenges can arise solely as 
 a result of the massive size,
 rapid generation, and vast dimensionality of the data [@meng2018]. 
-Fan et al. [@fan2014challenges]
+Fan et al. [-@fan2014challenges]
 identify three issues--- noise accumulation, spurious correlations, and
 incidental endogeneity---which will be discussed in this
 section. These issues should concern social scientists even if the data
@@ -467,7 +467,7 @@ data deficiencies will only exacerbate these problems.
 
 **Noise accumulation**
 
-To illustrate noise accumulation, Fan et al. [@fan2014challenges]
+To illustrate noise accumulation, Fan et al. [-@fan2014challenges]
 consider the following scenario. Suppose an analyst is interested in
 classifying individuals into two categories, $C_{1}$ and $C_{2}$, based
 upon the values of 1,000 variables in a big data set. Suppose further
@@ -480,7 +480,7 @@ classification error. However, as more and more variables are included
 in the rule, classification error increases because the uninformative
 variables (i.e., the 990 variables having no discriminating power)
 eventually overwhelm the informative signals (i.e., the first 10
-variables). In the Fan et al. [@fan2014challenges] example, when
+variables). In the Fan et al. [-@fan2014challenges] example, when
 $m > 200$, the accumulated noise exceeds the signal embedded in the
 first 10 variables and the classification rule becomes equivalent to a
 coin-flip classification rule.
@@ -496,7 +496,7 @@ inferences. The phenomenon depicted in Figure
 \@ref(fig:fig10-3), is an
 illustration of this. Many more examples can be found on a website and
 in a book devoted to the topic [@spurious; @spurious2]. Fan et
-al. [@fan2014challenges] explain this phenomenon using simulated
+al. [-@fan2014challenges] explain this phenomenon using simulated
 populations and relatively small sample sizes. They illustrate how, with
 800 independent (i.e., uncorrelated) variables, the analyst has a 50%
 chance of observing an absolute correlation that exceeds 0.4. Their
@@ -515,7 +515,7 @@ Finally, turning to incidental endogeneity, a key assumption in
 regression analysis is that the model covariates are uncorrelated with
 the residual error; endogeneity refers to a violation of this
 assumption. For high-dimensional models, this can occur purely by
-chance---a phenomenon Fan and Liao [@fan2014endogeneity] call
+chance---a phenomenon Fan and Liao [-@fan2014endogeneity] call
 *incidental endogeneity*. Incidental endogeneity leads to the modeling
 of spurious variation in the outcome variables resulting in errors in
 the model selection process and biases in the model predictions. The
@@ -523,14 +523,14 @@ risks of incidental endogeneity increase as the number of variables in
 the model selection process grows large. Thus it is a particularly
 important concern for big data analytics.
 
-Fan et al. [@fan2014challenges] as well as a number of other authors
+Fan et al. [-@fan2014challenges] as well as a number of other authors
 [@stock2002forecasting; @fan2009ultrahigh] (see, for example, Hall and
-Miller [@HallMiller2009]; Fan and Liao, [@FanLiao2012]) suggest robust
+Miller -@HallMiller2009; Fan and Liao -@FanLiao2012) suggest robust
 statistical methods aimed at mitigating the risks of noise accumulation,
 spurious correlations, and incidental endogeneity. However, as
 previously noted, these issues and others are further compounded when
 data errors are present in a data set. Biemer and Trewin
-[@biemer1997review] show that data errors will bias the results of
+[-@biemer1997review] show that data errors will bias the results of
 traditional data analysis and inflate the variance of estimates in ways
 that are difficult to evaluate or mitigate in the analysis process.
 
@@ -634,7 +634,7 @@ J$, and let $b_j$ denote the systematic effect of the $j$th source. Here
 we also assume that, with each hypothetical repetition of the data set
 generating process, these systematic effects can vary stochastically.
 (It is also possible to assume the systematic effects are fixed. See,
-for example, Biemer and Stokes [@BiemerStokes1991] for more details on
+for example, Biemer and Stokes [-@BiemerStokes1991] for more details on
 this model.) Thus, we assume that ${\rm E}(b_j ) = 0$,
 ${\rm Var}(b_j ) =
 \sigma_b^2$, and ${\rm Cov}(b_j ,b_k ) = 0$ for $j \ne k$.
@@ -685,7 +685,7 @@ structure do not hold. For example, consider the case of a binary
 ($0/1$) variable. Since both $y_r$ and $\mu_r$ should be either 1 or 0,
 the error in equation (10.1) must assume the values of $-1$, $0$, or $1$. A
 more appropriate model is the misclassification model described by
-Biemer [@biemer2011latent], which we summarize here.
+Biemer [-@biemer2011latent], which we summarize here.
 
 Let $\phi_r$ denote the probability of a false positive error (i.e.,
 $\phi_r = \Pr (y_r = 1\vert \mu_r = 0)$), and let $\theta_r$ denote the
@@ -697,7 +697,7 @@ $1$, and $1 - \phi_r$ if the true value is $0$.
 As an example, suppose an analyst wishes to compute the proportion,
 $P = \sum_r {y_r / N}$, of the units in the file that are classified as
 $1$, and let $\pi = \sum_r {\mu_r / N}$ denote the true proportion. Then
-under the assumption of uncorrelated error, Biemer [@biemer2011latent]
+under the assumption of uncorrelated error, Biemer [-@biemer2011latent]
 shows that $$\label{eq:10-1.3}
 P = \pi (1 - \theta ) + (1 - \pi )\phi,$$ where
 $\theta = \sum_r {\theta_r / N}$ and $\phi = \sum_r
@@ -847,7 +847,7 @@ indicates the presence of systematic error variation in the data. As we
 shall see, even small values of $\rho_c$ can cause big problems in
 correlation analysis.
 
-Using the results in Biemer and Trewin [@biemer1997review], it can be
+Using the results in Biemer and Trewin [-@biemer1997review], it can be
 shown that the correlation between $y_{rc}$ and $y_{rd}$, defined as
 $\rho_{y\vert cd} = \sigma_{y\vert cd} / \sigma_{y\vert c} \sigma_{y\vert d}$, can be expressed as
 $$\label{eq:10-1.7} \rho_{y\vert cd} = \sqrt {R_c R_d } \rho_{\mu \vert cd} + \sqrt {\rho_c \rho_d }.$$
@@ -1021,7 +1021,7 @@ residual variance is increased by the additive term, that is,
 $\sigma_{e}^{\prime2} = \sigma_{\varepsilon \vert y}^2 +
 \sigma_e^2$.
 
-Chai [@chai1971correlated] considers the case of systematic errors in
+Chai [-@chai1971correlated] considers the case of systematic errors in
 the regression variables that may induce correlations both within and
 between variables in the regression. He shows that, in the presence of
 systematic errors in the independent variable, the bias in the slope
@@ -1069,7 +1069,7 @@ approach where rules can apply to a particular variable, a combination
 of variables, or an aggregate value that is the sum over all the rows or
 a subset of the rows in a data set. Recently, data mining and machine
 learning techniques have been applied to data editing with excellent
-results (see Chandola et al. [@chandola2009anomaly] for a review).
+results (see Chandola et al. -@chandola2009anomaly for a review).
 Tree-based methods such as classification and regression trees and
 random forests are particularly useful for creating editing rules for
 anomaly identification and resolution [@petrakos2004new]. However, some
@@ -1157,7 +1157,7 @@ follows:
 Typically, $T_{b}$ is the mean, but other statistics such as the median
 or range could be plotted if they aid in the outlier identification
 process. For highly skewed distributions, Tennekes and de Jonge
-[@tennekes2011top] suggest transforming $T_{b}$ by the log function to
+[-@tennekes2011top] suggest transforming $T_{b}$ by the log function to
 better capture the range of values in the data set. In that case,
 negative values can be plotted as $\log(-T_{b})$ to the left of the
 origin and zero values can be plotted on the origin line. For
@@ -1173,7 +1173,7 @@ big data. Currently, the R implementation of tableplot is limited to $2$
 billion records.
 
 The tableplot in Figure \@ref(fig:fig10-7) is taken from Tennekes and de Jonge
-[@tennekes2011top] for the annual Dutch Structural Business Statistics
+[-@tennekes2011top] for the annual Dutch Structural Business Statistics
 survey, a survey of approximately 58,000 business units annually. Topics
 covered in the questionnaire include turnover, number of employed
 persons, total purchases, and financial results. Figure
@@ -1207,7 +1207,7 @@ As social scientists, we are deeply concerned with making sure that the inferenc
 
 In addition to describing the types of errors, this chapter also gives an example of a solution to clean up the data before analysis. Another option that was not discussed is the possibility of using analytical techniques that attempt to model errors and compensate for them in the analysis. Such techniques include the use of latent class analysis for classification error [@biemer2011latent], multilevel modeling of systematic errors from multiple sources [@hox2010multilevel], and Bayesian statistics for partitioning massive data sets across multiple machines and then combining the results [@ibrahim2000power; @scott2013bayes].
 
-While this chapter has focused on the accuracy of the data and the validity of the inference, other data quality dimensions such as timeliness, comparability, coherence, and relevance that we have not considered in this chapter are also important. For example, timeliness often competes with accuracy because achieving acceptable levels of the latter often requires greater expenditures of resources and time. In fact, some applications of data analysis prefer results that are less accurate for the sake of timeliness. Biemer and Lyberg [@biemer2003] discuss these and other issues in some detail. 
+While this chapter has focused on the accuracy of the data and the validity of the inference, other data quality dimensions such as timeliness, comparability, coherence, and relevance that we have not considered in this chapter are also important. For example, timeliness often competes with accuracy because achieving acceptable levels of the latter often requires greater expenditures of resources and time. In fact, some applications of data analysis prefer results that are less accurate for the sake of timeliness. Biemer and Lyberg [-@biemer2003] discuss these and other issues in some detail. 
 
 It is important to understand that we will rarely, if ever, get perfect data for our analysis. Every data source will have some limitation - some will be inaccurate, some will become stale,  and some will have sample bias. The key is to 1) be aware of the limitations of each data source, 2) incorporate that awareness in to the analysis that is being done with it, and 3) understand what type of inference errors it can lead to in order to appropriately communicate the results and make sound decisions.
 

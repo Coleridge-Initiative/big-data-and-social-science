@@ -1309,7 +1309,7 @@ the attributes advertisers could use to target their content.
 However, these limitations might not be sufficient in light of the
 platform's machine learning algorithms that are determining who is shown
 a given ad regardless of the specific targeting parameters. Research
-performed by Ali and colleagues [@ali2019], confirmed that the content of an
+performed by Ali and colleagues [-@ali2019], confirmed that the content of an
 advertisement could have a dramatic impact on who it was served to
 despite broad targeting parameters. Users who were shown a job posting
 for a position as a lumberjack were more than 90% men and more than 70%

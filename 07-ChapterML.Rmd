@@ -204,8 +204,8 @@ researchers and practitioners to take the following steps:
     were a single method that always worked best for a specific type of
     problem, but that would make things too easy. Each method makes a 
     difference assumption about the structure and distribution of the data 
-    and with large amounts of high-dimensional data^[dimensionality of the 
-    data often refers to how many variables we have in the data], it is 
+    and with large amounts of high-dimensional data^[Dimensionality of the 
+    data often refers to how many variables we have in the data.], it is 
     difficult to know apriori which assumption will best match the data 
     we have. Typically, in machine learning, you take a collection of 
     methods and try them out to empirically validate which one works the 
@@ -277,7 +277,7 @@ into two major categories:
     *overfit* to the data and the performance on new (unseen) data often
     goes down. Methods like the lasso [@tibshirani1996regression]
     penalize the model for having too many terms by performing what is
-    known as *regularization*^[In statistical terms, regularization is an attempt to avoid overfitting the model]. 
+    known as *regularization*^[In statistical terms, regularization is an attempt to avoid overfitting the model.]. 
 
 2.  **Unsupervised learning**: These are problems where there does not exist a target variable that
     we want to predict but we want to understand "natural" groupings or
@@ -296,7 +296,7 @@ supervised learning, all data points have labels. In between, either the
 percentage of examples with labels can vary or the types of labels can
 vary. We do not cover the weakly supervised and semi-supervised methods
 much in this chapter, but this is an active area of research in machine
-learning. Zhu [@zhu2005semi] provides more details.
+learning. Zhu [-@zhu2005semi] provides more details.
 
 ```{r spectrum, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Spectrum of machine learning methods from unsupervised to supervised learning'}
 knitr::include_graphics("ChapterML/figures/spectrum.png")
@@ -1270,11 +1270,11 @@ Both of these are important for different reasons. We need global interpretabili
 
 *Global Interpretability*
 
-Each method results in a model that needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to view the tree to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we can look at the coefficients and odds-ratios, but it is often difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing their “feature importances”\^[some measure of how uesful that fgeature was for the given model] and we often use that as a proxy for global model interpretability. 
+Each method results in a model that needs to be interpreted in a way that is appropriate for that method. For example, for a decision tree, we may want to view the tree to understand what types of classifications are being made. This can of course get cumbersome and difficult if the tree is extremely large. For logistic regression models, we can look at the coefficients and odds-ratios, but it is often difficult to mentally account for different variables controlling for each other. In general, the models discussed above have different ways of exposing their “feature importances”\^[Some measure of how useful that feature was for the given model.] and we often use that as a proxy for global model interpretability. 
 
 Another way of interpreting a model is to understand  how the model scores individual data points. We can take the set of entities that are scored by the model, and generate cross-tabs that highlight how the top x% of the scored/predicted entities are different from the rest of the entities. This approach allows us to get an idea of what the model is doing, not in general, but on the entities of interest to us and makes interpretability a little more intuitive and generalizable across different model types.
 
-A different approach that some have taken in this area has been to sparse\^[Using a small number of features/predictors] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include Ustun and Rudin [-@Ustun2019], Ustun and Rudin [-@Ustun2016], and Caruana et al. [-@Caruana2015]. These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy\footnote{We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.} of those models.
+A different approach that some have taken in this area has been to sparse\^[Using a small number of features/predictors.] models, making them easier to interpret. The motivation behind these simple, sparse models is that they are inherently interpretble and do not require the use of additional analysis for humans to understand them. Examples of such work include Ustun and Rudin [-@Ustun2019], Ustun and Rudin [-@Ustun2016], and Caruana et al. [-@Caruana2015]. These models may not perform well in every task so it’s important for us to explore the range of models in terms of performance and complexity, and decide what level and type of interpretability we need and how to balance that with the accuracy^[We are using accuracy as a proxy for different confusion-matrix based performance metrics such as precision, recall, etc.] of those models.
 
 *Individual-Level Explanations*
 
@@ -1427,7 +1427,7 @@ important to highlight that machine learning models for classification
 typically do not predict 0/1 values directly. SVMs, random forests, and
 logistic regression all produce a score (which is sometimes a
 probability) that is then turned into 0 or 1 based on a user-specific
-threshold. You might find that certain tools (such as scikitlearn^[you should never use the predict function in sci-kit-learn since it assumes a 0.5 threshold]) use a default
+threshold. You might find that certain tools (such as scikitlearn^[You should never use the predict function in sci-kit-learn since it assumes a 0.5 threshold.]) use a default
 value for that threshold (often 0.5), but it is important to know that
 it is an arbitrary threshold and you should select the threshold based
 on the data, the model, and the problem you are solving. We will cover
@@ -1643,7 +1643,7 @@ improve some social science tasks:
     analysis in the social sciences. One fundamental assumption within
     both is that they are additive over parameters. Machine learning
     provides tools when this assumption is too limiting. Hainmueller and
-    Hazlett [@hainmueller2014kernel], for example, reanalyze data that
+    Hazlett [-@hainmueller2014kernel], for example, reanalyze data that
     were originally analyzed with logistic regression and come to
     substantially different conclusions. They argue that their analysis,
     which is more flexible and based on supervised learning methodology,
@@ -1660,9 +1660,9 @@ improve some social science tasks:
 -   **Better text analysis**:  Text is everywhere, but unfortunately humans are slow and expensive
     in analyzing text data. Thus, computers are needed to analyze large
     collections of text. Machine learning methods can help make this
-    process more efficient. Feldman and Sanger [@FeldmanSanger] provide
+    process more efficient. Feldman and Sanger [-@FeldmanSanger] provide
     an overview of different automatic methods for text analysis.
-    Grimmer and Stewart [@grimmer2013text] give examples that are more
+    Grimmer and Stewart [-@grimmer2013text] give examples that are more
     specific for social scientists, and
     Chapter [Text analysis](#chap:text) provides more details on this topic.
 
@@ -1688,7 +1688,7 @@ improve some social science tasks:
 
 -   **Variable selection**: Although there are many methods for variable selection, regularized
     methods such as the lasso are highly effective and efficient when
-    faced with large amounts of data. Varian [@Varian2014] goes into
+    faced with large amounts of data. Varian [-@Varian2014] goes into
     more detail and gives other methods from machine learning that can
     be useful for variable selection. We can also find interactions
     between pairs of variables (to feed into other models) using random
