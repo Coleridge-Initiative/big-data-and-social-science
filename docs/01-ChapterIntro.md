@@ -174,7 +174,8 @@ Furthermore, they are developing at a tremendous rate as the result of
 work by thousands of people worldwide. For these reasons, the modern
 social scientist needs to be familiar with their capabilities.
 
-The book's "use case" {#sec:1-6}---------------------
+The book's "use case" {#sec:1-6}
+---------------------
 
 This book is about the uses of big data in social science. Our focus is
 on working through the use of data as a social scientist normally
@@ -185,29 +186,31 @@ and then thinking about how to apply them to a potpourri of social
 science examples.
 
 There are many examples of the use of big data in social science
-research. Our challenge in designing the book was to find a use case that was interesting,
-that didn't require access to confidential micro-data, that made use of all the methods and tools that a typical
-researcher might want to learn about, and that could be applied to most of the many other use cases that 
-might be of interest to other instructors (such as criminal justice, health care, welfare, education or economic development).
-We chose to make use of the great surge of interest in examining the impact of investments in research and development on economic and social outcomes, and which constitutes one of the first large-scale big data
-social science data infrastructures. Many of the data sources are public, and it is those that are used in this book.
+research. Our challenge in designing the book was to find a use case that
+was interesting, that didn't require access to confidential micro-data, 
+that made use of all the methods and tools that a typical researcher might
+want to learn about, and that could be applied to most of the many other 
+use cases that might be of interest to other instructors (such as criminal
+justice, health care, welfare, education or economic development).
+We chose to make use of the great surge of interest in examining the impact
+of investments in research and development on economic and social outcomes,
+and which constitutes one of the first large-scale big data social science
+data infrastructures. Many of the data sources are public, and it is those
+that are used in this book.
 
-We think the question should also be of broad interest to many potential users, even if they're not subject matter specialists.  
-The surge of interest was in response to a call from the
-President's Science Advisor (Jack Marburger) for a *science of science
-policy* [@marburger2005wanted]. He wanted a scientific response to the
-questions that he was asked about the impact of investments in science.
+We think the question should also be of broad interest to many potential users, even if they're not subject matter specialists. The surge of interest was in response to a call from the President's Science Advisor (Jack Marburger) for a *science of science policy* [@marburger2005wanted]. He wanted a scientific response to the questions that he was asked about the impact of investments in science.
 
 ---
 
 **Example: The Science of Science Policy**
 
-Marburger made some very insightful points during his tenure as Science Advisor.   He was sceptical of the calls for more and
-more investment in science, particularly of the European push for 3% of GDP to be allocated to research and development.
-He wanted to both understand and be able to explain what would be the returns to that kind of expenditure. In a very famous
-editorial, he asked
-[@marburger2005wanted]: "How much should a nation spend
-on science? What kind of science? How much from private versus public
+Marburger made some very insightful points during his tenure as Science
+Advisor. He was sceptical of the calls for more and more investment in
+science, particularly of the European push for 3% of GDP to be allocated 
+to research and development. He wanted to both understand and be able to
+explain what would be the returns to that kind of expenditure. In a very
+famous editorial, he asked [@marburger2005wanted]: "How much should a nation
+spend on science? What kind of science? How much from private versus public
 sectors? Does demand for funding by potential science performers imply a
 shortage of funding or a surfeit of performers? These and related
 science policy questions tend to be asked and answered today in a highly
@@ -229,7 +232,7 @@ of science advocacy too."
 
 In order to answer his question, an entire research field developed that pulled together relevant data from a wide variety of different sources using widely differing methodologies and approaches. They addressed challenges often faced by social science and computer science researchers trying to use new data to answer important questions - namely that inputs, outputs and outcomes are not generated or combined in a systematic fashion, even though producing consistent and reliable answers to stakeholder requests requires the use of common data sources and standardized methodologies. They were able to pull together new digital sources of data and apply modern technologies to analyze them.  In the book we use three main examples to show how this was done. The first is to  describe **what** research is being done, using data produced from multiple agencies on grand funding. The second is to use award and patent administrative records to describe **who** is doing the research (and **with whom**). The third is to use patent data to describe **what results** the funding has generated [@weinberg2014science, @Lane2018]  
 
-Showing how those challenges can be addressed fits in with the goal of the book.   The focus is to highlight how to use new digital technologies to capture the data needed to understand and address a set of questions, with an illustrative focus on the broad  results of Federal Science and Technology investments. We are able to draw on the public availability of a wide variety of research inputs, such as federal grant information, and some outputs, particularly patent data. We are also able to draw on new and more accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names [@han2004two, @smalheiser2009author, @li2014disambiguation, @kim2016inventor].  Figure \@ref(fig:fig2) provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities and shows .
+Showing how those challenges can be addressed fits in with the goal of the book. The focus is to highlight how to use new digital technologies to capture the data needed to understand and address a set of questions, with an illustrative focus on the broad  results of Federal Science and Technology investments. We are able to draw on the public availability of a wide variety of research inputs, such as federal grant information, and some outputs, particularly patent data. We are also able to draw on new and more accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names [@han2004two, @smalheiser2009author, @li2014disambiguation, @kim2016inventor]. Figure \@ref(fig:fig2) provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities and shows.
 
 First, data must be captured on what is funded, and since the data are
 in text format, computational linguistics tools must be applied
@@ -237,7 +240,7 @@ in text format, computational linguistics tools must be applied
 and how they interact in teams, so network tools and analysis must be
 used ([Networks: The Basics](#chap:networks)). Third, information about the 
 type of results must be gleaned from the web and other sources 
-([Working with Web Data and APIs]). 
+([Working with Web Data and APIs](#chap:web)). 
 
 Finally, the disparate complex data sets need to be stored in databases ([Databases](#chap:db)), integrated ([Record Linkage](#chap:link)), analyzed ([Machine Learning](#chap:ml)), and used to make inferences ([Data Quality and Inference Errors](#chap:errors)).
 
@@ -282,24 +285,27 @@ we discuss how to store the data in different types of data formats.
 
 **BOX**
 
-** Much more information is available at the Institute for Research on Innovation and Science (IRIS, https://iris.isr.umich.edu/) at the University of Michigan.  The Institute has extended the data infrastructure to bring together both confidential and public data in a secure environment. They have worked with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors - and show the direct effects on that funding on their subsequent scientific and economic activity [@InstituteForResearchOnInnovationAndScienceIRISResearch2019].  To date, over 100 researchers from dozens of institutions have worked with the new data infrastructure to provide an empirical response to Marburger's call.
+Much more information is available at the Institute for Research on Innovation and Science (IRIS, https://iris.isr.umich.edu/) at the University of Michigan. The Institute has extended the data infrastructure to bring together both confidential and public data in a secure environment. They have worked with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors - and show the direct effects on that funding on their subsequent scientific and economic activity [@InstituteForResearchOnInnovationAndScienceIRISResearch2019]. To date, over 100 researchers from dozens of institutions have worked with the new data infrastructure to provide an empirical response to Marburger's call.
 
 Although we focus on one particular use case, the methods covered in this book are broadly applicable across a variety of policy areas - indeed, we have used this book to teach classes in such fields as education, criminal justice, workforce and economic development and social services (https://coleridgeinitiative.org/training). 
 
-The methods have been used to answer questions such as: - ‘What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
+The methods have been used to answer questions such as: 
 
-'How does placement in different types of firms change the likelihood that the formerly incareratedwill recidivate?’
+- 'What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
 
-'What factors increase the likelihood that welfare recipients on TANF (Temporary Asistance to Needy Families) will leave welfare?'
+- 'How does placement in different types of firms change the likelihood that the formerly incareratedwill recidivate?'
+
+- 'What factors increase the likelihood that welfare recipients on TANF (Temporary Asistance to Needy Families) will leave welfare?'
 
 and
 
-‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’ 
+- 'How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?'
 
 **BOX**
+
 Building data science skills to support state and local efforts to become more data driven in the provision of human services.
 
-The Offices of Family Assistance Office and of Planning, Research, and Evaluation in the Department of Health and Human Services' Administration for Children and Families set up a TANF data collaborative (tanfdata.org) to help professionals at TANF and related human services agencies develop key data science skills.   The focus is on teaching participants how to scope a problem, do record linkage, apply machine learning and visualization tools and learn about privacy issues when working with confidential data.  
+The Offices of Family Assistance Office and of Planning, Research, and Evaluation in the Department of Health and Human Services' Administration for Children and Families set up a TANF data collaborative (https://www.tanfdata.org/) to help professionals at TANF and related human services agencies develop key data science skills. The focus is on teaching participants how to scope a problem, do record linkage, apply machine learning and visualization tools and learn about privacy issues when working with confidential data.  
 
 **BOX**
 
@@ -385,8 +391,8 @@ You will get an overview of basic approaches and how those approaches are
 applied. The chapter builds from a conceptual framework on how to formulate
 social science problems as machine learning problems, how to perform machine
 learning analysis, and how to evaluate the analysis. These concepts are then
-translated into code to ensure that the analysis can be put into practical use 
-by social science researchers and practitioners.
+translated into code to ensure that the analysis can be put into practical 
+use by social science researchers and practitioners.
 
 [Text Analysis](#chap:text) describes how social scientists can make use of
 text data through text analysis and natural language processing methods. 
@@ -451,7 +457,7 @@ collected in the wild. This concluding chapter identifies the issues
 that must be addressed for responsible and ethical research to take
 place.
 
-Finally, [Workbooks](#chap:workbooks) provides an overview of the practical work that accompanies each chapter---the workbooks that are designed, using *Jupyter notebooks*^[See jupyter.org.], to enable students and interested practitioners to apply the new techniques and approaches in selected chapters. This last chapter gives a broad overview of the tools needed to work with these workbooks and some instructions on how to use the workbooks if you decide to teach a class using this content. The chapter also informs broadly about the data and problems these workbooks tackle, and about the general structure of the workbooks. We are constantly expanding and updating the set of available workbooks, so check GitHub regularly if you want to see the latest version. We hope you have a lot of fun with them. 
+Finally, [Workbooks](#chap:workbooks) provides an overview of the practical work that accompanies each chapter---the workbooks that are designed, using *Jupyter notebooks*^[See https://jupyter.org/.], to enable students and interested practitioners to apply the new techniques and approaches in selected chapters. This last chapter gives a broad overview of the tools needed to work with these workbooks and some instructions on how to use the workbooks if you decide to teach a class using this content. The chapter also informs broadly about the data and problems these workbooks tackle, and about the general structure of the workbooks. We are constantly expanding and updating the set of available workbooks, so check GitHub regularly if you want to see the latest version. We hope you have a lot of fun with them. 
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/Figure4.png" alt="The four chapters in Part III focus on *inference* and *ethics*" width="70%" />
@@ -465,8 +471,8 @@ For more information on the **science of science policy**, see Husbands et al.'s
 
 This book is above all a *practical* introduction to the methods and
 tools that the social scientist can use to make sense of big data, and
-thus **programming** resources are also important. We make extensive use of the Python
-programming language and databases in both
+thus **programming** resources are also important. We make extensive use 
+of the Python programming language and databases in both
 the book and its supporting workbooks. We recommend that any social
 scientist who aspires to work with large data sets become proficient in
 the use of these two systems and GitHub. All three,
