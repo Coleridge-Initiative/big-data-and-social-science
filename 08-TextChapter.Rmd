@@ -263,8 +263,8 @@ otherwise. Another approach would be to assign it the value of how
 many times this token occurs in that document (often known as
 frequency of that term or token). This is essentially a way to define
 the importance or value of this token in this document. Not all words
-are worth the same; in an article about economics, "free market" is
-more important than "social good".<!-- Comment: This is not a good example. Why would this be true? --> Appropriately weighting^[Term
+are worth the same; in an article about sociology, "social" may be 
+less important or informative than "inequality".<!-- Comment: This is not a good example. Why would this be true? --> Appropriately weighting^[Term
 weighting is an example of feature engineering discussed in Chapter
 [Machine Learning](#chap:ml).] 
 and calibrating words is important for both human and machine
@@ -349,7 +349,7 @@ $$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
 \sum\limits_{t=1}^m w_{t,a}\times
 \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
 $w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
-<!-- Updated comment by Patrick: m was not defined.
+-- Updated comment by Patrick: m was not defined.
 It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
 I added this piece of information.
 If you want to check: see the [@huang-08] paper,
