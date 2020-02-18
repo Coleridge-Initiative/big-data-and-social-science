@@ -17,13 +17,13 @@ on evaluation metrics such as precision (positive predictive value), recall
 (sensitivity), area-under-curve (AUC), and accuracy, that are often used
 to measure the performance of machine learning methods. In most (if not
 all) public policy problems, a key goal for the analytical systems
-being developed is to help achieve equitable outcomes.
+being developed is to help achieve equitable outcomes for society and we need to understand how to design systems that lead to equity.
 
 When machine learning models are being used to make decisions, they
 cannot be separated from the social and ethical context in which they
 are applied, and those developing and deploying these models must take
 care to do so in a manner that accounts for both accuracy and fairness.
-In this chapter, we will discuss sources of potential bias in your
+In this chapter, we will discuss sources of potential bias in the
 modeling pipeline, as well as some of the ways that bias introduced by a
 model can be measured, with a particular focus on classification
 problems. Unfortunately, just as there is no single machine learning
@@ -745,7 +745,7 @@ Because the metrics describe here rely only on the predicted and actual
 labels, no specific knowledge of the process by which the predicted
 labels are determined is needed to make use of them to assess bias and
 fairness in the results. Given this sort of labeled outcome data for any
-existing or proposed process, these tools can be applied to help
+existing or proposed process (and our knowledge of how trustworthy the outcomes data may be) , bias audit tools such as Aequitas ^[<https://github.com/dssg/aequitas>] can be applied to help
 understand whether that process is yielding equitable results (for the
 various possible definitions of “equitable” described above).
 
