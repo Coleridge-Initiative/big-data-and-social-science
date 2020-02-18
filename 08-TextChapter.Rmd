@@ -323,17 +323,17 @@ find it useful for, and how to evaluate the results of the analysis.
 **Use Case: Finding Similar Documents**
 
 One task social scientists may be interested in is finding similar
-documents to a document they’re analyzing. This is a routine task for
-lawyers where they’re looking at a case file and want to find all
+documents to a document they’re analyzing. This is a routine task in many other disciplines as well, such as law, where
+lawyers looking at a case file want to find all
 prior cases similar to this case or during literature review where we
 may have a paper and we’re interested in finding similar papers. The
 key challenge here is to define what makes two documents similar and
-what similarity metrics we should use. Typical metrics involved in
-this process include cosine similarity and Kullback--Leibler
+what similarity metrics we should use to calculate the similarity. Typical metrics involved in
+this process include Cosine Similarity and Kullback--Leibler
 divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two
-documents $d_a$ and $d_b$, the common approach is to turn the documents into vectors
+documents $d_a$ and $d_b$, this measure turns the documents into vectors (each dimension of the vector can be a word or phrase)
 $\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity 
 (the cosine of the angle between the two vectors) as a measure of their similarity.
 This is defined as:
@@ -349,7 +349,7 @@ $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} 
 NSF awards are not labeled by scientific field---they are labeled by
 program. This administrative classification is not always useful to
 assess the effects of certain funding mechanisms on disciplines and
-scientific communities. One approach is to understand how awards are similar
+scientific communities. A common need is to understand how awards are similar
 to each other even if they were funded by different programs. Cosine
 similarity allows us to do just that.
 
