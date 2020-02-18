@@ -90,7 +90,7 @@ Translation | Automatic translation of text from one language to another. | Look
 
 For this chapter, we will focus on two types of use cases that social scientists deal with containing text data: 
 
-1. We have some text “corpus”, for example open-ended survey responses
+1. Content understanding: We have some text “corpus”, for example open-ended survey responses
 or news articles or research publications, and our goal is to
 understand the content---patterns, themes, trends---of that
 data. This often involves methods from unsupervised machine learning
@@ -101,7 +101,7 @@ that the respondent filled out, or the news article or research
 publication has meta-data that can be augmented with information
 generated from the text analysis.
 
-2. The second use case is less focused on "discovery" and
+2. Content Classification: The second use case is less focused on "discovery" and
 "understanding new content" and instead focuses on efficiently
 classifying content into a pre-defined set of categories. The text
 data is similar to the previous use case but the task is different,
@@ -323,18 +323,15 @@ find it useful for, and how to evaluate the results of the analysis.
 **Use Case: Finding Similar Documents**
 
 One task social scientists may be interested in is finding similar
-documents to a document they’re analyzing. This is a routine task in many other disciplines as well, such as law, where
-lawyers looking at a case file want to find all
-prior cases similar to this case or during literature review where we
-may have a paper and we’re interested in finding similar papers. The
-key challenge here is to define what makes two documents similar and
-what similarity metrics we should use to calculate the similarity. Typical metrics involved in
-this process include Cosine Similarity and Kullback--Leibler
+documents to a document they’re analyzing. This is a routine task during literature review where we
+may have a paper and we’re interested in finding similar papers or in disciplines such as law, where lawyers looking at a case file want to find all prior cases related to the case being reviewed. The
+key challenge here is to define what makes two documents similar - 
+what similarity metrics should we use to calculate this similarity? Two commonly used metrics are Cosine Similarity and Kullback--Leibler
 divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two
-documents $d_a$ and $d_b$, this measure turns the documents into vectors (each dimension of the vector can be a word or phrase)
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity 
+documents $d_a$ and $d_b$, this measure first turns the documents into vectors (each dimension of the vector can be a word or phrase)
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and uses the cosine similarity 
 (the cosine of the angle between the two vectors) as a measure of their similarity.
 This is defined as:
 
@@ -342,27 +339,6 @@ $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} 
      \overrightarrow{t_b}}{|\overrightarrow{t_a}|\times|\overrightarrow{t_b}|}.$$
      
 ---
-
-
-**Example: Measuring cosine similarity between documents**
-
-NSF awards are not labeled by scientific field---they are labeled by
-program. This administrative classification is not always useful to
-assess the effects of certain funding mechanisms on disciplines and
-scientific communities. A common need is to understand how awards are similar
-to each other even if they were funded by different programs. Cosine
-similarity allows us to do just that.
-
-**Example code**
-
-The Python `numpy` module is a powerful library of tools for efficient linear
-algebra computation. Among other things, it can be used to compute the
-cosine similarity of two documents represented by numeric vectors, as
-described above. The `gensim` module that is often used as a Python-based topic
-modeling implementation can be used to produce vector space
-representations of textual data.
-<!-- Notebook XXX provides an example of measuring cosine similarity
-using these modules. -->
 
 Kullback--Leibler (KL) divergence is a measure that allows us to
 compare probability distributions in general and is often used to
@@ -386,13 +362,33 @@ $\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}
 and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
 
 A Python-based `scikit-learn` library provides an implementation of 
-these measures as well as other machine learning models and approaches.
+these measures as well as other machine learning models and approaches
+
+**Example: Measuring similarity between documents**
+
+NSF awards are not labeled by scientific field---they are labeled by
+program. This administrative classification is not always useful to
+assess the effects of certain funding mechanisms on disciplines and
+scientific communities. A common need is to understand how awards are similar
+to each other even if they were funded by different programs. Cosine
+similarity allows us to do just that.
+
+**Example code**
+
+The Python `numpy` module is a powerful library of tools for efficient linear
+algebra computation. Among other things, it can be used to compute the
+cosine similarity of two documents represented by numeric vectors, as
+described above. The `gensim` module that is often used as a Python-based topic
+modeling implementation can be used to produce vector space
+representations of textual data.
+<!-- Notebook XXX provides an example of measuring cosine similarity
+using these modules. -->
 
 **Augmenting Similarity Calculations with External Knowledge repositories**
 
-Similarity calculations can be significantly enriched by the use of
-external resources that provide relationships between words,
-documents, or concepts present in specific domains. Established
+It's often the case that two, especially short, documents do not have any words in common but 
+are still similar. In such cases, cosine similarity or KL divergence do not help us with the similarity calculations without augmenting the data with additional information. Often, external data resources that provide relationships between words,
+documents, or concepts present in specific domains can be used to achieve that. Established
 corpora, such as the Brown Corpus and Lancaster--Oslo--Bergen Corpus,
 are one type of such preprocessed repositories.
 
