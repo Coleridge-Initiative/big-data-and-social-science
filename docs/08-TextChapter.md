@@ -1,5 +1,5 @@
 <!--
-% todo: resolve comments on topic modeling equations
+% done
 --> 
 
 Text Analysis {#chap:text}
@@ -90,7 +90,7 @@ Translation | Automatic translation of text from one language to another. | Look
 
 For this chapter, we will focus on two types of use cases that social scientists deal with containing text data: 
 
-1. We have some text “corpus”, for example open-ended survey responses
+1. Content understanding: We have some text “corpus”, for example open-ended survey responses
 or news articles or research publications, and our goal is to
 understand the content---patterns, themes, trends---of that
 data. This often involves methods from unsupervised machine learning
@@ -101,7 +101,7 @@ that the respondent filled out, or the news article or research
 publication has meta-data that can be augmented with information
 generated from the text analysis.
 
-2. The second use case is less focused on "discovery" and
+2. Content Classification: The second use case is less focused on "discovery" and
 "understanding new content" and instead focuses on efficiently
 classifying content into a pre-defined set of categories. The text
 data is similar to the previous use case but the task is different,
@@ -261,8 +261,8 @@ otherwise. Another approach would be to assign it the value of how
 many times this token occurs in that document (often known as
 frequency of that term or token). This is essentially a way to define
 the importance or value of this token in this document. Not all words
-are worth the same; in an article about economics, "free market" is
-more important than "social good".<!-- Comment: This is not a good example. Why would this be true? --> Appropriately weighting^[Term
+are worth the same; in an article about sociology, "social" may be 
+less important or informative than "inequality".<!-- Comment: This is not a good example. Why would this be true? --> Appropriately weighting^[Term
 weighting is an example of feature engineering discussed in Chapter
 [Machine Learning](#chap:ml).] 
 and calibrating words is important for both human and machine
@@ -321,18 +321,15 @@ find it useful for, and how to evaluate the results of the analysis.
 **Use Case: Finding Similar Documents**
 
 One task social scientists may be interested in is finding similar
-documents to a document they’re analyzing. This is a routine task for
-lawyers where they’re looking at a case file and want to find all
-prior cases similar to this case or during literature review where we
-may have a paper and we’re interested in finding similar papers. The
-key challenge here is to define what makes two documents similar and
-what similarity metrics we should use. Typical metrics involved in
-this process include cosine similarity and Kullback--Leibler
+documents to a document they’re analyzing. This is a routine task during literature review where we
+may have a paper and we’re interested in finding similar papers or in disciplines such as law, where lawyers looking at a case file want to find all prior cases related to the case being reviewed. The
+key challenge here is to define what makes two documents similar - 
+what similarity metrics should we use to calculate this similarity? Two commonly used metrics are Cosine Similarity and Kullback--Leibler
 divergence [@kullback1951information].
 
 Cosine similarity is a popular measure in text analysis. Given two
-documents $d_a$ and $d_b$, the common approach is to turn the documents into vectors
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and use the cosine similarity 
+documents $d_a$ and $d_b$, this measure first turns the documents into vectors (each dimension of the vector can be a word or phrase)
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, and uses the cosine similarity 
 (the cosine of the angle between the two vectors) as a measure of their similarity.
 This is defined as:
 
@@ -341,13 +338,36 @@ $$SIM_C(\overrightarrow{t_a},\overrightarrow{t_b}) = \frac{\overrightarrow{t_a} 
      
 ---
 
+Kullback--Leibler (KL) divergence is a measure that allows us to
+compare probability distributions in general and is often used to
+compare two documents represented as vectors.  Given two term vectors
+$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the KL divergence
+from vector $\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
+$$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
+\sum\limits_{t=1}^m w_{t,a}\times
+\log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
+$w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
+-- Updated comment by Patrick: m was not defined.
+It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
+I added this piece of information.
+If you want to check: see the [@huang-08] paper,
+https://www.academia.edu/download/44422710/SMTP.pdf, pages 51 middle and 52 middle. -->
 
-**Example: Measuring cosine similarity between documents**
+An averaged KL divergence metric is then defined as
+$$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
+where
+$\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}}$,
+and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
+
+A Python-based `scikit-learn` library provides an implementation of 
+these measures as well as other machine learning models and approaches
+
+**Example: Measuring similarity between documents**
 
 NSF awards are not labeled by scientific field---they are labeled by
 program. This administrative classification is not always useful to
 assess the effects of certain funding mechanisms on disciplines and
-scientific communities. One approach is to understand how awards are similar
+scientific communities. A common need is to understand how awards are similar
 to each other even if they were funded by different programs. Cosine
 similarity allows us to do just that.
 
@@ -362,35 +382,11 @@ representations of textual data.
 <!-- Notebook XXX provides an example of measuring cosine similarity
 using these modules. -->
 
-Kullback--Leibler (KL) divergence is a measure that allows us to
-compare probability distributions in general and is often used to
-compare two documents represented as vectors.  Given two term vectors
-$\overrightarrow{t_a}$ and $\overrightarrow{t_b}$, the KL divergence
-from vector $\overrightarrow{t_a}$ to $\overrightarrow{t_b}$ is
-$$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
-\sum\limits_{t=1}^m w_{t,a}\times
-\log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
-$w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
-<!-- Updated comment by Patrick: m was not defined.
-It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
-I added this piece of information.
-If you want to check: see the [@huang-08] paper,
-https://www.academia.edu/download/44422710/SMTP.pdf, pages 51 middle and 52 middle. -->
-
-An averaged KL divergence metric is then defined as
-$$D_{AvgKL}(\overrightarrow{t_a}||\overrightarrow{t_b}) = \sum\limits_{t=1}^m (\pi_1\times D(w_{t,a}||w_t)+\pi_2\times D(w_{t,b}||w_t)),$$
-where
-$\pi_1 = \frac{w_{t,a}}{w_{t,a}+w_{t,b}}, \pi_2 = \frac{w_{t,b}}{w_{t,a}+w_{t,b}}$,
-and $w_t = \pi_1\times w_{t,a} + \pi_2\times w_{t,b}$ [@huang-08].
-
-A Python-based `scikit-learn` library provides an implementation of 
-these measures as well as other machine learning models and approaches.
-
 **Augmenting Similarity Calculations with External Knowledge repositories**
 
-Similarity calculations can be significantly enriched by the use of
-external resources that provide relationships between words,
-documents, or concepts present in specific domains. Established
+It's often the case that two, especially short, documents do not have any words in common but 
+are still similar. In such cases, cosine similarity or KL divergence do not help us with the similarity calculations without augmenting the data with additional information. Often, external data resources that provide relationships between words,
+documents, or concepts present in specific domains can be used to achieve that. Established
 corpora, such as the Brown Corpus and Lancaster--Oslo--Bergen Corpus,
 are one type of such preprocessed repositories.
 
@@ -812,7 +808,7 @@ The metrics used to evaluate text classification methods are the same
 as those used in supervised learning, as described in the Machine
 Learning chapter. The most commonly used metrics include accuracy,
 precision, recall, AUC, and F1 score. 
-<!--  [include example in notebook] -->
+
 
 Word Embeddings and Deep Learning
 -----------
