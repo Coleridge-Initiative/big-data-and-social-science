@@ -1768,7 +1768,7 @@ Software:
 
 -   Python (with libraries like `scikit-learn`, `pandas`, and more).
 
--   R has many relevant packages [@cranML].
+-   R has many relevant packages.^[https://cran.r-project.org/web/views/MachineLearning.html]
 
 -   Cloud-based: AzureML, Amazon ML, Google
 

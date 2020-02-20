@@ -899,7 +899,7 @@ to discover statistically significant word collocations, as we show
 in Listing [Bigrams](#list:text1).
 
 @bird-09 provide a detailed description of NLTK tools and
-techniques. See also the official NLTK website [@NLTKweb].
+techniques. See also the official NLTK website.^[http://www.nltk.org]
 
 
 ```r
@@ -924,9 +924,9 @@ def bigram_finder(texts):
 **Stanford CoreNLP**
 
 While NLTK's emphasis is on simple reference implementations, Stanford's
-CoreNLP [@corenlp; @manning2014stanford] is focused on fast
+CoreNLP [@manning2014stanford] is focused on fast
 implementations of cutting-edge algorithms, particularly for syntactic
-analysis (e.g., determining the subject of a sentence).
+analysis (e.g., determining the subject of a sentence).^[https://stanfordnlp.github.io/CoreNLP/]
 
 **MALLET**
 
@@ -990,9 +990,9 @@ resources that can be helpful in mastering text mining techniques:
 
 - The Natural Language Toolkit is one of the most popular Python-based
   tools for natural language processing. It has a variety of methods
-  and examples that are easily accessible online [@NLTKweb]. The
-  book by @bird-09, available online, contains
-  multiple examples and tips on how to use NLTK.  This is a great
+  and examples that are easily accessible online.^[http://www.nltk.org] 
+  The book by @bird-09, available online, contains
+  multiple examples and tips on how to use NLTK. This is a great
   package to use if you want to *understand* these models.
 
 - A paper by Anna Huang [-@huang-08] provides a brief overview of the
@@ -1007,7 +1007,7 @@ resources that can be helpful in mastering text mining techniques:
 
 - We provide an example of how to run topic modeling using MALLET on
   textual data from the National Science Foundation and Norwegian
-  Research Council award abstracts [@NSFsearch].
+  Research Council award abstracts.^[http://www.umiacs.umd.edu/~jbg/lda_demo]
 
 - If you do not care about understanding and just want models that are
   easy to use and fast, spaCy [https://spacy.io/] has a useful minimal

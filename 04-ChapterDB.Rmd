@@ -155,12 +155,10 @@ can deal with larger file sizes by choosing to only load the variables
 or cases that you need for the analysis [@kohler2012datenanalyse].
 Likewise, you can deal with more complex data by creating a system of
 files that each can be linked as needed for a particular analysis
-through a common identifier variable^[For example, the Panel
-Study of Income Dynamics
-[@PSID] has a series of files
-that are related and can be
-combined through common
-identifier variables [@PSIDguide].].
+through a common identifier variable.^[For example, the Panel
+Study of Income Dynamics (http://psidonline.isr.umich.edu) 
+has a series of files that are related and can be
+combined through common identifier variables [@PSIDguide].]
 
 The ad hoc approaches to problems of scale mentioned in the preceding
 paragraph are provided as core functions in most DBMSs, and thus rather 
@@ -1424,25 +1422,27 @@ The enormous popularity of DBMSs means that there are many good books to
 be found. Classic textbooks such as those by Silberschatz et
 al. [-@silberschatz2010database] and Ramakrishnan and Gherke
 [-@ramakrishnan2000database] provide a great deal of technical detail.
-The DB Engines website collects information on DBMSs [@DBengines]. There
+The DB Engines website collects information on 
+DBMSs.^[http://db-engines.com/en/] There
 are also many useful online tutorials, and of course StackExchange
 and other online forums often have answers to your technical questions.
 
 Turning to specific technologies, the *SQL Cookbook* [@SQLCookbook]
 provides a wonderful introduction to SQL. We also recommend the SQL
-Cheatsheet [@SQLcheat] and a useful visual depiction of different SQL
+Cheatsheet^[http://www.sql-tutorial.net/SQL-Cheat-Sheet.pdf] 
+and a useful visual depiction of different SQL
 join operators [@vizjoins]. Two good books on the PostGIS geospatial
 extensions to the PostgreSQL database are the *PostGIS Cookbook*
 [@PostGISCookbook] and *PostGIS in Action* [@PostGISInAction]. The
-online documentation is also excellent [@PostGISdoc]. The monograph
-*NoSQL Databases* [@NoSQLdatabases] provides much useful technical
-detail.
+online documentation is also excellent.^[http://postgis.net/documentation/] 
+The monograph *NoSQL Databases* [@NoSQLdatabases] provides much 
+useful technical detail.
 
 We did not consider in this chapter the native extensible Markup
 Language (XML) and Resource Description Framework (RDF) triple stores,
 as these are not typically used for data management. However, they do
 play a fundamental role in metadata and knowledge management. See, for
-example, Sesame [@broekstra2002sesame; @sesame]
+example, Sesame [@broekstra2002sesame].^[http://rdf4j.org]
 
 If you are interested in the state of database and data management
 research, the relatively recent Beckman Report [@abadi2014beckman] provides a

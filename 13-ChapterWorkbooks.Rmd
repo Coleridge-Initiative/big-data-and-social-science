@@ -5,8 +5,8 @@ Workbooks {#chap:workbooks}
 
 This final chapter provides an overview of the Python workbooks that
 accompany this book. The workbooks combine text explanation and
-code you can run, implemented in *Jupyter notebooks* 
-(<https://jupyter.org/>), to explain techniques and approaches
+code you can run, implemented in *Jupyter notebooks*^[https://jupyter.org/], 
+to explain techniques and approaches
 selected from each chapter and to provide thorough implementation
 details, enabling students and interested practitioners to quickly get
 up to speed on and start using the technologies covered in the book. We
@@ -455,16 +455,13 @@ resources, and also see <https://github.com/BigDataSocialScience>, where we
 have collected many useful web links, including the following.
 
 For more on getting started with Anaconda, see the Anaconda
-documentation [@Anaconda], Anaconda FAQ [@AnacondaFAQ], and Anaconda
-quick start guide [@AnacondaQSG].
+documentation.^[http://docs.continuum.io/anaconda]
 
 For more information on IPython and the Jupyter notebook server, see the
-IPython site [@ipython], IPython documentation [@ipythondoc], Jupyter
-Project site [@juypter], and Jupyter Project documentation
-[@juypterdoc].
+IPython site (http://ipython.org/), IPython documentation (http://ipython.readthedocs.org/), Jupyter
+Project site (http://jupyter.org/), and Jupyter Project documentation (http://jupyter.readthedocs.org/).
 
 For more information on using `jupyterhub` and `nbgrader` to host, 
 distribute, and grade workbooks using a central server, see the `jupyterhub`
-GitHub repository [@juypterhub], `jupyterhub` documentation 
-[@juypterhubdoc], `nbgrader` GitHub repository [@nbgrader], `nbgrader` 
-and documentation [@nbgraderdoc].
+GitHub repository (https://github.com/jupyter/jupyterhub/), `jupyterhub` documentation (http://jupyterhub.readthedocs.org/), `nbgrader` GitHub repository (https://github.com/jupyter/nbgrader/), and `nbgrader` 
+documentation (http://nbgrader.readthedocs.org/).

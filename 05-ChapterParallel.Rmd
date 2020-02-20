@@ -137,7 +137,7 @@ computation to be moved to the data during execution.
 
 ### The Hadoop Distributed File System
 
-The Hadoop Distributed File System [@Hadoop][@HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
+The Hadoop Distributed File System [@Hadoop; @HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
 block is also replicated across several nodes as an attempt to ensure
 that a full copy of the data is still available even in the case of
 computing node failures. The block size as well as the number of
@@ -546,8 +546,9 @@ Apache Spark.
 
 Mortgage origination data provided by the Consumer Protection Financial
 Bureau provide insightful details of the financial health of the real
-estate market. The data [@HDMA], which are a product of the Home
-Mortgage Disclosure Act (HMDA), highlight key attributes that function
+estate market. The data^[http://www.consumerfinance.gov/hmda/learn-more], 
+which are a product of the Home Mortgage Disclosure Act (HMDA), 
+highlight key attributes that function
 as strong indicators of health and lending patterns.
 
 Lending institutions, as defined by section 1813 in Title 12 of the
@@ -668,7 +669,7 @@ Resources
 ---------
 
 There are a wealth of online resources describing both Hadoop and Spark.
-See, for example, the tutorials on the Apache Hadoop [@AHweb] and Spark
-[@ASweb] websites. Albanese describes how to use Hadoop for social
-science [@socialhadoop], and Lin and Dyer discuss the use of MapReduce
-for text analysis [@lin2010data].
+See, for example, the tutorials on the Apache Hadoop^[http://hadoop.apache.org/] 
+and Spark^[https://spark.apache.org/] websites. Albanese describes how to 
+use Hadoop for social science [@socialhadoop], and Lin and Dyer discuss 
+the use of MapReduce for text analysis [@lin2010data].

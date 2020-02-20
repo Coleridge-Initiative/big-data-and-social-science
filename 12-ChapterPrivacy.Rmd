@@ -556,23 +556,20 @@ Resources
 ---------
 
 The American Statistical Association's Privacy and Confidentiality
-website provides a useful source of information
-[@AmericanStatisticalAssociation].
+website provides a useful source of information.^[http://community.amstat.org/cpc/home]
 
 An overview of federal activities is provided by the Confidentiality and
 Data Access Committee of the Federal Committee on Statistics and
-Methodology [@ConfidentialityandDataAccessCommittee].
+Methodology.^[https://nces.ed.gov/FCSM/cdac_resources.asp]
 
 The World Bank and International Household Survey Network provide a good
-overview of data dissemination "best practices"
-[@InternationalHouseholdSurveyNetwork].
+overview of data dissemination "best practices".^[http://www.ihsn.org/home/projects/dissemination]
 
 There is a *Journal of Privacy and Confidentiality* based at Carnegie
-Mellon University [@JPC], and also a journal called *Transactions in
-Data Privacy* [@TransactionsonDataPrivacy].
+Mellon University^[http://repository.cmu.edu/jpc/], and also a journal 
+called *Transactions in Data Privacy*^[http://www.tdp.cat/].
 
 The United Nations Economic Commission on Europe hosts workshops and
-conferences and produces occasional reports
-[@UnitedNationsEconomicCommissionforEurope].
+conferences and produces occasional reports.^[http://www.unece.org/stats/mos/meth/confidentiality.html]
 
-Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing https://simons.berkeley.edu/programs/privacy2019 (available on youtube https://www.youtube.com/user/SimonsInstitute/).
+Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing.^[https://simons.berkeley.edu/programs/privacy2019, available on youtube: https://www.youtube.com/user/SimonsInstitute/)]

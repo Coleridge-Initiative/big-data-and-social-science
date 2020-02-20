@@ -491,10 +491,10 @@ coin-flip classification rule.
 High dimensionality can also introduce coincidental (or *spurious*)
 correlations in that many unrelated variables may be highly correlated
 simply by chance, resulting in false discoveries and erroneous
-inferences. The phenomenon depicted in Figure
-\@ref(fig:fig10-3), is an
-illustration of this. Many more examples can be found on a website and
-in a book devoted to the topic [@spurious; @spurious2]. Fan et
+inferences. The phenomenon depicted in Figure \@ref(fig:fig10-3), 
+is an illustration of this. Many more examples can be found on a
+website^[http://www.tylervigen.com/spurious-correlations] and
+in a book devoted to the topic [@spurious2]. Fan et
 al. [-@fan2014challenges] explain this phenomenon using simulated
 populations and relatively small sample sizes. They illustrate how, with
 800 independent (i.e., uncorrelated) variables, the analyst has a 50%
@@ -1209,12 +1209,11 @@ Resources
 ---------
 
 The American Association of Public Opinion Research has a number of
-resources on its website [@aaporWeb]. See, in particular, its report on
-big data [@japec2015big].
+resources on its website.^[http://www.aapor.org] See, in particular, 
+its report on big data [@japec2015big].
 
-The *Journal of Official Statistics* [@JOSweb] is a standard resource
-with many relevant articles. There is also an annual international
-conference on the total survey error framework, supported by major
-survey organizations [@TSEweb].
+The *Journal of Official Statistics*^[https://www.degruyter.com/view/j/jos] 
+is a standard resource with many relevant articles. There is also an annual international conference (*International Total Survey Error Workshop*) 
+on the total survey error framework, supported by major survey organizations.
 
 The *Errors and Inference* workbook of Chapter [Workbooks](#chap:workbooks) provides an introduction to sensitivity analysis and imputation.^[See <https://workbooks.coleridgeinitiative.org>.]

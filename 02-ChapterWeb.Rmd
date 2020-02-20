@@ -64,7 +64,7 @@ King et al. [-@King2013] investigate how censorship in China allows government c
 Scraping information from the web
 ---------------------------------
 
-With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website [@nsfweb] it is possible to obtain data downloads of all grant information. Sometimes data are available through web pages or we only want a subset of this information. In this case web scraping is often a viable approach.
+With the range of information available on the web, our first task is to learn how to access it. The simplest approach is often to manually go to the web and look for data files or other information. For instance, on the NSF website^[https://nsf.gov/awardsearch/download.jsp] it is possible to obtain data downloads of all grant information. Sometimes data are available through web pages or we only want a subset of this information. In this case web scraping is often a viable approach.
 
 Web scraping involves writing code to download and process web pages programmatically. We need to look at the website, identify how to get the information we want from it, and then write code to do it. Many websites deliberately make this difficult to prevent easy access to their underlying data while some websites explicitly prohibit this type of activity in their terms of use. Another challenge when scraping data from websites is that the structure of the websites changes often, requiring researchers to keep updating their code. This is also important to note when using the code in this chapter. While the code accurately captures the data from the website at the time of this writing, it may not be valid in the future as the structure and content of the website changes.
 
@@ -506,7 +506,7 @@ Crossref is the provider of DOIs used by
 many publishers to uniquely identify scholarly works. Crossref is not
 the only organization to provide DOIs. The scholarly communication space
 DataCite is another important provider. The documentation is available
-at the Crossref website [@crossref].
+at the Crossref website.^[http://api.crossref.org]
 
 Once again the `requests` Python library provides a series of convenience
 functions that make it easier to make HTTP calls and to process returned JSON.

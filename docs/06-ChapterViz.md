@@ -99,7 +99,7 @@ If the goal is to present results, there is a wide spectrum of users and
 a wide range of options. If the audience is broad, then *infographics*
 can be developed by graphic designers, as described in classic texts
 (see @few2009now; @edward2001visual; @edward2006beauty or the examples
-compiled by Harrison et al. -@harrison2015infographic; -@harrisonweb).
+compiled by @harrison2015infographic; @harrisonweb).
 If, on the other hand, the audience comprises domain experts interested in
 monitoring the overview status of dynamic processes on a continuous basis,
 monitoring *dashboards* with no or little interactivity can be used. 
