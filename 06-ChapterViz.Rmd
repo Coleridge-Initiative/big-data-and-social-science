@@ -17,7 +17,7 @@ Introduction {#sec:viz-1}
 ------------
 
 One of the most famous discoveries in science---that disease was
-transmitted through germs, rather than through pollution--- resulted
+transmitted through germs, rather than through pollution---resulted
 from insights derived from a visualization of the location of London
 cholera deaths near a water pump [@snow1855mode]. Information
 visualization in the twenty-first century can be used to generate

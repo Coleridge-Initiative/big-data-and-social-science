@@ -334,7 +334,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.6.3" data-path="chap-bias.html"><a href="chap-bias.html#facebook-advertisement-targeting"><i class="fa fa-check"></i><b>11.6.3</b> Facebook Advertisement Targeting</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="chap-bias.html"><a href="chap-bias.html#aequitas---a-toolkit-for-auditing-bias-and-fairness-in-machine-learning-models"><i class="fa fa-check"></i><b>11.7</b> Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models</a></li>
-<li class="chapter" data-level="11.8" data-path="chap-bias.html"><a href="chap-bias.html#summary-7"><i class="fa fa-check"></i><b>11.8</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>12</b> Privacy and Confidentiality</a><ul>
 <li class="chapter" data-level="12.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
@@ -343,7 +342,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#non-tabular-data"><i class="fa fa-check"></i><b>12.4</b> Non-Tabular data</a></li>
 <li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.5</b> The new challenges</a></li>
 <li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.6</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-8"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-7"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
 <li class="chapter" data-level="12.8" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>13</b> Workbooks</a><ul>
@@ -550,7 +549,7 @@ Figure 4.1: A research project may use a NoSQL database to accumulate large amou
 </div>
 <div id="relational-dbmss" class="section level2">
 <h2><span class="header-section-number">4.3</span> Relational DBMSs</h2>
-<p>We now provide a more detailed description of relational DBMSs. Relational DBMSs implement the relational data model, in which data are represented as sets of records organized in tables. This model is particularly well suited for the structured data with which we frequently deal in the social sciences; we discuss in Section <a href="chap-db.html#sec:db:nosql" reference-type="ref" reference="sec:db:nosql">4.5</a> alternative data models, such as those used in NoSQL databases.</p>
+<p>We now provide a more detailed description of relational DBMSs. Relational DBMSs implement the relational data model, in which data are represented as sets of records organized in tables. This model is particularly well suited for the structured data with which we frequently deal in the social sciences; we discuss in Section <a href="chap-db.html#sec:db:nosql">NoSQL databases</a> alternative data models, such as those used in NoSQL databases.</p>
 <p>We use the data shown in Figure <a href="chap-db.html#fig:figdb-1">4.2</a> to introduce key concepts. These two CSV format files describe grants made by the US National Science Foundation (NSF). One file contains information about grants, the other information about investigators. How should you proceed to manipulate and analyze these data?</p>
 <div class="figure" style="text-align: center"><span id="fig:figdb-1"></span>
 <img src="ChapterDB/figures/figdb-1.png" alt="CSV files representing grants and investigators. Each line in the first table specifies a grant number, investigator name, total funding amount, and NSF program name; each line in the second gives an investigator name, institution name, and investigator email address" width="70%" />
@@ -609,7 +608,7 @@ Figure 4.3: Relational tables <code>Grants</code> and <code>Investigators</code>
 </tbody>
 </table>
 <hr />
-<p>DBMSs automatically optimize declarative queries such as the example that we just presented, translating them into a set of low-level data manipulations (an imperative <em>query plan</em>) that can be evaluated efficiently. This feature allows users to write queries without having to worry too much about performance issues—the database does the worrying for you. For example, a DBMS need not consider every row in the <code>Grants</code> table in order to identify those with funding less than $200,000, a strategy that would be slow if the <code>Grants</code> table were large: it can instead use an index to retrieve the relevant records much more quickly. We discuss indices in more detail in Section <a href="chap-db.html#sec:db:index">4.3.6</a>.</p>
+<p>DBMSs automatically optimize declarative queries such as the example that we just presented, translating them into a set of low-level data manipulations (an imperative <em>query plan</em>) that can be evaluated efficiently. This feature allows users to write queries without having to worry too much about performance issues—the database does the worrying for you. For example, a DBMS need not consider every row in the <code>Grants</code> table in order to identify those with funding less than $200,000, a strategy that would be slow if the <code>Grants</code> table were large: it can instead use an index to retrieve the relevant records much more quickly. We discuss indices in more detail in Section <a href="chap-db.html#sec:db:index">Database optimizations</a>.</p>
 <p>The querying component of SQL supports a wide variety of manipulations on tables, whether referred to explicitly by a table name (as in the example just shown) or constructed by another query. We just saw how to use the <code>select</code> operator to both pick certain rows (what is termed <em>selection</em>) and certain columns (what is called <em>projection</em>) from a table.</p>
 <hr />
 <p><strong>Example: Finding grants awarded to an investigator</strong></p>
@@ -643,7 +642,7 @@ Figure 4.3: Relational tables <code>Grants</code> and <code>Investigators</code>
 </tr>
 </tbody>
 </table>
-<p>This ability to join two tables in a query is one example of how SQL permits concise specifications of complex computations. This joining of tables via a cartesian product operation is formally called a <em>cross join</em>. Other types of join are also supported. We describe one such, the <em>inner join</em>, in Section <a href="chap-db.html#sec:db:spatial">4.6</a>.</p>
+<p>This ability to join two tables in a query is one example of how SQL permits concise specifications of complex computations. This joining of tables via a cartesian product operation is formally called a <em>cross join</em>. Other types of join are also supported. We describe one such, the <em>inner join</em>, in Section <a href="chap-db.html#sec:db:spatial">Spatial databases</a>.</p>
 <hr />
 <p>SQL aggregate functions allow for the computation of aggregate statistics over tables. For example, we can use the following query to determine the total number of grants and their total and average funding levels:</p>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> <span class="fu">count</span>(*) <span class="kw">as</span> <span class="st">&#39;Number&#39;</span>, <span class="fu">sum</span>(Funding) <span class="kw">as</span> <span class="st">&#39;Total&#39;</span>,
@@ -842,7 +841,7 @@ Listing: Code to load data into the Investigators and Grants tables
 <p>may need to be rewritten as:</p>
 <p><code>Howard Weinberg,University of North Carolina Chapel Hill,null</code></p>
 <p><strong>Metadata for categorical variables</strong></p>
-<p>SQL engines are metadata poor: they do not allow extra information to be stored about a variable (field) beyond its base name and type (<code>int</code>, <code>char</code>, etc., as introduced in Section <a href="chap-db.html#sec:db:schema">4.3.3</a>). They cannot, for example, record directly the fact that the column <code>class</code> can only take one of three values, <code>animal</code>, <code>vegetable</code>, or <code>mineral</code>, or what these values mean. Common practice is thus to store information about possible values in another table (commonly referred to as a <em>dimension table</em>) that can be used as a lookup and constraint, as in the following:</p>
+<p>SQL engines are metadata poor: they do not allow extra information to be stored about a variable (field) beyond its base name and type (<code>int</code>, <code>char</code>, etc., as introduced in Section <a href="chap-db.html#sec:db:schema">Schema design and definition</a>). They cannot, for example, record directly the fact that the column <code>class</code> can only take one of three values, <code>animal</code>, <code>vegetable</code>, or <code>mineral</code>, or what these values mean. Common practice is thus to store information about possible values in another table (commonly referred to as a <em>dimension table</em>) that can be used as a lookup and constraint, as in the following:</p>
 <div style="text-align: center">
 Table <strong>class_values</strong>
 </div>
@@ -928,7 +927,7 @@ Listing: Embedding SQL in Python
 <pre style="inline"><code>institute,name,role,state,town
 Janelia Campus,Laurence Abbott,Senior Fellow,VA,Ashburn
 Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
-<p>But into what table? The two records each combine information about a person with information about an institute. Following the schema design rules given in Section <a href="chap-db.html#sec:db:schema">4.3.3</a>, we should <em>normalize</em> the data by reorganizing them into two tables, one describing people and one describing institutes. Similar problems arise when JSON documents contain nested structures. For example, consider the following alternative JSON representation of the data above. Here, the need for normalization is yet more apparent.</p>
+<p>But into what table? The two records each combine information about a person with information about an institute. Following the schema design rules given in Section <a href="chap-db.html#sec:db:schema">Schema design and definition</a>, we should <em>normalize</em> the data by reorganizing them into two tables, one describing people and one describing institutes. Similar problems arise when JSON documents contain nested structures. For example, consider the following alternative JSON representation of the data above. Here, the need for normalization is yet more apparent.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">[
   {
     name <span class="op">:</span><span class="st"> </span>Laurence Abbott,
@@ -945,7 +944,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
                 town <span class="op">:</span><span class="st"> </span>Bar Harbor}
   }
 ]</code></pre></div>
-<p>Thus, the loading of JSON data into a relational database usually requires both work on schema design (Section <a href="chap-db.html#sec:db:schema">4.3.3</a>) and data preparation.</p>
+<p>Thus, the loading of JSON data into a relational database usually requires both work on schema design (Section <a href="chap-db.html#sec:db:schema">Schema design and definition</a>) and data preparation.</p>
 <hr />
 </div>
 <div id="sec:db:nosql" class="section level2">
@@ -1070,7 +1069,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
 </tr>
 </tbody>
 </table>
-<p>Associated query languages may permit queries within the document, such as regular expression searches, and retrieval of selected fields, providing a form of a relational DBMS’s selection and projection capabilities (Section <a href="chap-db.html#sec:db:sql">4.3.2</a>). For example, MongoDB allows us to ask for documents in a collection called that have “University of Texas at Austin” as their institution and the Nobel as an award.</p>
+<p>Associated query languages may permit queries within the document, such as regular expression searches, and retrieval of selected fields, providing a form of a relational DBMS’s selection and projection capabilities (Section <a href="chap-db.html#sec:db:sql">Manipulating and querying data</a>). For example, MongoDB allows us to ask for documents in a collection called that have “University of Texas at Austin” as their institution and the Nobel as an award.</p>
 <p><code>db.investigators.find( { institution: 'University of Texas at Austin', award: 'Nobel' } )</code></p>
 <p>A column-oriented DBMS stores data tables by columns rather than by rows, as is common practice in relational DBMSs. This approach has advantages in settings where aggregates must frequently be computed over many similar data items: for example, in clinical data analysis. Google Cloud BigTable and Amazon RedShift are two cloud-hosted column-oriented NoSQL databases. HBase and Cassandra are two open source systems with similar characteristics. (Confusingly, the term <em>column oriented</em> is also often used to refer to SQL database engines that store data in columns instead of rows: for example, Google BigQuery, HP Vertica, Terradata, and the open source MonetDB. Such systems are not to be confused with column-based NoSQL databases.)</p>
 <p>Graph databases store information about graph structures in terms of nodes, edges that connect nodes, and attributes of nodes and edges. Proponents argue that they permit particularly straightforward navigation of such graphs, as when answering queries such as “find all the friends of the friends of my friends”—a task that would require multiple joins in a relational database.</p>
@@ -1087,7 +1086,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
   <span class="kw">from</span> illinois_schools, chicago_citylimits
   <span class="kw">where</span> st_within(illinois_schools.the_geom,
                   chicago_citylimits.the_geom);</code></pre></div>
-<p>We join the two tables and , with the constraint constraining the selected rows to those representing schools within the city limits. Here we use the inner join introduced in Section <a href="chap-db.html#sec:db:sql">4.3.2</a>. This query could also be written as:</p>
+<p>We join the two tables and , with the constraint constraining the selected rows to those representing schools within the city limits. Here we use the inner join introduced in Section <a href="chap-db.html#sec:db:sql">Manipulating and querying data</a>. This query could also be written as:</p>
 <div class="sourceCode"><pre class="sourceCode sql"><code class="sourceCode sql"><span class="kw">select</span> illinois_schools.name
   <span class="kw">from</span> illinois_schools <span class="kw">left</span> <span class="kw">join</span> chicago_citylimits
   <span class="kw">on</span> st_within(illinois_schools.the_geom,
@@ -1102,9 +1101,9 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
 <p><code>table1 left join table2 on constraint</code></p>
 <p>returns all rows from the left table (<code>table1</code>) with the matching rows in the right table (<code>table2</code>), with the result being <code>null</code> in the right side when there is no match. This selection is illustrated in the middle column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. The addition of the <code>where h.gid is null</code> then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. Note also the use of the <code>as</code> operator to rename the columns <code>illinois_schools</code> and <code>illinois_hospitals</code>. In this case, we rename them simply to make our query more compact.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig-venn"></span>
-<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join" width="70%" />
+<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join" width="70%" />
 <p class="caption">
-Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join
+Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in Section <a href="chap-db.html#sec:db:sql">Manipulating and querying data</a>, the left join, and left excluding join
 </p>
 </div>
 <hr />
@@ -1121,7 +1120,7 @@ Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in
 <div id="nosql-dbmss" class="section level3">
 <h3><span class="header-section-number">4.7.2</span> NoSQL DBMSs</h3>
 <p>Some social science problems have the scale that might motivate the use of a NoSQL DBMS. Furthermore, while defining and enforcing a schema can involve some effort, the benefits of so doing are considerable. Thus, the use of a relational DBMS is usually to be recommended.</p>
-<p>Nevertheless, as noted in Section <a href="chap-db.html#sec:db:when">4.2</a>, there are occasions when a NoSQL DBMS can be a highly effective, such as when working with large quantities of unstructured data. For example, researchers analyzing large collections of Twitter messages frequently store the messages in a NoSQL document-oriented database such as MongoDB. NoSQL databases are also often used to organize large numbers of records from many different sources, as illustrated in Figure <a href="chap-db.html#fig:figdb-dbs">4.1</a>.</p>
+<p>Nevertheless, as noted in Section <a href="chap-db.html#sec:db:when">DBMS: When and why</a>, there are occasions when a NoSQL DBMS can be a highly effective, such as when working with large quantities of unstructured data. For example, researchers analyzing large collections of Twitter messages frequently store the messages in a NoSQL document-oriented database such as MongoDB. NoSQL databases are also often used to organize large numbers of records from many different sources, as illustrated in Figure <a href="chap-db.html#fig:figdb-dbs">4.1</a>.</p>
 </div>
 </div>
 <div id="summary-2" class="section level2">
@@ -1201,7 +1200,7 @@ Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in
 <li id="fn26"><p>DBMS is a system that interacts with users, other applications, and the database itself to capture and analyze data.<a href="chap-db.html#fnref26">↩</a></p></li>
 <li id="fn27"><p>Some key DBMS features are often lacking in standard statistical packages: a standard query language (with commands that allow analyses or data manipulation on a subgroup of cases defined during the analysis, for example “group by …,” “order by …”), keys (for speed improvement), and an explicit model of a relational data structure.<a href="chap-db.html#fnref27">↩</a></p></li>
 <li id="fn28"><p>Sometimes, as discussed in Chapter <a href="chap-link.html#chap:link">Record Linkage</a>, the links are one to one and sometimes one to many.<a href="chap-db.html#fnref28">↩</a></p></li>
-<li id="fn29"><p>A schema defines the structure of a database in a formal language defined by the DBMS. See Section <a href="chap-db.html#sec:db:schema">4.3.3</a>.<a href="chap-db.html#fnref29">↩</a></p></li>
+<li id="fn29"><p>A schema defines the structure of a database in a formal language defined by the DBMS. See Section <a href="chap-db.html#sec:db:schema">Schema design and definition</a>.<a href="chap-db.html#fnref29">↩</a></p></li>
 <li id="fn30"><p>Normalization involves organizing columns and tables of a relational database to minimize data redundancy.<a href="chap-db.html#fnref30">↩</a></p></li>
 <li id="fn31"><p>Normalization can be done in statistical packages as well. For example, as noted above, PSID splits its data into different files linked through ID variables. The difference here is that the DBMS makes creating, navigating, and querying the resulting data particularly easy.<a href="chap-db.html#fnref31">↩</a></p></li>
 <li id="fn32"><p>These storage types will be familiar to many of you from statistical software packages.<a href="chap-db.html#fnref32">↩</a></p></li>

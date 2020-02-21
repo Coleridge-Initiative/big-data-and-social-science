@@ -122,7 +122,7 @@ a network analysis is to first turn our data into a graph by clearly defining wh
 In traditional social network analysis studies, there is a natural representation of the data as a network. People are often nodes, and some type of communication between them form the “ties”.  While this seems like an easy move, it often requires deep thought. For
 instance, an interest in innovation and discovery could take several forms. We could be interested in how universities differ in their capacity to respond to new requests for proposals (a macro question that would require the comparison of full networks across campuses). We could
 wonder what sorts of training arrangements lead to the best outcomes for
-graduate students (a more micro- level question that requires us to
+graduate students (a more micro-level question that requires us to
 identify individual positions in larger networks). Or we could ask what
 team structure is likely to lead to more or less radical discoveries (a
 decidedly meso-level question that requires we identify substructures
@@ -828,7 +828,7 @@ knitr::include_graphics("ChapterNetworks/figures/fig8-7b.png")
 It is evident from Figure \@ref(fig:fig8-7a) that they are quite different in character.
 University A's network follows a more classic skewed distribution of the
 sort that is often associated with the kinds of power-law degree
-distributions common to scale- free networks. In contrast, university
+distributions common to scale-free networks. In contrast, university
 B's distribution has some interesting features. First, the left-hand
 side of the distribution is more dispersed than it is for university A,
 suggesting that there are many nodes with moderate degree. These nodes

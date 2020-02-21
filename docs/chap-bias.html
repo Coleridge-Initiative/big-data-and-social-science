@@ -334,7 +334,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.6.3" data-path="chap-bias.html"><a href="chap-bias.html#facebook-advertisement-targeting"><i class="fa fa-check"></i><b>11.6.3</b> Facebook Advertisement Targeting</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="chap-bias.html"><a href="chap-bias.html#aequitas---a-toolkit-for-auditing-bias-and-fairness-in-machine-learning-models"><i class="fa fa-check"></i><b>11.7</b> Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models</a></li>
-<li class="chapter" data-level="11.8" data-path="chap-bias.html"><a href="chap-bias.html#summary-7"><i class="fa fa-check"></i><b>11.8</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>12</b> Privacy and Confidentiality</a><ul>
 <li class="chapter" data-level="12.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
@@ -343,7 +342,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#non-tabular-data"><i class="fa fa-check"></i><b>12.4</b> Non-Tabular data</a></li>
 <li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.5</b> The new challenges</a></li>
 <li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.6</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-8"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-7"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
 <li class="chapter" data-level="12.8" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>13</b> Workbooks</a><ul>
@@ -509,7 +508,7 @@ Figure 11.1: Fairness Tree
 </div>
 <div id="false-discovery-rate" class="section level4">
 <h4><span class="header-section-number">11.3.4.3</span> False Discovery Rate</h4>
-<p>The False Discovery Rate (<span class="math inline">\(FDR\)</span>) focuses specifically on the people who are affected by the intervention — in the example above, among the 200 people in jail, what are the group-level disparities in rates of wrong convictions. The jail example is particularly instructive here as we could imagine the social cost of disparities manifesting directly through inmates observing how frequently different groups are wrongly convicted.</p>
+<p>The False Discovery Rate (<span class="math inline">\(FDR\)</span>) focuses specifically on the people who are affected by the intervention—in the example above, among the 200 people in jail, what are the group-level disparities in rates of wrong convictions. The jail example is particularly instructive here as we could imagine the social cost of disparities manifesting directly through inmates observing how frequently different groups are wrongly convicted.</p>
 <p>^(In probabilistic terms, <span class="math display">\[P(\textrm{wrongly jailed $\mid$ jailed, group $i$}) = C~~~\forall~i\]</span> Where <span class="math inline">\(C\)</span> is a constant value. Or, alternatively, <span class="math display">\[\frac{FP_i}{FP_j} = \frac{k_i}{k_j}~~~\forall~i,j\]</span> Where <span class="math inline">\(FP_i\)</span> is the number of false positives and <span class="math inline">\(k_i\)</span> the total number of <em>jailed</em> individuals in group <span class="math inline">\(i\)</span>.)</p>
 </div>
 <div id="false-positive-rate" class="section level4">
@@ -791,11 +790,8 @@ Figure 11.2: ML pipeline
 </div>
 <p>Figure <a href="chap-bias.html#fig:ml-pipeline">11.2</a> puts Aequitas in the context of the machine learning workflow and shows which type of user and when the audits must be made. The main goal of Aequitas is to standardize the process of understanding model biases. By providing a toolkit for auditing by both data scientists and decision makers, it makes it possible for these different actors to take bias and fairness into consideration at all stages of decision-making in the modeling process: model selection, whether or not to deploy a model, when to retrain, the need to collect more and better data, and so on.</p>
 <p>To get a more hands-on tutorial using Aequitas, take a look at the Aequitas Example Jupyter Notebook.</p>
-</div>
-<div id="summary-7" class="section level2">
-<h2><span class="header-section-number">11.8</span> Summary</h2>
 <!-- 
-% move following to workbooks chapter
+Summary
 -->
 
 <!--

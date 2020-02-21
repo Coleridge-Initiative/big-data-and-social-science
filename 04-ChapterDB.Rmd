@@ -286,7 +286,7 @@ data sets in total, some of which may be extremely large. We initially
 have no idea of what **schema**^[A schema defines the
 structure of a database in
 a formal language defined
-by the DBMS. See Section [4.3.3](#sec:db:schema).] 
+by the DBMS. See Section [Schema design and definition](#sec:db:schema).] 
 to use for the different data sets, and indeed it
 may not be feasible to define a unified set of schema, as the data may be
 diverse and new data sets may be getting acquired continuously. Furthermore,
@@ -319,9 +319,8 @@ Relational DBMSs implement the relational data model, in which data are
 represented as sets of records organized in tables. This model is
 particularly well suited for the structured data with which we
 frequently deal in the social sciences; we discuss in
-Section [4.5](#sec:db:nosql){reference-type="ref"
-reference="sec:db:nosql"} alternative data models, such as those used in
-NoSQL databases.
+Section [NoSQL databases](#sec:db:nosql) alternative data models, 
+such as those used in NoSQL databases.
 
 We use the data shown in
 Figure \@ref(fig:figdb-1) to introduce key concepts. These two CSV format
@@ -426,6 +425,7 @@ as a new table, or passed to another query as input.)
 | **Number**  | **Person** | **Funding** | **Program**                       |
 |---------|--------|---------|-------------------------------|
 | 1500194 | 3      | 200,000 | Accelerating Innovation Rsrch |
+
 ---
 
 DBMSs automatically optimize declarative queries such as the example
@@ -437,7 +437,7 @@ worrying for you. For example, a DBMS need not consider every row in the `Grants
 table in order to identify those with funding less than \$200,000, a
 strategy that would be slow if the `Grants` table were large: it can instead use
 an index to retrieve the relevant records much more quickly. We discuss
-indices in more detail in Section [4.3.6](#sec:db:index).
+indices in more detail in Section [Database optimizations](#sec:db:index).
 
 The querying component of SQL supports a wide variety of manipulations
 on tables, whether referred to explicitly by a table name (as in the
@@ -471,7 +471,7 @@ This ability to join two tables in a query is one example of how SQL
 permits concise specifications of complex computations. This joining of
 tables via a cartesian product operation is formally called a *cross
 join*. Other types of join are also supported. We describe one such, the
-*inner join*, in Section [4.6](#sec:db:spatial).
+*inner join*, in Section [Spatial databases](#sec:db:spatial).
 
 ---
 
@@ -884,11 +884,7 @@ may need to be rewritten as:
 
 SQL engines are metadata poor: they do not allow extra information to be
 stored about a variable (field) beyond its base name and type (`int`, `char`,
-etc., as introduced in Section [4.3.3](#sec:db:schema)). They cannot, for
-example, record directly the fact that the column `class` can only take one of three values, `animal`, `vegetable`, or `mineral`, or what these values mean. Common practice is thus to store information
-about possible values in another table (commonly referred to as a
-*dimension table*) that can be used as a lookup and constraint, as in
-the following:
+etc., as introduced in Section [Schema design and definition](#sec:db:schema)). They cannot, for example, record directly the fact that the column `class` can only take one of three values, `animal`, `vegetable`, or `mineral`, or what these values mean. Common practice is thus to store information about possible values in another table (commonly referred to as a *dimension table*) that can be used as a lookup and constraint, as in the following:
 
 <div style="text-align: center"> Table **class_values**</div>
 | **Value**  | **Description** |
@@ -1012,7 +1008,7 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor
 
 But into what table? The two records each combine information about a
 person with information about an institute. Following the schema design
-rules given in Section [4.3.3](#sec:db:schema), 
+rules given in Section [Schema design and definition](#sec:db:schema), 
 we should *normalize* the data by
 reorganizing them into two tables, one describing people and one
 describing institutes. Similar problems arise when JSON documents
@@ -1041,7 +1037,7 @@ normalization is yet more apparent.
 
 Thus, the loading of JSON data into a relational database usually
 requires both work on schema design
-(Section [4.3.3](#sec:db:schema)) and data preparation.
+(Section [Schema design and definition](#sec:db:schema)) and data preparation.
 
 ---
 
@@ -1231,7 +1227,7 @@ additional information that we just introduced.
 Associated query languages may permit queries within the document, such
 as regular expression searches, and retrieval of selected fields,
 providing a form of a relational DBMS's selection and projection
-capabilities (Section [4.3.2](#sec:db:sql)). 
+capabilities (Section [Manipulating and querying data](#sec:db:sql)). 
 For example, MongoDB allows us to ask for
 documents in a collection called that have "University of Texas at
 Austin" as their institution and the Nobel as an award.
@@ -1305,8 +1301,7 @@ select illinois_schools.name
 
 We join the two tables and , with the constraint constraining the
 selected rows to those representing schools within the city limits. Here
-we use the inner join introduced in Section [4.3.2](#sec:db:sql). 
-This query could also be written as:
+we use the inner join introduced in Section [Manipulating and querying data](#sec:db:sql). This query could also be written as:
 
 ```{sql, eval = FALSE}
 select illinois_schools.name
@@ -1337,7 +1332,7 @@ match. This selection is illustrated in the middle column of
 Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
 Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
-```{r fig-venn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Three types of *join* illustrated: the inner join, as used in Section 4.3.2, the left join, and left excluding join'}
+```{r fig-venn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join'}
 knitr::include_graphics("ChapterDB/figures/fig-venn.png")
 ```
 
@@ -1384,8 +1379,8 @@ of a NoSQL DBMS. Furthermore, while defining and enforcing a schema can
 involve some effort, the benefits of so doing are considerable. Thus,
 the use of a relational DBMS is usually to be recommended.
 
-Nevertheless, as noted in
-Section [4.2](#sec:db:when), there are occasions when a NoSQL DBMS can be a
+Nevertheless, as noted in Section [DBMS: When and why](#sec:db:when), 
+there are occasions when a NoSQL DBMS can be a
 highly effective, such as when working with large quantities of
 unstructured data. For example, researchers analyzing large collections
 of Twitter messages frequently store the messages in a NoSQL

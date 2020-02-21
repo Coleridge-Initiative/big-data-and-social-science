@@ -34,7 +34,7 @@ In social science, we often explore information on people, organizations, or loc
 
 Using the example of data on researchers and research outputs, we will
 focus this chapter on obtaining information directly from web pages 
-(*web scraping*) as well as explore the uses of APIs--- web services that 
+(*web scraping*) as well as explore the uses of APIs---web services that 
 allow programmatic retrieval of data. Both in this chapter and the next, 
 you will see how the crucial pieces of integration often lie in making 
 connections between disparate data sets and how in turn making those connections

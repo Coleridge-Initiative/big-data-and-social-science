@@ -49,7 +49,7 @@ to multiple individuals, then that inventor's productivity will be
 understated.
 
 This chapter discusses current approaches to joining multiple data sets
-together---commonly called *record linkage*. ^[Other names associated with
+together---commonly called *record linkage*.^[Other names associated with
 record linkage are entity disambiguation, entity resolution,
 co-reference resolution, matching, and data fusion, meaning
 that records which are linked or co-referent can be thought of as

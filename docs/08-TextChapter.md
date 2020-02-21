@@ -347,7 +347,8 @@ $$D_{KL}(\overrightarrow{t_a}||\overrightarrow{t_b}) =
 \sum\limits_{t=1}^m w_{t,a}\times
 \log\left(\frac{w_{t,a}}{w_{t,b}}\right),$$ where $w_{t,a}$ and
 $w_{t,b}$ are term weights in the two vectors, respectively, for terms $t=1, \ldots, m$. 
--- Updated comment by Patrick: m was not defined.
+
+<!-- Updated comment by Patrick: m was not defined.
 It is the size of the so-called term set, i.e. the set of all distinct terms that are considered.
 I added this piece of information.
 If you want to check: see the [@huang-08] paper,
@@ -407,7 +408,7 @@ relationships), and found that this mapping enriches the search queries
 with additional context and concept relationships. One way of using
 these ontologies is to retrieve a predefined list of Wikipedia pages
 that would match a specific taxonomy. For example, scientific
-disciplines are an established way of tagging documents--- some are in
+disciplines are an established way of tagging documents---some are in
 physics, others in chemistry, engineering, or computer science. If a
 user retrieves four Wikipedia pages on "Physics", "Chemistry",
 "Engineering", and "Computer Science", they can be further mapped to a

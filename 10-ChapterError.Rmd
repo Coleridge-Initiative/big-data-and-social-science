@@ -23,7 +23,7 @@ systematic way to think about the error framework in a big data setting.
 Introduction {#sec:10-1}
 ------------
 
-The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro) -- and the decisions made along the way -- can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
+The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro)---and the decisions made along the way---can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
 
 The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. -@japec2015big): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
 
@@ -139,13 +139,11 @@ $$\text{Total error } =\text{ Row error } + \text{ Column error }
 For the situations considered in this chapter, the row errors may be of
 three types:
 
--   **Omissions**: Some rows are missing, which implies that elements in the target
-    population are not represented on the file.
+-   **Omissions**: Some rows are missing, which implies that elements in the target population are not represented on the file.
 
 -   **Duplications**: Some population elements occupy more than one row.
 
--   **Erroneous inclusions**: Some rows contain elements or entities that are not part of the
-    target population.
+-   **Erroneous inclusions**: Some rows contain elements or entities that are not part of the target population.
 
 Omissions:
 
@@ -443,6 +441,7 @@ algorithms are not (publicly) measured for accuracy, since they are
 often proprietary. Google Flu Trends is special in that it publicly
 failed. From what we have seen, most models fail privately and often
 without anyone noticing.
+
 --------
 
 
@@ -458,7 +457,7 @@ analyst. Even if data is correct, other challenges can arise solely as
 a result of the massive size,
 rapid generation, and vast dimensionality of the data [@meng2018]. 
 Fan et al. [-@fan2014challenges]
-identify three issues--- noise accumulation, spurious correlations, and
+identify three issues---noise accumulation, spurious correlations, and
 incidental endogeneity---which will be discussed in this
 section. These issues should concern social scientists even if the data
 could be regarded as infallible. Content errors, missing data, and other
@@ -555,7 +554,7 @@ substituting these aggregates for the individual units in these
 analyses. Third, unlike random noise, systematic errors can bias
 correlation and regression analysis is unpredictable ways, and these
 biases cannot be effectively mitigated by aggregating the data. Finally,
-multilevel modeling can -- under certain circumstances -- be an important 
+multilevel modeling can---under certain circumstances---be an important 
 mitigation strategy for dealing
 with systematic errors emanating from multiple data sources. These
 issues will be examined in some detail in the remainder of this section.
@@ -1053,7 +1052,7 @@ generation process is often outside the purview of the data collectors,
 as noted in Section [Introduction](#sec:10-1), there is limited opportunity to 
 address deficiencies in the data generation process. Instead, error mitigation
 must necessarily begin at the data processing stage. We illustrate this error 
-mitigation process using two types of techniques - data editing and cleaning.
+mitigation process using two types of techniques---data editing and cleaning.
 
 Data editing is a set of methodologies for identifying and correcting 
 (or transforming) anomalies
@@ -1197,13 +1196,14 @@ graph on the right appear smoother and are less jagged.
 
 Summary {#sec:10-6}
 -------
+
 As social scientists, we are deeply concerned with making sure that the inferences we make from our analysis are valid. Since many of the newer data sources we are using are not collected or generated from instruments and methods designed to produce valid and reliable data for scientific analysis and discovery, they can lead to inference errors. This chapter described different types of errors that we encounter to make us aware of these limitations and take the necessary steps to understand and hopefully mitigate the effects of hidden errors on our results.
 
 In addition to describing the types of errors, this chapter also gives an example of a solution to clean up the data before analysis. Another option that was not discussed is the possibility of using analytical techniques that attempt to model errors and compensate for them in the analysis. Such techniques include the use of latent class analysis for classification error [@biemer2011latent], multilevel modeling of systematic errors from multiple sources [@hox2010multilevel], and Bayesian statistics for partitioning massive data sets across multiple machines and then combining the results [@ibrahim2000power; @scott2013bayes].
 
 While this chapter has focused on the accuracy of the data and the validity of the inference, other data quality dimensions such as timeliness, comparability, coherence, and relevance that we have not considered in this chapter are also important. For example, timeliness often competes with accuracy because achieving acceptable levels of the latter often requires greater expenditures of resources and time. In fact, some applications of data analysis prefer results that are less accurate for the sake of timeliness. Biemer and Lyberg [-@biemer2003] discuss these and other issues in some detail. 
 
-It is important to understand that we will rarely, if ever, get perfect data for our analysis. Every data source will have some limitation - some will be inaccurate, some will become stale,  and some will have sample bias. The key is to 1) be aware of the limitations of each data source, 2) incorporate that awareness in to the analysis that is being done with it, and 3) understand what type of inference errors it can lead to in order to appropriately communicate the results and make sound decisions.
+It is important to understand that we will rarely, if ever, get perfect data for our analysis. Every data source will have some limitation---some will be inaccurate, some will become stale, and some will have sample bias. The key is to 1) be aware of the limitations of each data source, 2) incorporate that awareness in to the analysis that is being done with it, and 3) understand what type of inference errors it can lead to in order to appropriately communicate the results and make sound decisions.
 
 Resources
 ---------

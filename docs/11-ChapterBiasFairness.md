@@ -467,7 +467,7 @@ metric is concerned with unfairness in this way:
 #### False Discovery Rate
 
 The False Discovery Rate ($FDR$) focuses specifically on the people who
-are affected by the intervention — in the example above, among the 200
+are affected by the intervention---in the example above, among the 200
 people in jail, what are the group-level disparities in rates of wrong
 convictions. The jail example is particularly instructive here as we
 could imagine the social cost of disparities manifesting directly
@@ -1407,11 +1407,6 @@ more and better data, and so on.
 
 To get a more hands-on tutorial using Aequitas, take a look at the Aequitas Example Jupyter Notebook.
 
-Summary
--------
-
-
-
 <!-- 
-% move following to workbooks chapter
+Summary
 -->

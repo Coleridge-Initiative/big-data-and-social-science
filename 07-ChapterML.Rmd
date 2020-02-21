@@ -18,7 +18,7 @@ connections to what you already know from statistics and data analysis,
 and go deeper into some of the novel concepts and methods that have
 been developed in this field. Although the field originates from
 computer science, it has been
-influenced quite heavily by math and statistics in the past 15-20 years. As you will
+influenced quite heavily by math and statistics in the past 15--20 years. As you will
 see, many of the concepts you will learn are not entirely new, but are
 simply called something else. For example, you already are familiar with
 logistic regression (a classification method that falls under the
@@ -1497,7 +1497,7 @@ perfect recall but low precision.
 Figure \@ref(fig:pr) show a precision--recall curve that is often used
 to represent the performance of a given classifier.
 
-```{r pr, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Precision-recall curve'}
+```{r pr, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Precision--recall curve'}
 knitr::include_graphics("ChapterML/figures/pr.png")
 ```
 
@@ -1579,7 +1579,7 @@ The most common forms of leakage happen because of temporal issues – including
 
 5.  Using (proxies/transformation of) future outcomes as features: Similar to #1
 
-6. Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary  – again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.
+6. Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary---again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.
 
 7.  Using data (as features) that happened before model training time but is not available until later. This is fairly common in cases where there is lag/delay in data collection or access. An event may happen today but it doesn’t appear in the database until a week, a month, or a year later and while it will be available in the data set you’re using to build and select ML models, it will not be available at prediction time in deployment.
 

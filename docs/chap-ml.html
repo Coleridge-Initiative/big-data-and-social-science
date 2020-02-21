@@ -334,7 +334,6 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="11.6.3" data-path="chap-bias.html"><a href="chap-bias.html#facebook-advertisement-targeting"><i class="fa fa-check"></i><b>11.6.3</b> Facebook Advertisement Targeting</a></li>
 </ul></li>
 <li class="chapter" data-level="11.7" data-path="chap-bias.html"><a href="chap-bias.html#aequitas---a-toolkit-for-auditing-bias-and-fairness-in-machine-learning-models"><i class="fa fa-check"></i><b>11.7</b> Aequitas - A Toolkit for Auditing Bias and Fairness in Machine Learning Models</a></li>
-<li class="chapter" data-level="11.8" data-path="chap-bias.html"><a href="chap-bias.html#summary-7"><i class="fa fa-check"></i><b>11.8</b> Summary</a></li>
 </ul></li>
 <li class="chapter" data-level="12" data-path="chap-privacy.html"><a href="chap-privacy.html"><i class="fa fa-check"></i><b>12</b> Privacy and Confidentiality</a><ul>
 <li class="chapter" data-level="12.1" data-path="chap-privacy.html"><a href="chap-privacy.html#introduction-5"><i class="fa fa-check"></i><b>12.1</b> Introduction</a></li>
@@ -343,7 +342,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <li class="chapter" data-level="12.4" data-path="chap-privacy.html"><a href="chap-privacy.html#non-tabular-data"><i class="fa fa-check"></i><b>12.4</b> Non-Tabular data</a></li>
 <li class="chapter" data-level="12.5" data-path="chap-privacy.html"><a href="chap-privacy.html#the-new-challenges"><i class="fa fa-check"></i><b>12.5</b> The new challenges</a></li>
 <li class="chapter" data-level="12.6" data-path="chap-privacy.html"><a href="chap-privacy.html#legal-and-ethical-framework"><i class="fa fa-check"></i><b>12.6</b> Legal and ethical framework</a></li>
-<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-8"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
+<li class="chapter" data-level="12.7" data-path="chap-privacy.html"><a href="chap-privacy.html#summary-7"><i class="fa fa-check"></i><b>12.7</b> Summary</a></li>
 <li class="chapter" data-level="12.8" data-path="chap-privacy.html"><a href="chap-privacy.html#resources-6"><i class="fa fa-check"></i><b>12.8</b> Resources</a></li>
 </ul></li>
 <li class="chapter" data-level="13" data-path="chap-workbooks.html"><a href="chap-workbooks.html"><i class="fa fa-check"></i><b>13</b> Workbooks</a><ul>
@@ -388,7 +387,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <p>This chapter introduces you to the use of machine learning in tackling social science and public policy problems. We cover the end-to-end machine learning process and focus on clustering and classification methods. After reading this chapter, you should have an overview of the components of a machine learning pipeline and methods, and know how to use those in solving social science problems. We have written this chapter to give an intuitive explanation for the methods and to provide a framework and practical tips on how to use them in practice.</p>
 <div id="introduction-2" class="section level2">
 <h2><span class="header-section-number">7.1</span> Introduction</h2>
-<p>You have probably heard of “machine learning” but are not sure exactly what it is, how it differs from traditional statistics, and what you, as social scientists, can do with it. In this chapter, we will demystify machine learning, draw connections to what you already know from statistics and data analysis, and go deeper into some of the novel concepts and methods that have been developed in this field. Although the field originates from computer science, it has been influenced quite heavily by math and statistics in the past 15-20 years. As you will see, many of the concepts you will learn are not entirely new, but are simply called something else. For example, you already are familiar with logistic regression (a classification method that falls under the supervised learning framework in machine learning) and cluster analysis (a form of unsupervised learning). You will also learn about new methods that are more exclusively used in machine learning, such as random forests, support vector machines, and neural networks. We will keep formalisms to a minimum and focus on getting the intuition across, as well as providing practical tips. Our hope is this chapter will make you comfortable and familiar with machine learning vocabulary, concepts, and processes, and allows you to further explore and use these methods and tools in your own research and practice.</p>
+<p>You have probably heard of “machine learning” but are not sure exactly what it is, how it differs from traditional statistics, and what you, as social scientists, can do with it. In this chapter, we will demystify machine learning, draw connections to what you already know from statistics and data analysis, and go deeper into some of the novel concepts and methods that have been developed in this field. Although the field originates from computer science, it has been influenced quite heavily by math and statistics in the past 15–20 years. As you will see, many of the concepts you will learn are not entirely new, but are simply called something else. For example, you already are familiar with logistic regression (a classification method that falls under the supervised learning framework in machine learning) and cluster analysis (a form of unsupervised learning). You will also learn about new methods that are more exclusively used in machine learning, such as random forests, support vector machines, and neural networks. We will keep formalisms to a minimum and focus on getting the intuition across, as well as providing practical tips. Our hope is this chapter will make you comfortable and familiar with machine learning vocabulary, concepts, and processes, and allows you to further explore and use these methods and tools in your own research and practice.</p>
 </div>
 <div id="what-is-machine-learning" class="section level2">
 <h2><span class="header-section-number">7.2</span> What is machine learning?</h2>
@@ -790,9 +789,9 @@ Figure 7.9: A <em>confusion matrix</em> created from real-valued predictions
 <p>This is often used when you want to balance both precision and recall.</p>
 <p>There is often a tradeoff between precision and recall. By selecting different classification thresholds, we can vary and tune the precision and recall of a given classifier. A highly conservative classifier that only predicts a 1 when it is absolutely sure (say, a threshold of 0.9999) will most often be correct when it predicts a 1 (high precision) but will miss most 1s (low recall). At the other extreme, a classifier that says 1 to every data point (a threshold of 0.0001) will have perfect recall but low precision. Figure <a href="chap-ml.html#fig:pr">7.10</a> show a precision–recall curve that is often used to represent the performance of a given classifier.</p>
 <div class="figure" style="text-align: center"><span id="fig:pr"></span>
-<img src="ChapterML/figures/pr.png" alt="Precision-recall curve" width="70%" />
+<img src="ChapterML/figures/pr.png" alt="Precision--recall curve" width="70%" />
 <p class="caption">
-Figure 7.10: Precision-recall curve
+Figure 7.10: Precision–recall curve
 </p>
 </div>
 <div class="figure" style="text-align: center"><span id="fig:pr2"></span>
@@ -826,7 +825,7 @@ Figure 7.11: Precision or recall at different thresholds
 <p><strong>Using information from the future (that will not available at training or prediction time)</strong></p>
 <ol start="5" style="list-style-type: decimal">
 <li><p>Using (proxies/transformation of) future outcomes as features: Similar to #1</p></li>
-<li><p>Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary – again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.</p></li>
+<li><p>Doing standard k fold cross-validation when you have temporal data. If you have temporal data (that is non-stationary—again, when is it not!), k-fold cross validation will shuffle the data and a training set will (probably) contain data from the future and a test set will (probably) contain data from the past.</p></li>
 <li><p>Using data (as features) that happened before model training time but is not available until later. This is fairly common in cases where there is lag/delay in data collection or access. An event may happen today but it doesn’t appear in the database until a week, a month, or a year later and while it will be available in the data set you’re using to build and select ML models, it will not be available at prediction time in deployment.</p></li>
 <li><p>Using data (as rows) in the training set based on information from the future. Including rows that match certain criteria (in the future) in the training set, such as everyone who got a social service in the next 3 months) leaks information to your model via a biased training set.</p></li>
 </ol>
