@@ -7,7 +7,7 @@ Why this book? {#sec:1-1}
 
 The world has changed for empirical social scientists. The new types of "big data" have generated an entire new research field---that of data science. That world is dominated by computer scientists who have generated new ways of creating and collecting data, developed new analytical techniques and provided new ways of visualizing and presenting information. The results have been to change the nature of the work that social scientists do. 
 
-Social scientists have been enthusiastic in responding to the new opportunity. Python and R are becoming as well-known as SAS and Stata---indeed, the 2018 Nobel Laureate in Economics, Paul Romer, is a Python convert [@Kopf]. Research has also changed. Researchers draw on data that are "found" rather than "made" by federal agencies; those publishing in leading academic journals are much less likely today to draw on preprocessed survey data (Figure \@ref(fig:fig1)). Social science workflows can become more automated, replicable and reproducible [@Yarkoni2019].
+Social scientists have been enthusiastic in responding to the new opportunity. Python and R are becoming as, and hopefully more, well-known as SAS and Stata---indeed, the 2018 Nobel Laureate in Economics, Paul Romer, is a Python convert [@Kopf]. Research has also changed. Researchers draw on data that are "found" rather than "made" by federal agencies; those publishing in leading academic journals are much less likely today to draw on preprocessed survey data (Figure \@ref(fig:fig1)). Social science workflows can become more automated, replicable and reproducible [@Yarkoni2019].
 
 <div class="figure" style="text-align: center">
 <img src="ChapterIntro/figures/Figure1.png" alt="Use of pre-existing survey data in publications in leading journals, 1980--2010 [@Chetty2012]" width="70%" />
@@ -18,9 +18,9 @@ Policy has also changed. The Foundations of Evidence-based Policy Act, which was
 
 And the jobs have changed. The new job title of "data scientist" is highlighted in job advertisements on CareerBuilder.com and Burningglass--- supplanting the demand for statisticians, economists, and other quantitative social scientists if starting salaries are useful indicators. At the federal level, the Office of Personnel Management created a new data scientist job title.
 
-The goal of this book is to provide social scientists with an understanding of the key elements of this new  science, value of the tools and the opportunities for doing better work. The goal is also to identify the many ways in which the analytical toolkits possessed by social scientists can be brought to bear to enhance the generalizability and usefulness of the work done by computer scientists. 
+The goal of this book is to provide social scientists with an understanding of the key elements of this new science, value of the tools, and the opportunities for doing better work. The goal is also to identify the many ways in which the analytical toolkits possessed by social scientists can enhance the generalizability and usefulness of the work done by computer scientists. 
 
-We take a pragmatic approach, drawn on our experience of working with data.  Most social scientists set out to solve a real world social or economic problem: they frame the problem, identify the data, do the analysis, and then draw inferences.  At all points, of course, the social scientist needs to consider the ethical ramifications of her work, particularly respecting privacy and confidentiality. The book follows the same structure. We chose a particular problem---the link between research investments and innovation---because that is a major social science policy issue, and one in which social scientists have been addressing using big data techniques. 
+We take a pragmatic approach, drawn on our experience of working with data to tackle a wide variety of policy problems.  Most social scientists set out to solve a real world social or economic problem: they frame the problem, identify the data, do the analysis, and then draw inferences.  At all points, of course, the social scientist needs to consider the ethical ramifications of their work, particularly respecting privacy and confidentiality. The book follows the same structure. We chose a particular problem---the link between research investments and innovation---because that is a major social science policy issue, and one in which social scientists have been addressing using big data techniques. 
 
 Defining big data and its value {#sec:1-2}
 -------------------------------
@@ -34,6 +34,9 @@ The value of the new types of data for social science is quite substantial. Pers
 **Example: New potential for social science**
 
 The billion prices project is a great example of how researchers can use new web-scraping techniques to get online prices from hundreds of websites and thousands of webpages to build datasets customized to fit specific measurement and research needs in ways that were unimaginable 20 years ago [@cavallo2016billion]; other great examples include the way in which researchers use text analysis of political speeches to study political polarization [@peterson2018classification] or of airbnb postings to get new insights into racial discrimination [@edelman2017racial].
+
+Of course, these new sources come with their own caveats and biases that need to be considered when drawing 
+inferences. We will cover this later in the book in more detail.
 
 ---
 
@@ -54,7 +57,7 @@ If we take a look across the social sciences, including economics, public policy
 
 The job of many social scientists is to provide descriptive statements about the population of interest. These could be univariate, bivariate or even multivariate statements. 
 
-Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities [@hansen1993sample, @valliant2013practical].
+Usually descriptive statistics are created based on census data or sample surveys to create some summary statistics like a mean, median or a graphical distribution to describe the population of interest. In the case of a census the work ends right there. With sample surveys the point estimates come with measures of uncertainties (standard errors). The estimation of standard errors has been worked out for most descriptive statistics and most common survey designs, even complex ones that include multiple layers of sampling and disproportional selection probabilities [@hansen1993sample, @valliant2018practical].
 
 ---
 
@@ -82,7 +85,7 @@ In practice, regardless of how much data is available, researchers must consider
 
 **Prediction**
 
-Forecasting or prediction tasks. The potential for massive amounts of data to improve prediction is undeniable. However, just like the causal inference setting, it is of utmost importance that we know the process that generated the data, so that biases due to unknown or unobserved systematic selection can be minimized. Predictive policing is a good example of the challenges. The criminal justice system generates massive amounts of data that can be used to better allocate police resources - but if the data do not represent the population at large, the predictions will be biased.
+Forecasting or prediction tasks. The potential for massive amounts of data to improve prediction is undeniable. However, just like the causal inference setting, it is of utmost importance that we know the process that generated the data, so that biases due to unknown or unobserved systematic selection can be minimized. Predictive policing is a good example of the challenges. The criminal justice system generates massive amounts of data that can be used to better allocate police resources - but if the data do not represent the population at large, the predictions could be biased, and more importantly, the interventions assigned using those predictions could harm society.
 
 ---
 
@@ -160,9 +163,9 @@ statistical packages such as geospatial data, networks, and graphs.
 Open source programming languages such as Python (used extensively
 throughout this book) and R provide high-quality implementations of
 numerous data analysis and visualization methods, from regression to
-statistics, text analysis, network analysis, and much more. Finally,
+machine learning, text analysis, network analysis, and much more. Finally,
 parallel computing platforms such as Hadoop and Spark can be used to
-harness parallel computer clusters for extremely large data sets and
+harness parallel computing clusters for extremely large data sets and
 computationally intensive analyses.
 
 These various components may not always work together as smoothly as do
@@ -175,7 +178,8 @@ social scientist needs to be familiar with their capabilities.
 The book's "use case" {#sec:1-6}
 ---------------------
 
-This book is about the uses of big data in social science. Our focus is
+This book is about the uses of new types of computational and 
+data analysis methods in social science. Our focus is
 on working through the use of data as a social scientist normally
 approaches research. That involves thinking through how to use such data
 to address a question from beginning to end, and thereby learning about

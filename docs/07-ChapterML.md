@@ -1696,7 +1696,7 @@ improve some social science tasks:
 
 -   **Variable selection**: Although there are many methods for variable selection, regularized
     methods such as the lasso are highly effective and efficient when
-    faced with large amounts of data. Varian [-@Varian2014] goes into
+    faced with large amounts of data. Varian [-@varian2014big] goes into
     more detail and gives other methods from machine learning that can
     be useful for variable selection. We can also find interactions
     between pairs of variables (to feed into other models) using random
