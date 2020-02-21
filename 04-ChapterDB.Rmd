@@ -1332,7 +1332,7 @@ match. This selection is illustrated in the middle column of
 Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of
 Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
-```{r fig-venn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join'}
+```{r fig-venn, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Three types of *join* illustrated: the inner join, the left join, and left excluding join'}
 knitr::include_graphics("ChapterDB/figures/fig-venn.png")
 ```
 

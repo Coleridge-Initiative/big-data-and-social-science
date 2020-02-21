@@ -1354,8 +1354,8 @@ Figure \@ref(fig:fig-venn). The addition of the `where h.gid is null` then selec
 Figure \@ref(fig:fig-venn). Note also the use of the `as` operator to rename the columns `illinois_schools` and `illinois_hospitals`. In this case, we rename them simply to make our query more compact.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join" width="70%" />
-<p class="caption">(\#fig:fig-venn)Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join</p>
+<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, the left join, and left excluding join" width="70%" />
+<p class="caption">(\#fig:fig-venn)Three types of *join* illustrated: the inner join, the left join, and left excluding join</p>
 </div>
 
 ---

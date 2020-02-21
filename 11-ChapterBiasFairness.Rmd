@@ -425,11 +425,11 @@ each group as reasonable place to start for assessing whether our model
 is biased. Here, we are concerned with statements like “twice as many
 people from Group A were wrongly convicted as from Group B.”
 
-\^(In probabilistic terms, we could express this as:
+In probabilistic terms, we could express this as:
 $$P(\textrm{wrongly jailed, group $i$}) = C~~~\forall~i$$ Where $C$ is a
 constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = 1~~~\forall~i,j$$ Where $FP_i$ is the number of
-false positives in group $i$.)
+false positives in group $i$. <!-- footnote? -->
 
 However, it is unclear whether differences in the number of false
 positives across groups reflect unfairness in the model. For instance,
@@ -444,12 +444,12 @@ By accounting for differently sized groups, we ask the question, “just
 by virtue of the fact that an individual is a member of a given group,
 what are the chances they'll be wrongly convicted?”
 
-\^(in terms of probability,
+In terms of probability,
 $$P(\textrm{wrongly jailed $\mid$ group $i$}) = C~~~\forall~i$$ Where
 $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{n_i}{n_j}~~~\forall~i,j$$ Where $FP_i$ is
 the number of false positives and $n_i$ the total number of individuals
-in group $i$.)
+in group $i$. <!-- footnote? -->
 
 While this metric might feel like it meets a reasonable criteria of
 avoiding treating groups differently in terms of classification errors,
@@ -473,12 +473,12 @@ could imagine the social cost of disparities manifesting directly
 through inmates observing how frequently different groups are wrongly
 convicted.
 
-\^(In probabilistic terms,
+In probabilistic terms,
 $$P(\textrm{wrongly jailed $\mid$ jailed, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{k_i}{k_j}~~~\forall~i,j$$ Where $FP_i$ is
 the number of false positives and $k_i$ the total number of *jailed*
-individuals in group $i$.)
+individuals in group $i$. <!-- footnote? -->
 
 #### False Positive Rate
 
@@ -488,13 +488,13 @@ intervention. Here, this would ask, “for an *innocent* person, what are
 the chances they will be wrongly convicted by virtue of the fact that
 they're a member of a given group?”
 
-^(\In probabilistic terms,
+In probabilistic terms,
 $$P(\textrm{wrongly jailed $\mid$ innocent, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FP_i}{FP_j} = \frac{n_i \times (1-p_i)}{n_j \times (1-p_j)}~~~\forall~i,j$$
 Where $FP_i$ is the number of false positives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of being truly
-guilty) in group $i$.)
+guilty) in group $i$. <!-- footnote? -->
 
 The difference between the choosing to focus on the $FPR$ and group
 size-adjusted false positives is somewhat nuanced and warrants
@@ -523,7 +523,7 @@ positives with:
     with 30 wrongfully convicted. Suppose the other 2700 are all
     innocent.
 
-\^(In this case, $$\begin{aligned}
+In this case, $$\begin{aligned}
 &\frac{FP_A}{n_A} = \frac{10}{1000} = 1.0\% \\
 &FDR_A = \frac{10}{100} = 10.0\% \\
 &FPR_A = \frac{10}{10} = 100.0\%\end{aligned}$$
@@ -531,7 +531,8 @@ positives with:
 while, $$\begin{aligned}
 &\frac{FP_B}{n_B} = \frac{30}{3000} = 1.0\% \\
 &FDR_B = \frac{30}{300} = 10.0\% \\
-&FPR_B = \frac{30}{2730} = 1.1\%\end{aligned}$$)
+&FPR_B = \frac{30}{2730} = 1.1\%\end{aligned}$$
+<!-- footnote? -->
 
 That is,
 
@@ -583,11 +584,11 @@ group, focusing on statements like “twice as many families with need for
 food assistance from Group A were missed by the benefit as from Group
 B.”
 
-\^(In probabilistic terms, we could express this as:
+In probabilistic terms, we could express this as:
 $$P(\textrm{missed by benefit, group $i$}) = C~~~\forall~i$$ Where $C$
 is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = 1~~~\forall~i,j$$ Where $FN_i$ is the number of
-false negatives in group $i$.)
+false negatives in group $i$. <!-- footnote? -->
 
 Differences in the number of false negatives by group, however, may be
 relatively limited in measuring equity when the groups are very
@@ -602,12 +603,12 @@ question of fairness is to ask, “just by virtue of the fact that an
 individual is a member of a given group, what are the chances they will
 be missed by the food subsidy?”
 
-\^(That is, in terms of probability,
+That is, in terms of probability,
 $$P(\textrm{missed by benefit $\mid$ group $i$}) = C~~~\forall~i$$ Where
 $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i}{n_j}~~~\forall~i,j$$ Where $FN_i$ is
 the number of false negatives and $n_i$ the total number of families in
-group $i$.)
+group $i$. <!-- footnote? -->
 
 While avoiding disparities on this metric focuses on the reasonable goal
 of treating different groups similarly in terms of classification
@@ -625,13 +626,13 @@ receiving the food subsidy. Such families will either be true negatives
 is, those who did need assistance but were missed by the program), and
 the $FOR$ asks what fraction of this set fall into the latter category.
 
-\^(In probabilistic terms,
+In probabilistic terms,
 $$P(\textrm{missed by program $\mid$ no subsidy, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i-k_i}{n_j-k_j}~~~\forall~i,j$$ Where
 $FN_i$ is the number of false negatives, $k_i$ the number of families
 receiving the subsidy, and $n_i$ is the total number of families in
-group $i$.)
+group $i$. <!-- footnote? -->
 
 In practice, the $FOR$ can be a useful metric in many situations,
 particularly because need can often be more easily measured among
@@ -650,13 +651,13 @@ with need for the intervention. In our example, this asks the question,
 be missed by the subsidy by virtue of the fact they're a member of a
 given group?”
 
-\^(In probabilistic terms,
+In probabilistic terms,
 $$P(\textrm{missed by subsidy $\mid$ need assistance, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{FN_i}{FN_j} = \frac{n_i \times p_i}{n_j \times p_j}~~~\forall~i,j$$
 Where $FN_i$ is the number of false negatives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of need for food
-assistance) in group $i$.)
+assistance) in group $i$. <!-- footnote? -->
 
 As with the punitive case, there is some nuance in the difference
 between choosing to focus on group-size adjusted false negatives and the
@@ -693,13 +694,13 @@ thinking about equity, asking the question, “given that the program
 cannot serve everyone with need, is it at least serving different
 populations in a manner that reflects their level of need?”
 
-\^(In probabilistic terms,
+In probabilistic terms,
 $$P(\textrm{received subsidy $\mid$ need assistance, group $i$}) = C~~~\forall~i$$
 Where $C$ is a constant value. Or, alternatively,
 $$\frac{TP_i}{TP_j} = \frac{n_i \times p_i}{n_j \times p_j}~~~\forall~i,j$$
 Where $TP_i$ is the number of true positives, $n_i$ the total number of
 individuals, and $p_i$ is the prevalence (here, rate of need for food
-assistance) in group $i$.)
+assistance) in group $i$. <!-- footnote? -->
 
 Note that, unlike the metrics described above, using recall as an equity
 metric doesn't explicitly focus on the mistakes being made by the
@@ -722,7 +723,7 @@ we have used in these cases is to balance recall relative to prevalence
 (however, there's no theoretically “right” choice here and it's
 generally best to consider a range of options):
 
-\^($$\frac{recall_i}{recall_j} = \frac{p_i}{p_j}~~~\forall~i,j$$)
+$$\frac{recall_i}{recall_j} = \frac{p_i}{p_j}~~~\forall~i,j$$
 
 The idea here is that (assuming the program is equally effective across
 groups), balancing recall will seek to improve outcomes at an equal rate

@@ -1101,9 +1101,9 @@ Jackson Lab,Susan Ackerman,Investigator,ME,Bar Harbor</code></pre>
 <p><code>table1 left join table2 on constraint</code></p>
 <p>returns all rows from the left table (<code>table1</code>) with the matching rows in the right table (<code>table2</code>), with the result being <code>null</code> in the right side when there is no match. This selection is illustrated in the middle column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. The addition of the <code>where h.gid is null</code> then selects only those rows in the left table with no right-hand match, as illustrated in the right-hand column of Figure <a href="chap-db.html#fig:fig-venn">4.5</a>. Note also the use of the <code>as</code> operator to rename the columns <code>illinois_schools</code> and <code>illinois_hospitals</code>. In this case, we rename them simply to make our query more compact.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig-venn"></span>
-<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, as used in Section [Manipulating and querying data](#sec:db:sql), the left join, and left excluding join" width="70%" />
+<img src="ChapterDB/figures/fig-venn.png" alt="Three types of *join* illustrated: the inner join, the left join, and left excluding join" width="70%" />
 <p class="caption">
-Figure 4.5: Three types of <em>join</em> illustrated: the inner join, as used in Section <a href="chap-db.html#sec:db:sql">Manipulating and querying data</a>, the left join, and left excluding join
+Figure 4.5: Three types of <em>join</em> illustrated: the inner join, the left join, and left excluding join
 </p>
 </div>
 <hr />
