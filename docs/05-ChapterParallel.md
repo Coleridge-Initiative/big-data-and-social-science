@@ -138,7 +138,11 @@ computation to be moved to the data during execution.
 
 ### The Hadoop Distributed File System
 
-The Hadoop Distributed File System [@Hadoop; @HDFS] is a distributed file system that stores data across all the nodes (machines) of a Hadoop cluster. HDFS splits large data files into smaller blocks (chunks of data) which are managed by different nodes in a cluster. Each
+The Hadoop Distributed File System [@HDFS] is a distributed file 
+system that stores data across all the nodes (machines) of a Hadoop
+cluster.^[https://hadoop.apache.org/docs/stable/] HDFS splits large 
+data files into smaller blocks (chunks of data) which are managed 
+by different nodes in a cluster. Each
 block is also replicated across several nodes as an attempt to ensure
 that a full copy of the data is still available even in the case of
 computing node failures. The block size as well as the number of
