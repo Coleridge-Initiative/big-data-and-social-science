@@ -234,7 +234,7 @@ of science advocacy too."
 
 In order to answer his question, an entire research field developed that pulled together relevant data from a wide variety of different sources using widely differing methodologies and approaches. They addressed challenges often faced by social science and computer science researchers trying to use new data to answer important questions---namely that inputs, outputs and outcomes are not generated or combined in a systematic fashion, even though producing consistent and reliable answers to stakeholder requests requires the use of common data sources and standardized methodologies. They were able to pull together new digital sources of data and apply modern technologies to analyze them.  In the book we use three main examples to show how this was done. The first is to  describe **what** research is being done, using data produced from multiple agencies on grand funding. The second is to use award and patent administrative records to describe **who** is doing the research (and **with whom**). The third is to use patent data to describe **what results** the funding has generated [@weinberg2014science, @Lane2018]  
 
-Showing how those challenges can be addressed fits in with the goal of the book. The focus is to highlight how to use new digital technologies to capture the data needed to understand and address a set of questions, with an illustrative focus on the broad  results of Federal Science and Technology investments. We are able to draw on the public availability of a wide variety of research inputs, such as federal grant information, and some outputs, particularly patent data. We are also able to draw on new and more accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names [@han2004two, @smalheiser2009author, @li2014disambiguation, @kim2016inventor]. Figure \@ref(fig:fig2) provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities and shows.
+Showing how those challenges can be addressed fits in with the goal of the book. The focus is to highlight how to use new digital technologies to capture the data needed to understand and address a set of questions, with an illustrative focus on the broad results of Federal Science and Technology investments. We are able to draw on the public availability of a wide variety of research inputs, such as federal grant information, and some outputs, particularly patent data. We are also able to draw on new and more accurate methods exist for reliably attributing research products to researchers, a nontrivial task due to considerable ambiguity in author names [@han2004two, @smalheiser2009author, @li2014disambiguation, @kim2016inventor]. Figure \@ref(fig:fig2) provides an abstract representation of the empirical approach that is needed: data about grants, the people who are funded on grants, and the subsequent scientific and economic activities and shows.
 
 First, data must be captured on what is funded, and since the data are
 in text format, computational linguistics tools must be applied
@@ -287,7 +287,7 @@ we discuss how to store the data in different types of data formats.
 
 ---
 
-**BOX**
+**Box: IRIS data infrastructure** <a id="box:intro1"></a>
 
 Much more information is available at the Institute for Research on Innovation and Science (IRIS, https://iris.isr.umich.edu/) at the University of Michigan. The Institute has extended the data infrastructure to bring together both confidential and public data in a secure environment. They have worked with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors---and show the direct effects on that funding on their subsequent scientific and economic activity [@InstituteForResearchOnInnovationAndScienceIRISResearch2019]. To date, over 100 researchers from dozens of institutions have worked with the new data infrastructure to provide an empirical response to Marburger's call.
 
@@ -309,9 +309,7 @@ and
 
 ---
 
-**BOX**
-
-Building data science skills to support state and local efforts to become more data driven in the provision of human services.
+**Box: Data science skills and the provision of human services** <a id="box:intro2"></a>
 
 The Offices of Family Assistance Office and of Planning, Research, and Evaluation in the Department of Health and Human Services' Administration for Children and Families set up a TANF data collaborative (https://www.tanfdata.org/) to help professionals at TANF and related human services agencies develop key data science skills. The focus is on teaching participants how to scope a problem, do record linkage, apply machine learning and visualization tools and learn about privacy issues when working with confidential data.  
 

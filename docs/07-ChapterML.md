@@ -366,7 +366,7 @@ will use in this section.
 
 ---
 
-**Box 7.3: Machine learning vocabulary** <a id="box:ml3"></a>
+**Box: Machine learning vocabulary** <a id="box:ml3"></a>
 
 -  **Learning**: In machine learning, you will notice the term *learning* that will
     be used in the context of "learning" a model. This is what you

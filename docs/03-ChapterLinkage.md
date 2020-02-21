@@ -65,7 +65,7 @@ different algorithms on studies of patent productivity
 
 ---
 
-**Box: Examples** <a id="box:link1"></a>
+**Box: Record Linkage Examples** <a id="box:link1"></a>
 
 In addition to the worked examples in this chapter here are a few other papers that show the wide variety of projects using combining records from different sources.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
