@@ -1,4 +1,3 @@
-<!-- % footnotes ^(...)? **** --> 
 
 Bias and Fairness {#chap:bias}
 ================

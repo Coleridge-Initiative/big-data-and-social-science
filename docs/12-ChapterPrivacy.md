@@ -1,8 +1,3 @@
-<!--
-% - Rayid: "check Initially, assume the organization is on the outer frontier." ... what does this mean?
-% - Julia: on Research Data Centers, add a line how the new envisioned ADRF would allow more replicability/reproducibility and access toothers but researchers? (industry, non-profit, government) for whom current RDCs are too hard to jump through hoops?
---> 
-
 
 Privacy and Confidentiality {#chap:privacy}
 ===========================

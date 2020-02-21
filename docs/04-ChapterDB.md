@@ -1,4 +1,3 @@
-<!-- % done --> 
 
 Databases {#chap:db}
 =========

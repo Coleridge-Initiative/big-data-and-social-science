@@ -1,6 +1,3 @@
-<!-- 
-% 
---> 
 
 Scaling up through Parallel and Distributed Computing {#chap:parallel}
 =========================

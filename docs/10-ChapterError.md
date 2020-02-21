@@ -1,6 +1,3 @@
-<!--
-%done
---> 
 
 Data Quality and Inference Errors {#chap:errors}
 ====================

@@ -1,7 +1,3 @@
-<!--
-%done
---> 
-
 
 Privacy and Confidentiality {#chap:privacy}
 ===========================

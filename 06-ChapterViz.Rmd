@@ -1,4 +1,3 @@
-<!-- % done --> 
 
 Information Visualization {#chap:viz}
 =========================

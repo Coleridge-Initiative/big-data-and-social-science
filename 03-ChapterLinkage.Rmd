@@ -1,4 +1,3 @@
-<!-- % done --> 
 
 Record Linkage {#chap:link}
 ==============

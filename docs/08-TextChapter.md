@@ -1,6 +1,3 @@
-<!--
-% done
---> 
 
 Text Analysis {#chap:text}
 =============

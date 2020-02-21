@@ -1,6 +1,3 @@
-<!-- 
-%ToDo: Missing references (\ian)
---> 
 
 Introduction {#chap:intro}
 ============
@@ -76,12 +73,11 @@ Identifying causal relationships is another common goal for social science resea
 
 **Example: New data and causal inference**
 
-If the data generating process is not understood, resources can be badly misallocated. Overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, internet savvy people with cell-phones and away from elderly or impoverished neighborhoods [@shelton2014mapping].  Of course, all data collection approaches have had similar risks. Bad survey methodology led the Literary Digest to incorrectly call the 1936 election [@squire19881936]. Inadequate understanding of coverage, incentive and quality issues, together with the lack of a comparison group, has hampered the use of administrative records---famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction [@donohue2006uses]. 
-<!-- \ian{Need: Le Miles, 2006} -->
+If the data generating process is not understood, resources can be badly misallocated. Overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, internet savvy people with cell-phones and away from elderly or impoverished neighborhoods [@shelton2014mapping].  Of course, all data collection approaches have had similar risks. Bad survey methodology led the Literary Digest to incorrectly call the 1936 election [@squire19881936]. Inadequate understanding of coverage, incentive and quality issues, together with the lack of a comparison group, has hampered the use of administrative records---famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction [@donohue2006uses].
 
 ---
 
-In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations [@athey2017state] 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest. <!-- (cite: Stuart et al. 2010) --> New methods to address generalizability are under development [@dugoff2014generalizing]. <!-- \ian{add: Kern et al., in press} --> While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.
+In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations [@athey2017state] 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest [@stuart2010matching]. New methods to address generalizability are under development [@dugoff2014generalizing]. While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.
 
 **Prediction**
 
