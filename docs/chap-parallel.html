@@ -473,7 +473,7 @@ Figure 5.1: Top: The traditional parallel computing model where data are brought
 <h3><span class="header-section-number">5.3.3</span> Hardware provisioning</h3>
 <p>Hadoop requires a distributed cluster of machines to operate efficiently. (It can be set up to run entirely on a single computer, but this should only be done for technology demonstration purposes.) This is mostly because the MapReduce performance heavily depends on the total I/O throughput (i.e., disk read and write) of the entire system. Having a distributed cluster, where each machine has its own set of hard drives, is one of the most efficient ways to maximize this throughput.</p>
 <p>A typical Hadoop cluster consists of two types of machine: masters and workers. Master machines are those exclusively reserved for running services that are critical to the framework operations. Some examples are the NameNode and the JobTracker services, which are tasked to manage how data and tasks are distributed among the machines, respectively. The worker machines are reserved for data storage and for running actual computation tasks (i.e., map and reduce). It is normal to have worker machines that can be included or removed from an operational cluster on demand. This ability to vary the number of worker nodes makes the overall system more tolerant of failure. However, master machines are usually required to be running uninterrupted.</p>
-<p>Provisioning and configuring the hardware for Hadoop, like any other parallel computing, are some of the most important and complex tasks in setting up a cluster, and they often require a lot of experience and careful consideration. Major big data vendors provide guidelines and tools to facilitate the process <span class="citation">(Apache Software Foundation, n.d.; Cloudera, n.d.; Baldeschwieler <a href="#ref-Provisioning">2011</a>)</span>. most decisions will be based on the types of analysis to be run on the cluster, for which only you, as the user, can provide the best input.</p>
+<p>Provisioning and configuring the hardware for Hadoop, like any other parallel computing, are some of the most important and complex tasks in setting up a cluster, and they often require a lot of experience and careful consideration. Major big data vendors provide guidelines and tools to facilitate the process <span class="citation">(Apache Software Foundation, n.d.; Cloudera, n.d.)</span>. most decisions will be based on the types of analysis to be run on the cluster, for which only you, as the user, can provide the best input.</p>
 </div>
 <div id="programming-in-hadoop" class="section level3">
 <h3><span class="header-section-number">5.3.4</span> Programming in Hadoop</h3>
@@ -734,20 +734,14 @@ Listing: Python code for a Spark program to aggregate the debt–income ratio fo
 </div>
 <div id="resources-2" class="section level2">
 <h2><span class="header-section-number">5.7</span> Resources</h2>
-<p>There are a wealth of online resources describing both Hadoop and Spark. See, for example, the tutorials on the Apache Hadoop<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a> and Spark<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a> websites. Albanese describes how to use Hadoop for social science <span class="citation">(Albanese <a href="#ref-socialhadoop">2010</a>)</span>, and Lin and Dyer discuss the use of MapReduce for text analysis <span class="citation">(Lin and Dyer <a href="#ref-lin2010data">2010</a>)</span>.</p>
+<p>There are a wealth of online resources describing both Hadoop and Spark. See, for example, the tutorials on the Apache Hadoop<a href="#fn43" class="footnoteRef" id="fnref43"><sup>43</sup></a> and Spark<a href="#fn44" class="footnoteRef" id="fnref44"><sup>44</sup></a> websites. Lin and Dyer discuss the use of MapReduce for text analysis <span class="citation">(Lin and Dyer <a href="#ref-lin2010data">2010</a>)</span>.</p>
 
 </div>
 </div>
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-aghbari2019">
-<p>Al Aghbari, Zaher, Mohammed Bahutair, and Ibrahim Kamel. 2019. “GeoSimMR: A Mapreduce Algorithm for Detecting Communities Based on Distance and Interest in Social Networks.” <em>Data Science Journal</em> 18 (1): 13. doi:<a href="https://doi.org/http://doi.org/10.5334/dsj-2019-013">http://doi.org/10.5334/dsj-2019-013</a>.</p>
-</div>
-<div id="ref-socialhadoop">
-<p>Albanese, Ed. 2010. “Scaling Social Science with Hadoop.” <a href="http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/" class="uri">http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/</a>. Accessed February 1, 2016.</p>
-</div>
-<div id="ref-Provisioning">
-<p>Baldeschwieler, Eric. 2011. “Best Practices for Selecting Apache Hadoop Hardware.” <em>Hortonworks</em>, <a href="http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/" class="uri">http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/</a>.</p>
+<p>Al Aghbari, Zaher, Mohammed Bahutair, and Ibrahim Kamel. 2019. “GeoSimMR: A Mapreduce Algorithm for Detecting Communities Based on Distance and Interest in Social Networks.” <em>Data Science Journal</em> 18 (1): 13.</p>
 </div>
 <div id="ref-ching2012">
 <p>Ching, Ravi, Averyand Murthy, Dmytro Dmytro Molkov, Ramkumar Vadali, and Paul Yang. 2012. “Under the Hood: Scheduling MapReduce Jobs More Efficiently with Corona.” <a href="https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/" class="uri">https://www.facebook.com/notes/facebook-engineering/under-the-hood-scheduling-mapreduce-jobs-more-efficiently-with-corona/10151142560538920/</a>.</p>
@@ -765,7 +759,7 @@ Listing: Python code for a Spark program to aggregate the debt–income ratio fo
 <p>Gropp, William, Ewing Lusk, and Anthony Skjellum. 2014. <em>Using Mpi: Portable Parallel Programming with the Message-Passing Interface</em>. MIT Press.</p>
 </div>
 <div id="ref-kolb2012">
-<p>Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. “Dedoop: Efficient Deduplication with Hadoop.” <em>Proc. VLDB Endow.</em> 5 (12). VLDB Endowment: 1878–81. doi:<a href="https://doi.org/10.14778/2367502.2367527">10.14778/2367502.2367527</a>.</p>
+<p>Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. “Dedoop: Efficient Deduplication with Hadoop.” <em>Proceedings of the VLDB Endowment</em> 5 (12): 1878–81.</p>
 </div>
 <div id="ref-lin2010data">
 <p>Lin, Jimmy, and Chris Dyer. 2010. <em>Data-Intensive Text Processing with MapReduce</em>. Morgan &amp; Claypool Publishers.</p>
@@ -774,7 +768,7 @@ Listing: Python code for a Spark program to aggregate the debt–income ratio fo
 <p>Lockwood, Glenn K. 2015. “Conceptual Overview of Map-Reduce and Hadoop.” <a href="http://www.glennklockwood.com/data-intensive/hadoop/overview.html" class="uri">http://www.glennklockwood.com/data-intensive/hadoop/overview.html</a>.</p>
 </div>
 <div id="ref-bigdata_old1">
-<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 Acm/Ieee Conference on Supercomputing</em>, 230–41. ACM. doi:<a href="https://doi.org/10.1145/125826.125954">10.1145/125826.125954</a>.</p>
+<p>Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P. Mesirov. 1991. “Computing Turbulent Flow in Complex Geometries on a Massively Parallel Processor.” In <em>Proceedings of the 1991 ACM/IEEE Conference on Supercomputing</em>, 230–41. ACM.</p>
 </div>
 </div>
 <div class="footnotes">

@@ -1775,8 +1775,7 @@ Software:
 
 -   Commercial: IBM Modeler, SAS Enterprise Miner, Matlab.
 
-Many excellent courses are available online [@MLcourses], including
-Hastie and Tibshirani's *Statistical Learning* [@SLcourse].
+Many excellent courses are available online [@MLcourses].
 
 Major conferences in this area include the [International Conference on
 Machine Learning](https://icml.cc/), the [Annual Conference on Neural Information

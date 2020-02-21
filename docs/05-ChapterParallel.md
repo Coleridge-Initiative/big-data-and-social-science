@@ -265,7 +265,7 @@ parallel computing, are some of the most important and complex tasks in
 setting up a cluster, and they often require a lot of experience and
 careful consideration. Major big data vendors provide guidelines and
 tools to facilitate the process
-[@ApacheAmbari; @ClouderaManager; @Provisioning]. most decisions will be
+[@ApacheAmbari; @ClouderaManager]. most decisions will be
 based on the types of analysis to be run on the cluster, for which only
 you, as the user, can provide the best input.
 
@@ -677,6 +677,5 @@ Resources
 
 There are a wealth of online resources describing both Hadoop and Spark.
 See, for example, the tutorials on the Apache Hadoop^[http://hadoop.apache.org/] 
-and Spark^[https://spark.apache.org/] websites. Albanese describes how to 
-use Hadoop for social science [@socialhadoop], and Lin and Dyer discuss 
+and Spark^[https://spark.apache.org/] websites. Lin and Dyer discuss 
 the use of MapReduce for text analysis [@lin2010data].

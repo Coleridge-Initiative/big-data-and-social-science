@@ -399,8 +399,8 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <ul>
 <li>‘How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?’</li>
 </ul>
-<p><strong>Privacy</strong> “encompasses not only the famous ‘right to be left alone,’ or keeping one’s personal matters and relationships secret, but also the ability to share information selectively but not publicly” <span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>)</span>. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2009">2009</a>)</span>. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity of the data flow when deciding which data to collect and how to analyze and share them.</p>
-<p><strong>Confidentiality</strong> is “preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information” <span class="citation">(McCallister, Grance, and Scarfone <a href="#ref-mccallister2010sp">2010</a>)</span>. Doing so is not easy—the challenge to the research community is how to balance the <em>risk</em> of providing access with the associated utility <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>. To give a simple example, if means and percentages are presented for a <em>large</em> number of people, it will be difficult to infer an individual’s value from such output, even if one knew that a certain individual or unit contributed to the formation of that mean or percentage. However, if those means and percentages are presented for subgroups or in multivariate tables with small cell sizes, the risk for disclosure increases <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>.</p>
+<p><strong>Privacy</strong> “encompasses not only the famous ‘right to be left alone,’ or keeping one’s personal matters and relationships secret, but also the ability to share information selectively but not publicly” <span class="citation">(President’s Council of Advisors on Science and Technology <a href="#ref-house2014big">2014</a>)</span>. A useful way of thinking about privacy is the notion of preserving the appropriate flow of information <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2009">2009</a>)</span>. There is no specific data type or piece of information that is too sensitive to be shared in all circumstances. In some context providing detailed information about one’s health is very appropriate, for example if it helps finding the right treatment for a disease. It is generally important to understand the context and the contextual integrity of the data flow when deciding which data to collect and how to analyze and share them.</p>
+<p><strong>Confidentiality</strong> is “preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information” <span class="citation">(McCallister, Grance, and Scarfone <a href="#ref-mccallister2010sp">2010</a>)</span>. Doing so is not easy—the challenge to the research community is how to balance the <em>risk</em> of providing access with the associated utility <span class="citation">(Duncan, Elliot, and Juan Jose Salazar <a href="#ref-duncanstatistical">2011</a>)</span>. To give a simple example, if means and percentages are presented for a <em>large</em> number of people, it will be difficult to infer an individual’s value from such output, even if one knew that a certain individual or unit contributed to the formation of that mean or percentage. However, if those means and percentages are presented for subgroups or in multivariate tables with small cell sizes, the risk for disclosure increases <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>.</p>
 <div class="figure" style="text-align: center"><span id="fig:fig11-1"></span>
 <img src="ChapterPrivacy/figures/fig11-1.png" alt="The privacy--utility tradeoff" width="70%" />
 <p class="caption">
@@ -411,7 +411,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p><strong>Harm</strong> Although much of the discussion of privacy and confidentiality has been driven by the imperatives of the legislation governing statistical agencies, which imposes civil and criminal penalties for any reidentification, statistical agencies no longer have a monopoly on data access and use. As a result, there is more attention being paid to the potential for harm based on the type of information being shared, rather than the fact that a piece of information is shared <span class="citation">(Nissenbaum <a href="#ref-nissenbaum2019contextual">2019</a>)</span>. Intuitively, if an intruder finds out that an individual in a dataset is a woman, or is married, that may cause less harm than if information about income, sexual history, or criminal records are recovered.</p>
 <p>There is an explicit tradeoff between data access and data utility. The greater the number of researchers and analysts that access the data, the greater the quality of the analysis and the greater the number of potential uses <span class="citation">(Lane <a href="#ref-Lane2007a">2007</a><a href="#ref-Lane2007a">a</a>)</span>. We depict this tradeoff graphically in Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>. The concave curves in this hypothetical example depict the technological relationship between data utility and privacy for an organization such as a business firm or a statistical agency. At one extreme, all information is available to anybody about all units, and therefore high analytic utility is associated with the data that are not at all protected. At the other extreme, nobody has access to any data and no utility is achieved. Initially, assume the organization is on the outer frontier. Increased external data resources (those not used by the organization) increase the risk of reidentification. This is represented by an inward shift of the utility/privacy frontier in Figure <a href="chap-privacy.html#fig:fig11-1">12.1</a>. Before the increase in external data, the organization could achieve a level of data utility <span class="math inline">\(U^*\)</span> and privacy <span class="math inline">\(P_1\)</span>. The increase in externally available data now means that in order to maintain utility at <span class="math inline">\(U^*\)</span>, privacy is reduced to <span class="math inline">\(P_2\)</span>. This simple example represents the challenge to all organizations that release statistical or analytical products obtained from underlying identifiable data. As more data from external sources becomes available, it becomes more difficult to maintain privacy.</p>
 <p>Previously, national statistical agencies had the capacity and the mandate to make dissemination decisions: they assessed the risk, they understood the data user community and the associated utility from data releases. And they had the wherewithal to address the legal, technical, and statistical issues associated with protecting confidentiality <span class="citation">(Trewin et al. <a href="#ref-trewin2007managing">2007</a>)</span>.</p>
-<p>But in a world of massive amounts of data, many once-settled issues have new complications, and wholly new issues arise that need to be addressed, albeit under the same rubrics. The new types of data have much greater potential utility, often because it is possible to study small cells or the tails of a distribution in ways not possible with small data. In fact, in many social science applications, the tails of the distribution are often the most interesting and hardest-to-reach parts of the population being studied; consider health care costs for a small number of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, or economic activity such as rapid employment growth by a small number of firms <span class="citation">(Decker et al. to appear)</span>.</p>
+<p>But in a world of massive amounts of data, many once-settled issues have new complications, and wholly new issues arise that need to be addressed, albeit under the same rubrics. The new types of data have much greater potential utility, often because it is possible to study small cells or the tails of a distribution in ways not possible with small data. In fact, in many social science applications, the tails of the distribution are often the most interesting and hardest-to-reach parts of the population being studied; consider health care costs for a small number of ill people <span class="citation">(Stanton and Rutherford <a href="#ref-stanton2006high">2006</a>)</span>, or economic activity such as rapid employment growth by a small number of firms <span class="citation">(Decker et al. <a href="#ref-decker2015has">2016</a>)</span>.</p>
 <hr />
 <p><strong>Example: The importance of activity in the tails</strong></p>
 <p>Spending on health care services in the United States is highly concentrated among a small proportion of people with extremely high use. For the overall civilian population living in the community, the latest data indicate that more than 20% of all personal health care spending in 2009 ($275 billion) was on behalf of just 1% of the population <span class="citation">(Schoenman <a href="#ref-healthcarespending">2012</a>)</span>.</p>
@@ -442,7 +442,7 @@ Figure 12.1: The privacy–utility tradeoff
 <blockquote>
 <p>concepts and methods that ensure the confidentiality of micro and aggregated data that are to be published. It is methodology used to design statistical outputs in a way that someone with access to that output cannot relate a known individual (or other responding unit) to an element in the output.</p>
 </blockquote>
-<p>Traditionally, confidentiality protection was accomplished by releasing only <em>aggregated tabular data</em>. This practice worked well in settings where the primary purpose was enumeration, such as census taking. However, tabular data are poorly suited to describing the underlying distributions and covariance across variables that are often the focus of applied social science research <span class="citation">(Duncan, Elliot, and Salazar-González <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
+<p>Traditionally, confidentiality protection was accomplished by releasing only <em>aggregated tabular data</em>. This practice worked well in settings where the primary purpose was enumeration, such as census taking. However, tabular data are poorly suited to describing the underlying distributions and covariance across variables that are often the focus of applied social science research <span class="citation">(Duncan, Elliot, and Juan Jose Salazar <a href="#ref-duncanstatistical">2011</a>)</span>.</p>
 <p>To provide researchers access to data that permitted analysis of the underlying variance–covariance structure of the data, some agencies have constructed public use micro-data samples. To product confidentiality in such <em>public use files</em>, a number of statistical disclosure control procedures are typically applied. These include stripping all identifying (e.g., PII) fields from the data, topcoding highly skewed variables (e.g., income), and swapping records <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>; Zayatz <a href="#ref-zayatz2007disclosure">2007</a>)</span>. However, the mosaic effect—where disparate pieces of information can be combined to reidentify individuals—dramatically increases the risk of releasing public use files <span class="citation">(Czajka et al. <a href="#ref-czajka2014minimizing">2014</a>)</span>. In addition, there is more and more evidence that the statistical disclosure procedure applied to produce them decreases their utility across many applications <span class="citation">(Burkhauser, Feng, and Larrimore <a href="#ref-burkhauser2010improving">2010</a>)</span>.</p>
 <p>Some agencies provide access to confidential micro-data through <em>licensing</em> arrangements. A contract specifies the conditions of use and what safeguards must be in place. In some cases, the agency has the authority to conduct random inspections. However, this approach has led to a number of operational challenges, including version control, identifying and managing risky researcher behavior, and management costs <span class="citation">(Doyle et al. <a href="#ref-doyle2001confidentiality">2001</a>)</span>.</p>
 <p>Another approach to providing access to confidential data that has been proposed by a group of theoretical computer scientists Cynthia Dwork, Frank McSherry, Kobbi Nissim, and Adam Smith <span class="citation">(<a href="#ref-Dworkroth2014">2014</a>)</span>. Here statistics or other reported outputs are injected with noise, and are called “differentially private” if the inclusion or exclusion of the most at-risk person in the population does not change the probability of any output by more than a given factor. The parameter driving this factor (usually referred to as epsilon) quantifies how sensitive the aggregate output is to any one person’s data. If it is low, the output is highly “private” in the sense that it will be very difficult to reconstruct anything based on it. If it is high, reconstruction is easy. For a discussion of the applications to Census data see <span class="citation">(Ruggles et al. <a href="#ref-ruggles2019">2019</a>; Abowd <a href="#ref-abowed2018">2018</a>)</span>.</p>
@@ -452,7 +452,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>The second approach is establishing research data centers (RDC). RDC present an established operational approach to facilitate access to confidential microdata for research and/or statistical purposes. This approach is based on the theoretical framework of the “Five Safes” which was initially developed by Felix Ritchie at the UK Office of National Statistics in 2003 <span class="citation">(Desai, Ritchie, and Welpton <a href="#ref-desaietal2016">2016</a>)</span>. The first dimension refers to safe projects. This dimension mainly refers to the whether the intended use of the data conforms with the use specified in legislations or regulations. For example, a legislation may specifically allow users to use the data only for independent scientific research. Safe people, the second dimension of the Five Saves framework, requires data users to be able to use the data in an appropriate way. A certain amount of technical skills or minimum educational levels may be required to access the data. In contrast, safe data refers to the potential to de-identifying individuals or entities in the data. Safe settings relate to the practical controls on how the data are accessed. Different channels may exist which in turn may depend on the de-identifcation risk. In practice, the lower the de-identifcation risk the more restrictive the setting will be. Lastly, safe output refers to the risk of de-identifcation in publications from confidential microdata. Strong input and output controls are in place to ensure that published findings comply with the privacy and confidentiality regulations <span class="citation">(Hayden <a href="#ref-hayden2012broken">2012</a>)</span>.</p>
 <hr />
 <p><strong>Box</strong></p>
-<p>It is not easy to use the FSRDCs. Every stage of the research process is significantly more time-consuming than using public use data, and only the most persistent researchers are successful. In addition, most of the branches charge high fees for anyone unaffiliated with an institution sponsoring an FSRDC. Projects are approved only if they benefit the Census Bureau, which by itself makes most research topics ineligible. Prospective users must prepare detailed proposals, including the precise models they intend to run and the research outputs they hope to remove from the center, which are generally restricted to model coefficients and supporting statistics. Most descriptive statistics are prohibited. Researchers are not allowed to “browse” the data or change the outputs based on their results. Under census law, researchers must become (unpaid) Census Bureau employees to gain access to non-public data. To meet this requirement, once a project is approved researchers must obtain Special Sworn Status, which involves a level 2 security clearance and fingerprint search. Applicants must be U.S. citizens or U.S. residents for three years, so most international scholars are excluded. Researchers then undergo data stewardship training. If researchers wish to modify their original model specifications or outputs, they must submit a written request and wait for approval. When the research is complete, theresults must be cleared before publication by the Center for Disclosure Avoidance Research at the Census Bureau. Any deviations from the original proposal must be documented, justified, and approved. The FSRDCs were never intended as a substitute for public use microdata, and they cannot fulfill that role. Even if the number of seats in the centers could be multiplied several hundred-fold to accommodate the current number of users of public use data, substantial hurdles remain. Applying for access and gaining approval to use the FSRDC takes at least six months and usually more. Eligibility for using FSRDCs is limited to investigators (a) affiliated with an FSRDC (or with significant financial resources), (b) with sufficient time to wait for review and approvals, and (c) doing work deemed valuable by the Bureau <span class="citation">(UnivTask Force on Differential Privacy for Census Data† <a href="#ref-UnivTaskForceonDifferentialPrivacyforCensusData2019">2019</a>)</span>.</p>
+<p>It is not easy to use the FSRDCs. Every stage of the research process is significantly more time-consuming than using public use data, and only the most persistent researchers are successful. In addition, most of the branches charge high fees for anyone unaffiliated with an institution sponsoring an FSRDC. Projects are approved only if they benefit the Census Bureau, which by itself makes most research topics ineligible. Prospective users must prepare detailed proposals, including the precise models they intend to run and the research outputs they hope to remove from the center, which are generally restricted to model coefficients and supporting statistics. Most descriptive statistics are prohibited. Researchers are not allowed to “browse” the data or change the outputs based on their results. Under census law, researchers must become (unpaid) Census Bureau employees to gain access to non-public data. To meet this requirement, once a project is approved researchers must obtain Special Sworn Status, which involves a level 2 security clearance and fingerprint search. Applicants must be U.S. citizens or U.S. residents for three years, so most international scholars are excluded. Researchers then undergo data stewardship training. If researchers wish to modify their original model specifications or outputs, they must submit a written request and wait for approval. When the research is complete, theresults must be cleared before publication by the Center for Disclosure Avoidance Research at the Census Bureau. Any deviations from the original proposal must be documented, justified, and approved. The FSRDCs were never intended as a substitute for public use microdata, and they cannot fulfill that role. Even if the number of seats in the centers could be multiplied several hundred-fold to accommodate the current number of users of public use data, substantial hurdles remain. Applying for access and gaining approval to use the FSRDC takes at least six months and usually more. Eligibility for using FSRDCs is limited to investigators (a) affiliated with an FSRDC (or with significant financial resources), (b) with sufficient time to wait for review and approvals, and (c) doing work deemed valuable by the Bureau <span class="citation">(UnivTask Force on Differential Privacy for Census Data <a href="#ref-UnivTaskForceonDifferentialPrivacyforCensusData2019">2019</a>)</span>.</p>
 <hr />
 <p><strong>Box</strong></p>
 <p>There are other approaches that are becoming available. The Commission on Evidencebased Policy identified new technologies, such as remote access, cloud-based, virtual data facilities, as a promising approach to provide scalable secure access to microdata without the disadvantages of the bricks and mortar approached used by the FSRDC system. One such approach, the Administrative Data Research Facility has incorporated the “five safes” principles—safe projects, safe people, safe settings, safe data, and safe outputs (<a href="https://en.wikipedia.org/wiki/Five_safes)---into" class="uri">https://en.wikipedia.org/wiki/Five_safes)---into</a> its design. In addition to winning a Government Innovation Award <span class="citation">(Government Computer News Staff <a href="#ref-GovernmentComputerNewsStaff2018">2018</a>)</span>, it has been used to provide secure access to confidential data to over 450 government analysts and researchers in the past 3 years <span class="citation">(Kreuter, Ghani, and Lane <a href="#ref-Kreuter2019Change">2019</a>)</span>.</p>
@@ -466,7 +466,7 @@ Figure 12.1: The privacy–utility tradeoff
 </div>
 <div id="the-new-challenges" class="section level2">
 <h2><span class="header-section-number">12.5</span> The new challenges</h2>
-<p>While there are well-established policies and protocols surrounding access to and use of survey and administrative data, a major new challenge is the lack of clear guidelines governing the collection of data about human activity in a world in which all public, and some private, actions generate data that can be harvested <span class="citation">(Advisors on Science and Technology <a href="#ref-house2014big">2014</a>; Ohm <a href="#ref-ohm2010broken">2010</a>; Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. The twin pillars on which so much of social science have rested—informed consent and anonymization—are virtually useless in a big data setting where multiple data sets can be and are linked together using individual identifiers by a variety of players beyond social scientists with formal training and whose work is overseen by institutional review boards. This rapid expansion in data and their use is very much driven by the increased utility of the linked information to businesses, policymakers, and ultimately the taxpayer. In addition, there are no obvious data stewards and custodians who can be entrusted with preserving the privacy and confidentiality with regard to both the source data collected from sensors, social media, and many other sources, and the related analyses <span class="citation">(Lane and Stodden <a href="#ref-lane2013me">2013</a>)</span>.</p>
+<p>While there are well-established policies and protocols surrounding access to and use of survey and administrative data, a major new challenge is the lack of clear guidelines governing the collection of data about human activity in a world in which all public, and some private, actions generate data that can be harvested <span class="citation">(President’s Council of Advisors on Science and Technology <a href="#ref-house2014big">2014</a>; Ohm <a href="#ref-ohm2010broken">2010</a>; Strandburg <a href="#ref-Strandburg2014">2014</a>)</span>. The twin pillars on which so much of social science have rested—informed consent and anonymization—are virtually useless in a big data setting where multiple data sets can be and are linked together using individual identifiers by a variety of players beyond social scientists with formal training and whose work is overseen by institutional review boards. This rapid expansion in data and their use is very much driven by the increased utility of the linked information to businesses, policymakers, and ultimately the taxpayer. In addition, there are no obvious data stewards and custodians who can be entrusted with preserving the privacy and confidentiality with regard to both the source data collected from sensors, social media, and many other sources, and the related analyses <span class="citation">(Lane and Stodden <a href="#ref-lane2013me">2013</a>)</span>.</p>
 <p>It is clear that informed consent as historically construed is no longer feasible. As Nissenbaum <span class="citation">(<a href="#ref-nissenbaum2011contextual">2011</a>)</span> points out, notification is either comprehensive or comprehensible, but not both. While ideally human subjects are offered true freedom of choice based on a sound and sufficient understanding of what the choice entails, in reality the flow of data is so complex and the interest in the data usage so diverse that simplicity and clarity in the consent statement unavoidably result in losses of fidelity, as anyone who has accepted a Google Maps agreement is likely to understand <span class="citation">(Hayden <a href="#ref-check2015researchers">2015</a>)</span>. In addition, informed consent requires a greater understanding of the breadth of type of privacy breaches, the nature of harm as diffused over time, and an improved valuation of privacy in the big data context. Consumers may value their own privacy in variously flawed ways. They may, for example, have incomplete information, or an overabundance of information rendering processing impossible, or use heuristics that establish and routinize deviations from rational decision-making <span class="citation">(Acquisti <a href="#ref-Acquisti2014">2014</a>)</span>.</p>
 <p>It is also nearly impossible to truly anonymize data. Big data are often structured in such a way that essentially everyone in the file is unique, either because so many variables exist or because they are so frequent or geographically detailed, that they make it easy to reidentify individual patterns <span class="citation">(Narayanan and Shmatikov <a href="#ref-narayanan2008robust">2008</a>)</span>. It is also no longer possible to rely on sampling or measurement error in external files as a buffer for data protection, since most data are not in the hands of statistical agencies.</p>
 <p>There are no data stewards controlling access to individual data. Data are often so interconnected (think social media network data) that one person’s action can disclose information about another person without that person even knowing that their data are being accessed. The group of students posting pictures about a beer party is an obvious example, but, in a research context, if the principal investigator grants access to the proposal, information could be divulged about colleagues and students. In other words, volunteered information of a minority of individuals can unlock the same information about many—a type of “tyranny of the minority” <span class="citation">(Barocas and Nissenbaum <a href="#ref-barocas2014bigger">2014</a><a href="#ref-barocas2014bigger">b</a>)</span>.</p>
@@ -510,22 +510,19 @@ Figure 12.1: The privacy–utility tradeoff
 <h3>References</h3>
 <div id="refs" class="references">
 <div id="ref-abazajian2009seventh">
-<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2). IOP Publishing: 543.</p>
+<p>Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros, Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson, et al. 2009. “The Seventh Data Release of the Sloan Digital Sky Survey.” <em>Astrophysical Journal Supplement Series</em> 182 (2). IOP Publishing.</p>
 </div>
 <div id="ref-abowed2018">
-<p>Abowd, J. M. 2018. “The US Census Bureau Adopts Differential Privacy.” Proceedings of the 24th ACM SIGKDD International Conference on Knowledge Discovery &amp; Data Mining (pp. 2867-2867). ACM.</p>
+<p>Abowd, John M. 2018. “The US Census Bureau Adopts Differential Privacy.” In <em>Proceedings of the 24th Acm Sigkdd International Conference on Knowledge Discovery &amp; Data Mining.</em>, 2867–7. ACM.</p>
 </div>
 <div id="ref-abowd2004integrated">
-<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2). JSTOR: 224–29.</p>
+<p>Abowd, John M., John Haltiwanger, and Julia Lane. 2004. “Integrated Longitudinal Employer-Employee Data for the United States.” <em>American Economic Review</em> 94 (2): 224–29.</p>
 </div>
 <div id="ref-abowd2006final">
 <p>Abowd, John M., Martha Stinson, and Gary Benedetto. 2006. “Final Report to the Social Security Administration on the SIPP/SSA/IRS Public Use File Project.” Suitland, MD: Census Bureau, Longitudinal Employer-Household Dynamics Program.</p>
 </div>
 <div id="ref-Acquisti2014">
 <p>Acquisti, Alessandro. 2014. “The Economics and Behavioral Economics of Privacy.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
-</div>
-<div id="ref-house2014big">
-<p>Advisors on Science, President’s Council of, and Technology. 2014. “Big Data and Privacy: A Technological Perspective.” Washington, DC: Executive Office of the President.</p>
 </div>
 <div id="ref-Agrawal1994">
 <p>Agrawal, Rakesh, and Ramakrishnan Srikant. 1994. “Fast Algorithms for Mining Association Rules in Large Databases.” In <em>Proceedings of the 20th International Conference on Very Large Data Bases</em>.</p>
@@ -540,28 +537,31 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Barocas, Solon, and Helen Nissenbaum. 2014b. “The Limits of Anonymity and Consent in the Big Data Age.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University Press.</p>
 </div>
 <div id="ref-Bastian2013">
-<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <em>Scientific American</em>, <a href="http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th" class="uri">http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th</a> <a href="-olympiad-of-research-on-biomedical-publication/" class="uri">-olympiad-of-research-on-biomedical-publication/</a>.</p>
+<p>Bastian, Hilda. 2013. “Bad Research Rising: The 7th Olympiad of Research on Biomedical Publication.” <a href="https://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th-olympiad-of-research-on-biomedical-publication/" class="uri">https://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th-olympiad-of-research-on-biomedical-publication/</a> Accessed February 1, 2020.</p>
 </div>
 <div id="ref-bird2011computing">
-<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61. Annual Reviews: 99–118.</p>
+<p>Bird, Ian. 2011. “Computing for the Large Hadron Collider.” <em>Annual Review of Nuclear and Particle Science</em> 61: 99–118.</p>
 </div>
 <div id="ref-boyd2012critical">
-<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5). Taylor &amp; Francis: 662–79.</p>
+<p>Boyd, Danah, and Kate Crawford. 2012. “Critical Questions for Big Data: Provocations for a Cultural, Technological, and Scholarly Phenomenon.” <em>Information, Communication &amp; Society</em> 15 (5): 662–79.</p>
 </div>
 <div id="ref-brown2008economic">
 <p>Brown, Clair, John Haltiwanger, and Julia Lane. 2008. <em>Economic Turbulence: Is a Volatile Economy Good for America?</em> University of Chicago Press.</p>
 </div>
 <div id="ref-burkhauser2010improving">
-<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1). Elsevier: 69–72.</p>
+<p>Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010. “Improving Imputations of Top Incomes in the Public-Use Current Population Survey by Using Both Cell-Means and Variances.” <em>Economics Letters</em> 108 (1): 69–72.</p>
 </div>
 <div id="ref-Cecil2003">
-<p>Cecil, Joe, and Donna Eden. 2003. “The Legal Foundations of Confidentiality.” In <em>Key Issues in Confidentiality Research: Results of an Nsf Workshop</em>. National Science Foundation.</p>
+<p>Cecil, Joe, and Donna Eden. 2003. “The Legal Foundations of Confidentiality.” In <em>Key Issues in Confidentiality Research: Results of an NSF Workshop</em>. National Science Foundation.</p>
 </div>
 <div id="ref-Cumby2011">
 <p>Cumby, Chad, and Rayid Ghani. 2011. “A Machine Learning Based System for Semi-Automatically Redacting Documents.” AAAI Publications, Twenty-Third IAAI Conference.</p>
 </div>
 <div id="ref-czajka2014minimizing">
 <p>Czajka, John, Craig Schneider, Amang Sukasih, and Kevin Collins. 2014. “Minimizing Disclosure Risk in HHS Open Data Initiatives.” US Department of Health &amp; Human Services.</p>
+</div>
+<div id="ref-decker2015has">
+<p>Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. 2016. “Where Has All the Skewness Gone? The Decline in High-Growth (Young) Firms in the US.” <em>European Economic Review</em> 86: 4–23.</p>
 </div>
 <div id="ref-desaietal2016">
 <p>Desai, T., F. Ritchie, and R. Welpton. 2016. “Five Safes: Designing Data Access for Research.” Working Papers 20161601, Department of Accounting, Economics; Finance, Bristol Business School, University of the West of England, Bristol.</p>
@@ -575,14 +575,14 @@ Figure 12.1: The privacy–utility tradeoff
 <div id="ref-drechsler2011synthetic">
 <p>Drechsler, Jörg. 2011. <em>Synthetic Datasets for Statistical Disclosure Control: Theory and Implementation</em>. Springer.</p>
 </div>
-<div id="ref-duncanstatistical">
-<p>Duncan, G., M. Elliot, and J. J. Salazar-González. 2011. <em>Statistical Confidentiality: Principles and Practice</em>. Springer.</p>
-</div>
 <div id="ref-duncan2004disclosure">
 <p>Duncan, George T, and S Lynne Stokes. 2004. “Disclosure Risk Vs. Data Utility: The Ru Confidentiality Map as Applied to Topcoding.” <em>Chance</em> 17 (3). Taylor &amp; Francis: 16–20.</p>
 </div>
+<div id="ref-duncanstatistical">
+<p>Duncan, George T., Mark Elliot, and Gonzalez Juan Jose Salazar. 2011. <em>Statistical Confidentiality: Principles and Practice</em>. Springer.</p>
+</div>
 <div id="ref-Dworkroth2014">
-<p>Dwork, C., and A. Roth. 2014. “The Algorithmic Foundations of Differential Privacy.” <em>Foundations and Trends in Theoretical Computer Science</em> 9 (3–4): 211–407.</p>
+<p>Dwork, Cynthia, and Aaron Roth. 2014. “The Algorithmic Foundations of Differential Privacy.” <em>Foundations and Trends in Theoretical Computer Science</em> 9 (3–4): 211–407.</p>
 </div>
 <div id="ref-Elias2014">
 <p>Elias, Peter. 2014. “A European Perspective on Research and Big Data Access.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
@@ -591,7 +591,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Foster, Lucia, Ron S. Jarmin, and T. Lynn Riggs. 2009. “Resolving the Tension Between Access and Confidentiality: Past Experience and Future Plans at the US Census Bureau.” 09-33. US Census Bureau Center for Economic Studies.</p>
 </div>
 <div id="ref-galloway2017four">
-<p>Galloway, Scott. 2017. <em>The Four: The Hidden Dna of Amazon, Apple, Facebook and Google</em>. Random House.</p>
+<p>Galloway, Scott. 2017. <em>The Four: The Hidden DNA of Amazon, Apple, Facebook and Google</em>. Random House.</p>
 </div>
 <div id="ref-GovernmentComputerNewsStaff2018">
 <p>Government Computer News Staff. 2018. “Data mashups at government scale: The Census Bureau ADRF.” <em>GCN Magazine</em>.</p>
@@ -600,13 +600,13 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. “Who Creates Jobs? Small Versus Large Versus Young.” <em>Review of Economics and Statistics</em> 95 (2). MIT Press: 347–61.</p>
 </div>
 <div id="ref-check2015researchers">
-<p>Hayden, Erica Check. 2015. “Researchers Wrestle with a Privacy Problem.” <em>Nature</em> 525 (7570): 440.</p>
+<p>Hayden, Erica Check. 2015. “Researchers Wrestle with a Privacy Problem.” <em>Nature</em> 525 (7570).</p>
 </div>
 <div id="ref-hayden2012broken">
-<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403). Macmillan Publishers Ltd., London, England: 312–14.</p>
+<p>Hayden, Erika Check. 2012. “A Broken Contract.” <em>Nature</em> 486 (7403): 312–14.</p>
 </div>
 <div id="ref-herzog2007data">
-<p>Herzog, Thomas N, Fritz J Scheuren, and William E Winkler. 2007. <em>Data Quality and Record Linkage Techniques</em>. Springer Science &amp; Business Media.</p>
+<p>Herzog, Thomas N., Fritz J. Scheuren, and William E. Winkler. 2007. <em>Data Quality and Record Linkage Techniques</em>. Springer Science &amp; Business Media.</p>
 </div>
 <div id="ref-hill2012target">
 <p>Hill, Kashmir. 2012. “How Target Figured Out a Teen Girl Was Pregnant Before Her Father Did.” <em>Forbes</em>, <a href="http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6" class="uri">http://www.forbes.com/sites/kashmirhill/2012/02/16/how-target-figured-out-a-teen-girl-was-pregnant-before-her-father-did/#7280148734c6</a>.</p>
@@ -621,10 +621,10 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Hundepool, Anco, Josep Domingo-Ferrer, Luisa Franconi, Sarah Giessing, Rainer Lenz, Jane Longhurst, E. Schulte Nordholt, Giovanni Seri, and P. Wolf. 2010. “Handbook on Statistical Disclosure Control.” Network of Excellence in the European Statistical System in the Field of Statistical Disclosure Control.</p>
 </div>
 <div id="ref-Ioannidis2005">
-<p>Ioannidis, J. P. A. 2005. “Why Most Published Research Findings Are False.” <em>PLoS Medicine</em> 2 (8): e124.</p>
+<p>Ioannidis, John P. A. 2005. “Why Most Published Research Findings Are False.” <em>PLoS Medicine</em> 2 (8): e124.</p>
 </div>
 <div id="ref-jarmin2002longitudinal">
-<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN 2128793.</p>
+<p>Jarmin, Ron S., and Javier Miranda. 2002. “The Longitudinal Business Database.” Available at SSRN: <a href="https://ssrn.com/abstract=2128793" class="uri">https://ssrn.com/abstract=2128793</a>.</p>
 </div>
 <div id="ref-jarmin2014expanding">
 <p>Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. “Expanding the Role of Synthetic Data at the US Census Bureau.” <em>Statistical Journal of the IAOS</em> 30 (2): 117–21.</p>
@@ -642,7 +642,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Kreuter, Frauke, and Roger D. Peng. 2014. “Extracting Information from Big Data: Issues of Measurement, Inference, and Linkage.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 257–75. Cambridge University Press.</p>
 </div>
 <div id="ref-Kreuter2019Change">
-<p>Kreuter, Frauke, Rayid Ghani, and Julia Lane. 2019. “Change Through Data: A Data Analytics Training Program for Government Employees.” <em>Harvard Data Science Review</em> 1 (2). doi:<a href="https://doi.org/10.1162/99608f92.ed353ae3">10.1162/99608f92.ed353ae3</a>.</p>
+<p>Kreuter, Frauke, Rayid Ghani, and Julia Lane. 2019. “Change Through Data: A Data Analytics Training Program for Government Employees.” <em>Harvard Data Science Review</em> 1 (2).</p>
 </div>
 <div id="ref-Lane2007a">
 <p>Lane, Julia. 2007a. “Optimizing Access to Micro Data.” <em>Journal of Official Statistics</em> 23.</p>
@@ -651,7 +651,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Lane, Julia. 2007b. “Optimizing Access to Micro Data.” <em>Journal of Official Statistics</em> 23: 299–317.</p>
 </div>
 <div id="ref-Lane2020">
-<p>Lane, Julia I. 2020. “Tiered Access: Risk and Utility.” Washington DC: Committee of Professional Associations on Federal Statistics (COPAFS).</p>
+<p>Lane, Julia. 2020. “Tiered Access: Risk and Utility.” Washington DC: Committee of Professional Associations on Federal Statistics (COPAFS).</p>
 </div>
 <div id="ref-lane2013me">
 <p>Lane, Julia, and Victoria Stodden. 2013. “What? Me Worry? What to Do About Privacy, Big Data, and Statistical Research.” <em>AMSTAT News</em> 438. American Statistical Association: 14.</p>
@@ -663,7 +663,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Levitt, Steven D., and Thomas J. Miles. 2006. “Economic Contributions to the Understanding of Crime.” <em>Annual Review of Law Social Science</em> 2. Annual Reviews: 147–64.</p>
 </div>
 <div id="ref-mccallister2010sp">
-<p>McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. <em>SP 800-122. Guide to Protecting the Confidentiality of Personally Identifiable Information (Pii)</em>. National Institute of Standards; Technology.</p>
+<p>McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. <em>SP 800-122. Guide to Protecting the Confidentiality of Personally Identifiable Information (PII)</em>. National Institute of Standards; Technology.</p>
 </div>
 <div id="ref-narayanan2008robust">
 <p>Narayanan, Arvind, and Vitaly Shmatikov. 2008. “Robust de-Anonymization of Large Sparse Datasets.” In <em>IEEE Symposium on Security and Privacy</em>, 111–25. IEEE.</p>
@@ -678,7 +678,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Nielsen, Michael. 2012. <em>Reinventing Discovery: The New Era of Networked Science</em>. Princeton University Press.</p>
 </div>
 <div id="ref-nissenbaum2009">
-<p>Nissenbaum, H. 2009. <em>Privacy in Context: Technology, Policy, and the Integrity of Social Life</em>. Stanford University Press.</p>
+<p>Nissenbaum, Helen. 2009. <em>Privacy in Context: Technology, Policy, and the Integrity of Social Life</em>. Stanford University Press.</p>
 </div>
 <div id="ref-nissenbaum2011contextual">
 <p>Nissenbaum, Helen. 2011. “A Contextual Approach to Privacy Online.” <em>Daedalus</em> 140 (4). MIT Press: 32–48.</p>
@@ -695,11 +695,14 @@ Figure 12.1: The privacy–utility tradeoff
 <div id="ref-Pentland2014">
 <p>Pentland, Alex, Daniel Greenwood, Brian Sweatt, Arek Stopczynski, and Yves-Alexandre de Montjoye. 2014. “Institutional Controls: The New Deal on Data.” In <em>Privacy, Big Data, and the Public Good: Frameworks for Engagement</em>, edited by Julia Lane, Victoria Stodden, Stefan Bender, and Helen Nissenbaum, 98–112. Cambridge University Press.</p>
 </div>
+<div id="ref-house2014big">
+<p>President’s Council of Advisors on Science and Technology. 2014. “Big Data and Privacy: A Technological Perspective.” Washington, DC: Executive Office of the President.</p>
+</div>
 <div id="ref-reiter2012statistical">
 <p>Reiter, Jerome P. 2012. “Statistical Approaches to Protecting Confidentiality for Microdata and Their Effects on the Quality of Statistical Inferences.” <em>Public Opinion Quarterly</em> 76 (1). AAPOR: 163–81.</p>
 </div>
 <div id="ref-ruggles2019">
-<p>Ruggles, S., C. Fitch, Magnuson D., and J. Schroeder. 2019. “Differential Privacy and Census Data: Implications for Social and Economic Research.” AEA Papers; Proceedings (Vol. 109, pp. 403-08).</p>
+<p>Ruggles, Steven, Catherine Fitch, Diana Magnuson, and Jonathan Schroeder. 2019. “Differential Privacy and Census Data: Implications for Social and Economic Research.” AEA Papers; Proceedings (Vol. 109, pp. 403-08).</p>
 </div>
 <div id="ref-Sah2017">
 <p>Sah, Shagan, Ameya Shringi, Raymond Ptucha, Aaron M. Burry, and Robert P. Loce. 2017. “Video Redaction: A Survey and Comparison of Enabling Technologies.” <em>Journal of Electronic Imaging</em> 26 (5): 1–14.</p>
@@ -720,7 +723,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Shlomo, Natalie. 2014. “Probabilistic Record Linkage for Disclosure Risk Assessment.” In <em>International Conference on Privacy in Statistical Databases</em>, 269–82. Springer.</p>
 </div>
 <div id="ref-shlomo2018">
-<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1). doi:<a href="https://doi.org/10.29012/jpc.v8i1">10.29012/jpc.v8i1</a>.</p>
+<p>Shlomo, Natalie. 2018. “Statistical Disclosure Limitation: New Directions and Challenges.” <em>Journal of Privacy and Confidentiality</em> 8 (1).</p>
 </div>
 <div id="ref-squire19881936">
 <p>Squire, Peverill. 1988. “Why the 1936 Literary Digest Poll Failed.” <em>Public Opinion Quarterly</em> 52 (1). AAPOR: 125–33.</p>
@@ -738,7 +741,7 @@ Figure 12.1: The privacy–utility tradeoff
 <p>Trewin, D., A. Andersen, T. Beridze, L. Biggeri, I. Fellegi, and T. Toczynski. 2007. “Managing Statistical Confidentiality and Microdata Access: Principles and Guidelines of Good Practice.” Geneva: Conference of European Statisticians, United Nations Economic Commision for Europe.</p>
 </div>
 <div id="ref-UnivTaskForceonDifferentialPrivacyforCensusData2019">
-<p>UnivTask Force on Differential Privacy for Census Data†. 2019. “Implications of Differential Privacy for Census Bureau Data and Scientific Research.” Minneapolis, MN, USA: Institute for Social Research; Data Innovation, University of Minnesota.</p>
+<p>UnivTask Force on Differential Privacy for Census Data. 2019. “Implications of Differential Privacy for Census Bureau Data and Scientific Research.” Minneapolis, MN, USA: Institute for Social Research; Data Innovation, University of Minnesota.</p>
 </div>
 <div id="ref-Valentino-DeVries">
 <p>Valentino-DeVries, Josephine, Natasha Singer, Michael Keller, and Aaron Krolick. 2018. “Your Apps Know Where You Were Last Night, and They’re Not Keeping It Secret.” New York, New York, USA.</p>
