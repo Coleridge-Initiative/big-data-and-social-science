@@ -39,9 +39,9 @@ The billion prices project is a great example of how researchers can use new web
 
 ---
 
-But most interestingly, the new data can change the way we think about behavior.  For example, in a study of environmental effects on health, researchers combined information on public school cafeteria deliveries with children's school health records to show that simply putting water jets in cafeterias reduced milk consumption and also reduced childhood obesity [@schwartz2016effect]. Another study which shed new light into the role of peers on productivity found that the productivity of a cashier increased if they were within eyesight of a highly productive cashier but not otherwise [@mas2009peers]. Studies like these show ways in which clever use of data can lead to greater understanding of the effects of complex environmental inputs on human behavior.  
+But most interestingly, the new data can change the way we think about behavior. For example, in a study of environmental effects on health, researchers combined information on public school cafeteria deliveries with children's school health records to show that simply putting water jets in cafeterias reduced milk consumption and also reduced childhood obesity [@schwartz2016effect]. Another study which shed new light into the role of peers on productivity found that the productivity of a cashier increased if they were within eyesight of a highly productive cashier but not otherwise [@mas2009peers]. Studies like these show ways in which clever use of data can lead to greater understanding of the effects of complex environmental inputs on human behavior.  
 
-New types of data can also enable us to study to examine small groups - the tails of a distribution - in a way that is not possible with small data. Much of interest in human behavior is driven by those tails---health care costs by small numbers of ill people [@stanton2006high], economic activity and employment by a small number of firms [@evans1987tests, @jovanovic1982selection].
+New types of data can also enable us to study to examine small groups---the tails of a distribution---in a way that is not possible with small data. Much of interest in human behavior is driven by those tails---health care costs by small numbers of ill people [@stanton2006high], economic activity and employment by a small number of firms [@evans1987tests, @jovanovic1982selection].
 
 Our excitement about the value of new types of data must be accompanied by a recognition of the lessons learned by statisticians and social scientists from their past experience with surveys and small scale data collection. The next sections provide a brief overview. 
 
@@ -76,11 +76,12 @@ Identifying causal relationships is another common goal for social science resea
 
 **Example: New data and causal inference**
 
-If the data generating process is not understood, resources can be badly misallocated. Overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, internet savvy people with cell-phones and away from elderly or impoverished neighborhoods [@shelton2014mapping].  Of course, all data collection approaches have had similar risks. Bad survey methodology led the Literary Digest to incorrectly call the 1936 election [@squire19881936]. Inadequate understanding of coverage, incentive and quality issues, together with the lack of a comparison group, has hampered the use of administrative records---famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction [@donohue2006uses].  \ian{Need: Le Miles, 2006}
+If the data generating process is not understood, resources can be badly misallocated. Overreliance on, say, Twitter data, in targeting resources after hurricanes can lead to the misallocation of resources towards young, internet savvy people with cell-phones and away from elderly or impoverished neighborhoods [@shelton2014mapping].  Of course, all data collection approaches have had similar risks. Bad survey methodology led the Literary Digest to incorrectly call the 1936 election [@squire19881936]. Inadequate understanding of coverage, incentive and quality issues, together with the lack of a comparison group, has hampered the use of administrative records---famously in the case of using administrative records on crime to make inference about the role of death penalty policy in crime reduction [@donohue2006uses]. 
+<!-- \ian{Need: Le Miles, 2006} -->
 
 ---
 
-In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations [@athey2017state] 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest (cite: Stuart et al. 2010). New methods to address generalizability are under development [@dugoff2014generalizing] \ian{add: Kern et al., in press}. While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.
+In practice, regardless of how much data is available, researchers must consider at least two things: 1) how well the results generalize to other populations [@athey2017state] 2) whether the treatment effect on the treated population is different than the treatment effect in the full population of interest. <!-- (cite: Stuart et al. 2010) --> New methods to address generalizability are under development [@dugoff2014generalizing]. <!-- \ian{add: Kern et al., in press} --> While unknown study selection probabilities usually makes it difficult to estimate population causal effects, as long as we are able to model the selection process there is no reason not to do causal inference from so-called non-probability data.
 
 **Prediction**
 
@@ -281,9 +282,13 @@ variety of different formats, some of which are quite large (or
 voluminous), and with a variety of different timestamps (or velocity),
 we discuss how to store the data in different types of data formats.
 
+---
+
 **BOX**
 
 Much more information is available at the Institute for Research on Innovation and Science (IRIS, https://iris.isr.umich.edu/) at the University of Michigan. The Institute has extended the data infrastructure to bring together both confidential and public data in a secure environment. They have worked with universities interested in documenting the results of their grant funding, they are able to trace the spending of almost 400,000 grants to over 600,000 individuals and 820,000 vendors---and show the direct effects on that funding on their subsequent scientific and economic activity [@InstituteForResearchOnInnovationAndScienceIRISResearch2019]. To date, over 100 researchers from dozens of institutions have worked with the new data infrastructure to provide an empirical response to Marburger's call.
+
+---
 
 Although we focus on one particular use case, the methods covered in this book are broadly applicable across a variety of policy areas---indeed, we have used this book to teach classes in such fields as education, criminal justice, workforce and economic development and social services (https://coleridgeinitiative.org/training). 
 
@@ -299,13 +304,15 @@ and
 
 - 'How do regulatory agencies move from reactive, complaint-based, health and safety inspections for workplaces and housing to a more proactive approach that focuses on prevention?'
 
+---
+
 **BOX**
 
 Building data science skills to support state and local efforts to become more data driven in the provision of human services.
 
 The Offices of Family Assistance Office and of Planning, Research, and Evaluation in the Department of Health and Human Services' Administration for Children and Families set up a TANF data collaborative (https://www.tanfdata.org/) to help professionals at TANF and related human services agencies develop key data science skills. The focus is on teaching participants how to scope a problem, do record linkage, apply machine learning and visualization tools and learn about privacy issues when working with confidential data.  
 
-**BOX**
+---
 
 The structure of the book
 -------------------------
