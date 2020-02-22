@@ -174,14 +174,15 @@ presenting information. The results have been to change the nature of
 the work that social scientists do.
 
 Social scientists have been enthusiastic in responding to the new
-opportunity. Python and R are becoming as well-known as SAS and
-Stata---indeed, the 2018 Nobel Laureate in Economics, Paul Romer, is a
-Python convert (Kopf \protect\hyperlink{ref-Kopf}{2018}). Research has
-also changed. Researchers draw on data that are ``found'' rather than
-``made'' by federal agencies; those publishing in leading academic
-journals are much less likely today to draw on preprocessed survey data
-(Figure \ref{fig:fig1}). Social science workflows can become more
-automated, replicable and reproducible (Yarkoni et al.
+opportunity. Python and R are becoming as, and hopefully more,
+well-known as SAS and Stata---indeed, the 2018 Nobel Laureate in
+Economics, Paul Romer, is a Python convert (Kopf
+\protect\hyperlink{ref-Kopf}{2018}). Research has also changed.
+Researchers draw on data that are ``found'' rather than ``made'' by
+federal agencies; those publishing in leading academic journals are much
+less likely today to draw on preprocessed survey data (Figure
+\ref{fig:fig1}). Social science workflows can become more automated,
+replicable and reproducible (Yarkoni et al.
 \protect\hyperlink{ref-Yarkoni2019}{2019}).
 
 \begin{figure}
@@ -212,21 +213,22 @@ created a new data scientist job title.
 
 The goal of this book is to provide social scientists with an
 understanding of the key elements of this new science, value of the
-tools and the opportunities for doing better work. The goal is also to
+tools, and the opportunities for doing better work. The goal is also to
 identify the many ways in which the analytical toolkits possessed by
-social scientists can be brought to bear to enhance the generalizability
-and usefulness of the work done by computer scientists.
+social scientists can enhance the generalizability and usefulness of the
+work done by computer scientists.
 
 We take a pragmatic approach, drawn on our experience of working with
-data. Most social scientists set out to solve a real world social or
-economic problem: they frame the problem, identify the data, do the
-analysis, and then draw inferences. At all points, of course, the social
-scientist needs to consider the ethical ramifications of her work,
-particularly respecting privacy and confidentiality. The book follows
-the same structure. We chose a particular problem---the link between
-research investments and innovation---because that is a major social
-science policy issue, and one in which social scientists have been
-addressing using big data techniques.
+data to tackle a wide variety of policy problems. Most social scientists
+set out to solve a real world social or economic problem: they frame the
+problem, identify the data, do the analysis, and then draw inferences.
+At all points, of course, the social scientist needs to consider the
+ethical ramifications of their work, particularly respecting privacy and
+confidentiality. The book follows the same structure. We chose a
+particular problem---the link between research investments and
+innovation---because that is a major social science policy issue, and
+one in which social scientists have been addressing using big data
+techniques.
 
 \section{Defining big data and its value}\label{sec:1-2}
 
@@ -281,6 +283,10 @@ speeches to study political polarization (Peterson and Spirling
 \protect\hyperlink{ref-peterson2018classification}{2018}) or of airbnb
 postings to get new insights into racial discrimination (Edelman, Luca,
 and Svirsky \protect\hyperlink{ref-edelman2017racial}{2017}).
+
+Of course, these new sources come with their own caveats and biases that
+need to be considered when drawing inferences. We will cover this later
+in the book in more detail.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -348,7 +354,7 @@ descriptive statistics and most common survey designs, even complex ones
 that include multiple layers of sampling and disproportional selection
 probabilities (Hansen, Hurwitz, and Madow
 \protect\hyperlink{ref-hansen1993sample}{1993}, Valliant, Dever, and
-Kreuter (\protect\hyperlink{ref-valliant2013practical}{2013})).
+Kreuter (\protect\hyperlink{ref-valliant2018practical}{2018})).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -388,7 +394,7 @@ in the sample).
 \textbf{Causation}
 
 Identifying causal relationships is another common goal for social
-science researchers (Hal R Varian
+science researchers (Varian
 \protect\hyperlink{ref-varian2014big}{2014}). Ideally such explanations
 stem from data that allow causal inference: typically randomized
 experiments or strong non-experimental study designs. When examining the
@@ -430,13 +436,14 @@ consider at least two things: 1) how well the results generalize to
 other populations (Athey and Imbens
 \protect\hyperlink{ref-athey2017state}{2017}) 2) whether the treatment
 effect on the treated population is different than the treatment effect
-in the full population of interest. New methods to address
-generalizability are under development (DuGoff, Schuler, and Stuart
-\protect\hyperlink{ref-dugoff2014generalizing}{2014}). While unknown
-study selection probabilities usually makes it difficult to estimate
-population causal effects, as long as we are able to model the selection
-process there is no reason not to do causal inference from so-called
-non-probability data.
+in the full population of interest (Stuart
+\protect\hyperlink{ref-stuart2010matching}{2010}). New methods to
+address generalizability are under development (DuGoff, Schuler, and
+Stuart \protect\hyperlink{ref-dugoff2014generalizing}{2014}). While
+unknown study selection probabilities usually makes it difficult to
+estimate population causal effects, as long as we are able to model the
+selection process there is no reason not to do causal inference from
+so-called non-probability data.
 
 \textbf{Prediction}
 
@@ -448,7 +455,8 @@ systematic selection can be minimized. Predictive policing is a good
 example of the challenges. The criminal justice system generates massive
 amounts of data that can be used to better allocate police resources -
 but if the data do not represent the population at large, the
-predictions will be biased.
+predictions could be biased, and more importantly, the interventions
+assigned using those predictions could harm society.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -595,10 +603,10 @@ statistical packages such as geospatial data, networks, and graphs.
 Open source programming languages such as Python (used extensively
 throughout this book) and R provide high-quality implementations of
 numerous data analysis and visualization methods, from regression to
-statistics, text analysis, network analysis, and much more. Finally,
-parallel computing platforms such as Hadoop and Spark can be used to
-harness parallel computer clusters for extremely large data sets and
-computationally intensive analyses.
+machine learning, text analysis, network analysis, and much more.
+Finally, parallel computing platforms such as Hadoop and Spark can be
+used to harness parallel computing clusters for extremely large data
+sets and computationally intensive analyses.
 
 These various components may not always work together as smoothly as do
 integrated packages such as SAS, SPSS, and Stata, but they allow
@@ -610,13 +618,14 @@ social scientist needs to be familiar with their capabilities.
 \section{\texorpdfstring{The book's ``use
 case''}{The book's use case}}\label{sec:1-6}
 
-This book is about the uses of big data in social science. Our focus is
-on working through the use of data as a social scientist normally
-approaches research. That involves thinking through how to use such data
-to address a question from beginning to end, and thereby learning about
-the associated tools---rather than simply engaging in coding exercises
-and then thinking about how to apply them to a potpourri of social
-science examples.
+This book is about the uses of new types of computational and data
+analysis methods in social science. Our focus is on working through the
+use of data as a social scientist normally approaches research. That
+involves thinking through how to use such data to address a question
+from beginning to end, and thereby learning about the associated
+tools---rather than simply engaging in coding exercises and then
+thinking about how to apply them to a potpourri of social science
+examples.
 
 There are many examples of the use of big data in social science
 research. Our challenge in designing the book was to find a use case
@@ -773,7 +782,7 @@ we discuss how to store the data in different types of data formats.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{BOX}
+\textbf{Box: IRIS data infrastructure}
 
 Much more information is available at the Institute for Research on
 Innovation and Science (IRIS, \url{https://iris.isr.umich.edu/}) at the
@@ -824,10 +833,7 @@ and
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{BOX}
-
-Building data science skills to support state and local efforts to
-become more data driven in the provision of human services.
+\textbf{Box: Data science skills and the provision of human services}
 
 The Offices of Family Assistance Office and of Planning, Research, and
 Evaluation in the Department of Health and Human Services'
@@ -1181,7 +1187,7 @@ specifically for this purpose.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Box: Examples}
+\textbf{Box: Web Data and API Applications}
 
 In addition to the worked examples in this chapter here are a few other
 papers that show the wide variety of projects using data from web pages
@@ -2218,7 +2224,7 @@ effects of different algorithms on studies of patent productivity
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Box: Examples}
+\textbf{Box: Record Linkage Examples}
 
 In addition to the worked examples in this chapter here are a few other
 papers that show the wide variety of projects using combining records
@@ -5408,10 +5414,9 @@ parallel computing, are some of the most important and complex tasks in
 setting up a cluster, and they often require a lot of experience and
 careful consideration. Major big data vendors provide guidelines and
 tools to facilitate the process (Apache Software Foundation, n.d.;
-Cloudera, n.d.; Baldeschwieler
-\protect\hyperlink{ref-Provisioning}{2011}). most decisions will be
-based on the types of analysis to be run on the cluster, for which only
-you, as the user, can provide the best input.
+Cloudera, n.d.). most decisions will be based on the types of analysis
+to be run on the cluster, for which only you, as the user, can provide
+the best input.
 
 \subsection{Programming in Hadoop}\label{programming-in-hadoop}
 
@@ -5859,10 +5864,8 @@ decision-making process and thus increasing impact.
 
 There are a wealth of online resources describing both Hadoop and Spark.
 See, for example, the tutorials on the Apache Hadoop\footnote{\url{http://hadoop.apache.org/}}
-and Spark\footnote{\url{https://spark.apache.org/}} websites. Albanese
-describes how to use Hadoop for social science (Albanese
-\protect\hyperlink{ref-socialhadoop}{2010}), and Lin and Dyer discuss
-the use of MapReduce for text analysis (Lin and Dyer
+and Spark\footnote{\url{https://spark.apache.org/}} websites. Lin and
+Dyer discuss the use of MapReduce for text analysis (Lin and Dyer
 \protect\hyperlink{ref-lin2010data}{2010}).
 
 \hypertarget{chap:viz}{\chapter{Information
@@ -7164,7 +7167,7 @@ several terms we will use in this section.
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Box 7.3: Machine learning vocabulary}
+\textbf{Box: Machine learning vocabulary}
 
 \begin{itemize}
 \item
@@ -8818,8 +8821,8 @@ improve some social science tasks:
   \textbf{Variable selection}: Although there are many methods for
   variable selection, regularized methods such as the lasso are highly
   effective and efficient when faced with large amounts of data. Varian
-  (\protect\hyperlink{ref-Varian2014}{2014}) goes into more detail and
-  gives other methods from machine learning that can be useful for
+  (\protect\hyperlink{ref-varian2014big}{2014}) goes into more detail
+  and gives other methods from machine learning that can be useful for
   variable selection. We can also find interactions between pairs of
   variables (to feed into other models) using random forests, by looking
   at variables that co-occur in the same tree, and by calculating the
@@ -8941,9 +8944,7 @@ Software:
 \end{itemize}
 
 Many excellent courses are available online (Zygmunt
-\protect\hyperlink{ref-MLcourses}{2013}), including Hastie and
-Tibshirani's \emph{Statistical Learning} (Hastie and Tibshirani
-\protect\hyperlink{ref-SLcourse}{2015}).
+\protect\hyperlink{ref-MLcourses}{2013}).
 
 Major conferences in this area include the
 \href{https://icml.cc/}{International Conference on Machine Learning},
@@ -9983,21 +9984,21 @@ statistical agency charged with collecting statistics on science and
 engineering, uses a rule-based system to manually create categories of
 science; these are then used to categorize research as ``physics'' or
 ``economics'' (Mortensen and Bloch
-\protect\hyperlink{ref-oecd2005measurement}{2005}; Economic Co-operation
-and Development \protect\hyperlink{ref-manual2004summary}{2004}). In a
-rule-based system there is no ready response to the question ``how much
-do we spend on climate change, food safety, or biofuels?'' because
-existing rules have not created such categories. Text analysis
-techniques can be used to provide such detail without manual collation.
-For example, data about research awards from public sources and about
-people funded on research grants from UMETRICS can be linked with data
-about their subsequent publications and related student dissertations
-from ProQuest. Both award and dissertation data are text documents that
-can be used to characterize what research has been done, provide
-information about which projects are similar within or across
-institutions, and potentially identify new fields of study (Talley,
-Newman, Mimno, Herr II, et al.
-\protect\hyperlink{ref-talley2011database}{2011}).
+\protect\hyperlink{ref-oecd2005measurement}{2005}; Organisation of
+Economic Co-operation and Development
+\protect\hyperlink{ref-manual2004summary}{2004}). In a rule-based system
+there is no ready response to the question ``how much do we spend on
+climate change, food safety, or biofuels?'' because existing rules have
+not created such categories. Text analysis techniques can be used to
+provide such detail without manual collation. For example, data about
+research awards from public sources and about people funded on research
+grants from UMETRICS can be linked with data about their subsequent
+publications and related student dissertations from ProQuest. Both award
+and dissertation data are text documents that can be used to
+characterize what research has been done, provide information about
+which projects are similar within or across institutions, and
+potentially identify new fields of study (Talley, Newman, Mimno, Herr
+II, et al. \protect\hyperlink{ref-talley2011database}{2011}).
 
 \textbf{Applications}
 
@@ -10321,18 +10322,18 @@ and organizational theorists.
 Social Scientists have studied networks for a long time. A lot of the
 theory behind network analysis in fact comes from the social sciences
 where we studied relationships between people, groups, and organizations
-(Moreno and Jennings \protect\hyperlink{ref-moreno1934}{1934}). What's
-different today is the scale of the data available to us to perform this
-analysis. Instead of studying a group of 25 participants in a karate
-club (Zachary \protect\hyperlink{ref-zachary1977}{1977}), we now have
-data about hundreds of millions of people communicating with each other
-through social media channels, or hundreds of thousands of employees in
-a large multinational organizations collaborating on projects. This
-increased scale requires us to explore new methods of answering the same
-questions that we used to be interested in, as well as opens up avenues
-to answer new questions that could not be answered before.\footnote{If
-  you have examples from your own research using the methods we describe
-  in this chapter, please submit a link to the paper (and/or code) here:
+(Moreno \protect\hyperlink{ref-moreno1934}{1934}). What's different
+today is the scale of the data available to us to perform this analysis.
+Instead of studying a group of 25 participants in a karate club (Zachary
+\protect\hyperlink{ref-zachary1977}{1977}), we now have data about
+hundreds of millions of people communicating with each other through
+social media channels, or hundreds of thousands of employees in a large
+multinational organizations collaborating on projects. This increased
+scale requires us to explore new methods of answering the same questions
+that we used to be interested in, as well as opens up avenues to answer
+new questions that could not be answered before.\footnote{If you have
+  examples from your own research using the methods we describe in this
+  chapter, please submit a link to the paper (and/or code) here:
   \url{https://textbook.coleridgeinitiative.org/submitexamples}}
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
@@ -14430,7 +14431,7 @@ and
 \textbf{Privacy} ``encompasses not only the famous `right to be left
 alone,' or keeping one's personal matters and relationships secret, but
 also the ability to share information selectively but not publicly''
-(Advisors on Science and Technology
+(President's Council of Advisors on Science and Technology
 \protect\hyperlink{ref-house2014big}{2014}). A useful way of thinking
 about privacy is the notion of preserving the appropriate flow of
 information (Nissenbaum \protect\hyperlink{ref-nissenbaum2009}{2009}).
@@ -14448,7 +14449,7 @@ personal privacy and proprietary information'' (McCallister, Grance, and
 Scarfone \protect\hyperlink{ref-mccallister2010sp}{2010}). Doing so is
 not easy---the challenge to the research community is how to balance the
 \emph{risk} of providing access with the associated utility (Duncan,
-Elliot, and Salazar-González
+Elliot, and Juan Jose Salazar
 \protect\hyperlink{ref-duncanstatistical}{2011}). To give a simple
 example, if means and percentages are presented for a \emph{large}
 number of people, it will be difficult to infer an individual's value
@@ -14539,7 +14540,7 @@ parts of the population being studied; consider health care costs for a
 small number of ill people (Stanton and Rutherford
 \protect\hyperlink{ref-stanton2006high}{2006}), or economic activity
 such as rapid employment growth by a small number of firms (Decker et
-al. to appear).
+al. \protect\hyperlink{ref-decker2015has}{2016}).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
@@ -14764,8 +14765,8 @@ only \emph{aggregated tabular data}. This practice worked well in
 settings where the primary purpose was enumeration, such as census
 taking. However, tabular data are poorly suited to describing the
 underlying distributions and covariance across variables that are often
-the focus of applied social science research (Duncan, Elliot, and
-Salazar-González \protect\hyperlink{ref-duncanstatistical}{2011}).
+the focus of applied social science research (Duncan, Elliot, and Juan
+Jose Salazar \protect\hyperlink{ref-duncanstatistical}{2011}).
 
 To provide researchers access to data that permitted analysis of the
 underlying variance--covariance structure of the data, some agencies
@@ -14871,7 +14872,7 @@ comply with the privacy and confidentiality regulations (Hayden
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Box}
+\textbf{Box: Federal Statistical Research Data Centers}
 
 It is not easy to use the FSRDCs. Every stage of the research process is
 significantly more time-consuming than using public use data, and only
@@ -14905,15 +14906,15 @@ six months and usually more. Eligibility for using FSRDCs is limited to
 investigators (a) affiliated with an FSRDC (or with significant
 financial resources), (b) with sufficient time to wait for review and
 approvals, and (c) doing work deemed valuable by the Bureau (UnivTask
-Force on Differential Privacy for Census Data†
+Force on Differential Privacy for Census Data
 \protect\hyperlink{ref-UnivTaskForceonDifferentialPrivacyforCensusData2019}{2019}).
 
 \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
 
-\textbf{Box}
+\textbf{Box: The Administrative Data Research Facility}
 
 There are other approaches that are becoming available. The Commission
-on Evidencebased Policy identified new technologies, such as remote
+on Evidence-based Policy identified new technologies, such as remote
 access, cloud-based, virtual data facilities, as a promising approach to
 provide scalable secure access to microdata without the disadvantages of
 the bricks and mortar approached used by the FSRDC system. One such
@@ -14969,8 +14970,9 @@ While there are well-established policies and protocols surrounding
 access to and use of survey and administrative data, a major new
 challenge is the lack of clear guidelines governing the collection of
 data about human activity in a world in which all public, and some
-private, actions generate data that can be harvested (Advisors on
-Science and Technology \protect\hyperlink{ref-house2014big}{2014}; Ohm
+private, actions generate data that can be harvested (President's
+Council of Advisors on Science and Technology
+\protect\hyperlink{ref-house2014big}{2014}; Ohm
 \protect\hyperlink{ref-ohm2010broken}{2010}; Strandburg
 \protect\hyperlink{ref-Strandburg2014}{2014}). The twin pillars on which
 so much of social science have rested---informed consent and
@@ -15555,17 +15557,17 @@ Abazajian, Kevork N., Jennifer K. Adelman-McCarthy, Marcel A. Agüeros,
 Sahar S. Allam, Carlos Allende Prieto, Deokkeun An, Kurt S. J. Anderson,
 et al. 2009. ``The Seventh Data Release of the Sloan Digital Sky
 Survey.'' \emph{Astrophysical Journal Supplement Series} 182 (2). IOP
-Publishing: 543.
+Publishing.
 
 \hypertarget{ref-abowed2018}{}
-Abowd, J. M. 2018. ``The US Census Bureau Adopts Differential Privacy.''
-Proceedings of the 24th ACM SIGKDD International Conference on Knowledge
-Discovery \& Data Mining (pp. 2867-2867). ACM.
+Abowd, John M. 2018. ``The US Census Bureau Adopts Differential
+Privacy.'' In \emph{Proceedings of the 24th Acm Sigkdd International
+Conference on Knowledge Discovery \& Data Mining.}, 2867--7. ACM.
 
 \hypertarget{ref-abowd2004integrated}{}
 Abowd, John M., John Haltiwanger, and Julia Lane. 2004. ``Integrated
 Longitudinal Employer-Employee Data for the United States.''
-\emph{American Economic Review} 94 (2). JSTOR: 224--29.
+\emph{American Economic Review} 94 (2): 224--29.
 
 \hypertarget{ref-abowd2006final}{}
 Abowd, John M., Martha Stinson, and Gary Benedetto. 2006. ``Final Report
@@ -15584,11 +15586,6 @@ Adam Rose. 2010. ``Are Face-Detection Cameras Racist?''
 \url{http://content.time.com/time/business/article/0,8599,1954643,00.html}.
 Accessed February 12, 2020.
 
-\hypertarget{ref-house2014big}{}
-Advisors on Science, President's Council of, and Technology. 2014. ``Big
-Data and Privacy: A Technological Perspective.'' Washington, DC:
-Executive Office of the President.
-
 \hypertarget{ref-Agrawal1994}{}
 Agrawal, Rakesh, and Ramakrishnan Srikant. 1994. ``Fast Algorithms for
 Mining Association Rules in Large Databases.'' In \emph{Proceedings of
@@ -15605,12 +15602,6 @@ Al Aghbari, Zaher, Mohammed Bahutair, and Ibrahim Kamel. 2019.
 ``GeoSimMR: A Mapreduce Algorithm for Detecting Communities Based on
 Distance and Interest in Social Networks.'' \emph{Data Science Journal}
 18 (1): 13.
-doi:\href{https://doi.org/http://doi.org/10.5334/dsj-2019-013}{http://doi.org/10.5334/dsj-2019-013}.
-
-\hypertarget{ref-socialhadoop}{}
-Albanese, Ed. 2010. ``Scaling Social Science with Hadoop.''
-\url{http://blog.cloudera.com/blog/2010/04/scaling-social-science-with-hadoop/}.
-Accessed February 1, 2016.
 
 \hypertarget{ref-campbell2018}{}
 Alexia Fernandez Campbell. 2018. ``Women accuse Facebook of illegally
@@ -15621,26 +15612,25 @@ Accessed February 12, 2020.
 \hypertarget{ref-ali2019}{}
 Ali, Muhammad, Piotr Sapiezynski, Miranda Bogen, Aleksandra Korolova,
 Alan Mislove, and Aaron Rieke. 2019. ``Discrimination Through
-Optimization: How Facebook's Ad Delivery Can Lead to Biased Outcomes.''
-\emph{Proc. ACM Hum.-Comput. Interact.} 3 (CSCW). New York, NY, USA:
-Association for Computing Machinery.
-doi:\href{https://doi.org/10.1145/3359301}{10.1145/3359301}.
+Optimization: How Facebooks Ad Delivery Can Lead to Biased Outcomes.''
+\emph{Proceedings of the ACM on Human-Computer Interaction} 3. New York,
+NY, USA: Association for Computing Machinery.
 
 \hypertarget{ref-allison2001missing}{}
 Allison, Paul D. 2001. \emph{Missing Data}. Sage Publications.
 
 \hypertarget{ref-anscombe1973graphs}{}
 Anscombe, Francis J. 1973. ``Graphs in Statistical Analysis.''
-\emph{American Statistician} 27 (1). Taylor \& Francis Group: 17--21.
+\emph{American Statistician} 27 (1): 17--21.
 
 \hypertarget{ref-HDFS}{}
 Apache Hadoop. n.d. ``HDFS Architecture.''
 \url{http://hadoop.apache.org/docs/stable/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html}.
-Accessed April 16, 2016.
+Accessed February 1, 2020.
 
 \hypertarget{ref-ApacheAmbari}{}
 Apache Software Foundation. n.d. ``Apache Ambari.''
-\url{http://ambari.apache.org}. Accessed February 1, 2016.
+\url{http://ambari.apache.org}. Accessed February 1, 2020.
 
 \hypertarget{ref-armbrust2010view}{}
 Armbrust, Michael, Armando Fox, Rean Griffith, Anthony D. Joseph, Randy
@@ -15648,7 +15638,7 @@ Katz, Andy Konwinski, Gunho Lee, et al. 2010. ``A View of Cloud
 Computing.'' \emph{Communications of the ACM} 53 (4). ACM: 50--58.
 
 \hypertarget{ref-athey2017state}{}
-Athey, Susan, and Guido W Imbens. 2017. ``The State of Applied
+Athey, Susan, and Guido W. Imbens. 2017. ``The State of Applied
 Econometrics: Causality and Policy Evaluation.'' \emph{Journal of
 Economic Perspectives} 31 (2): 3--32.
 
@@ -15656,11 +15646,6 @@ Economic Perspectives} 31 (2): 3--32.
 Athey, Susan, and Stefan Wager. 2019. ``Estimating Treatment Effects
 with Causal Forests: An Application.''
 \url{https://arxiv.org/abs/1902.07409}.
-
-\hypertarget{ref-Provisioning}{}
-Baldeschwieler, Eric. 2011. ``Best Practices for Selecting Apache Hadoop
-Hardware.'' \emph{Hortonworks},
-\url{http://hortonworks.com/blog/best-practices-for-selecting-apache-hadoop-hardware/}.
 
 \hypertarget{ref-barabasi1999emergence}{}
 Barabási, Albert-László, and Réka Albert. 1999. ``Emergence of Scaling
@@ -15684,9 +15669,9 @@ Helen Nissenbaum. Cambridge University Press.
 
 \hypertarget{ref-Bastian2013}{}
 Bastian, Hilda. 2013. ``Bad Research Rising: The 7th Olympiad of
-Research on Biomedical Publication.'' \emph{Scientific American},
-\url{http://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th}
-\url{-olympiad-of-research-on-biomedical-publication/}.
+Research on Biomedical Publication.''
+\url{https://blogs.scientificamerican.com/absolutely-maybe/bad-research-rising-the-7th-olympiad-of-research-on-biomedical-publication/}
+Accessed February 1, 2020.
 
 \hypertarget{ref-batagelj1998pajek}{}
 Batagelj, Vladimir, and Andrej Mrvar. 1998. ``Pajek---Program for Large
@@ -15694,13 +15679,14 @@ Network Analysis.'' \emph{Connections} 21 (2): 47--57.
 
 \hypertarget{ref-BellPython}{}
 Bell, Alex. 2012. ``Python for Economists.''
-\url{http://cs.brown.edu/~ambell/pyseminar/pyseminar.html}.
+\url{https://scholar.harvard.edu/files/ambell/files/python_for_economists.pdf}
+Accessed February 1, 2020.
 
 \hypertarget{ref-bengio-13}{}
-Bengio, Y., A. Courville, and P. Vincent. 2013. ``Representation
-Learning: A Review and New Perspectives.'' \emph{IEEE Transactions on
-Pattern Analysis and Machine Intelligence} 35 (8): 1798--1828.
-doi:\href{https://doi.org/10.1109/TPAMI.2013.50}{10.1109/TPAMI.2013.50}.
+Bengio, Yoshua, Aaron Courville, and Pascal Vincent. 2013.
+``Representation Learning: A Review and New Perspectives.'' \emph{IEEE
+Transactions on Pattern Analysis and Machine Intelligence} 35 (8):
+1798--1828.
 
 \hypertarget{ref-bhuvaneshwar2015case}{}
 Bhuvaneshwar, Krithika, Dinanath Sulakhe, Robinder Gauba, Alex
@@ -15723,17 +15709,17 @@ Biemer, Paul P., and Lars E. Lyberg. 2003. \emph{Introduction to Survey
 Quality}. John Wiley \& Sons.
 
 \hypertarget{ref-BiemerStokes1991}{}
-Biemer, Paul P., and S. L. Stokes. 1991. ``Approaches to Modeling
+Biemer, Paul P., and S. Lynne Stokes. 1991. ``Approaches to Modeling
 Measurement Error.'' In \emph{Measurement Errors in Surveys}, edited by
-Paul P. Biemer, R. Groves, L. Lyberg, N. Mathiowetz, and S. Sudman,
-54--68. John Wiley.
+Paul P. Biemer, Robert M. Groves, Lars E. Lyberg, Nancy A. Mathiowetz,
+and Seymour Sudman, 54--68. John Wiley.
 
 \hypertarget{ref-biemer1997review}{}
 Biemer, Paul P., and Dennis Trewin. 1997. ``A Review of Measurement
 Error Effects on the Analysis of Survey Data.'' In \emph{Survey
-Measurement and Process Quality}, edited by L. Lyberg, P. Biemer, M.
-Collins, E. De Leeuw, C. Dippo, N. Schwarz, and D. Trewin, 601--32. John
-Wiley \& Sons.
+Measurement and Process Quality}, edited by Lars Lyberg, Paul P. Biemer,
+Martin Collins, Edith De Leeuw, Cathryn Dippo, Norbert Schwarz, and
+Dennis Trewin, 601--32. John Wiley \& Sons.
 
 \hypertarget{ref-bird2011computing}{}
 Bird, Ian. 2011. ``Computing for the Large Hadron Collider.''
@@ -15761,14 +15747,13 @@ Allocation.'' \emph{Journal of Machine Learning Research} 3: 993--1022.
 \hypertarget{ref-blitzer-07}{}
 Blitzer, John, Mark Dredze, and Fernando Pereira. 2007. ``Biographies,
 Bollywood, Boom-Boxes and Blenders: Domain Adaptation for Sentiment
-Classification.'' In \emph{Proceedings of the Association for
-Computational Linguistics}.
+Classification.'' In \emph{ACL}, 187--205.
 
 \hypertarget{ref-boy2014principled}{}
 Boy, Jeremy, Ronald Rensink, Enrico Bertini, Jean-Daniel Fekete, and
 others. 2014. ``A Principled Way of Assessing Visualization Literacy.''
-\emph{IEEE Transactions on Visualization and Computer Graphics} 20 (12).
-IEEE: 1963--72.
+\emph{IEEE Transactions on Visualization and Computer Graphics} 20 (12):
+1963--72.
 
 \hypertarget{ref-boyd2012critical}{}
 Boyd, Danah, and Kate Crawford. 2012. ``Critical Questions for Big Data:
@@ -15780,7 +15765,6 @@ Provocations for a Cultural, Technological, and Scholarly Phenomenon.''
 Boyd-Graber, Jordan, Yuening Hu, and David Mimno. 2017.
 \emph{Applications of Topic Models}. Edited by Doug Oard. Vol. 11.
 Foundations and Trends in Information Retrieval 2--3. NOW Publishers.
-\url{http://www.nowpublishers.com/article/Details/INR-030}.
 
 \hypertarget{ref-brady2019challenge}{}
 Brady, Henry E. 2019. ``The Challenge of Big Data and Data Science.''
@@ -15803,7 +15787,8 @@ Chicago Press.
 \hypertarget{ref-brynjolfsson2011strength}{}
 Brynjolfsson, Erik, Lorin M. Hitt, and Heekyung Hellen Kim. 2011.
 ``Strength in Numbers: How Does Data-Driven Decisionmaking Affect Firm
-Performance?'' Available at SSRN 1819486.
+Performance?'' Available at SSRN:
+\url{https://ssrn.com/abstract=1819486}.
 
 \hypertarget{ref-buolamwini2018}{}
 Buolamwini, Joy, and Timnit Gebru. 2018. ``Gender Shades: Intersectional
@@ -15811,7 +15796,7 @@ Accuracy Disparities in Commercial Gender Classification.'' In
 \emph{Proceedings of the 1st Conference on Fairness, Accountability and
 Transparency}, edited by Sorelle A. Friedler and Christo Wilson,
 81:77--91. Proceedings of Machine Learning Research. New York, NY, USA:
-PMLR. \url{http://proceedings.mlr.press/v81/buolamwini18a.html}.
+PMLR.
 
 \hypertarget{ref-burkhauser2010improving}{}
 Burkhauser, Richard V., Shuaizhang Feng, and Jeff Larrimore. 2010.
@@ -15820,13 +15805,13 @@ Population Survey by Using Both Cell-Means and Variances.''
 \emph{Economics Letters} 108 (1). Elsevier: 69--72.
 
 \hypertarget{ref-burt1993social}{}
-Burt, Ronald S. 1993. ``The Social Structure of Competition.''
-\emph{Explorations in Economic Sociology} 65. New York: Russel Sage
-Foundation: 103.
+Burt, Ronald S. 1993. ``The Social Structure of Competition.'' In
+\emph{Explorations in Economic Sociology}. New York: Russel Sage
+Foundation.
 
 \hypertarget{ref-burt2004structural}{}
 ---------. 2004. ``Structural Holes and Good Ideas.'' \emph{American
-Journal of Sociology} 110 (2). JSTOR: 349--99.
+Journal of Sociology} 110 (2): 349--99.
 
 \hypertarget{ref-butler2013google}{}
 Butler, Declan. 2013. ``When Google Got Flu Wrong.'' \emph{Nature} 494
@@ -15845,7 +15830,6 @@ Rayid Ghani. 2016. ``Identifying Police Officers at Risk of Adverse
 Events.'' In \emph{Proceedings of the 22nd Acm Sigkdd International
 Conference on Knowledge Discovery and Data Mining}, 67--76. KDD 16. New
 York, NY, USA: Association for Computing Machinery.
-doi:\href{https://doi.org/10.1145/2939672.2939698}{10.1145/2939672.2939698}.
 
 \hypertarget{ref-Caruana2015}{}
 Caruana, Rich, Yin Lou, Johannes Gehrke, Paul Koch, Marc Sturm, and
@@ -15870,15 +15854,14 @@ Project: Using Online Prices for Measurement and Research.''
 \hypertarget{ref-Cecil2003}{}
 Cecil, Joe, and Donna Eden. 2003. ``The Legal Foundations of
 Confidentiality.'' In \emph{Key Issues in Confidentiality Research:
-Results of an Nsf Workshop}. National Science Foundation.
+Results of an NSF Workshop}. National Science Foundation.
 
 \hypertarget{ref-celis2019}{}
 Celis, L. Elisa, Lingxiao Huang, Vijay Keswani, and Nisheeth K. Vishnoi.
 2019. ``Classification with Fairness Constraints: A Meta-Algorithm with
 Provable Guarantees.'' In \emph{Proceedings of the Conference on
-Fairness, Accountability, and Transparency}, 319--28. FAT* '19. New
-York, NY, USA: Association for Computing Machinery.
-doi:\href{https://doi.org/10.1145/3287560.3287586}{10.1145/3287560.3287586}.
+Fairness, Accountability, and Transparency}, 319--28. FAT* 19. New York,
+NY, USA: Association for Computing Machinery.
 
 \hypertarget{ref-chai1971correlated}{}
 Chai, John J. 1971. ``Correlated Measurement Errors and the Least
@@ -15888,13 +15871,12 @@ American Statistical Association} 66 (335). Taylor \& Francis Group:
 
 \hypertarget{ref-chandola2009anomaly}{}
 Chandola, Varun, Arindam Banerjee, and Vipin Kumar. 2009. ``Anomaly
-Detection: A Survey.'' \emph{ACM Computing Surveys} 41 (3). ACM: 15.
+Detection: A Survey.'' \emph{ACM Computing Surveys} 41 (3).
 
 \hypertarget{ref-Chapelle2010}{}
-Chapelle, O., and S. S. Keerthi. 2010. ``Efficient Algorithms for
-Ranking with SVMs.'' \emph{Information Retrieval} 13 (3). Hingham, MA:
-Kluwer Academic Publishers: 201--15.
-doi:\href{https://doi.org/10.1007/s10791-009-9109-9}{10.1007/s10791-009-9109-9}.
+Chapelle, Olivier, and S. Sathiya Keerthi. 2010. ``Efficient Algorithms
+for Ranking with SVMs.'' \emph{Information Retrieval} 13 (3). Hingham,
+MA: Kluwer Academic Publishers: 201--15.
 
 \hypertarget{ref-Chapelle2006}{}
 Chapelle, Olivier, Bernhard Schoelkopf, and Alexander Zien, eds. 2006.
@@ -15904,15 +15886,12 @@ Chapelle, Olivier, Bernhard Schoelkopf, and Alexander Zien, eds. 2006.
 Chawla, Nitesh V. 2005. ``Data Mining for Imbalanced Datasets: An
 Overview.'' In \emph{The Data Mining and Knowledge Discovery Handbook},
 edited by Oded Maimon and Lior Rokach, 853--67. Springer.
-\url{http://dblp.uni-trier.de/db/books/collections/datamining2005.html\#Chawla05}.
 
 \hypertarget{ref-chen2018}{}
 Chen, Irene, Fredrik D Johansson, and David Sontag. 2018. ``Why Is My
-Classifier Discriminatory?'' In \emph{Advances in Neural Information
-Processing Systems 31}, edited by S. Bengio, H. Wallach, H. Larochelle,
-K. Grauman, N. Cesa-Bianchi, and R. Garnett, 3539--50. Curran
-Associates, Inc.
-\url{http://papers.nips.cc/paper/7613-why-is-my-classifier-discriminatory.pdf}.
+Classifier Discriminatory?'' In \emph{Proceedings of the 32nd
+International Conference on Neural Information Processing Systems},
+3543--54. NIPS 18. Red Hook, NY, USA: Curran Associates, Inc.
 
 \hypertarget{ref-cheng2016}{}
 Cheng, Justin, Lada A Adamic, Jon M Kleinberg, and Jure Leskovec. 2016.
@@ -15929,7 +15908,6 @@ Efficiently with Corona.''
 Chouldechova, Alexandra. 2017. ``Fair Prediction with Disparate Impact:
 A Study of Bias in Recidivism Prediction Instruments.'' \emph{Big Data}
 5 (2): 153--63.
-doi:\href{https://doi.org/10.1089/big.2016.0047}{10.1089/big.2016.0047}.
 
 \hypertarget{ref-chouldechova2018}{}
 Chouldechova, Alexandra, and Aaron Roth. 2018. ``The Frontiers of
@@ -15957,16 +15935,15 @@ Methods.'' \emph{Journal of the American Statistical Association} 79
 (387). Taylor \& Francis: 531--54.
 
 \hypertarget{ref-Clifton06}{}
-Clifton, C., M. Kantarcioglu, A. Doan, G. Schadow, J. Vaidya, A.K.
-Elmagarmid, and D. Suciu. 2006. ``Privacy-Preserving Data Integration
-and Sharing.'' In \emph{9th Acm Sigmod Workshop on Research Issues in
-Data Mining and Knowledge Discovery}, edited by G. Das, B. Liu, and P.
-S. Yu, 19--26. ACM.
+Clifton, Chris, Murat Kantarcioglu, AnHai Doan, Gunther Schadow, Jaideep
+Vaidya, Ahmed Elmagarmid, and Dan Suciu. 2006. ``Privacy-Preserving Data
+Integration and Sharing.'' In \emph{9th Acm Sigmod Workshop on Research
+Issues in Data Mining and Knowledge Discovery}, 19--26. ACM.
 
 \hypertarget{ref-ClouderaManager}{}
 Cloudera. n.d. ``Cloudera Manager.''
 \url{https://www.cloudera.com/content/www/en-us/products/cloudera-manager.html}.
-Accessed April 16, 2016.
+Accessed February 1, 2020.
 
 \hypertarget{ref-cochran1968errors}{}
 Cochran, William G. 1968. ``Errors of Measurement in Statistics.''
@@ -15986,7 +15963,6 @@ Corti, Paolo, Thomas J. Kraft, Stephen Vincent Mather, and Bborie Park.
 Crammer, Koby, and Yoram Singer. 2002. ``On the Algorithmic
 Implementation of Multiclass Kernel-Based Vector Machines.''
 \emph{Journal of Machine Learning Research} 2. JMLR.org: 265--92.
-\url{http://dl.acm.org/citation.cfm?id=944790.944813}.
 
 \hypertarget{ref-crossno1993heterogeneous}{}
 Crossno, Patricia J., Douglas D. Cline, and Jeffrey N Jortner. 1993. ``A
@@ -16016,9 +15992,9 @@ DeBelius, Danny. 2015. ``Let's Tesselate: Hexagons for Tile Grid Maps.''
 \url{http://blog.apps.npr.org/2015/05/11/hex-tile-maps.html}.
 
 \hypertarget{ref-decker2015has}{}
-Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda. to
-appear. ``Where Has All the Skewness Gone? The Decline in High-Growth
-(Young) Firms in the US.'' \emph{European Economic Review}.
+Decker, Ryan A., John Haltiwanger, Ron S. Jarmin, and Javier Miranda.
+2016. ``Where Has All the Skewness Gone? The Decline in High-Growth
+(Young) Firms in the US.'' \emph{European Economic Review} 86: 4--23.
 
 \hypertarget{ref-desaietal2016}{}
 Desai, T., F. Ritchie, and R. Welpton. 2016. ``Five Safes: Designing
@@ -16074,14 +16050,14 @@ DuGoff, Eva H., Megan Schuler, and Elizabeth A. Stuart. 2014.
 Methods to Complex Surveys.'' \emph{Health Services Research} 49 (1).
 Wiley Online Library: 284--303.
 
-\hypertarget{ref-duncanstatistical}{}
-Duncan, G., M. Elliot, and J. J. Salazar-González. 2011.
-\emph{Statistical Confidentiality: Principles and Practice}. Springer.
-
 \hypertarget{ref-duncan2004disclosure}{}
 Duncan, George T, and S Lynne Stokes. 2004. ``Disclosure Risk Vs. Data
 Utility: The Ru Confidentiality Map as Applied to Topcoding.''
 \emph{Chance} 17 (3). Taylor \& Francis: 16--20.
+
+\hypertarget{ref-duncanstatistical}{}
+Duncan, George T., Mark Elliot, and Gonzalez Juan Jose Salazar. 2011.
+\emph{Statistical Confidentiality: Principles and Practice}. Springer.
 
 \hypertarget{ref-dunne2013motif}{}
 Dunne, Cody, and Ben Shneiderman. 2013. ``Motif Simplification:
@@ -16093,14 +16069,13 @@ Factors in Computing Systems}, 3247--56. ACM.
 Dunning, Ted. 1993. ``Accurate Methods for the Statistics of Surprise
 and Coincidence.'' \emph{Computational Linguistics} 19 (1). Cambridge,
 MA: MIT Press: 61--74.
-\url{http://dl.acm.org/citation.cfm?id=972450.972454}.
 
 \hypertarget{ref-dutwinbuskirk2017}{}
 Dutwin, David, and Trent D. Buskirk. 2017. ``Reply.'' \emph{Public
 Opinion Quarterly} 81 (S1): 246--49.
 
 \hypertarget{ref-Dworkroth2014}{}
-Dwork, C., and A. Roth. 2014. ``The Algorithmic Foundations of
+Dwork, Cynthia, and Aaron Roth. 2014. ``The Algorithmic Foundations of
 Differential Privacy.'' \emph{Foundations and Trends in Theoretical
 Computer Science} 9 (3--4): 211--407.
 
@@ -16108,18 +16083,12 @@ Computer Science} 9 (3--4): 211--407.
 Dwork, Cynthia, Moritz Hardt, Toniann Pitassi, Omer Reingold, and
 Richard Zemel. 2012. ``Fairness Through Awareness.'' In
 \emph{Proceedings of the 3rd Innovations in Theoretical Computer Science
-Conference}, 214--26. ITCS '12. New York, NY, USA: Association for
+Conference}, 214--26. ITCS 12. New York, NY, USA: Association for
 Computing Machinery.
-doi:\href{https://doi.org/10.1145/2090236.2090255}{10.1145/2090236.2090255}.
 
 \hypertarget{ref-EconomicandSocialResearchCouncil2016}{}
 Economic and Social Research Council. 2016. ``Administrative Data
 Research Network.''
-
-\hypertarget{ref-manual2004summary}{}
-Economic Co-operation, Organisation of, and Development. 2004. ``A
-Summary of the Frascati Manual.'' \emph{Main Definitions and Conventions
-for the Measurement of Research and Experimental Development} 84.
 
 \hypertarget{ref-edelman2017racial}{}
 Edelman, Benjamin, Michael Luca, and Dan Svirsky. 2017. ``Racial
@@ -16150,8 +16119,8 @@ Evans, David S. 1987. ``Tests of Alternative Theories of Firm Growth.''
 \emph{Journal of Political Economy} 95. JSTOR: 657--74.
 
 \hypertarget{ref-Evans2011}{}
-Evans, J. A., and J. G. Foster. 2011. ``Metaknowledge.'' \emph{Science}
-331 (6018): 721--25.
+Evans, James A., and Jacob G. Foster. 2011. ``Metaknowledge.''
+\emph{Science} 331 (6018): 721--25.
 
 \hypertarget{ref-FanLiao2012}{}
 Fan, Jianqing, and Yuan Liao. 2012. ``Endogeneity in Ultrahigh
@@ -16159,7 +16128,7 @@ Dimension.'' Princeton University.
 
 \hypertarget{ref-fan2014endogeneity}{}
 ---------. 2014. ``Endogeneity in High Dimensions.'' \emph{Annals of
-Statistics} 42 (3). NIH Public Access: 872.
+Statistics} 42 (3): 872.
 
 \hypertarget{ref-fan2014challenges}{}
 Fan, Jianqing, Fang Han, and Han Liu. 2014. ``Challenges of Big Data
@@ -16169,7 +16138,7 @@ Press: 293--314.
 \hypertarget{ref-fan2009ultrahigh}{}
 Fan, Jianqing, Richard Samworth, and Yichao Wu. 2009. ``Ultrahigh
 Dimensional Feature Selection: Beyond the Linear Model.'' \emph{Journal
-of Machine Learning Research} 10. JMLR. org: 2013--38.
+of Machine Learning Research} 10: 2013--38.
 
 \hypertarget{ref-fekete2015progressivis}{}
 Fekete, Jean-Daniel. 2015. ``ProgressiVis: A Toolkit for Steerable
@@ -16196,7 +16165,7 @@ Linkage.'' \emph{Journal of the American Statistical Association} 64
 Feng, Shi, Eric Wallace, Alvin Grissom II, Pedro Rodriguez, Mohit Iyyer,
 and Jordan Boyd-Graber. 2018. ``Pathologies of Neural Models Make
 Interpretation Difficult.'' In \emph{Empirical Methods in Natural
-Language Processing}. Brussels, Belgium. \url{docs/2018_emnlp_rs.pdf}.
+Language Processing}. Brussels, Belgium.
 
 \hypertarget{ref-ferragina-10}{}
 Ferragina, Paolo, and Ugo Scaiella. 2010. ``TAGME: On-the-Fly Annotation
@@ -16204,7 +16173,6 @@ of Short Text Fragments (by Wikipedia Entities).'' In \emph{Proceedings
 of the 19th Acm International Conference on Information and Knowledge
 Management}, 1625--8. CIKM 10. New York, NY, USA: Association for
 Computing Machinery.
-doi:\href{https://doi.org/10.1145/1871437.1871689}{10.1145/1871437.1871689}.
 
 \hypertarget{ref-few2009now}{}
 Few, Stephen. 2009. \emph{Now You See It: Simple Visualization
@@ -16220,7 +16188,7 @@ the Modern Web Architecture.'' \emph{ACM Transactions on Internet
 Technology} 2 (2). ACM: 115--50.
 
 \hypertarget{ref-fisher2012trust}{}
-Fisher, Danyel, Igor Popov, Steven Drucker, and m. c. schraefel. 2012.
+Fisher, Danyel, Igor Popov, Steven Drucker, and Monica Schraefel. 2012.
 ``Trust Me, I'm Partially Right: Incremental Visualization Lets Analysts
 Explore Large Datasets Faster.'' In \emph{Proceedings of the Sigchi
 Conference on Human Factors in Computing Systems}, 1673--82. ACM.
@@ -16233,7 +16201,7 @@ Algorithms That Make Sense of Data}. Cambridge University Press.
 Fortuna, Blaz, Marko Grobelnik, and Dunja Mladenic. 2007. ``OntoGen:
 Semi-Automatic Ontology Editor.'' In \emph{Proceedings of the 2007
 Conference on Human Interface: Part Ii}, 309--18. Beijing, China:
-Springer. \url{http://dl.acm.org/citation.cfm?id=1766591.1766627}.
+Springer.
 
 \hypertarget{ref-foster2009resolving}{}
 Foster, Lucia, Ron S. Jarmin, and T. Lynn Riggs. 2009. ``Resolving the
@@ -16247,9 +16215,9 @@ Paul Gauthier. 1997. ``Cluster-Based Scalable Network Services.''
 \emph{ACM SIGOPS Operating Systems Review} 31 (5). ACM.
 
 \hypertarget{ref-browncorpus}{}
-Francis, W. N., and H. Kucera. 1979. ``Brown Corpus Manual.'' Department
-of Linguistics, Brown University, Providence, Rhode Island, US.
-\url{http://icame.uib.no/brown/bcm.html}.
+Francis, W. Nelson, and Henry Kucera. 1979. ``Brown Corpus Manual.''
+Department of Linguistics, Brown University, Providence, Rhode Island,
+US.
 
 \hypertarget{ref-freeman1979centrality}{}
 Freeman, Linton C. 1979. ``Centrality in Social Networks Conceptual
@@ -16262,22 +16230,22 @@ Paul P. Biemer, Robert M. Groves, Lars E. Lyberg, Nancy A. Mathiowetz,
 and Seymour Sudman, 617--35. John Wiley \& Sons.
 
 \hypertarget{ref-galloway2017four}{}
-Galloway, Scott. 2017. \emph{The Four: The Hidden Dna of Amazon, Apple,
+Galloway, Scott. 2017. \emph{The Four: The Hidden DNA of Amazon, Apple,
 Facebook and Google}. Random House.
 
 \hypertarget{ref-geman-90}{}
-Geman, S., and D. Geman. 1990. ``Stochastic Relaxation, Gibbs
+Geman, Stuart, and Donald Geman. 1990. ``Stochastic Relaxation, Gibbs
 Distributions, and the Bayesian Restoration of Images.'' In
 \emph{Readings in Uncertain Reasoning}, edited by Glenn Shafer and Judea
 Pearl, 452--72. Morgan Kaufmann.
 
 \hypertarget{ref-gerrish-12}{}
 Gerrish, Sean M., and David M. Blei. 2012. ``The Issue-Adjusted Ideal
-Point Model.'' \emph{arXiv}.
+Point Model.'' \url{https://arxiv.org/abs/1209.6004}.
 
 \hypertarget{ref-girone2008cern}{}
 Girone, Maria. 2008. ``CERN Database Services for the LHC Computing
-Grid.'' In \emph{Journal of Physics: Conference Series}, 119:052017. 5.
+Grid.'' In \emph{Journal of Physics: Conference Series}. Vol. 119. 5.
 IOP Publishing.
 
 \hypertarget{ref-girvan2002community}{}
@@ -16329,7 +16297,7 @@ Greenwood, Daniel, Arkadiusz Stopczynski, Brian Sweatt, Thomas Hardjono,
 and Alex Pentland. 2014. ``The New Deal on Data: A Framework for
 Institutional Controls.'' In \emph{Privacy, Big Data, and the Public
 Good: Frameworks for Engagement}, edited by Julia Lane, Victoria
-Stodden, Stefan Bender, and Helen Nissenbaum, 192. Cambridge University
+Stodden, Stefan Bender, and Helen Nissenbaum. Cambridge University
 Press.
 
 \hypertarget{ref-griffiths-04}{}
@@ -16340,7 +16308,7 @@ Topics.'' \emph{Proceedings of the National Academy of Sciences} 101
 \hypertarget{ref-grimmer2013text}{}
 Grimmer, Justin, and Brandon M. Stewart. 2013. ``Text as Data: The
 Promise and Pitfalls of Automatic Content Analysis Methods for Political
-Texts.'' \emph{Political Analysis} 21 (3). SPM-PMSAPSA: 267--97.
+Texts.'' \emph{Political Analysis} 21 (3): 267--97.
 
 \hypertarget{ref-mpi}{}
 Gropp, William, Ewing Lusk, and Anthony Skjellum. 2014. \emph{Using Mpi:
@@ -16354,8 +16322,7 @@ Wiley \& Sons.
 \hypertarget{ref-haak2012orcid}{}
 Haak, Laurel L., Martin Fenner, Laura Paglione, Ed Pentz, and Howard
 Ratner. 2012. ``ORCID: A System to Uniquely Identify Researchers.''
-\emph{Learned Publishing} 25 (4). Association of Learned; Professional
-Society Publishers: 259--64.
+\emph{Learned Publishing} 25 (4): 259--64.
 
 \hypertarget{ref-SparkTransformation}{}
 Hadoop, Apache. n.d. ``HDFS Architecture.''
@@ -16365,7 +16332,7 @@ Hadoop, Apache. n.d. ``HDFS Architecture.''
 Hainmueller, Jens, and Chad Hazlett. 2014. ``Kernel Regularized Least
 Squares: Reducing Misspecification Bias with a Flexible and
 Interpretable Machine Learning Approach.'' \emph{Political Analysis} 22
-(2). SPM-PMSAPSA: 143--68.
+(2): 143--68.
 
 \hypertarget{ref-halevy-09}{}
 Halevy, Alon, Peter Norvig, and Fernando Pereira. 2009. ``The
@@ -16373,9 +16340,9 @@ Unreasonable Effectiveness of Data.'' \emph{IEEE Intelligent Systems} 24
 (2). Piscataway, NJ: IEEE Educational Activities Department: 8--12.
 
 \hypertarget{ref-HallMiller2009}{}
-Hall, P., and H. Miller. 2009. ``Using Generalized Correlation to Effect
-Variable Selection in Very High Dimensional Problems.'' \emph{Journal of
-Computational and Graphical Statistics} 18: 533--50.
+Hall, Peter, and Hugh Miller. 2009. ``Using Generalized Correlation to
+Effect Variable Selection in Very High Dimensional Problems.''
+\emph{Journal of Computational and Graphical Statistics} 18: 533--50.
 
 \hypertarget{ref-haltiwanger2013creates}{}
 Haltiwanger, John, Ron S. Jarmin, and Javier Miranda. 2013. ``Who
@@ -16399,7 +16366,7 @@ Hansen, Morris H., William N. Hurwitz, and William G. Madow. 1993.
 
 \hypertarget{ref-harford2014big}{}
 Harford, Tim. 2014. ``Big Data: A Big Mistake?'' \emph{Significance} 11
-(5). Wiley Online Library: 14--19.
+(5): 14--19.
 
 \hypertarget{ref-harrison2015infographic}{}
 Harrison, Lane, Katharina Reinecke, and Remco Chang. 2015. ``Infographic
@@ -16413,23 +16380,17 @@ in the United States.'' \emph{Data Coalition Blog}. Washington DC: The
 Data Colaition.
 \url{https://www.datacoalition.org/two-years-of-progress-on-evidence-based-policymaking-in-the-united-states/}.
 
-\hypertarget{ref-SLcourse}{}
-Hastie, Trevor, and Rob Tibshirani. 2015. ``Statistical Learning
-Course.''
-\url{https://lagunita.stanford.edu/courses/HumanitiesandScience/StatLearning/Winter2015/about}.
-Accessed February 1, 2016.
-
 \hypertarget{ref-HastieTibshirani}{}
 Hastie, Trevor, Robert Tibshirani, and Jerome Friedman. 2001. \emph{The
 Elements of Statistical Learning}. Springer.
 
 \hypertarget{ref-check2015researchers}{}
 Hayden, Erica Check. 2015. ``Researchers Wrestle with a Privacy
-Problem.'' \emph{Nature} 525 (7570): 440.
+Problem.'' \emph{Nature} 525 (7570).
 
 \hypertarget{ref-hayden2012broken}{}
 Hayden, Erika Check. 2012. ``A Broken Contract.'' \emph{Nature} 486
-(7403). Macmillan Publishers Ltd., London, England: 312--14.
+(7403): 312--14.
 
 \hypertarget{ref-he2003discovering}{}
 He, Zengyou, Xiaofei Xu, and Shengchun Deng. 2003. ``Discovering
@@ -16448,7 +16409,7 @@ Transactions on Visualization and Computer Graphics} 12 (5). IEEE:
 677--84.
 
 \hypertarget{ref-herzog2007data}{}
-Herzog, Thomas N, Fritz J Scheuren, and William E Winkler. 2007.
+Herzog, Thomas N., Fritz J. Scheuren, and William E. Winkler. 2007.
 \emph{Data Quality and Record Linkage Techniques}. Springer Science \&
 Business Media.
 
@@ -16462,24 +16423,24 @@ Hofmann, Thomas. 1999. ``Probabilistic Latent Semantic Analysis.'' In
 \emph{Proceedings of Uncertainty in Artificial Intelligence}.
 
 \hypertarget{ref-Holmberg2017}{}
-Holmberg, A., and C. Bycroft. 2017. ``Statistics New Zealand's Approach
-to Making Use of Alternative Data Sources in a New Era of Integrated
-Data.'' In \emph{Total Survey Error in Practice}, edited by Paul P.
-Biemer, Edith D. de Leeuw, Stephanie Eckman, Brad Edwards, Frauke
-Kreuter, Lars E. Lyberg, N. Clyde Tucker, and Brady T. West. Hoboken,
-NJ: John Wiley; Sons.
+Holmberg, Anders, and Christine Bycroft. 2017. ``Statistics New
+Zealand's Approach to Making Use of Alternative Data Sources in a New
+Era of Integrated Data.'' In \emph{Total Survey Error in Practice},
+edited by Paul P. Biemer, Edith D. de Leeuw, Stephanie Eckman, Brad
+Edwards, Frauke Kreuter, Lars E. Lyberg, N. Clyde Tucker, and Brady T.
+West. Hoboken, NJ: John Wiley; Sons.
 
 \hypertarget{ref-hox2010multilevel}{}
 Hox, Joop. 2010. \emph{Multilevel Analysis: Techniques and
 Applications}. Routledge.
 
 \hypertarget{ref-Hsieh2017}{}
-Hsieh, Y., and J. Murphy. 2017. ``Total Twitter Error: Decomposing
-Public Opinion Measurement on Twitter from a Total Survey Error
-Perspective.'' In \emph{Total Survey Error in Practice}, edited by Paul
-P. Biemer, Edith D. de Leeuw, Stephanie Eckman, Brad Edwards, Frauke
-Kreuter, Lars E. Lyberg, N. Clyde Tucker, and Brady T. West. Hoboken,
-NJ: John Wiley; Sons.
+Hsieh, Yuli Patrick, and Joe Murphy. 2017. ``Total Twitter Error:
+Decomposing Public Opinion Measurement on Twitter from a Total Survey
+Error Perspective.'' In \emph{Total Survey Error in Practice}, edited by
+Paul P. Biemer, Edith D. de Leeuw, Stephanie Eckman, Brad Edwards,
+Frauke Kreuter, Lars E. Lyberg, N. Clyde Tucker, and Brady T. West.
+Hoboken, NJ: John Wiley; Sons.
 
 \hypertarget{ref-Hu:Zhai:Eidelman:Boyd-Graber-2014}{}
 Hu, Yuening, Ke Zhai, Vlad Eidelman, and Jordan Boyd-Graber. 2014.
@@ -16551,14 +16512,13 @@ PSID Data Files.'' Technical report.
 \url{http://psidonline.isr.umich.edu/Guide/FileStructure.pdf}.
 
 \hypertarget{ref-Ioannidis2005}{}
-Ioannidis, J. P. A. 2005. ``Why Most Published Research Findings Are
+Ioannidis, John P. A. 2005. ``Why Most Published Research Findings Are
 False.'' \emph{PLoS Medicine} 2 (8): e124.
 
 \hypertarget{ref-iyyer-15}{}
-Iyyer, Mohit, Varun Manjunatha, Jordan Boyd-Graber, and Hal DauméIII.
+Iyyer, Mohit, Varun Manjunatha, Jordan Boyd-Graber, and Hal Daumé III.
 2015. ``Deep Unordered Composition Rivals Syntactic Methods for Text
-Classification.'' In \emph{Acl}.
-\url{http://www.cs.colorado.edu/~jbg/docs/2015_acl_dan.pdf}.
+Classification.'' In \emph{Association for Computational Linguistics}.
 
 \hypertarget{ref-james2013introduction}{}
 James, Gareth, Daniela Witten, Trevor Hastie, and Robert Tibshirani.
@@ -16572,7 +16532,7 @@ Quarterly} 79 (4). AAPOR: 839--80.
 
 \hypertarget{ref-jarmin2002longitudinal}{}
 Jarmin, Ron S., and Javier Miranda. 2002. ``The Longitudinal Business
-Database.'' Available at SSRN 2128793.
+Database.'' Available at SSRN: \url{https://ssrn.com/abstract=2128793}.
 
 \hypertarget{ref-jarmin2014expanding}{}
 Jarmin, Ron S., Thomas A. Louis, and Javier Miranda. 2014. ``Expanding
@@ -16634,28 +16594,25 @@ Press.
 \hypertarget{ref-harrisonweb}{}
 Keshif. n.d. ``Infographics Aesthetics Dataset Browser.''
 \url{http://keshif.me/demo/infographics_aesthetics}. Accessed February
-1, 2016.
+1, 2020.
 
 \hypertarget{ref-kilbertus2017}{}
 Kilbertus, Niki, Mateo Rojas Carulla, Giambattista Parascandolo, Moritz
 Hardt, Dominik Janzing, and Bernhard Schölkopf. 2017. ``Avoiding
 Discrimination Through Causal Reasoning.'' In \emph{Advances in Neural
-Information Processing Systems 30}, edited by I. Guyon, U. V. Luxburg,
-S. Bengio, H. Wallach, R. Fergus, S. Vishwanathan, and R. Garnett,
-656--66. Curran Associates, Inc.
-\url{http://papers.nips.cc/paper/6668-avoiding-discrimination-through-causal-reasoning.pdf}.
+Information Processing Systems 30}, 656--66. Curran Associates, Inc.
 
 \hypertarget{ref-kim2016inventor}{}
 Kim, Kunho, Madian Khabsa, and C Lee Giles. 2016. ``Inventor Name
 Disambiguation for a Patent Database Using a Random Forest and Dbscan.''
-In \emph{2016 Ieee/Acm Joint Conference on Digital Libraries (Jcdl)},
+In \emph{2016 IEEE/ACM Joint Conference on Digital Libraries (JCDL)},
 269--70. IEEE.
 
 \hypertarget{ref-Kim2016}{}
-Kim, Y., J. Huang, and S. Emery. 2016. ``Garbage in, Garbage Out: Data
-Collection, Quality Assessment and Reporting Standards for Social Media
-Data Use in Health Research, Infodemiology and Digital Disease
-Detection.'' \emph{Journal of Medical Internet Research} 18 (2).
+Kim, Yoonsang, Jidong Huang, and Sherry Emery. 2016. ``Garbage in,
+Garbage Out: Data Collection, Quality Assessment and Reporting Standards
+for Social Media Data Use in Health Research, Infodemiology and Digital
+Disease Detection.'' \emph{Journal of Medical Internet Research} 18 (2).
 
 \hypertarget{ref-King2013}{}
 King, Gary, Jennifer Pan, and Margaret E. Roberts. 2013. ``How
@@ -16682,34 +16639,29 @@ Cambridge, MA: MIT Press: 485--525.
 Kleinberg, Jon, Jens Ludwig, Sendhil Mullainathan, and Ziad Obermeyer.
 2015. ``Prediction Policy Problems.'' \emph{American Economic Review}
 105 (5): 491--95.
-\url{http://EconPapers.repec.org/RePEc:aea:aecrev:v:105:y:2015:i:5:p:491-95}.
 
 \hypertarget{ref-kleinberg2017}{}
 Kleinberg, Jon, Sendhil Mullainathan, and Manish Raghavan. 2017.
 ``Inherent Trade-Offs in the Fair Determination of Risk Scores.'' In
-\emph{8th Innovations in Theoretical Computer Science Conference (Itcs
-2017)}, edited by Christos H. Papadimitriou, 67:43:1--43:23. Leibniz
-International Proceedings in Informatics (Lipics). Dagstuhl, Germany:
+\emph{8th Innovations in Theoretical Computer Science Conference (ITCS
+2017)}, edited by Christos H. Papadimitriou. Vol. 67. Dagstuhl, Germany:
 Schloss Dagstuhl--Leibniz-Zentrum fuer Informatik.
-doi:\href{https://doi.org/10.4230/LIPIcs.ITCS.2017.43}{10.4230/LIPIcs.ITCS.2017.43}.
 
 \hypertarget{ref-kohler2012datenanalyse}{}
 Kohler, Ulrich, and Frauke Kreuter. 2012. \emph{Data Analysis Using
-Stata, 3rd Edition}. Stata Press.
+Stata}. 3rd Edition. Stata Press.
 
 \hypertarget{ref-kolb2012}{}
 Kolb, Lars, Andreas Thor, and Erhard Rahm. 2012. ``Dedoop: Efficient
-Deduplication with Hadoop.'' \emph{Proc. VLDB Endow.} 5 (12). VLDB
-Endowment: 1878--81.
-doi:\href{https://doi.org/10.14778/2367502.2367527}{10.14778/2367502.2367527}.
+Deduplication with Hadoop.'' \emph{Proceedings of the VLDB Endowment} 5
+(12): 1878--81.
 
 \hypertarget{ref-kong-14}{}
 Kong, Lingpeng, Nathan Schneider, Swabha Swayamdipta, Archna Bhatia,
 Chris Dyer, and Noah A. Smith. 2014. ``A Dependency Parser for Tweets.''
 In \emph{Proceedings of the 2014 Conference on Empirical Methods in
-Natural Language Processing (Emnlp)}, 1001--12. Association for
+Natural Language Processing (EMNLP)}, 1001--12. Association for
 Computational Linguistics.
-\url{http://www.aclweb.org/anthology/D14-1108}.
 
 \hypertarget{ref-Kopf}{}
 Kopf, Dan. 2018. ``This year's Nobel Prize in economics was awarded to a
@@ -16731,7 +16683,6 @@ Helen Nissenbaum, 257--75. Cambridge University Press.
 Kreuter, Frauke, Rayid Ghani, and Julia Lane. 2019. ``Change Through
 Data: A Data Analytics Training Program for Government Employees.''
 \emph{Harvard Data Science Review} 1 (2).
-doi:\href{https://doi.org/10.1162/99608f92.ed353ae3}{10.1162/99608f92.ed353ae3}.
 
 \hypertarget{ref-kuhn2005hungarian}{}
 Kuhn, H. W. 2005. ``The Hungarian Method for the Assignment Problem.''
@@ -16749,17 +16700,13 @@ Sufficiency.'' \emph{Annals of Mathematical Statistics} 22 (1). JSTOR:
 \hypertarget{ref-Kumar2010}{}
 Kumar, Mohit, Rayid Ghani, and Zhu-Song Mei. 2010. ``Data Mining to
 Predict and Prevent Errors in Health Insurance Claims Processing.'' In
-\emph{Proceedings of the 16th Acm Sigkdd International Conference on
+\emph{Proceedings of the 16th ACM SIGKDD International Conference on
 Knowledge Discovery and Data Mining}, 65--74. KDD '10. ACM.
-doi:\href{https://doi.org/10.1145/1835804.1835816}{10.1145/1835804.1835816}.
 
 \hypertarget{ref-kusner2017}{}
 Kusner, Matt J, Joshua Loftus, Chris Russell, and Ricardo Silva. 2017.
 ``Counterfactual Fairness.'' In \emph{Advances in Neural Information
-Processing Systems 30}, edited by I. Guyon, U. V. Luxburg, S. Bengio, H.
-Wallach, R. Fergus, S. Vishwanathan, and R. Garnett, 4066--76. Curran
-Associates, Inc.
-\url{http://papers.nips.cc/paper/6995-counterfactual-fairness.pdf}.
+Processing Systems 30}, 4066--76. Curran Associates, Inc.
 
 \hypertarget{ref-lafferty-01}{}
 Lafferty, John D., Andrew McCallum, and Fernando C. N. Pereira. 2001.
@@ -16776,9 +16723,8 @@ Linked Data.'' \emph{Journal of the American Statistical Association}
 Lakkaraju, Himabindu, Everaldo Aguiar, Carl Shan, David Miller, Nasir
 Bhanpuri, Rayid Ghani, and Kecia L. Addison. 2015. ``A Machine Learning
 Framework to Identify Students at Risk of Adverse Academic Outcomes.''
-In \emph{Proceedings of the 21th Acm Sigkdd International Conference on
+In \emph{Proceedings of the 21th ACM SIGKDD International Conference on
 Knowledge Discovery and Data Mining}, 1909--18. KDD '15. ACM.
-doi:\href{https://doi.org/10.1145/2783258.2788620}{10.1145/2783258.2788620}.
 
 \hypertarget{ref-lam2012empirical}{}
 Lam, Heidi, Enrico Bertini, Petra Isenberg, Catherine Plaisant, and
@@ -16790,12 +16736,11 @@ Visualization and Computer Graphics} 18 (9). IEEE: 1520--36.
 Lambrecht, Anja, and Catherine Tucker. 2019. ``Algorithmic Bias? An
 Empirical Study of Apparent Gender-Based Discrimination in the Display
 of Stem Career Ads.'' \emph{Management Science} 65 (7): 2966--81.
-doi:\href{https://doi.org/10.1287/mnsc.2018.3093}{10.1287/mnsc.2018.3093}.
 
 \hypertarget{ref-landauer-97}{}
-Landauer, T., and S. Dumais. 1997. ``Solutions to Plato's Problem: The
-Latent Semantic Analysis Theory of Acquisition, Induction and
-Representation of Knowledge.'' \emph{Psychological Review} 104 (2):
+Landauer, Thomas, and Susan Dumais. 1997. ``Solutions to Plato's
+Problem: The Latent Semantic Analysis Theory of Acquisition, Induction
+and Representation of Knowledge.'' \emph{Psychological Review} 104 (2):
 211--40.
 
 \hypertarget{ref-Lane2007a}{}
@@ -16807,19 +16752,19 @@ of Official Statistics} 23.
 Official Statistics} 23: 299--317.
 
 \hypertarget{ref-Lane2020}{}
-Lane, Julia I. 2020. ``Tiered Access: Risk and Utility.'' Washington DC:
+---------. 2020. ``Tiered Access: Risk and Utility.'' Washington DC:
 Committee of Professional Associations on Federal Statistics (COPAFS).
-
-\hypertarget{ref-lane2015new}{}
-Lane, Julia I., Jason Owen-Smith, Rebecca F. Rosen, and Bruce A.
-Weinberg. 2015. ``New Linked Data on Research Investments: Scientific
-Workforce, Productivity, and Public Value.'' \emph{Research Policy} 44.
-Elsevier: 1659--71.
 
 \hypertarget{ref-lane2013me}{}
 Lane, Julia, and Victoria Stodden. 2013. ``What? Me Worry? What to Do
 About Privacy, Big Data, and Statistical Research.'' \emph{AMSTAT News}
 438. American Statistical Association: 14.
+
+\hypertarget{ref-lane2015new}{}
+Lane, Julia, Jason Owen-Smith, Rebecca F. Rosen, and Bruce A. Weinberg.
+2015. ``New Linked Data on Research Investments: Scientific Workforce,
+Productivity, and Public Value.'' \emph{Research Policy} 44. Elsevier:
+1659--71.
 
 \hypertarget{ref-Lane2018}{}
 Lane, Julia, Jason Owen-Smith, Joseph Staudt, and Bruce A. Weinberg.
@@ -16835,7 +16780,7 @@ Engagement}. Cambridge: Cambridge University Press.
 \hypertarget{ref-lazer2014parable}{}
 Lazer, David, Ryan Kennedy, Gary King, and Alessandro Vespignani. 2014.
 ``The Parable of Google Flu: Traps in Big Data Analysis.''
-\emph{Science} 343 (14 March).
+\emph{Science} 343.
 
 \hypertarget{ref-levitt2006economic}{}
 Levitt, Steven D., and Thomas J. Miles. 2006. ``Economic Contributions
@@ -16848,8 +16793,8 @@ Assumption in Information Retrieval.'' In \emph{Proceedings of European
 Conference of Machine Learning}, 4--15.
 
 \hypertarget{ref-li2014disambiguation}{}
-Li, Guan-Cheng, Ronald Lai, Alexander D'Amour, David M Doolin, Ye Sun,
-Vetle I Torvik, Z Yu Amy, and Lee Fleming. 2014. ``Disambiguation and
+Li, Guan-Cheng, Ronald Lai, Alexander D'Amour, David M. Doolin, Ye Sun,
+Vetle I. Torvik, Z. Yu Amy, and Lee Fleming. 2014. ``Disambiguation and
 Co-Authorship Networks of the Us Patent Inventor Database
 (1975--2010).'' \emph{Research Policy} 43 (6). Elsevier: 941--55.
 
@@ -16870,7 +16815,7 @@ Lins, Lauro, James T Klosowski, and Carlos Scheidegger. 2013.
 IEEE: 2456--65.
 
 \hypertarget{ref-little2014statistical}{}
-Little, Roderick J. A., and Donald B Rubin. 2014. \emph{Statistical
+Little, Roderick J. A., and Donald B. Rubin. 2014. \emph{Statistical
 Analysis with Missing Data}. John Wiley \& Sons.
 
 \hypertarget{ref-liu2014effects}{}
@@ -16905,7 +16850,6 @@ Springer.
 
 \hypertarget{ref-malmkjar-02}{}
 Malmkjær, K. 2002. \emph{The Linguistics Encyclopedia}. Routledge.
-\url{https://books.google.ca/books?id=uCrXOLvD7fMC}.
 
 \hypertarget{ref-manning2014stanford}{}
 Manning, Christopher D., Mihai Surdeanu, John Bauer, Jenny Finkel,
@@ -16932,12 +16876,11 @@ Maskeri, Girish, Santonu Sarkar, and Kenneth Heafield. 2008. ``Mining
 Business Topics in Source Code Using Latent Dirichlet Allocation.'' In
 \emph{Proceedings of the 1st India Software Engineering Conference},
 113--20. ACM.
-doi:\href{https://doi.org/http://doi.acm.org/10.1145/1342211.1342234}{http://doi.acm.org/10.1145/1342211.1342234}.
 
 \hypertarget{ref-mccallister2010sp}{}
 McCallister, Erika, Timothy Grance, and Karen A Scarfone. 2010. \emph{SP
 800-122. Guide to Protecting the Confidentiality of Personally
-Identifiable Information (Pii)}. National Institute of Standards;
+Identifiable Information (PII)}. National Institute of Standards;
 Technology.
 
 \hypertarget{ref-mallet}{}
@@ -16948,18 +16891,17 @@ Language Toolkit.'' \url{http://mallet.cs.umass.edu}.
 Meij, Edgar, Marc Bron, Laura Hollink, Bouke Huurnink, and Maarten
 Rijke. 2009. ``Learning Semantic Query Suggestions.'' In
 \emph{Proceedings of the 8th International Semantic Web Conference},
-424--40. ISWC '09. Chantilly, VA: Springer.
-doi:\href{https://doi.org/10.1007/978-3-642-04930-9_27}{10.1007/978-3-642-04930-9\_27}.
+424--40. ISWC '09. Springer.
 
 \hypertarget{ref-meng2018}{}
 Meng, Xiao-Li. 2018. ``Statistical Paradises and Paradoxes in Big Data
-(I): Law of Large Populations, Big Data Paradox, and the 2016 Us
+(I): Law of Large Populations, Big Data Paradox, and the 2016 US
 Presidential Election.'' \emph{The Annals of Applied Statistics} 12 (2):
 685--726.
 
 \hypertarget{ref-mikolov-13}{}
-Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S Corrado, and Jeff Dean.
-2013. ``Distributed Representations of Words and Phrases and Their
+Mikolov, Tomas, Ilya Sutskever, Kai Chen, Greg S. Corrado, and Jeff
+Dean. 2013. ``Distributed Representations of Words and Phrases and Their
 Compositionality.'' In \emph{Advances in Neural Information Processing
 Systems}, 3111--9. Morgan Kaufmann.
 
@@ -16977,21 +16919,20 @@ for the Second Shared Task on Language Identification in Code-Switched
 Data.'' In \emph{Proceedings of the Second Workshop on Computational
 Approaches to Code Switching}, 40--49. Austin, Texas: Association for
 Computational Linguistics.
-doi:\href{https://doi.org/10.18653/v1/W16-5805}{10.18653/v1/W16-5805}.
 
 \hypertarget{ref-SQLCookbook}{}
 Molinaro, Anthony. 2005. \emph{SQL Cookbook: Query Solutions and
 Techniques for Database Developers}. O'Reilly Media.
 
 \hypertarget{ref-moreno1934}{}
-Moreno, J.L., and H.H. Jennings. 1934. \emph{Who Shall Survive?: A New
-Approach to the Problem of Human Interrelations}. Washington, D.C.:
-Nervous; Mental Disease Publishing Co.
+Moreno, Jacob L. 1934. \emph{Who Shall Survive?: A New Approach to the
+Problem of Human Interrelations}. Washington, D.C.: Nervous and Mental
+Disease Publishing Co.
 
 \hypertarget{ref-oecd2005measurement}{}
 Mortensen, Peter Stendahl, and Carter Walter Bloch. 2005. \emph{Oslo
 Manual: Guidelines for Collecting and Interpreting Innovation Data}.
-Organisation for Economic Co-operation; Development.
+Organisation for Economic Co-operation and Development.
 
 \hypertarget{ref-munzner2014visualization}{}
 Munzner, Tamara. 2014. \emph{Visualization Analysis and Design}. CRC
@@ -17077,18 +17018,17 @@ Niculae, Vlad, Srijan Kumar, Jordan Boyd-Graber, and Cristian
 Danescu-Niculescu-Mizil. 2015. ``Linguistic Harbingers of Betrayal: A
 Case Study on an Online Strategy Game.'' In \emph{Association for
 Computational Linguistics}. Beijing, China.
-\url{docs/2015_acl_diplomacy.pdf}.
 
 \hypertarget{ref-nielsen2012reinventing}{}
 Nielsen, Michael. 2012. \emph{Reinventing Discovery: The New Era of
 Networked Science}. Princeton University Press.
 
 \hypertarget{ref-nissenbaum2009}{}
-Nissenbaum, H. 2009. \emph{Privacy in Context: Technology, Policy, and
-the Integrity of Social Life}. Stanford University Press.
+Nissenbaum, Helen. 2009. \emph{Privacy in Context: Technology, Policy,
+and the Integrity of Social Life}. Stanford University Press.
 
 \hypertarget{ref-nissenbaum2011contextual}{}
-Nissenbaum, Helen. 2011. ``A Contextual Approach to Privacy Online.''
+---------. 2011. ``A Contextual Approach to Privacy Online.''
 \emph{Daedalus} 140 (4). MIT Press: 32--48.
 
 \hypertarget{ref-nissenbaum2019contextual}{}
@@ -17129,13 +17069,18 @@ Selections to Accommodate Map Users with Color-Vision Impairments.''
 \emph{Annals of the Association of American Geographers} 87 (1). Taylor
 \& Francis: 103--34.
 
+\hypertarget{ref-manual2004summary}{}
+Organisation of Economic Co-operation and Development. 2004. ``A Summary
+of the Frascati Manual.'' \emph{Main Definitions and Conventions for the
+Measurement of Research and Experimental Development} 84.
+
 \hypertarget{ref-ott-11}{}
 Ott, Myle, Yejin Choi, Claire Cardie, and Jeffrey T. Hancock. 2011.
 ``Finding Deceptive Opinion Spam by Any Stretch of the Imagination.'' In
 \emph{Proceedings of the 49th Annual Meeting of the Association for
 Computational Linguistics: Human Language Technologies---Volume 1},
 309--19. HLT '11. Stroudsburg, PA: Association for Computational
-Linguistics. \url{http://dl.acm.org/citation.cfm?id=2002472.2002512}.
+Linguistics.
 
 \hypertarget{ref-owen2003expanding}{}
 Owen-Smith, Jason, and Walter W. Powell. 2003. ``The Expanding Role of
@@ -17210,7 +17155,6 @@ Part-of-Speech Tagging with Bidirectional Long Short-Term Memory Models
 and Auxiliary Loss.'' In \emph{Proceedings of the 54th Annual Meeting of
 the Association for Computational Linguistics (Volume 2: Short Papers)},
 412--18. Berlin, Germany: Association for Computational Linguistics.
-doi:\href{https://doi.org/10.18653/v1/P16-2067}{10.18653/v1/P16-2067}.
 
 \hypertarget{ref-Plumb2018}{}
 Plumb, Gregory, Denali Molitor, and Ameet Talwalkar. 2018. ``Model
@@ -17225,18 +17169,22 @@ Ghani. 2015. ``Predictive Modeling for Public Health: Preventing
 Childhood Lead Poisoning.'' In \emph{Proceedings of the 21th Acm Sigkdd
 International Conference on Knowledge Discovery and Data Mining},
 2039--47. KDD '15. ACM.
-doi:\href{https://doi.org/10.1145/2783258.2788629}{10.1145/2783258.2788629}.
 
 \hypertarget{ref-powell2003neither}{}
-Powell, W. 2003. ``Neither Market nor Hierarchy.'' \emph{Sociology of
-Organizations: Classic, Contemporary, and Critical Readings} 315:
-104--17.
+Powell, Walter W. 2003. ``Neither Market nor Hierarchy.''
+\emph{Sociology of Organizations: Classic, Contemporary, and Critical
+Readings} 315: 104--17.
 
 \hypertarget{ref-powell2005network}{}
 Powell, Walter W., Douglas R. White, Kenneth W. Koput, and Jason
 Owen-Smith. 2005. ``Network Dynamics and Field Evolution: The Growth of
 Interorganizational Collaboration in the Life Sciences.'' \emph{American
 Journal of Sociology} 110 (4). JSTOR: 1132--1205.
+
+\hypertarget{ref-house2014big}{}
+President's Council of Advisors on Science and Technology. 2014. ``Big
+Data and Privacy: A Technological Perspective.'' Washington, DC:
+Executive Office of the President.
 
 \hypertarget{ref-FawcettProvost}{}
 Provost, Foster, and Tom Fawcett. 2013. \emph{Data Science for Business:
@@ -17256,12 +17204,11 @@ Computing}. Vienna, Austria: R Foundation for Statistical Computing.
 Rabiner, Lawrence R. 1989. ``A Tutorial on Hidden Markov Models and
 Selected Applications in Speech Recognition.'' \emph{Proceedings of the
 IEEE} 77 (2): 257--86.
-doi:\href{https://doi.org/10.1109/5.18626}{10.1109/5.18626}.
 
 \hypertarget{ref-ram2013git}{}
 Ram, Karthik. 2013. ``Git Can Facilitate Greater Reproducibility and
 Increased Transparency in Science.'' \emph{Source Code for Biology and
-Medicine} 8 (1): 7.
+Medicine} 8 (1).
 
 \hypertarget{ref-ramage-09}{}
 Ramage, Daniel, David Hall, Ramesh Nallapati, and Christopher Manning.
@@ -17274,8 +17221,8 @@ Ramakrishnan, Raghu, and Johannes Gehrke. 2002. \emph{Database
 Management Systems, 3rd Edition}. McGraw-Hill.
 
 \hypertarget{ref-Reid2017}{}
-Reid, G., F. Zabala, and A. Holmberg. 2017. ``Extending Tse to
-Administrative Data: A Quality Framework and Case Studies from Stats
+Reid, Giles, Felipa Zabala, and Anders Holmberg. 2017. ``Extending Tse
+to Administrative Data: A Quality Framework and Case Studies from Stats
 Nz.'' \emph{Journal of Official Statistics} 33 (2): 477--511.
 
 \hypertarget{ref-reiter2012statistical}{}
@@ -17288,27 +17235,25 @@ Statistical Inferences.'' \emph{Public Opinion Quarterly} 76 (1). AAPOR:
 Ribeiro, Marco Tulio, Sameer Singh, and Carlos Guestrin. 2016. ```Why
 Should I Trust You?': Explaining the Predictions of Any Classifier.'' In
 \emph{Proceedings of the 22nd ACM SIGKDD International Conference on
-Knowledge Discovery and Data Mining, San Francisco, ca, Usa, August
-13-17, 2016}, 1135--44.
+Knowledge Discovery and Data Mining}, 1135--44. San Francisco, CA, USA.
 
 \hypertarget{ref-bsoup}{}
 Richardson, Leonard. n.d. ``Beautiful Soup.''
 \url{http://www.crummy.com/software/BeautifulSoup/}. Accessed February
-1, 2016.
+1, 2020.
 
 \hypertarget{ref-Ritter2012}{}
 Ritter, Alan, Mausam, Oren Etzioni, and Sam Clark. 2012. ``Open Domain
 Event Extraction from Twitter.'' In \emph{Proceedings of the 18th Acm
 Sigkdd International Conference on Knowledge Discovery and Data Mining},
-1104--12. KDD '12. New York, NY, USA: Association for Computing
+1104--12. KDD 12. New York, NY, USA: Association for Computing
 Machinery.
-doi:\href{https://doi.org/10.1145/2339530.2339704}{10.1145/2339530.2339704}.
 
 \hypertarget{ref-Rodolfa2020}{}
 Rodolfa, K., E. Salomon, L. Haynes, I. Mendieta, J. Larson, and R.
 Ghani. 2020. ``Predictive Fairness to Reduce Misdemeanor Recidivism
-Through Social Service Interventions.'' In \emph{Proceedings of the Acm
-Conference on Fairness, Accountability, and Transparency (Acm Fat*)
+Through Social Service Interventions.'' In \emph{Proceedings of the ACM
+Conference on Fairness, Accountability, and Transparency (ACM FAT*)
 2020}.
 
 \hypertarget{ref-rubin1976}{}
@@ -17316,9 +17261,10 @@ Rubin, Donald B. 1976. ``Inference and Missing Data.'' \emph{Biometrika}
 63: 581--92.
 
 \hypertarget{ref-ruggles2019}{}
-Ruggles, S., C. Fitch, Magnuson D., and J. Schroeder. 2019.
-``Differential Privacy and Census Data: Implications for Social and
-Economic Research.'' AEA Papers; Proceedings (Vol. 109, pp. 403-08).
+Ruggles, Steven, Catherine Fitch, Diana Magnuson, and Jonathan
+Schroeder. 2019. ``Differential Privacy and Census Data: Implications
+for Social and Economic Research.'' AEA Papers; Proceedings (Vol. 109,
+pp. 403-08).
 
 \hypertarget{ref-brandom2019}{}
 Russell Brandom. 2019. ``Facebook has been charged with housing
@@ -17416,8 +17362,7 @@ Monte Carlo Algorithm.'' In \emph{EFaBBayes 250 Conference}. Vol. 16.
 Sethian, James A., Jean-Philippe Brunet, Adam Greenberg, and Jill P.
 Mesirov. 1991. ``Computing Turbulent Flow in Complex Geometries on a
 Massively Parallel Processor.'' In \emph{Proceedings of the 1991
-Acm/Ieee Conference on Supercomputing}, 230--41. ACM.
-doi:\href{https://doi.org/10.1145/125826.125954}{10.1145/125826.125954}.
+ACM/IEEE Conference on Supercomputing}, 230--41. ACM.
 
 \hypertarget{ref-SeverancePython}{}
 Severance, Charles. 2013. ``Python for Informatics: Exploring
@@ -17441,7 +17386,6 @@ Statistical Databases}, 269--82. Springer.
 \hypertarget{ref-shlomo2018}{}
 ---------. 2018. ``Statistical Disclosure Limitation: New Directions and
 Challenges.'' \emph{Journal of Privacy and Confidentiality} 8 (1).
-doi:\href{https://doi.org/10.29012/jpc.v8i1}{10.29012/jpc.v8i1}.
 
 \hypertarget{ref-shneiderman1992tree}{}
 Shneiderman, Ben. 1992. ``Tree Visualization with Tree-Maps: 2-D
@@ -17469,9 +17413,8 @@ Technology} 43 (1). Wiley Online Library: 1--43.
 
 \hypertarget{ref-SmolaRegression04}{}
 Smola, Alex J., and Bernhard Schölkopf. 2004. ``A Tutorial on Support
-Vector Regression.'' \emph{Statistics and Computing} 14 (3). Hingham,
-MA: Kluwer Academic Publishers: 199--222.
-doi:\href{https://doi.org/10.1023/B:STCO.0000035301.49549.88}{10.1023/B:STCO.0000035301.49549.88}.
+Vector Regression.'' \emph{Statistics and Computing} 14 (3). Kluwer
+Academic Publishers: 199--222.
 
 \hypertarget{ref-snow1855mode}{}
 Snow, John. 1855. \emph{On the Mode of Communication of Cholera}. John
@@ -17482,7 +17425,6 @@ Spielman, Seth E., and Alex Singleton. 2015. ``Studying Neighborhoods
 Using Uncertain Data from the American Community Survey: A Contextual
 Approach.'' \emph{Annals of the Association of American Geographers} 105
 (5): 1003--25.
-doi:\href{https://doi.org/10.1080/00045608.2015.1052335}{10.1080/00045608.2015.1052335}.
 
 \hypertarget{ref-squire19881936}{}
 Squire, Peverill. 1988. ``Why the 1936 Literary Digest Poll Failed.''
@@ -17491,7 +17433,7 @@ Squire, Peverill. 1988. ``Why the 1936 Literary Digest Poll Failed.''
 \hypertarget{ref-ProtoVis2015}{}
 Stanford Visualization Group. n.d. ``Dorling Cartograms in ProtoVis.''
 \url{http://mbostock.github.io/protovis/ex/cartogram.html}. Accessed
-January 10, 2015.
+February 1, 2020.
 
 \hypertarget{ref-stanton2006high}{}
 Stanton, Mark W, and MK Rutherford. 2006. \emph{The High Concentration
@@ -17506,13 +17448,12 @@ Investigative Analysis Through Interactive Visualization.''
 \hypertarget{ref-steorts2014smered}{}
 Steorts, Rebecca C, Rob Hall, and Stephen E Fienberg. 2014. ``SMERED: A
 Bayesian Approach to Graphical Record Linkage and de-Duplication.''
-Preprint, arXiv 1403.0211.
+\url{https://arxiv.org/abs/1312.4645}.
 
 \hypertarget{ref-SDV2015}{}
 Stephens-Davidowitz, S., and H. Varian. 2015. ``A Hands-on Guide to
 Google Data.''
 \url{http://people.ischool.berkeley.edu/~hal/Papers/2015/primer.pdf}.
-Accessed October 12.
 
 \hypertarget{ref-stock2002forecasting}{}
 Stock, James H., and Mark W. Watson. 2002. ``Forecasting Using Principal
@@ -17539,6 +17480,11 @@ Strasser, Carly. 2014. ``Git/GitHub: A Primer for Researchers.''
 \hypertarget{ref-NoSQLdatabases}{}
 Strauch, Christof. 2009. ``NoSQL Databases.''
 \url{http://www.christof-strauch.de/nosqldbs.pdf}.
+
+\hypertarget{ref-stuart2010matching}{}
+Stuart, Elizabeth A. 2010. ``Matching Methods for Causal Inference: A
+Review and a Look Forward.'' \emph{Statistical Science} 25 (1). NIH
+Public Access: 1.
 
 \hypertarget{ref-Sutton2018}{}
 Sutton, Richard S., and Andrew G. Barto. 2018. \emph{Reinforcement
@@ -17574,10 +17520,10 @@ Volunteers in DNA Study.'' \emph{Forbes},
 \url{http://www.forbes.com/sites/adamtanner/2013/04/25/harvard-professor-re-identifies-anonymous-volunteers-in-dna-study/\#6cc7f6b43e39}.
 
 \hypertarget{ref-Tennekes2012}{}
-Tennekes, M., E. de Jonge, and P. Daas. 2012. ``Innovative Visual Tools
-for Data Editing.'' Presented at the United Nations Economic Commission
-for Europe Work Session on Statistical Data. Available online at
-\url{http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf}.
+Tennekes, M., E. de Jonge, and Piet Daas. 2012. ``Innovative Visual
+Tools for Data Editing.'' Presented at the United Nations Economic
+Commission for Europe Work Session on Statistical Data. Available online
+at \url{http://www.pietdaas.nl/beta/pubs/pubs/30_Netherlands.pdf}.
 
 \hypertarget{ref-tennekes2011top}{}
 Tennekes, Martijn, and Edwin de Jonge. 2011. ``Top-down Data Analysis
@@ -17588,7 +17534,7 @@ Information Visualization Theory and Applications}, 236--41. SciTePress.
 \hypertarget{ref-tennekes2013visualizing}{}
 Tennekes, Martijn, Edwin de Jonge, and Piet J. H. Daas. 2013.
 ``Visualizing and Inspecting Large Datasets with Tableplots.''
-\emph{Journal of Data Science} 11 (1). ???????? 43--58.
+\emph{Journal of Data Science} 11 (1): 43--58.
 
 \hypertarget{ref-northpointe2016}{}
 The Northpointe Suite. 2016. ``Response to ProPublica: Demonstrating
@@ -17617,9 +17563,8 @@ of European Statisticians, United Nations Economic Commision for Europe.
 \hypertarget{ref-tuarob-13}{}
 Tuarob, Suppawong, Line C. Pouchard, and C. Lee Giles. 2013. ``Automatic
 Tag Recommendation for Metadata Annotation Using Probabilistic Topic
-Modeling.'' In \emph{Proceedings of the 13th Acm/Ieee-Cs Joint
+Modeling.'' In \emph{Proceedings of the 13th ACM/IEEE-CS Joint
 Conference on Digital Libraries}, 239--48. JCDL '13. ACM.
-doi:\href{https://doi.org/10.1145/2467696.2467706}{10.1145/2467696.2467706}.
 
 \hypertarget{ref-edward2001visual}{}
 Tufte, Edward. 2001. \emph{The Visual Display of Quantitative
@@ -17631,15 +17576,15 @@ Graphics Press.
 
 \hypertarget{ref-ugander2011}{}
 Ugander, Johan, Brian Karrer, Lars Backstrom, and Cameron Marlow. 2011.
-``The Anatomy of the Facebook Social Graph.'' \emph{arXiv Preprint
-arXiv:1111.4503}.
+``The Anatomy of the Facebook Social Graph.''
+\url{https://arxiv.org/abs/1111.4503}.
 
 \hypertarget{ref-bnc}{}
 University of Oxford. 2006. ``British National Corpus.''
 \url{http://www.natcorp.ox.ac.uk/}.
 
 \hypertarget{ref-UnivTaskForceonDifferentialPrivacyforCensusData2019}{}
-UnivTask Force on Differential Privacy for Census Data†. 2019.
+UnivTask Force on Differential Privacy for Census Data. 2019.
 ``Implications of Differential Privacy for Census Bureau Data and
 Scientific Research.'' Minneapolis, MN, USA: Institute for Social
 Research; Data Innovation, University of Minnesota.
@@ -17658,19 +17603,14 @@ Valentino-DeVries, Josephine, Natasha Singer, Michael Keller, and Aaron
 Krolick. 2018. ``Your Apps Know Where You Were Last Night, and They're
 Not Keeping It Secret.'' New York, New York, USA.
 
-\hypertarget{ref-valliant2013practical}{}
-Valliant, Richard, Jill A Dever, and Frauke Kreuter. 2013.
-\emph{Practical Tools for Designing and Weighting Survey Samples}.
-Springer.
+\hypertarget{ref-valliant2018practical}{}
+Valliant, Richard, Jill A. Dever, and Frauke Kreuter. 2018.
+\emph{Practical Tools for Designing and Weighting Survey Samples}. 2nd
+Edition. Springer.
 
 \hypertarget{ref-varian2014big}{}
 Varian, Hal R. 2014. ``Big Data: New Tricks for Econometrics.''
 \emph{Journal of Economic Perspectives} 28 (2): 3--28.
-
-\hypertarget{ref-Varian2014}{}
-Varian, Hal R. 2014. ``Big Data: New Tricks for Econometrics.''
-\emph{Journal of Economic Perspectives} 28 (2): 3--28.
-doi:\href{https://doi.org/10.1257/jep.28.2.3}{10.1257/jep.28.2.3}.
 
 \hypertarget{ref-ventura2015seeing}{}
 Ventura, Samuel L., Rebecca Nugent, and Erica R. H. Fuchs. 2015.
@@ -17713,7 +17653,6 @@ in Information and Management}.
 \hypertarget{ref-church-17}{}
 Ward, Kenneth Church. 2017. ``Word2Vec.'' \emph{Natural Language
 Engineering} 23 (1). Cambridge University Press: 155--62.
-doi:\href{https://doi.org/10.1017/S1351324916000334}{10.1017/S1351324916000334}.
 
 \hypertarget{ref-ward2010interactive}{}
 Ward, Matthew O., Georges Grinstein, and Daniel Keim. 2010.
@@ -17721,8 +17660,8 @@ Ward, Matthew O., Georges Grinstein, and Daniel Keim. 2010.
 Applications}. CRC Press.
 
 \hypertarget{ref-weinberg2014science}{}
-Weinberg, Bruce A, Jason Owen-Smith, Rebecca F Rosen, Lou Schwarz,
-Barbara McFadden Allen, Roy E Weiss, and Julia Lane. 2014. ``Science
+Weinberg, Bruce A., Jason Owen-Smith, Rebecca F. Rosen, Lou Schwarz,
+Barbara McFadden Allen, Roy E. Weiss, and Julia Lane. 2014. ``Science
 Funding and Short-Term Economic Activity.'' \emph{Science} 344 (6179).
 American Association for the Advancement of Science: 41--43.
 
@@ -17750,7 +17689,7 @@ Construction}, 67--72. ACM.
 \hypertarget{ref-RESTwiki}{}
 Wikipedia. n.d. ``Representational State Transfer.''
 \url{https://en.wikipedia.org/wiki/Representational_state_transfer}.
-Accessed January 10, 2016.
+Accessed February 1, 2020.
 
 \hypertarget{ref-Wilbanks2014}{}
 Wilbanks, John. 2014. ``Portable Approaches to Informed Consent and Open
@@ -17761,13 +17700,12 @@ Helen Nissenbaum, 98--112. Cambridge University Press.
 \hypertarget{ref-winkler09}{}
 Winkler, William E. 2009. ``Record Linkage.'' In \emph{Handbook of
 Statistics 29a, Sample Surveys: Design, Methods and Applications},
-edited by D. Pfeffermann and C. R. Rao, 351--80. Elsevier.
+edited by Danny Pfeffermann and C. R. Rao, 351--80. Elsevier.
 
 \hypertarget{ref-WICS:WICS1317}{}
 ---------. 2014. ``Matching and Record Linkage.'' \emph{Wiley
 Interdisciplinary Reviews: Computational Statistics} 6 (5). John Wiley
 \& Sons, Inc.: 313--25.
-doi:\href{https://doi.org/10.1002/wics.1317}{10.1002/wics.1317}.
 
 \hypertarget{ref-wongsuphasawat2014using}{}
 Wongsuphasawat, Krist, and Jimmy Lin. 2014. ``Using Visualizations to
@@ -17790,15 +17728,13 @@ Dominance of Teams in Production of Knowledge.'' \emph{Science} 316
 Yarkoni, Tal, Dean Eckles, James Heathers, Maggie Levenstein, Paul
 Smaldino, and Julia I. Lane. 2019. ``Enhancing and accelerating social
 science via automation: Challenges and Opportunities.'' DARPA.
-doi:\href{https://doi.org/10.31235/osf.io/vncwe}{10.31235/osf.io/vncwe}.
 
 \hypertarget{ref-yates-10}{}
 Yates, Dave, and Scott Paquette. 2010. ``Emergency Knowledge Management
 and Social Media Technologies: A Case Study of the 2010 Haitian
 Earthquake.'' In \emph{Proceedings of the 73rd Asis\&T Annual Meeting on
-Navigating Streams in an Information Ecosystem - Volume 47}, 42:1--42:9.
-ASIS\&T '10. Silver Springs, MD: American Society for Information
-Science. \url{http://dl.acm.org/citation.cfm?id=1920331.1920391}.
+Navigating Streams in an Information Ecosystem}. Vol. 47. ASIS\&T '10.
+Silver Springs, MD: American Society for Information Science.
 
 \hypertarget{ref-yost2007beyond}{}
 Yost, Beth, Yonca Haciahmetoglu, and Chris North. 2007. ``Beyond Visual
@@ -17807,7 +17743,7 @@ Large Displays.'' In \emph{Proceedings of the Sigchi Conference on Human
 Factors in Computing Systems}, 101--10. ACM.
 
 \hypertarget{ref-zachary1977}{}
-Zachary, W. W. 1977. ``An Information Flow Model for Conflict and
+Zachary, Wayne W. 1977. ``An Information Flow Model for Conflict and
 Fission in Small Groups.'' \emph{Journal of Anthropological Research} 33
 (4): 452--73.
 
@@ -17818,12 +17754,11 @@ Classification.'' In \emph{Proceedings of the 20th International
 Conference on Artificial Intelligence and Statistics}, edited by Aarti
 Singh and Jerry Zhu, 54:962--70. Proceedings of Machine Learning
 Research. Fort Lauderdale, FL, USA: PMLR.
-\url{http://proceedings.mlr.press/v54/zafar17a.html}.
 
 \hypertarget{ref-zayatz2007disclosure}{}
 Zayatz, Laura. 2007. ``Disclosure Avoidance Practices and Research at
 the US Census Bureau: An Update.'' \emph{Journal of Official Statistics}
-23 (2). Statistics Sweden (SCB): 253.
+23 (2). Statistics Sweden (SCB): 253--65.
 
 \hypertarget{ref-zemel2013}{}
 Zemel, Rich, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork.
@@ -17831,13 +17766,12 @@ Zemel, Rich, Yu Wu, Kevin Swersky, Toni Pitassi, and Cynthia Dwork.
 30th International Conference on Machine Learning}, edited by Sanjoy
 Dasgupta and David McAllester, 28:325--33. Proceedings of Machine
 Learning Research 3. Atlanta, Georgia, USA: PMLR.
-\url{http://proceedings.mlr.press/v28/zemel13.html}.
 
 \hypertarget{ref-Zeng-2012}{}
 Zeng, Qing T., Doug Redd, Thomas C. Rindflesch, and Jonathan R. Nebeker.
 2012. ``Synonym, Topic Model and Predicate-Based Query Expansion for
 Retrieving Clinical Documents.'' In \emph{American Medical Informatics
-Association Annual Symposium}.
+Association Annual Symposium}, 1050--9.
 
 \hypertarget{ref-Zhang2012}{}
 Zhang, Li-Chun. 2012. ``Topics of Statistical Theory for Register-Based
