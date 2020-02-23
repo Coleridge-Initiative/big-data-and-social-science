@@ -299,9 +299,9 @@ The methods have been used to answer questions such as:
 
 - 'What are the earnings and employment outcomes of individuals graduating from two and four year colleges?'
 
-- 'How does placement in different types of firms change the likelihood that the formerly incareratedwill recidivate?'
+- 'How does placement in different types of firms change the likelihood that the formerly incarcerated will recidivate?'
 
-- 'What factors increase the likelihood that welfare recipients on TANF (Temporary Asistance to Needy Families) will leave welfare?'
+- 'What factors increase the likelihood that welfare recipients on TANF (Temporary Assistance to Needy Families) will leave welfare?'
 
 and
 

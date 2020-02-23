@@ -110,7 +110,8 @@ Turning Data into a Network
 
 Networks are comprised of *nodes*, which represent entities that can be
 connected to one another, and of ties that represent the relationships
-connecting nodes. When ties are undirected (representing a relationshop between the nodes that is not directional) they are called *edges*. When
+connecting nodes. When ties are undirected (representing a relationship 
+between the nodes that is not directional) they are called *edges*. When
 they are directed (as when I lend money to you and you do or do not
 reciprocate) they are called *arcs*. Nodes, edges and arcs can, in
 principle, be anything: patents and citations, web pages and hypertext

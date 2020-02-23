@@ -12,7 +12,7 @@ In many social science problems we have to augment our primary data with externa
 Introduction
 ------------
 
-The Internet is an excllent resource for vast amounts of
+The Internet is an excellent resource for vast amounts of
 data on businesses, people, and their activity on social media. But how
 can we capture the information and make use of it as we might make use
 of more traditional data sources? 

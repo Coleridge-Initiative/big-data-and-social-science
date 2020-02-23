@@ -8,8 +8,8 @@ Data Quality and Inference Errors {#chap:errors}
 This chapter deals with inference and the errors associated with big
 data. Social scientists know only too well the cost associated with bad
 data---we highlighted both the classic *Literary Digest* example and the
-more recent Google Flu Trends problems in
-Chapter [Introduction](#chap:intro). Although the consequences are well understood,
+more recent Google Flu Trends problems in Chapter [Introduction](#chap:intro).
+Although the consequences are well understood,
 the new types of data are so large and complex that their properties
 often cannot be studied in traditional ways. In addition, the data
 generating function is such that the data are often selective,
@@ -20,7 +20,7 @@ systematic way to think about the error framework in a big data setting.
 Introduction {#sec:10-1}
 ------------
 
-The Machine Learning chapter and the Bias and Fairness chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro)---and the decisions made along the way---can contribute to errors. In this chapter, we will focus on frameworks that help to detect  errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mititage the inference risk from errors.
+The [Machine Learning](#chap:ml) chapter and the [Bias and Fairness](#chap:bias) chapter discuss how analysis errors can lead to bad inferences and suboptimal decision making. In fact the whole workflow we depicted in chapter [Introduction](#chap:intro)---and the decisions made along the way---can contribute to errors. In this chapter, we will focus on frameworks that help to detect errors in our data, highlight in general how errors can lead to incorrect inferences, and discuss some strategies to mitigate the inference risk from errors.
 
 The massive amounts of high-dimensional and unstructured data that have recently become available to social scientists, such as data from social media platforms and micro-data from administrative data sources, bring both new opportunities and new challenges. Many of the problems with these types of data are well known (see, for example, the AAPOR report by Japec et al. -@japec2015big): this data often has selection bias, is incomplete, and erroneous. As it is processed and analyzed, new errors can be introduced in downstream operations.
 

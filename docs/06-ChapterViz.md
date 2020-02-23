@@ -74,7 +74,7 @@ guided by understanding the background and goals of the target audience
 
 **Box: Effective visualizations** <a id="box:viz1"></a>
 
-The development of an effective visualization is a continous process that generally includes the following activities:
+The development of an effective visualization is a continuous process that generally includes the following activities:
 
 -   Specify user needs, tasks, accessibility requirements and criteria
     for success.
