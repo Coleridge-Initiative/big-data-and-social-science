@@ -2,6 +2,8 @@
 
 You can view this textbook at [https://textbook.coleridgeinitiative.org/](https://textbook.coleridgeinitiative.org/)
 
+<!--
+
 ## Soliciting feedback and improvement suggestions for the second edition
 
 We are currently working on a 2nd edition of the book. Please give us suggestions for improvements and additional content by creating a [github issue](https://github.com/Coleridge-Initiative/big-data-and-social-science/issues) in this repository.
@@ -21,3 +23,5 @@ We are currently working on a 2nd edition of the book. Please give us suggestion
 11. Bias:
 12. Privacy: 
 13. Notebooks: 
+
+-->
