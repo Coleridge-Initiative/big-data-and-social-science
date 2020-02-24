@@ -163,7 +163,7 @@ the class attribute `view-rows`. Again, there is nothing obvious about finding
 these, it requires a close examination of the page HTML itself for any
 specific case you happen to be looking at.
 
-```{r fig2-1, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.'}
+```{r fig2-1, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'Source HTML from the portion of an HHMI results page containing information on HHMI investigators; note that the webscraping results in badly formatted html which is difficult to read.'}
 knitr::include_graphics("ChapterWeb/figures/fig2-1.png")
 ```
 

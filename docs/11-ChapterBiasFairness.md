@@ -399,7 +399,7 @@ applications:
 Navigating the many options for defining bias in a given context is a difficult and
 nuanced process, even for those familiar with the underlying statistical concepts. In
 order to help facilitate these conversations between data scientists and stakeholders,
-we developed the Fairness Tree depicted in Figure \@ref{fig:fairness-tree}. While it
+we developed the Fairness Tree depicted in Figure \@ref(fig:fairness-tree). While it
 certainly can't provide a single "right" answer for a given context, our hope is that
 the Fairness Tree can act as a tool to help structure the process of arriving at an
 appropriate metric (or set of metrics) to focus on.

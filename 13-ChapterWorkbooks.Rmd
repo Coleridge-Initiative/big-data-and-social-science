@@ -122,7 +122,7 @@ In this workbook, you will learn how to:
 
 ### Text Analysis 
 
-In the Text Analysis notebook, you will use the data that you pulled from 
+In the *Text Analysis* notebook, you will use the data that you pulled from 
 the PatentsView API in the API notebook to find topics from patent abstracts. 
 This will involve going through every step of the process, from extracting 
 the data to cleaning and preparing to using topic modeling algorithms. 
@@ -136,7 +136,7 @@ In this workbook, you will learn how to:
 
 ### Networks
 
-In the Networks workbook you will create network data where the nodes
+In the *Networks* workbook you will create network data where the nodes
 are researchers who have been awarded grants, and ties are created
 between each researcher on a given grant. You will use Python to read
 the grant data and translate them into network data, calculate node- 
