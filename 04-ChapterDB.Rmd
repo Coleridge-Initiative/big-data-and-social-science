@@ -76,7 +76,7 @@ Table: (\#tab:table4-1) When to use different data management and analysis techn
 
 |**When to use different data management and analysis technologies**|
 |-----------------------------------------------------------------|
-|**Text files, spreadsheets, and scripting language**             |
+| **Text files, spreadsheets, and scripting language**            |
 | • Your data are small                                           |
 | • Your analysis is simple                                       |
 | • You do not expect to repeat analyses over time                |
@@ -90,17 +90,15 @@ Table: (\#tab:table4-1) When to use different data management and analysis techn
 | • You want to share your data and analyses with others          |
 | **NoSQL database**                                              |
 | • Your data are unstructured                                    |
-| • Your data are extremely large			|
-|* Your analysis will happen mostly outside the database in a programming language|
-                                 |
+| • Your data are extremely large			                            |
+| • Your analysis will happen mostly outside the database in a programming language |
 <br>
 
 In the case of data set 1 (10,000 records describing research grants),
 it may be feasible to leave the data in their original file, use
-spreadsheets, pivot tables, or write programs in **scripting languages**^[A scripting language is
-a programming language
-used to automate tasks that
-could otherwise be performed one by one by the
+spreadsheets, pivot tables, or write programs in 
+**scripting languages**^[A scripting language is a programming language
+used to automate tasks that could otherwise be performed one by one by the
 user.] such as Python or R to
 analyze the data in those files. For example, someone familiar with such
 languages can quickly create a script to extract from data set 1 all
@@ -174,10 +172,9 @@ well.
 
 Alas, databases are not perfectly suited for every need. For example, in social science research, the reproducibility of our analysis is critical and hence versioning of the data used for analysis is critical. Most databases do not do provide versioning out of the box. Typically, they do keep a log of all operations performed (inserting, updating, updating data for example), which can facilitate versioning and rollbacks, but we often need to configure the database to allow versioning and support reproducibility.
 
-These considerations bring us to the topic of this chapter, namely **database management systems**. A DBMS^[DBMS is a system
-that interacts with users,
-other applications, and the
-database itself to capture
+These considerations bring us to the topic of this chapter, namely 
+**database management systems**. A DBMS^[DBMS is a system that interacts 
+with users, other applications, and the database itself to capture
 and analyze data.] handles all of the issues listed above, and more. As we
 will see below when we look at concrete examples, a DBMS allows us to
 define a logical design that fits the structure of our data. The DBMS
@@ -283,8 +280,7 @@ scraping, tabular data from various administrative databases, Twitter
 data, and newspaper articles. There may be hundreds or even thousands of
 data sets in total, some of which may be extremely large. We initially
 have no idea of what **schema**^[A schema defines the
-structure of a database in
-a formal language defined
+structure of a database in a formal language defined
 by the DBMS. See Section [Schema design and definition](#sec:db:schema).] 
 to use for the different data sets, and indeed it
 may not be feasible to define a unified set of schema, as the data may be
@@ -515,10 +511,10 @@ We obtain the following:
 
 ### Schema design and definition {#sec:db:schema}
 
-
-```{r NCSES, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue).'}
+```{r NCSES, out.width = '100%', fig.align = 'center', echo = FALSE, fig.cap = 'A database schema can show the ways in which many tables are linked. Here, there are individual-links (shown in green) as well as institution-level links (shown in red) and location-level links (shown in blue).'}
 knitr::include_graphics("ChapterDB/figures/NCSES-Database-Diagram.png")
 ```
+
 When using a pre-existing database, you will be given the database design that includes tables, rows, and columns. 
 But, when you are starting with your own data and need to create a database, the first step is to come up with the design of the database.
 
