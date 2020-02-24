@@ -905,8 +905,8 @@ be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size" width="70%" />
-<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size</p>
+<img src="ChapterError/figures/fig10-4.png" alt="Correlation as a function of sample size (I)" width="70%" />
+<p class="caption">(\#fig:fig10-4)Correlation as a function of sample size (I)</p>
 </div>
 
 **Both variable and systematic errors**
@@ -944,8 +944,8 @@ factors and the result is a much inflated value of the correlation across
 all aggregate sizes.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size" width="70%" />
-<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size</p>
+<img src="ChapterError/figures/fig10-5.png" alt="Correlation as a function of sample size (II)" width="70%" />
+<p class="caption">(\#fig:fig10-5)Correlation as a function of sample size (II)</p>
 </div>
 
 To summarize these findings, correlation analysis is attenuated by
@@ -993,7 +993,7 @@ $x$-values, reliability is reduced and the fitted slope will approach
 $0$.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-6.png" alt="Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77" width="70%" />
+<img src="ChapterError/figures/fig10-6.png" alt="Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77" width="90%" />
 <p class="caption">(\#fig:fig10-6)Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77</p>
 </div>
 
@@ -1125,7 +1125,7 @@ displayed as a bar (for continuous variables) or as a stacked bar for
 categorical variables.
 
 <div class="figure" style="text-align: center">
-<img src="ChapterError/figures/fig10-7.png" alt="Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars" width="70%" />
+<img src="ChapterError/figures/fig10-7.png" alt="Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars" width="90%" />
 <p class="caption">(\#fig:fig10-7)Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars</p>
 </div>
 

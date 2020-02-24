@@ -70,7 +70,7 @@ There are a lot of types of analysis that we can do with text
 data. Table \@ref(tab:table7-0) gives a summary of these types of
 analysis.^[If you have examples from your own research using the methods we describe in this chapter, please submit a link to the paper (and/or code) here: https://textbook.coleridgeinitiative.org/submitexamples]
 
-Table: (\#tab:table7-0) Examples
+Table: (\#tab:table7-0) Text analysis examples
 
 Type of Analysis | Description           | Examples                                                                                   
 -----------------|-----------------------|--------------------------------------------------------------------------------------------

@@ -590,7 +590,7 @@ Table: (\#tab:table5-1) Home Mortgage Disclosure Act data size
  |  **Total** |  **130,420,445** |          **86.4**|
 <br>
 
-Table: (\#tab:table5-2) Home Mortgage Disclosure Act data size
+Table: (\#tab:table5-2) Home Mortgage Disclosure Act data fields
 
 |  **Index** |  **Attribute**  |     **Type**|
 |-----------|------------------|:----------:|

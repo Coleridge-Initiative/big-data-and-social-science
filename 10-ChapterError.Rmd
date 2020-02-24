@@ -902,7 +902,7 @@ negligible when $n > 30$. These results suggest that variable error can
 be mitigated by aggregating like elements that can be assumed to have
 independent errors.
 
-```{r fig10-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size'}
+```{r fig10-4, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size (I)'}
 knitr::include_graphics("ChapterError/figures/fig10-4.png")
 ```
 
@@ -940,7 +940,7 @@ intra-source variation, the inflation factor overwhelms the attenuation
 factors and the result is a much inflated value of the correlation across 
 all aggregate sizes.
 
-```{r fig10-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size'}
+```{r fig10-5, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap='Correlation as a function of sample size (II)'}
 knitr::include_graphics("ChapterError/figures/fig10-5.png")
 ```
 
@@ -988,7 +988,7 @@ proportion to the reliability, $R_{x}$. As random error is added to the
 $x$-values, reliability is reduced and the fitted slope will approach
 $0$.
 
-```{r fig10-6, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77'}
+```{r fig10-6, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Regression of *y* on *x* with and without variable error. On the left is the population regression with no error in the *x* variable. On the right, variable error was added to the *x*-values with a reliability ratio of 0.73. Note its attenuated slope, which is very near the theoretical value of 0.77'}
 knitr::include_graphics("ChapterError/figures/fig10-6.png")
 ```
 
@@ -1119,7 +1119,7 @@ such as the mean or total is computed for the values in a bin and is
 displayed as a bar (for continuous variables) or as a stacked bar for
 categorical variables.
 
-```{r fig10-7, out.width = '70%', fig.align = 'center', echo = FALSE, fig.cap = 'Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars'}
+```{r fig10-7, out.width = '90%', fig.align = 'center', echo = FALSE, fig.cap = 'Comparison of tableplots for the Dutch Structural Business Statistics Survey for five variables before and after editing. Row bins with high missing and unknown numeric values are represented by lighter colored bars'}
 knitr::include_graphics("ChapterError/figures/fig10-7.png")
 ```
 
