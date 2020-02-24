@@ -568,4 +568,4 @@ called *Transactions in Data Privacy*^[http://www.tdp.cat/].
 The United Nations Economic Commission on Europe hosts workshops and
 conferences and produces occasional reports.^[http://www.unece.org/stats/mos/meth/confidentiality.html]
 
-Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing.^[https://simons.berkeley.edu/programs/privacy2019, available on youtube: https://www.youtube.com/user/SimonsInstitute/)]
+Collection of lectures from the semester on privacy at the Simons Institute for the Theory of Computing.^[https://simons.berkeley.edu/programs/privacy2019, available on youtube: https://www.youtube.com/user/SimonsInstitute/.]
