@@ -57,7 +57,7 @@ disclosure increases [@doyle2001confidentiality].
 There is an explicit tradeoff between data access and data utility. 
 The greater the number of researchers and analysts that access the data, 
 the greater the quality of the analysis and the greater the number of 
-potential uses [@Lane2007a]. We depict this tradeoff graphically in
+potential uses [@Lane2007]. We depict this tradeoff graphically in
 Figure \@ref(fig:fig11-1). The
 concave curves in this hypothetical example depict the technological
 relationship between data utility and privacy for an organization such

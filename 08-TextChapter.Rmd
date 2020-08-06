@@ -81,7 +81,7 @@ Sentiment analysis | Detection of sentiment or opinions at different levels of g
 Word Clustering/Synonyms | Finding groups of words that are similar to each other. Depending on the problem need, similarity can be defined as strictly synonyms or aliases (such as IBM and Big Blue being synonyms in a specific context). | In a search engine, when a user searches for "Russian astronaut", also return search results for "Soviet cosmonaut" [@Zeng-2012].
 Named Entity Linking | Recognition, tagging and extraction of named entities (typically of type Person, Location, Organization) from text data. Typically limited to proper nouns. | Given an e-mail, automatically link all of the names to their corresponding Wikipedia page [@ferragina-10].
 General Extraction | Recognition, tagging, and extraction of specific classes of words/phrases that may be entities, events, relationships between entities, etc. | Automatically detecting words as types of events (holiday, party, graduation  for example) and classifying them into types (related to sports, politics, and religion for example) from tweets [@Ritter2012].
-Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@EdmundMTalley2011].
+Visualization | Visualization of text data and/or visual mashups combining text with other forms of data (such as maps or networks). | Given grants funded by the NIH, create a visualization to find areas where directorates could collaborate with each other [@talley-11].
 Summarization | Summarization of a document (or a set of documents), either as a set of important keywords, or important sentences extracted from the text, or new sentences generated to produce a summary. | For example, Wang et al. [-@wang-09] use topic modeling to produce category-sensitive text summaries and annotations on large-scale document collections.
 Translation | Automatic translation of text from one language to another. | Look at reaction to a political event in newspapers of different countries in different languages.
 
@@ -692,7 +692,7 @@ provide more details on the derivation of this equation.
 Topic modeling is most often used for topic exploration, allowing users
 to understand the contents of large text corpora. Thus, topic models
 have been used, for example, to understand what the National Institutes
-of Health funds [@talley2011database]; to compare and contrast what was
+of Health funds [@talley-11]; to compare and contrast what was
 discussed in the North and South in the Civil War [@nelson-10]; and to
 understand how individuals code in large programming projects
 [@maskeri-08].
@@ -773,7 +773,7 @@ publications and related student dissertations from ProQuest. Both award
 and dissertation data are text documents that can be used to
 characterize what research has been done, provide information about
 which projects are similar within or across institutions, and
-potentially identify new fields of study [@talley2011database].
+potentially identify new fields of study [@talley-11].
 
 
 **Applications**

@@ -261,7 +261,7 @@ For example, the text analysis chapter
 ([Text Analysis](#chap:text)) shows how to use natural language 
 processing to describe *what* research is being done, using 
 proposal and award text to identify the research topics in a portfolio
-[@talley2011database; @Evans2011]. But then it also shows how the
+[@talley-11; @Evans2011]. But then it also shows how the
 approach can be used to address a problem that is not just limited to
 science policy---the conversion of massive amounts of knowledge that is
 stored in text to usable information.
