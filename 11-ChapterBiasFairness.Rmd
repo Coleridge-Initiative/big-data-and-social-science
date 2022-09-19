@@ -357,7 +357,7 @@ detailed discussion between the data scientists, decision makers, and
 those who will be affected by the application of the model. Each
 perspective may have a different concept of fairness and a different
 understanding of harm involved in making different types of errors, both
-at individual and societal levels. Importantly, data scientists have an
+at individual and societal levels. Importantly, data scientists have a
 critical role in this conversation, both as the experts in understanding
 how different concepts of fairness might translate into metrics and
 measurement and as individuals with experience deploying similar models.
